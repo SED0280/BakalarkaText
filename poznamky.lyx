@@ -152,5 +152,54 @@ Ortogonální polynomy:
  [Hertl str.15]
 \end_layout
 
+\begin_layout Standard
+Tříčlenná rekurze:
+\end_layout
+
+\begin_layout Standard
+pro ortogonální polynomy 
+\begin_inset Formula $\{p_{n}\}_{n=0}^{\infty}$
+\end_inset
+
+ kde pro skalární součin platí 
+\begin_inset Formula $(\forall p,q\in P):<x\cdot p,q>=<p,x\cdot q>$
+\end_inset
+
+,pak
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\forall n\in\mathbb{N}:p_{n+1}(x)=(\alpha_{n}x+\beta_{n})\cdot p_{n}(x)+\gamma_{n}\cdot p_{n-1}(x)$
+\end_inset
+
+.[Hertl str.16]
+\end_layout
+
+\begin_layout Standard
+Váhová funkce:
+\end_layout
+
+\begin_layout Standard
+s tou si ještě nejsem 100% jistý,
+ ale svými slovy to chápu jako funkci která se používá pro integrály k zjednodušení/aproximaci funkce na integrovatelnou funkci kde v podstatě váhová funkce je součástí integrálu
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $(\forall p\in P):\int_{J}w(x)\cdot p(x)\,dx\in\mathbb{R}$
+\end_inset
+
+,
+ w(x) nazveme váhovou funkcí [Hertl str.17]
+\end_layout
+
+\begin_layout Standard
+skalarni součin s váhovou funkcí:
+ 
+\begin_inset Formula $<u,v>=\int_{J}w(x)u(x)v(x)\,dx$
+\end_inset
+
+
+\end_layout
+
 \end_body
 \end_document
