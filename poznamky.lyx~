@@ -6,6 +6,9 @@
 \origin unavailable
 \textclass article
 \use_default_options true
+\begin_modules
+theorems-ams
+\end_modules
 \maintain_unincluded_children no
 \language czech
 \language_package default
@@ -33,6 +36,7 @@
 \float_placement class
 \float_alignment class
 \paperfontsize default
+\spacing single
 \use_hyperref false
 \papersize default
 \use_geometry false
@@ -48,6 +52,7 @@
 \use_package undertilde 1
 \cite_engine basic
 \cite_engine_type default
+\biblio_style plain
 \use_bibtopic false
 \use_indices false
 \paperorientation portrait
@@ -186,11 +191,6 @@ Váhová funkce:
 \end_layout
 
 \begin_layout Standard
-~~ s tou si ještě nejsem 100% jistý,
- ale svými slovy to chápu jako funkci která se používá pro integrály k aproximaci funkce na integrovatelnou funkci kde v podstatě váhová funkce je součástí integrálu
-\end_layout
-
-\begin_layout Standard
 \begin_inset Formula $(\forall p\in P):\int_{J}w(x)\cdot p(x)\,dx\in\mathbb{R}$
 \end_inset
 
@@ -295,6 +295,178 @@ Gaussova-Hermitova kvadraturní formule:
 
  [Hertl str.
  47]
+\end_layout
+
+\begin_layout Standard
+—
+—
+—
+—
+—
+—
+—
+—
+—
+—
+—
+—
+—
+—
+—
+—
+—
+—
+—
+—
+—
+—
+—
+—
+—
+—
+—
+—
+—
+—
+–
+\end_layout
+
+\begin_layout Standard
+GAUTSCHI:
+\end_layout
+
+\begin_layout Definition
+When we have a function 
+\begin_inset Formula $\lambda(t)\in\mathbb{R}$
+\end_inset
+
+having finite limits as 
+\begin_inset Formula $t\rightarrow\infty$
+\end_inset
+
+and 
+\begin_inset Formula $t\rightarrow-\infty$
+\end_inset
+
+and the induced positive measure 
+\begin_inset Formula $d\lambda$
+\end_inset
+
+ has finite moments of all orders,
+\end_layout
+
+\begin_layout Definition
+\begin_inset Formula $\mu_{r}=\mu_{r}(d\lambda)\coloneqq\intop_{\mathbb{R}}t^{r}\,d\lambda(t),\;r=0,1,2,\ldots,\;with\,\mu_{0}>0.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+Let 
+\begin_inset Formula $\mathbb{P}$
+\end_inset
+
+be the 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+space of real polynomials and.
+ For any pair u,
+ v in 
+\begin_inset Formula $\mathbb{P}$
+\end_inset
+
+ one may define an 
+\begin_inset Formula $\mathit{inner}$
+\end_inset
+
+
+\begin_inset Formula $\mathit{product}$
+\end_inset
+
+ as:
+\end_layout
+
+\begin_layout Definition
+\begin_inset Formula $(u,v)=\intop_{\mathbb{R}}u(t)v(t)\,d\lambda(t)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Definition
+If (u,
+ v) = 0,
+ then u is said to be orthogonal to v.
+\end_layout
+
+\begin_layout Standard
+Monic polynomal is a polynomal where leading coefficient is equal to 1:
+ 
+\begin_inset Formula $p(t)=t^{n}+a_{n-1}t^{n-1}+\cdots+a_{1}t+a_{0}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $d\lambda=w(t)\cdot dt$
+\end_inset
+
+ where w(t) is called weight function
+\end_layout
+
+\begin_layout Standard
+Three-term recurrence:
+\end_layout
+
+\begin_layout Theorem
+Let 
+\begin_inset Formula $\pi_{k}(\cdot)=\pi_{k}(\cdot;d\lambda),k=0,1,\ldots$
+\end_inset
+
+,
+ be amonic monic orthogonal polynomials with respect to the measure 
+\begin_inset Formula $d\lambda.$
+\end_inset
+
+Then,
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Formula $\pi_{k+1}(t)=(t-\alpha_{k})\pi_{k}(t)-\beta_{k}\pi_{k-1}(t),\;k=0,1,2,\ldots,$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Formula $\pi_{-1}=0,\pi_{0}=1,$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+where
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Formula $\alpha_{k}=\frac{(t\pi_{k},\pi_{k})_{d\lambda}}{(\pi_{k},\pi_{k})_{d\lambda}}$
+\end_inset
+
+
 \end_layout
 
 \end_body
