@@ -463,10 +463,59 @@ where
 \end_layout
 
 \begin_layout Theorem
-\begin_inset Formula $\alpha_{k}=\frac{(t\pi_{k},\pi_{k})_{d\lambda}}{(\pi_{k},\pi_{k})_{d\lambda}}$
+\begin_inset Formula $\alpha_{k}=\frac{(t\pi_{k},\pi_{k})_{d\lambda}}{(\pi_{k},\pi_{k})_{d\lambda}},k=0,1,2,\ldots,$
 \end_inset
 
 
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Formula $\beta_{k}=\frac{(\pi_{k},\pi_{k})_{d\lambda}}{(\pi_{k-1},\pi_{k-1})_{d\lambda}},k=0,1,2,\ldots$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Characteristic polynomial of a matrix A is
+\begin_inset Formula $p_{A}(x)=det(A-xI)$
+\end_inset
+
+,
+ (where I is identity matrix)
+\end_layout
+
+\begin_layout Standard
+Let us have a square matrix A and a vector v.
+ If 
+\begin_inset Formula $Av=\lambda v$
+\end_inset
+
+ then we can call v an eigenvector and 
+\begin_inset Formula $\lambda$
+\end_inset
+
+eigenvalue (vlastní číslo,
+ vlastní vektor)
+\end_layout
+
+\begin_layout Standard
+Lets denote 
+\begin_inset Formula $\thicksim\pi_{k}(\cdot)$
+\end_inset
+
+ as orthonormal polynomials ( 
+\begin_inset Formula $\pi_{k}(t)=||\pi_{k}||\thicksim\pi_{k}(t)$
+\end_inset
+
+ )
+\end_layout
+
+\begin_layout Definition
+If the index range in Theorems 1.27 (Věta 2.) and 1.29 (dopíšu (str.12)) is infinite,
+ the Jacobi matrix associated with the measure dλ is the infinite,
+ symmetric,
+ tridiagonal matrix
 \end_layout
 
 \end_body

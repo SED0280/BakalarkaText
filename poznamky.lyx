@@ -476,5 +476,59 @@ where
 
 \end_layout
 
+\begin_layout Standard
+Characteristic polynomial of a matrix A is
+\begin_inset Formula $p_{A}(x)=det(A-xI)$
+\end_inset
+
+,
+ (where I is identity matrix)
+\end_layout
+
+\begin_layout Standard
+Let us have a square matrix A and a vector v.
+ If 
+\begin_inset Formula $Av=\lambda v$
+\end_inset
+
+ then we can call v an eigenvector and 
+\begin_inset Formula $\lambda$
+\end_inset
+
+eigenvalue (vlastní číslo,
+ vlastní vektor)
+\end_layout
+
+\begin_layout Standard
+Lets denote 
+\begin_inset Formula $\thicksim\pi_{k}(\cdot)$
+\end_inset
+
+ as orthonormal polynomials ( 
+\begin_inset Formula $\pi_{k}(t)=||\pi_{k}||\thicksim\pi_{k}(t)$
+\end_inset
+
+ )
+\end_layout
+
+\begin_layout Definition
+If the index range in Theorems 1.27 (Věta 2.) and 1.29 (dopíšu (str.12)) is infinite,
+ the Jacobi matrix associated with the measure dλ is the infinite,
+ symmetric,
+ tridiagonal matrix
+\end_layout
+
+\begin_layout Definition
+\begin_inset Formula $J_{\infty}=J_{\infty}(d\lambda)\coloneqq\begin{bmatrix}\alpha_{0} & \sqrt{\beta_{1}} &  &  &  & 0\\
+\sqrt{\beta_{1}} & \alpha_{1} & \sqrt{\beta_{2}}\\
+ & \sqrt{\beta_{2}} & \alpha_{2} & \sqrt{\beta_{3}}\\
+ &  & \ddots & \ddots & \ddots\\
+0
+\end{bmatrix}$
+\end_inset
+
+.
+\end_layout
+
 \end_body
 \end_document
