@@ -530,8 +530,25 @@ If the index range in Theorems 1.27 (Věta 2.) and 1.29 (dopíšu (str.12)) is i
 .
 \end_layout
 
-\begin_layout Standard
+\begin_layout Theorem
+The zeros 
+\begin_inset Formula $\tau_{v}^{(n)}$
+\end_inset
 
+ of 
+\begin_inset Formula $\pi_{n}$
+\end_inset
+
+are the eigenvalues of 
+\begin_inset Formula $J_{n}(d\lambda)$
+\end_inset
+
+,
+ and 
+\begin_inset Formula $\thicksim\pi_{k}(\tau_{v}^{(n)})$
+\end_inset
+
+ are the coresponding eigenvectors
 \end_layout
 
 \end_body

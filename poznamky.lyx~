@@ -518,5 +518,17 @@ If the index range in Theorems 1.27 (Věta 2.) and 1.29 (dopíšu (str.12)) is i
  tridiagonal matrix
 \end_layout
 
+\begin_layout Definition
+\begin_inset Formula $J_{\infty}=J_{\infty}(d\lambda)\coloneqq\begin{bmatrix}\alpha_{0} & \sqrt{\beta_{1}} &  &  &  & 0\\
+\sqrt{\beta_{1}} & \alpha_{1} & \sqrt{\beta_{2}}\\
+ & \sqrt{\beta_{2}} & \alpha_{2} & \sqrt{\beta_{3}}\\
+ &  & \ddots & \ddots & \ddots\\
+0
+\end{bmatrix}$
+\end_inset
+
+.
+\end_layout
+
 \end_body
 \end_document
