@@ -304,8 +304,23 @@ If the inner product is positive definite on P,
 \end_layout
 
 \begin_layout Definition
-(Def.
- shift property)
+Let us have 
+\begin_inset Formula $u,v\in P$
+\end_inset
+
+ and 
+\begin_inset Formula $t\in\mathbb{R}$
+\end_inset
+
+,
+ then 
+\end_layout
+
+\begin_layout Definition
+\begin_inset Formula $<t*u,v>=<u,t*v>$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Theorem
@@ -579,6 +594,21 @@ If we have a inner product with integration over an interval
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Remark
+weight function then becomes 
+\begin_inset Formula $w(t)=\frac{b-a}{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Remark
+\begin_inset Formula $<u,v>_{1}=\int_{a}^{b}1\cdot u(t)\cdot v(t)\,dt=\int_{-1}^{1}\frac{b-a}{2}\cdot u(\frac{a+b}{2}+\frac{b-a}{2}\cdot\hat{t})\cdot v(\frac{a+b}{2}+\frac{b-a}{2}\cdot\hat{t})\,d\hat{t}$
+\end_inset
+
+
 \end_layout
 
 \end_body
