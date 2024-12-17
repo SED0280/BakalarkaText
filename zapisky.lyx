@@ -581,5 +581,20 @@ If we have a inner product with integration over an interval
 .
 \end_layout
 
+\begin_layout Remark
+weight function then becomes 
+\begin_inset Formula $w(t)=\frac{b-a}{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Remark
+\begin_inset Formula $<u,v>_{1}=\int_{a}^{b}1\cdot u(t)\cdot v(t)\,dt=\int_{-1}^{1}\frac{b-a}{2}\cdot u(\frac{a+b}{2}+\frac{b-a}{2}\cdot\hat{t})\cdot v(\frac{a+b}{2}+\frac{b-a}{2}\cdot\hat{t})\,d\hat{t}$
+\end_inset
+
+
+\end_layout
+
 \end_body
 \end_document

@@ -562,19 +562,23 @@ If we have a inner product with integration over an interval
 \begin_inset Formula $I=(a,b);a,b\in\mathbb{R}$
 \end_inset
 
+ and weight function 
+\begin_inset Formula $w(t)=1$
+\end_inset
+
 ,
  then we can get to an itegration over an interval 
 \begin_inset Formula $I=(-1,1)$
 \end_inset
 
- by usinga substitution for x:
+ by using a substitution for t:
 \end_layout
 
 \begin_layout Remark
-\begin_inset Formula $x=\frac{a+b}{2}+\frac{b-a}{2}\cdot\hat{x},\hat{x}\in(-1,1)$
+\begin_inset Formula $t=\frac{a+b}{2}+\frac{b-a}{2}\cdot\hat{t},\hat{t}\in(-1,1)$
 \end_inset
 
-
+.
 \end_layout
 
 \end_body
