@@ -317,7 +317,18 @@ Let us have
 \end_layout
 
 \begin_layout Definition
-\begin_inset Formula $<t*u,v>=<u,t*v>$
+\begin_inset Formula $<t\cdot u,v>=<u,t\cdot v>$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Remark
+This also works for an inner product defined from integrals
+\end_layout
+
+\begin_layout Remark
+\begin_inset Formula $<x\cdot u,v>=\int_{I}w(t)\cdot(x\cdot u(t))\cdot v(t)\,dt=\int_{I}w(t)\cdot u(t)\cdot(x\cdot v(t))\,dt=<u,x\cdot v>$
 \end_inset
 
 
