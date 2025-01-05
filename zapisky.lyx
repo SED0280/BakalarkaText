@@ -10,7 +10,7 @@
 theorems-ams
 \end_modules
 \maintain_unincluded_children no
-\language czech
+\language english
 \language_package default
 \inputencoding utf8
 \fontencoding auto
@@ -121,7 +121,7 @@ then we call
 \end_layout
 
 \begin_layout Definition
-\begin_inset Formula $\mu_{r}\coloneqq\int_{\mathbb{R}}w(t)t^{r}\,dt,\;r=0,1,2,\ldots,\;with\:\mu_{0}>0$
+\begin_inset Formula $\mu_{r}\coloneqq\int_{\mathbb{R}}w(t)t^{r}\,dt,\;r=0,1,2,\ldots,\;with\:\forall r:\mu_{r}>0$
 \end_inset
 
 .
@@ -335,6 +335,12 @@ This also works for an inner product defined from integrals
 \end_layout
 
 \begin_layout Theorem
+\begin_inset CommandInset label
+LatexCommand label
+name "thm:Theorem 9"
+
+\end_inset
+
 Let 
 \begin_inset Formula $\pi_{k},k=0,1,2,\ldots,$
 \end_inset
@@ -406,7 +412,18 @@ be ortholonormal polynomials.
 \end_layout
 
 \begin_layout Definition
-If the index range in Theorems 1.27 and 1.29 is infinite,
+If the index range in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "thm:Theorem 9"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ and 1.29 is infinite,
  the Jacobi matrix is the infinite,
  symmetric,
  tridiagonal matrix
