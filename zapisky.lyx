@@ -93,15 +93,25 @@ theorems-ams
 
 \begin_layout Definition
 Let us have a function 
-\begin_inset Formula $w(t),$
+\end_layout
+
+\begin_layout Definition
+\begin_inset Formula $w(t)>0,$
 \end_inset
 
- 
+ where 
+\begin_inset Formula $\int w(t)>0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+and for 
 \begin_inset Formula $I\subseteq\mathbb{R}$
 \end_inset
 
-,
- and
+
 \end_layout
 
 \begin_layout Definition
@@ -135,7 +145,7 @@ then we call
 \end_layout
 
 \begin_layout Definition
-Let P be the space of real polynomials.
+Let us denote P as a space of real polynomials.
  For any pair 
 \begin_inset Formula $u,v\in P$
 \end_inset
@@ -213,7 +223,7 @@ If the weight function
 \end_inset
 
 at interval 
-\begin_inset Formula $I=(-1,1)$
+\begin_inset Formula $I=\left\langle -1,1\right\rangle $
 \end_inset
 
 ,
@@ -248,7 +258,7 @@ w(t) is equal to 1,
 \end_layout
 
 \begin_layout Proof
-\begin_inset Formula $||u||=\left\langle u,u\right\rangle _{w}=\int_{-1}^{1}u(t)^{2}dt,u(t)\in C((-1,1))$
+\begin_inset Formula $||u||=\left\langle u,u\right\rangle _{w}=\int_{-1}^{1}u(t)^{2}dt,u(t)\in C(\left\langle -1,1\right\rangle )$
 \end_inset
 
 
@@ -389,11 +399,17 @@ where
 \end_layout
 
 \begin_layout Theorem
+\begin_inset CommandInset label
+LatexCommand label
+name "thm:Theorem 10"
+
+\end_inset
+
 Let 
 \begin_inset Formula $\tilde{\pi}_{k},k=0,1,2,\ldots,$
 \end_inset
 
-be ortholonormal polynomials.
+be monic ortholonormal polynomials.
  Then,
 \end_layout
 
@@ -423,7 +439,18 @@ nolink "false"
 
 \end_inset
 
- and 1.29 is infinite,
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "thm:Theorem 10"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ is infinite,
  the Jacobi matrix is the infinite,
  symmetric,
  tridiagonal matrix
@@ -477,11 +504,27 @@ The roots
  are corresponding eigenvectors.
 \end_layout
 
-\begin_layout Standard
-\begin_inset Separator plain
+\begin_layout Definition
+The quadrature rule is defined as
+\end_layout
+
+\begin_layout Definition
+\begin_inset Formula $\int_{I}f(t)dt\approx\sum_{v=1}^{n}\lambda_{v}f(\tau_{v})$
 \end_inset
 
+ 
+\end_layout
 
+\begin_layout Definition
+where 
+\begin_inset Formula $\lambda_{v}$
+\end_inset
+
+ are called weights and 
+\begin_inset Formula $\tau_{v}$
+\end_inset
+
+ are called nodes of an n-point Gauss quadrature rule
 \end_layout
 
 \begin_layout Theorem
@@ -555,12 +598,12 @@ Quadrature rule for positive definite inner product with the exactness of 2n-1,
 \end_layout
 
 \begin_layout Theorem
-nodes 
+Nodes 
 \begin_inset Formula $\tau_{v}^{G},v=1,2,3,\ldots,n$
 \end_inset
 
 ,
- of the n-point Gauss quadrature rule and the eigenvalues of the Jacobi matrix 
+ of the n-point Gauss quadrature rule are the eigenvalues of the Jacobi matrix 
 \begin_inset Formula $J_{n}$
 \end_inset
 
@@ -602,7 +645,7 @@ where
 
 \begin_layout Remark
 If we have a inner product with integration over an interval 
-\begin_inset Formula $I=(a,b);a,b\in\mathbb{R}$
+\begin_inset Formula $I=\left\langle a,b\right\rangle ;a,b\in\mathbb{R}$
 \end_inset
 
  and weight function 
@@ -611,14 +654,14 @@ If we have a inner product with integration over an interval
 
 ,
  then we can get to an itegration over an interval 
-\begin_inset Formula $I=(-1,1)$
+\begin_inset Formula $I=\left\langle -1,1\right\rangle $
 \end_inset
 
  by using a substitution for t:
 \end_layout
 
 \begin_layout Remark
-\begin_inset Formula $t=\frac{a+b}{2}+\frac{b-a}{2}\cdot\hat{t},\hat{t}\in(-1,1)$
+\begin_inset Formula $t=\frac{a+b}{2}+\frac{b-a}{2}\cdot\hat{t},\hat{t}\in\left\langle -1,1\right\rangle $
 \end_inset
 
 .

@@ -1,0 +1,8 @@
+Leg. (Čeb., Her....) polynomy jsou pevně dané
+jejich kořeny jsou proto taky pevně dané
+při přesunutí hranic z (-1,1) na (a,b) se ale změní kořeny
+gausova kvadratura mi potom říká že integral funkce f(x) je soucet funkce f v kořenech gauss kvadratury krát související váhy
+pro získaní vah by měl fungovat můj kód, pamatuju si ale že tam byly nějaké problémy.
+podle papíru ze schůzky máme polynom určený podle kořenů (bez j-tého kořene) a váha je to integrál tohoto polynomu děleno ten polynom v j-tém kořenu
+tyto kořeny se budou taky měnit podle (a,b)
+acording to chatGPT I get weights and roots from Jacobi matrix
