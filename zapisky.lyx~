@@ -145,24 +145,39 @@ then we call
 \end_layout
 
 \begin_layout Definition
-Let us denote P as the space of real polynomials.
+Let us denote 
+\begin_inset Formula $P$
+\end_inset
+
+ as a space of real polynomials and 
+\begin_inset Formula $P_{d}$
+\end_inset
+
+ a space of polynomials of degree at most d,
+ where 
+\begin_inset Formula $\forall p\in P_{d}:p(x)=\sum_{i=0}^{d}a_{i}x^{i}$
+\end_inset
+
+.
+ Then,
+ 
+\begin_inset Formula $P=\cup_{d=0}^{\infty}P_{d}$
+\end_inset
+
+.
  For any pair 
 \begin_inset Formula $u,v\in P$
 \end_inset
 
 ,
- one may define an 
-\emph on
-inner product
-\emph default
- as
+ an inner product may be defined as:
 \end_layout
 
 \begin_layout Definition
-\begin_inset Formula $\left\langle u,v\right\rangle _{w}=\int_{J}w(t)u(t)v(t)\,dt$
+\begin_inset Formula $\left\langle u,v\right\rangle _{w}=\int_{I}w(t)u(t)v(t)\,dt$
 \end_inset
 
-
+.
 \end_layout
 
 \begin_layout Definition

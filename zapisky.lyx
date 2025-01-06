@@ -115,11 +115,14 @@ and for
 \end_layout
 
 \begin_layout Definition
-\begin_inset Formula $(\forall f\in C(I)):\int_{I}w(t)f(t)\,dt\in\mathbb{R}$
+\begin_inset Formula 
+\[
+(\forall f\in C(I)):\int_{I}w(t)f(t)\,dt\in\mathbb{R},
+\]
+
 \end_inset
 
-,
- 
+
 \end_layout
 
 \begin_layout Definition
@@ -131,10 +134,14 @@ then we call
 \end_layout
 
 \begin_layout Definition
-\begin_inset Formula $\mu_{r}\coloneqq\int_{\mathbb{R}}w(t)t^{r}\,dt,\;r=0,1,2,\ldots,\;with\:\forall r:\mu_{r}>0$
+\begin_inset Formula 
+\[
+\mu_{r}\coloneqq\int_{\mathbb{R}}w(t)t^{r}\,dt,\;r=0,1,2,\ldots,\;with\:\forall r:\mu_{r}>0.
+\]
+
 \end_inset
 
-.
+
 \end_layout
 
 \begin_layout Standard
@@ -145,21 +152,40 @@ then we call
 \end_layout
 
 \begin_layout Definition
-Let us denote P as a space of real polynomials.
+Let us denote 
+\begin_inset Formula $P$
+\end_inset
+
+ as a space of real polynomials and 
+\begin_inset Formula $P_{d}$
+\end_inset
+
+ a space of polynomials of degree at most d,
+ where 
+\begin_inset Formula $\forall p\in P_{d}:p(x)=\sum_{i=0}^{d}a_{i}x^{i}$
+\end_inset
+
+.
+ Then,
+ 
+\begin_inset Formula $P=\cup_{d=0}^{\infty}P_{d}$
+\end_inset
+
+.
  For any pair 
 \begin_inset Formula $u,v\in P$
 \end_inset
 
 ,
- one may define an 
-\emph on
-inner product
-\emph default
- as
+ an inner product may be defined as:
 \end_layout
 
 \begin_layout Definition
-\begin_inset Formula $\left\langle u,v\right\rangle _{w}=\int_{J}w(t)u(t)v(t)\,dt$
+\begin_inset Formula 
+\[
+\left\langle u,v\right\rangle _{w}=\int_{I}w(t)u(t)v(t)\,dt.
+\]
+
 \end_inset
 
 
@@ -202,15 +228,19 @@ Hankel determinants in the moment
 \end_layout
 
 \begin_layout Definition
-\begin_inset Formula $\Delta_{n}=detM_{n},\;M_{n}=\left[\begin{array}{cccc}
+\begin_inset Formula 
+\[
+\Delta_{n}=detM_{n},\;M_{n}=\left[\begin{array}{cccc}
 \mu_{0} & \mu_{1} & \cdots & \mu_{n-1}\\
 \mu_{1} & \mu_{2} & \cdots & \mu_{n}\\
 \vdots & \vdots &  & \vdots\\
 \mu_{n-1} & \mu_{n} & \cdots & \mu_{2n-2}
-\end{array}\right],\;n=1,2,3,\ldots$
+\end{array}\right],\;n=1,2,3,\ldots,
+\]
+
 \end_inset
 
-,
+
 \end_layout
 
 \begin_layout Definition
@@ -258,7 +288,11 @@ w(t) is equal to 1,
 \end_layout
 
 \begin_layout Proof
-\begin_inset Formula $||u||=\left\langle u,u\right\rangle _{w}=\int_{-1}^{1}u(t)^{2}dt,u(t)\in C(\left\langle -1,1\right\rangle )$
+\begin_inset Formula 
+\[
+||u||=\left\langle u,u\right\rangle _{w}=\int_{-1}^{1}u(t)^{2}dt,u(t)\in C(\left\langle -1,1\right\rangle )
+\]
+
 \end_inset
 
 
@@ -327,7 +361,11 @@ Let us have
 \end_layout
 
 \begin_layout Definition
-\begin_inset Formula $\left\langle tu,v\right\rangle =\left\langle u,tv\right\rangle $
+\begin_inset Formula 
+\[
+\left\langle tu,v\right\rangle =\left\langle u,tv\right\rangle 
+\]
+
 \end_inset
 
 
@@ -338,7 +376,11 @@ This also works for an inner product defined from integrals
 \end_layout
 
 \begin_layout Remark
-\begin_inset Formula $\left\langle xu,v\right\rangle =\int_{I}w(t)(xu(t))v(t)\,dt=\int_{I}w(t)u(t)(xv(t))\,dt=\left\langle u,xv\right\rangle $
+\begin_inset Formula 
+\[
+\left\langle xu,v\right\rangle =\int_{I}w(t)(xu(t))v(t)\,dt=\int_{I}w(t)u(t)(xv(t))\,dt=\left\langle u,xv\right\rangle 
+\]
+
 \end_inset
 
 
@@ -360,14 +402,22 @@ Let
 \end_layout
 
 \begin_layout Theorem
-\begin_inset Formula $\pi_{k+1}(t)=(t-\alpha_{k})\pi_{k}(t)-\beta_{k}\pi_{k-1}(t),k=0,1,2,\ldots,$
+\begin_inset Formula 
+\[
+\pi_{k+1}(t)=(t-\alpha_{k})\pi_{k}(t)-\beta_{k}\pi_{k-1}(t),k=0,1,2,\ldots,
+\]
+
 \end_inset
 
 
 \end_layout
 
 \begin_layout Theorem
-\begin_inset Formula $\pi_{-1}(t)=0,\pi_{0}(t)=1,$
+\begin_inset Formula 
+\[
+\pi_{-1}(t)=0,\pi_{0}(t)=1,
+\]
+
 \end_inset
 
 
@@ -378,14 +428,22 @@ where
 \end_layout
 
 \begin_layout Theorem
-\begin_inset Formula $\alpha_{k}=\frac{\left\langle t\pi_{k},\pi_{k}\right\rangle _{w}}{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}},k=0,1,2,\ldots,$
+\begin_inset Formula 
+\[
+\alpha_{k}=\frac{\left\langle t\pi_{k},\pi_{k}\right\rangle _{w}}{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}},k=0,1,2,\ldots,
+\]
+
 \end_inset
 
 
 \end_layout
 
 \begin_layout Theorem
-\begin_inset Formula $\beta_{k}=\frac{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}}{\left\langle \pi_{k-1},\pi_{k-1}\right\rangle _{w}},k=0,1,2,\ldots.$
+\begin_inset Formula 
+\[
+\beta_{k}=\frac{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}}{\left\langle \pi_{k-1},\pi_{k-1}\right\rangle _{w}},k=0,1,2,\ldots.
+\]
+
 \end_inset
 
 
@@ -414,14 +472,22 @@ be monic ortholonormal polynomials.
 \end_layout
 
 \begin_layout Theorem
-\begin_inset Formula $\sqrt{\beta_{k+1}}\tilde{\pi}_{k+1}(t)=(t-\alpha_{k})\tilde{\pi}_{k}(t)-\sqrt{\beta_{k}}\tilde{\pi}_{k-1}(t),\;k=0,1,2,\ldots,$
+\begin_inset Formula 
+\[
+\sqrt{\beta_{k+1}}\tilde{\pi}_{k+1}(t)=(t-\alpha_{k})\tilde{\pi}_{k}(t)-\sqrt{\beta_{k}}\tilde{\pi}_{k-1}(t),\;k=0,1,2,\ldots,
+\]
+
 \end_inset
 
 
 \end_layout
 
 \begin_layout Theorem
-\begin_inset Formula $\tilde{\pi}_{-1}(t)=0,\tilde{\pi}_{0}(t)=1/\sqrt{\beta_{0}}.$
+\begin_inset Formula 
+\[
+\tilde{\pi}_{-1}(t)=0,\tilde{\pi}_{0}(t)=1/\sqrt{\beta_{0}}.
+\]
+
 \end_inset
 
 
@@ -457,27 +523,16 @@ nolink "false"
 \end_layout
 
 \begin_layout Definition
-\begin_inset Formula $J_{n}\coloneqq\begin{bmatrix}\alpha_{0} & \sqrt{\beta_{1}} &  &  & 0\\
+\begin_inset Formula 
+\[
+J_{n}\coloneqq\begin{bmatrix}\alpha_{0} & \sqrt{\beta_{1}} &  &  & 0\\
 \sqrt{\beta_{1}} & \alpha_{1} & \sqrt{\beta_{2}}\\
  & \sqrt{\beta_{2}} & \alpha_{2} & \ddots\\
  &  & \ddots & \ddots & \sqrt{\beta_{n}}\\
 0 &  &  & \sqrt{\beta_{n}} & \alpha_{n}
-\end{bmatrix}$
-\end_inset
+\end{bmatrix}.
+\]
 
-.
-\end_layout
-
-\begin_layout Definition
-Its 
-\begin_inset Formula $n\times n$
-\end_inset
-
- leading principal minor matrix is denoted as:
-\end_layout
-
-\begin_layout Definition
-\begin_inset Formula $J_{n}=\left[J_{\infty}\right]_{\left[1:n,1:n\right]}$
 \end_inset
 
 
@@ -509,10 +564,14 @@ The quadrature rule is defined as
 \end_layout
 
 \begin_layout Definition
-\begin_inset Formula $\int_{I}f(t)dt\approx\sum_{v=1}^{n}\lambda_{v}f(\tau_{v})$
+\begin_inset Formula 
+\[
+\int_{I}f(t)dt\approx\sum_{v=1}^{n}\lambda_{v}f(\tau_{v})
+\]
+
 \end_inset
 
- 
+
 \end_layout
 
 \begin_layout Definition
@@ -549,7 +608,11 @@ Let us have an integer k with
 \end_layout
 
 \begin_layout Theorem
-\begin_inset Formula $f(t)=\sum_{v=1}^{n}f(\tau_{v})l_{v}(t),$
+\begin_inset Formula 
+\[
+f(t)=\sum_{v=1}^{n}f(\tau_{v})l_{v}(t),
+\]
+
 \end_inset
 
 
@@ -560,10 +623,14 @@ where
 \end_layout
 
 \begin_layout Theorem
-\begin_inset Formula $l_{v}(t)=\prod_{\mu=1,\mu\neq v}^{n}\frac{t-\tau_{\mu}}{\tau_{v}-\tau_{\mu}}$
+\begin_inset Formula 
+\[
+l_{v}(t)=\prod_{\mu=1,\mu\neq v}^{n}\frac{t-\tau_{\mu}}{\tau_{v}-\tau_{\mu}}.
+\]
+
 \end_inset
 
-.
+
 \end_layout
 
 \begin_layout Theorem
@@ -571,7 +638,11 @@ where
 \end_layout
 
 \begin_layout Theorem
-\begin_inset Formula $\omega_{n}(t)=\prod_{v=1}^{n}(t-\tau_{v}).$
+\begin_inset Formula 
+\[
+\omega_{n}(t)=\prod_{v=1}^{n}(t-\tau_{v}).
+\]
+
 \end_inset
 
 
@@ -617,10 +688,14 @@ Nodes
 \end_layout
 
 \begin_layout Theorem
-\begin_inset Formula $\lambda_{v}^{G}=\beta_{0}v_{v,1}^{2}$
+\begin_inset Formula 
+\[
+\lambda_{v}^{G}=\beta_{0}v_{v,1}^{2},
+\]
+
 \end_inset
 
-,
+
 \end_layout
 
 \begin_layout Theorem
@@ -661,10 +736,14 @@ If we have a inner product with integration over an interval
 \end_layout
 
 \begin_layout Remark
-\begin_inset Formula $t=\frac{a+b}{2}+\frac{b-a}{2}\cdot\hat{t},\hat{t}\in\left\langle -1,1\right\rangle $
+\begin_inset Formula 
+\[
+t=\frac{a+b}{2}+\frac{b-a}{2}\cdot\hat{t},\hat{t}\in\left\langle -1,1\right\rangle .
+\]
+
 \end_inset
 
-.
+
 \end_layout
 
 \begin_layout Remark
@@ -676,7 +755,11 @@ weight function then becomes
 \end_layout
 
 \begin_layout Remark
-\begin_inset Formula $\left\langle u,v\right\rangle _{1}=\int_{a}^{b}u(t)v(t)\,dt=\int_{-1}^{1}\frac{b-a}{2}u(\frac{a+b}{2}+\frac{b-a}{2}\hat{t})v(\frac{a+b}{2}+\frac{b-a}{2}\hat{t})\,d\hat{t}$
+\begin_inset Formula 
+\[
+\left\langle u,v\right\rangle _{1}=\int_{a}^{b}u(t)v(t)\,dt=\int_{-1}^{1}\frac{b-a}{2}u(\frac{a+b}{2}+\frac{b-a}{2}\hat{t})v(\frac{a+b}{2}+\frac{b-a}{2}\hat{t})\,d\hat{t}
+\]
+
 \end_inset
 
 
