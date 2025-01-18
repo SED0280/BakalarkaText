@@ -6,3 +6,22 @@ pro získaní vah by měl fungovat můj kód, pamatuju si ale že tam byly něja
 podle papíru ze schůzky máme polynom určený podle kořenů (bez j-tého kořene) a váha je to integrál tohoto polynomu děleno ten polynom v j-tém kořenu
 tyto kořeny se budou taky měnit podle (a,b)
 acording to chatGPT I get weights and roots from Jacobi matrix
+------------------------------------------------------------------
+z Jakobianu dostanu roots(?) a vektory, první prvek vektoru je v_v,1 ve Theorem 15 (Theorem 15. Nodes \tau_{v}^{G},v=1,2,3,\ldots,n, of the n-point Gauss quadrature rule are the eigenvalues of the Jacobi)
+tím získám váhy a mám i kořeny z Jakobi spektralnim rozkladem
+k novemu papiru:
+	Pokud mám něco z Gautchiho, přidat poznamku z jaké strany.
+	Def 1: posledni řádek muže být svůj vlastni theorem, misto >0 ma byt <inf. 
+X	Def 2: nemusi byt polynomy, ale i tak by se hodilo definovat 3 druhy polynomů Pd, monicke a normalizovane (a nejak je oznacit) 
+	Lemma 4: neni potreba specifikovat w a I pokud bude Def 1 udelana poradne. Důkaz nedokazuje dobře.
+X	Def 5: zmenit tak jak to je na papire?
+X	Def 7: zapomel jsi na w ("with w from def 1")
+	Theorem 9: důkaz pomocí G.O. ortogonalizačního procesu
+X	Theorem 10: definovat Orthonormalní polynomy
+	Def 11: neni potřaba range, ale odkaz na 9 se bude hodit.
+	Remark 16: spis pokud mas zadany I a w, pak zname koreny a vahy pro L., urcime že nové váhy a kořeny se rovnají X.
+	Remark 17: I,w -> Polynomy se mi změní na násobek s jinými x
+Myslím že byly prohozené 16 a 17 oproti tomu co mám v poznámkách
+"Dělej to tak jako by si to někomu vysvětloval, přečti si to co si napsal a přemýšlej jestli by si to pochopil se základníma znalostma z prváku" 
+	
+
