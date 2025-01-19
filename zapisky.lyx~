@@ -546,7 +546,7 @@ name "thm:3-time-recurence"
 
 \end_inset
 
-Let 
+(Three time recurence) Let 
 \begin_inset Formula $\pi_{k},k=0,1,2,\ldots,$
 \end_inset
 
@@ -560,9 +560,6 @@ Let
 \end_inset
 
 
-\end_layout
-
-\begin_layout Theorem
 \begin_inset Formula 
 \[
 \pi_{-1}(t)=0,\pi_{0}(t)=1,
@@ -604,10 +601,65 @@ If we use Gauss-Ostrogradsky orthogonalization process where we start with const
 \end_inset
 
 .
- Gauss-Ostrogradsky orthogonalization process will then result in orthogonal polynomials:
+ Gauss-Ostrogradsky orthogonalization process will then result in orthogonal polynomial
 \begin_inset Formula 
 \[
-\pi_{k+1}(x)=x\pi_{k}
+\pi_{k+1}(x)=x\pi_{k}(x)-\sum_{i=1}^{k}\frac{\left\langle x\pi_{k},\pi_{i}\right\rangle }{\left\langle \pi_{i},\pi_{i}\right\rangle }\pi_{i}(x)=x\pi_{k}(x)-\frac{\left\langle x\pi_{k},\pi_{k}\right\rangle }{\left\langle \pi_{k},\pi_{k}\right\rangle }\pi_{k}(x)-\frac{\left\langle x\pi_{k},\pi_{k-1}\right\rangle }{\left\langle \pi_{k-1},\pi_{k-1}\right\rangle }\pi_{k-1}(x)-\sum_{i=1}^{k-2}\frac{\left\langle x\pi_{k},\pi_{i}\right\rangle }{\left\langle \pi_{i},\pi_{i}\right\rangle }\pi_{i}(x)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+thanks to shift property of inner product we can say that 
+\begin_inset Formula $\forall i,j\in\mathbb{N}:\left\langle x\pi_{i},\pi_{j}\right\rangle =\left\langle \pi_{i},x\pi_{j}\right\rangle $
+\end_inset
+
+and because of the construction of these polynomials 
+\begin_inset Formula $x\pi_{j}=\pi_{j+1}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+therefore:
+ 
+\begin_inset Formula $\forall i\in\mathbb{N},i\leq k-2:\left\langle x\pi_{k},\pi_{i}\right\rangle =\left\langle \pi_{k},x\pi_{i}\right\rangle =\left\langle \pi_{k},\pi_{i+1}\right\rangle =0$
+\end_inset
+
+ because 
+\begin_inset Formula $k\neq i+1$
+\end_inset
+
+and polynomials are orthogonal.
+ That means that
+\begin_inset Formula 
+\[
+\pi_{k+1}(x)=x\pi_{k}(x)-\frac{\left\langle x\pi_{k},\pi_{k}\right\rangle }{\left\langle \pi_{k},\pi_{k}\right\rangle }\pi_{k}(x)-\frac{\left\langle x\pi_{k},\pi_{k-1}\right\rangle }{\left\langle \pi_{k-1},\pi_{k-1}\right\rangle }\pi_{k-1}(x)=(x-\frac{\left\langle x\pi_{k},\pi_{k}\right\rangle }{\left\langle \pi_{k},\pi_{k}\right\rangle })\pi_{k}(x)-\frac{\left\langle \pi_{k},\pi_{k}\right\rangle }{\left\langle \pi_{k-1},\pi_{k-1}\right\rangle }\pi_{k-1}(x)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+and if we define 
+\begin_inset Formula $\alpha_{k}=\frac{\left\langle x\pi_{k},\pi_{k}\right\rangle }{\left\langle \pi_{k},\pi_{k}\right\rangle }$
+\end_inset
+
+ and 
+\begin_inset Formula $\beta_{k}=\frac{\left\langle \pi_{k},\pi_{k}\right\rangle }{\left\langle \pi_{k-1},\pi_{k-1}\right\rangle }$
+\end_inset
+
+,
+ then we obtain fromula for desired three time recurence:
+\begin_inset Formula 
+\[
+\pi_{k+1}(x)=(x-\alpha_{k})\pi_{k}(x)-\beta_{k}\pi_{k-1}(x).
 \]
 
 \end_inset
@@ -640,6 +692,73 @@ be monic ortholonormal polynomials.
 \[
 \tilde{\pi}_{-1}(t)=0,\tilde{\pi}_{0}(t)=1/\sqrt{\beta_{0}}.
 \]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Monic polynomials 
+\begin_inset Formula $\pi=\tilde{\pi}\left\Vert \pi\right\Vert $
+\end_inset
+
+where 
+\begin_inset Formula $\tilde{\pi}$
+\end_inset
+
+ is monic orthonormal polynomial and 
+\begin_inset Formula $\left\Vert \pi\right\Vert =\sqrt{\left\langle \pi,\pi\right\rangle }$
+\end_inset
+
+.
+ Therefore 3 time recurence from theorem:
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "thm:3-time-recurence"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ is
+\begin_inset Formula 
+\[
+\tilde{\pi}_{k+1}\sqrt{\left\langle \pi_{k+1},\pi_{k+1}\right\rangle }=(x-\alpha_{k})\tilde{\pi}_{k}\sqrt{\left\langle \pi_{k},\pi_{k}\right\rangle }-\beta_{k}\tilde{\pi}_{k-1}\sqrt{\left\langle \pi_{k-1},\pi_{k-1}\right\rangle }\,/:\sqrt{\left\langle \pi_{k},\pi_{k}\right\rangle }
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\tilde{\pi}_{k+1}\sqrt{\frac{\left\langle \pi_{k+1},\pi_{k+1}\right\rangle }{\left\langle \pi_{k},\pi_{k}\right\rangle }}=(x-\alpha_{k})\tilde{\pi}_{k}-\beta_{k}\tilde{\pi}_{k-1}\sqrt{\frac{\left\langle \pi_{k-1},\pi_{k-1}\right\rangle }{\left\langle \pi_{k},\pi_{k}\right\rangle }}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\tilde{\pi}_{k+1}\sqrt{\beta_{k+1}}=(x-\alpha_{k})\tilde{\pi}_{k}-\beta_{k}\tilde{\pi}_{k-1}\sqrt{\beta_{k}^{-1}}=(x-\alpha_{k})\tilde{\pi}_{k}-\tilde{\pi}_{k-1}\sqrt{\beta_{k}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Which gives us Therefore 3 time recurence from theorem:
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "thm:monic-3-time-recurence"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
 
 \end_inset
 

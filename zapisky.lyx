@@ -670,7 +670,7 @@ and if we define
 \begin_layout Theorem
 \begin_inset CommandInset label
 LatexCommand label
-name "thm:monic-3-time-recurence"
+name "thm:normal-3-time-recurence"
 
 \end_inset
 
@@ -698,6 +698,73 @@ be monic ortholonormal polynomials.
 
 \end_layout
 
+\begin_layout Proof
+Monic polynomials 
+\begin_inset Formula $\pi=\tilde{\pi}\left\Vert \pi\right\Vert $
+\end_inset
+
+where 
+\begin_inset Formula $\tilde{\pi}$
+\end_inset
+
+ is monic orthonormal polynomial and 
+\begin_inset Formula $\left\Vert \pi\right\Vert =\sqrt{\left\langle \pi,\pi\right\rangle }$
+\end_inset
+
+.
+ Therefore 3 time recurence from theorem:
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "thm:3-time-recurence"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ is
+\begin_inset Formula 
+\[
+\tilde{\pi}_{k+1}\sqrt{\left\langle \pi_{k+1},\pi_{k+1}\right\rangle }=(x-\alpha_{k})\tilde{\pi}_{k}\sqrt{\left\langle \pi_{k},\pi_{k}\right\rangle }-\beta_{k}\tilde{\pi}_{k-1}\sqrt{\left\langle \pi_{k-1},\pi_{k-1}\right\rangle }\,/:\sqrt{\left\langle \pi_{k},\pi_{k}\right\rangle }
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\tilde{\pi}_{k+1}\sqrt{\frac{\left\langle \pi_{k+1},\pi_{k+1}\right\rangle }{\left\langle \pi_{k},\pi_{k}\right\rangle }}=(x-\alpha_{k})\tilde{\pi}_{k}-\beta_{k}\tilde{\pi}_{k-1}\sqrt{\frac{\left\langle \pi_{k-1},\pi_{k-1}\right\rangle }{\left\langle \pi_{k},\pi_{k}\right\rangle }}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\tilde{\pi}_{k+1}\sqrt{\beta_{k+1}}=(x-\alpha_{k})\tilde{\pi}_{k}-\beta_{k}\tilde{\pi}_{k-1}\sqrt{\beta_{k}^{-1}}=(x-\alpha_{k})\tilde{\pi}_{k}-\tilde{\pi}_{k-1}\sqrt{\beta_{k}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Which gives us Therefore 3 time recurence from theorem:
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "thm:normal-3-time-recurence"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Definition
 With reference to Theorem:
 \begin_inset CommandInset ref
@@ -713,7 +780,7 @@ nolink "false"
  and Theorem:
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "thm:monic-3-time-recurence"
+reference "thm:normal-3-time-recurence"
 plural "false"
 caps "false"
 noprefix "false"
