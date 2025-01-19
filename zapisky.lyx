@@ -227,7 +227,7 @@ Space of real polynomials of degree at most d will be denoted as
 
 ,
  where 
-\begin_inset Formula $\forall p\in P:p(x)=\sum_{i=0}^{d}a_{i}x^{i}$
+\begin_inset Formula $\forall p\in P_{d}:p(x)=\sum_{i=0}^{d}a_{i}x^{i}$
 \end_inset
 
 
@@ -263,17 +263,16 @@ nolink "false"
 \end_inset
 
 ,
- where 
-\begin_inset Formula $a_{d}=1$
+ with the highest coefficient equal to 1.
+ Meaning that:
+\begin_inset Formula 
+\[
+\forall\pi\in P_{d}^{m}\exists k\in\mathbb{N}:k\leq d+1:\pi=x^{d-k+1}+\sum_{i=0}^{d-k}a_{i}x^{i}
+\]
+
 \end_inset
 
-.
- Meaning that 
-\begin_inset Formula $\forall\pi\in P_{d}^{m}:\pi=x^{d}+\sum_{i=0}^{d-1}a_{i}x^{i}$
-\end_inset
 
-.
- 
 \end_layout
 
 \begin_layout Standard
@@ -289,12 +288,8 @@ For any pair of functions
 \end_inset
 
 ,
- an inner product may be defined as:
-\begin_inset Formula 
-\[
-\left\langle u,v\right\rangle _{w}=\int_{I}w(t)u(t)v(t)\,dt.
-\]
-
+ an inner product may be defined as
+\begin_inset Formula $\left\langle u,v\right\rangle _{w}=\int_{I}w(t)u(t)v(t)\,dt.$
 \end_inset
 
 
@@ -370,7 +365,7 @@ and normalized monic polynomials denoted as
 \end_layout
 
 \begin_layout Definition
-The inner product is said to be positive definite on P if 
+[Gautchi Definition 1.1] The inner product is said to be positive definite on P if 
 \begin_inset Formula $\left\Vert u\right\Vert _{w}>0$
 \end_inset
 
@@ -482,7 +477,7 @@ inner product
 \end_layout
 
 \begin_layout Theorem
-If the inner product is positive definite on P,
+[Gautchi Theorem 1.6] If the inner product is positive definite on P,
  there exists a unique infinite sequence 
 \begin_inset Formula $\left\{ \pi_{k}\right\} $
 \end_inset
@@ -491,7 +486,7 @@ If the inner product is positive definite on P,
 \end_layout
 
 \begin_layout Definition
-Inner product's shift property is when for every 
+[Gautchi 1.3]Inner product's shift property is when for every 
 \begin_inset Formula $u,v\in P_{d}$
 \end_inset
 
@@ -546,7 +541,7 @@ name "thm:3-time-recurence"
 
 \end_inset
 
-(Three time recurence) Let 
+[Gautchi Theorem 1.27](Three time recurence) Let 
 \begin_inset Formula $\pi_{k},k=0,1,2,\ldots,$
 \end_inset
 
@@ -674,7 +669,7 @@ name "thm:normal-3-time-recurence"
 
 \end_inset
 
-Let 
+[Gautchi Theorem 1.29]Let 
 \begin_inset Formula $\tilde{\pi}_{k}\in\tilde{P_{d}^{m}},k=0,1,2,\ldots,$
 \end_inset
 
@@ -766,7 +761,7 @@ nolink "false"
 \end_layout
 
 \begin_layout Definition
-With reference to Theorem:
+[Gautchi Definition 1.30]With reference to Theorem:
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "thm:3-time-recurence"
@@ -810,7 +805,7 @@ J_{n}\coloneqq\begin{bmatrix}\alpha_{0} & \sqrt{\beta_{1}} &  &  & 0\\
 \end_layout
 
 \begin_layout Theorem
-The roots 
+[Gautchi Theorem 1.31] The roots 
 \begin_inset Formula $\tau_{v}^{(n)}$
 \end_inset
 
@@ -855,7 +850,7 @@ where
 \end_layout
 
 \begin_layout Theorem
-Let us have an integer k with 
+[Gautchi Theorem 1.45] Let us have an integer k with 
 \begin_inset Formula $0\leq k\leq n$
 \end_inset
 
@@ -928,7 +923,7 @@ Quadrature rule for positive definite inner product with the exactness of 2n-1,
 \end_layout
 
 \begin_layout Theorem
-Nodes 
+[Gautchi Theorem 3.1] Nodes 
 \begin_inset Formula $\tau_{v}^{G},v=1,2,3,\ldots,n$
 \end_inset
 
