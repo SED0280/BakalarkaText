@@ -98,14 +98,84 @@ name "def:weigh-function"
 
 \end_inset
 
-Let us have a function 
-\begin_inset Formula $w(t)>0,\forall t\in C(I)$
+A weight function 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $w(t)$
 \end_inset
 
 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ on an interval
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\begin_inset Formula $I=\left\langle a,b\right\rangle $
+\end_inset
+
+ is a function where 
+\begin_inset Formula $w(t)\in C(I)$
+\end_inset
+
+ and
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ 
+\begin_inset Formula $\forall t\in I:w(t)>0$
+\end_inset
+
+.
+ For every continuous function,
+ the integral
 \begin_inset Formula 
 \[
-(\forall f\in C(I)):\int_{I}w(t)f(t)\,dt\in\mathbb{R},
+(\forall f\in C(I)):\int_{I}w(t)f(t)\,dt,
 \]
 
 \end_inset
@@ -114,11 +184,11 @@ Let us have a function
 \end_layout
 
 \begin_layout Definition
-then we call 
-\begin_inset Formula $w(t)$
+is well-defined and belongs to 
+\begin_inset Formula $\mathbb{R}$
 \end_inset
 
- a weigh function (in interval I).
+
 \end_layout
 
 \begin_layout Theorem
@@ -126,10 +196,7 @@ moments of a weigh function are defined as
 \begin_inset Formula $\mu_{r}$
 \end_inset
 
- in:
-\end_layout
-
-\begin_layout Theorem
+ where:
 \begin_inset Formula 
 \[
 \mu_{r}\coloneqq\int_{\mathbb{R}}w(t)t^{r}\,dt,\;r=0,1,2,\ldots,\;with\:\forall r:\mu_{r}<\infty.
@@ -479,7 +546,7 @@ name "thm:3-time-recurence"
 
 \end_inset
 
-Let 
+(Three time recurence) Let 
 \begin_inset Formula $\pi_{k},k=0,1,2,\ldots,$
 \end_inset
 
@@ -493,9 +560,6 @@ Let
 \end_inset
 
 
-\end_layout
-
-\begin_layout Theorem
 \begin_inset Formula 
 \[
 \pi_{-1}(t)=0,\pi_{0}(t)=1,
@@ -526,8 +590,78 @@ where
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset Separator plain
+\begin_layout Proof
+If we use Gauss-Ostrogradsky orthogonalization process where we start with constant function 
+\begin_inset Formula $f_{1}(x)=1$
+\end_inset
+
+ and every following function to be orthogonalized will be the previous orthogonalization resulting function multiplied by t:
+ 
+\begin_inset Formula $f_{k+1}(x)=x\pi_{k}(x),k=1,2,3,\ldots$
+\end_inset
+
+.
+ Gauss-Ostrogradsky orthogonalization process will then result in orthogonal polynomial
+\begin_inset Formula 
+\[
+\pi_{k+1}(x)=x\pi_{k}(x)-\sum_{i=1}^{k}\frac{\left\langle x\pi_{k},\pi_{i}\right\rangle }{\left\langle \pi_{i},\pi_{i}\right\rangle }\pi_{i}(x)=x\pi_{k}(x)-\frac{\left\langle x\pi_{k},\pi_{k}\right\rangle }{\left\langle \pi_{k},\pi_{k}\right\rangle }\pi_{k}(x)-\frac{\left\langle x\pi_{k},\pi_{k-1}\right\rangle }{\left\langle \pi_{k-1},\pi_{k-1}\right\rangle }\pi_{k-1}(x)-\sum_{i=1}^{k-2}\frac{\left\langle x\pi_{k},\pi_{i}\right\rangle }{\left\langle \pi_{i},\pi_{i}\right\rangle }\pi_{i}(x)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+thanks to shift property of inner product we can say that 
+\begin_inset Formula $\forall i,j\in\mathbb{N}:\left\langle x\pi_{i},\pi_{j}\right\rangle =\left\langle \pi_{i},x\pi_{j}\right\rangle $
+\end_inset
+
+and because of the construction of these polynomials 
+\begin_inset Formula $x\pi_{j}=\pi_{j+1}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+therefore:
+ 
+\begin_inset Formula $\forall i\in\mathbb{N},i\leq k-2:\left\langle x\pi_{k},\pi_{i}\right\rangle =\left\langle \pi_{k},x\pi_{i}\right\rangle =\left\langle \pi_{k},\pi_{i+1}\right\rangle =0$
+\end_inset
+
+ because 
+\begin_inset Formula $k\neq i+1$
+\end_inset
+
+and polynomials are orthogonal.
+ That means that
+\begin_inset Formula 
+\[
+\pi_{k+1}(x)=x\pi_{k}(x)-\frac{\left\langle x\pi_{k},\pi_{k}\right\rangle }{\left\langle \pi_{k},\pi_{k}\right\rangle }\pi_{k}(x)-\frac{\left\langle x\pi_{k},\pi_{k-1}\right\rangle }{\left\langle \pi_{k-1},\pi_{k-1}\right\rangle }\pi_{k-1}(x)=(x-\frac{\left\langle x\pi_{k},\pi_{k}\right\rangle }{\left\langle \pi_{k},\pi_{k}\right\rangle })\pi_{k}(x)-\frac{\left\langle \pi_{k},\pi_{k}\right\rangle }{\left\langle \pi_{k-1},\pi_{k-1}\right\rangle }\pi_{k-1}(x)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+and if we define 
+\begin_inset Formula $\alpha_{k}=\frac{\left\langle x\pi_{k},\pi_{k}\right\rangle }{\left\langle \pi_{k},\pi_{k}\right\rangle }$
+\end_inset
+
+ and 
+\begin_inset Formula $\beta_{k}=\frac{\left\langle \pi_{k},\pi_{k}\right\rangle }{\left\langle \pi_{k-1},\pi_{k-1}\right\rangle }$
+\end_inset
+
+,
+ then we obtain fromula for desired three time recurence:
+\begin_inset Formula 
+\[
+\pi_{k+1}(x)=(x-\alpha_{k})\pi_{k}(x)-\beta_{k}\pi_{k-1}(x).
+\]
+
 \end_inset
 
 
@@ -776,10 +910,6 @@ where
 \begin_layout Remark
 If we have a inner product with integration over an interval 
 \begin_inset Formula $I=\left\langle a,b\right\rangle ;a,b\in\mathbb{R}$
-\end_inset
-
- and weight function 
-\begin_inset Formula $w(t)=1$
 \end_inset
 
 ,

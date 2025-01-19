@@ -98,14 +98,84 @@ name "def:weigh-function"
 
 \end_inset
 
-Let us have a function 
-\begin_inset Formula $w(t)>0,\forall t\in C(I)$
+A weight function 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $w(t)$
 \end_inset
 
 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ on an interval
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\begin_inset Formula $I=\left\langle a,b\right\rangle $
+\end_inset
+
+ is a function where 
+\begin_inset Formula $w(t)\in C(I)$
+\end_inset
+
+ and
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ 
+\begin_inset Formula $\forall t\in I:w(t)>0$
+\end_inset
+
+.
+ For every continuous function,
+ the integral
 \begin_inset Formula 
 \[
-(\forall f\in C(I)):\int_{I}w(t)f(t)\,dt\in\mathbb{R},
+(\forall f\in C(I)):\int_{I}w(t)f(t)\,dt,
 \]
 
 \end_inset
@@ -114,11 +184,11 @@ Let us have a function
 \end_layout
 
 \begin_layout Definition
-then we call 
-\begin_inset Formula $w(t)$
+is well-defined and belongs to 
+\begin_inset Formula $\mathbb{R}$
 \end_inset
 
- a weigh function (in interval I).
+
 \end_layout
 
 \begin_layout Theorem
@@ -126,10 +196,7 @@ moments of a weigh function are defined as
 \begin_inset Formula $\mu_{r}$
 \end_inset
 
- in:
-\end_layout
-
-\begin_layout Theorem
+ where:
 \begin_inset Formula 
 \[
 \mu_{r}\coloneqq\int_{\mathbb{R}}w(t)t^{r}\,dt,\;r=0,1,2,\ldots,\;with\:\forall r:\mu_{r}<\infty.
@@ -184,7 +251,7 @@ Space of monic polynomials will be denoted as
 \end_inset
 
 ,
- as defined in Definition:
+ as defined in definition:
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "def:polynomials-of-degree"
@@ -207,52 +274,6 @@ nolink "false"
 
 .
  
-\end_layout
-
-\begin_layout Standard
-\begin_inset Separator plain
-\end_inset
-
-
-\end_layout
-
-\begin_layout Definition
-Normalized polynomials are polynomials 
-\begin_inset Formula $\tilde{p}\in\tilde{P_{d}}$
-\end_inset
-
- where 
-\begin_inset Formula $\forall\tilde{p}\in\tilde{P_{d}}:\left\Vert \tilde{p}\right\Vert =1$
-\end_inset
-
- and 
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\nospellcheck off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
-
-\begin_inset Formula $\tilde{P}$
-\end_inset
-
- is a space of normalized polynomials.
- Space of normalized monic polynomials will be denotes as 
-\begin_inset Formula $\tilde{P_{d}^{m}}$
-\end_inset
-
-and normalized monic polynomials denoted as 
-\begin_inset Formula $\tilde{\pi}$
-\end_inset
-
-.
 \end_layout
 
 \begin_layout Standard
@@ -303,8 +324,54 @@ If
 \end_layout
 
 \begin_layout Definition
+Normalized polynomials are polynomials 
+\begin_inset Formula $\tilde{p}\in\tilde{P_{d}}$
+\end_inset
+
+ where 
+\begin_inset Formula $\forall\tilde{p}\in\tilde{P_{d}}:\left\Vert \tilde{p}\right\Vert _{w}=1$
+\end_inset
+
+ and 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\tilde{P}$
+\end_inset
+
+ is a space of normalized polynomials.
+ Space of normalized monic polynomials will be denotes as 
+\begin_inset Formula $\tilde{P_{d}^{m}}$
+\end_inset
+
+and normalized monic polynomials denoted as 
+\begin_inset Formula $\tilde{\pi}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
 The inner product is said to be positive definite on P if 
-\begin_inset Formula $\left\Vert u\right\Vert >0$
+\begin_inset Formula $\left\Vert u\right\Vert _{w}>0$
 \end_inset
 
  for all 
@@ -424,8 +491,8 @@ If the inner product is positive definite on P,
 \end_layout
 
 \begin_layout Definition
-Let us have 
-\begin_inset Formula $u,v\in P$
+Inner product's shift property is when for every 
+\begin_inset Formula $u,v\in P_{d}$
 \end_inset
 
  and 
@@ -437,7 +504,7 @@ Let us have
 \begin_inset Formula $w$
 \end_inset
 
- from Definition:
+ from definition:
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "def:weigh-function"
@@ -448,11 +515,8 @@ nolink "false"
 
 \end_inset
 
-,
- then 
-\end_layout
-
-\begin_layout Definition
+:
+ 
 \begin_inset Formula 
 \[
 \left\langle tu,v\right\rangle _{w}=\left\langle u,tv\right\rangle _{w}
@@ -465,9 +529,6 @@ nolink "false"
 
 \begin_layout Remark
 This also works for an inner product defined from integrals:
-\end_layout
-
-\begin_layout Remark
 \begin_inset Formula 
 \[
 \left\langle xu,v\right\rangle =\int_{I}w(t)(xu(t))v(t)\,dt=\int_{I}w(t)u(t)(xv(t))\,dt=\left\langle u,xv\right\rangle 
@@ -491,9 +552,6 @@ Let
 
  be a monic orthogonal polynomials.
  Then,
-\end_layout
-
-\begin_layout Theorem
 \begin_inset Formula 
 \[
 \pi_{k+1}(t)=(t-\alpha_{k})\pi_{k}(t)-\beta_{k}\pi_{k-1}(t),k=0,1,2,\ldots,
@@ -517,9 +575,6 @@ Let
 
 \begin_layout Theorem
 where
-\end_layout
-
-\begin_layout Theorem
 \begin_inset Formula 
 \[
 \alpha_{k}=\frac{\left\langle t\pi_{k},\pi_{k}\right\rangle _{w}}{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}},k=0,1,2,\ldots,
@@ -528,9 +583,6 @@ where
 \end_inset
 
 
-\end_layout
-
-\begin_layout Theorem
 \begin_inset Formula 
 \[
 \beta_{k}=\frac{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}}{\left\langle \pi_{k-1},\pi_{k-1}\right\rangle _{w}},k=0,1,2,\ldots.
@@ -541,8 +593,23 @@ where
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset Separator plain
+\begin_layout Proof
+If we use Gauss-Ostrogradsky orthogonalization process where we start with constant function 
+\begin_inset Formula $f_{1}(x)=1$
+\end_inset
+
+ and every following function to be orthogonalized will be the previous orthogonalization resulting function multiplied by t:
+ 
+\begin_inset Formula $f_{k+1}(x)=x\pi_{k}(x),k=1,2,3,\ldots$
+\end_inset
+
+.
+ Gauss-Ostrogradsky orthogonalization process will then result in orthogonal polynomials:
+\begin_inset Formula 
+\[
+\pi_{k+1}(x)=x\pi_{k}
+\]
+
 \end_inset
 
 
@@ -556,14 +623,11 @@ name "thm:monic-3-time-recurence"
 \end_inset
 
 Let 
-\begin_inset Formula $\tilde{\pi}_{k},k=0,1,2,\ldots,$
+\begin_inset Formula $\tilde{\pi}_{k}\in\tilde{P_{d}^{m}},k=0,1,2,\ldots,$
 \end_inset
 
 be monic ortholonormal polynomials.
  Then,
-\end_layout
-
-\begin_layout Theorem
 \begin_inset Formula 
 \[
 \sqrt{\beta_{k+1}}\tilde{\pi}_{k+1}(t)=(t-\alpha_{k})\tilde{\pi}_{k}(t)-\sqrt{\beta_{k}}\tilde{\pi}_{k-1}(t),\;k=0,1,2,\ldots,
@@ -572,9 +636,6 @@ be monic ortholonormal polynomials.
 \end_inset
 
 
-\end_layout
-
-\begin_layout Theorem
 \begin_inset Formula 
 \[
 \tilde{\pi}_{-1}(t)=0,\tilde{\pi}_{0}(t)=1/\sqrt{\beta_{0}}.
@@ -586,7 +647,7 @@ be monic ortholonormal polynomials.
 \end_layout
 
 \begin_layout Definition
-If the index range in 
+With reference to Theorem:
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "thm:3-time-recurence"
@@ -597,7 +658,7 @@ nolink "false"
 
 \end_inset
 
- and 
+ and Theorem:
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "thm:monic-3-time-recurence"
@@ -608,9 +669,8 @@ nolink "false"
 
 \end_inset
 
- is infinite,
- the Jacobi matrix is the infinite,
- symmetric,
+ ,
+ the Jacobi matrix is symmetric,
  tridiagonal matrix
 \end_layout
 
@@ -653,9 +713,6 @@ The roots
 
 \begin_layout Definition
 The quadrature rule is defined as
-\end_layout
-
-\begin_layout Definition
 \begin_inset Formula 
 \[
 \int_{I}f(t)dt\approx\sum_{v=1}^{n}\lambda_{v}f(\tau_{v})
@@ -697,9 +754,6 @@ Let us have an integer k with
 
 \begin_layout Theorem
 (a) The quadrature rule is obtained by integrating the Lagrange interpolation formula (it is Interpolatory)
-\end_layout
-
-\begin_layout Theorem
 \begin_inset Formula 
 \[
 f(t)=\sum_{v=1}^{n}f(\tau_{v})l_{v}(t),
@@ -712,9 +766,6 @@ f(t)=\sum_{v=1}^{n}f(\tau_{v})l_{v}(t),
 
 \begin_layout Theorem
 where
-\end_layout
-
-\begin_layout Theorem
 \begin_inset Formula 
 \[
 l_{v}(t)=\prod_{\mu=1,\mu\neq v}^{n}\frac{t-\tau_{\mu}}{\tau_{v}-\tau_{\mu}}.
@@ -727,9 +778,6 @@ l_{v}(t)=\prod_{\mu=1,\mu\neq v}^{n}\frac{t-\tau_{\mu}}{\tau_{v}-\tau_{\mu}}.
 
 \begin_layout Theorem
 (b) The node polynomial 
-\end_layout
-
-\begin_layout Theorem
 \begin_inset Formula 
 \[
 \omega_{n}(t)=\prod_{v=1}^{n}(t-\tau_{v}).
@@ -777,9 +825,6 @@ Nodes
 
 ,
  are 
-\end_layout
-
-\begin_layout Theorem
 \begin_inset Formula 
 \[
 \lambda_{v}^{G}=\beta_{0}v_{v,1}^{2},
@@ -815,19 +860,12 @@ If we have a inner product with integration over an interval
 \begin_inset Formula $I=\left\langle a,b\right\rangle ;a,b\in\mathbb{R}$
 \end_inset
 
- and weight function 
-\begin_inset Formula $w(t)=1$
-\end_inset
-
 ,
  then we can get to an itegration over an interval 
 \begin_inset Formula $I=\left\langle -1,1\right\rangle $
 \end_inset
 
  by using a substitution for t:
-\end_layout
-
-\begin_layout Remark
 \begin_inset Formula 
 \[
 t=\frac{a+b}{2}+\frac{b-a}{2}\cdot\hat{t},\hat{t}\in\left\langle -1,1\right\rangle .
@@ -844,9 +882,6 @@ weight function then becomes
 \end_inset
 
 
-\end_layout
-
-\begin_layout Remark
 \begin_inset Formula 
 \[
 \left\langle u,v\right\rangle _{1}=\int_{a}^{b}u(t)v(t)\,dt=\int_{-1}^{1}\frac{b-a}{2}u(\frac{a+b}{2}+\frac{b-a}{2}\hat{t})v(\frac{a+b}{2}+\frac{b-a}{2}\hat{t})\,d\hat{t}
