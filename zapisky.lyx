@@ -113,7 +113,7 @@ A weight function
 \noun off
 \color none
 
-\begin_inset Formula $w(t)$
+\begin_inset Formula $w(x)$
 \end_inset
 
 
@@ -149,7 +149,7 @@ A weight function
 \end_inset
 
  is a function where 
-\begin_inset Formula $w(t)\in C(I)$
+\begin_inset Formula $w(x)\in C(I)$
 \end_inset
 
  and
@@ -167,7 +167,7 @@ A weight function
 \noun default
 \color inherit
  
-\begin_inset Formula $\forall t\in I:w(t)>0$
+\begin_inset Formula $\forall x\in I:w(x)>0$
 \end_inset
 
 .
@@ -175,7 +175,7 @@ A weight function
  the integral
 \begin_inset Formula 
 \[
-(\forall f\in C(I)):\int_{I}w(t)f(t)\,dt,
+(\forall f\in C(I)):\int_{I}w(x)f(x)\,dx,
 \]
 
 \end_inset
@@ -192,14 +192,14 @@ is well-defined and belongs to
 \end_layout
 
 \begin_layout Theorem
-moments of a weigh function are defined as 
+Moments of a weight function denoted as 
 \begin_inset Formula $\mu_{r}$
 \end_inset
 
- where:
+ are
 \begin_inset Formula 
 \[
-\mu_{r}\coloneqq\int_{\mathbb{R}}w(t)t^{r}\,dt,\;r=0,1,2,\ldots,\;with\:\forall r:\mu_{r}<\infty.
+\mu_{r}\coloneqq\int_{\mathbb{R}}w(x)x^{r}\,dx,\;r=0,1,2,\ldots,\;with\:\forall r:\mu_{r}<\infty.
 \]
 
 \end_inset
@@ -230,7 +230,16 @@ Space of real polynomials of degree at most d will be denoted as
 \begin_inset Formula $\forall p\in P_{d}:p(x)=\sum_{i=0}^{d}a_{i}x^{i}$
 \end_inset
 
+.
+ Space of all real polynomials will be denoted as 
+\begin_inset Formula $P$
+\end_inset
 
+ and 
+\begin_inset Formula $P=\cup_{d=0}^{\infty}P_{d}$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -289,10 +298,14 @@ For any pair of functions
 
 ,
  an inner product may be defined as
-\begin_inset Formula $\left\langle u,v\right\rangle _{w}=\int_{I}w(t)u(t)v(t)\,dt.$
+\begin_inset Formula $\left\langle u,v\right\rangle _{w}=\int_{I}w(x)u(x)v(x)\,dx$
 \end_inset
 
+ where 
+\begin_inset Formula $w(x)$
+\end_inset
 
+ is called a weight function
 \end_layout
 
 \begin_layout Definition
@@ -342,7 +355,7 @@ Normalized polynomials are polynomials
 \noun off
 \color none
 
-\begin_inset Formula $\tilde{P}$
+\begin_inset Formula $\tilde{P_{d}}$
 \end_inset
 
  is a space of normalized polynomials.
@@ -376,15 +389,15 @@ and normalized monic polynomials denoted as
 
 \end_layout
 
-\begin_layout Definition
-Hankel determinants in the moment 
+\begin_layout Theorem
+[Gautchi Definition 1.1] Hankel determinants in the moment 
 \begin_inset Formula $\mu_{r}$
 \end_inset
 
 ,
 \end_layout
 
-\begin_layout Definition
+\begin_layout Theorem
 \begin_inset Formula 
 \[
 \Delta_{n}=detM_{n},\;M_{n}=\left[\begin{array}{cccc}
@@ -400,79 +413,39 @@ Hankel determinants in the moment
 
 \end_layout
 
-\begin_layout Definition
+\begin_layout Theorem
 provide a simple criterion for positive definiteness.
 \end_layout
 
 \begin_layout Lemma
-If the weight function 
-\begin_inset Formula $w(t)=1$
-\end_inset
 
-at interval 
+\emph on
+An inner product
+\emph default
+ over interval 
 \begin_inset Formula $I=\left\langle -1,1\right\rangle $
 \end_inset
 
-,
- then the 
-\emph on
-inner product 
-\emph default
-
-\begin_inset Formula $\left\langle u,v\right\rangle _{w}$
+ with the weight function 
+\begin_inset Formula $w(x)=1$
 \end_inset
 
  is positive definite
 \end_layout
 
 \begin_layout Proof
-if the weigh function 
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\nospellcheck off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
-w(t) is equal to 1,
- then
-\end_layout
-
-\begin_layout Proof
-\begin_inset Formula 
-\[
-||u||=\left\langle u,u\right\rangle _{w}=\int_{-1}^{1}u(t)^{2}dt,u(t)\in C(\left\langle -1,1\right\rangle )
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Proof
-because 
-\begin_inset Formula $u(t)^{2}\geq0,t\in(-1,1)$
+\begin_inset Formula $\forall u\in C(I):u\cancel{\equiv}0\Rightarrow\exists x\in I:u(x)\neq0$
 \end_inset
 
 ,
  then 
-\begin_inset Formula $\int_{-1}^{1}u(t)^{2}dt\geq0\Longrightarrow$
+\begin_inset Formula $\left\Vert u\right\Vert _{w}=\left\langle u,u\right\rangle _{w}=\int_{I}w(x)u(x)^{2}\,dx=\int_{-1}^{1}u(x)^{2}\,dx>0\Longrightarrow$
 \end_inset
 
 
 \emph on
-inner product 
+inner product
 \emph default
-
-\begin_inset Formula $\left\langle u,v\right\rangle _{w}$
-\end_inset
-
  is positive definite
 \end_layout
 
@@ -486,7 +459,7 @@ inner product
 \end_layout
 
 \begin_layout Definition
-[Gautchi 1.3]Inner product's shift property is when for every 
+[Gautchi 1.3] Inner product's shift property is when for every 
 \begin_inset Formula $u,v\in P_{d}$
 \end_inset
 
@@ -526,7 +499,7 @@ nolink "false"
 This also works for an inner product defined from integrals:
 \begin_inset Formula 
 \[
-\left\langle xu,v\right\rangle =\int_{I}w(t)(xu(t))v(t)\,dt=\int_{I}w(t)u(t)(xv(t))\,dt=\left\langle u,xv\right\rangle 
+\left\langle xu,v\right\rangle _{w}=\int_{I}w(t)(xu(t))v(t)\,dt=\int_{I}w(t)u(t)(xv(t))\,dt=\left\langle u,xv\right\rangle _{w}
 \]
 
 \end_inset
@@ -590,16 +563,16 @@ If we use Gauss-Ostrogradsky orthogonalization process where we start with const
 \begin_inset Formula $f_{1}(x)=1$
 \end_inset
 
- and every following function to be orthogonalized will be the previous orthogonalization resulting function multiplied by t:
+ and every following function to be orthogonalized will be the previous orthogonalization resulting function multiplied by x:
  
 \begin_inset Formula $f_{k+1}(x)=x\pi_{k}(x),k=1,2,3,\ldots$
 \end_inset
 
 .
- Gauss-Ostrogradsky orthogonalization process will then result in orthogonal polynomial
+ Gauss-Ostrogradsky orthogonalization process will then result in orthogonal polynomials
 \begin_inset Formula 
 \[
-\pi_{k+1}(x)=x\pi_{k}(x)-\sum_{i=1}^{k}\frac{\left\langle x\pi_{k},\pi_{i}\right\rangle }{\left\langle \pi_{i},\pi_{i}\right\rangle }\pi_{i}(x)=x\pi_{k}(x)-\frac{\left\langle x\pi_{k},\pi_{k}\right\rangle }{\left\langle \pi_{k},\pi_{k}\right\rangle }\pi_{k}(x)-\frac{\left\langle x\pi_{k},\pi_{k-1}\right\rangle }{\left\langle \pi_{k-1},\pi_{k-1}\right\rangle }\pi_{k-1}(x)-\sum_{i=1}^{k-2}\frac{\left\langle x\pi_{k},\pi_{i}\right\rangle }{\left\langle \pi_{i},\pi_{i}\right\rangle }\pi_{i}(x)
+\pi_{k+1}(x)=x\pi_{k}(x)-\sum_{i=1}^{k}\frac{\left\langle x\pi_{k},\pi_{i}\right\rangle _{w}}{\left\langle \pi_{i},\pi_{i}\right\rangle _{w}}\pi_{i}(x)=x\pi_{k}(x)-\frac{\left\langle x\pi_{k},\pi_{k}\right\rangle _{w}}{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}}\pi_{k}(x)-\frac{\left\langle x\pi_{k},\pi_{k-1}\right\rangle _{w}}{\left\langle \pi_{k-1},\pi_{k-1}\right\rangle _{w}}\pi_{k-1}(x)-\sum_{i=1}^{k-2}\frac{\left\langle x\pi_{k},\pi_{i}\right\rangle _{w}}{\left\langle \pi_{i},\pi_{i}\right\rangle _{w}}\pi_{i}(x).
 \]
 
 \end_inset
@@ -609,7 +582,7 @@ If we use Gauss-Ostrogradsky orthogonalization process where we start with const
 
 \begin_layout Proof
 thanks to shift property of inner product we can say that 
-\begin_inset Formula $\forall i,j\in\mathbb{N}:\left\langle x\pi_{i},\pi_{j}\right\rangle =\left\langle \pi_{i},x\pi_{j}\right\rangle $
+\begin_inset Formula $\forall i,j\in\mathbb{N}:\left\langle x\pi_{i},\pi_{j}\right\rangle _{w}=\left\langle \pi_{i},x\pi_{j}\right\rangle _{w}$
 \end_inset
 
 and because of the construction of these polynomials 
@@ -622,18 +595,18 @@ and because of the construction of these polynomials
 \begin_layout Proof
 therefore:
  
-\begin_inset Formula $\forall i\in\mathbb{N},i\leq k-2:\left\langle x\pi_{k},\pi_{i}\right\rangle =\left\langle \pi_{k},x\pi_{i}\right\rangle =\left\langle \pi_{k},\pi_{i+1}\right\rangle =0$
+\begin_inset Formula $\forall i\in\mathbb{N},i\leq k-2:\left\langle x\pi_{k},\pi_{i}\right\rangle _{w}=\left\langle \pi_{k},x\pi_{i}\right\rangle _{w}=\left\langle \pi_{k},\pi_{i+1}\right\rangle _{w}=0$
 \end_inset
 
  because 
 \begin_inset Formula $k\neq i+1$
 \end_inset
 
-and polynomials are orthogonal.
- That means that
+ and polynomials are orthogonal.
+ Which means that
 \begin_inset Formula 
 \[
-\pi_{k+1}(x)=x\pi_{k}(x)-\frac{\left\langle x\pi_{k},\pi_{k}\right\rangle }{\left\langle \pi_{k},\pi_{k}\right\rangle }\pi_{k}(x)-\frac{\left\langle x\pi_{k},\pi_{k-1}\right\rangle }{\left\langle \pi_{k-1},\pi_{k-1}\right\rangle }\pi_{k-1}(x)=(x-\frac{\left\langle x\pi_{k},\pi_{k}\right\rangle }{\left\langle \pi_{k},\pi_{k}\right\rangle })\pi_{k}(x)-\frac{\left\langle \pi_{k},\pi_{k}\right\rangle }{\left\langle \pi_{k-1},\pi_{k-1}\right\rangle }\pi_{k-1}(x)
+\pi_{k+1}(x)=x\pi_{k}(x)-\frac{\left\langle x\pi_{k},\pi_{k}\right\rangle _{w}}{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}}\pi_{k}(x)-\frac{\left\langle x\pi_{k},\pi_{k-1}\right\rangle _{w}}{\left\langle \pi_{k-1},\pi_{k-1}\right\rangle _{w}}\pi_{k-1}(x)=(x-\frac{\left\langle x\pi_{k},\pi_{k}\right\rangle _{w}}{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}})\pi_{k}(x)-\frac{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}}{\left\langle \pi_{k-1},\pi_{k-1}\right\rangle _{w}}\pi_{k-1}(x)
 \]
 
 \end_inset
@@ -643,11 +616,11 @@ and polynomials are orthogonal.
 
 \begin_layout Proof
 and if we define 
-\begin_inset Formula $\alpha_{k}=\frac{\left\langle x\pi_{k},\pi_{k}\right\rangle }{\left\langle \pi_{k},\pi_{k}\right\rangle }$
+\begin_inset Formula $\alpha_{k}=\frac{\left\langle x\pi_{k},\pi_{k}\right\rangle _{w}}{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}}$
 \end_inset
 
  and 
-\begin_inset Formula $\beta_{k}=\frac{\left\langle \pi_{k},\pi_{k}\right\rangle }{\left\langle \pi_{k-1},\pi_{k-1}\right\rangle }$
+\begin_inset Formula $\beta_{k}=\frac{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}}{\left\langle \pi_{k-1},\pi_{k-1}\right\rangle _{w}}$
 \end_inset
 
 ,
@@ -669,7 +642,7 @@ name "thm:normal-3-time-recurence"
 
 \end_inset
 
-[Gautchi Theorem 1.29]Let 
+[Gautchi Theorem 1.29] Let 
 \begin_inset Formula $\tilde{\pi}_{k}\in\tilde{P_{d}^{m}},k=0,1,2,\ldots,$
 \end_inset
 
@@ -695,7 +668,7 @@ be monic ortholonormal polynomials.
 
 \begin_layout Proof
 Monic polynomials 
-\begin_inset Formula $\pi=\tilde{\pi}\left\Vert \pi\right\Vert $
+\begin_inset Formula $\pi=\tilde{\pi}\left\Vert \pi\right\Vert _{w},$
 \end_inset
 
 where 
@@ -703,7 +676,7 @@ where
 \end_inset
 
  is monic orthonormal polynomial and 
-\begin_inset Formula $\left\Vert \pi\right\Vert =\sqrt{\left\langle \pi,\pi\right\rangle }$
+\begin_inset Formula $\left\Vert \pi\right\Vert _{w}=\sqrt{\left\langle \pi,\pi\right\rangle _{w}}$
 \end_inset
 
 .
@@ -721,7 +694,7 @@ nolink "false"
  is
 \begin_inset Formula 
 \[
-\tilde{\pi}_{k+1}\sqrt{\left\langle \pi_{k+1},\pi_{k+1}\right\rangle }=(x-\alpha_{k})\tilde{\pi}_{k}\sqrt{\left\langle \pi_{k},\pi_{k}\right\rangle }-\beta_{k}\tilde{\pi}_{k-1}\sqrt{\left\langle \pi_{k-1},\pi_{k-1}\right\rangle }\,/:\sqrt{\left\langle \pi_{k},\pi_{k}\right\rangle }
+\tilde{\pi}_{k+1}\sqrt{\left\langle \pi_{k+1},\pi_{k+1}\right\rangle _{w}}=(x-\alpha_{k})\tilde{\pi}_{k}\sqrt{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}}-\beta_{k}\tilde{\pi}_{k-1}\sqrt{\left\langle \pi_{k-1},\pi_{k-1}\right\rangle _{w}}
 \]
 
 \end_inset
@@ -729,7 +702,7 @@ nolink "false"
 
 \begin_inset Formula 
 \[
-\tilde{\pi}_{k+1}\sqrt{\frac{\left\langle \pi_{k+1},\pi_{k+1}\right\rangle }{\left\langle \pi_{k},\pi_{k}\right\rangle }}=(x-\alpha_{k})\tilde{\pi}_{k}-\beta_{k}\tilde{\pi}_{k-1}\sqrt{\frac{\left\langle \pi_{k-1},\pi_{k-1}\right\rangle }{\left\langle \pi_{k},\pi_{k}\right\rangle }}
+\tilde{\pi}_{k+1}\sqrt{\frac{\left\langle \pi_{k+1},\pi_{k+1}\right\rangle _{w}}{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}}}=(x-\alpha_{k})\tilde{\pi}_{k}-\beta_{k}\tilde{\pi}_{k-1}\sqrt{\frac{\left\langle \pi_{k-1},\pi_{k-1}\right\rangle _{w}}{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}}}
 \]
 
 \end_inset
@@ -761,7 +734,7 @@ nolink "false"
 \end_layout
 
 \begin_layout Definition
-[Gautchi Definition 1.30]With reference to Theorem:
+[Gautchi Definition 1.30]With reference to theorem:
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "thm:3-time-recurence"
@@ -772,7 +745,7 @@ nolink "false"
 
 \end_inset
 
- and Theorem:
+ and theorem:
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "thm:normal-3-time-recurence"
@@ -783,7 +756,7 @@ nolink "false"
 
 \end_inset
 
- ,
+,
  the Jacobi matrix is symmetric,
  tridiagonal matrix
 \end_layout
@@ -826,7 +799,7 @@ J_{n}\coloneqq\begin{bmatrix}\alpha_{0} & \sqrt{\beta_{1}} &  &  & 0\\
 \end_layout
 
 \begin_layout Definition
-The quadrature rule is defined as
+The Gauss quadrature rule is defined as
 \begin_inset Formula 
 \[
 \int_{I}f(t)dt\approx\sum_{v=1}^{n}\lambda_{v}f(\tau_{v})
@@ -970,40 +943,160 @@ where
 \end_layout
 
 \begin_layout Remark
-If we have a inner product with integration over an interval 
+Orthogonal Lagrange polynomials denoted as 
+\begin_inset Formula $\pi_{i}^{L}(x)$
+\end_inset
+
+ are defined for an inner product over interval 
+\begin_inset Formula $I^{L}=\left\langle -1,1\right\rangle $
+\end_inset
+
+ and a weight function 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $w(x)=1$
+\end_inset
+
+.
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+Let us have an interval 
 \begin_inset Formula $I=\left\langle a,b\right\rangle ;a,b\in\mathbb{R}$
 \end_inset
 
-,
- then we can get to an itegration over an interval 
-\begin_inset Formula $I=\left\langle -1,1\right\rangle $
+ and an inner product over interval 
+\begin_inset Formula $I$
 \end_inset
 
- by using a substitution for t:
-\begin_inset Formula 
-\[
-t=\frac{a+b}{2}+\frac{b-a}{2}\cdot\hat{t},\hat{t}\in\left\langle -1,1\right\rangle .
-\]
+ with a weight 
+\begin_inset Formula $w(x)=1$
+\end_inset
 
+,
+ orthogonal polynomials created with this inner product will be equal to 
+\begin_inset Formula $\pi_{i}(x)=\sqrt{\frac{2}{b-a}}\pi_{i}^{L}(\frac{a+b}{a-b}+\frac{2}{b-a}x)$
 \end_inset
 
 
 \end_layout
 
 \begin_layout Remark
-weight function then becomes 
-\begin_inset Formula $w(t)=\frac{b-a}{2}$
+Orthogonality of polynomials 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\pi_{i}(x)$
+\end_inset
+
+ can be proven:
+ 
+\begin_inset Formula $\forall i,j\in\mathbb{N}:i\neq j:\left\langle \pi_{i},\pi_{j}\right\rangle _{1}=\int_{a}^{b}\pi_{i}(x)\pi_{j}(x)\,dx=\int_{a}^{b}\sqrt{\frac{2}{b-a}}\pi_{i}^{L}(\frac{a+b}{a-b}+\frac{2}{b-a}x)\,\sqrt{\frac{2}{b-a}}\pi_{j}^{L}(\frac{a+b}{a-b}+\frac{2}{b-a}x)\,dx=\int_{a}^{b}\frac{2}{b-a}\pi_{i}^{L}(\frac{a+b}{a-b}+\frac{2}{b-a}x)\pi_{j}^{L}(\frac{a+b}{a-b}+\frac{2}{b-a}x)\,dx$
 \end_inset
 
 
-\begin_inset Formula 
-\[
-\left\langle u,v\right\rangle _{1}=\int_{a}^{b}u(t)v(t)\,dt=\int_{-1}^{1}\frac{b-a}{2}u(\frac{a+b}{2}+\frac{b-a}{2}\hat{t})v(\frac{a+b}{2}+\frac{b-a}{2}\hat{t})\,d\hat{t}
-\]
+\end_layout
 
+\begin_layout Remark
+Let 
+\begin_inset Formula $\hat{x}=\frac{a+b}{a-b}+\frac{2}{b-a}x\Longrightarrow d\hat{x}=\frac{2}{b-a}dx\Longrightarrow\quad\int_{a}^{b}\frac{2}{b-a}\pi_{i}^{L}(\frac{a+b}{a-b}+\frac{2}{b-a}x)\pi_{j}^{L}(\frac{a+b}{a-b}+\frac{2}{b-a}x)\,dx=\int_{-1}^{1}\pi_{i}^{L}(\hat{x})\pi_{j}^{L}(\hat{x})\,d\hat{x}=0$
 \end_inset
 
 
+\begin_inset Formula $\Longrightarrow\left\langle \pi_{i},\pi_{j}\right\rangle _{1}=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Remark
+Orthogonal Lagrange polynomials denoted as 
+\begin_inset Formula $\pi^{L}(x)$
+\end_inset
+
+ are defined for an inner product over interval 
+\begin_inset Formula $I^{L}=\left\langle -1,1\right\rangle $
+\end_inset
+
+ and a weight function 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $w(x)=1$
+\end_inset
+
+.
+ The roots 
+\begin_inset Formula $\tau_{i}^{L}$
+\end_inset
+
+of 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+Lagrange polynomials are used as nodes in Gauss-quadrature rule
 \end_layout
 
 \end_body
