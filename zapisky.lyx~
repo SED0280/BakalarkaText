@@ -823,7 +823,7 @@ where
 \end_layout
 
 \begin_layout Theorem
-[Gautchi Theorem 1.45] Let us have an integer k with 
+[Gautchi Theorem 1.45] (TO DO) Let us have an integer k with 
 \begin_inset Formula $0\leq k\leq n$
 \end_inset
 
@@ -943,50 +943,6 @@ where
 \end_layout
 
 \begin_layout Remark
-(to be deleted) If we have a inner product with integration over an interval 
-\begin_inset Formula $I=\left\langle a,b\right\rangle ;a,b\in\mathbb{R}$
-\end_inset
-
-,
- then we can get to an itegration over an interval 
-\begin_inset Formula $I=\left\langle -1,1\right\rangle $
-\end_inset
-
- by using a substitution for t:
-\begin_inset Formula 
-\[
-t=\frac{a+b}{2}+\frac{b-a}{2}\cdot\hat{t},\hat{t}\in\left\langle -1,1\right\rangle .
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Remark
-weight function then becomes 
-\begin_inset Formula $w(t)=\frac{b-a}{2}$
-\end_inset
-
-
-\begin_inset Formula 
-\[
-\left\langle u,v\right\rangle _{1}=\int_{a}^{b}u(t)v(t)\,dt=\int_{-1}^{1}\frac{b-a}{2}u(\frac{a+b}{2}+\frac{b-a}{2}\hat{t})v(\frac{a+b}{2}+\frac{b-a}{2}\hat{t})\,d\hat{t}
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Separator plain
-\end_inset
-
-
-\end_layout
-
-\begin_layout Remark
 Orthogonal Lagrange polynomials denoted as 
 \begin_inset Formula $\pi_{i}^{L}(x)$
 \end_inset
@@ -1095,7 +1051,7 @@ Let
 \end_layout
 
 \begin_layout Remark
-Orthogonal Lagrange polynomials denoted as 
+(TO DO) Orthogonal Lagrange polynomials denoted as 
 \begin_inset Formula $\pi^{L}(x)$
 \end_inset
 
