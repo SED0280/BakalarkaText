@@ -843,7 +843,7 @@ where
 (a) The quadrature rule is obtained by integrating the Lagrange interpolation formula (it is Interpolatory)
 \begin_inset Formula 
 \[
-f(t)=\sum_{v=1}^{n}f(\tau_{v})l_{v}(t),
+f(x)=\sum_{v=1}^{n}f(\tau_{v})l_{v}(x),
 \]
 
 \end_inset
@@ -855,7 +855,7 @@ f(t)=\sum_{v=1}^{n}f(\tau_{v})l_{v}(t),
 where
 \begin_inset Formula 
 \[
-l_{v}(t)=\prod_{\mu=1,\mu\neq v}^{n}\frac{t-\tau_{\mu}}{\tau_{v}-\tau_{\mu}}.
+l_{v}(x)=\prod_{\mu=1,\mu\neq v}^{n}\frac{x-\tau_{\mu}}{\tau_{v}-\tau_{\mu}}.
 \]
 
 \end_inset
@@ -867,7 +867,7 @@ l_{v}(t)=\prod_{\mu=1,\mu\neq v}^{n}\frac{t-\tau_{\mu}}{\tau_{v}-\tau_{\mu}}.
 (b) The node polynomial 
 \begin_inset Formula 
 \[
-\omega_{n}(t)=\prod_{v=1}^{n}(t-\tau_{v}).
+\omega_{n}(x)=\prod_{v=1}^{n}(x-\tau_{v}).
 \]
 
 \end_inset
@@ -880,7 +880,7 @@ satisfies
 \end_layout
 
 \begin_layout Theorem
-\begin_inset Formula $\int_{\mathbb{R}}\omega_{n}(t)p(t)\,dt=0$
+\begin_inset Formula $\int_{\mathbb{R}}\omega_{n}(x)p(x)\,dx=0$
 \end_inset
 
  for all 
@@ -998,7 +998,7 @@ Let us have an interval
 
 ,
  orthogonal polynomials created with this inner product will be equal to 
-\begin_inset Formula $\pi_{i}(x)=\sqrt{\frac{2}{b-a}}\pi_{i}^{L}(\frac{a+b}{a-b}+\frac{2}{b-a}x)$
+\begin_inset Formula $\pi_{i}(x)=\pi_{i}^{L}(\frac{a+b}{a-b}+\frac{2}{b-a}x)$
 \end_inset
 
 
@@ -1025,7 +1025,7 @@ Orthogonality of polynomials
 
  can be proven:
  
-\begin_inset Formula $\forall i,j\in\mathbb{N}:i\neq j:\left\langle \pi_{i},\pi_{j}\right\rangle _{1}=\int_{a}^{b}\pi_{i}(x)\pi_{j}(x)\,dx=\int_{a}^{b}\sqrt{\frac{2}{b-a}}\pi_{i}^{L}(\frac{a+b}{a-b}+\frac{2}{b-a}x)\,\sqrt{\frac{2}{b-a}}\pi_{j}^{L}(\frac{a+b}{a-b}+\frac{2}{b-a}x)\,dx=\int_{a}^{b}\frac{2}{b-a}\pi_{i}^{L}(\frac{a+b}{a-b}+\frac{2}{b-a}x)\pi_{j}^{L}(\frac{a+b}{a-b}+\frac{2}{b-a}x)\,dx$
+\begin_inset Formula $\forall i,j\in\mathbb{N}:i\neq j:\left\langle \pi_{i},\pi_{j}\right\rangle _{1}=\int_{a}^{b}\pi_{i}(x)\pi_{j}(x)\,dx=\int_{a}^{b}\pi_{i}^{L}(\frac{a+b}{a-b}+\frac{2}{b-a}x)\pi_{j}^{L}(\frac{a+b}{a-b}+\frac{2}{b-a}x)\,dx$
 \end_inset
 
 
@@ -1033,7 +1033,7 @@ Orthogonality of polynomials
 
 \begin_layout Remark
 Let 
-\begin_inset Formula $\hat{x}=\frac{a+b}{a-b}+\frac{2}{b-a}x\Longrightarrow d\hat{x}=\frac{2}{b-a}dx\Longrightarrow\quad\int_{a}^{b}\frac{2}{b-a}\pi_{i}^{L}(\frac{a+b}{a-b}+\frac{2}{b-a}x)\pi_{j}^{L}(\frac{a+b}{a-b}+\frac{2}{b-a}x)\,dx=\int_{-1}^{1}\pi_{i}^{L}(\hat{x})\pi_{j}^{L}(\hat{x})\,d\hat{x}=0$
+\begin_inset Formula $\hat{x}=\frac{a+b}{a-b}+\frac{2}{b-a}x\Longrightarrow d\hat{x}=\frac{2}{b-a}dx\Longrightarrow\quad\int_{a}^{b}\pi_{i}^{L}(\frac{a+b}{a-b}+\frac{2}{b-a}x)\pi_{j}^{L}(\frac{a+b}{a-b}+\frac{2}{b-a}x)\,dx=\int_{-1}^{1}\frac{b-a}{2}\pi_{i}^{L}(\hat{x})\pi_{j}^{L}(\hat{x})\,d\hat{x}=\frac{b-a}{2}\int_{-1}^{1}\pi_{i}^{L}(\hat{x})\pi_{j}^{L}(\hat{x})\,d\hat{x}=0$
 \end_inset
 
 
