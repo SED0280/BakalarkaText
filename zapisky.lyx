@@ -1004,7 +1004,7 @@ Let us have an interval
 
 \end_layout
 
-\begin_layout Remark
+\begin_layout Proof
 Orthogonality of polynomials 
 \family roman
 \series medium
@@ -1031,7 +1031,7 @@ Orthogonality of polynomials
 
 \end_layout
 
-\begin_layout Remark
+\begin_layout Proof
 Let 
 \begin_inset Formula $\hat{x}=\frac{a+b}{a-b}+\frac{2}{b-a}x\Longrightarrow d\hat{x}=\frac{2}{b-a}dx\Longrightarrow\quad\int_{a}^{b}\pi_{i}^{L}(\frac{a+b}{a-b}+\frac{2}{b-a}x)\pi_{j}^{L}(\frac{a+b}{a-b}+\frac{2}{b-a}x)\,dx=\int_{-1}^{1}\frac{b-a}{2}\pi_{i}^{L}(\hat{x})\pi_{j}^{L}(\hat{x})\,d\hat{x}=\frac{b-a}{2}\int_{-1}^{1}\pi_{i}^{L}(\hat{x})\pi_{j}^{L}(\hat{x})\,d\hat{x}=0$
 \end_inset
@@ -1051,15 +1051,16 @@ Let
 \end_layout
 
 \begin_layout Remark
-(TO DO) Orthogonal Lagrange polynomials denoted as 
-\begin_inset Formula $\pi^{L}(x)$
+Let us denote 
+\begin_inset Formula $\tau_{i}^{L}$
 \end_inset
 
- are defined for an inner product over interval 
-\begin_inset Formula $I^{L}=\left\langle -1,1\right\rangle $
+ as the roots of Lagrange polynomials and 
+\begin_inset Formula $\lambda_{i}^{L}$
 \end_inset
 
- and a weight function 
+ as their corresponding weights.
+ For orthogonal polynomials 
 \family roman
 \series medium
 \shape up
@@ -1074,15 +1075,10 @@ Let
 \noun off
 \color none
 
-\begin_inset Formula $w(x)=1$
+\begin_inset Formula $\pi(x)$
 \end_inset
 
-.
- The roots 
-\begin_inset Formula $\tau_{i}^{L}$
-\end_inset
-
-of 
+ made from inner product over interval 
 \family default
 \series default
 \shape default
@@ -1096,28 +1092,55 @@ of
 \uwave default
 \noun default
 \color inherit
-Lagrange polynomials are used as nodes in Gauss-quadrature rule
-\end_layout
 
-\begin_layout Remark
-\begin_inset Formula $\pi^{L}(\tau_{i}^{L})=0,\,\pi(\tau_{i})=0\;\Longrightarrow\;\pi^{L}(\frac{a+b}{a-b}+\frac{2}{b-a}\tau_{i})=0\;\Longrightarrow\;\tau_{i}^{L}=\frac{a+b}{a-b}+\frac{2}{b-a}\tau_{i}\;\Longrightarrow\;\frac{a+b}{2}+\frac{b-a}{2}\tau_{i}^{L}=\tau_{i}$
+\begin_inset Formula $I=\left\langle a,b\right\rangle $
 \end_inset
 
- 
+,
+ the roots are 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\tau_{i}=\frac{a+b}{2}+\frac{b-a}{2}\tau_{i}^{L}$
+\end_inset
+
+ and weights are 
+\begin_inset Formula $\lambda_{j}=\frac{b-a}{2}\lambda_{j}^{L}$
+\end_inset
+
+.
 \end_layout
 
-\begin_layout Remark
+\begin_layout Proof
+\begin_inset Formula $\pi^{L}(\tau_{i}^{L})=0,\,\pi(\tau_{i})=0,\,\pi_{i}(x)=\pi_{i}^{L}(\frac{a+b}{a-b}+\frac{2}{b-a}x)\quad\Longrightarrow\;\pi^{L}(\frac{a+b}{a-b}+\frac{2}{b-a}\tau_{i})=0\;\Longrightarrow\;\tau_{i}^{L}=\frac{a+b}{a-b}+\frac{2}{b-a}\tau_{i}\;\Longrightarrow\;\frac{a+b}{2}+\frac{b-a}{2}\tau_{i}^{L}=\tau_{i}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
 \begin_inset Formula $\lambda_{j}=\frac{\int_{a}^{b}\prod_{i\neq j,i=0}^{n}(x-\tau_{i})\,dx}{\prod_{i\neq j,i=0}^{n}(\tau_{j}-\tau_{i})}=\frac{\int_{a}^{b}\prod_{i\neq j,i=0}^{n}(x-\frac{a+b}{2}-\frac{b-a}{2}\tau_{i}^{L})\,dx}{\prod_{i\neq j,i=0}^{n}(\frac{a+b}{2}+\frac{b-a}{2}\tau_{j}^{L}-\frac{a+b}{2}-\frac{b-a}{2}\tau_{i}^{L})}=\frac{\int_{-1}^{1}\frac{b-a}{2}\prod_{i\neq j,i=0}^{n}(\frac{a+b}{2}+\frac{b-a}{2}\hat{x}-\frac{a+b}{2}-\frac{b-a}{2}\tau_{i}^{L})\,d\hat{x}}{\prod_{i\neq j,i=0}^{n}(\frac{b-a}{2}(\tau_{j}^{L}-\tau_{i}^{L}))}=\frac{(\frac{b-a}{2})^{n}\int_{-1}^{1}\prod_{i\neq j,i=0}^{n}(\hat{x}-\tau_{i}^{L})\,d\hat{x}}{(\frac{b-a}{2})^{n-1}\prod_{i\neq j,i=0}^{n}(\tau_{j}^{L}-\tau_{i}^{L})}=\frac{b-a}{2}\,\frac{\int_{-1}^{1}\prod_{i\neq j,i=0}^{n}(\hat{x}-\tau_{i}^{L})\,d\hat{x}}{\prod_{i\neq j,i=0}^{n}(\tau_{j}^{L}-\tau_{i}^{L})}=\frac{b-a}{2}\lambda_{j}^{L}$
 \end_inset
 
 
 \end_layout
 
-\begin_layout Remark
-or (more likely):
+\begin_layout Proof
+or:
 \end_layout
 
-\begin_layout Remark
+\begin_layout Proof
 \begin_inset Formula $\lambda_{j}=\beta_{0}v_{v,1}^{2},\lambda_{j}^{L}=\beta_{0}^{L}v_{v,1}^{2},\;\beta_{0}^{L}=2\;\beta_{0}=\int_{I}w(x)dx=\int_{a}^{b}1\,dx=b-a\;\Longrightarrow\;\lambda_{j}=\frac{2}{2}(b-a)v_{v,1}^{2}=\frac{(b-a)}{2}2v_{v,1}^{2}=\frac{b-a}{2}\lambda_{j}^{L}$
 \end_inset
 
