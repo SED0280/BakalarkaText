@@ -823,76 +823,65 @@ where
 \end_layout
 
 \begin_layout Theorem
-[Gautchi Theorem 1.45 page:21] (TO DO) Let us have an integer k with 
-\begin_inset Formula $0\leq k\leq n$
+[Gautchi Theorem 1.45 page:21] If the Quadrature rule is obtained by integrating the Lagrange interpolation formula (it is Interpolatory):
+ 
+\begin_inset Formula $f(x)=\sum_{v=1}^{n}f(\tau_{v})l_{v}(x)$
+\end_inset
+
+ where 
+\begin_inset Formula $l_{v}(x)=\prod_{\mu=1,\mu\neq v}^{n}\frac{x-\tau_{\mu}}{\tau_{v}-\tau_{\mu}}$
 \end_inset
 
 ,
- the degree 
-\begin_inset Formula $d$
-\end_inset
+ and the node polynomial 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
 
- of exactness of the quadrature rule is 
-\begin_inset Formula $d=n-1+k$
-\end_inset
-
- if and only if the following conditions are satisfied:
-\end_layout
-
-\begin_layout Theorem
-(a) The quadrature rule is obtained by integrating the Lagrange interpolation formula (it is Interpolatory)
-\begin_inset Formula 
-\[
-f(x)=\sum_{v=1}^{n}f(\tau_{v})l_{v}(x),
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Theorem
-where
-\begin_inset Formula 
-\[
-l_{v}(x)=\prod_{\mu=1,\mu\neq v}^{n}\frac{x-\tau_{\mu}}{\tau_{v}-\tau_{\mu}}.
-\]
-
+\begin_inset Formula $\omega_{n}(x)=\prod_{v=1}^{n}(x-\tau_{v})$
 \end_inset
 
 
-\end_layout
-
-\begin_layout Theorem
-(b) The node polynomial 
-\begin_inset Formula 
-\[
-\omega_{n}(x)=\prod_{v=1}^{n}(x-\tau_{v}).
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Theorem
-satisfies
-\end_layout
-
-\begin_layout Theorem
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ satisfies
 \begin_inset Formula $\int_{\mathbb{R}}\omega_{n}(x)p(x)\,dx=0$
 \end_inset
 
  for all 
-\begin_inset Formula $p\in P_{k-1}.$
+\begin_inset Formula $p\in P_{n-1},$
 \end_inset
 
-
+then Quadrature rule for positive definite inner product,
+ has points equal to the root of an n-th ortogonal polynomial
 \end_layout
 
 \begin_layout Standard
-Quadrature rule for positive definite inner product with the exactness of 2n-1,
- has points equal to the root of an n-th ortogonal polynomial
+\begin_inset Separator plain
+\end_inset
+
+
 \end_layout
 
 \begin_layout Theorem
