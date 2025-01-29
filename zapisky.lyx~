@@ -276,7 +276,7 @@ nolink "false"
  Meaning that:
 \begin_inset Formula 
 \[
-\forall\pi\in P_{d}^{m}\exists k\in\mathbb{N}:k\leq d+1:\pi=x^{d-k+1}+\sum_{i=0}^{d-k}a_{i}x^{i}
+\forall\pi\in P_{d}^{m}\exists k\in\mathbb{N}:k\leq d:\pi(x)=x^{d-k}+\sum_{i=0}^{d-k-1}a_{i}x^{i}
 \]
 
 \end_inset
@@ -499,7 +499,7 @@ nolink "false"
 This also works for an inner product defined from integrals:
 \begin_inset Formula 
 \[
-\left\langle xu,v\right\rangle _{w}=\int_{I}w(t)(xu(t))v(t)\,dt=\int_{I}w(t)u(t)(xv(t))\,dt=\left\langle u,xv\right\rangle _{w}
+\left\langle tu,v\right\rangle _{w}=\int_{I}w(x)(tu(x))v(x)\,dx=\int_{I}w(x)u(x)(tv(x))\,dx=\left\langle u,tv\right\rangle _{w}
 \]
 
 \end_inset
@@ -510,11 +510,11 @@ This also works for an inner product defined from integrals:
 \begin_layout Theorem
 \begin_inset CommandInset label
 LatexCommand label
-name "thm:3-time-recurence"
+name "thm:3-time-recurrence"
 
 \end_inset
 
-[Gautchi Theorem 1.27 page:10](Three time recurence) Let 
+[Gautchi Theorem 1.27 page:10](Three time recurrence) Let 
 \begin_inset Formula $\pi_{k},k=0,1,2,\ldots,$
 \end_inset
 
@@ -606,7 +606,7 @@ therefore:
  Which means that
 \begin_inset Formula 
 \[
-\pi_{k+1}(x)=x\pi_{k}(x)-\frac{\left\langle x\pi_{k},\pi_{k}\right\rangle _{w}}{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}}\pi_{k}(x)-\frac{\left\langle x\pi_{k},\pi_{k-1}\right\rangle _{w}}{\left\langle \pi_{k-1},\pi_{k-1}\right\rangle _{w}}\pi_{k-1}(x)=(x-\frac{\left\langle x\pi_{k},\pi_{k}\right\rangle _{w}}{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}})\pi_{k}(x)-\frac{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}}{\left\langle \pi_{k-1},\pi_{k-1}\right\rangle _{w}}\pi_{k-1}(x)
+\pi_{k+1}(x)=x\pi_{k}(x)-\frac{\left\langle x\pi_{k},\pi_{k}\right\rangle _{w}}{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}}\pi_{k}(x)-\frac{\left\langle x\pi_{k},\pi_{k-1}\right\rangle _{w}}{\left\langle \pi_{k-1},\pi_{k-1}\right\rangle _{w}}\pi_{k-1}(x)=\left(x-\frac{\left\langle x\pi_{k},\pi_{k}\right\rangle _{w}}{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}}\right)\pi_{k}(x)-\frac{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}}{\left\langle \pi_{k-1},\pi_{k-1}\right\rangle _{w}}\pi_{k-1}(x)
 \]
 
 \end_inset
@@ -624,7 +624,7 @@ and if we define
 \end_inset
 
 ,
- then we obtain fromula for desired three time recurence:
+ then we obtain formula for desired three time recurrence:
 \begin_inset Formula 
 \[
 \pi_{k+1}(x)=(x-\alpha_{k})\pi_{k}(x)-\beta_{k}\pi_{k-1}(x).
@@ -638,7 +638,7 @@ and if we define
 \begin_layout Theorem
 \begin_inset CommandInset label
 LatexCommand label
-name "thm:normal-3-time-recurence"
+name "thm:normal-3-time-recurrence"
 
 \end_inset
 
@@ -675,7 +675,7 @@ where
 \begin_inset Formula $\tilde{\pi}$
 \end_inset
 
- is monic orthonormal polynomial and 
+ is a monic orthonormal polynomial and 
 \begin_inset Formula $\left\Vert \pi\right\Vert _{w}=\sqrt{\left\langle \pi,\pi\right\rangle _{w}}$
 \end_inset
 
@@ -683,7 +683,7 @@ where
  Therefore 3 time recurence from theorem:
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "thm:3-time-recurence"
+reference "thm:3-time-recurrence"
 plural "false"
 caps "false"
 noprefix "false"
@@ -691,7 +691,7 @@ nolink "false"
 
 \end_inset
 
- is
+ is equal to:
 \begin_inset Formula 
 \[
 \tilde{\pi}_{k+1}\sqrt{\left\langle \pi_{k+1},\pi_{k+1}\right\rangle _{w}}=(x-\alpha_{k})\tilde{\pi}_{k}\sqrt{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}}-\beta_{k}\tilde{\pi}_{k-1}\sqrt{\left\langle \pi_{k-1},\pi_{k-1}\right\rangle _{w}}
@@ -719,10 +719,10 @@ nolink "false"
 \end_layout
 
 \begin_layout Proof
-Which gives us Therefore 3 time recurence from theorem:
+Which therefore gives us 3 time recurrence from theorem:
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "thm:normal-3-time-recurence"
+reference "thm:normal-3-time-recurrence"
 plural "false"
 caps "false"
 noprefix "false"
@@ -737,7 +737,7 @@ nolink "false"
 [Gautchi Definition 1.30 page:13]With reference to theorem:
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "thm:3-time-recurence"
+reference "thm:3-time-recurrence"
 plural "false"
 caps "false"
 noprefix "false"
@@ -748,7 +748,7 @@ nolink "false"
  and theorem:
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "thm:normal-3-time-recurence"
+reference "thm:normal-3-time-recurrence"
 plural "false"
 caps "false"
 noprefix "false"
@@ -823,76 +823,65 @@ where
 \end_layout
 
 \begin_layout Theorem
-[Gautchi Theorem 1.45 page:21] (TO DO) Let us have an integer k with 
-\begin_inset Formula $0\leq k\leq n$
+[Gautchi Theorem 1.45 page:21] If the Quadrature rule is obtained by integrating the Lagrange interpolation formula (it is Interpolatory):
+ 
+\begin_inset Formula $f(x)=\sum_{v=1}^{n}f(\tau_{v})l_{v}(x)$
+\end_inset
+
+ where 
+\begin_inset Formula $l_{v}(x)=\prod_{\mu=1,\mu\neq v}^{n}\frac{x-\tau_{\mu}}{\tau_{v}-\tau_{\mu}}$
 \end_inset
 
 ,
- the degree 
-\begin_inset Formula $d$
-\end_inset
+ and the node polynomial 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
 
- of exactness of the quadrature rule is 
-\begin_inset Formula $d=n-1+k$
-\end_inset
-
- if and only if the following conditions are satisfied:
-\end_layout
-
-\begin_layout Theorem
-(a) The quadrature rule is obtained by integrating the Lagrange interpolation formula (it is Interpolatory)
-\begin_inset Formula 
-\[
-f(x)=\sum_{v=1}^{n}f(\tau_{v})l_{v}(x),
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Theorem
-where
-\begin_inset Formula 
-\[
-l_{v}(x)=\prod_{\mu=1,\mu\neq v}^{n}\frac{x-\tau_{\mu}}{\tau_{v}-\tau_{\mu}}.
-\]
-
+\begin_inset Formula $\omega_{n}(x)=\prod_{v=1}^{n}(x-\tau_{v})$
 \end_inset
 
 
-\end_layout
-
-\begin_layout Theorem
-(b) The node polynomial 
-\begin_inset Formula 
-\[
-\omega_{n}(x)=\prod_{v=1}^{n}(x-\tau_{v}).
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Theorem
-satisfies
-\end_layout
-
-\begin_layout Theorem
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ satisfies
 \begin_inset Formula $\int_{\mathbb{R}}\omega_{n}(x)p(x)\,dx=0$
 \end_inset
 
  for all 
-\begin_inset Formula $p\in P_{k-1}.$
+\begin_inset Formula $p\in P_{n-1},$
 \end_inset
 
-
+then Quadrature rule for positive definite inner product,
+ has points equal to the root of an n-th ortogonal polynomial
 \end_layout
 
 \begin_layout Standard
-Quadrature rule for positive definite inner product with the exactness of 2n-1,
- has points equal to the root of an n-th ortogonal polynomial
+\begin_inset Separator plain
+\end_inset
+
+
 \end_layout
 
 \begin_layout Theorem
@@ -924,7 +913,7 @@ Quadrature rule for positive definite inner product with the exactness of 2n-1,
 
 \begin_layout Theorem
 where 
-\begin_inset Formula $\beta_{0}=\int_{\mathbb{R}}w(x)\,dx$
+\begin_inset Formula $\beta_{0}=\int_{\mathbb{I}}w(x)\,dx$
 \end_inset
 
  and 
@@ -985,7 +974,7 @@ Orthogonal Lagrange polynomials denoted as
 \noun default
 \color inherit
 Let us have an interval 
-\begin_inset Formula $I=\left\langle a,b\right\rangle ;a,b\in\mathbb{R}$
+\begin_inset Formula $I=\left\langle a,b\right\rangle ;a,b\in\mathbb{R}:a<b$
 \end_inset
 
  and an inner product over interval 
@@ -1137,7 +1126,7 @@ Let us denote
 \end_layout
 
 \begin_layout Proof
-or:
+or (not sure which is better):
 \end_layout
 
 \begin_layout Proof
