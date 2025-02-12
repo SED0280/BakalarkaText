@@ -108,25 +108,33 @@ name "def:polynomials-of-degree"
 
 \end_inset
 
-Space of real polynomials of degree at most d will be denoted as 
-\begin_inset Formula $P_{d}$
+For non-negative integer 
+\begin_inset Formula $d$
 \end_inset
 
 ,
- where 
-\begin_inset Formula $\forall p\in P_{d}:p(x)=\sum_{i=0}^{d}a_{i}x^{i}$
+ let us define 
+\begin_inset Formula 
+\[
+P_{d}\coloneqq\left\{ p(x)=\sum_{i=0}^{d}a_{i}x^{i}\;\Big|\;a_{i}\in\mathbb{R}\right\} 
+\]
+
+\end_inset
+
+as a space of real polynomials of degree at most 
+\begin_inset Formula $d$
 \end_inset
 
 .
- Space of all real polynomials will be denoted as 
-\begin_inset Formula $P$
+ The space of all real polynomials is then
+\begin_inset Formula 
+\[
+P\coloneqq\bigcup_{d=0}^{\infty}P_{d}
+\]
+
 \end_inset
 
- and 
-\begin_inset Formula $P=\cup_{d=0}^{\infty}P_{d}$
-\end_inset
 
-.
 \end_layout
 
 \begin_layout Standard
@@ -137,45 +145,23 @@ Space of real polynomials of degree at most d will be denoted as
 \end_layout
 
 \begin_layout Definition
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Weight Function
+\end_layout
+
+\end_inset
+
+
 \begin_inset CommandInset label
 LatexCommand label
 name "def:weigh-function"
 
 \end_inset
 
-A weight function 
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\nospellcheck off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
-
-\begin_inset Formula $w(x)$
-\end_inset
-
-
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\nospellcheck default
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
- on an interval
+Let
 \family roman
 \series medium
 \shape up
@@ -190,14 +176,16 @@ A weight function
 \noun off
 \color none
  
-\begin_inset Formula $I=\left\langle a,b\right\rangle $
+\begin_inset Formula $I=\left\langle a,b\right\rangle \subset\mathbb{R}$
 \end_inset
 
- is a function where 
+ (bounded,
+ closed interval).
+ A function 
 \begin_inset Formula $w(x)\in C(I)$
 \end_inset
 
- and
+ that satisfies
 \family default
 \series default
 \shape default
@@ -211,16 +199,11 @@ A weight function
 \uwave default
 \noun default
 \color inherit
- 
-\begin_inset Formula $\forall x\in I:w(x)>0$
-\end_inset
-
 .
- For every continuous function,
- the integral
+ 
 \begin_inset Formula 
 \[
-(\forall f\in C(I)):\int_{I}w(x)f(x)\,dx,
+\forall x\in I:w(x)>0
 \]
 
 \end_inset
@@ -228,20 +211,53 @@ A weight function
 
 \end_layout
 
-\begin_layout Definition
-is well-defined and belongs to 
-\begin_inset Formula $\mathbb{R}$
+\begin_layout Remark
+The weighted integral is well defined 
+\begin_inset Formula $\forall f\in C(I)$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\int_{I}w(x)f(x)\,dx\in\mathbb{R}
+\]
+
 \end_inset
 
 
 \end_layout
 
 \begin_layout Theorem
-Moments of a weight function denoted as 
-\begin_inset Formula $\mu_{r}$
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Moments of a Weight Function
+\end_layout
+
 \end_inset
 
- are
+Let 
+\begin_inset Formula $w(x)$
+\end_inset
+
+ be a weight function from Definition 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "def:weigh-function"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ and 
+\begin_inset Formula $I$
+\end_inset
+
+ its corresponding support.
+ Then all moments are finite:
 \begin_inset Formula 
 \[
 \mu_{r}\coloneqq\int_{\mathbb{R}}w(x)x^{r}\,dx,\;r=0,1,2,\ldots,\;with\:\forall r:\mu_{r}<\infty.
@@ -250,9 +266,6 @@ Moments of a weight function denoted as
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
 \begin_inset Separator plain
 \end_inset
 
@@ -260,15 +273,14 @@ Moments of a weight function denoted as
 \end_layout
 
 \begin_layout Definition
-Monic polynomials are polynomials 
-\begin_inset Formula $\pi\in P_{d}^{m}$
+Let 
+\begin_inset Formula $w(x)$
 \end_inset
 
-,
- as defined in definition:
+ be a weight function from Definition 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "def:polynomials-of-degree"
+reference "def:weigh-function"
 plural "false"
 caps "false"
 noprefix "false"
@@ -276,12 +288,28 @@ nolink "false"
 
 \end_inset
 
+ and 
+\begin_inset Formula $I$
+\end_inset
+
+ its corresponding support.
+ For any functions 
+\begin_inset Formula $u,v\in C(I)$
+\end_inset
+
 ,
- with the highest coefficient equal to 1.
- Meaning that:
+ a weighted inner product may be defined as
 \begin_inset Formula 
 \[
-\forall\pi\in P_{d}^{m}\exists k\in\mathbb{N}:k\leq d:\pi(x)=x^{d-k}+\sum_{i=0}^{d-k-1}a_{i}x^{i}
+\left\langle u,v\right\rangle _{w}=\int_{I}w(x)u(x)v(x)\,dx
+\]
+
+\end_inset
+
+ The corresponding norm is
+\begin_inset Formula 
+\[
+\left\Vert u\right\Vert _{w}=\sqrt{\left\langle u,u\right\rangle _{w}}
 \]
 
 \end_inset
@@ -289,60 +317,26 @@ nolink "false"
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset Separator plain
-\end_inset
-
-
-\end_layout
-
-\begin_layout Definition
-For any pair of functions 
-\begin_inset Formula $u,v\in C(I)$
-\end_inset
-
-,
- an inner product may be defined as
-\begin_inset Formula $\left\langle u,v\right\rangle _{w}=\int_{I}w(x)u(x)v(x)\,dx$
-\end_inset
-
- where 
-\begin_inset Formula $w(x)$
-\end_inset
-
- is called a weight function
-\end_layout
-
-\begin_layout Definition
+\begin_layout Remark
 If 
 \begin_inset Formula $\left\langle u,v\right\rangle _{w}=0$
 \end_inset
 
 ,
- then u is said to be orthogonal to v.
-\end_layout
-
-\begin_layout Definition
-\begin_inset Formula $\left\Vert u\right\Vert _{w}=\sqrt{\left\langle u,u\right\rangle _{w}}$
+ then 
+\begin_inset Formula $u$
 \end_inset
 
- is called the norm of u.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Separator plain
+ and 
+\begin_inset Formula $v$
 \end_inset
 
-
-\end_layout
-
-\begin_layout Definition
-Normalized polynomials are polynomials 
-\begin_inset Formula $\tilde{\pi}\in\tilde{P_{d}}$
-\end_inset
-
- where 
-\begin_inset Formula $\forall\tilde{p}\in\tilde{P_{d}}:\left\Vert \tilde{p}\right\Vert _{w}=1$
+ are said to be 
+\emph on
+orthogonal
+\emph default
+ with respect to the weight function 
+\begin_inset Formula $w$
 \end_inset
 
 .
@@ -356,12 +350,109 @@ Normalized polynomials are polynomials
 \end_layout
 
 \begin_layout Definition
-[Gautchi Definition 1.1 page:1] The inner product is said to be positive definite on P if 
-\begin_inset Formula $\left\Vert u\right\Vert _{w}>0$
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Monic polynomials
+\end_layout
+
 \end_inset
 
- for all 
-\begin_inset Formula $u\in P,u\cancel{\equiv}0$
+For non-negative integer 
+\begin_inset Formula $d$
+\end_inset
+
+,
+ let us define 
+\begin_inset Formula 
+\[
+P_{d}^{m}\coloneqq\left\{ \pi(x)=x^{d}+\sum_{i=0}^{d-1}a_{i}x^{i}\;\Big|\;a_{i}\in\mathbb{R}\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+as the set of 
+\emph on
+monic polynomials 
+\emph default
+of degree exactly 
+\begin_inset Formula $d$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Normalized polynomials
+\end_layout
+
+\end_inset
+
+For non-negative integer 
+\begin_inset Formula $d$
+\end_inset
+
+,
+ the set of normalized polynomials is defined as 
+\begin_inset Formula 
+\[
+\tilde{P_{d}}\coloneqq\left\{ \tilde{p}\in P_{d}:\left\Vert \tilde{p}\right\Vert _{w}=1\right\} 
+\]
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Positive Definiteness of an Inner Product [Adapted from Gautchi,
+ Definition 1.1,
+ p.1]
+\end_layout
+
+\end_inset
+
+ An inner product 
+\begin_inset Formula $\left\langle \cdot,\cdot\right\rangle _{w}$
+\end_inset
+
+ on 
+\begin_inset Formula $P$
+\end_inset
+
+ is said to be positive definite if 
+\begin_inset Formula 
+\[
+\left\Vert u\right\Vert _{w}>0\quad\forall u\in P:u\cancel{\equiv}0.
+\]
+
 \end_inset
 
 
@@ -376,11 +467,25 @@ An inner product
 \begin_inset Formula $I=\left\langle -1,1\right\rangle $
 \end_inset
 
+ by 
+\begin_inset Formula 
+\[
+\left\langle u,v\right\rangle _{w}=\int_{-1}^{1}u(x)v(x)\,dx
+\]
+
+\end_inset
+
+i.e.,
  with the weight function 
 \begin_inset Formula $w(x)=1$
 \end_inset
 
- is positive definite
+,
+ is positive definite on 
+\begin_inset Formula $P$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Proof
@@ -400,7 +505,18 @@ inner product
 \end_layout
 
 \begin_layout Theorem
-[Gautchi Theorem 1.6 page:3] If the inner product is positive definite on P,
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+[Adapted from Gautchi,
+ Theorem 1.6,
+ p.3]
+\end_layout
+
+\end_inset
+
+ If the inner product is positive definite on P,
  there exists a unique infinite sequence 
 \begin_inset Formula $\left\{ \pi_{k}\right\} $
 \end_inset
@@ -409,7 +525,17 @@ inner product
 \end_layout
 
 \begin_layout Definition
-[Gautchi 1.3 page:10] Inner product's shift property is when for every 
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+[Adapted from Gautchi,
+ 1.3 p.10]
+\end_layout
+
+\end_inset
+
+ Inner product's shift property is when for every 
 \begin_inset Formula $u,v\in P_{d}$
 \end_inset
 
@@ -422,7 +548,7 @@ inner product
 \begin_inset Formula $w$
 \end_inset
 
- from definition:
+ from Definition 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "def:weigh-function"
@@ -449,7 +575,7 @@ nolink "false"
 This also works for an inner product defined from integrals:
 \begin_inset Formula 
 \[
-\left\langle tu,v\right\rangle _{w}=\int_{I}w(x)(tu(x))v(x)\,dx=\int_{I}w(x)u(x)(tv(x))\,dx=\left\langle u,tv\right\rangle _{w}
+\left\langle tu,v\right\rangle _{w}=\int_{I}w(x)\left(tu(x)\right)v(x)\,dx=\int_{I}w(x)u(x)\left(tv(x)\right)\,dx=\left\langle u,tv\right\rangle _{w}
 \]
 
 \end_inset
@@ -458,19 +584,21 @@ This also works for an inner product defined from integrals:
 \end_layout
 
 \begin_layout Theorem
-\begin_inset CommandInset label
-LatexCommand label
-name "thm:3-time-recurrence"
-
-\end_inset
-
-[Gautchi Theorem 1.27 page:10]
 \begin_inset Argument 1
 status open
 
 \begin_layout Plain Layout
-Three term recurrence
+Three term recurrence [Adapted from Gautchi,
+ Theorem 1.27,
+ p.10] 
 \end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "thm:3-term-recurrence"
 
 \end_inset
 
@@ -482,7 +610,7 @@ Let
  Then,
 \begin_inset Formula 
 \[
-\pi_{k+1}(t)=(t-\alpha_{k})\pi_{k}(t)-\beta_{k}\pi_{k-1}(t),k=0,1,2,\ldots,
+\pi_{k+1}(t)=\left(t-\alpha_{k}\right)\pi_{k}(t)-\beta_{k}\pi_{k-1}(t),k=0,1,2,\ldots,
 \]
 
 \end_inset
@@ -519,63 +647,116 @@ where
 \end_layout
 
 \begin_layout Proof
-If we use Gramm-Schmidt orthogonalization process where we start with constant function 
+We begin by applying the Gram-Schmidt orthogonalization process,
+ starting with the constant function 
 \begin_inset Formula $f_{1}(x)=1$
 \end_inset
 
- and every following function to be orthogonalized will be the previous orthogonalization resulting function multiplied by x:
- 
-\begin_inset Formula $f_{k+1}(x)=x\pi_{k}(x),k=1,2,3,\ldots$
+.
+ Each subsequent function to be orthogonalized is obtained by multiplying the previous orthogonalized function by 
+\begin_inset Formula $x$
+\end_inset
+
+.Thus,
+ for 
+\begin_inset Formula $k=1,2,3,\ldots$
+\end_inset
+
+,
+ the functions are defined as 
+\begin_inset Formula $f_{k+1}(x)=x\pi_{k}(x)$
 \end_inset
 
 .
- Gauss-Ostrogradsky orthogonalization process will then result in orthogonal polynomials
+ 
+\end_layout
+
+\begin_layout Proof
+Gramm-Schmidt process results in orthogonal polynomials,
+ and we can express 
+\begin_inset Formula $\pi_{k+1}(x)$
+\end_inset
+
+ as follows:
 \begin_inset Formula 
 \[
-\pi_{k+1}(x)=x\pi_{k}(x)-\sum_{i=1}^{k}\frac{\left\langle x\pi_{k},\pi_{i}\right\rangle _{w}}{\left\langle \pi_{i},\pi_{i}\right\rangle _{w}}\pi_{i}(x)=x\pi_{k}(x)-\frac{\left\langle x\pi_{k},\pi_{k}\right\rangle _{w}}{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}}\pi_{k}(x)-\frac{\left\langle x\pi_{k},\pi_{k-1}\right\rangle _{w}}{\left\langle \pi_{k-1},\pi_{k-1}\right\rangle _{w}}\pi_{k-1}(x)-\sum_{i=1}^{k-2}\frac{\left\langle x\pi_{k},\pi_{i}\right\rangle _{w}}{\left\langle \pi_{i},\pi_{i}\right\rangle _{w}}\pi_{i}(x).
+\pi_{k+1}(x)=x\pi_{k}(x)-\sum_{i=1}^{k}\frac{\left\langle x\pi_{k},\pi_{i}\right\rangle _{w}}{\left\langle \pi_{i},\pi_{i}\right\rangle _{w}}\pi_{i}(x).
 \]
 
 \end_inset
 
+Expanding the sum:
+\begin_inset Formula 
+\[
+\pi_{k+1}(x)=x\pi_{k}(x)-\frac{\left\langle x\pi_{k},\pi_{k}\right\rangle _{w}}{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}}\pi_{k}(x)-\frac{\left\langle x\pi_{k},\pi_{k-1}\right\rangle _{w}}{\left\langle \pi_{k-1},\pi_{k-1}\right\rangle _{w}}\pi_{k-1}(x)-\sum_{i=1}^{k-2}\frac{\left\langle x\pi_{k},\pi_{i}\right\rangle _{w}}{\left\langle \pi_{i},\pi_{i}\right\rangle _{w}}\pi_{i}(x).
+\]
 
-\end_layout
-
-\begin_layout Proof
-thanks to shift property of inner product we can say that 
-\begin_inset Formula $\forall i,j\in\mathbb{N}:\left\langle x\pi_{i},\pi_{j}\right\rangle _{w}=\left\langle \pi_{i},x\pi_{j}\right\rangle _{w}$
 \end_inset
 
-and because of the construction of these polynomials 
-\begin_inset Formula $x\pi_{j}=\pi_{j+1}$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Proof
-therefore:
+Next by shift property of the inner product,
+ we have:
  
-\begin_inset Formula $\forall i\in\mathbb{N},i\leq k-2:\left\langle x\pi_{k},\pi_{i}\right\rangle _{w}=\left\langle \pi_{k},x\pi_{i}\right\rangle _{w}=\left\langle \pi_{k},\pi_{i+1}\right\rangle _{w}=0$
+\begin_inset Formula 
+\[
+\forall k,i\in\mathbb{N}:\left\langle x\pi_{k},\pi_{i}\right\rangle _{w}=\left\langle \pi_{k},x\pi_{i}\right\rangle _{w}
+\]
+
+\end_inset
+
+Because of the construction of these polynomials,
+ we know that 
+\begin_inset Formula $x\pi_{i}\in P_{i+1}$
+\end_inset
+
+,
+ where 
+\begin_inset Formula $P_{i+1}$
+\end_inset
+
+ represents the space of polynomials of degree 
+\begin_inset Formula $i+1$
+\end_inset
+
+ and thus the inner product is zero for 
+\begin_inset Formula $k\neq i+1$
+\end_inset
+
+.
+ This gives:
+ 
+\begin_inset Formula 
+\[
+\forall i\in\mathbb{N},i\leq k-2:\left\langle x\pi_{k},\pi_{i}\right\rangle _{w}=\left\langle \pi_{k},x\pi_{i}\right\rangle _{w}=0
+\]
+
 \end_inset
 
  because 
 \begin_inset Formula $k\neq i+1$
 \end_inset
 
- and polynomials are orthogonal.
- Which means that
+ and the polynomials are orthogonal.
+ This leads to the simplification of the expression for
+\begin_inset Formula $\pi_{k+1}(x)$
+\end_inset
+
+:
 \begin_inset Formula 
 \[
-\pi_{k+1}(x)=x\pi_{k}(x)-\frac{\left\langle x\pi_{k},\pi_{k}\right\rangle _{w}}{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}}\pi_{k}(x)-\frac{\left\langle x\pi_{k},\pi_{k-1}\right\rangle _{w}}{\left\langle \pi_{k-1},\pi_{k-1}\right\rangle _{w}}\pi_{k-1}(x)=\left(x-\frac{\left\langle x\pi_{k},\pi_{k}\right\rangle _{w}}{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}}\right)\pi_{k}(x)-\frac{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}}{\left\langle \pi_{k-1},\pi_{k-1}\right\rangle _{w}}\pi_{k-1}(x)
+\pi_{k+1}(x)=x\pi_{k}(x)-\frac{\left\langle x\pi_{k},\pi_{k}\right\rangle _{w}}{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}}\pi_{k}(x)-\frac{\left\langle x\pi_{k},\pi_{k-1}\right\rangle _{w}}{\left\langle \pi_{k-1},\pi_{k-1}\right\rangle _{w}}\pi_{k-1}(x)
 \]
 
 \end_inset
 
+which simplifies further to:
+\begin_inset Formula 
+\[
+\pi_{k+1}(x)=\left(x-\frac{\left\langle x\pi_{k},\pi_{k}\right\rangle _{w}}{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}}\right)\pi_{k}(x)-\frac{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}}{\left\langle \pi_{k-1},\pi_{k-1}\right\rangle _{w}}\pi_{k-1}(x)
+\]
 
-\end_layout
+\end_inset
 
-\begin_layout Proof
-and if we define 
+Now if we define 
 \begin_inset Formula $\alpha_{k}=\frac{\left\langle x\pi_{k},\pi_{k}\right\rangle _{w}}{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}}$
 \end_inset
 
@@ -584,10 +765,10 @@ and if we define
 \end_inset
 
 ,
- then we obtain formula for desired three time recurrence:
+ we obtain the desired three term recurrence relation:
 \begin_inset Formula 
 \[
-\pi_{k+1}(x)=(x-\alpha_{k})\pi_{k}(x)-\beta_{k}\pi_{k-1}(x).
+\pi_{k+1}(x)=\left(x-\alpha_{k}\right)\pi_{k}(x)-\beta_{k}\pi_{k-1}(x).
 \]
 
 \end_inset
@@ -596,13 +777,25 @@ and if we define
 \end_layout
 
 \begin_layout Theorem
-\begin_inset CommandInset label
-LatexCommand label
-name "thm:normal-3-time-recurrence"
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+[Adapted from Gautchi,
+ Theorem 1.29,
+ p.12]
+\end_layout
 
 \end_inset
 
-[Gautchi Theorem 1.29 page:12] Let 
+
+\begin_inset CommandInset label
+LatexCommand label
+name "thm:normal-3-term-recurrence"
+
+\end_inset
+
+ Let 
 \begin_inset Formula $\tilde{\pi}_{k}\in\tilde{P_{d}^{m}},k=0,1,2,\ldots,$
 \end_inset
 
@@ -610,7 +803,7 @@ be monic ortholonormal polynomials.
  Then,
 \begin_inset Formula 
 \[
-\sqrt{\beta_{k+1}}\tilde{\pi}_{k+1}(t)=(t-\alpha_{k})\tilde{\pi}_{k}(t)-\sqrt{\beta_{k}}\tilde{\pi}_{k-1}(t),\;k=0,1,2,\ldots,
+\sqrt{\beta_{k+1}}\tilde{\pi}_{k+1}(t)=\left(t-\alpha_{k}\right)\tilde{\pi}_{k}(t)-\sqrt{\beta_{k}}\tilde{\pi}_{k-1}(t),\;k=0,1,2,\ldots,
 \]
 
 \end_inset
@@ -640,10 +833,10 @@ where
 \end_inset
 
 .
- Therefore 3 time recurence from theorem:
+ Therefore 3 term recurence from Theorem 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "thm:3-time-recurrence"
+reference "thm:3-term-recurrence"
 plural "false"
 caps "false"
 noprefix "false"
@@ -654,7 +847,7 @@ nolink "false"
  is equal to:
 \begin_inset Formula 
 \[
-\tilde{\pi}_{k+1}\sqrt{\left\langle \pi_{k+1},\pi_{k+1}\right\rangle _{w}}=(x-\alpha_{k})\tilde{\pi}_{k}\sqrt{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}}-\beta_{k}\tilde{\pi}_{k-1}\sqrt{\left\langle \pi_{k-1},\pi_{k-1}\right\rangle _{w}}
+\tilde{\pi}_{k+1}\sqrt{\left\langle \pi_{k+1},\pi_{k+1}\right\rangle _{w}}=\left(x-\alpha_{k}\right)\tilde{\pi}_{k}\sqrt{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}}-\beta_{k}\tilde{\pi}_{k-1}\sqrt{\left\langle \pi_{k-1},\pi_{k-1}\right\rangle _{w}}
 \]
 
 \end_inset
@@ -662,7 +855,7 @@ nolink "false"
 
 \begin_inset Formula 
 \[
-\tilde{\pi}_{k+1}\sqrt{\frac{\left\langle \pi_{k+1},\pi_{k+1}\right\rangle _{w}}{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}}}=(x-\alpha_{k})\tilde{\pi}_{k}-\beta_{k}\tilde{\pi}_{k-1}\sqrt{\frac{\left\langle \pi_{k-1},\pi_{k-1}\right\rangle _{w}}{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}}}
+\tilde{\pi}_{k+1}\sqrt{\frac{\left\langle \pi_{k+1},\pi_{k+1}\right\rangle _{w}}{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}}}=\left(x-\alpha_{k}\right)\tilde{\pi}_{k}-\beta_{k}\tilde{\pi}_{k-1}\sqrt{\frac{\left\langle \pi_{k-1},\pi_{k-1}\right\rangle _{w}}{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}}}
 \]
 
 \end_inset
@@ -670,7 +863,7 @@ nolink "false"
 
 \begin_inset Formula 
 \[
-\tilde{\pi}_{k+1}\sqrt{\beta_{k+1}}=(x-\alpha_{k})\tilde{\pi}_{k}-\beta_{k}\tilde{\pi}_{k-1}\sqrt{\beta_{k}^{-1}}=(x-\alpha_{k})\tilde{\pi}_{k}-\tilde{\pi}_{k-1}\sqrt{\beta_{k}}
+\tilde{\pi}_{k+1}\sqrt{\beta_{k+1}}=\left(x-\alpha_{k}\right)\tilde{\pi}_{k}-\beta_{k}\tilde{\pi}_{k-1}\sqrt{\beta_{k}^{-1}}=\left(x-\alpha_{k}\right)\tilde{\pi}_{k}-\tilde{\pi}_{k-1}\sqrt{\beta_{k}}
 \]
 
 \end_inset
@@ -682,7 +875,7 @@ nolink "false"
 Which therefore gives us 3 time recurrence from theorem:
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "thm:normal-3-time-recurrence"
+reference "thm:normal-3-term-recurrence"
 plural "false"
 caps "false"
 noprefix "false"
@@ -694,10 +887,21 @@ nolink "false"
 \end_layout
 
 \begin_layout Definition
-[Gautchi Definition 1.30 page:13]With reference to theorem:
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+[Adapted from Gautchi,
+ Definition 1.30,
+ p.13]
+\end_layout
+
+\end_inset
+
+With reference to Theorem 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "thm:3-time-recurrence"
+reference "thm:3-term-recurrence"
 plural "false"
 caps "false"
 noprefix "false"
@@ -705,10 +909,10 @@ nolink "false"
 
 \end_inset
 
- and theorem:
+ and Theorem 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "thm:normal-3-time-recurrence"
+reference "thm:normal-3-term-recurrence"
 plural "false"
 caps "false"
 noprefix "false"
@@ -738,7 +942,18 @@ J_{n}\coloneqq\begin{bmatrix}\alpha_{0} & \sqrt{\beta_{1}} &  &  & 0\\
 \end_layout
 
 \begin_layout Theorem
-[Gautchi Theorem 1.31 page:13] The roots 
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+[Adapted from Gautchi,
+ Theorem 1.31,
+ page:13]
+\end_layout
+
+\end_inset
+
+The roots 
 \begin_inset Formula $\tau_{v}^{(n)}$
 \end_inset
 
@@ -752,7 +967,7 @@ J_{n}\coloneqq\begin{bmatrix}\alpha_{0} & \sqrt{\beta_{1}} &  &  & 0\\
 
  of order n,
  and 
-\begin_inset Formula $\tilde{\pi}(\tau_{v}^{(n)})$
+\begin_inset Formula $\tilde{\pi}\left(\tau_{v}^{(n)}\right)$
 \end_inset
 
  are corresponding eigenvectors.
@@ -783,7 +998,17 @@ where
 \end_layout
 
 \begin_layout Theorem
-[Gautchi Theorem 1.45 page:21] If the Quadrature rule is obtained by integrating the Lagrange interpolation formula (it is Interpolatory):
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+[Adapted from Gautchi Theorem,
+ 1.45 p.21]
+\end_layout
+
+\end_inset
+
+If the Quadrature rule is obtained by integrating the Lagrange interpolation formula (it is Interpolatory):
  
 \begin_inset Formula $f(x)=\sum_{v=1}^{n}f(\tau_{v})l_{v}(x)$
 \end_inset
@@ -845,7 +1070,18 @@ then Quadrature rule for positive definite inner product,
 \end_layout
 
 \begin_layout Theorem
-[Gautchi Theorem 3.1 page:153] Nodes 
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+[Adapted from Gautchi,
+ Theorem 3.1,
+ p.153]
+\end_layout
+
+\end_inset
+
+Nodes 
 \begin_inset Formula $\tau_{v}^{G},v=1,2,3,\ldots,n$
 \end_inset
 
@@ -947,7 +1183,7 @@ Let us have an interval
 
 ,
  orthogonal polynomials created with this inner product will be equal to 
-\begin_inset Formula $\pi_{i}(x)=\pi_{i}^{L}(\frac{a+b}{a-b}+\frac{2}{b-a}x)$
+\begin_inset Formula $\pi_{i}(x)=\pi_{i}^{L}\left(\frac{a+b}{a-b}+\frac{2}{b-a}x\right)$
 \end_inset
 
 
@@ -974,7 +1210,7 @@ Orthogonality of polynomials
 
  can be proven:
  
-\begin_inset Formula $\forall i,j\in\mathbb{N}:i\neq j:\left\langle \pi_{i},\pi_{j}\right\rangle _{1}=\int_{a}^{b}\pi_{i}(x)\pi_{j}(x)\,dx=\int_{a}^{b}\pi_{i}^{L}(\frac{a+b}{a-b}+\frac{2}{b-a}x)\pi_{j}^{L}(\frac{a+b}{a-b}+\frac{2}{b-a}x)\,dx$
+\begin_inset Formula $\forall i,j\in\mathbb{N}:i\neq j:\left\langle \pi_{i},\pi_{j}\right\rangle _{1}=\int_{a}^{b}\pi_{i}(x)\pi_{j}(x)\,dx=\int_{a}^{b}\pi_{i}^{L}\left(\frac{a+b}{a-b}+\frac{2}{b-a}x\right)\pi_{j}^{L}\left(\frac{a+b}{a-b}+\frac{2}{b-a}x\right)\,dx$
 \end_inset
 
 
@@ -982,7 +1218,7 @@ Orthogonality of polynomials
 
 \begin_layout Proof
 Let 
-\begin_inset Formula $\hat{x}=\frac{a+b}{a-b}+\frac{2}{b-a}x\Longrightarrow d\hat{x}=\frac{2}{b-a}dx\Longrightarrow\quad\int_{a}^{b}\pi_{i}^{L}(\frac{a+b}{a-b}+\frac{2}{b-a}x)\pi_{j}^{L}(\frac{a+b}{a-b}+\frac{2}{b-a}x)\,dx=\int_{-1}^{1}\frac{b-a}{2}\pi_{i}^{L}(\hat{x})\pi_{j}^{L}(\hat{x})\,d\hat{x}=\frac{b-a}{2}\int_{-1}^{1}\pi_{i}^{L}(\hat{x})\pi_{j}^{L}(\hat{x})\,d\hat{x}=0$
+\begin_inset Formula $\hat{x}=\frac{a+b}{a-b}+\frac{2}{b-a}x\Longrightarrow d\hat{x}=\frac{2}{b-a}dx\Longrightarrow\quad\int_{a}^{b}\pi_{i}^{L}\left(\frac{a+b}{a-b}+\frac{2}{b-a}x\right)\pi_{j}^{L}\left(\frac{a+b}{a-b}+\frac{2}{b-a}x\right)\,dx=\int_{-1}^{1}\frac{b-a}{2}\pi_{i}^{L}\left(\hat{x}\right)\pi_{j}^{L}\left(\hat{x}\right)\,d\hat{x}=\frac{b-a}{2}\int_{-1}^{1}\pi_{i}^{L}\left(\hat{x}\right)\pi_{j}^{L}\left(\hat{x}\right)\,d\hat{x}=0$
 \end_inset
 
 
@@ -1072,25 +1308,14 @@ Let us denote
 \end_layout
 
 \begin_layout Proof
-\begin_inset Formula $\pi^{L}(\tau_{i}^{L})=0,\,\pi(\tau_{i})=0,\,\pi_{i}(x)=\pi_{i}^{L}(\frac{a+b}{a-b}+\frac{2}{b-a}x)\quad\Longrightarrow\;\pi^{L}(\frac{a+b}{a-b}+\frac{2}{b-a}\tau_{i})=0\;\Longrightarrow\;\tau_{i}^{L}=\frac{a+b}{a-b}+\frac{2}{b-a}\tau_{i}\;\Longrightarrow\;\frac{a+b}{2}+\frac{b-a}{2}\tau_{i}^{L}=\tau_{i}$
+\begin_inset Formula $\pi^{L}(\tau_{i}^{L})=0,\,\pi(\tau_{i})=0,\,\pi_{i}(x)=\pi_{i}^{L}\left(\frac{a+b}{a-b}+\frac{2}{b-a}x\right)\quad\Longrightarrow\;\pi^{L}\left(\frac{a+b}{a-b}+\frac{2}{b-a}\tau_{i}\right)=0\;\Longrightarrow\;\tau_{i}^{L}=\frac{a+b}{a-b}+\frac{2}{b-a}\tau_{i}\;\Longrightarrow\;\frac{a+b}{2}+\frac{b-a}{2}\tau_{i}^{L}=\tau_{i}$
 \end_inset
 
 
 \end_layout
 
 \begin_layout Proof
-\begin_inset Formula $\lambda_{j}=\frac{\int_{a}^{b}\prod_{i\neq j,i=0}^{n}(x-\tau_{i})\,dx}{\prod_{i\neq j,i=0}^{n}(\tau_{j}-\tau_{i})}=\frac{\int_{a}^{b}\prod_{i\neq j,i=0}^{n}(x-\frac{a+b}{2}-\frac{b-a}{2}\tau_{i}^{L})\,dx}{\prod_{i\neq j,i=0}^{n}(\frac{a+b}{2}+\frac{b-a}{2}\tau_{j}^{L}-\frac{a+b}{2}-\frac{b-a}{2}\tau_{i}^{L})}=\frac{\int_{-1}^{1}\frac{b-a}{2}\prod_{i\neq j,i=0}^{n}(\frac{a+b}{2}+\frac{b-a}{2}\hat{x}-\frac{a+b}{2}-\frac{b-a}{2}\tau_{i}^{L})\,d\hat{x}}{\prod_{i\neq j,i=0}^{n}(\frac{b-a}{2}(\tau_{j}^{L}-\tau_{i}^{L}))}=\frac{(\frac{b-a}{2})^{n}\int_{-1}^{1}\prod_{i\neq j,i=0}^{n}(\hat{x}-\tau_{i}^{L})\,d\hat{x}}{(\frac{b-a}{2})^{n-1}\prod_{i\neq j,i=0}^{n}(\tau_{j}^{L}-\tau_{i}^{L})}=\frac{b-a}{2}\,\frac{\int_{-1}^{1}\prod_{i\neq j,i=0}^{n}(\hat{x}-\tau_{i}^{L})\,d\hat{x}}{\prod_{i\neq j,i=0}^{n}(\tau_{j}^{L}-\tau_{i}^{L})}=\frac{b-a}{2}\lambda_{j}^{L}$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Proof
-or (not fully sure which is better):
-\end_layout
-
-\begin_layout Proof
-\begin_inset Formula $\lambda_{j}=\beta_{0}v_{v,1}^{2},\;\lambda_{j}^{L}=\beta_{0}^{L}v_{v,1}^{2},\;\beta_{0}^{L}=2,\;\beta_{0}=\int_{I}w(x)dx=\int_{a}^{b}1\,dx=b-a\;\Longrightarrow\;\lambda_{j}=\frac{2}{2}(b-a)v_{v,1}^{2}=\frac{(b-a)}{2}2v_{v,1}^{2}=\frac{b-a}{2}\lambda_{j}^{L}$
+\begin_inset Formula $\lambda_{j}=\frac{\int_{a}^{b}\prod_{i\neq j,i=0}^{n}\left(x-\tau_{i}\right)\,dx}{\prod_{i\neq j,i=0}^{n}\left(\tau_{j}-\tau_{i}\right)}=\frac{\int_{a}^{b}\prod_{i\neq j,i=0}^{n}\left(x-\frac{a+b}{2}-\frac{b-a}{2}\tau_{i}^{L}\right)\,dx}{\prod_{i\neq j,i=0}^{n}\left(\frac{a+b}{2}+\frac{b-a}{2}\tau_{j}^{L}-\frac{a+b}{2}-\frac{b-a}{2}\tau_{i}^{L}\right)}=\frac{\int_{-1}^{1}\frac{b-a}{2}\prod_{i\neq j,i=0}^{n}\left(\frac{a+b}{2}+\frac{b-a}{2}\hat{x}-\frac{a+b}{2}-\frac{b-a}{2}\tau_{i}^{L}\right)\,d\hat{x}}{\prod_{i\neq j,i=0}^{n}\left(\frac{b-a}{2}\left(\tau_{j}^{L}-\tau_{i}^{L}\right)\right)}=\frac{\left(\frac{b-a}{2}\right)^{n}\int_{-1}^{1}\prod_{i\neq j,i=0}^{n}\left(\hat{x}-\tau_{i}^{L}\right)\,d\hat{x}}{\left(\frac{b-a}{2}\right)^{n-1}\prod_{i\neq j,i=0}^{n}\left(\tau_{j}^{L}-\tau_{i}^{L}\right)}=\frac{b-a}{2}\,\frac{\int_{-1}^{1}\prod_{i\neq j,i=0}^{n}\left(\hat{x}-\tau_{i}^{L}\right)\,d\hat{x}}{\prod_{i\neq j,i=0}^{n}\left(\tau_{j}^{L}-\tau_{i}^{L}\right)}=\frac{b-a}{2}\lambda_{j}^{L}$
 \end_inset
 
 

@@ -558,5 +558,12 @@ are the eigenvalues of
  are the coresponding eigenvectors
 \end_layout
 
+\begin_layout Remark
+\begin_inset Formula $\lambda_{j}=\beta_{0}v_{v,1}^{2},\;\lambda_{j}^{L}=\beta_{0}^{L}v_{v,1}^{2},\;\beta_{0}^{L}=2,\;\beta_{0}=\int_{I}w(x)dx=\int_{a}^{b}1\,dx=b-a\;\Longrightarrow\;\lambda_{j}=\frac{2}{2}(b-a)v_{v,1}^{2}=\frac{(b-a)}{2}2v_{v,1}^{2}=\frac{b-a}{2}\lambda_{j}^{L}$
+\end_inset
+
+
+\end_layout
+
 \end_body
 \end_document
