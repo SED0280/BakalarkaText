@@ -92,6 +92,51 @@ theorems-ams
 \begin_body
 
 \begin_layout Definition
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Space of Polynomials
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "def:polynomials-of-degree"
+
+\end_inset
+
+Space of real polynomials of degree at most d will be denoted as 
+\begin_inset Formula $P_{d}$
+\end_inset
+
+,
+ where 
+\begin_inset Formula $\forall p\in P_{d}:p(x)=\sum_{i=0}^{d}a_{i}x^{i}$
+\end_inset
+
+.
+ Space of all real polynomials will be denoted as 
+\begin_inset Formula $P$
+\end_inset
+
+ and 
+\begin_inset Formula $P=\cup_{d=0}^{\infty}P_{d}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
 \begin_inset CommandInset label
 LatexCommand label
 name "def:weigh-function"
@@ -215,48 +260,8 @@ Moments of a weight function denoted as
 \end_layout
 
 \begin_layout Definition
-\begin_inset CommandInset label
-LatexCommand label
-name "def:polynomials-of-degree"
-
-\end_inset
-
-Space of real polynomials of degree at most d will be denoted as 
-\begin_inset Formula $P_{d}$
-\end_inset
-
-,
- where 
-\begin_inset Formula $\forall p\in P_{d}:p(x)=\sum_{i=0}^{d}a_{i}x^{i}$
-\end_inset
-
-.
- Space of all real polynomials will be denoted as 
-\begin_inset Formula $P$
-\end_inset
-
- and 
-\begin_inset Formula $P=\cup_{d=0}^{\infty}P_{d}$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Separator plain
-\end_inset
-
-
-\end_layout
-
-\begin_layout Definition
-Space of monic polynomials will be denoted as 
-\begin_inset Formula $P_{d}^{m}$
-\end_inset
-
-.
- Monic polynomials are polynomials 
-\begin_inset Formula $\pi\in P_{d}$
+Monic polynomials are polynomials 
+\begin_inset Formula $\pi\in P_{d}^{m}$
 \end_inset
 
 ,
@@ -333,38 +338,11 @@ If
 
 \begin_layout Definition
 Normalized polynomials are polynomials 
-\begin_inset Formula $\tilde{p}\in\tilde{P_{d}}$
+\begin_inset Formula $\tilde{\pi}\in\tilde{P_{d}}$
 \end_inset
 
  where 
 \begin_inset Formula $\forall\tilde{p}\in\tilde{P_{d}}:\left\Vert \tilde{p}\right\Vert _{w}=1$
-\end_inset
-
- and 
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\nospellcheck off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
-
-\begin_inset Formula $\tilde{P_{d}}$
-\end_inset
-
- is a space of normalized polynomials.
- Space of normalized monic polynomials will be denotes as 
-\begin_inset Formula $\tilde{P_{d}^{m}}$
-\end_inset
-
-and normalized monic polynomials denoted as 
-\begin_inset Formula $\tilde{\pi}$
 \end_inset
 
 .
@@ -387,34 +365,6 @@ and normalized monic polynomials denoted as
 \end_inset
 
 
-\end_layout
-
-\begin_layout Theorem
-[Gautchi Definition 1.1 page:1] Hankel determinants in the moment 
-\begin_inset Formula $\mu_{r}$
-\end_inset
-
-,
-\end_layout
-
-\begin_layout Theorem
-\begin_inset Formula 
-\[
-\Delta_{n}=detM_{n},\;M_{n}=\left[\begin{array}{cccc}
-\mu_{0} & \mu_{1} & \cdots & \mu_{n-1}\\
-\mu_{1} & \mu_{2} & \cdots & \mu_{n}\\
-\vdots & \vdots &  & \vdots\\
-\mu_{n-1} & \mu_{n} & \cdots & \mu_{2n-2}
-\end{array}\right],\;n=1,2,3,\ldots,
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Theorem
-provide a simple criterion for positive definiteness.
 \end_layout
 
 \begin_layout Lemma
@@ -514,7 +464,17 @@ name "thm:3-time-recurrence"
 
 \end_inset
 
-[Gautchi Theorem 1.27 page:10](Three time recurrence) Let 
+[Gautchi Theorem 1.27 page:10]
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Three term recurrence
+\end_layout
+
+\end_inset
+
+Let 
 \begin_inset Formula $\pi_{k},k=0,1,2,\ldots,$
 \end_inset
 
@@ -1126,11 +1086,11 @@ Let us denote
 \end_layout
 
 \begin_layout Proof
-or (not sure which is better):
+or (not fully sure which is better):
 \end_layout
 
 \begin_layout Proof
-\begin_inset Formula $\lambda_{j}=\beta_{0}v_{v,1}^{2},\lambda_{j}^{L}=\beta_{0}^{L}v_{v,1}^{2},\;\beta_{0}^{L}=2\;\beta_{0}=\int_{I}w(x)dx=\int_{a}^{b}1\,dx=b-a\;\Longrightarrow\;\lambda_{j}=\frac{2}{2}(b-a)v_{v,1}^{2}=\frac{(b-a)}{2}2v_{v,1}^{2}=\frac{b-a}{2}\lambda_{j}^{L}$
+\begin_inset Formula $\lambda_{j}=\beta_{0}v_{v,1}^{2},\;\lambda_{j}^{L}=\beta_{0}^{L}v_{v,1}^{2},\;\beta_{0}^{L}=2,\;\beta_{0}=\int_{I}w(x)dx=\int_{a}^{b}1\,dx=b-a\;\Longrightarrow\;\lambda_{j}=\frac{2}{2}(b-a)v_{v,1}^{2}=\frac{(b-a)}{2}2v_{v,1}^{2}=\frac{b-a}{2}\lambda_{j}^{L}$
 \end_inset
 
 
