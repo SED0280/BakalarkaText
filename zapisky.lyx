@@ -344,6 +344,15 @@ nolink "false"
 \end_layout
 
 \begin_layout Definition
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Weighted Inner Product
+\end_layout
+
+\end_inset
+
 Let 
 \begin_inset Formula $w(x)$
 \end_inset
@@ -443,10 +452,6 @@ P_{d}^{m}\coloneqq\left\{ \pi(x)=x^{d}+\sum_{i=0}^{d-1}a_{i}x^{i}\;\Big|\;a_{i}\
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Definition
 as the set of 
 \emph on
 monic polynomials 
@@ -532,6 +537,15 @@ Positive Definiteness of an Inner Product [Adapted from Gautchi,
 \begin_layout Lemma
 
 \emph on
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Positive Definiteness of an Inner product over <-1,1>
+\end_layout
+
+\end_inset
+
 An inner product
 \emph default
  over interval 
@@ -560,19 +574,185 @@ i.e.,
 \end_layout
 
 \begin_layout Proof
-\begin_inset Formula $\forall u\in C(I):u\cancel{\equiv}0\Rightarrow\exists x\in I:u(x)\neq0$
+(Asi potom přepíšu svými slovy) As 
+\begin_inset Formula $P$
+\end_inset
+
+ on 
+\begin_inset Formula $\left\langle -1,1\right\rangle $
+\end_inset
+
+ is a subset of 
+\begin_inset Formula $C\left(\left\langle -1,1\right\rangle \right)$
 \end_inset
 
 ,
- then 
-\begin_inset Formula $\left\Vert u\right\Vert _{w}=\left\langle u,u\right\rangle _{w}=\int_{I}w(x)u(x)^{2}\,dx=\int_{-1}^{1}u(x)^{2}\,dx>0\Longrightarrow$
+ we will prove it for 
+\begin_inset Formula $C\left(\left\langle -1,1\right\rangle \right)$
 \end_inset
 
+.
+ Let 
+\begin_inset Formula $u\in C\left(\left\langle -1,1\right\rangle \right)$
+\end_inset
 
-\emph on
-inner product
-\emph default
- is positive definite
+ be a nonzero function;
+ that is,
+ 
+\begin_inset Formula $u\not\equiv0$
+\end_inset
+
+.
+ Then,
+ there exists some point 
+\begin_inset Formula $x_{0}\in\left\langle -1,1\right\rangle $
+\end_inset
+
+ such that 
+\begin_inset Formula $u(x_{0})\neq0$
+\end_inset
+
+.
+ Without loss of generality,
+ assume 
+\begin_inset Formula $u(x_{0})>0$
+\end_inset
+
+ (if 
+\begin_inset Formula $u(x_{0})<0$
+\end_inset
+
+,
+ consider 
+\begin_inset Formula $-u$
+\end_inset
+
+ instead).
+\end_layout
+
+\begin_layout Proof
+Since u is continuous at 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+,
+ for the choice 
+\begin_inset Formula 
+\[
+\epsilon=\frac{u(x_{0})}{2}>0,
+\]
+
+\end_inset
+
+there exists a 
+\begin_inset Formula $\delta>0$
+\end_inset
+
+ such that for all 
+\begin_inset Formula $x$
+\end_inset
+
+ with 
+\begin_inset Formula $|x-x_{0}|<\delta$
+\end_inset
+
+ (and 
+\begin_inset Formula $x\in\left\langle -1,1\right\rangle $
+\end_inset
+
+ ),
+ we have 
+\begin_inset Formula 
+\[
+|u(x)-u(x_{0})|<\epsilon.
+\]
+
+\end_inset
+
+This implies that for every 
+\begin_inset Formula $x$
+\end_inset
+
+ in the interval 
+\begin_inset Formula $I_{\delta}=\left\langle x_{0}-\delta,x_{0}+\delta\right\rangle \cap\left\langle -1,1\right\rangle $
+\end_inset
+
+ ,
+ 
+\begin_inset Formula 
+\[
+u(x)>u(x_{0})-\epsilon=\frac{u(x_{0})}{2}>0.
+\]
+
+\end_inset
+
+Thus,
+ on 
+\begin_inset Formula $I_{\delta}$
+\end_inset
+
+,
+ we have 
+\begin_inset Formula 
+\[
+u(x)^{2}\ge\left(\frac{u(x_{0})}{2}\right)^{2}.
+\]
+
+\end_inset
+
+Integrating over 
+\begin_inset Formula $I_{\delta}$
+\end_inset
+
+ yields 
+\begin_inset Formula 
+\[
+\int_{I_{\delta}}u(x)^{2}\,dx\ge\int_{I_{\delta}}\left(\frac{u(x_{0})}{2}\right)^{2}dx=\left(\frac{u(x_{0})}{2}\right)^{2}\cdot\left|I_{\delta}\right|,
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $\left|I_{\delta}\right|$
+\end_inset
+
+ denotes the length of 
+\begin_inset Formula $I_{\delta}$
+\end_inset
+
+,
+ which is positive.
+\end_layout
+
+\begin_layout Proof
+Since 
+\begin_inset Formula 
+\[
+\|u\|_{w}^{2}=\int_{-1}^{1}u(x)^{2}\,dx\ge\int_{I_{\delta}}u(x)^{2}\,dx,
+\]
+
+\end_inset
+
+it follows that 
+\begin_inset Formula 
+\[
+\|u\|_{w}^{2}\ge\left(\frac{u(x_{0})}{2}\right)^{2}\cdot\left|I_{\delta}\right|>0.
+\]
+
+\end_inset
+
+Hence,
+ 
+\begin_inset Formula $\|u\|_{w}>0$
+\end_inset
+
+ for every nonzero function 
+\begin_inset Formula $u\in C\left(\left\langle -1,1\right\rangle \right)$
+\end_inset
+
+,
+ and so the inner product is positive definite.
+ 
 \end_layout
 
 \begin_layout Theorem
@@ -681,7 +861,7 @@ Let
  Then,
 \begin_inset Formula 
 \[
-\pi_{k+1}(t)=\left(t-\alpha_{k}\right)\pi_{k}(t)-\beta_{k}\pi_{k-1}(t),k=0,1,2,\ldots,
+\pi_{k+1}(x)=\left(x-\alpha_{k}\right)\pi_{k}(x)-\beta_{k}\pi_{k-1}(x),k=0,1,2,\ldots,
 \]
 
 \end_inset
@@ -689,7 +869,7 @@ Let
 
 \begin_inset Formula 
 \[
-\pi_{-1}(t)=0,\pi_{0}(t)=1,
+\pi_{-1}(x)=0,\pi_{0}(x)=1,
 \]
 
 \end_inset
@@ -701,7 +881,7 @@ Let
 where
 \begin_inset Formula 
 \[
-\alpha_{k}=\frac{\left\langle t\pi_{k},\pi_{k}\right\rangle _{w}}{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}},k=0,1,2,\ldots,
+\alpha_{k}=\frac{\left\langle x\pi_{k},\pi_{k}\right\rangle _{w}}{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}},k=0,1,2,\ldots,
 \]
 
 \end_inset
@@ -874,7 +1054,7 @@ be monic ortholonormal polynomials.
  Then,
 \begin_inset Formula 
 \[
-\sqrt{\beta_{k+1}}\tilde{\pi}_{k+1}(t)=\left(t-\alpha_{k}\right)\tilde{\pi}_{k}(t)-\sqrt{\beta_{k}}\tilde{\pi}_{k-1}(t),\;k=0,1,2,\ldots,
+\sqrt{\beta_{k+1}}\tilde{\pi}_{k+1}(x)=\left(x-\alpha_{k}\right)\tilde{\pi}_{k}(x)-\sqrt{\beta_{k}}\tilde{\pi}_{k-1}(x),\;k=0,1,2,\ldots,
 \]
 
 \end_inset
@@ -882,7 +1062,7 @@ be monic ortholonormal polynomials.
 
 \begin_inset Formula 
 \[
-\tilde{\pi}_{-1}(t)=0,\tilde{\pi}_{0}(t)=1/\sqrt{\beta_{0}}.
+\tilde{\pi}_{-1}(x)=0,\tilde{\pi}_{0}(x)=1/\sqrt{\beta_{0}}.
 \]
 
 \end_inset
@@ -1317,7 +1497,7 @@ The Quadrature rule
 The quadrature rule is defined as
 \begin_inset Formula 
 \[
-\int_{I}f(t)dt\approx\sum_{v=1}^{n}\lambda_{v}f(\tau_{v})
+\int_{I}f(x)dt\approx\sum_{v=1}^{n}\lambda_{v}f(\tau_{v})
 \]
 
 \end_inset
@@ -1412,7 +1592,7 @@ then Quadrature rule for positive definite inner product,
 status open
 
 \begin_layout Plain Layout
-[Adapted from Gautchi,
+Gauss Quardature from eigenvectors [Adapted from Gautchi,
  Theorem 3.1,
  p.153]
 \end_layout

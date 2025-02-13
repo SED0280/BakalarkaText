@@ -443,10 +443,6 @@ P_{d}^{m}\coloneqq\left\{ \pi(x)=x^{d}+\sum_{i=0}^{d-1}a_{i}x^{i}\;\Big|\;a_{i}\
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Definition
 as the set of 
 \emph on
 monic polynomials 
@@ -560,19 +556,185 @@ i.e.,
 \end_layout
 
 \begin_layout Proof
-\begin_inset Formula $\forall u\in C(I):u\cancel{\equiv}0\Rightarrow\exists x\in I:u(x)\neq0$
+(Asi potom přepíšu svými slovy) As 
+\begin_inset Formula $P$
+\end_inset
+
+ on 
+\begin_inset Formula $\left\langle -1,1\right\rangle $
+\end_inset
+
+ is a subset of 
+\begin_inset Formula $C\left(\left\langle -1,1\right\rangle \right)$
 \end_inset
 
 ,
- then 
-\begin_inset Formula $\left\Vert u\right\Vert _{w}=\left\langle u,u\right\rangle _{w}=\int_{I}w(x)u(x)^{2}\,dx=\int_{-1}^{1}u(x)^{2}\,dx>0\Longrightarrow$
+ we will prove it for 
+\begin_inset Formula $C\left(\left\langle -1,1\right\rangle \right)$
 \end_inset
 
+.
+ Let 
+\begin_inset Formula $u\in C\left(\left\langle -1,1\right\rangle \right)$
+\end_inset
 
-\emph on
-inner product
-\emph default
- is positive definite
+ be a nonzero function;
+ that is,
+ 
+\begin_inset Formula $u\not\equiv0$
+\end_inset
+
+.
+ Then,
+ there exists some point 
+\begin_inset Formula $x_{0}\in\left\langle -1,1\right\rangle $
+\end_inset
+
+ such that 
+\begin_inset Formula $u(x_{0})\neq0$
+\end_inset
+
+.
+ Without loss of generality,
+ assume 
+\begin_inset Formula $u(x_{0})>0$
+\end_inset
+
+ (if 
+\begin_inset Formula $u(x_{0})<0$
+\end_inset
+
+,
+ consider 
+\begin_inset Formula $-u$
+\end_inset
+
+ instead).
+\end_layout
+
+\begin_layout Proof
+Since u is continuous at 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+,
+ for the choice 
+\begin_inset Formula 
+\[
+\epsilon=\frac{u(x_{0})}{2}>0,
+\]
+
+\end_inset
+
+there exists a 
+\begin_inset Formula $\delta>0$
+\end_inset
+
+ such that for all 
+\begin_inset Formula $x$
+\end_inset
+
+ with 
+\begin_inset Formula $|x-x_{0}|<\delta$
+\end_inset
+
+ (and 
+\begin_inset Formula $x\in\left\langle -1,1\right\rangle $
+\end_inset
+
+ ),
+ we have 
+\begin_inset Formula 
+\[
+|u(x)-u(x_{0})|<\epsilon.
+\]
+
+\end_inset
+
+This implies that for every 
+\begin_inset Formula $x$
+\end_inset
+
+ in the interval 
+\begin_inset Formula $I_{\delta}=\left\langle x_{0}-\delta,x_{0}+\delta\right\rangle \cap\left\langle -1,1\right\rangle $
+\end_inset
+
+ ,
+ 
+\begin_inset Formula 
+\[
+u(x)>u(x_{0})-\epsilon=\frac{u(x_{0})}{2}>0.
+\]
+
+\end_inset
+
+Thus,
+ on 
+\begin_inset Formula $I_{\delta}$
+\end_inset
+
+,
+ we have 
+\begin_inset Formula 
+\[
+u(x)^{2}\ge\left(\frac{u(x_{0})}{2}\right)^{2}.
+\]
+
+\end_inset
+
+Integrating over 
+\begin_inset Formula $I_{\delta}$
+\end_inset
+
+ yields 
+\begin_inset Formula 
+\[
+\int_{I_{\delta}}u(x)^{2}\,dx\ge\int_{I_{\delta}}\left(\frac{u(x_{0})}{2}\right)^{2}dx=\left(\frac{u(x_{0})}{2}\right)^{2}\cdot\left|I_{\delta}\right|,
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $\left|I_{\delta}\right|$
+\end_inset
+
+ denotes the length of 
+\begin_inset Formula $I_{\delta}$
+\end_inset
+
+,
+ which is positive.
+\end_layout
+
+\begin_layout Proof
+Since 
+\begin_inset Formula 
+\[
+\|u\|_{w}^{2}=\int_{-1}^{1}u(x)^{2}\,dx\ge\int_{I_{\delta}}u(x)^{2}\,dx,
+\]
+
+\end_inset
+
+it follows that 
+\begin_inset Formula 
+\[
+\|u\|_{w}^{2}\ge\left(\frac{u(x_{0})}{2}\right)^{2}\cdot\left|I_{\delta}\right|>0.
+\]
+
+\end_inset
+
+Hence,
+ 
+\begin_inset Formula $\|u\|_{w}>0$
+\end_inset
+
+ for every nonzero function 
+\begin_inset Formula $u\in C\left(\left\langle -1,1\right\rangle \right)$
+\end_inset
+
+,
+ and so the inner product is positive definite.
+ 
 \end_layout
 
 \begin_layout Theorem
@@ -1412,7 +1574,7 @@ then Quadrature rule for positive definite inner product,
 status open
 
 \begin_layout Plain Layout
-[Adapted from Gautchi,
+Gauss Quardature from eigenvectors [Adapted from Gautchi,
  Theorem 3.1,
  p.153]
 \end_layout
@@ -1621,12 +1783,8 @@ where
 
 \end_inset
 
-which means that
-\begin_inset Formula 
-\[
-\lambda^{G}=\beta_{0}v_{v,1}^{2}
-\]
-
+which means that 
+\begin_inset Formula $\lambda^{G}=\beta_{0}v_{v,1}^{2}$
 \end_inset
 
 
