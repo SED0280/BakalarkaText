@@ -717,7 +717,6 @@ Because of the construction of these polynomials,
 \begin_inset Formula $i+1$
 \end_inset
 
- this,
  and thus the inner product is zero for 
 \begin_inset Formula $k\neq i+1$
 \end_inset
@@ -974,8 +973,131 @@ The roots
  are corresponding eigenvectors.
 \end_layout
 
+\begin_layout Proof
+(tento zacatek mozna jako samostatny Remark) If the first 
+\begin_inset Formula $n$
+\end_inset
+
+ equations from Theorem 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "thm:normal-3-term-recurrence"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ are written in the form 
+\begin_inset Formula 
+\[
+t\tilde{\pi}_{k}(t)=\sqrt{\beta_{k}}\tilde{\pi}_{k-1}(t)+\alpha_{k}\tilde{\pi}_{k}(t)+\sqrt{\beta_{k+1}}\tilde{\pi}_{k+1}(t),\;k=0,1,\ldots,n-1,
+\]
+
+\end_inset
+
+and one lets
+\begin_inset Formula 
+\[
+\tilde{\pi}(t)=\left[\tilde{\pi}_{0}(t),\tilde{\pi}_{1}(t),\ldots,\tilde{\pi}_{n-1}(t)\right]^{T},
+\]
+
+\end_inset
+
+then we can express these equations in matrix form as 
+\begin_inset Formula 
+\[
+t\tilde{\pi}(t)=J_{n}\tilde{\pi}(t)+\sqrt{\beta_{n}}\tilde{\pi}_{n}(t)e_{n},
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $e_{n}=\left[0,0,\ldots,1\right]^{T}$
+\end_inset
+
+ is the 
+\emph on
+n
+\emph default
+th coordinate vector in 
+\begin_inset Formula $\mathbb{R}^{n}$
+\end_inset
+
+.
+ Both assertions follow immediately from the matrix form of this equation by putting 
+\begin_inset Formula $t=\tau_{v}^{(n)}$
+\end_inset
+
+ and noting that 
+\begin_inset Formula $\tilde{\pi}(\tau_{v}^{(n)})\neq0$
+\end_inset
+
+,
+ the first component of 
+\begin_inset Formula $\tilde{\pi}(\tau_{v}^{(n)})$
+\end_inset
+
+ being 
+\begin_inset Formula $1/\sqrt{\beta_{0}}$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\tau_{v}^{(n)}\tilde{\pi}(\tau_{v}^{(n)})=J_{n}\tilde{\pi}(\tau_{v}^{(n)})+\sqrt{\beta_{n}}\tilde{\pi}_{n}(\tau_{v}^{(n)})e_{n},
+\]
+
+\end_inset
+
+since 
+\begin_inset Formula $\tau_{v}^{(n)}$
+\end_inset
+
+ are roots of 
+\begin_inset Formula $\pi_{n}$
+\end_inset
+
+,
+ then 
+\begin_inset Formula $\tilde{\pi_{n}}(\tau_{v}^{(n)})=0$
+\end_inset
+
+ and the equation simplifies to:
+\begin_inset Formula 
+\[
+\tau_{v}^{(n)}\tilde{\pi}(\tau_{v}^{(n)})=J_{n}\tilde{\pi}(\tau_{v}^{(n)})
+\]
+
+\end_inset
+
+This shows that 
+\begin_inset Formula $\tilde{\pi}(\tau_{v}^{(n)})$
+\end_inset
+
+ is an eigenvector of the matrix 
+\begin_inset Formula $J_{n}$
+\end_inset
+
+ corresponding to the eigenvalue
+\begin_inset Formula $\tau_{v}^{(n)}$
+\end_inset
+
+.
+\end_layout
+
 \begin_layout Definition
-The Gauss quadrature rule is defined as
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+The Quadrature rule
+\end_layout
+
+\end_inset
+
+The quadrature rule is defined as
 \begin_inset Formula 
 \[
 \int_{I}f(t)dt\approx\sum_{v=1}^{n}\lambda_{v}f(\tau_{v})
