@@ -5,6 +5,77 @@
 \save_transient_properties true
 \origin unavailable
 \textclass article
+\begin_preamble
+\usepackage{xcolor}    % Colors
+\usepackage{amsthm}    % Theorem formatting
+\usepackage{mdframed}  % Framed boxes
+
+% Define custom colors
+\definecolor{lightgray}{rgb}{0.95,0.95,0.95}  % Light gray for theorem
+
+% Define theorem styles with boxed environments
+\newtheoremstyle{boxtheorem}  % Boxed theorem style
+  {0pt} % Space above
+  {5pt} % Space below
+  {}    % Body font
+  {}    % Indent amount
+  {\bfseries} % Theorem head font
+  {.}   % Punctuation after theorem head
+  { }   % Space after theorem head
+  {\thmname{#1} \thmnumber{#2}\thmnote{ (#3)}}
+
+% Apply to theorem and definition
+\theoremstyle{boxtheorem}
+
+\newmdenv[
+  linewidth=1pt,
+  linecolor=black,
+  backgroundcolor=lightgray,
+  roundcorner=5pt,
+  innertopmargin=5pt,
+  innerbottommargin=5pt,
+  skipabove=10pt,
+  skipbelow=10pt
+]{thmBox}
+
+\newmdenv[
+  linewidth=1pt,
+  linecolor=black,
+  backgroundcolor=lightgray,
+  roundcorner=5pt,
+  innertopmargin=5pt,
+  innerbottommargin=5pt,
+  skipabove=5pt,
+  skipbelow=10pt
+]{lemBox}
+
+\newmdenv[
+  linewidth=1pt,
+  linecolor=black,
+  backgroundcolor=white,
+  roundcorner=5pt,
+  innertopmargin=5pt,
+  innerbottommargin=5pt,
+  skipabove=5pt,
+  skipbelow=10pt
+]{defnBox}
+
+% Wrap Theorems in Frames Without Recursion
+\let\oldthm\thm
+\renewcommand{\thm}{\begin{thmBox}\oldthm}
+\let\endoldthm\endthm
+\renewcommand{\endthm}{\endoldthm\end{thmBox}}
+
+\let\oldlem\lem
+\renewcommand{\lem}{\begin{lemBox}\oldlem}
+\let\endoldlem\endlem
+\renewcommand{\endlem}{\endoldlem\end{lemBox}}
+
+\let\olddefn\defn
+\renewcommand{\defn}{\begin{defnBox}\olddefn}
+\let\endolddefn\enddefn
+\renewcommand{\enddefn}{\endolddefn\end{defnBox}}
+\end_preamble
 \use_default_options true
 \begin_modules
 theorems-ams
@@ -948,8 +1019,15 @@ status open
 \begin_layout Plain Layout
 [Adapted from Gautchi,
  Theorem 1.31,
- page:13]
+ p.13]
 \end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "thm:Jacobi-eigenvalues-eigenvectors"
 
 \end_inset
 
@@ -992,7 +1070,7 @@ nolink "false"
  are written in the form 
 \begin_inset Formula 
 \[
-t\tilde{\pi}_{k}(t)=\sqrt{\beta_{k}}\tilde{\pi}_{k-1}(t)+\alpha_{k}\tilde{\pi}_{k}(t)+\sqrt{\beta_{k+1}}\tilde{\pi}_{k+1}(t),\;k=0,1,\ldots,n-1,
+t\tilde{\pi}_{k}(x)=\sqrt{\beta_{k}}\tilde{\pi}_{k-1}(x)+\alpha_{k}\tilde{\pi}_{k}(x)+\sqrt{\beta_{k+1}}\tilde{\pi}_{k+1}(x),\;k=0,1,\ldots,n-1,
 \]
 
 \end_inset
@@ -1000,7 +1078,7 @@ t\tilde{\pi}_{k}(t)=\sqrt{\beta_{k}}\tilde{\pi}_{k-1}(t)+\alpha_{k}\tilde{\pi}_{
 and one lets
 \begin_inset Formula 
 \[
-\tilde{\pi}(t)=\left[\tilde{\pi}_{0}(t),\tilde{\pi}_{1}(t),\ldots,\tilde{\pi}_{n-1}(t)\right]^{T},
+\tilde{\pi}(x)=\left[\tilde{\pi}_{0}(x),\tilde{\pi}_{1}(x),\ldots,\tilde{\pi}_{n-1}(x)\right]^{T},
 \]
 
 \end_inset
@@ -1008,7 +1086,7 @@ and one lets
 then we can express these equations in matrix form as 
 \begin_inset Formula 
 \[
-t\tilde{\pi}(t)=J_{n}\tilde{\pi}(t)+\sqrt{\beta_{n}}\tilde{\pi}_{n}(t)e_{n},
+t\tilde{\pi}(x)=J_{n}\tilde{\pi}(x)+\sqrt{\beta_{n}}\tilde{\pi}_{n}(x)e_{n},
 \]
 
 \end_inset
@@ -1087,6 +1165,145 @@ This shows that
 .
 \end_layout
 
+\begin_layout Corollary
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+[Adapted from Gautchi,
+ Corollary to 1.31,
+ p.13]
+\end_layout
+
+\end_inset
+
+Let 
+\begin_inset Formula $v_{v}$
+\end_inset
+
+ denote the normalized eigenvector of
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ 
+\begin_inset Formula $J_{n}$
+\end_inset
+
+ corresponding to the eigenvalue 
+\begin_inset Formula $\tau_{v}^{(n)}$
+\end_inset
+
+,
+\begin_inset Formula 
+\[
+J_{n}v_{v}=\tau_{v}^{(n)}v_{v},\;v_{v}^{T}v_{v}=1,
+\]
+
+\end_inset
+
+and let 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $v_{v,1}$
+\end_inset
+
+ denote its first component.
+ Then,
+\begin_inset Formula 
+\[
+\beta_{0}v_{v,1}^{2}=\frac{1}{\sum_{k=0}^{n-1}\left[\tilde{\pi}_{k}(\tau_{v}^{(n)})\right]^{2}},\quad v=1,2,\ldots,n.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+For each normalized eigenvector 
+\begin_inset Formula $v_{v}$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+v_{v}=\left(\sum_{k=0}^{n-1}\left[\tilde{\pi}_{k}(\tau_{v}^{(n)})\right]^{2}\right)^{-1/2}\tilde{\pi}(\tau_{v}^{(n)}),\quad v=1,2,\ldots,n.
+\]
+
+\end_inset
+
+noting from Theorem 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "thm:normal-3-term-recurrence"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ that 
+\begin_inset Formula $\tilde{\pi}_{0}=1/\sqrt{\beta_{0}}$
+\end_inset
+
+,
+ if we compare the first component of each side and square the equation we obtain:
+\begin_inset Formula 
+\[
+v_{v,1}^{2}=\left(\sum_{k=0}^{n-1}\left[\tilde{\pi}_{k}(\tau_{v}^{(n)})\right]^{2}\right)^{-1}\frac{1}{\sqrt{\beta_{0}}},\quad v=1,2,\ldots,n.
+\]
+
+\end_inset
+
+and after simplification,
+ we obtain desired formula
+\begin_inset Formula 
+\[
+\beta_{0}v_{v,1}^{2}=\frac{1}{\sum_{k=0}^{n-1}\left[\tilde{\pi}_{k}(\tau_{v}^{(n)})\right]^{2}},\quad v=1,2,\ldots,n.
+\]
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Definition
 \begin_inset Argument 1
 status open
@@ -1105,10 +1322,6 @@ The quadrature rule is defined as
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Definition
 where 
 \begin_inset Formula $\lambda_{v}$
 \end_inset
@@ -1125,8 +1338,10 @@ where
 status open
 
 \begin_layout Plain Layout
-[Adapted from Gautchi Theorem,
- 1.45 p.21]
+[Adapted from Gautchi,
+ Theorem,
+ 1.45,
+ p.21]
 \end_layout
 
 \end_inset
@@ -1227,10 +1442,6 @@ Nodes
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Theorem
 where 
 \begin_inset Formula $\beta_{0}=\int_{\mathbb{I}}w(x)\,dx$
 \end_inset
@@ -1248,6 +1459,177 @@ where
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Proof
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+[Adapted from Gautchi,
+ p.153]
+\end_layout
+
+\end_inset
+
+Let us have a vector 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\tilde{\pi}(x)=\left[\tilde{\pi}_{0}(x),\tilde{\pi}_{1}(x),\ldots,\tilde{\pi}_{n-1}(x)\right]^{T}$
+\end_inset
+
+,
+ where 
+\begin_inset Formula $\tilde{\pi}_{k}(x)$
+\end_inset
+
+ are orthonormal polynomials.
+ By Theorem 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "thm:Jacobi-eigenvalues-eigenvectors"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ and its Corollary:
+\begin_inset Formula 
+\[
+\beta_{0}v_{v,1}^{2}=\frac{1}{\sum_{k=0}^{n-1}\left[\tilde{\pi}_{k}(\tau_{v}^{(n)})\right]^{2}}
+\]
+
+\end_inset
+
+On the other hand,
+ letting 
+\begin_inset Formula $f(x)=\tilde{\pi}_{k}(x),k\leq n-1$
+\end_inset
+
+,
+ in the Gauss formula 
+\begin_inset Formula $\int_{\mathbb{R}}f(x)\,dx=\sum_{v=1}^{n}\lambda_{v}^{G}f(\tau_{v}^{G})+R_{n}^{G}(f)$
+\end_inset
+
+ and noting that 
+\begin_inset Formula $\tilde{\pi}_{0}=\beta_{0}^{-1/2}$
+\end_inset
+
+,
+ one obtains by orthogonality,
+\begin_inset Formula 
+\[
+\beta_{0}^{1/2}\delta_{k,0}=\sum_{v=1}^{n}\lambda_{v}^{G}\tilde{\pi}_{k}(\tau_{v}^{G}),
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $\delta_{k,0}$
+\end_inset
+
+ is the Kronecker delta (if 
+\begin_inset Formula $i=j$
+\end_inset
+
+ then 
+\begin_inset Formula $\delta_{i,j}=1$
+\end_inset
+
+,
+ else
+\begin_inset Formula $\delta_{i,j}=0$
+\end_inset
+
+),
+ or in matrix form,
+\begin_inset Formula 
+\[
+P\lambda^{G}=\beta_{0}^{1/2}e_{1},
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $P$
+\end_inset
+
+ is the matrix of eigenvectors and 
+\begin_inset Formula $\lambda^{G}$
+\end_inset
+
+ the vector of Gauss weights,(insert P and lambda example later) and 
+\begin_inset Formula $e_{1}^{T}=\left[1,0,\ldots,0\right]\in\mathbb{R}^{n}$
+\end_inset
+
+ the first coordinate vector.
+ Since the columns of 
+\begin_inset Formula $P$
+\end_inset
+
+ are mutually orthogonal,
+ there holds
+\begin_inset Formula 
+\[
+P^{T}P=D_{\pi}=diag\left(d_{0},d_{1},\ldots,d_{n-1}\right),\quad d_{v-1}=\sum_{k=0}^{n-1}\left[\tilde{\pi}_{k}(\tau_{v}^{(n)})\right]^{2}
+\]
+
+\end_inset
+
+Multiplying the matrix form of our equation by 
+\begin_inset Formula $P^{T}$
+\end_inset
+
+ from the left,
+ one gets
+\begin_inset Formula 
+\[
+D_{\pi}\lambda^{G}=\beta_{0}^{1/2}P^{T}e_{1}=\beta_{0}^{1/2}\beta_{0}^{-1/2}e=e,
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $e=\left[1,1,\ldots,1\right]^{T}\in\mathbb{R}^{n}$
+\end_inset
+
+.
+ There follows 
+\begin_inset Formula $\lambda^{G}=D_{\pi}^{-1}e$
+\end_inset
+
+,
+ that is,
+\begin_inset Formula 
+\[
+\lambda^{G}=\frac{1}{\sum_{k=0}^{n-1}\left[\tilde{\pi}_{k}(\tau_{v}^{(n)})\right]^{2}}
+\]
+
+\end_inset
+
+which means that
+\begin_inset Formula 
+\[
+\lambda^{G}=\beta_{0}v_{v,1}^{2}
+\]
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Remark
@@ -1333,14 +1715,29 @@ Orthogonality of polynomials
 
  can be proven:
  
-\begin_inset Formula $\forall i,j\in\mathbb{N}:i\neq j:\left\langle \pi_{i},\pi_{j}\right\rangle _{1}=\int_{a}^{b}\pi_{i}(x)\pi_{j}(x)\,dx=\int_{a}^{b}\pi_{i}^{L}\left(\frac{a+b}{a-b}+\frac{2}{b-a}x\right)\pi_{j}^{L}\left(\frac{a+b}{a-b}+\frac{2}{b-a}x\right)\,dx$
+\begin_inset Formula 
+\[
+\forall i,j\in\mathbb{N}:i\neq j:\left\langle \pi_{i},\pi_{j}\right\rangle _{1}=\int_{a}^{b}\pi_{i}(x)\pi_{j}(x)\,dx=\int_{a}^{b}\pi_{i}^{L}\left(\frac{a+b}{a-b}+\frac{2}{b-a}x\right)\pi_{j}^{L}\left(\frac{a+b}{a-b}+\frac{2}{b-a}x\right)\,dx
+\]
+
 \end_inset
 
+.
 
-\end_layout
-
-\begin_layout Proof
-Let 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ Let 
 \begin_inset Formula $\hat{x}=\frac{a+b}{a-b}+\frac{2}{b-a}x\Longrightarrow d\hat{x}=\frac{2}{b-a}dx\Longrightarrow\quad\int_{a}^{b}\pi_{i}^{L}\left(\frac{a+b}{a-b}+\frac{2}{b-a}x\right)\pi_{j}^{L}\left(\frac{a+b}{a-b}+\frac{2}{b-a}x\right)\,dx=\int_{-1}^{1}\frac{b-a}{2}\pi_{i}^{L}\left(\hat{x}\right)\pi_{j}^{L}\left(\hat{x}\right)\,d\hat{x}=\frac{b-a}{2}\int_{-1}^{1}\pi_{i}^{L}\left(\hat{x}\right)\pi_{j}^{L}\left(\hat{x}\right)\,d\hat{x}=0$
 \end_inset
 
@@ -1367,7 +1764,7 @@ Let us denote
 \begin_inset Formula $\lambda_{i}^{L}$
 \end_inset
 
- as their corresponding weights.
+ as their corresponding weights of quadrature.
  For orthogonal polynomials 
 \family roman
 \series medium
