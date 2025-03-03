@@ -1,0 +1,534 @@
+%% LyX 2.4.1 created this file.  For more info, see https://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[english]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{luainputenc}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{cancel}
+
+\makeatletter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
+\theoremstyle{plain}
+\newtheorem{thm}{\protect\theoremname}
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{\protect\definitionname}
+\theoremstyle{remark}
+\newtheorem{rem}[thm]{\protect\remarkname}
+\theoremstyle{plain}
+\newtheorem{lem}[thm]{\protect\lemmaname}
+\theoremstyle{plain}
+\newtheorem{cor}[thm]{\protect\corollaryname}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+\usepackage{xcolor}    % Colors
+\usepackage{amsthm}    % Theorem formatting
+\usepackage{mdframed}  % Framed boxes
+
+% Define custom colors
+\definecolor{lightgray}{rgb}{0.95,0.95,0.95}  % Light gray for theorem
+
+% Define theorem styles with boxed environments
+\newtheoremstyle{boxtheorem}  % Boxed theorem style
+  {0pt} % Space above
+  {5pt} % Space below
+  {}    % Body font
+  {}    % Indent amount
+  {\bfseries} % Theorem head font
+  {.}   % Punctuation after theorem head
+  { }   % Space after theorem head
+  {\thmname{#1} \thmnumber{#2}\thmnote{ (#3)}}
+
+% Apply to theorem and definition
+\theoremstyle{boxtheorem}
+
+\newmdenv[
+  linewidth=1pt,
+  linecolor=black,
+  backgroundcolor=lightgray,
+  roundcorner=5pt,
+  innertopmargin=5pt,
+  innerbottommargin=5pt,
+  skipabove=10pt,
+  skipbelow=10pt
+]{thmBox}
+
+\newmdenv[
+  linewidth=1pt,
+  linecolor=black,
+  backgroundcolor=lightgray,
+  roundcorner=5pt,
+  innertopmargin=5pt,
+  innerbottommargin=5pt,
+  skipabove=5pt,
+  skipbelow=10pt
+]{lemBox}
+
+\newmdenv[
+  linewidth=1pt,
+  linecolor=black,
+  backgroundcolor=white,
+  roundcorner=5pt,
+  innertopmargin=5pt,
+  innerbottommargin=5pt,
+  skipabove=5pt,
+  skipbelow=10pt
+]{defnBox}
+
+% Wrap Theorems in Frames Without Recursion
+\let\oldthm\thm
+\renewcommand{\thm}{\begin{thmBox}\oldthm}
+\let\endoldthm\endthm
+\renewcommand{\endthm}{\endoldthm\end{thmBox}}
+
+\let\oldlem\lem
+\renewcommand{\lem}{\begin{lemBox}\oldlem}
+\let\endoldlem\endlem
+\renewcommand{\endlem}{\endoldlem\end{lemBox}}
+
+\let\olddefn\defn
+\renewcommand{\defn}{\begin{defnBox}\olddefn}
+\let\endolddefn\enddefn
+\renewcommand{\enddefn}{\endolddefn\end{defnBox}}
+
+\makeatother
+
+\usepackage{babel}
+\providecommand{\corollaryname}{Corollary}
+\providecommand{\definitionname}{Definition}
+\providecommand{\lemmaname}{Lemma}
+\providecommand{\remarkname}{Remark}
+\providecommand{\theoremname}{Theorem}
+
+\begin{document}
+\begin{defn}[Space of Polynomials]
+\label{def:polynomials-of-degree}For non-negative integer $d$,
+let us define 
+\[
+P_{d}\coloneqq\left\{ p(x)=\sum_{i=0}^{d}a_{i}x^{i}\;\Big|\;a_{i}\in\mathbb{R}\right\} 
+\]
+as a space of real polynomials of degree at most $d$. The space of
+all real polynomials is then
+\[
+P\coloneqq\bigcup_{d=0}^{\infty}P_{d}
+\]
+\end{defn}
+
+\begin{defn}[Weight Function]
+\label{def:weigh-function}Let $I=\left\langle a,b\right\rangle \subset\mathbb{R}$
+(bounded, closed interval). A function $w(x)\in C(I)$ that satisfies.
+\[
+\forall x\in I:w(x)>0
+\]
+\end{defn}
+
+\begin{rem}
+The weighted integral is well defined $\forall f\in C(I)$
+\[
+\int_{I}w(x)f(x)\,dx\in\mathbb{R}
+\]
+\end{rem}
+
+\begin{thm}[Moments of a Weight Function]
+Let $w(x)$ be a weight function from Definition \ref{def:weigh-function}
+and $I$ its corresponding support. Then all moments are finite:
+\[
+\mu_{r}\coloneqq\int_{\mathbb{R}}w(x)x^{r}\,dx,\;r=0,1,2,\ldots,\;with\:\forall r:\mu_{r}<\infty.
+\]
+%
+\end{thm}
+
+\begin{defn}[Weighted Inner Product]
+Let $w(x)$ be a weight function from Definition \ref{def:weigh-function}
+and $I$ its corresponding support. For any functions $u,v\in C(I)$,
+a weighted inner product may be defined as
+\[
+\left\langle u,v\right\rangle _{w}=\int_{I}w(x)u(x)v(x)\,dx
+\]
+ The corresponding norm is
+\[
+\left\Vert u\right\Vert _{w}=\sqrt{\left\langle u,u\right\rangle _{w}}
+\]
+\end{defn}
+
+\begin{rem}
+If $\left\langle u,v\right\rangle _{w}=0$, then $u$ and $v$ are
+said to be \emph{orthogonal} with respect to the weight function $w$.
+\end{rem}
+
+\begin{defn}[Monic polynomials]
+For non-negative integer $d$, let us define 
+\[
+P_{d}^{m}\coloneqq\left\{ \pi(x)=x^{d}+\sum_{i=0}^{d-1}a_{i}x^{i}\;\Big|\;a_{i}\in\mathbb{R}\right\} 
+\]
+as the set of \emph{monic polynomials }of degree exactly $d$.
+\end{defn}
+
+\begin{defn}[Normalized polynomials]
+For non-negative integer $d$, the set of normalized polynomials
+is defined as 
+\[
+\tilde{P_{d}}\coloneqq\left\{ \tilde{p}\in P_{d}:\left\Vert \tilde{p}\right\Vert _{w}=1\right\} 
+\]
+.
+\end{defn}
+
+\begin{defn}[{Positive Definiteness of an Inner Product {[}Adapted from Gautchi,
+Definition 1.1, p.1{]}}]
+ An inner product $\left\langle \cdot,\cdot\right\rangle _{w}$ on
+$P$ is said to be positive definite if 
+\[
+\left\Vert u\right\Vert _{w}>0\quad\forall u\in P:u\cancel{\equiv}0.
+\]
+\end{defn}
+
+\begin{lem}[Positive Definiteness of an Inner product over <-1,1>]
+\emph{An inner product} over interval $I=\left\langle -1,1\right\rangle $
+by 
+\[
+\left\langle u,v\right\rangle _{w}=\int_{-1}^{1}u(x)v(x)\,dx
+\]
+i.e., with the weight function $w(x)=1$, is positive definite on
+$P$
+\end{lem}
+
+\begin{proof}
+As $P$ on $\left\langle -1,1\right\rangle $ is a subset of $C\left(\left\langle -1,1\right\rangle \right)$,
+we will prove it for $C\left(\left\langle -1,1\right\rangle \right)$.
+Let $u\in C\left(\left\langle -1,1\right\rangle \right)$ be a nonzero
+function; that is, $u\not\equiv0$. Then, there exists some point
+$x_{0}\in\left\langle -1,1\right\rangle $ such that $u(x_{0})\neq0$.
+Without loss of generality, assume $u(x_{0})>0$ (if $u(x_{0})<0$,
+consider $-u$ instead).
+
+Since u is continuous at $x_{0}$, for the choice 
+\[
+\epsilon=\frac{u(x_{0})}{2}>0,
+\]
+there exists a $\delta>0$ such that for all $x$ with $|x-x_{0}|<\delta$
+(and $x\in\left\langle -1,1\right\rangle $ ), we have 
+\[
+|u(x)-u(x_{0})|<\epsilon.
+\]
+This implies that for every $x$ in the interval $I_{\delta}=\left\langle x_{0}-\delta,x_{0}+\delta\right\rangle \cap\left\langle -1,1\right\rangle $
+, 
+\[
+u(x)>u(x_{0})-\epsilon=\frac{u(x_{0})}{2}>0.
+\]
+Thus, on $I_{\delta}$, we have 
+\[
+u(x)^{2}\ge\left(\frac{u(x_{0})}{2}\right)^{2}.
+\]
+Integrating over $I_{\delta}$ yields 
+\[
+\int_{I_{\delta}}u(x)^{2}\,dx\ge\int_{I_{\delta}}\left(\frac{u(x_{0})}{2}\right)^{2}dx=\left(\frac{u(x_{0})}{2}\right)^{2}\cdot\left|I_{\delta}\right|,
+\]
+where $\left|I_{\delta}\right|$ denotes the length of $I_{\delta}$,
+which is positive.
+
+Since 
+\[
+\|u\|_{w}^{2}=\int_{-1}^{1}u(x)^{2}\,dx\ge\int_{I_{\delta}}u(x)^{2}\,dx,
+\]
+it follows that 
+\[
+\|u\|_{w}^{2}\ge\left(\frac{u(x_{0})}{2}\right)^{2}\cdot\left|I_{\delta}\right|>0.
+\]
+Hence, $\|u\|_{w}>0$ for every nonzero function $u\in C\left(\left\langle -1,1\right\rangle \right)$,
+and so the inner product is positive definite. 
+\end{proof}
+\begin{thm}[{{[}Adapted from Gautchi, Theorem 1.6, p.3{]}}]
+ If the inner product is positive definite on P, there exists a unique
+infinite sequence $\left\{ \pi_{k}\right\} $ of monic orthogonal
+polynomials
+\end{thm}
+
+\begin{defn}[{Shift Property {[}Adapted from Gautchi, 1.3 p.10{]}}]
+ Inner product's shift property is when for every $u,v\in P_{d}$
+and $t\in\mathbb{R}$, with $w$ from Definition \ref{def:weigh-function}:
+\[
+\left\langle tu,v\right\rangle _{w}=\left\langle u,tv\right\rangle _{w}
+\]
+\end{defn}
+
+\begin{rem}
+This also works for an inner product defined from integrals:
+\[
+\left\langle tu,v\right\rangle _{w}=\int_{I}w(x)\left(tu(x)\right)v(x)\,dx=\int_{I}w(x)u(x)\left(tv(x)\right)\,dx=\left\langle u,tv\right\rangle _{w}
+\]
+\end{rem}
+
+\begin{thm}[{Three term recurrence {[}Adapted from Gautchi, Theorem 1.27, p.10{]} }]
+\label{thm:3-term-recurrence}Let $\pi_{k},k=0,1,2,\ldots,$ be a
+monic orthogonal polynomials. Then,
+\[
+\pi_{k+1}(x)=\left(x-\alpha_{k}\right)\pi_{k}(x)-\beta_{k}\pi_{k-1}(x),k=0,1,2,\ldots,
+\]
+\[
+\pi_{-1}(x)=0,\pi_{0}(x)=1,
+\]
+
+where
+\[
+\alpha_{k}=\frac{\left\langle x\pi_{k},\pi_{k}\right\rangle _{w}}{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}},k=0,1,2,\ldots,
+\]
+\[
+\beta_{k}=\frac{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}}{\left\langle \pi_{k-1},\pi_{k-1}\right\rangle _{w}},k=0,1,2,\ldots.
+\]
+\end{thm}
+
+\begin{proof}
+We begin by applying the Gram-Schmidt orthogonalization process, starting
+with the constant function $f_{1}(x)=1$. Each subsequent function
+to be orthogonalized is obtained by multiplying the previous orthogonalized
+function by $x$.Thus, for $k=1,2,3,\ldots$, the functions are defined
+as $f_{k+1}(x)=x\pi_{k}(x)$. 
+
+Gramm-Schmidt process results in orthogonal polynomials, and we can
+express $\pi_{k+1}(x)$ as follows:
+\[
+\pi_{k+1}(x)=x\pi_{k}(x)-\sum_{i=1}^{k}\frac{\left\langle x\pi_{k},\pi_{i}\right\rangle _{w}}{\left\langle \pi_{i},\pi_{i}\right\rangle _{w}}\pi_{i}(x).
+\]
+Expanding the sum:
+\[
+\pi_{k+1}(x)=x\pi_{k}(x)-\frac{\left\langle x\pi_{k},\pi_{k}\right\rangle _{w}}{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}}\pi_{k}(x)-\frac{\left\langle x\pi_{k},\pi_{k-1}\right\rangle _{w}}{\left\langle \pi_{k-1},\pi_{k-1}\right\rangle _{w}}\pi_{k-1}(x)-\sum_{i=1}^{k-2}\frac{\left\langle x\pi_{k},\pi_{i}\right\rangle _{w}}{\left\langle \pi_{i},\pi_{i}\right\rangle _{w}}\pi_{i}(x).
+\]
+Next by shift property of the inner product, we have: 
+\[
+\forall k,i\in\mathbb{N}:\left\langle x\pi_{k},\pi_{i}\right\rangle _{w}=\left\langle \pi_{k},x\pi_{i}\right\rangle _{w}
+\]
+Because of the construction of these polynomials, we know that $x\pi_{i}\in P_{i+1}$,
+where $P_{i+1}$ represents the space of polynomials of degree $i+1$
+and thus the inner product is zero for $k\neq i+1$. This gives: 
+\[
+\forall i\in\mathbb{N},i\leq k-2:\left\langle x\pi_{k},\pi_{i}\right\rangle _{w}=\left\langle \pi_{k},x\pi_{i}\right\rangle _{w}=0
+\]
+ because $k\neq i+1$ and the polynomials are orthogonal. This leads
+to the simplification of the expression for$\pi_{k+1}(x)$:
+\[
+\pi_{k+1}(x)=x\pi_{k}(x)-\frac{\left\langle x\pi_{k},\pi_{k}\right\rangle _{w}}{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}}\pi_{k}(x)-\frac{\left\langle x\pi_{k},\pi_{k-1}\right\rangle _{w}}{\left\langle \pi_{k-1},\pi_{k-1}\right\rangle _{w}}\pi_{k-1}(x)
+\]
+which simplifies further to:
+\[
+\pi_{k+1}(x)=\left(x-\frac{\left\langle x\pi_{k},\pi_{k}\right\rangle _{w}}{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}}\right)\pi_{k}(x)-\frac{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}}{\left\langle \pi_{k-1},\pi_{k-1}\right\rangle _{w}}\pi_{k-1}(x)
+\]
+Now if we define $\alpha_{k}=\frac{\left\langle x\pi_{k},\pi_{k}\right\rangle _{w}}{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}}$
+and $\beta_{k}=\frac{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}}{\left\langle \pi_{k-1},\pi_{k-1}\right\rangle _{w}}$,
+we obtain the desired three term recurrence relation:
+\[
+\pi_{k+1}(x)=\left(x-\alpha_{k}\right)\pi_{k}(x)-\beta_{k}\pi_{k-1}(x).
+\]
+\end{proof}
+\begin{thm}[{{[}Adapted from Gautchi, Theorem 1.29, p.12{]}}]
+\label{thm:normal-3-term-recurrence} Let $\tilde{\pi}_{k}\in\tilde{P_{d}^{m}},k=0,1,2,\ldots,$be
+monic ortholonormal polynomials. Then,
+\[
+\sqrt{\beta_{k+1}}\tilde{\pi}_{k+1}(x)=\left(x-\alpha_{k}\right)\tilde{\pi}_{k}(x)-\sqrt{\beta_{k}}\tilde{\pi}_{k-1}(x),\;k=0,1,2,\ldots,
+\]
+\[
+\tilde{\pi}_{-1}(x)=0,\tilde{\pi}_{0}(x)=1/\sqrt{\beta_{0}}.
+\]
+\end{thm}
+
+\begin{proof}
+Monic polynomials $\pi=\tilde{\pi}\left\Vert \pi\right\Vert _{w},$where
+$\tilde{\pi}$ is a monic orthonormal polynomial and $\left\Vert \pi\right\Vert _{w}=\sqrt{\left\langle \pi,\pi\right\rangle _{w}}$.
+Therefore 3 term recurence from Theorem \ref{thm:3-term-recurrence}
+is equal to:
+\[
+\tilde{\pi}_{k+1}\sqrt{\left\langle \pi_{k+1},\pi_{k+1}\right\rangle _{w}}=\left(x-\alpha_{k}\right)\tilde{\pi}_{k}\sqrt{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}}-\beta_{k}\tilde{\pi}_{k-1}\sqrt{\left\langle \pi_{k-1},\pi_{k-1}\right\rangle _{w}}
+\]
+\[
+\tilde{\pi}_{k+1}\sqrt{\frac{\left\langle \pi_{k+1},\pi_{k+1}\right\rangle _{w}}{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}}}=\left(x-\alpha_{k}\right)\tilde{\pi}_{k}-\beta_{k}\tilde{\pi}_{k-1}\sqrt{\frac{\left\langle \pi_{k-1},\pi_{k-1}\right\rangle _{w}}{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}}}
+\]
+\[
+\tilde{\pi}_{k+1}\sqrt{\beta_{k+1}}=\left(x-\alpha_{k}\right)\tilde{\pi}_{k}-\beta_{k}\tilde{\pi}_{k-1}\sqrt{\beta_{k}^{-1}}=\left(x-\alpha_{k}\right)\tilde{\pi}_{k}-\tilde{\pi}_{k-1}\sqrt{\beta_{k}}
+\]
+
+Which therefore gives us 3 time recurrence from theorem:\ref{thm:normal-3-term-recurrence}
+\end{proof}
+\begin{defn}[{{[}Adapted from Gautchi, Definition 1.30, p.13{]}}]
+With reference to Theorem \ref{thm:3-term-recurrence} and Theorem
+\ref{thm:normal-3-term-recurrence}, the Jacobi matrix is symmetric,
+tridiagonal matrix
+
+\[
+J_{n}\coloneqq\begin{bmatrix}\alpha_{0} & \sqrt{\beta_{1}} &  &  & 0\\
+\sqrt{\beta_{1}} & \alpha_{1} & \sqrt{\beta_{2}}\\
+ & \sqrt{\beta_{2}} & \alpha_{2} & \ddots\\
+ &  & \ddots & \ddots & \sqrt{\beta_{n}}\\
+0 &  &  & \sqrt{\beta_{n}} & \alpha_{n}
+\end{bmatrix}.
+\]
+\end{defn}
+
+\begin{thm}[{{[}Adapted from Gautchi, Theorem 1.31, p.13{]}}]
+\label{thm:Jacobi-eigenvalues-eigenvectors}The roots $\tau_{v}^{(n)}$
+of $\pi_{n}$ are the eigenvalues of the Jacobi matrix $J_{n}$ of
+order n, and $\tilde{\pi}\left(\tau_{v}^{(n)}\right)$ are corresponding
+eigenvectors.
+\end{thm}
+
+\begin{proof}
+If the first $n$ equations from Theorem \ref{thm:normal-3-term-recurrence}
+are written in the form 
+\[
+t\tilde{\pi}_{k}(x)=\sqrt{\beta_{k}}\tilde{\pi}_{k-1}(x)+\alpha_{k}\tilde{\pi}_{k}(x)+\sqrt{\beta_{k+1}}\tilde{\pi}_{k+1}(x),\;k=0,1,\ldots,n-1,
+\]
+and one lets
+\[
+\tilde{\pi}(x)=\left[\tilde{\pi}_{0}(x),\tilde{\pi}_{1}(x),\ldots,\tilde{\pi}_{n-1}(x)\right]^{T},
+\]
+then we can express these equations in matrix form as 
+\[
+t\tilde{\pi}(x)=J_{n}\tilde{\pi}(x)+\sqrt{\beta_{n}}\tilde{\pi}_{n}(x)e_{n},
+\]
+where $e_{n}=\left[0,0,\ldots,1\right]^{T}$ is the \emph{n}th coordinate
+vector in $\mathbb{R}^{n}$. Both assertions follow immediately from
+the matrix form of this equation by putting $t=\tau_{v}^{(n)}$ and
+noting that $\tilde{\pi}(\tau_{v}^{(n)})\neq0$, the first component
+of $\tilde{\pi}(\tau_{v}^{(n)})$ being $1/\sqrt{\beta_{0}}$
+\[
+\tau_{v}^{(n)}\tilde{\pi}(\tau_{v}^{(n)})=J_{n}\tilde{\pi}(\tau_{v}^{(n)})+\sqrt{\beta_{n}}\tilde{\pi}_{n}(\tau_{v}^{(n)})e_{n},
+\]
+since $\tau_{v}^{(n)}$ are roots of $\pi_{n}$, then $\tilde{\pi_{n}}(\tau_{v}^{(n)})=0$
+and the equation simplifies to:
+\[
+\tau_{v}^{(n)}\tilde{\pi}(\tau_{v}^{(n)})=J_{n}\tilde{\pi}(\tau_{v}^{(n)})
+\]
+This shows that $\tilde{\pi}(\tau_{v}^{(n)})$ is an eigenvector of
+the matrix $J_{n}$ corresponding to the eigenvalue$\tau_{v}^{(n)}$.
+\end{proof}
+\begin{cor}[{to Theorem \ref{thm:Jacobi-eigenvalues-eigenvectors}{[}Adapted from
+Gautchi, Corollary to 1.31, p.13{]}}]
+\textup{Let $v_{v}$ denote the normalized eigenvector of} $J_{n}$
+corresponding to the eigenvalue $\tau_{v}^{(n)}$,
+\[
+J_{n}v_{v}=\tau_{v}^{(n)}v_{v},\;v_{v}^{T}v_{v}=1,
+\]
+and let \textup{$v_{v,1}$ denote its first component. Then,
+\[
+\beta_{0}v_{v,1}^{2}=\frac{1}{\sum_{k=0}^{n-1}\left[\tilde{\pi}_{k}(\tau_{v}^{(n)})\right]^{2}},\quad v=1,2,\ldots,n.
+\]
+}
+\end{cor}
+
+\begin{proof}
+For each normalized eigenvector $v_{v}$:
+\[
+v_{v}=\left(\sum_{k=0}^{n-1}\left[\tilde{\pi}_{k}(\tau_{v}^{(n)})\right]^{2}\right)^{-1/2}\tilde{\pi}(\tau_{v}^{(n)}),\quad v=1,2,\ldots,n.
+\]
+noting from Theorem \ref{thm:normal-3-term-recurrence} that $\tilde{\pi}_{0}=1/\sqrt{\beta_{0}}$,
+if we compare the first component of each side and square the equation
+we obtain:
+\[
+v_{v,1}^{2}=\left(\sum_{k=0}^{n-1}\left[\tilde{\pi}_{k}(\tau_{v}^{(n)})\right]^{2}\right)^{-1}\frac{1}{\sqrt{\beta_{0}}},\quad v=1,2,\ldots,n.
+\]
+and after simplification, we obtain desired formula
+\[
+\beta_{0}v_{v,1}^{2}=\frac{1}{\sum_{k=0}^{n-1}\left[\tilde{\pi}_{k}(\tau_{v}^{(n)})\right]^{2}},\quad v=1,2,\ldots,n.
+\]
+\end{proof}
+\begin{defn}[The Quadrature rule]
+The quadrature rule is defined as
+\[
+\int_{I}f(x)dt\approx\sum_{v=1}^{n}\lambda_{v}f(\tau_{v})
+\]
+where $\lambda_{v}$ are called weights and $\tau_{v}$ are called
+nodes of an n-point Gauss quadrature rule
+\end{defn}
+
+\begin{thm}[{{[}Adapted from Gautchi, Theorem, 1.45, p.21{]}}]
+If the Quadrature rule is obtained by integrating the Lagrange interpolation
+formula (it is Interpolatory): $f(x)=\sum_{v=1}^{n}f(\tau_{v})l_{v}(x)$
+where $l_{v}(x)=\prod_{\mu=1,\mu\neq v}^{n}\frac{x-\tau_{\mu}}{\tau_{v}-\tau_{\mu}}$,
+and the node polynomial \textup{$\omega_{n}(x)=\prod_{v=1}^{n}(x-\tau_{v})$}
+satisfies$\int_{\mathbb{R}}\omega_{n}(x)p(x)\,dx=0$ for all $p\in P_{n-1},$then
+Quadrature rule for positive definite inner product, has points equal
+to the root of an n-th ortogonal polynomial
+\end{thm}
+
+\begin{thm}[{Gauss Quardature from eigenvectors {[}Adapted from Gautchi, Theorem
+3.1, p.153{]}}]
+Nodes $\tau_{v}^{G},v=1,2,3,\ldots,n$, of the n-point Gauss quadrature
+rule are the eigenvalues of the Jacobi matrix $J_{n}$, and the weights
+$\lambda_{v}^{G},v=1,2,3,\ldots,n$, are 
+\[
+\lambda_{v}^{G}=\beta_{0}v_{v,1}^{2},
+\]
+where $\beta_{0}=\int_{\mathbb{I}}w(x)\,dx$ and $v_{v,1}$ is the
+first component of the normalized eigenvector $v_{v}$ belonging to
+the eigenvalue $\tau_{v}^{G}$.
+\end{thm}
+
+\begin{proof}[{{[}Adapted from Gautchi, p.153{]}}]
+Let us have a vector $\tilde{\pi}(x)=\left[\tilde{\pi}_{0}(x),\tilde{\pi}_{1}(x),\ldots,\tilde{\pi}_{n-1}(x)\right]^{T}$,
+where $\tilde{\pi}_{k}(x)$ are orthonormal polynomials. By Theorem
+\ref{thm:Jacobi-eigenvalues-eigenvectors} and its Corollary:
+\[
+\beta_{0}v_{v,1}^{2}=\frac{1}{\sum_{k=0}^{n-1}\left[\tilde{\pi}_{k}(\tau_{v}^{(n)})\right]^{2}}
+\]
+On the other hand, letting $f(x)=\tilde{\pi}_{k}(x),k\leq n-1$, in
+the Gauss formula $\int_{\mathbb{R}}f(x)\,dx=\sum_{v=1}^{n}\lambda_{v}^{G}f(\tau_{v}^{G})+R_{n}^{G}(f)$
+and noting that $\tilde{\pi}_{0}=\beta_{0}^{-1/2}$, one obtains by
+orthogonality,
+\[
+\beta_{0}^{1/2}\delta_{k,0}=\sum_{v=1}^{n}\lambda_{v}^{G}\tilde{\pi}_{k}(\tau_{v}^{G}),
+\]
+where $\delta_{k,0}$ is the Kronecker delta (if $i=j$ then $\delta_{i,j}=1$,
+else$\delta_{i,j}=0$), or in matrix form,
+\[
+P\lambda^{G}=\beta_{0}^{1/2}e_{1},
+\]
+where $P$ is the matrix of eigenvectors and $\lambda^{G}$ the vector
+of Gauss weights,(insert P and lambda example later) and $e_{1}^{T}=\left[1,0,\ldots,0\right]\in\mathbb{R}^{n}$
+the first coordinate vector. Since the columns of $P$ are mutually
+orthogonal, there holds
+\[
+P^{T}P=D_{\pi}=diag\left(d_{0},d_{1},\ldots,d_{n-1}\right),\quad d_{v-1}=\sum_{k=0}^{n-1}\left[\tilde{\pi}_{k}(\tau_{v}^{(n)})\right]^{2}
+\]
+Multiplying the matrix form of our equation by $P^{T}$ from the left,
+one gets
+\[
+D_{\pi}\lambda^{G}=\beta_{0}^{1/2}P^{T}e_{1}=\beta_{0}^{1/2}\beta_{0}^{-1/2}e=e,
+\]
+where $e=\left[1,1,\ldots,1\right]^{T}\in\mathbb{R}^{n}$. There follows
+$\lambda^{G}=D_{\pi}^{-1}e$, that is,
+\[
+\lambda^{G}=\frac{1}{\sum_{k=0}^{n-1}\left[\tilde{\pi}_{k}(\tau_{v}^{(n)})\right]^{2}}
+\]
+which means that $\lambda^{G}=\beta_{0}v_{v,1}^{2}$
+\end{proof}
+\begin{rem}
+Orthogonal Lagrange polynomials denoted as $\pi_{i}^{L}(x)$ are defined
+for an inner product over interval $I^{L}=\left\langle -1,1\right\rangle $
+and a weight function $w(x)=1$. Let us have an interval $I=\left\langle a,b\right\rangle ;a,b\in\mathbb{R}:a<b$
+and an inner product over interval $I$ with a weight $w(x)=1$, orthogonal
+polynomials created with this inner product will be equal to $\pi_{i}(x)=\pi_{i}^{L}\left(\frac{a+b}{a-b}+\frac{2}{b-a}x\right)$
+\end{rem}
+
+\begin{proof}
+Orthogonality of polynomials $\pi_{i}(x)$ can be proven: 
+\[
+\forall i,j\in\mathbb{N}:i\neq j:\left\langle \pi_{i},\pi_{j}\right\rangle _{1}=\int_{a}^{b}\pi_{i}(x)\pi_{j}(x)\,dx=\int_{a}^{b}\pi_{i}^{L}\left(\frac{a+b}{a-b}+\frac{2}{b-a}x\right)\pi_{j}^{L}\left(\frac{a+b}{a-b}+\frac{2}{b-a}x\right)\,dx
+\]
+. Let $\hat{x}=\frac{a+b}{a-b}+\frac{2}{b-a}x\Longrightarrow d\hat{x}=\frac{2}{b-a}dx\Longrightarrow\quad\int_{a}^{b}\pi_{i}^{L}\left(\frac{a+b}{a-b}+\frac{2}{b-a}x\right)\pi_{j}^{L}\left(\frac{a+b}{a-b}+\frac{2}{b-a}x\right)\,dx=\int_{-1}^{1}\frac{b-a}{2}\pi_{i}^{L}\left(\hat{x}\right)\pi_{j}^{L}\left(\hat{x}\right)\,d\hat{x}=\frac{b-a}{2}\int_{-1}^{1}\pi_{i}^{L}\left(\hat{x}\right)\pi_{j}^{L}\left(\hat{x}\right)\,d\hat{x}=0$$\Longrightarrow\left\langle \pi_{i},\pi_{j}\right\rangle _{1}=0$
+\end{proof}
+%
+\begin{rem}
+Let us denote $\tau_{i}^{L}$ as the roots of Lagrange polynomials
+and $\lambda_{i}^{L}$ as their corresponding weights of quadrature.
+For orthogonal polynomials $\pi(x)$ made from inner product over
+interval $I=\left\langle a,b\right\rangle $, the roots are $\tau_{i}=\frac{a+b}{2}+\frac{b-a}{2}\tau_{i}^{L}$
+and weights are $\lambda_{j}=\frac{b-a}{2}\lambda_{j}^{L}$.
+\end{rem}
+
+\begin{proof}
+$\pi^{L}(\tau_{i}^{L})=0,\,\pi(\tau_{i})=0,\,\pi_{i}(x)=\pi_{i}^{L}\left(\frac{a+b}{a-b}+\frac{2}{b-a}x\right)\quad\Longrightarrow\;\pi^{L}\left(\frac{a+b}{a-b}+\frac{2}{b-a}\tau_{i}\right)=0\;\Longrightarrow\;\tau_{i}^{L}=\frac{a+b}{a-b}+\frac{2}{b-a}\tau_{i}\;\Longrightarrow\;\frac{a+b}{2}+\frac{b-a}{2}\tau_{i}^{L}=\tau_{i}$
+
+$\lambda_{j}=\frac{\int_{a}^{b}\prod_{i\neq j,i=0}^{n}\left(x-\tau_{i}\right)\,dx}{\prod_{i\neq j,i=0}^{n}\left(\tau_{j}-\tau_{i}\right)}=\frac{\int_{a}^{b}\prod_{i\neq j,i=0}^{n}\left(x-\frac{a+b}{2}-\frac{b-a}{2}\tau_{i}^{L}\right)\,dx}{\prod_{i\neq j,i=0}^{n}\left(\frac{a+b}{2}+\frac{b-a}{2}\tau_{j}^{L}-\frac{a+b}{2}-\frac{b-a}{2}\tau_{i}^{L}\right)}=\frac{\int_{-1}^{1}\frac{b-a}{2}\prod_{i\neq j,i=0}^{n}\left(\frac{a+b}{2}+\frac{b-a}{2}\hat{x}-\frac{a+b}{2}-\frac{b-a}{2}\tau_{i}^{L}\right)\,d\hat{x}}{\prod_{i\neq j,i=0}^{n}\left(\frac{b-a}{2}\left(\tau_{j}^{L}-\tau_{i}^{L}\right)\right)}=\frac{\left(\frac{b-a}{2}\right)^{n}\int_{-1}^{1}\prod_{i\neq j,i=0}^{n}\left(\hat{x}-\tau_{i}^{L}\right)\,d\hat{x}}{\left(\frac{b-a}{2}\right)^{n-1}\prod_{i\neq j,i=0}^{n}\left(\tau_{j}^{L}-\tau_{i}^{L}\right)}=\frac{b-a}{2}\,\frac{\int_{-1}^{1}\prod_{i\neq j,i=0}^{n}\left(\hat{x}-\tau_{i}^{L}\right)\,d\hat{x}}{\prod_{i\neq j,i=0}^{n}\left(\tau_{j}^{L}-\tau_{i}^{L}\right)}=\frac{b-a}{2}\lambda_{j}^{L}$
+\end{proof}
+
+\end{document}

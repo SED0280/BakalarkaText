@@ -179,7 +179,7 @@ name "def:polynomials-of-degree"
 
 \end_inset
 
-For non-negative integer 
+For a non-negative integer 
 \begin_inset Formula $d$
 \end_inset
 
@@ -270,16 +270,19 @@ Let
 \uwave default
 \noun default
 \color inherit
-.
  
 \begin_inset Formula 
 \[
-\forall x\in I:w(x)>0
+\forall x\in I:w(x)>0,
 \]
 
 \end_inset
 
-
+is called a 
+\emph on
+Weight function
+\emph default
+.
 \end_layout
 
 \begin_layout Remark
@@ -331,7 +334,7 @@ nolink "false"
  Then all moments are finite:
 \begin_inset Formula 
 \[
-\mu_{r}\coloneqq\int_{\mathbb{R}}w(x)x^{r}\,dx,\;r=0,1,2,\ldots,\;with\:\forall r:\mu_{r}<\infty.
+\mu_{r}\coloneqq\int_{\mathbb{R}}w(x)x^{r}\,dx\in\mathbb{R},\;r=0,1,2,\ldots,\;with\:\forall r:\left|\mu_{r}\right|<\infty.
 \]
 
 \end_inset
@@ -378,15 +381,15 @@ nolink "false"
 \end_inset
 
 ,
- a weighted inner product may be defined as
+ a weighted inner product is defined as
 \begin_inset Formula 
 \[
-\left\langle u,v\right\rangle _{w}=\int_{I}w(x)u(x)v(x)\,dx
+\left\langle u,v\right\rangle _{w}=\int_{I}w(x)u(x)v(x)\,dx,
 \]
 
 \end_inset
 
- The corresponding norm is
+ with the corresponding norm being
 \begin_inset Formula 
 \[
 \left\Vert u\right\Vert _{w}=\sqrt{\left\langle u,u\right\rangle _{w}}
@@ -439,7 +442,7 @@ Monic polynomials
 
 \end_inset
 
-For non-negative integer 
+For a non-negative integer 
 \begin_inset Formula $d$
 \end_inset
 
@@ -488,7 +491,7 @@ For non-negative integer
  the set of normalized polynomials is defined as 
 \begin_inset Formula 
 \[
-\tilde{P_{d}}\coloneqq\left\{ \tilde{p}\in P_{d}:\left\Vert \tilde{p}\right\Vert _{w}=1\right\} 
+\widetilde{P_{d}}\coloneqq\left\{ \tilde{p}\in P_{d}:\left\Vert \tilde{p}\right\Vert _{w}=1\right\} 
 \]
 
 \end_inset
@@ -508,9 +511,7 @@ For non-negative integer
 status open
 
 \begin_layout Plain Layout
-Positive Definiteness of an Inner Product [Adapted from Gautchi,
- Definition 1.1,
- p.1]
+Positive Definiteness of an Inner Product
 \end_layout
 
 \end_inset
@@ -574,7 +575,7 @@ i.e.,
 \end_layout
 
 \begin_layout Proof
-(Asi potom přepíšu svými slovy) As 
+As 
 \begin_inset Formula $P$
 \end_inset
 
@@ -786,7 +787,11 @@ Shift Property [Adapted from Gautchi,
 
 \end_inset
 
- Inner product's shift property is when for every 
+ Let inner product 
+\begin_inset Formula $\left\langle \cdot,\cdot\right\rangle _{w}$
+\end_inset
+
+ have the property for every 
 \begin_inset Formula $u,v\in P_{d}$
 \end_inset
 
@@ -814,12 +819,16 @@ nolink "false"
  
 \begin_inset Formula 
 \[
-\left\langle tu,v\right\rangle _{w}=\left\langle u,tv\right\rangle _{w}
+\left\langle tu,v\right\rangle _{w}=\left\langle u,tv\right\rangle _{w},
 \]
 
 \end_inset
 
-
+then we say it has 
+\emph on
+shift property
+\emph default
+.
 \end_layout
 
 \begin_layout Remark
@@ -1123,7 +1132,7 @@ nolink "false"
 \end_layout
 
 \begin_layout Proof
-Which therefore gives us 3 time recurrence from theorem:
+Which therefore gives us 3 term recurrence from theorem:
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "thm:normal-3-term-recurrence"
@@ -1232,7 +1241,7 @@ The roots
 \end_layout
 
 \begin_layout Proof
-(tento zacatek mozna jako samostatny Remark) If the first 
+If the first 
 \begin_inset Formula $n$
 \end_inset
 
@@ -1521,7 +1530,7 @@ where
 \begin_inset Formula $\tau_{v}$
 \end_inset
 
- are called nodes of an n-point Gauss quadrature rule
+ are called nodes of an n-point quadrature rule
 \end_layout
 
 \begin_layout Theorem

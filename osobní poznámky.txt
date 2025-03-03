@@ -19,9 +19,19 @@ X	Def 7: zapomel jsi na w ("with w from def 1")
 x	Theorem 9: důkaz pomocí G.O. ortogonalizačního procesu
 X	Theorem 10: definovat Orthonormalní polynomy
 X	Def 11: neni potřaba range, ale odkaz na 9 se bude hodit.
-	Remark 16: spis pokud mas zadany I a w, pak zname koreny a vahy pro L., urcime že nové váhy a kořeny se rovnají X.
-	Remark 17: I,w -> Polynomy se mi změní na násobek s jinými x
+X	Remark 16: spis pokud mas zadany I a w, pak zname koreny a vahy pro L., urcime že nové váhy a kořeny se rovnají X.
+X	Remark 17: I,w -> Polynomy se mi změní na násobek s jinými x
 Myslím že byly prohozené 16 a 17 oproti tomu co mám v poznámkách (nezáleží na tom)
 "Dělej to tak jako by si to někomu vysvětloval, přečti si to co si napsal a přemýšlej jestli by si to pochopil se základníma znalostma z prváku" 
-	
+------------------------------------------------------------------
+potřebuju ještě dopsat theorem pro Remark 23, aby proof dával smysl.
+zeptám se učitele jestli to od něho můžu opsat a zda jsou moje důkazy ok. - "Měl by sis to přečíst a napsat podle sebe"
+měl bych více používat AI pro opravu přehlednosti a pravopisu.
+Podívej se na Bakalářky ostatních
+najdi si formát pro bakalářky
+ALT + M + [{( pro závorky
+Nadpisy a popisy mezi větami a definicemi.
+------------------------------------------------------------------
+Popisky k grafům (numerické experimenty)
+
 
