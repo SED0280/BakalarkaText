@@ -179,7 +179,7 @@ name "def:polynomials-of-degree"
 
 \end_inset
 
-For non-negative integer 
+For a non-negative integer 
 \begin_inset Formula $d$
 \end_inset
 
@@ -270,16 +270,19 @@ Let
 \uwave default
 \noun default
 \color inherit
-.
  
 \begin_inset Formula 
 \[
-\forall x\in I:w(x)>0
+\forall x\in I:w(x)>0,
 \]
 
 \end_inset
 
-
+is called a 
+\emph on
+Weight function
+\emph default
+.
 \end_layout
 
 \begin_layout Remark
@@ -331,7 +334,7 @@ nolink "false"
  Then all moments are finite:
 \begin_inset Formula 
 \[
-\mu_{r}\coloneqq\int_{\mathbb{R}}w(x)x^{r}\,dx,\;r=0,1,2,\ldots,\;with\:\forall r:\mu_{r}<\infty.
+\mu_{r}\coloneqq\int_{\mathbb{R}}w(x)x^{r}\,dx\in\mathbb{R},\;r=0,1,2,\ldots,\;with\:\forall r:\left|\mu_{r}\right|<\infty.
 \]
 
 \end_inset
@@ -378,15 +381,15 @@ nolink "false"
 \end_inset
 
 ,
- a weighted inner product may be defined as
+ a weighted inner product is defined as
 \begin_inset Formula 
 \[
-\left\langle u,v\right\rangle _{w}=\int_{I}w(x)u(x)v(x)\,dx
+\left\langle u,v\right\rangle _{w}=\int_{I}w(x)u(x)v(x)\,dx,
 \]
 
 \end_inset
 
- The corresponding norm is
+ with the corresponding norm being
 \begin_inset Formula 
 \[
 \left\Vert u\right\Vert _{w}=\sqrt{\left\langle u,u\right\rangle _{w}}
@@ -439,7 +442,7 @@ Monic polynomials
 
 \end_inset
 
-For non-negative integer 
+For a non-negative integer 
 \begin_inset Formula $d$
 \end_inset
 
@@ -488,7 +491,7 @@ For non-negative integer
  the set of normalized polynomials is defined as 
 \begin_inset Formula 
 \[
-\tilde{P_{d}}\coloneqq\left\{ \tilde{p}\in P_{d}:\left\Vert \tilde{p}\right\Vert _{w}=1\right\} 
+\widetilde{P_{d}}\coloneqq\left\{ \tilde{p}\in P_{d}:\left\Vert \tilde{p}\right\Vert _{w}=1\right\} 
 \]
 
 \end_inset
@@ -508,9 +511,7 @@ For non-negative integer
 status open
 
 \begin_layout Plain Layout
-Positive Definiteness of an Inner Product [Adapted from Gautchi,
- Definition 1.1,
- p.1]
+Positive Definiteness of an Inner Product
 \end_layout
 
 \end_inset
@@ -786,7 +787,11 @@ Shift Property [Adapted from Gautchi,
 
 \end_inset
 
- Inner product's shift property is when for every 
+ Let inner product 
+\begin_inset Formula $\left\langle \cdot,\cdot\right\rangle _{w}$
+\end_inset
+
+ have the property for every 
 \begin_inset Formula $u,v\in P_{d}$
 \end_inset
 
@@ -814,12 +819,16 @@ nolink "false"
  
 \begin_inset Formula 
 \[
-\left\langle tu,v\right\rangle _{w}=\left\langle u,tv\right\rangle _{w}
+\left\langle tu,v\right\rangle _{w}=\left\langle u,tv\right\rangle _{w},
 \]
 
 \end_inset
 
-
+then we say it has 
+\emph on
+shift property
+\emph default
+.
 \end_layout
 
 \begin_layout Remark
@@ -1123,7 +1132,7 @@ nolink "false"
 \end_layout
 
 \begin_layout Proof
-Which therefore gives us 3 time recurrence from theorem:
+Which therefore gives us 3 term recurrence from theorem:
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "thm:normal-3-term-recurrence"
@@ -1225,7 +1234,7 @@ The roots
 
  of order n,
  and 
-\begin_inset Formula $\tilde{\pi}\left(\tau_{v}^{(n)}\right)$
+\begin_inset Formula $\tilde{\boldsymbol{\pi}}\left(\tau_{v}^{(n)}\right)$
 \end_inset
 
  are corresponding eigenvectors.
@@ -1258,7 +1267,7 @@ t\tilde{\pi}_{k}(x)=\sqrt{\beta_{k}}\tilde{\pi}_{k-1}(x)+\alpha_{k}\tilde{\pi}_{
 and one lets
 \begin_inset Formula 
 \[
-\tilde{\pi}(x)=\left[\tilde{\pi}_{0}(x),\tilde{\pi}_{1}(x),\ldots,\tilde{\pi}_{n-1}(x)\right]^{T},
+\tilde{\boldsymbol{\pi}}(x)=\left[\tilde{\pi}_{0}(x),\tilde{\pi}_{1}(x),\ldots,\tilde{\pi}_{n-1}(x)\right]^{T},
 \]
 
 \end_inset
@@ -1266,7 +1275,7 @@ and one lets
 then we can express these equations in matrix form as 
 \begin_inset Formula 
 \[
-t\tilde{\pi}(x)=J_{n}\tilde{\pi}(x)+\sqrt{\beta_{n}}\tilde{\pi}_{n}(x)e_{n},
+t\tilde{\boldsymbol{\pi}}(x)=J_{n}\tilde{\boldsymbol{\pi}}(x)+\sqrt{\beta_{n}}\tilde{\boldsymbol{\pi}}_{n}(x)e_{n},
 \]
 
 \end_inset
@@ -1289,12 +1298,12 @@ th coordinate vector in
 \end_inset
 
  and noting that 
-\begin_inset Formula $\tilde{\pi}(\tau_{v}^{(n)})\neq0$
+\begin_inset Formula $\tilde{\boldsymbol{\pi}}(\tau_{v}^{(n)})\neq0$
 \end_inset
 
 ,
  the first component of 
-\begin_inset Formula $\tilde{\pi}(\tau_{v}^{(n)})$
+\begin_inset Formula $\tilde{\boldsymbol{\pi}}(\tau_{v}^{(n)})$
 \end_inset
 
  being 
@@ -1304,7 +1313,7 @@ th coordinate vector in
 
 \begin_inset Formula 
 \[
-\tau_{v}^{(n)}\tilde{\pi}(\tau_{v}^{(n)})=J_{n}\tilde{\pi}(\tau_{v}^{(n)})+\sqrt{\beta_{n}}\tilde{\pi}_{n}(\tau_{v}^{(n)})e_{n},
+\tau_{v}^{(n)}\tilde{\boldsymbol{\pi}}(\tau_{v}^{(n)})=J_{n}\tilde{\boldsymbol{\pi}}(\tau_{v}^{(n)})+\sqrt{\beta_{n}}\tilde{\pi}_{n}(\tau_{v}^{(n)})e_{n},
 \]
 
 \end_inset
@@ -1521,7 +1530,7 @@ where
 \begin_inset Formula $\tau_{v}$
 \end_inset
 
- are called nodes of an n-point Gauss quadrature rule
+ are called nodes of an n-point quadrature rule
 \end_layout
 
 \begin_layout Theorem
@@ -2023,6 +2032,128 @@ Let us denote
 
 \begin_layout Proof
 \begin_inset Formula $\lambda_{j}=\frac{\int_{a}^{b}\prod_{i\neq j,i=0}^{n}\left(x-\tau_{i}\right)\,dx}{\prod_{i\neq j,i=0}^{n}\left(\tau_{j}-\tau_{i}\right)}=\frac{\int_{a}^{b}\prod_{i\neq j,i=0}^{n}\left(x-\frac{a+b}{2}-\frac{b-a}{2}\tau_{i}^{L}\right)\,dx}{\prod_{i\neq j,i=0}^{n}\left(\frac{a+b}{2}+\frac{b-a}{2}\tau_{j}^{L}-\frac{a+b}{2}-\frac{b-a}{2}\tau_{i}^{L}\right)}=\frac{\int_{-1}^{1}\frac{b-a}{2}\prod_{i\neq j,i=0}^{n}\left(\frac{a+b}{2}+\frac{b-a}{2}\hat{x}-\frac{a+b}{2}-\frac{b-a}{2}\tau_{i}^{L}\right)\,d\hat{x}}{\prod_{i\neq j,i=0}^{n}\left(\frac{b-a}{2}\left(\tau_{j}^{L}-\tau_{i}^{L}\right)\right)}=\frac{\left(\frac{b-a}{2}\right)^{n}\int_{-1}^{1}\prod_{i\neq j,i=0}^{n}\left(\hat{x}-\tau_{i}^{L}\right)\,d\hat{x}}{\left(\frac{b-a}{2}\right)^{n-1}\prod_{i\neq j,i=0}^{n}\left(\tau_{j}^{L}-\tau_{i}^{L}\right)}=\frac{b-a}{2}\,\frac{\int_{-1}^{1}\prod_{i\neq j,i=0}^{n}\left(\hat{x}-\tau_{i}^{L}\right)\,d\hat{x}}{\prod_{i\neq j,i=0}^{n}\left(\tau_{j}^{L}-\tau_{i}^{L}\right)}=\frac{b-a}{2}\lambda_{j}^{L}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Banach Space
+\end_layout
+
+\end_inset
+
+ A Banach space is a complete normed vector space.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Lp Spaces
+\end_layout
+
+\end_inset
+
+ Let 
+\begin_inset Formula $\left(Y,\left\Vert \cdot\right\Vert _{Y}\right)$
+\end_inset
+
+be Banach space and 
+\begin_inset Formula $1\leq p<\infty$
+\end_inset
+
+.
+ For a domain D,
+ 
+\begin_inset Formula $L^{p}\left(D\right)$
+\end_inset
+
+ is the set of Borel measurable functions 
+\begin_inset Formula $u:D\rightarrow\mathbb{R}$
+\end_inset
+
+ with 
+\begin_inset Formula $\left\Vert u\right\Vert _{L^{p}\left(D\right)}<\infty$
+\end_inset
+
+,
+ where
+\begin_inset Formula 
+\[
+\left\Vert u\right\Vert _{L^{p}\left(D\right)}\coloneqq\left(\int_{D}\left|u\left(x\right)\right|^{p}dx\right)^{1/p}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Lemma
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Hilbert space
+\end_layout
+
+\end_inset
+
+ When 
+\begin_inset Formula $p=2$
+\end_inset
+
+,
+ there is an inner product and 
+\begin_inset Formula $L^{2}(D)$
+\end_inset
+
+ is a Hilbert space.
+ Functions in this space are called 
+\emph on
+square integrable
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+For any domain D,
+ 
+\begin_inset Formula $L^{2}(D)$
+\end_inset
+
+ is a real Hilbert space with inner product
+\begin_inset Formula 
+\[
+\left\langle u,v\right\rangle _{L^{2}(D)}\coloneqq\int_{D}u\left(\boldsymbol{x}\right)v\left(\boldsymbol{x}\right)d\boldsymbol{x}.
+\]
+
 \end_inset
 
 
