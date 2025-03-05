@@ -2505,5 +2505,98 @@ Let us have a set
 .
 \end_layout
 
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Expected Value
+\end_layout
+
+\end_inset
+
+ Let X be random variable on the probability space 
+\begin_inset Formula $\left(\Omega,\mathcal{F},\mathbb{P}\right)$
+\end_inset
+
+.
+ For a discrete random variable X with possible outcomes 
+\begin_inset Formula $x_{1},x_{2},\ldots,x_{n}$
+\end_inset
+
+ and corresponding probabilities 
+\begin_inset Formula $p\left(x_{1}\right),p\left(x_{2}\right),\ldots,p\left(x_{n}\right)$
+\end_inset
+
+,
+ the expected value is:
+\begin_inset Formula 
+\[
+\mathbb{E}\left[X\right]\coloneqq\sum_{i=1}^{n}x_{i}p\left(x_{i}\right)
+\]
+
+\end_inset
+
+For a continuous random variable X with probability density function (PDF) 
+\begin_inset Formula $f\left(x\right)$
+\end_inset
+
+,
+ the expected value is
+\begin_inset Formula 
+\[
+\mathbb{E}\left[X\right]\coloneqq\int_{-\infty}^{\infty}x\,f\left(x\right)\,dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Covariance [Adapted from Lord,
+ Definition 4.14,
+ p.142]
+\end_layout
+
+\end_inset
+
+The covariance of two real-valued random variables X and Y is
+\begin_inset Formula 
+\[
+Cov\left(X,Y\right)\coloneqq\mathbb{E}\left[\left(X-\mu_{X}\right)\left(Y-\mu_{Y}\right)\right]=\mathbb{E}\left[XY\right]-\mu_{X}\mu_{Y},
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $\mu_{X}=\mathbb{E}\left[X\right]$
+\end_inset
+
+ and 
+\begin_inset Formula $\mu_{Y}=\mathbb{E}\left[Y\right]$
+\end_inset
+
+ 
+\end_layout
+
 \end_body
 \end_document
