@@ -2346,7 +2346,7 @@ Let
 \end_inset
 
 .
- To emphasise the 
+ To emphasize the 
 \begin_inset Formula $\sigma$
 \end_inset
 
@@ -2372,7 +2372,11 @@ Let
 \begin_inset Formula $\Psi$
 \end_inset
 
- and is called a realisation of X.
+ and is called a 
+\emph on
+realization
+\emph default
+ of X.
 \end_layout
 
 \end_body

@@ -2379,5 +2379,131 @@ realization
  of X.
 \end_layout
 
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Random vector
+\end_layout
+
+\end_inset
+
+A random vector 
+\begin_inset Formula $\mathbb{X}\coloneqq\left(X_{1},X_{2},\ldots,X_{n}\right)$
+\end_inset
+
+ is a vector where each element 
+\begin_inset Formula $X_{i},i=1,2,\ldots,n,$
+\end_inset
+
+ is a random variable.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Stochastic Process [Adapted from Lord,
+ Definition 5.2,
+ p.182]
+\end_layout
+
+\end_inset
+
+ Given a set 
+\begin_inset Formula $\mathcal{T}\subset\mathbb{R}$
+\end_inset
+
+,
+ a measurable space 
+\begin_inset Formula $(H,\mathcal{H})$
+\end_inset
+
+,
+ and a probability space 
+\begin_inset Formula $(\Omega,\mathcal{F},\mathbb{P})$
+\end_inset
+
+,
+ a H-valued 
+\emph on
+stochastic process
+\emph default
+ (also known as Random process) is a set of H-valued random variables 
+\begin_inset Formula $\left\{ X(t):t\in\mathcal{T}\right\} $
+\end_inset
+
+.
+ Stochastic process can be simply denoted as 
+\begin_inset Formula $X(t)$
+\end_inset
+
+ where 
+\begin_inset Formula $X:\mathcal{T}\times\Omega\rightarrow H$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Random Field [Adapted from Lord,
+ Definition 7.2,
+ p.258]
+\end_layout
+
+\end_inset
+
+Let us have a set 
+\begin_inset Formula $D\subset\mathbb{R}^{d}$
+\end_inset
+
+,
+ random field 
+\begin_inset Formula $\left\{ u(\boldsymbol{x}):\boldsymbol{x}\in D\right\} $
+\end_inset
+
+ is a set of real-valued random variables on a probability space 
+\begin_inset Formula $\left(\Omega,\mathcal{F},\mathbb{P}\right)$
+\end_inset
+
+.
+ Random field can be simply denoted as 
+\begin_inset Formula $u\left(\boldsymbol{x}\right)$
+\end_inset
+
+ where 
+\begin_inset Formula $u:D\times\Omega\rightarrow\mathbb{R}$
+\end_inset
+
+.
+\end_layout
+
 \end_body
 \end_document
