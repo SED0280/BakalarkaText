@@ -2113,12 +2113,12 @@ be Banach space and
 status open
 
 \begin_layout Plain Layout
-Hilbert space
+Hilbert Space
 \end_layout
 
 \end_inset
 
- When 
+When 
 \begin_inset Formula $p=2$
 \end_inset
 
@@ -2157,6 +2157,226 @@ For any domain D,
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Let us have a probability space 
+\begin_inset Formula $\left(\Omega,\mathcal{F},\mathbb{P}\right)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\Omega$
+\end_inset
+
+ is the sample space in an experiment and it is the set of all possible outcomes.
+ For example in a roll of a dice there are six possible outcomes and 
+\begin_inset Formula $\Omega=\left\{ 1,2,3,4,5,6\right\} $
+\end_inset
+
+ and,
+ in a sequence of M rolls,
+ 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\Omega=\left\{ 1,2,3,4,5,6\right\} ^{M}.$
+\end_inset
+
+ In general,
+ the sample space is an abstract set,
+ one large enough to parameterize all possible outcomes of the experiment.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\mathcal{F}$
+\end_inset
+
+ is a collection of subsets of 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ and comprises those subsets to which we can assign probabilities.
+ Formally,
+ it is a 
+\emph on
+
+\begin_inset Formula $\sigma$
+\end_inset
+
+-algebra
+\emph default
+.
+ Any measurable set 
+\begin_inset Formula $F\in\mathcal{F}$
+\end_inset
+
+is known as an 
+\emph on
+event
+\emph default
+.
+ Each event corresponds to a set of outcomes in the experiment.
+ For example in the dice rolls,
+ lets say we want to know the probability of rolling an even number and so the set 
+\begin_inset Formula $F=\left\{ 2,4,6\right\} $
+\end_inset
+
+ is included as an event in the 
+\begin_inset Formula $\sigma$
+\end_inset
+
+-algebra 
+\begin_inset Formula $\mathcal{F}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The probability measure 
+\begin_inset Formula $\mathbb{P}$
+\end_inset
+
+ assigns a probability,
+ a number between 0 and 1,
+ to every measurable set in 
+\begin_inset Formula $\mathcal{F}$
+\end_inset
+
+.
+ Higher probability means the event is more likely to occur in an experiment.
+ For a dice roll the probability of rolling an even number (
+\begin_inset Formula $F=\left\{ 2,4,6\right\} $
+\end_inset
+
+) would be 
+\begin_inset Formula $\mathbb{P}\left(\left\{ 2,4,6\right\} \right)=1/2$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Definition
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Probability measure [Adapted from Lord,
+ Definition 4.1,
+ p.138] 
+\end_layout
+
+\end_inset
+
+A measure 
+\begin_inset Formula $\mathbb{P}$
+\end_inset
+
+ on 
+\begin_inset Formula $(\Omega,\mathcal{F})$
+\end_inset
+
+ is a 
+\emph on
+probability measure
+\emph default
+ if it has unit total mass,
+ 
+\begin_inset Formula $\mathbb{P}(\Omega)=1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Random Variables,
+ Realisation [Adapted from Lord,
+ Definition 4.3,
+ p.138]
+\end_layout
+
+\end_inset
+
+Let 
+\begin_inset Formula $\left(\Omega,\mathcal{F},\mathbb{P}\right)$
+\end_inset
+
+ be a probability space and let 
+\begin_inset Formula $\left(\Psi,\mathcal{G}\right)$
+\end_inset
+
+ be a measurable space.
+ Then,
+ X is a 
+\begin_inset Formula $\Psi$
+\end_inset
+
+-valued random variable if X is a measurable function from 
+\begin_inset Formula $\left(\Omega,\mathcal{F}\right)$
+\end_inset
+
+ to 
+\begin_inset Formula $\left(\Psi,\mathcal{G}\right)$
+\end_inset
+
+.
+ To emphasize the 
+\begin_inset Formula $\sigma$
+\end_inset
+
+-algebra on 
+\begin_inset Formula $\Omega$
+\end_inset
+
+,
+ we may write that X is an 
+\begin_inset Formula $\mathcal{F}$
+\end_inset
+
+-measurable random variable.
+ The observed value of 
+\begin_inset Formula $X(\omega)$
+\end_inset
+
+ for a given 
+\begin_inset Formula $\omega\in\Omega$
+\end_inset
+
+ belongs to 
+\begin_inset Formula $\Psi$
+\end_inset
+
+ and is called a 
+\emph on
+realization
+\emph default
+ of X.
 \end_layout
 
 \end_body
