@@ -2692,15 +2692,197 @@ A stochastic process
 \end_inset
 
 .
- We then write 
-\begin_inset Formula $C\left(s,t\right)=C\left(s-t,0\right)=c\left(s-t\right),$
+ 
+\end_layout
+
+\begin_layout Lemma
+Covariance function of a stationary stochastic process 
+\begin_inset Formula $\left\{ X\left(t\right):t\in\mathcal{T}\right\} $
 \end_inset
 
- where 
+ can be written as 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula 
+\[
+C\left(s,t\right)=C\left(s-t,0\right)\eqqcolon c\left(s-t\right),
+\]
+
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ where
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
 \begin_inset Formula $c\left(t\right)$
 \end_inset
 
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
  is known as stationary covariance function.
+\end_layout
+
+\begin_layout Definition
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Isotropic Random Field [Adapted from Lord,
+ Definition 7.14,
+ p.263]
+\end_layout
+
+\end_inset
+
+ A stationary random field 
+\begin_inset Formula $\left\{ X\left(\boldsymbol{x}\right):\boldsymbol{x}\in\mathbb{R}^{d}\right\} $
+\end_inset
+
+ is isotropic if the stationary covariance 
+\begin_inset Formula $c\left(\boldsymbol{x}\right)$
+\end_inset
+
+ is invariant to rotations.
+ 
+\end_layout
+
+\begin_layout Lemma
+Let 
+\begin_inset Formula $\left\{ X\left(\boldsymbol{x}\right):\boldsymbol{x}\in\mathbb{R}^{d}\right\} $
+\end_inset
+
+ be a isotropic stationary random field and 
+\begin_inset Formula $c\left(\boldsymbol{x}\right)$
+\end_inset
+
+ its stationary covariance,
+ then the mean 
+\begin_inset Formula $\mu$
+\end_inset
+
+ of 
+\begin_inset Formula $X\left(\boldsymbol{x}\right)$
+\end_inset
+
+ is constant and 
+\begin_inset Formula $c\left(\boldsymbol{x}\right)=c^{0}\left(r\right),$
+\end_inset
+
+ where 
+\begin_inset Formula $r\coloneqq\left\Vert \boldsymbol{x}\right\Vert _{2}$
+\end_inset
+
+,
+ for a function 
+\begin_inset Formula $c^{0}:\mathbb{R}^{+}\rightarrow\mathbb{R}$
+\end_inset
+
+ known as the isotropic covariance.
+\end_layout
+
+\begin_layout Section*
+Karhunen–Loève expansion
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $X\left(t\right)$
+\end_inset
+
+ be a stochastic process and 
+\begin_inset Formula $\mu\left(t\right)=\mathbb{E}\left[X\left(t\right)\right]$
+\end_inset
+
+.
+ Consider the mean-zero process 
+\begin_inset Formula $X\left(t\right)-\mu\left(t\right)$
+\end_inset
+
+.
+ We are interested in writing sample paths 
+\begin_inset Formula $X\left(t,\omega\right)-\mu\left(t\right)$
+\end_inset
+
+ as a series in an orthonormal basis 
+\begin_inset Formula $\left\{ \phi_{j}:j\in\mathbb{N}\right\} $
+\end_inset
+
+ of 
+\begin_inset Formula $L^{2}\left(\mathcal{T}\right)$
+\end_inset
+
+.
+ That is,
+ 
+\begin_inset Formula 
+\[
+X\left(t,\omega\right)-\mu\left(t\right)=\sum_{j=1}^{\infty}\gamma_{j}\left(\omega\right)\phi_{j}\left(t\right)
+\]
+
+\end_inset
+
+where the coefficients 
+\begin_inset Formula $\gamma_{j}$
+\end_inset
+
+ are random variables given by
+\begin_inset Formula 
+\[
+\gamma_{j}\left(\omega\right)\coloneqq\left\langle X\left(t,\omega\right)-\mu\left(t\right),\phi_{j}\left(t\right)\right\rangle _{L^{2}\left(\mathcal{T}\right)}.
+\]
+
+\end_inset
+
+
 \end_layout
 
 \end_body

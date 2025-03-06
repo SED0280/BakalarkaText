@@ -2795,7 +2795,7 @@ Isotropic Random Field [Adapted from Lord,
  
 \end_layout
 
-\begin_layout Theorem
+\begin_layout Lemma
 Let 
 \begin_inset Formula $\left\{ X\left(\boldsymbol{x}\right):\boldsymbol{x}\in\mathbb{R}^{d}\right\} $
 \end_inset
@@ -2827,6 +2827,50 @@ Let
 \end_inset
 
  known as the isotropic covariance.
+\end_layout
+
+\begin_layout Section*
+Karhunen–Loève expansion
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $X\left(t\right)$
+\end_inset
+
+ be a stochastic process and 
+\begin_inset Formula $\mu\left(t\right)=\mathbb{E}\left[X\left(t\right)\right]$
+\end_inset
+
+.
+ Consider the mean-zero process 
+\begin_inset Formula $X\left(t\right)-\mu\left(t\right)$
+\end_inset
+
+.
+ We are interested in writing sample paths 
+\begin_inset Formula $X\left(t,\omega\right)-\mu\left(t\right)$
+\end_inset
+
+ as a series in an orthonormal basis 
+\begin_inset Formula $\left\{ \phi_{j}:j\in\mathbb{N}\right\} $
+\end_inset
+
+ of 
+\begin_inset Formula $L^{2}\left(\mathcal{T}\right)$
+\end_inset
+
+.
+ That is,
+ 
+\begin_inset Formula 
+\[
+X\left(t,\omega\right)-\mu\left(t\right)=\sum_{j=1}^{\infty}\gamma_{j}\left(\omega\right)\phi_{j}\left(t\right)
+\]
+
+\end_inset
+
+where the 
 \end_layout
 
 \end_body
