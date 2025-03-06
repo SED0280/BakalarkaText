@@ -33,5 +33,6 @@ ALT + M + [{( pro závorky
 Nadpisy a popisy mezi větami a definicemi.
 ------------------------------------------------------------------
 Popisky k grafům (numerické experimenty)
+2 definice pro L2?
 
 

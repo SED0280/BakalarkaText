@@ -2598,5 +2598,110 @@ where
  
 \end_layout
 
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Autocovariance function
+\end_layout
+
+\end_inset
+
+Autocovariance function 
+\begin_inset Formula $C\left(s,t\right)$
+\end_inset
+
+ of a stochastic process 
+\begin_inset Formula $\left\{ X\left(t\right):t\in\mathcal{T}\right\} $
+\end_inset
+
+ is a function defined as
+\begin_inset Formula 
+\[
+C\left(s,t\right)\coloneqq Cov\left(X\left(s\right),X\left(t\right)\right),
+\]
+
+\end_inset
+
+for all 
+\begin_inset Formula $s,t\in\mathcal{T}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Stationary process [Adapted from Lord,
+ Definition 6.1,
+ p.217]
+\end_layout
+
+\end_inset
+
+A stochastic process 
+\begin_inset Formula $\left\{ X\left(t\right):t\in\mathcal{T}\right\} $
+\end_inset
+
+ is called stationary if the mean 
+\begin_inset Formula $\mu(t)$
+\end_inset
+
+ is independent of 
+\begin_inset Formula $t$
+\end_inset
+
+ and the covariance function 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $C\left(s,t\right)$
+\end_inset
+
+ is dependent only on the difference 
+\begin_inset Formula $s-t$
+\end_inset
+
+.
+ We then write 
+\begin_inset Formula $C\left(s,t\right)=C\left(s-t,0\right)=c\left(s-t\right),$
+\end_inset
+
+ where 
+\begin_inset Formula $c\left(t\right)$
+\end_inset
+
+ is known as stationary covariance function.
+\end_layout
+
 \end_body
 \end_document
