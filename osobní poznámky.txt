@@ -34,5 +34,24 @@ Nadpisy a popisy mezi větami a definicemi.
 ------------------------------------------------------------------
 Popisky k grafům (numerické experimenty)
 2 definice pro L2?
-
-
+------------------------------------------------------------------
+Kapitoly:
+Chapter 1 basic stuff
+	polynomials
+	weights
+	inner product
+		positive definiteness
+	three term recurence
+		Jacobi matrix
+Chapter 2 Quadratures
+	quadrature rule
+	Lagrange over interval
+Chapter 3 Probability stuff
+	L2 space
+	Probability
+		Random Variable
+		Random Vector
+		Stochaistic process
+		Random field
+	Covarience
+Chapter 4 Krahunen-loeve

@@ -4,11 +4,49 @@
 \begin_header
 \save_transient_properties true
 \origin unavailable
-\textclass article
+\textclass diploma
 \begin_preamble
+\ThesisAuthor{Michal Sedlář}
+\ThesisSupervisor{Ing. Michal Béreš, Ph.D.}
+
+\CzechThesisTitle{Aproximace Karhunen-Loèveho rozkladu izotropních Gaussovských
+náhodných polí pomocí ortogonálních polynomů a Gaussových
+kvadratur}
+
+\EnglishThesisTitle{Approximation of Karhunen-Loève Decomposition of Isotropic
+Gaussian Random Fields Using Orthogonal Polynomials and Gaussian
+Quadratures}
+
+\SubmissionYear{2025}
+
+\ThesisAssignmentFileName{ThesisAssignment.pdf}
+
+\Acknowledgement{TEMPLATE TEMPLATE TEMPLATE TEMPLATE TEMPLATE TEMPLATE TEMPLATE TEMPLATE TEMPLATE}
+
+\CzechAbstract{TEMPLATE TEMPLATE TEMPLATE TEMPLATE TEMPLATE TEMPLATE TEMPLATE TEMPLATE TEMPLATE}
+\CzechKeywords{TEMPLATE; TEMPLATE; TEMPLATE}
+
+\EnglishAbstract{TEMPLATE TEMPLATE TEMPLATE TEMPLATE TEMPLATE TEMPLATE TEMPLATE TEMPLATE TEMPLATE}
+\EnglishKeywords{TEMPLATE; TEMPLATE; TEMPLATE}
+
+
+
+\AddAcronym{$P$}{space of all real polynomials}
+\AddAcronym{$\mathbb{T}$}{TEMPLATE\\}
+
+\AddAcronym{pdf}{probability density function}
+\AddAcronym{TEMPLATE}{TEMPLATE\\}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%% nastaveni boxu definic a theoremu
 \usepackage{xcolor}    % Colors
 \usepackage{amsthm}    % Theorem formatting
 \usepackage{mdframed}  % Framed boxes
+\usepackage{amssymb}
+\usepackage{cancel, amsmath}
 
 % Define custom colors
 \definecolor{lightgray}{rgb}{0.95,0.95,0.95}  % Light gray for theorem
@@ -76,15 +114,16 @@
 \let\endolddefn\enddefn
 \renewcommand{\enddefn}{\endolddefn\end{defnBox}}
 \end_preamble
-\use_default_options true
+\options english, bachelor
+\use_default_options false
 \begin_modules
 theorems-ams
 \end_modules
 \maintain_unincluded_children no
 \language english
-\language_package default
+\language_package none
 \inputencoding utf8
-\fontencoding auto
+\fontencoding default
 \font_roman "default" "default"
 \font_sans "default" "default"
 \font_typewriter "default" "default"
@@ -102,7 +141,7 @@ theorems-ams
 \graphics default
 \default_output_format default
 \output_sync 0
-\bibtex_command default
+\bibtex_command biber
 \index_command default
 \float_placement class
 \float_alignment class
@@ -112,24 +151,27 @@ theorems-ams
 \papersize default
 \use_geometry false
 \use_package amsmath 1
-\use_package amssymb 1
-\use_package cancel 1
+\use_package amssymb 0
+\use_package cancel 0
 \use_package esint 1
-\use_package mathdots 1
-\use_package mathtools 1
-\use_package mhchem 1
-\use_package stackrel 1
-\use_package stmaryrd 1
-\use_package undertilde 1
-\cite_engine basic
-\cite_engine_type default
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine biblatex
+\cite_engine_type authoryear
 \biblio_style plain
+\biblio_options backend=biber, style=iso-numeric, alldates=iso
+\biblatex_bibstyle iso-numeric
+\biblatex_citestyle iso-numeric
 \use_bibtopic false
 \use_indices false
 \paperorientation portrait
 \suppress_date false
 \justification true
-\use_refstyle 1
+\use_refstyle 0
 \use_formatted_ref 0
 \use_minted 0
 \use_lineno 0
@@ -161,6 +203,151 @@ theorems-ams
 \end_header
 
 \begin_body
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+MakeTitlePages
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FloatList figure
+
+\end_inset
+
+
+\begin_inset Newpage clearpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FloatList table
+
+\end_inset
+
+
+\begin_inset Newpage clearpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Introduction
+\end_layout
+
+\begin_layout Standard
+TEMPLATE
+\end_layout
+
+\begin_layout Chapter
+Polynomials
+\end_layout
+
+\begin_layout Chapter
+Quadrature rule
+\end_layout
+
+\begin_layout Chapter
+Probability stuff (rename later)
+\end_layout
+
+\begin_layout Chapter
+Karhunen-Loéve expansion
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Gautschi2004,LordPowellShardlow2014"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+TEMPLATE
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+TEMPLATE
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+TEMPLATE
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement document
+alignment document
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+TEMPLATE
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+TEMPLATE
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \begin_layout Definition
 \begin_inset Argument 1
@@ -232,21 +419,7 @@ name "def:weigh-function"
 
 \end_inset
 
-Let
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\nospellcheck off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
- 
+Let 
 \begin_inset Formula $I=\left\langle a,b\right\rangle \subset\mathbb{R}$
 \end_inset
 
@@ -256,21 +429,7 @@ Let
 \begin_inset Formula $w(x)\in C(I)$
 \end_inset
 
- that satisfies
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\nospellcheck default
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
- 
+ that satisfies 
 \begin_inset Formula 
 \[
 \forall x\in I:w(x)>0,
@@ -850,7 +1009,7 @@ status open
 \begin_layout Plain Layout
 Three term recurrence [Adapted from Gautchi,
  Theorem 1.27,
- p.10] 
+ p.10]
 \end_layout
 
 \end_inset
@@ -1356,19 +1515,7 @@ This shows that
 
 \begin_layout Corollary
 
-\family roman
-\series medium
 \shape up
-\size normal
-\emph off
-\nospellcheck off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
 \begin_inset Argument 1
 status open
 
@@ -1396,19 +1543,7 @@ Let
 \end_inset
 
  denote the normalized eigenvector of
-\family default
-\series default
 \shape default
-\size default
-\emph default
-\nospellcheck default
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
  
 \begin_inset Formula $J_{n}$
 \end_inset
@@ -1426,19 +1561,7 @@ J_{n}v_{v}=\tau_{v}^{(n)}v_{v},\;v_{v}^{T}v_{v}=1,
 \end_inset
 
 and let 
-\family roman
-\series medium
 \shape up
-\size normal
-\emph off
-\nospellcheck off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
 
 \begin_inset Formula $v_{v,1}$
 \end_inset
@@ -1557,37 +1680,13 @@ If the Quadrature rule is obtained by integrating the Lagrange interpolation for
 
 ,
  and the node polynomial 
-\family roman
-\series medium
 \shape up
-\size normal
-\emph off
-\nospellcheck off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
 
 \begin_inset Formula $\omega_{n}(x)=\prod_{v=1}^{n}(x-\tau_{v})$
 \end_inset
 
 
-\family default
-\series default
 \shape default
-\size default
-\emph default
-\nospellcheck default
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
  satisfies
 \begin_inset Formula $\int_{\mathbb{R}}\omega_{n}(x)p(x)\,dx=0$
 \end_inset
@@ -1612,9 +1711,28 @@ then Quadrature rule for positive definite inner product,
 status open
 
 \begin_layout Plain Layout
-Gauss Quardature from eigenvectors [Adapted from Gautchi,
+Gauss Quardature from eigenvectors 
+\begin_inset CommandInset citation
+LatexCommand cite
+after "Theorem 3.1"
+key "Gautschi2004"
+literal "false"
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+[Adapted from Gautchi,
  Theorem 3.1,
  p.153]
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1673,20 +1791,6 @@ status open
 \end_inset
 
 Let us have a vector 
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\nospellcheck off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
-
 \begin_inset Formula $\tilde{\pi}(x)=\left[\tilde{\pi}_{0}(x),\tilde{\pi}_{1}(x),\ldots,\tilde{\pi}_{n-1}(x)\right]^{T}$
 \end_inset
 
@@ -1838,39 +1942,11 @@ Orthogonal Lagrange polynomials denoted as
 \end_inset
 
  and a weight function 
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\nospellcheck off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
-
 \begin_inset Formula $w(x)=1$
 \end_inset
 
 .
- 
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\nospellcheck default
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-Let us have an interval 
+ Let us have an interval 
 \begin_inset Formula $I=\left\langle a,b\right\rangle ;a,b\in\mathbb{R}:a<b$
 \end_inset
 
@@ -1892,20 +1968,6 @@ Let us have an interval
 
 \begin_layout Proof
 Orthogonality of polynomials 
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\nospellcheck off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
-
 \begin_inset Formula $\pi_{i}(x)$
 \end_inset
 
@@ -1919,20 +1981,6 @@ Orthogonality of polynomials
 \end_inset
 
 .
-
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\nospellcheck default
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
  Let 
 \begin_inset Formula $\hat{x}=\frac{a+b}{a-b}+\frac{2}{b-a}x\Longrightarrow d\hat{x}=\frac{2}{b-a}dx\Longrightarrow\quad\int_{a}^{b}\pi_{i}^{L}\left(\frac{a+b}{a-b}+\frac{2}{b-a}x\right)\pi_{j}^{L}\left(\frac{a+b}{a-b}+\frac{2}{b-a}x\right)\,dx=\int_{-1}^{1}\frac{b-a}{2}\pi_{i}^{L}\left(\hat{x}\right)\pi_{j}^{L}\left(\hat{x}\right)\,d\hat{x}=\frac{b-a}{2}\int_{-1}^{1}\pi_{i}^{L}\left(\hat{x}\right)\pi_{j}^{L}\left(\hat{x}\right)\,d\hat{x}=0$
 \end_inset
@@ -1962,57 +2010,15 @@ Let us denote
 
  as their corresponding weights of quadrature.
  For orthogonal polynomials 
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\nospellcheck off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
-
 \begin_inset Formula $\pi(x)$
 \end_inset
 
  made from inner product over interval 
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\nospellcheck default
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-
 \begin_inset Formula $I=\left\langle a,b\right\rangle $
 \end_inset
 
 ,
  the roots are 
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\nospellcheck off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
-
 \begin_inset Formula $\tau_{i}=\frac{a+b}{2}+\frac{b-a}{2}\tau_{i}^{L}$
 \end_inset
 
@@ -2031,7 +2037,13 @@ Let us denote
 \end_layout
 
 \begin_layout Proof
-\begin_inset Formula $\lambda_{j}=\frac{\int_{a}^{b}\prod_{i\neq j,i=0}^{n}\left(x-\tau_{i}\right)\,dx}{\prod_{i\neq j,i=0}^{n}\left(\tau_{j}-\tau_{i}\right)}=\frac{\int_{a}^{b}\prod_{i\neq j,i=0}^{n}\left(x-\frac{a+b}{2}-\frac{b-a}{2}\tau_{i}^{L}\right)\,dx}{\prod_{i\neq j,i=0}^{n}\left(\frac{a+b}{2}+\frac{b-a}{2}\tau_{j}^{L}-\frac{a+b}{2}-\frac{b-a}{2}\tau_{i}^{L}\right)}=\frac{\int_{-1}^{1}\frac{b-a}{2}\prod_{i\neq j,i=0}^{n}\left(\frac{a+b}{2}+\frac{b-a}{2}\hat{x}-\frac{a+b}{2}-\frac{b-a}{2}\tau_{i}^{L}\right)\,d\hat{x}}{\prod_{i\neq j,i=0}^{n}\left(\frac{b-a}{2}\left(\tau_{j}^{L}-\tau_{i}^{L}\right)\right)}=\frac{\left(\frac{b-a}{2}\right)^{n}\int_{-1}^{1}\prod_{i\neq j,i=0}^{n}\left(\hat{x}-\tau_{i}^{L}\right)\,d\hat{x}}{\left(\frac{b-a}{2}\right)^{n-1}\prod_{i\neq j,i=0}^{n}\left(\tau_{j}^{L}-\tau_{i}^{L}\right)}=\frac{b-a}{2}\,\frac{\int_{-1}^{1}\prod_{i\neq j,i=0}^{n}\left(\hat{x}-\tau_{i}^{L}\right)\,d\hat{x}}{\prod_{i\neq j,i=0}^{n}\left(\tau_{j}^{L}-\tau_{i}^{L}\right)}=\frac{b-a}{2}\lambda_{j}^{L}$
+\begin_inset Formula 
+\begin{eqnarray*}
+\lambda_{j} & = & \frac{\int_{a}^{b}\intop_{a}^{b}\prod_{i\neq j,i=0}^{n}\left(x-\tau_{i}\right)\,dx}{\prod_{i\neq j,i=0}^{n}\left(\tau_{j}-\tau_{i}\right)}=\frac{\int_{a}^{b}\prod_{i\neq j,i=0}^{n}\left(x-\frac{a+b}{2}-\frac{b-a}{2}\tau_{i}^{L}\right)\,dx}{\prod_{i\neq j,i=0}^{n}\left(\frac{a+b}{2}+\frac{b-a}{2}\tau_{j}^{L}-\frac{a+b}{2}-\frac{b-a}{2}\tau_{i}^{L}\right)}=\\
+ &  & \frac{\int_{-1}^{1}\frac{b-a}{2}\prod_{i\neq j,i=0}^{n}\left(\frac{a+b}{2}+\frac{b-a}{2}\hat{x}-\frac{a+b}{2}-\frac{b-a}{2}\tau_{i}^{L}\right)\,d\hat{x}}{\prod_{i\neq j,i=0}^{n}\left(\frac{b-a}{2}\left(\tau_{j}^{L}-\tau_{i}^{L}\right)\right)}=\frac{\left(\frac{b-a}{2}\right)^{n}\int_{-1}^{1}\prod_{i\neq j,i=0}^{n}\left(\hat{x}-\tau_{i}^{L}\right)\,d\hat{x}}{\left(\frac{b-a}{2}\right)^{n-1}\prod_{i\neq j,i=0}^{n}\left(\tau_{j}^{L}-\tau_{i}^{L}\right)}=\\
+ &  & \frac{b-a}{2}\,\frac{\int_{-1}^{1}\prod_{i\neq j,i=0}^{n}\left(\hat{x}-\tau_{i}^{L}\right)\,d\hat{x}}{\prod_{i\neq j,i=0}^{n}\left(\tau_{j}^{L}-\tau_{i}^{L}\right)}=\frac{b-a}{2}\lambda_{j}^{L}
+\end{eqnarray*}
+
 \end_inset
 
 
@@ -2180,20 +2192,6 @@ Let us have a probability space
  and,
  in a sequence of M rolls,
  
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\nospellcheck off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
-
 \begin_inset Formula $\Omega=\left\{ 1,2,3,4,5,6\right\} ^{M}.$
 \end_inset
 
@@ -2278,7 +2276,7 @@ status open
 \begin_layout Plain Layout
 Probability measure [Adapted from Lord,
  Definition 4.1,
- p.138] 
+ p.138]
 \end_layout
 
 \end_inset
@@ -2419,9 +2417,28 @@ A random vector
 status open
 
 \begin_layout Plain Layout
-Stochastic Process [Adapted from Lord,
+Stochastic Process 
+\begin_inset CommandInset citation
+LatexCommand cite
+after "Definition 5.2"
+key "LordPowellShardlow2014"
+literal "false"
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+[Adapted from Lord,
  Definition 5.2,
  p.182]
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2473,9 +2490,28 @@ stochastic process
 status open
 
 \begin_layout Plain Layout
-Random Field [Adapted from Lord,
+Random Field 
+\begin_inset CommandInset citation
+LatexCommand cite
+after "Definition 7.2"
+key "LordPowellShardlow2014"
+literal "false"
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+[Adapted from Lord,
  Definition 7.2,
  p.258]
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2522,29 +2558,16 @@ Expected Value
 
 \end_inset
 
- Let X be random variable on the probability space 
+ Let 
+\begin_inset Formula $X$
+\end_inset
+
+ be random variable on the probability space 
 \begin_inset Formula $\left(\Omega,\mathcal{F},\mathbb{P}\right)$
 \end_inset
 
 .
- For a discrete random variable X with possible outcomes 
-\begin_inset Formula $x_{1},x_{2},\ldots,x_{n}$
-\end_inset
-
- and corresponding probabilities 
-\begin_inset Formula $p\left(x_{1}\right),p\left(x_{2}\right),\ldots,p\left(x_{n}\right)$
-\end_inset
-
-,
- the expected value is:
-\begin_inset Formula 
-\[
-\mathbb{E}\left[X\right]\coloneqq\sum_{i=1}^{n}x_{i}p\left(x_{i}\right)
-\]
-
-\end_inset
-
-For a continuous random variable X with probability density function (PDF) 
+ For a continuous random variable X with probability density function (PDF) 
 \begin_inset Formula $f\left(x\right)$
 \end_inset
 
@@ -2670,20 +2693,6 @@ A stochastic process
 \end_inset
 
  and the covariance function 
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\nospellcheck off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
-
 \begin_inset Formula $C\left(s,t\right)$
 \end_inset
 
@@ -2701,19 +2710,7 @@ Covariance function of a stationary stochastic process
 \end_inset
 
  can be written as 
-\family roman
-\series medium
 \shape up
-\size normal
-\emph off
-\nospellcheck off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
 
 \begin_inset Formula 
 \[
@@ -2723,51 +2720,15 @@ C\left(s,t\right)=C\left(s-t,0\right)\eqqcolon c\left(s-t\right),
 \end_inset
 
 
-\family default
-\series default
 \shape default
-\size default
-\emph default
-\nospellcheck default
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
  where
-\family roman
-\series medium
 \shape up
-\size normal
-\emph off
-\nospellcheck off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
  
 \begin_inset Formula $c\left(t\right)$
 \end_inset
 
 
-\family default
-\series default
 \shape default
-\size default
-\emph default
-\nospellcheck default
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
  is known as stationary covariance function.
 \end_layout
 
@@ -2835,42 +2796,81 @@ Karhunen–Loève expansion
 
 \begin_layout Standard
 Let 
-\begin_inset Formula $X\left(t\right)$
+\begin_inset Formula $X(t)$
 \end_inset
 
  be a stochastic process and 
-\begin_inset Formula $\mu\left(t\right)=\mathbb{E}\left[X\left(t\right)\right]$
+\begin_inset Formula $\mu(t)=\mathbb{E}[X(t)]$
 \end_inset
 
 .
  Consider the mean-zero process 
-\begin_inset Formula $X\left(t\right)-\mu\left(t\right)$
+\begin_inset Formula $X(t)-\mu(t)$
 \end_inset
 
 .
- We are interested in writing sample paths 
-\begin_inset Formula $X\left(t,\omega\right)-\mu\left(t\right)$
+ We are interested in expressing the sample paths 
+\begin_inset Formula $X(t,\omega)-\mu(t)$
 \end_inset
 
  as a series in an orthonormal basis 
-\begin_inset Formula $\left\{ \phi_{j}:j\in\mathbb{N}\right\} $
+\begin_inset Formula $\{\phi_{j}:j\in\mathbb{N}\}$
 \end_inset
 
  of 
-\begin_inset Formula $L^{2}\left(\mathcal{T}\right)$
+\begin_inset Formula $L^{2}(\mathcal{T})$
 \end_inset
 
 .
  That is,
- 
+\end_layout
+
+\begin_layout Standard
 \begin_inset Formula 
 \[
-X\left(t,\omega\right)-\mu\left(t\right)=\sum_{j=1}^{\infty}\gamma_{j}\left(\omega\right)\phi_{j}\left(t\right)
+X(t,\omega)-\mu(t)=\sum_{j=1}^{\infty}\gamma_{j}(\omega)\phi_{j}(t),
 \]
 
 \end_inset
 
-where the 
+where the coefficients 
+\begin_inset Formula $\gamma_{j}$
+\end_inset
+
+ are random variables defined by
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\gamma_{j}(\omega)\coloneqq\langle X(t,\omega)-\mu(t),\phi_{j}(t)\rangle_{L^{2}(\mathcal{T})}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+btprint "btPrintCited"
+bibfiles "reference"
+options "bibtotoc"
+encoding "default"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+\start_of_appendix
+TEMPLATE
+\end_layout
+
+\begin_layout Standard
+TEMPLATE
 \end_layout
 
 \end_body

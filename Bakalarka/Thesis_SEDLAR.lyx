@@ -1,0 +1,2969 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass diploma
+\begin_preamble
+\ThesisAuthor{Michal Sedlář}
+\ThesisSupervisor{Ing. Michal Béreš, Ph.D.}
+
+\CzechThesisTitle{Aproximace Karhunen-Loèveho rozkladu izotropních Gaussovských
+náhodných polí pomocí ortogonálních polynomů a Gaussových
+kvadratur}
+
+\EnglishThesisTitle{Approximation of Karhunen-Loève Decomposition of Isotropic
+Gaussian Random Fields Using Orthogonal Polynomials and Gaussian
+Quadratures}
+
+\SubmissionYear{2025}
+
+\ThesisAssignmentFileName{ThesisAssignment.pdf}
+
+\Acknowledgement{TEMPLATE TEMPLATE TEMPLATE TEMPLATE TEMPLATE TEMPLATE TEMPLATE TEMPLATE TEMPLATE}
+
+\CzechAbstract{TEMPLATE TEMPLATE TEMPLATE TEMPLATE TEMPLATE TEMPLATE TEMPLATE TEMPLATE TEMPLATE}
+\CzechKeywords{TEMPLATE; TEMPLATE; TEMPLATE}
+
+\EnglishAbstract{TEMPLATE TEMPLATE TEMPLATE TEMPLATE TEMPLATE TEMPLATE TEMPLATE TEMPLATE TEMPLATE}
+\EnglishKeywords{TEMPLATE; TEMPLATE; TEMPLATE}
+
+
+
+\AddAcronym{$P$}{space of all real polynomials}
+\AddAcronym{$\mathbb{T}$}{TEMPLATE\\}
+
+\AddAcronym{pdf}{probability density function}
+\AddAcronym{TEMPLATE}{TEMPLATE\\}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%% nastaveni boxu definic a theoremu
+\usepackage{xcolor}    % Colors
+\usepackage{amsthm}    % Theorem formatting
+\usepackage{mdframed}  % Framed boxes
+\usepackage{amssymb}
+\usepackage{cancel, amsmath}
+
+% Define custom colors
+\definecolor{lightgray}{rgb}{0.95,0.95,0.95}  % Light gray for theorem
+
+% Define theorem styles with boxed environments
+\newtheoremstyle{boxtheorem}  % Boxed theorem style
+  {0pt} % Space above
+  {5pt} % Space below
+  {}    % Body font
+  {}    % Indent amount
+  {\bfseries} % Theorem head font
+  {.}   % Punctuation after theorem head
+  { }   % Space after theorem head
+  {\thmname{#1} \thmnumber{#2}\thmnote{ (#3)}}
+
+% Apply to theorem and definition
+\theoremstyle{boxtheorem}
+
+\newmdenv[
+  linewidth=1pt,
+  linecolor=black,
+  backgroundcolor=lightgray,
+  roundcorner=5pt,
+  innertopmargin=5pt,
+  innerbottommargin=5pt,
+  skipabove=10pt,
+  skipbelow=10pt
+]{thmBox}
+
+\newmdenv[
+  linewidth=1pt,
+  linecolor=black,
+  backgroundcolor=lightgray,
+  roundcorner=5pt,
+  innertopmargin=5pt,
+  innerbottommargin=5pt,
+  skipabove=5pt,
+  skipbelow=10pt
+]{lemBox}
+
+\newmdenv[
+  linewidth=1pt,
+  linecolor=black,
+  backgroundcolor=white,
+  roundcorner=5pt,
+  innertopmargin=5pt,
+  innerbottommargin=5pt,
+  skipabove=5pt,
+  skipbelow=10pt
+]{defnBox}
+
+% Wrap Theorems in Frames Without Recursion
+\let\oldthm\thm
+\renewcommand{\thm}{\begin{thmBox}\oldthm}
+\let\endoldthm\endthm
+\renewcommand{\endthm}{\endoldthm\end{thmBox}}
+
+\let\oldlem\lem
+\renewcommand{\lem}{\begin{lemBox}\oldlem}
+\let\endoldlem\endlem
+\renewcommand{\endlem}{\endoldlem\end{lemBox}}
+
+\let\olddefn\defn
+\renewcommand{\defn}{\begin{defnBox}\olddefn}
+\let\endolddefn\enddefn
+\renewcommand{\enddefn}{\endolddefn\end{defnBox}}
+\end_preamble
+\options english, bachelor
+\use_default_options false
+\begin_modules
+theorems-ams
+\end_modules
+\maintain_unincluded_children no
+\language english
+\language_package none
+\inputencoding utf8
+\fontencoding default
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command biber
+\index_command default
+\float_placement class
+\float_alignment class
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 0
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine biblatex
+\cite_engine_type authoryear
+\biblio_style plain
+\biblio_options backend=biber, style=iso-numeric, alldates=iso
+\biblatex_bibstyle iso-numeric
+\biblatex_citestyle iso-numeric
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content true
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+MakeTitlePages
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FloatList figure
+
+\end_inset
+
+
+\begin_inset Newpage clearpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FloatList table
+
+\end_inset
+
+
+\begin_inset Newpage clearpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Introduction
+\end_layout
+
+\begin_layout Standard
+TEMPLATE
+\end_layout
+
+\begin_layout Chapter
+Polynomials
+\end_layout
+
+\begin_layout Section
+Space of polynomials
+\end_layout
+
+\begin_layout Section
+Monic polynomials
+\end_layout
+
+\begin_layout Section
+Weighted inner product
+\end_layout
+
+\begin_layout Subsection
+weight function
+\end_layout
+
+\begin_layout Subsection
+inner product
+\end_layout
+
+\begin_layout Subsection
+positive definiteness
+\end_layout
+
+\begin_layout Section
+Normalized polynomials
+\end_layout
+
+\begin_layout Section
+(orthogonal polynomials
+\end_layout
+
+\begin_layout Section
+orthonormal polynomials)(maybe add these)
+\end_layout
+
+\begin_layout Section
+Three term recurrence
+\end_layout
+
+\begin_layout Subsection
+Jacobi Matrix
+\end_layout
+
+\begin_layout Chapter
+Quadrature rule
+\end_layout
+
+\begin_layout Section
+quadrature rule
+\end_layout
+
+\begin_layout Section
+nodes as eigenvalues
+\end_layout
+
+\begin_layout Section
+Legendre over interval
+\end_layout
+
+\begin_layout Section
+numeric experiments
+\end_layout
+
+\begin_layout Chapter
+Probability stuff (rename later)
+\end_layout
+
+\begin_layout Section
+L2 space
+\end_layout
+
+\begin_layout Section
+probability
+\end_layout
+
+\begin_layout Subsection
+Random Variable
+\end_layout
+
+\begin_layout Subsection
+Random Vector
+\end_layout
+
+\begin_layout Subsection
+Stochaistic process
+\end_layout
+
+\begin_layout Subsection
+Random field
+\end_layout
+
+\begin_layout Section
+Covarience
+\end_layout
+
+\begin_layout Subsection
+autocovarience
+\end_layout
+
+\begin_layout Chapter
+Karhunen-Loéve expansion
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Gautschi2004,LordPowellShardlow2014"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+TEMPLATE
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+TEMPLATE
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+TEMPLATE
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement document
+alignment document
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+TEMPLATE
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+TEMPLATE
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Space of Polynomials
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "def:polynomials-of-degree"
+
+\end_inset
+
+For a non-negative integer 
+\begin_inset Formula $d$
+\end_inset
+
+,
+ let us define 
+\begin_inset Formula 
+\[
+P_{d}\coloneqq\left\{ p(x)=\sum_{i=0}^{d}a_{i}x^{i}\;\Big|\;a_{i}\in\mathbb{R}\right\} 
+\]
+
+\end_inset
+
+as a space of real polynomials of degree at most 
+\begin_inset Formula $d$
+\end_inset
+
+.
+ The space of all real polynomials is then
+\begin_inset Formula 
+\[
+P\coloneqq\bigcup_{d=0}^{\infty}P_{d}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Weight Function
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "def:weigh-function"
+
+\end_inset
+
+Let 
+\begin_inset Formula $I=\left\langle a,b\right\rangle \subset\mathbb{R}$
+\end_inset
+
+ (bounded,
+ closed interval).
+ A function 
+\begin_inset Formula $w(x)\in C(I)$
+\end_inset
+
+ that satisfies 
+\begin_inset Formula 
+\[
+\forall x\in I:w(x)>0,
+\]
+
+\end_inset
+
+is called a 
+\emph on
+Weight function
+\emph default
+.
+\end_layout
+
+\begin_layout Remark
+The weighted integral is well defined 
+\begin_inset Formula $\forall f\in C(I)$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\int_{I}w(x)f(x)\,dx\in\mathbb{R}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Moments of a Weight Function
+\end_layout
+
+\end_inset
+
+Let 
+\begin_inset Formula $w(x)$
+\end_inset
+
+ be a weight function from Definition 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "def:weigh-function"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ and 
+\begin_inset Formula $I$
+\end_inset
+
+ its corresponding support.
+ Then all moments are finite:
+\begin_inset Formula 
+\[
+\mu_{r}\coloneqq\int_{\mathbb{R}}w(x)x^{r}\,dx\in\mathbb{R},\;r=0,1,2,\ldots,\;with\:\forall r:\left|\mu_{r}\right|<\infty.
+\]
+
+\end_inset
+
+
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Weighted Inner Product
+\end_layout
+
+\end_inset
+
+Let 
+\begin_inset Formula $w(x)$
+\end_inset
+
+ be a weight function from Definition 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "def:weigh-function"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ and 
+\begin_inset Formula $I$
+\end_inset
+
+ its corresponding support.
+ For any functions 
+\begin_inset Formula $u,v\in C(I)$
+\end_inset
+
+,
+ a weighted inner product is defined as
+\begin_inset Formula 
+\[
+\left\langle u,v\right\rangle _{w}=\int_{I}w(x)u(x)v(x)\,dx,
+\]
+
+\end_inset
+
+ with the corresponding norm being
+\begin_inset Formula 
+\[
+\left\Vert u\right\Vert _{w}=\sqrt{\left\langle u,u\right\rangle _{w}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Remark
+If 
+\begin_inset Formula $\left\langle u,v\right\rangle _{w}=0$
+\end_inset
+
+,
+ then 
+\begin_inset Formula $u$
+\end_inset
+
+ and 
+\begin_inset Formula $v$
+\end_inset
+
+ are said to be 
+\emph on
+orthogonal
+\emph default
+ with respect to the weight function 
+\begin_inset Formula $w$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Monic polynomials
+\end_layout
+
+\end_inset
+
+For a non-negative integer 
+\begin_inset Formula $d$
+\end_inset
+
+,
+ let us define 
+\begin_inset Formula 
+\[
+P_{d}^{m}\coloneqq\left\{ \pi(x)=x^{d}+\sum_{i=0}^{d-1}a_{i}x^{i}\;\Big|\;a_{i}\in\mathbb{R}\right\} 
+\]
+
+\end_inset
+
+as the set of 
+\emph on
+monic polynomials 
+\emph default
+of degree exactly 
+\begin_inset Formula $d$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Normalized polynomials
+\end_layout
+
+\end_inset
+
+For non-negative integer 
+\begin_inset Formula $d$
+\end_inset
+
+,
+ the set of normalized polynomials is defined as 
+\begin_inset Formula 
+\[
+\widetilde{P_{d}}\coloneqq\left\{ \tilde{p}\in P_{d}:\left\Vert \tilde{p}\right\Vert _{w}=1\right\} 
+\]
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Positive Definiteness of an Inner Product
+\end_layout
+
+\end_inset
+
+ An inner product 
+\begin_inset Formula $\left\langle \cdot,\cdot\right\rangle _{w}$
+\end_inset
+
+ on 
+\begin_inset Formula $P$
+\end_inset
+
+ is said to be positive definite if 
+\begin_inset Formula 
+\[
+\left\Vert u\right\Vert _{w}>0\quad\forall u\in P:u\cancel{\equiv}0.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Lemma
+
+\emph on
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Positive Definiteness of an Inner product over <-1,1>
+\end_layout
+
+\end_inset
+
+An inner product
+\emph default
+ over interval 
+\begin_inset Formula $I=\left\langle -1,1\right\rangle $
+\end_inset
+
+ by 
+\begin_inset Formula 
+\[
+\left\langle u,v\right\rangle _{w}=\int_{-1}^{1}u(x)v(x)\,dx
+\]
+
+\end_inset
+
+i.e.,
+ with the weight function 
+\begin_inset Formula $w(x)=1$
+\end_inset
+
+,
+ is positive definite on 
+\begin_inset Formula $P$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+As 
+\begin_inset Formula $P$
+\end_inset
+
+ on 
+\begin_inset Formula $\left\langle -1,1\right\rangle $
+\end_inset
+
+ is a subset of 
+\begin_inset Formula $C\left(\left\langle -1,1\right\rangle \right)$
+\end_inset
+
+,
+ we will prove it for 
+\begin_inset Formula $C\left(\left\langle -1,1\right\rangle \right)$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $u\in C\left(\left\langle -1,1\right\rangle \right)$
+\end_inset
+
+ be a nonzero function;
+ that is,
+ 
+\begin_inset Formula $u\not\equiv0$
+\end_inset
+
+.
+ Then,
+ there exists some point 
+\begin_inset Formula $x_{0}\in\left\langle -1,1\right\rangle $
+\end_inset
+
+ such that 
+\begin_inset Formula $u(x_{0})\neq0$
+\end_inset
+
+.
+ Without loss of generality,
+ assume 
+\begin_inset Formula $u(x_{0})>0$
+\end_inset
+
+ (if 
+\begin_inset Formula $u(x_{0})<0$
+\end_inset
+
+,
+ consider 
+\begin_inset Formula $-u$
+\end_inset
+
+ instead).
+\end_layout
+
+\begin_layout Proof
+Since u is continuous at 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+,
+ for the choice 
+\begin_inset Formula 
+\[
+\epsilon=\frac{u(x_{0})}{2}>0,
+\]
+
+\end_inset
+
+there exists a 
+\begin_inset Formula $\delta>0$
+\end_inset
+
+ such that for all 
+\begin_inset Formula $x$
+\end_inset
+
+ with 
+\begin_inset Formula $|x-x_{0}|<\delta$
+\end_inset
+
+ (and 
+\begin_inset Formula $x\in\left\langle -1,1\right\rangle $
+\end_inset
+
+ ),
+ we have 
+\begin_inset Formula 
+\[
+|u(x)-u(x_{0})|<\epsilon.
+\]
+
+\end_inset
+
+This implies that for every 
+\begin_inset Formula $x$
+\end_inset
+
+ in the interval 
+\begin_inset Formula $I_{\delta}=\left\langle x_{0}-\delta,x_{0}+\delta\right\rangle \cap\left\langle -1,1\right\rangle $
+\end_inset
+
+ ,
+ 
+\begin_inset Formula 
+\[
+u(x)>u(x_{0})-\epsilon=\frac{u(x_{0})}{2}>0.
+\]
+
+\end_inset
+
+Thus,
+ on 
+\begin_inset Formula $I_{\delta}$
+\end_inset
+
+,
+ we have 
+\begin_inset Formula 
+\[
+u(x)^{2}\ge\left(\frac{u(x_{0})}{2}\right)^{2}.
+\]
+
+\end_inset
+
+Integrating over 
+\begin_inset Formula $I_{\delta}$
+\end_inset
+
+ yields 
+\begin_inset Formula 
+\[
+\int_{I_{\delta}}u(x)^{2}\,dx\ge\int_{I_{\delta}}\left(\frac{u(x_{0})}{2}\right)^{2}dx=\left(\frac{u(x_{0})}{2}\right)^{2}\cdot\left|I_{\delta}\right|,
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $\left|I_{\delta}\right|$
+\end_inset
+
+ denotes the length of 
+\begin_inset Formula $I_{\delta}$
+\end_inset
+
+,
+ which is positive.
+\end_layout
+
+\begin_layout Proof
+Since 
+\begin_inset Formula 
+\[
+\|u\|_{w}^{2}=\int_{-1}^{1}u(x)^{2}\,dx\ge\int_{I_{\delta}}u(x)^{2}\,dx,
+\]
+
+\end_inset
+
+it follows that 
+\begin_inset Formula 
+\[
+\|u\|_{w}^{2}\ge\left(\frac{u(x_{0})}{2}\right)^{2}\cdot\left|I_{\delta}\right|>0.
+\]
+
+\end_inset
+
+Hence,
+ 
+\begin_inset Formula $\|u\|_{w}>0$
+\end_inset
+
+ for every nonzero function 
+\begin_inset Formula $u\in C\left(\left\langle -1,1\right\rangle \right)$
+\end_inset
+
+,
+ and so the inner product is positive definite.
+ 
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+[Adapted from Gautchi,
+ Theorem 1.6,
+ p.3]
+\end_layout
+
+\end_inset
+
+ If the inner product is positive definite on P,
+ there exists a unique infinite sequence 
+\begin_inset Formula $\left\{ \pi_{k}\right\} $
+\end_inset
+
+ of monic orthogonal polynomials
+\end_layout
+
+\begin_layout Definition
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Shift Property [Adapted from Gautchi,
+ 1.3 p.10]
+\end_layout
+
+\end_inset
+
+ Let inner product 
+\begin_inset Formula $\left\langle \cdot,\cdot\right\rangle _{w}$
+\end_inset
+
+ have the property for every 
+\begin_inset Formula $u,v\in P_{d}$
+\end_inset
+
+ and 
+\begin_inset Formula $t\in\mathbb{R}$
+\end_inset
+
+,
+ with 
+\begin_inset Formula $w$
+\end_inset
+
+ from Definition 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "def:weigh-function"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+:
+ 
+\begin_inset Formula 
+\[
+\left\langle tu,v\right\rangle _{w}=\left\langle u,tv\right\rangle _{w},
+\]
+
+\end_inset
+
+then we say it has 
+\emph on
+shift property
+\emph default
+.
+\end_layout
+
+\begin_layout Remark
+This also works for an inner product defined from integrals:
+\begin_inset Formula 
+\[
+\left\langle tu,v\right\rangle _{w}=\int_{I}w(x)\left(tu(x)\right)v(x)\,dx=\int_{I}w(x)u(x)\left(tv(x)\right)\,dx=\left\langle u,tv\right\rangle _{w}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Three term recurrence [Adapted from Gautchi,
+ Theorem 1.27,
+ p.10]
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "thm:3-term-recurrence"
+
+\end_inset
+
+Let 
+\begin_inset Formula $\pi_{k},k=0,1,2,\ldots,$
+\end_inset
+
+ be a monic orthogonal polynomials.
+ Then,
+\begin_inset Formula 
+\[
+\pi_{k+1}(x)=\left(x-\alpha_{k}\right)\pi_{k}(x)-\beta_{k}\pi_{k-1}(x),k=0,1,2,\ldots,
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\pi_{-1}(x)=0,\pi_{0}(x)=1,
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+where
+\begin_inset Formula 
+\[
+\alpha_{k}=\frac{\left\langle x\pi_{k},\pi_{k}\right\rangle _{w}}{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}},k=0,1,2,\ldots,
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\beta_{k}=\frac{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}}{\left\langle \pi_{k-1},\pi_{k-1}\right\rangle _{w}},k=0,1,2,\ldots.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+We begin by applying the Gram-Schmidt orthogonalization process,
+ starting with the constant function 
+\begin_inset Formula $f_{1}(x)=1$
+\end_inset
+
+.
+ Each subsequent function to be orthogonalized is obtained by multiplying the previous orthogonalized function by 
+\begin_inset Formula $x$
+\end_inset
+
+.Thus,
+ for 
+\begin_inset Formula $k=1,2,3,\ldots$
+\end_inset
+
+,
+ the functions are defined as 
+\begin_inset Formula $f_{k+1}(x)=x\pi_{k}(x)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Proof
+Gramm-Schmidt process results in orthogonal polynomials,
+ and we can express 
+\begin_inset Formula $\pi_{k+1}(x)$
+\end_inset
+
+ as follows:
+\begin_inset Formula 
+\[
+\pi_{k+1}(x)=x\pi_{k}(x)-\sum_{i=1}^{k}\frac{\left\langle x\pi_{k},\pi_{i}\right\rangle _{w}}{\left\langle \pi_{i},\pi_{i}\right\rangle _{w}}\pi_{i}(x).
+\]
+
+\end_inset
+
+Expanding the sum:
+\begin_inset Formula 
+\[
+\pi_{k+1}(x)=x\pi_{k}(x)-\frac{\left\langle x\pi_{k},\pi_{k}\right\rangle _{w}}{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}}\pi_{k}(x)-\frac{\left\langle x\pi_{k},\pi_{k-1}\right\rangle _{w}}{\left\langle \pi_{k-1},\pi_{k-1}\right\rangle _{w}}\pi_{k-1}(x)-\sum_{i=1}^{k-2}\frac{\left\langle x\pi_{k},\pi_{i}\right\rangle _{w}}{\left\langle \pi_{i},\pi_{i}\right\rangle _{w}}\pi_{i}(x).
+\]
+
+\end_inset
+
+Next by shift property of the inner product,
+ we have:
+ 
+\begin_inset Formula 
+\[
+\forall k,i\in\mathbb{N}:\left\langle x\pi_{k},\pi_{i}\right\rangle _{w}=\left\langle \pi_{k},x\pi_{i}\right\rangle _{w}
+\]
+
+\end_inset
+
+Because of the construction of these polynomials,
+ we know that 
+\begin_inset Formula $x\pi_{i}\in P_{i+1}$
+\end_inset
+
+,
+ where 
+\begin_inset Formula $P_{i+1}$
+\end_inset
+
+ represents the space of polynomials of degree 
+\begin_inset Formula $i+1$
+\end_inset
+
+ and thus the inner product is zero for 
+\begin_inset Formula $k\neq i+1$
+\end_inset
+
+.
+ This gives:
+ 
+\begin_inset Formula 
+\[
+\forall i\in\mathbb{N},i\leq k-2:\left\langle x\pi_{k},\pi_{i}\right\rangle _{w}=\left\langle \pi_{k},x\pi_{i}\right\rangle _{w}=0
+\]
+
+\end_inset
+
+ because 
+\begin_inset Formula $k\neq i+1$
+\end_inset
+
+ and the polynomials are orthogonal.
+ This leads to the simplification of the expression for
+\begin_inset Formula $\pi_{k+1}(x)$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\pi_{k+1}(x)=x\pi_{k}(x)-\frac{\left\langle x\pi_{k},\pi_{k}\right\rangle _{w}}{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}}\pi_{k}(x)-\frac{\left\langle x\pi_{k},\pi_{k-1}\right\rangle _{w}}{\left\langle \pi_{k-1},\pi_{k-1}\right\rangle _{w}}\pi_{k-1}(x)
+\]
+
+\end_inset
+
+which simplifies further to:
+\begin_inset Formula 
+\[
+\pi_{k+1}(x)=\left(x-\frac{\left\langle x\pi_{k},\pi_{k}\right\rangle _{w}}{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}}\right)\pi_{k}(x)-\frac{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}}{\left\langle \pi_{k-1},\pi_{k-1}\right\rangle _{w}}\pi_{k-1}(x)
+\]
+
+\end_inset
+
+Now if we define 
+\begin_inset Formula $\alpha_{k}=\frac{\left\langle x\pi_{k},\pi_{k}\right\rangle _{w}}{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}}$
+\end_inset
+
+ and 
+\begin_inset Formula $\beta_{k}=\frac{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}}{\left\langle \pi_{k-1},\pi_{k-1}\right\rangle _{w}}$
+\end_inset
+
+,
+ we obtain the desired three term recurrence relation:
+\begin_inset Formula 
+\[
+\pi_{k+1}(x)=\left(x-\alpha_{k}\right)\pi_{k}(x)-\beta_{k}\pi_{k-1}(x).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+[Adapted from Gautchi,
+ Theorem 1.29,
+ p.12]
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "thm:normal-3-term-recurrence"
+
+\end_inset
+
+ Let 
+\begin_inset Formula $\tilde{\pi}_{k}\in\tilde{P_{d}^{m}},k=0,1,2,\ldots,$
+\end_inset
+
+be monic ortholonormal polynomials.
+ Then,
+\begin_inset Formula 
+\[
+\sqrt{\beta_{k+1}}\tilde{\pi}_{k+1}(x)=\left(x-\alpha_{k}\right)\tilde{\pi}_{k}(x)-\sqrt{\beta_{k}}\tilde{\pi}_{k-1}(x),\;k=0,1,2,\ldots,
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\tilde{\pi}_{-1}(x)=0,\tilde{\pi}_{0}(x)=1/\sqrt{\beta_{0}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Monic polynomials 
+\begin_inset Formula $\pi=\tilde{\pi}\left\Vert \pi\right\Vert _{w},$
+\end_inset
+
+where 
+\begin_inset Formula $\tilde{\pi}$
+\end_inset
+
+ is a monic orthonormal polynomial and 
+\begin_inset Formula $\left\Vert \pi\right\Vert _{w}=\sqrt{\left\langle \pi,\pi\right\rangle _{w}}$
+\end_inset
+
+.
+ Therefore 3 term recurence from Theorem 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "thm:3-term-recurrence"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ is equal to:
+\begin_inset Formula 
+\[
+\tilde{\pi}_{k+1}\sqrt{\left\langle \pi_{k+1},\pi_{k+1}\right\rangle _{w}}=\left(x-\alpha_{k}\right)\tilde{\pi}_{k}\sqrt{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}}-\beta_{k}\tilde{\pi}_{k-1}\sqrt{\left\langle \pi_{k-1},\pi_{k-1}\right\rangle _{w}}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\tilde{\pi}_{k+1}\sqrt{\frac{\left\langle \pi_{k+1},\pi_{k+1}\right\rangle _{w}}{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}}}=\left(x-\alpha_{k}\right)\tilde{\pi}_{k}-\beta_{k}\tilde{\pi}_{k-1}\sqrt{\frac{\left\langle \pi_{k-1},\pi_{k-1}\right\rangle _{w}}{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}}}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\tilde{\pi}_{k+1}\sqrt{\beta_{k+1}}=\left(x-\alpha_{k}\right)\tilde{\pi}_{k}-\beta_{k}\tilde{\pi}_{k-1}\sqrt{\beta_{k}^{-1}}=\left(x-\alpha_{k}\right)\tilde{\pi}_{k}-\tilde{\pi}_{k-1}\sqrt{\beta_{k}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Which therefore gives us 3 term recurrence from theorem:
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "thm:normal-3-term-recurrence"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+[Adapted from Gautchi,
+ Definition 1.30,
+ p.13]
+\end_layout
+
+\end_inset
+
+With reference to Theorem 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "thm:3-term-recurrence"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ and Theorem 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "thm:normal-3-term-recurrence"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+,
+ the Jacobi matrix is symmetric,
+ tridiagonal matrix
+\end_layout
+
+\begin_layout Definition
+\begin_inset Formula 
+\[
+J_{n}\coloneqq\begin{bmatrix}\alpha_{0} & \sqrt{\beta_{1}} &  &  & 0\\
+\sqrt{\beta_{1}} & \alpha_{1} & \sqrt{\beta_{2}}\\
+ & \sqrt{\beta_{2}} & \alpha_{2} & \ddots\\
+ &  & \ddots & \ddots & \sqrt{\beta_{n}}\\
+0 &  &  & \sqrt{\beta_{n}} & \alpha_{n}
+\end{bmatrix}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+[Adapted from Gautchi,
+ Theorem 1.31,
+ p.13]
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "thm:Jacobi-eigenvalues-eigenvectors"
+
+\end_inset
+
+The roots 
+\begin_inset Formula $\tau_{v}^{(n)}$
+\end_inset
+
+ of 
+\begin_inset Formula $\pi_{n}$
+\end_inset
+
+ are the eigenvalues of the Jacobi matrix 
+\begin_inset Formula $J_{n}$
+\end_inset
+
+ of order n,
+ and 
+\begin_inset Formula $\tilde{\boldsymbol{\pi}}\left(\tau_{v}^{(n)}\right)$
+\end_inset
+
+ are corresponding eigenvectors.
+\end_layout
+
+\begin_layout Proof
+If the first 
+\begin_inset Formula $n$
+\end_inset
+
+ equations from Theorem 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "thm:normal-3-term-recurrence"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ are written in the form 
+\begin_inset Formula 
+\[
+t\tilde{\pi}_{k}(x)=\sqrt{\beta_{k}}\tilde{\pi}_{k-1}(x)+\alpha_{k}\tilde{\pi}_{k}(x)+\sqrt{\beta_{k+1}}\tilde{\pi}_{k+1}(x),\;k=0,1,\ldots,n-1,
+\]
+
+\end_inset
+
+and one lets
+\begin_inset Formula 
+\[
+\tilde{\boldsymbol{\pi}}(x)=\left[\tilde{\pi}_{0}(x),\tilde{\pi}_{1}(x),\ldots,\tilde{\pi}_{n-1}(x)\right]^{T},
+\]
+
+\end_inset
+
+then we can express these equations in matrix form as 
+\begin_inset Formula 
+\[
+t\tilde{\boldsymbol{\pi}}(x)=J_{n}\tilde{\boldsymbol{\pi}}(x)+\sqrt{\beta_{n}}\tilde{\boldsymbol{\pi}}_{n}(x)e_{n},
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $e_{n}=\left[0,0,\ldots,1\right]^{T}$
+\end_inset
+
+ is the 
+\emph on
+n
+\emph default
+th coordinate vector in 
+\begin_inset Formula $\mathbb{R}^{n}$
+\end_inset
+
+.
+ Both assertions follow immediately from the matrix form of this equation by putting 
+\begin_inset Formula $t=\tau_{v}^{(n)}$
+\end_inset
+
+ and noting that 
+\begin_inset Formula $\tilde{\boldsymbol{\pi}}(\tau_{v}^{(n)})\neq0$
+\end_inset
+
+,
+ the first component of 
+\begin_inset Formula $\tilde{\boldsymbol{\pi}}(\tau_{v}^{(n)})$
+\end_inset
+
+ being 
+\begin_inset Formula $1/\sqrt{\beta_{0}}$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\tau_{v}^{(n)}\tilde{\boldsymbol{\pi}}(\tau_{v}^{(n)})=J_{n}\tilde{\boldsymbol{\pi}}(\tau_{v}^{(n)})+\sqrt{\beta_{n}}\tilde{\pi}_{n}(\tau_{v}^{(n)})e_{n},
+\]
+
+\end_inset
+
+since 
+\begin_inset Formula $\tau_{v}^{(n)}$
+\end_inset
+
+ are roots of 
+\begin_inset Formula $\pi_{n}$
+\end_inset
+
+,
+ then 
+\begin_inset Formula $\tilde{\pi_{n}}(\tau_{v}^{(n)})=0$
+\end_inset
+
+ and the equation simplifies to:
+\begin_inset Formula 
+\[
+\tau_{v}^{(n)}\tilde{\pi}(\tau_{v}^{(n)})=J_{n}\tilde{\pi}(\tau_{v}^{(n)})
+\]
+
+\end_inset
+
+This shows that 
+\begin_inset Formula $\tilde{\pi}(\tau_{v}^{(n)})$
+\end_inset
+
+ is an eigenvector of the matrix 
+\begin_inset Formula $J_{n}$
+\end_inset
+
+ corresponding to the eigenvalue
+\begin_inset Formula $\tau_{v}^{(n)}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Corollary
+
+\shape up
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+to Theorem 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "thm:Jacobi-eigenvalues-eigenvectors"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+[Adapted from Gautchi,
+ Corollary to 1.31,
+ p.13]
+\end_layout
+
+\end_inset
+
+Let 
+\begin_inset Formula $v_{v}$
+\end_inset
+
+ denote the normalized eigenvector of
+\shape default
+ 
+\begin_inset Formula $J_{n}$
+\end_inset
+
+ corresponding to the eigenvalue 
+\begin_inset Formula $\tau_{v}^{(n)}$
+\end_inset
+
+,
+\begin_inset Formula 
+\[
+J_{n}v_{v}=\tau_{v}^{(n)}v_{v},\;v_{v}^{T}v_{v}=1,
+\]
+
+\end_inset
+
+and let 
+\shape up
+
+\begin_inset Formula $v_{v,1}$
+\end_inset
+
+ denote its first component.
+ Then,
+\begin_inset Formula 
+\[
+\beta_{0}v_{v,1}^{2}=\frac{1}{\sum_{k=0}^{n-1}\left[\tilde{\pi}_{k}(\tau_{v}^{(n)})\right]^{2}},\quad v=1,2,\ldots,n.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+For each normalized eigenvector 
+\begin_inset Formula $v_{v}$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+v_{v}=\left(\sum_{k=0}^{n-1}\left[\tilde{\pi}_{k}(\tau_{v}^{(n)})\right]^{2}\right)^{-1/2}\tilde{\pi}(\tau_{v}^{(n)}),\quad v=1,2,\ldots,n.
+\]
+
+\end_inset
+
+noting from Theorem 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "thm:normal-3-term-recurrence"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ that 
+\begin_inset Formula $\tilde{\pi}_{0}=1/\sqrt{\beta_{0}}$
+\end_inset
+
+,
+ if we compare the first component of each side and square the equation we obtain:
+\begin_inset Formula 
+\[
+v_{v,1}^{2}=\left(\sum_{k=0}^{n-1}\left[\tilde{\pi}_{k}(\tau_{v}^{(n)})\right]^{2}\right)^{-1}\frac{1}{\sqrt{\beta_{0}}},\quad v=1,2,\ldots,n.
+\]
+
+\end_inset
+
+and after simplification,
+ we obtain desired formula
+\begin_inset Formula 
+\[
+\beta_{0}v_{v,1}^{2}=\frac{1}{\sum_{k=0}^{n-1}\left[\tilde{\pi}_{k}(\tau_{v}^{(n)})\right]^{2}},\quad v=1,2,\ldots,n.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+The Quadrature rule
+\end_layout
+
+\end_inset
+
+The quadrature rule is defined as
+\begin_inset Formula 
+\[
+\int_{I}f(x)dt\approx\sum_{v=1}^{n}\lambda_{v}f(\tau_{v})
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $\lambda_{v}$
+\end_inset
+
+ are called weights and 
+\begin_inset Formula $\tau_{v}$
+\end_inset
+
+ are called nodes of an n-point quadrature rule
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+[Adapted from Gautchi,
+ Theorem,
+ 1.45,
+ p.21]
+\end_layout
+
+\end_inset
+
+If the Quadrature rule is obtained by integrating the Lagrange interpolation formula (it is Interpolatory):
+ 
+\begin_inset Formula $f(x)=\sum_{v=1}^{n}f(\tau_{v})l_{v}(x)$
+\end_inset
+
+ where 
+\begin_inset Formula $l_{v}(x)=\prod_{\mu=1,\mu\neq v}^{n}\frac{x-\tau_{\mu}}{\tau_{v}-\tau_{\mu}}$
+\end_inset
+
+,
+ and the node polynomial 
+\shape up
+
+\begin_inset Formula $\omega_{n}(x)=\prod_{v=1}^{n}(x-\tau_{v})$
+\end_inset
+
+
+\shape default
+ satisfies
+\begin_inset Formula $\int_{\mathbb{R}}\omega_{n}(x)p(x)\,dx=0$
+\end_inset
+
+ for all 
+\begin_inset Formula $p\in P_{n-1},$
+\end_inset
+
+then Quadrature rule for positive definite inner product,
+ has points equal to the root of an n-th ortogonal polynomial
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Gauss Quardature from eigenvectors 
+\begin_inset CommandInset citation
+LatexCommand cite
+after "Theorem 3.1"
+key "Gautschi2004"
+literal "false"
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+[Adapted from Gautchi,
+ Theorem 3.1,
+ p.153]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Nodes 
+\begin_inset Formula $\tau_{v}^{G},v=1,2,3,\ldots,n$
+\end_inset
+
+,
+ of the n-point Gauss quadrature rule are the eigenvalues of the Jacobi matrix 
+\begin_inset Formula $J_{n}$
+\end_inset
+
+,
+ and the weights 
+\begin_inset Formula $\lambda_{v}^{G},v=1,2,3,\ldots,n$
+\end_inset
+
+,
+ are 
+\begin_inset Formula 
+\[
+\lambda_{v}^{G}=\beta_{0}v_{v,1}^{2},
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $\beta_{0}=\int_{\mathbb{I}}w(x)\,dx$
+\end_inset
+
+ and 
+\begin_inset Formula $v_{v,1}$
+\end_inset
+
+ is the first component of the normalized eigenvector 
+\begin_inset Formula $v_{v}$
+\end_inset
+
+ belonging to the eigenvalue 
+\begin_inset Formula $\tau_{v}^{G}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+[Adapted from Gautchi,
+ p.153]
+\end_layout
+
+\end_inset
+
+Let us have a vector 
+\begin_inset Formula $\tilde{\pi}(x)=\left[\tilde{\pi}_{0}(x),\tilde{\pi}_{1}(x),\ldots,\tilde{\pi}_{n-1}(x)\right]^{T}$
+\end_inset
+
+,
+ where 
+\begin_inset Formula $\tilde{\pi}_{k}(x)$
+\end_inset
+
+ are orthonormal polynomials.
+ By Theorem 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "thm:Jacobi-eigenvalues-eigenvectors"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ and its Corollary:
+\begin_inset Formula 
+\[
+\beta_{0}v_{v,1}^{2}=\frac{1}{\sum_{k=0}^{n-1}\left[\tilde{\pi}_{k}(\tau_{v}^{(n)})\right]^{2}}
+\]
+
+\end_inset
+
+On the other hand,
+ letting 
+\begin_inset Formula $f(x)=\tilde{\pi}_{k}(x),k\leq n-1$
+\end_inset
+
+,
+ in the Gauss formula 
+\begin_inset Formula $\int_{\mathbb{R}}f(x)\,dx=\sum_{v=1}^{n}\lambda_{v}^{G}f(\tau_{v}^{G})+R_{n}^{G}(f)$
+\end_inset
+
+ and noting that 
+\begin_inset Formula $\tilde{\pi}_{0}=\beta_{0}^{-1/2}$
+\end_inset
+
+,
+ one obtains by orthogonality,
+\begin_inset Formula 
+\[
+\beta_{0}^{1/2}\delta_{k,0}=\sum_{v=1}^{n}\lambda_{v}^{G}\tilde{\pi}_{k}(\tau_{v}^{G}),
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $\delta_{k,0}$
+\end_inset
+
+ is the Kronecker delta (if 
+\begin_inset Formula $i=j$
+\end_inset
+
+ then 
+\begin_inset Formula $\delta_{i,j}=1$
+\end_inset
+
+,
+ else
+\begin_inset Formula $\delta_{i,j}=0$
+\end_inset
+
+),
+ or in matrix form,
+\begin_inset Formula 
+\[
+P\lambda^{G}=\beta_{0}^{1/2}e_{1},
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $P$
+\end_inset
+
+ is the matrix of eigenvectors and 
+\begin_inset Formula $\lambda^{G}$
+\end_inset
+
+ the vector of Gauss weights,(insert P and lambda example later) and 
+\begin_inset Formula $e_{1}^{T}=\left[1,0,\ldots,0\right]\in\mathbb{R}^{n}$
+\end_inset
+
+ the first coordinate vector.
+ Since the columns of 
+\begin_inset Formula $P$
+\end_inset
+
+ are mutually orthogonal,
+ there holds
+\begin_inset Formula 
+\[
+P^{T}P=D_{\pi}=diag\left(d_{0},d_{1},\ldots,d_{n-1}\right),\quad d_{v-1}=\sum_{k=0}^{n-1}\left[\tilde{\pi}_{k}(\tau_{v}^{(n)})\right]^{2}
+\]
+
+\end_inset
+
+Multiplying the matrix form of our equation by 
+\begin_inset Formula $P^{T}$
+\end_inset
+
+ from the left,
+ one gets
+\begin_inset Formula 
+\[
+D_{\pi}\lambda^{G}=\beta_{0}^{1/2}P^{T}e_{1}=\beta_{0}^{1/2}\beta_{0}^{-1/2}e=e,
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $e=\left[1,1,\ldots,1\right]^{T}\in\mathbb{R}^{n}$
+\end_inset
+
+.
+ There follows 
+\begin_inset Formula $\lambda^{G}=D_{\pi}^{-1}e$
+\end_inset
+
+,
+ that is,
+\begin_inset Formula 
+\[
+\lambda^{G}=\frac{1}{\sum_{k=0}^{n-1}\left[\tilde{\pi}_{k}(\tau_{v}^{(n)})\right]^{2}}
+\]
+
+\end_inset
+
+which means that 
+\begin_inset Formula $\lambda^{G}=\beta_{0}v_{v,1}^{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Remark
+Orthogonal Lagrange polynomials denoted as 
+\begin_inset Formula $\pi_{i}^{L}(x)$
+\end_inset
+
+ are defined for an inner product over interval 
+\begin_inset Formula $I^{L}=\left\langle -1,1\right\rangle $
+\end_inset
+
+ and a weight function 
+\begin_inset Formula $w(x)=1$
+\end_inset
+
+.
+ Let us have an interval 
+\begin_inset Formula $I=\left\langle a,b\right\rangle ;a,b\in\mathbb{R}:a<b$
+\end_inset
+
+ and an inner product over interval 
+\begin_inset Formula $I$
+\end_inset
+
+ with a weight 
+\begin_inset Formula $w(x)=1$
+\end_inset
+
+,
+ orthogonal polynomials created with this inner product will be equal to 
+\begin_inset Formula $\pi_{i}(x)=\pi_{i}^{L}\left(\frac{a+b}{a-b}+\frac{2}{b-a}x\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Orthogonality of polynomials 
+\begin_inset Formula $\pi_{i}(x)$
+\end_inset
+
+ can be proven:
+ 
+\begin_inset Formula 
+\[
+\forall i,j\in\mathbb{N}:i\neq j:\left\langle \pi_{i},\pi_{j}\right\rangle _{1}=\int_{a}^{b}\pi_{i}(x)\pi_{j}(x)\,dx=\int_{a}^{b}\pi_{i}^{L}\left(\frac{a+b}{a-b}+\frac{2}{b-a}x\right)\pi_{j}^{L}\left(\frac{a+b}{a-b}+\frac{2}{b-a}x\right)\,dx
+\]
+
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $\hat{x}=\frac{a+b}{a-b}+\frac{2}{b-a}x\Longrightarrow d\hat{x}=\frac{2}{b-a}dx\Longrightarrow\quad\int_{a}^{b}\pi_{i}^{L}\left(\frac{a+b}{a-b}+\frac{2}{b-a}x\right)\pi_{j}^{L}\left(\frac{a+b}{a-b}+\frac{2}{b-a}x\right)\,dx=\int_{-1}^{1}\frac{b-a}{2}\pi_{i}^{L}\left(\hat{x}\right)\pi_{j}^{L}\left(\hat{x}\right)\,d\hat{x}=\frac{b-a}{2}\int_{-1}^{1}\pi_{i}^{L}\left(\hat{x}\right)\pi_{j}^{L}\left(\hat{x}\right)\,d\hat{x}=0$
+\end_inset
+
+
+\begin_inset Formula $\Longrightarrow\left\langle \pi_{i},\pi_{j}\right\rangle _{1}=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Remark
+Let us denote 
+\begin_inset Formula $\tau_{i}^{L}$
+\end_inset
+
+ as the roots of Lagrange polynomials and 
+\begin_inset Formula $\lambda_{i}^{L}$
+\end_inset
+
+ as their corresponding weights of quadrature.
+ For orthogonal polynomials 
+\begin_inset Formula $\pi(x)$
+\end_inset
+
+ made from inner product over interval 
+\begin_inset Formula $I=\left\langle a,b\right\rangle $
+\end_inset
+
+,
+ the roots are 
+\begin_inset Formula $\tau_{i}=\frac{a+b}{2}+\frac{b-a}{2}\tau_{i}^{L}$
+\end_inset
+
+ and weights are 
+\begin_inset Formula $\lambda_{j}=\frac{b-a}{2}\lambda_{j}^{L}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $\pi^{L}(\tau_{i}^{L})=0,\,\pi(\tau_{i})=0,\,\pi_{i}(x)=\pi_{i}^{L}\left(\frac{a+b}{a-b}+\frac{2}{b-a}x\right)\quad\Longrightarrow\;\pi^{L}\left(\frac{a+b}{a-b}+\frac{2}{b-a}\tau_{i}\right)=0\;\Longrightarrow\;\tau_{i}^{L}=\frac{a+b}{a-b}+\frac{2}{b-a}\tau_{i}\;\Longrightarrow\;\frac{a+b}{2}+\frac{b-a}{2}\tau_{i}^{L}=\tau_{i}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\begin{eqnarray*}
+\lambda_{j} & = & \frac{\int_{a}^{b}\intop_{a}^{b}\prod_{i\neq j,i=0}^{n}\left(x-\tau_{i}\right)\,dx}{\prod_{i\neq j,i=0}^{n}\left(\tau_{j}-\tau_{i}\right)}=\frac{\int_{a}^{b}\prod_{i\neq j,i=0}^{n}\left(x-\frac{a+b}{2}-\frac{b-a}{2}\tau_{i}^{L}\right)\,dx}{\prod_{i\neq j,i=0}^{n}\left(\frac{a+b}{2}+\frac{b-a}{2}\tau_{j}^{L}-\frac{a+b}{2}-\frac{b-a}{2}\tau_{i}^{L}\right)}=\\
+ &  & \frac{\int_{-1}^{1}\frac{b-a}{2}\prod_{i\neq j,i=0}^{n}\left(\frac{a+b}{2}+\frac{b-a}{2}\hat{x}-\frac{a+b}{2}-\frac{b-a}{2}\tau_{i}^{L}\right)\,d\hat{x}}{\prod_{i\neq j,i=0}^{n}\left(\frac{b-a}{2}\left(\tau_{j}^{L}-\tau_{i}^{L}\right)\right)}=\frac{\left(\frac{b-a}{2}\right)^{n}\int_{-1}^{1}\prod_{i\neq j,i=0}^{n}\left(\hat{x}-\tau_{i}^{L}\right)\,d\hat{x}}{\left(\frac{b-a}{2}\right)^{n-1}\prod_{i\neq j,i=0}^{n}\left(\tau_{j}^{L}-\tau_{i}^{L}\right)}=\\
+ &  & \frac{b-a}{2}\,\frac{\int_{-1}^{1}\prod_{i\neq j,i=0}^{n}\left(\hat{x}-\tau_{i}^{L}\right)\,d\hat{x}}{\prod_{i\neq j,i=0}^{n}\left(\tau_{j}^{L}-\tau_{i}^{L}\right)}=\frac{b-a}{2}\lambda_{j}^{L}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Banach Space
+\end_layout
+
+\end_inset
+
+ A Banach space is a complete normed vector space.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Lp Spaces
+\end_layout
+
+\end_inset
+
+ Let 
+\begin_inset Formula $\left(Y,\left\Vert \cdot\right\Vert _{Y}\right)$
+\end_inset
+
+be Banach space and 
+\begin_inset Formula $1\leq p<\infty$
+\end_inset
+
+.
+ For a domain D,
+ 
+\begin_inset Formula $L^{p}\left(D\right)$
+\end_inset
+
+ is the set of Borel measurable functions 
+\begin_inset Formula $u:D\rightarrow\mathbb{R}$
+\end_inset
+
+ with 
+\begin_inset Formula $\left\Vert u\right\Vert _{L^{p}\left(D\right)}<\infty$
+\end_inset
+
+,
+ where
+\begin_inset Formula 
+\[
+\left\Vert u\right\Vert _{L^{p}\left(D\right)}\coloneqq\left(\int_{D}\left|u\left(x\right)\right|^{p}dx\right)^{1/p}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Lemma
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Hilbert Space
+\end_layout
+
+\end_inset
+
+When 
+\begin_inset Formula $p=2$
+\end_inset
+
+,
+ there is an inner product and 
+\begin_inset Formula $L^{2}(D)$
+\end_inset
+
+ is a Hilbert space.
+ Functions in this space are called 
+\emph on
+square integrable
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+For any domain D,
+ 
+\begin_inset Formula $L^{2}(D)$
+\end_inset
+
+ is a real Hilbert space with inner product
+\begin_inset Formula 
+\[
+\left\langle u,v\right\rangle _{L^{2}(D)}\coloneqq\int_{D}u\left(\boldsymbol{x}\right)v\left(\boldsymbol{x}\right)d\boldsymbol{x}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Let us have a probability space 
+\begin_inset Formula $\left(\Omega,\mathcal{F},\mathbb{P}\right)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\Omega$
+\end_inset
+
+ is the sample space in an experiment and it is the set of all possible outcomes.
+ For example in a roll of a dice there are six possible outcomes and 
+\begin_inset Formula $\Omega=\left\{ 1,2,3,4,5,6\right\} $
+\end_inset
+
+ and,
+ in a sequence of M rolls,
+ 
+\begin_inset Formula $\Omega=\left\{ 1,2,3,4,5,6\right\} ^{M}.$
+\end_inset
+
+ In general,
+ the sample space is an abstract set,
+ one large enough to parameterize all possible outcomes of the experiment.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\mathcal{F}$
+\end_inset
+
+ is a collection of subsets of 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ and comprises those subsets to which we can assign probabilities.
+ Formally,
+ it is a 
+\emph on
+
+\begin_inset Formula $\sigma$
+\end_inset
+
+-algebra
+\emph default
+.
+ Any measurable set 
+\begin_inset Formula $F\in\mathcal{F}$
+\end_inset
+
+is known as an 
+\emph on
+event
+\emph default
+.
+ Each event corresponds to a set of outcomes in the experiment.
+ For example in the dice rolls,
+ lets say we want to know the probability of rolling an even number and so the set 
+\begin_inset Formula $F=\left\{ 2,4,6\right\} $
+\end_inset
+
+ is included as an event in the 
+\begin_inset Formula $\sigma$
+\end_inset
+
+-algebra 
+\begin_inset Formula $\mathcal{F}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The probability measure 
+\begin_inset Formula $\mathbb{P}$
+\end_inset
+
+ assigns a probability,
+ a number between 0 and 1,
+ to every measurable set in 
+\begin_inset Formula $\mathcal{F}$
+\end_inset
+
+.
+ Higher probability means the event is more likely to occur in an experiment.
+ For a dice roll the probability of rolling an even number (
+\begin_inset Formula $F=\left\{ 2,4,6\right\} $
+\end_inset
+
+) would be 
+\begin_inset Formula $\mathbb{P}\left(\left\{ 2,4,6\right\} \right)=1/2$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Definition
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Probability measure [Adapted from Lord,
+ Definition 4.1,
+ p.138]
+\end_layout
+
+\end_inset
+
+A measure 
+\begin_inset Formula $\mathbb{P}$
+\end_inset
+
+ on 
+\begin_inset Formula $(\Omega,\mathcal{F})$
+\end_inset
+
+ is a 
+\emph on
+probability measure
+\emph default
+ if it has unit total mass,
+ 
+\begin_inset Formula $\mathbb{P}(\Omega)=1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Random Variables,
+ Realisation [Adapted from Lord,
+ Definition 4.3,
+ p.138]
+\end_layout
+
+\end_inset
+
+Let 
+\begin_inset Formula $\left(\Omega,\mathcal{F},\mathbb{P}\right)$
+\end_inset
+
+ be a probability space and let 
+\begin_inset Formula $\left(\Psi,\mathcal{G}\right)$
+\end_inset
+
+ be a measurable space.
+ Then,
+ X is a 
+\begin_inset Formula $\Psi$
+\end_inset
+
+-valued random variable if X is a measurable function from 
+\begin_inset Formula $\left(\Omega,\mathcal{F}\right)$
+\end_inset
+
+ to 
+\begin_inset Formula $\left(\Psi,\mathcal{G}\right)$
+\end_inset
+
+.
+ To emphasize the 
+\begin_inset Formula $\sigma$
+\end_inset
+
+-algebra on 
+\begin_inset Formula $\Omega$
+\end_inset
+
+,
+ we may write that X is an 
+\begin_inset Formula $\mathcal{F}$
+\end_inset
+
+-measurable random variable.
+ The observed value of 
+\begin_inset Formula $X(\omega)$
+\end_inset
+
+ for a given 
+\begin_inset Formula $\omega\in\Omega$
+\end_inset
+
+ belongs to 
+\begin_inset Formula $\Psi$
+\end_inset
+
+ and is called a 
+\emph on
+realization
+\emph default
+ of X.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Random vector
+\end_layout
+
+\end_inset
+
+A random vector 
+\begin_inset Formula $\mathbb{X}\coloneqq\left(X_{1},X_{2},\ldots,X_{n}\right)$
+\end_inset
+
+ is a vector where each element 
+\begin_inset Formula $X_{i},i=1,2,\ldots,n,$
+\end_inset
+
+ is a random variable.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Stochastic Process 
+\begin_inset CommandInset citation
+LatexCommand cite
+after "Definition 5.2"
+key "LordPowellShardlow2014"
+literal "false"
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+[Adapted from Lord,
+ Definition 5.2,
+ p.182]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ Given a set 
+\begin_inset Formula $\mathcal{T}\subset\mathbb{R}$
+\end_inset
+
+,
+ a measurable space 
+\begin_inset Formula $(H,\mathcal{H})$
+\end_inset
+
+,
+ and a probability space 
+\begin_inset Formula $(\Omega,\mathcal{F},\mathbb{P})$
+\end_inset
+
+,
+ a H-valued 
+\emph on
+stochastic process
+\emph default
+ (also known as Random process) is a set of H-valued random variables 
+\begin_inset Formula $\left\{ X(t):t\in\mathcal{T}\right\} $
+\end_inset
+
+.
+ Stochastic process can be simply denoted as 
+\begin_inset Formula $X(t)$
+\end_inset
+
+ where 
+\begin_inset Formula $X:\mathcal{T}\times\Omega\rightarrow H$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Random Field 
+\begin_inset CommandInset citation
+LatexCommand cite
+after "Definition 7.2"
+key "LordPowellShardlow2014"
+literal "false"
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+[Adapted from Lord,
+ Definition 7.2,
+ p.258]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Let us have a set 
+\begin_inset Formula $D\subset\mathbb{R}^{d}$
+\end_inset
+
+,
+ random field 
+\begin_inset Formula $\left\{ u(\boldsymbol{x}):\boldsymbol{x}\in D\right\} $
+\end_inset
+
+ is a set of real-valued random variables on a probability space 
+\begin_inset Formula $\left(\Omega,\mathcal{F},\mathbb{P}\right)$
+\end_inset
+
+.
+ Random field can be simply denoted as 
+\begin_inset Formula $u\left(\boldsymbol{x}\right)$
+\end_inset
+
+ where 
+\begin_inset Formula $u:D\times\Omega\rightarrow\mathbb{R}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Expected Value
+\end_layout
+
+\end_inset
+
+ Let 
+\begin_inset Formula $X$
+\end_inset
+
+ be random variable on the probability space 
+\begin_inset Formula $\left(\Omega,\mathcal{F},\mathbb{P}\right)$
+\end_inset
+
+.
+ For a continuous random variable X with probability density function (PDF) 
+\begin_inset Formula $f\left(x\right)$
+\end_inset
+
+,
+ the expected value is
+\begin_inset Formula 
+\[
+\mathbb{E}\left[X\right]\coloneqq\int_{-\infty}^{\infty}x\,f\left(x\right)\,dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Covariance [Adapted from Lord,
+ Definition 4.14,
+ p.142]
+\end_layout
+
+\end_inset
+
+The covariance of two real-valued random variables X and Y is
+\begin_inset Formula 
+\[
+Cov\left(X,Y\right)\coloneqq\mathbb{E}\left[\left(X-\mu_{X}\right)\left(Y-\mu_{Y}\right)\right]=\mathbb{E}\left[XY\right]-\mu_{X}\mu_{Y},
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $\mu_{X}=\mathbb{E}\left[X\right]$
+\end_inset
+
+ and 
+\begin_inset Formula $\mu_{Y}=\mathbb{E}\left[Y\right]$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Autocovariance function
+\end_layout
+
+\end_inset
+
+Autocovariance function 
+\begin_inset Formula $C\left(s,t\right)$
+\end_inset
+
+ of a stochastic process 
+\begin_inset Formula $\left\{ X\left(t\right):t\in\mathcal{T}\right\} $
+\end_inset
+
+ is a function defined as
+\begin_inset Formula 
+\[
+C\left(s,t\right)\coloneqq Cov\left(X\left(s\right),X\left(t\right)\right),
+\]
+
+\end_inset
+
+for all 
+\begin_inset Formula $s,t\in\mathcal{T}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Stationary process [Adapted from Lord,
+ Definition 6.1,
+ p.217]
+\end_layout
+
+\end_inset
+
+A stochastic process 
+\begin_inset Formula $\left\{ X\left(t\right):t\in\mathcal{T}\right\} $
+\end_inset
+
+ is called stationary if the mean 
+\begin_inset Formula $\mu(t)$
+\end_inset
+
+ is independent of 
+\begin_inset Formula $t$
+\end_inset
+
+ and the covariance function 
+\begin_inset Formula $C\left(s,t\right)$
+\end_inset
+
+ is dependent only on the difference 
+\begin_inset Formula $s-t$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Lemma
+Covariance function of a stationary stochastic process 
+\begin_inset Formula $\left\{ X\left(t\right):t\in\mathcal{T}\right\} $
+\end_inset
+
+ can be written as 
+\shape up
+
+\begin_inset Formula 
+\[
+C\left(s,t\right)=C\left(s-t,0\right)\eqqcolon c\left(s-t\right),
+\]
+
+\end_inset
+
+
+\shape default
+ where
+\shape up
+ 
+\begin_inset Formula $c\left(t\right)$
+\end_inset
+
+
+\shape default
+ is known as stationary covariance function.
+\end_layout
+
+\begin_layout Definition
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Isotropic Random Field [Adapted from Lord,
+ Definition 7.14,
+ p.263]
+\end_layout
+
+\end_inset
+
+ A stationary random field 
+\begin_inset Formula $\left\{ X\left(\boldsymbol{x}\right):\boldsymbol{x}\in\mathbb{R}^{d}\right\} $
+\end_inset
+
+ is isotropic if the stationary covariance 
+\begin_inset Formula $c\left(\boldsymbol{x}\right)$
+\end_inset
+
+ is invariant to rotations.
+ 
+\end_layout
+
+\begin_layout Lemma
+Let 
+\begin_inset Formula $\left\{ X\left(\boldsymbol{x}\right):\boldsymbol{x}\in\mathbb{R}^{d}\right\} $
+\end_inset
+
+ be a isotropic stationary random field and 
+\begin_inset Formula $c\left(\boldsymbol{x}\right)$
+\end_inset
+
+ its stationary covariance,
+ then the mean 
+\begin_inset Formula $\mu$
+\end_inset
+
+ of 
+\begin_inset Formula $X\left(\boldsymbol{x}\right)$
+\end_inset
+
+ is constant and 
+\begin_inset Formula $c\left(\boldsymbol{x}\right)=c^{0}\left(r\right),$
+\end_inset
+
+ where 
+\begin_inset Formula $r\coloneqq\left\Vert \boldsymbol{x}\right\Vert _{2}$
+\end_inset
+
+,
+ for a function 
+\begin_inset Formula $c^{0}:\mathbb{R}^{+}\rightarrow\mathbb{R}$
+\end_inset
+
+ known as the isotropic covariance.
+\end_layout
+
+\begin_layout Section*
+Karhunen–Loève expansion
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $X(t)$
+\end_inset
+
+ be a stochastic process and 
+\begin_inset Formula $\mu(t)=\mathbb{E}[X(t)]$
+\end_inset
+
+.
+ Consider the mean-zero process 
+\begin_inset Formula $X(t)-\mu(t)$
+\end_inset
+
+.
+ We are interested in expressing the sample paths 
+\begin_inset Formula $X(t,\omega)-\mu(t)$
+\end_inset
+
+ as a series in an orthonormal basis 
+\begin_inset Formula $\{\phi_{j}:j\in\mathbb{N}\}$
+\end_inset
+
+ of 
+\begin_inset Formula $L^{2}(\mathcal{T})$
+\end_inset
+
+.
+ That is,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+X(t,\omega)-\mu(t)=\sum_{j=1}^{\infty}\gamma_{j}(\omega)\phi_{j}(t),
+\]
+
+\end_inset
+
+where the coefficients 
+\begin_inset Formula $\gamma_{j}$
+\end_inset
+
+ are random variables defined by
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\gamma_{j}(\omega)\coloneqq\langle X(t,\omega)-\mu(t),\phi_{j}(t)\rangle_{L^{2}(\mathcal{T})}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+btprint "btPrintCited"
+bibfiles "reference"
+options "bibtotoc"
+encoding "default"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+\start_of_appendix
+TEMPLATE
+\end_layout
+
+\begin_layout Standard
+TEMPLATE
+\end_layout
+
+\end_body
+\end_document
