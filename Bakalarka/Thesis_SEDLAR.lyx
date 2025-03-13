@@ -1253,9 +1253,9 @@ nolink "false"
 
  is equal to:
 \begin_inset Formula 
-\[
-\tilde{\pi}_{k+1}\sqrt{\left\langle \pi_{k+1},\pi_{k+1}\right\rangle _{w}}=\left(x-\alpha_{k}\right)\tilde{\pi}_{k}\sqrt{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}}-\beta_{k}\tilde{\pi}_{k-1}\sqrt{\left\langle \pi_{k-1},\pi_{k-1}\right\rangle _{w}}
-\]
+\begin{eqnarray*}
+\tilde{\pi}_{k+1}\sqrt{\left\langle \pi_{k+1},\pi_{k+1}\right\rangle _{w}} & = & \left(x-\alpha_{k}\right)\tilde{\pi}_{k}\sqrt{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}}-\beta_{k}\tilde{\pi}_{k-1}\sqrt{\left\langle \pi_{k-1},\pi_{k-1}\right\rangle _{w}}
+\end{eqnarray*}
 
 \end_inset
 
@@ -1983,7 +1983,12 @@ Orthogonality of polynomials
 
 .
  Let 
-\begin_inset Formula $\hat{x}=\frac{a+b}{a-b}+\frac{2}{b-a}x\Longrightarrow d\hat{x}=\frac{2}{b-a}dx\Longrightarrow\quad\int_{a}^{b}\pi_{i}^{L}\left(\frac{a+b}{a-b}+\frac{2}{b-a}x\right)\pi_{j}^{L}\left(\frac{a+b}{a-b}+\frac{2}{b-a}x\right)\,dx=\int_{-1}^{1}\frac{b-a}{2}\pi_{i}^{L}\left(\hat{x}\right)\pi_{j}^{L}\left(\hat{x}\right)\,d\hat{x}=\frac{b-a}{2}\int_{-1}^{1}\pi_{i}^{L}\left(\hat{x}\right)\pi_{j}^{L}\left(\hat{x}\right)\,d\hat{x}=0$
+\begin_inset Formula 
+\begin{eqnarray*}
+\hat{x} & = & \frac{a+b}{a-b}+\frac{2}{b-a}x\Longrightarrow d\hat{x}=\frac{2}{b-a}dx\Longrightarrow\quad\int_{a}^{b}\pi_{i}^{L}\left(\frac{a+b}{a-b}+\frac{2}{b-a}x\right)\pi_{j}^{L}\left(\frac{a+b}{a-b}+\frac{2}{b-a}x\right)\,dx=\\
+ &  & =\int_{-1}^{1}\frac{b-a}{2}\pi_{i}^{L}\left(\hat{x}\right)\pi_{j}^{L}\left(\hat{x}\right)\,d\hat{x}=\frac{b-a}{2}\int_{-1}^{1}\pi_{i}^{L}\left(\hat{x}\right)\pi_{j}^{L}\left(\hat{x}\right)\,d\hat{x}=0
+\end{eqnarray*}
+
 \end_inset
 
 

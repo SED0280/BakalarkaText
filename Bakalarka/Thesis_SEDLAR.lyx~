@@ -475,7 +475,7 @@ The weighted integral is well defined
 
 \begin_inset Formula 
 \[
-\int_{I}w(x)f(x)\,dx\in\mathbb{R}
+\intop_{I}w(x)f(x)\,dx\in\mathbb{R}
 \]
 
 \end_inset
@@ -516,7 +516,7 @@ nolink "false"
  Then all moments are finite:
 \begin_inset Formula 
 \[
-\mu_{r}\coloneqq\int_{\mathbb{R}}w(x)x^{r}\,dx\in\mathbb{R},\;r=0,1,2,\ldots,\;with\:\forall r:\left|\mu_{r}\right|<\infty.
+\mu_{r}\coloneqq\intop_{\mathbb{R}}w(x)x^{r}\,dx\in\mathbb{R},\;r=0,1,2,\ldots,\;with\:\forall r:\left|\mu_{r}\right|<\infty.
 \]
 
 \end_inset
@@ -566,7 +566,7 @@ nolink "false"
  a weighted inner product is defined as
 \begin_inset Formula 
 \[
-\left\langle u,v\right\rangle _{w}=\int_{I}w(x)u(x)v(x)\,dx,
+\left\langle u,v\right\rangle _{w}=\intop_{I}w(x)u(x)v(x)\,dx,
 \]
 
 \end_inset
@@ -661,7 +661,7 @@ An inner product
  by 
 \begin_inset Formula 
 \[
-\left\langle u,v\right\rangle _{w}=\int_{-1}^{1}u(x)v(x)\,dx
+\left\langle u,v\right\rangle _{w}=\intop_{-1}^{1}u(x)v(x)\,dx
 \]
 
 \end_inset
@@ -813,7 +813,7 @@ Integrating over
  yields 
 \begin_inset Formula 
 \[
-\int_{I_{\delta}}u(x)^{2}\,dx\ge\int_{I_{\delta}}\left(\frac{u(x_{0})}{2}\right)^{2}dx=\left(\frac{u(x_{0})}{2}\right)^{2}\cdot\left|I_{\delta}\right|,
+\intop_{I_{\delta}}u(x)^{2}\,dx\ge\intop_{I_{\delta}}\left(\frac{u(x_{0})}{2}\right)^{2}dx=\left(\frac{u(x_{0})}{2}\right)^{2}\cdot\left|I_{\delta}\right|,
 \]
 
 \end_inset
@@ -834,7 +834,7 @@ where
 Since 
 \begin_inset Formula 
 \[
-\|u\|_{w}^{2}=\int_{-1}^{1}u(x)^{2}\,dx\ge\int_{I_{\delta}}u(x)^{2}\,dx,
+\|u\|_{w}^{2}=\intop_{-1}^{1}u(x)^{2}\,dx\ge\intop_{I_{\delta}}u(x)^{2}\,dx,
 \]
 
 \end_inset
@@ -940,7 +940,7 @@ shift property
 This also works for an inner product defined from integrals:
 \begin_inset Formula 
 \[
-\left\langle tu,v\right\rangle _{w}=\int_{I}w(x)\left(tu(x)\right)v(x)\,dx=\int_{I}w(x)u(x)\left(tv(x)\right)\,dx=\left\langle u,tv\right\rangle _{w}
+\left\langle tu,v\right\rangle _{w}=\intop_{I}w(x)\left(tu(x)\right)v(x)\,dx=\intop_{I}w(x)u(x)\left(tv(x)\right)\,dx=\left\langle u,tv\right\rangle _{w}
 \]
 
 \end_inset
@@ -1253,9 +1253,9 @@ nolink "false"
 
  is equal to:
 \begin_inset Formula 
-\[
-\tilde{\pi}_{k+1}\sqrt{\left\langle \pi_{k+1},\pi_{k+1}\right\rangle _{w}}=\left(x-\alpha_{k}\right)\tilde{\pi}_{k}\sqrt{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}}-\beta_{k}\tilde{\pi}_{k-1}\sqrt{\left\langle \pi_{k-1},\pi_{k-1}\right\rangle _{w}}
-\]
+\begin{eqnarray*}
+\tilde{\pi}_{k+1}\sqrt{\left\langle \pi_{k+1},\pi_{k+1}\right\rangle _{w}} & = & \left(x-\alpha_{k}\right)\tilde{\pi}_{k}\sqrt{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}}-\beta_{k}\tilde{\pi}_{k-1}\sqrt{\left\langle \pi_{k-1},\pi_{k-1}\right\rangle _{w}}
+\end{eqnarray*}
 
 \end_inset
 
@@ -1640,7 +1640,7 @@ The Quadrature rule
 The quadrature rule is defined as
 \begin_inset Formula 
 \[
-\int_{I}f(x)dt\approx\sum_{v=1}^{n}\lambda_{v}f(\tau_{v})
+\intop_{I}f(x)dt\approx\sum_{v=1}^{n}\lambda_{v}f(\tau_{v})
 \]
 
 \end_inset
@@ -1976,7 +1976,7 @@ Orthogonality of polynomials
  
 \begin_inset Formula 
 \[
-\forall i,j\in\mathbb{N}:i\neq j:\left\langle \pi_{i},\pi_{j}\right\rangle _{1}=\int_{a}^{b}\pi_{i}(x)\pi_{j}(x)\,dx=\int_{a}^{b}\pi_{i}^{L}\left(\frac{a+b}{a-b}+\frac{2}{b-a}x\right)\pi_{j}^{L}\left(\frac{a+b}{a-b}+\frac{2}{b-a}x\right)\,dx
+\forall i,j\in\mathbb{N}:i\neq j:\left\langle \pi_{i},\pi_{j}\right\rangle _{1}=\intop_{a}^{b}\pi_{i}(x)\pi_{j}(x)\,dx=\intop_{a}^{b}\pi_{i}^{L}\left(\frac{a+b}{a-b}+\frac{2}{b-a}x\right)\pi_{j}^{L}\left(\frac{a+b}{a-b}+\frac{2}{b-a}x\right)\,dx
 \]
 
 \end_inset
@@ -2087,7 +2087,7 @@ L2 Space
 
 \begin_inset Formula 
 \[
-\intop\left|f(x)\right|^{2}dx<\infty
+\intop_{I}\left|f(x)\right|^{2}dx<\infty
 \]
 
 \end_inset
@@ -2096,7 +2096,7 @@ L2 Space
 \end_layout
 
 \begin_layout Section
-probability
+Probability
 \end_layout
 
 \begin_layout Standard
@@ -2367,21 +2367,16 @@ status collapsed
 \end_inset
 
 ,
- a measurable space 
-\begin_inset Formula $(H,\mathcal{H})$
-\end_inset
-
-,
  and a probability space 
 \begin_inset Formula $(\Omega,\mathcal{F},\mathbb{P})$
 \end_inset
 
 ,
- a H-valued 
+ a real-valued 
 \emph on
 stochastic process
 \emph default
- (also known as Random process) is a set of H-valued random variables 
+ (also known as Random process) is a set of real-valued random variables 
 \begin_inset Formula $\left\{ X(t):t\in\mathcal{T}\right\} $
 \end_inset
 
@@ -2391,7 +2386,7 @@ stochastic process
 \end_inset
 
  where 
-\begin_inset Formula $X:\mathcal{T}\times\Omega\rightarrow H$
+\begin_inset Formula $X:\mathcal{T}\times\Omega\rightarrow\mathbb{R}$
 \end_inset
 
 .
@@ -2491,7 +2486,7 @@ Expected Value
  the expected value is
 \begin_inset Formula 
 \[
-\mathbb{E}\left[X\right]\coloneqq\int_{-\infty}^{\infty}x\,f\left(x\right)\,dx
+\mathbb{E}\left[X\right]\coloneqq\intop_{-\infty}^{\infty}x\,f\left(x\right)\,dx
 \]
 
 \end_inset
