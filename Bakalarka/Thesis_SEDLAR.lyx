@@ -244,122 +244,6 @@ MakeTitlePages
 
 \end_layout
 
-\begin_layout Chapter
-Introduction
-\end_layout
-
-\begin_layout Standard
-TEMPLATE
-\end_layout
-
-\begin_layout Chapter
-Polynomials
-\end_layout
-
-\begin_layout Section
-Space of polynomials
-\end_layout
-
-\begin_layout Section
-Monic polynomials
-\end_layout
-
-\begin_layout Section
-Weighted inner product
-\end_layout
-
-\begin_layout Subsection
-weight function
-\end_layout
-
-\begin_layout Subsection
-inner product
-\end_layout
-
-\begin_layout Subsection
-positive definiteness
-\end_layout
-
-\begin_layout Section
-Normalized polynomials
-\end_layout
-
-\begin_layout Section
-(orthogonal polynomials
-\end_layout
-
-\begin_layout Section
-orthonormal polynomials)(maybe add these)
-\end_layout
-
-\begin_layout Section
-Three term recurrence
-\end_layout
-
-\begin_layout Subsection
-Jacobi Matrix
-\end_layout
-
-\begin_layout Chapter
-Quadrature rule
-\end_layout
-
-\begin_layout Section
-quadrature rule
-\end_layout
-
-\begin_layout Section
-nodes as eigenvalues
-\end_layout
-
-\begin_layout Section
-Legendre over interval
-\end_layout
-
-\begin_layout Section
-numeric experiments
-\end_layout
-
-\begin_layout Chapter
-Probability stuff (rename later)
-\end_layout
-
-\begin_layout Section
-L2 space
-\end_layout
-
-\begin_layout Section
-probability
-\end_layout
-
-\begin_layout Subsection
-Random Variable
-\end_layout
-
-\begin_layout Subsection
-Random Vector
-\end_layout
-
-\begin_layout Subsection
-Stochaistic process
-\end_layout
-
-\begin_layout Subsection
-Random field
-\end_layout
-
-\begin_layout Section
-Covarience
-\end_layout
-
-\begin_layout Subsection
-autocovarience
-\end_layout
-
-\begin_layout Chapter
-Karhunen-Loéve expansion
-\end_layout
-
 \begin_layout Standard
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -399,10 +283,6 @@ TEMPLATE
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -432,13 +312,25 @@ TEMPLATE
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
+\end_layout
+
+\begin_layout Chapter
+Introduction
+\end_layout
+
+\begin_layout Standard
+TEMPLATE
+\end_layout
+
+\begin_layout Chapter
+Polynomials
+\end_layout
+
+\begin_layout Section
+Space of polynomials
 \end_layout
 
 \begin_layout Definition
@@ -487,11 +379,50 @@ P\coloneqq\bigcup_{d=0}^{\infty}P_{d}
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset Separator plain
+\begin_layout Section
+Monic polynomials
+\end_layout
+
+\begin_layout Definition
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Monic polynomials
+\end_layout
+
 \end_inset
 
+For a non-negative integer 
+\begin_inset Formula $d$
+\end_inset
 
+,
+ let us define 
+\begin_inset Formula 
+\[
+P_{d}^{m}\coloneqq\left\{ \pi(x)=x^{d}+\sum_{i=0}^{d-1}a_{i}x^{i}\;\Big|\;a_{i}\in\mathbb{R}\right\} 
+\]
+
+\end_inset
+
+as the set of 
+\emph on
+monic polynomials 
+\emph default
+of degree exactly 
+\begin_inset Formula $d$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Weighted inner product
+\end_layout
+
+\begin_layout Subsection
+weight function
 \end_layout
 
 \begin_layout Definition
@@ -544,7 +475,7 @@ The weighted integral is well defined
 
 \begin_inset Formula 
 \[
-\int_{I}w(x)f(x)\,dx\in\mathbb{R}
+\intop_{I}w(x)f(x)\,dx\in\mathbb{R}
 \]
 
 \end_inset
@@ -585,16 +516,16 @@ nolink "false"
  Then all moments are finite:
 \begin_inset Formula 
 \[
-\mu_{r}\coloneqq\int_{\mathbb{R}}w(x)x^{r}\,dx\in\mathbb{R},\;r=0,1,2,\ldots,\;with\:\forall r:\left|\mu_{r}\right|<\infty.
+\mu_{r}\coloneqq\intop_{\mathbb{R}}w(x)x^{r}\,dx\in\mathbb{R},\;r=0,1,2,\ldots,\;with\:\forall r:\left|\mu_{r}\right|<\infty.
 \]
 
 \end_inset
 
 
-\begin_inset Separator plain
-\end_inset
+\end_layout
 
-
+\begin_layout Subsection
+inner product
 \end_layout
 
 \begin_layout Definition
@@ -635,7 +566,7 @@ nolink "false"
  a weighted inner product is defined as
 \begin_inset Formula 
 \[
-\left\langle u,v\right\rangle _{w}=\int_{I}w(x)u(x)v(x)\,dx,
+\left\langle u,v\right\rangle _{w}=\intop_{I}w(x)u(x)v(x)\,dx,
 \]
 
 \end_inset
@@ -676,85 +607,8 @@ orthogonal
 .
 \end_layout
 
-\begin_layout Standard
-\begin_inset Separator plain
-\end_inset
-
-
-\end_layout
-
-\begin_layout Definition
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Monic polynomials
-\end_layout
-
-\end_inset
-
-For a non-negative integer 
-\begin_inset Formula $d$
-\end_inset
-
-,
- let us define 
-\begin_inset Formula 
-\[
-P_{d}^{m}\coloneqq\left\{ \pi(x)=x^{d}+\sum_{i=0}^{d-1}a_{i}x^{i}\;\Big|\;a_{i}\in\mathbb{R}\right\} 
-\]
-
-\end_inset
-
-as the set of 
-\emph on
-monic polynomials 
-\emph default
-of degree exactly 
-\begin_inset Formula $d$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Separator plain
-\end_inset
-
-
-\end_layout
-
-\begin_layout Definition
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Normalized polynomials
-\end_layout
-
-\end_inset
-
-For non-negative integer 
-\begin_inset Formula $d$
-\end_inset
-
-,
- the set of normalized polynomials is defined as 
-\begin_inset Formula 
-\[
-\widetilde{P_{d}}\coloneqq\left\{ \tilde{p}\in P_{d}:\left\Vert \tilde{p}\right\Vert _{w}=1\right\} 
-\]
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Separator plain
-\end_inset
-
-
+\begin_layout Subsection
+positive definiteness
 \end_layout
 
 \begin_layout Definition
@@ -807,7 +661,7 @@ An inner product
  by 
 \begin_inset Formula 
 \[
-\left\langle u,v\right\rangle _{w}=\int_{-1}^{1}u(x)v(x)\,dx
+\left\langle u,v\right\rangle _{w}=\intop_{-1}^{1}u(x)v(x)\,dx
 \]
 
 \end_inset
@@ -959,7 +813,7 @@ Integrating over
  yields 
 \begin_inset Formula 
 \[
-\int_{I_{\delta}}u(x)^{2}\,dx\ge\int_{I_{\delta}}\left(\frac{u(x_{0})}{2}\right)^{2}dx=\left(\frac{u(x_{0})}{2}\right)^{2}\cdot\left|I_{\delta}\right|,
+\intop_{I_{\delta}}u(x)^{2}\,dx\ge\intop_{I_{\delta}}\left(\frac{u(x_{0})}{2}\right)^{2}dx=\left(\frac{u(x_{0})}{2}\right)^{2}\cdot\left|I_{\delta}\right|,
 \]
 
 \end_inset
@@ -980,7 +834,7 @@ where
 Since 
 \begin_inset Formula 
 \[
-\|u\|_{w}^{2}=\int_{-1}^{1}u(x)^{2}\,dx\ge\int_{I_{\delta}}u(x)^{2}\,dx,
+\|u\|_{w}^{2}=\intop_{-1}^{1}u(x)^{2}\,dx\ge\intop_{I_{\delta}}u(x)^{2}\,dx,
 \]
 
 \end_inset
@@ -1086,12 +940,54 @@ shift property
 This also works for an inner product defined from integrals:
 \begin_inset Formula 
 \[
-\left\langle tu,v\right\rangle _{w}=\int_{I}w(x)\left(tu(x)\right)v(x)\,dx=\int_{I}w(x)u(x)\left(tv(x)\right)\,dx=\left\langle u,tv\right\rangle _{w}
+\left\langle tu,v\right\rangle _{w}=\intop_{I}w(x)\left(tu(x)\right)v(x)\,dx=\intop_{I}w(x)u(x)\left(tv(x)\right)\,dx=\left\langle u,tv\right\rangle _{w}
 \]
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Section
+Normalized polynomials
+\end_layout
+
+\begin_layout Definition
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Normalized polynomials
+\end_layout
+
+\end_inset
+
+For non-negative integer 
+\begin_inset Formula $d$
+\end_inset
+
+,
+ the set of normalized polynomials is defined as 
+\begin_inset Formula 
+\[
+\widetilde{P_{d}}\coloneqq\left\{ \tilde{p}\in P_{d}:\left\Vert \tilde{p}\right\Vert _{w}=1\right\} .
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+(orthogonal polynomials)
+\end_layout
+
+\begin_layout Section
+(orthonormal polynomials)(maybe add these)
+\end_layout
+
+\begin_layout Section
+Three term recurrence
 \end_layout
 
 \begin_layout Theorem
@@ -1395,6 +1291,10 @@ nolink "false"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Subsection
+Jacobi Matrix
 \end_layout
 
 \begin_layout Definition
@@ -1719,6 +1619,14 @@ and after simplification,
 
 \end_layout
 
+\begin_layout Chapter
+Quadrature rule
+\end_layout
+
+\begin_layout Section
+quadrature rule
+\end_layout
+
 \begin_layout Definition
 \begin_inset Argument 1
 status open
@@ -1732,7 +1640,7 @@ The Quadrature rule
 The quadrature rule is defined as
 \begin_inset Formula 
 \[
-\int_{I}f(x)dt\approx\sum_{v=1}^{n}\lambda_{v}f(\tau_{v})
+\intop_{I}f(x)dt\approx\sum_{v=1}^{n}\lambda_{v}f(\tau_{v})
 \]
 
 \end_inset
@@ -1791,11 +1699,8 @@ then Quadrature rule for positive definite inner product,
  has points equal to the root of an n-th ortogonal polynomial
 \end_layout
 
-\begin_layout Standard
-\begin_inset Separator plain
-\end_inset
-
-
+\begin_layout Section
+nodes as eigenvalues
 \end_layout
 
 \begin_layout Theorem
@@ -2024,6 +1929,10 @@ which means that
 
 \end_layout
 
+\begin_layout Section
+Legendre over interval
+\end_layout
+
 \begin_layout Remark
 Orthogonal Lagrange polynomials denoted as 
 \begin_inset Formula $\pi_{i}^{L}(x)$
@@ -2067,7 +1976,7 @@ Orthogonality of polynomials
  
 \begin_inset Formula 
 \[
-\forall i,j\in\mathbb{N}:i\neq j:\left\langle \pi_{i},\pi_{j}\right\rangle _{1}=\int_{a}^{b}\pi_{i}(x)\pi_{j}(x)\,dx=\int_{a}^{b}\pi_{i}^{L}\left(\frac{a+b}{a-b}+\frac{2}{b-a}x\right)\pi_{j}^{L}\left(\frac{a+b}{a-b}+\frac{2}{b-a}x\right)\,dx
+\forall i,j\in\mathbb{N}:i\neq j:\left\langle \pi_{i},\pi_{j}\right\rangle _{1}=\intop_{a}^{b}\pi_{i}(x)\pi_{j}(x)\,dx=\intop_{a}^{b}\pi_{i}^{L}\left(\frac{a+b}{a-b}+\frac{2}{b-a}x\right)\pi_{j}^{L}\left(\frac{a+b}{a-b}+\frac{2}{b-a}x\right)\,dx
 \]
 
 \end_inset
@@ -2141,24 +2050,20 @@ Let us denote
 
 \end_layout
 
-\begin_layout Definition
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Banach Space
-\end_layout
-
-\end_inset
-
- A Banach space is a complete normed vector space.
+\begin_layout Section
+numeric experiments
 \end_layout
 
 \begin_layout Standard
-\begin_inset Separator plain
-\end_inset
+(add numeric experiments with pictures and graphs)
+\end_layout
 
+\begin_layout Chapter
+Probability stuff (rename later)
+\end_layout
 
+\begin_layout Section
+L2 space
 \end_layout
 
 \begin_layout Definition
@@ -2166,38 +2071,23 @@ Banach Space
 status open
 
 \begin_layout Plain Layout
-Lp Spaces
+L2 Space
 \end_layout
 
 \end_inset
 
- Let 
-\begin_inset Formula $\left(Y,\left\Vert \cdot\right\Vert _{Y}\right)$
-\end_inset
-
-be Banach space and 
-\begin_inset Formula $1\leq p<\infty$
-\end_inset
-
-.
- For a domain D,
  
-\begin_inset Formula $L^{p}\left(D\right)$
+\begin_inset Formula $L^{2}$
 \end_inset
 
- is the set of Borel measurable functions 
-\begin_inset Formula $u:D\rightarrow\mathbb{R}$
+ space is a space where for every 
+\begin_inset Formula $f(x)\in L^{2}:$
 \end_inset
 
- with 
-\begin_inset Formula $\left\Vert u\right\Vert _{L^{p}\left(D\right)}<\infty$
-\end_inset
 
-,
- where
 \begin_inset Formula 
 \[
-\left\Vert u\right\Vert _{L^{p}\left(D\right)}\coloneqq\left(\int_{D}\left|u\left(x\right)\right|^{p}dx\right)^{1/p}.
+\intop_{I}\left|f(x)\right|^{2}dx<\infty
 \]
 
 \end_inset
@@ -2205,62 +2095,8 @@ be Banach space and
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset Separator plain
-\end_inset
-
-
-\end_layout
-
-\begin_layout Lemma
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Hilbert Space
-\end_layout
-
-\end_inset
-
-When 
-\begin_inset Formula $p=2$
-\end_inset
-
-,
- there is an inner product and 
-\begin_inset Formula $L^{2}(D)$
-\end_inset
-
- is a Hilbert space.
- Functions in this space are called 
-\emph on
-square integrable
-\emph default
-.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Separator plain
-\end_inset
-
-
-\end_layout
-
-\begin_layout Theorem
-For any domain D,
- 
-\begin_inset Formula $L^{2}(D)$
-\end_inset
-
- is a real Hilbert space with inner product
-\begin_inset Formula 
-\[
-\left\langle u,v\right\rangle _{L^{2}(D)}\coloneqq\int_{D}u\left(\boldsymbol{x}\right)v\left(\boldsymbol{x}\right)d\boldsymbol{x}.
-\]
-
-\end_inset
-
-
+\begin_layout Section
+Probability
 \end_layout
 
 \begin_layout Standard
@@ -2393,11 +2229,8 @@ probability measure
 .
 \end_layout
 
-\begin_layout Standard
-\begin_inset Separator plain
-\end_inset
-
-
+\begin_layout Subsection
+Random Variable
 \end_layout
 
 \begin_layout Definition
@@ -2469,11 +2302,8 @@ realization
  of X.
 \end_layout
 
-\begin_layout Standard
-\begin_inset Separator plain
-\end_inset
-
-
+\begin_layout Subsection
+Random Vector
 \end_layout
 
 \begin_layout Definition
@@ -2497,11 +2327,8 @@ A random vector
  is a random variable.
 \end_layout
 
-\begin_layout Standard
-\begin_inset Separator plain
-\end_inset
-
-
+\begin_layout Subsection
+Stochaistic process
 \end_layout
 
 \begin_layout Definition
@@ -2540,21 +2367,16 @@ status collapsed
 \end_inset
 
 ,
- a measurable space 
-\begin_inset Formula $(H,\mathcal{H})$
-\end_inset
-
-,
  and a probability space 
 \begin_inset Formula $(\Omega,\mathcal{F},\mathbb{P})$
 \end_inset
 
 ,
- a H-valued 
+ a real-valued 
 \emph on
 stochastic process
 \emph default
- (also known as Random process) is a set of H-valued random variables 
+ (also known as Random process) is a set of real-valued random variables 
 \begin_inset Formula $\left\{ X(t):t\in\mathcal{T}\right\} $
 \end_inset
 
@@ -2564,17 +2386,14 @@ stochastic process
 \end_inset
 
  where 
-\begin_inset Formula $X:\mathcal{T}\times\Omega\rightarrow H$
+\begin_inset Formula $X:\mathcal{T}\times\Omega\rightarrow\mathbb{R}$
 \end_inset
 
 .
 \end_layout
 
-\begin_layout Standard
-\begin_inset Separator plain
-\end_inset
-
-
+\begin_layout Subsection
+Random field
 \end_layout
 
 \begin_layout Definition
@@ -2667,7 +2486,7 @@ Expected Value
  the expected value is
 \begin_inset Formula 
 \[
-\mathbb{E}\left[X\right]\coloneqq\int_{-\infty}^{\infty}x\,f\left(x\right)\,dx
+\mathbb{E}\left[X\right]\coloneqq\intop_{-\infty}^{\infty}x\,f\left(x\right)\,dx
 \]
 
 \end_inset
@@ -2675,11 +2494,8 @@ Expected Value
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset Separator plain
-\end_inset
-
-
+\begin_layout Section
+Covarience
 \end_layout
 
 \begin_layout Definition
@@ -2713,11 +2529,8 @@ where
  
 \end_layout
 
-\begin_layout Standard
-\begin_inset Separator plain
-\end_inset
-
-
+\begin_layout Subsection
+Autocovarience
 \end_layout
 
 \begin_layout Definition
@@ -2753,11 +2566,8 @@ for all
 .
 \end_layout
 
-\begin_layout Standard
-\begin_inset Separator plain
-\end_inset
-
-
+\begin_layout Section
+Stationary process
 \end_layout
 
 \begin_layout Definition
@@ -2824,6 +2634,10 @@ C\left(s,t\right)=C\left(s-t,0\right)\eqqcolon c\left(s-t\right),
  is known as stationary covariance function.
 \end_layout
 
+\begin_layout Section
+Isotropic Random Field
+\end_layout
+
 \begin_layout Definition
 \begin_inset Argument 1
 status open
@@ -2882,8 +2696,8 @@ Let
  known as the isotropic covariance.
 \end_layout
 
-\begin_layout Section*
-Karhunen–Loève expansion
+\begin_layout Chapter
+Karhunen-Loéve expansion
 \end_layout
 
 \begin_layout Standard
