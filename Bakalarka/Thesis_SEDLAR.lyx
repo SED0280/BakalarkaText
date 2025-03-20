@@ -639,7 +639,11 @@ Positive Definiteness of an Inner Product
 status open
 
 \begin_layout Plain Layout
-Positive Definiteness of an Inner product over <-1,1>
+Positive Definiteness of an Inner product over 
+\begin_inset Formula $\left\langle -1,1\right\rangle $
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -887,8 +891,7 @@ status open
 status open
 
 \begin_layout Plain Layout
-Shift Property [Adapted from Gautchi,
- 1.3 p.10]
+Shift Property
 \end_layout
 
 \end_inset
@@ -938,7 +941,7 @@ shift property
 \end_layout
 
 \begin_layout Remark
-This also works for an inner product defined from integrals:
+Shift property holds for an inner product defined from integrals:
 \begin_inset Formula 
 \[
 \left\langle tu,v\right\rangle _{w}=\intop_{I}w(x)\left(tu(x)\right)v(x)\,dx=\intop_{I}w(x)u(x)\left(tv(x)\right)\,dx=\left\langle u,tv\right\rangle _{w}
@@ -964,7 +967,13 @@ For non-negative integer
 \end_inset
 
 ,
- the set of normalized polynomials is defined as 
+ the set of normalized polynomials,
+ with respect to a weighted norm with weight 
+\begin_inset Formula $w$
+\end_inset
+
+,
+ is defined as 
 \begin_inset Formula 
 \[
 \widetilde{P_{d}}\coloneqq\left\{ \tilde{p}\in P_{d}:\left\Vert \tilde{p}\right\Vert _{w}=1\right\} .
@@ -1049,11 +1058,16 @@ We begin by applying the Gram-Schmidt orthogonalization process,
 \end_inset
 
 .
- Each subsequent function to be orthogonalized is obtained by multiplying the previous orthogonalized function by 
+ Each subsequent function to be orthogonalized is obtained by multiplying the previous orthogonalized function 
+\begin_inset Formula $\pi_{k}$
+\end_inset
+
+ by 
 \begin_inset Formula $x$
 \end_inset
 
-.Thus,
+.
+ Thus,
  for 
 \begin_inset Formula $k=1,2,3,\ldots$
 \end_inset
@@ -1068,8 +1082,8 @@ We begin by applying the Gram-Schmidt orthogonalization process,
 \end_layout
 
 \begin_layout Proof
-Gramm-Schmidt process results in orthogonal polynomials,
- and we can express 
+The Gram-Schmidt process produces orthogonal polynomials,
+ and we can represent 
 \begin_inset Formula $\pi_{k+1}(x)$
 \end_inset
 
@@ -1192,7 +1206,7 @@ name "thm:normal-3-term-recurrence"
 \end_inset
 
  Let 
-\begin_inset Formula $\tilde{\pi}_{k}\in\tilde{P_{d}^{m}},k=0,1,2,\ldots,$
+\begin_inset Formula $\tilde{\pi}_{k}\in\widetilde{P_{d}^{m}},k=0,1,2,\ldots,$
 \end_inset
 
 be monic ortholonormal polynomials.
@@ -1216,7 +1230,7 @@ be monic ortholonormal polynomials.
 \end_layout
 
 \begin_layout Proof
-Monic polynomials relate to orthonormal polynomials in the way 
+Monic polynomials relates to orthonormal polynomials in the way 
 \begin_inset Formula $\pi=\tilde{\pi}\left\Vert \pi\right\Vert _{w},$
 \end_inset
 
@@ -1350,7 +1364,7 @@ name "thm:Jacobi-eigenvalues-eigenvectors"
 \end_inset
 
 The roots 
-\begin_inset Formula $\tau_{v}^{(n)}$
+\begin_inset Formula $\tau_{j}^{(n)}$
 \end_inset
 
  of 
@@ -1363,7 +1377,7 @@ The roots
 
  of order n,
  and 
-\begin_inset Formula $\tilde{\boldsymbol{\pi}}\left(\tau_{v}^{(n)}\right)$
+\begin_inset Formula $\tilde{\boldsymbol{\pi}}\left(\tau_{j}^{(n)}\right)$
 \end_inset
 
  are corresponding eigenvectors.
@@ -1414,25 +1428,25 @@ where
 \end_inset
 
  is the 
-\emph on
-n
-\emph default
-th coordinate vector in 
+\begin_inset Formula $n$
+\end_inset
+
+-th coordinate vector in 
 \begin_inset Formula $\mathbb{R}^{n}$
 \end_inset
 
 .
  Both assertions follow immediately from the matrix form of this equation by putting 
-\begin_inset Formula $t=\tau_{v}^{(n)}$
+\begin_inset Formula $t=\tau_{j}^{(n)}$
 \end_inset
 
  and noting that 
-\begin_inset Formula $\tilde{\boldsymbol{\pi}}(\tau_{v}^{(n)})\neq0$
+\begin_inset Formula $\tilde{\boldsymbol{\pi}}(\tau_{j}^{(n)})\neq0$
 \end_inset
 
 ,
  the first component of 
-\begin_inset Formula $\tilde{\boldsymbol{\pi}}(\tau_{v}^{(n)})$
+\begin_inset Formula $\tilde{\boldsymbol{\pi}}(\tau_{j}^{(n)})$
 \end_inset
 
  being 
@@ -1442,13 +1456,13 @@ th coordinate vector in
 
 \begin_inset Formula 
 \[
-\tau_{v}^{(n)}\tilde{\boldsymbol{\pi}}(\tau_{v}^{(n)})=J_{n}\tilde{\boldsymbol{\pi}}(\tau_{v}^{(n)})+\sqrt{\beta_{n}}\tilde{\pi}_{n}(\tau_{v}^{(n)})e_{n},
+\tau_{j}^{(n)}\tilde{\boldsymbol{\pi}}(\tau_{j}^{(n)})=J_{n}\tilde{\boldsymbol{\pi}}(\tau_{j}^{(n)})+\sqrt{\beta_{n}}\tilde{\pi}_{n}(\tau_{j}^{(n)})e_{n},
 \]
 
 \end_inset
 
 since 
-\begin_inset Formula $\tau_{v}^{(n)}$
+\begin_inset Formula $\tau_{j}^{(n)}$
 \end_inset
 
  are roots of 
@@ -1457,35 +1471,33 @@ since
 
 ,
  then 
-\begin_inset Formula $\tilde{\pi_{n}}(\tau_{v}^{(n)})=0$
+\begin_inset Formula $\tilde{\pi_{n}}(\tau_{j}^{(n)})=0$
 \end_inset
 
  and the equation simplifies to:
 \begin_inset Formula 
 \[
-\tau_{v}^{(n)}\tilde{\pi}(\tau_{v}^{(n)})=J_{n}\tilde{\pi}(\tau_{v}^{(n)})
+\tau_{j}^{(n)}\tilde{\pi}(\tau_{j}^{(n)})=J_{n}\tilde{\pi}(\tau_{j}^{(n)})
 \]
 
 \end_inset
 
 This shows that 
-\begin_inset Formula $\tilde{\pi}(\tau_{v}^{(n)})$
+\begin_inset Formula $\tilde{\pi}(\tau_{j}^{(n)})$
 \end_inset
 
  is an eigenvector of the matrix 
 \begin_inset Formula $J_{n}$
 \end_inset
 
- corresponding to the eigenvalue
-\begin_inset Formula $\tau_{v}^{(n)}$
+ corresponding to the eigenvalue 
+\begin_inset Formula $\tau_{j}^{(n)}$
 \end_inset
 
 .
 \end_layout
 
 \begin_layout Corollary
-
-\shape up
 \begin_inset Argument 1
 status open
 
@@ -1508,31 +1520,31 @@ nolink "false"
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Corollary
 Let 
-\begin_inset Formula $v_{v}$
+\begin_inset Formula $v_{j}$
 \end_inset
 
- denote the normalized eigenvector of
-\shape default
- 
+ denote the normalized eigenvector of 
 \begin_inset Formula $J_{n}$
 \end_inset
 
  corresponding to the eigenvalue 
-\begin_inset Formula $\tau_{v}^{(n)}$
+\begin_inset Formula $\tau_{j}^{(n)}$
 \end_inset
 
 ,
 \begin_inset Formula 
 \[
-J_{n}v_{v}=\tau_{v}^{(n)}v_{v},\;v_{v}^{T}v_{v}=1,
+J_{n}v_{j}=\tau_{j}^{(n)}v_{j},\;v_{j}^{T}v_{j}=1,
 \]
 
 \end_inset
 
 and let 
-\shape up
-
 \begin_inset Formula $v_{v,1}$
 \end_inset
 
@@ -1540,7 +1552,7 @@ and let
  Then,
 \begin_inset Formula 
 \[
-\beta_{0}v_{v,1}^{2}=\frac{1}{\sum_{k=0}^{n-1}\left[\tilde{\pi}_{k}(\tau_{v}^{(n)})\right]^{2}},\quad v=1,2,\ldots,n.
+\beta_{0}v_{v,1}^{2}=\frac{1}{\sum_{k=0}^{n-1}\left[\tilde{\pi}_{k}(\tau_{j}^{(n)})\right]^{2}},\quad v=1,2,\ldots,n.
 \]
 
 \end_inset
@@ -1550,13 +1562,13 @@ and let
 
 \begin_layout Proof
 For each normalized eigenvector 
-\begin_inset Formula $v_{v}$
+\begin_inset Formula $v_{j}$
 \end_inset
 
 :
 \begin_inset Formula 
 \[
-v_{v}=\left(\sum_{k=0}^{n-1}\left[\tilde{\pi}_{k}(\tau_{v}^{(n)})\right]^{2}\right)^{-1/2}\tilde{\pi}(\tau_{v}^{(n)}),\quad v=1,2,\ldots,n.
+v_{j}=\left(\sum_{k=0}^{n-1}\left[\tilde{\pi}_{k}(\tau_{j}^{(n)})\right]^{2}\right)^{-1/2}\tilde{\pi}(\tau_{j}^{(n)}),\quad v=1,2,\ldots,n.
 \]
 
 \end_inset
@@ -1580,7 +1592,7 @@ nolink "false"
  if we compare the first component of each side and square the equation we obtain:
 \begin_inset Formula 
 \[
-v_{v,1}^{2}=\left(\sum_{k=0}^{n-1}\left[\tilde{\pi}_{k}(\tau_{v}^{(n)})\right]^{2}\right)^{-1}\frac{1}{\sqrt{\beta_{0}}},\quad v=1,2,\ldots,n.
+v_{v,1}^{2}=\left(\sum_{k=0}^{n-1}\left[\tilde{\pi}_{k}(\tau_{j}^{(n)})\right]^{2}\right)^{-1}\frac{1}{\sqrt{\beta_{0}}},\quad v=1,2,\ldots,n.
 \]
 
 \end_inset
@@ -1589,7 +1601,7 @@ and after simplification,
  we obtain desired formula
 \begin_inset Formula 
 \[
-\beta_{0}v_{v,1}^{2}=\frac{1}{\sum_{k=0}^{n-1}\left[\tilde{\pi}_{k}(\tau_{v}^{(n)})\right]^{2}},\quad v=1,2,\ldots,n.
+\beta_{0}v_{v,1}^{2}=\frac{1}{\sum_{k=0}^{n-1}\left[\tilde{\pi}_{k}(\tau_{j}^{(n)})\right]^{2}},\quad v=1,2,\ldots,n.
 \]
 
 \end_inset
@@ -1611,23 +1623,23 @@ The Quadrature rule
 
 \end_inset
 
-The quadrature rule is defined as
+The quadrature rule is a set of weights 
+\begin_inset Formula $\lambda_{v}$
+\end_inset
+
+ and nodes 
+\begin_inset Formula $\tau_{v}$
+\end_inset
+
+ that help approximate the value of an integral 
 \begin_inset Formula 
 \[
-\intop_{I}f(x)dt\approx\sum_{v=1}^{n}\lambda_{v}f(\tau_{v})
+\intop_{I}f(x)dt\approx\sum_{v=1}^{n}\lambda_{v}f(\tau_{v}).
 \]
 
 \end_inset
 
-where 
-\begin_inset Formula $\lambda_{v}$
-\end_inset
 
- are called weights and 
-\begin_inset Formula $\tau_{v}$
-\end_inset
-
- are called nodes of an n-point quadrature rule
 \end_layout
 
 \begin_layout Theorem
@@ -1635,10 +1647,28 @@ where
 status open
 
 \begin_layout Plain Layout
+\begin_inset CommandInset citation
+LatexCommand cite
+after "Theorem 1.45"
+key "Gautschi2004"
+literal "false"
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 [Adapted from Gautchi,
  Theorem,
  1.45,
  p.21]
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1740,7 +1770,7 @@ where
 \end_inset
 
  is the first component of the normalized eigenvector 
-\begin_inset Formula $v_{v}$
+\begin_inset Formula $v_{j}$
 \end_inset
 
  belonging to the eigenvalue 
@@ -1785,7 +1815,7 @@ nolink "false"
  and its Corollary:
 \begin_inset Formula 
 \[
-\beta_{0}v_{v,1}^{2}=\frac{1}{\sum_{k=0}^{n-1}\left[\tilde{\pi}_{k}(\tau_{v}^{(n)})\right]^{2}}
+\beta_{0}v_{v,1}^{2}=\frac{1}{\sum_{k=0}^{n-1}\left[\tilde{\pi}_{k}(\tau_{j}^{(n)})\right]^{2}}
 \]
 
 \end_inset
@@ -1860,7 +1890,7 @@ where
  there holds
 \begin_inset Formula 
 \[
-P^{T}P=D_{\pi}=diag\left(d_{0},d_{1},\ldots,d_{n-1}\right),\quad d_{v-1}=\sum_{k=0}^{n-1}\left[\tilde{\pi}_{k}(\tau_{v}^{(n)})\right]^{2}
+P^{T}P=D_{\pi}=diag\left(d_{0},d_{1},\ldots,d_{n-1}\right),\quad d_{v-1}=\sum_{k=0}^{n-1}\left[\tilde{\pi}_{k}(\tau_{j}^{(n)})\right]^{2}
 \]
 
 \end_inset
@@ -1891,7 +1921,7 @@ where
  that is,
 \begin_inset Formula 
 \[
-\lambda^{G}=\frac{1}{\sum_{k=0}^{n-1}\left[\tilde{\pi}_{k}(\tau_{v}^{(n)})\right]^{2}}
+\lambda^{G}=\frac{1}{\sum_{k=0}^{n-1}\left[\tilde{\pi}_{k}(\tau_{j}^{(n)})\right]^{2}}
 \]
 
 \end_inset

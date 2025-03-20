@@ -55,3 +55,13 @@ Chapter 3 Probability stuff
 		Random field
 	Covarience
 Chapter 4 Krahunen-loeve
+------------------------------------------------------------------
+zmena Chapters a Sections
+Theorem 14 proof fixed
+Definition 15 changed a little (needs more)
+def 23
+Remark 11
+Def 12
+Proof of 13 (need more)
+small fixes to 14 15
+def 18
