@@ -330,7 +330,7 @@ Polynomials
 \end_layout
 
 \begin_layout Section
-Space of polynomials
+Polynomials of real variable
 \end_layout
 
 \begin_layout Definition
@@ -379,10 +379,6 @@ P\coloneqq\bigcup_{d=0}^{\infty}P_{d}
 
 \end_layout
 
-\begin_layout Section
-Monic polynomials
-\end_layout
-
 \begin_layout Definition
 \begin_inset Argument 1
 status open
@@ -418,11 +414,11 @@ of degree exactly
 \end_layout
 
 \begin_layout Section
-Weighted inner product
+Weighted spaces and orthogonal polynomilals
 \end_layout
 
 \begin_layout Subsection
-weight function
+Weight function
 \end_layout
 
 \begin_layout Definition
@@ -525,7 +521,7 @@ nolink "false"
 \end_layout
 
 \begin_layout Subsection
-inner product
+Weighted inner product
 \end_layout
 
 \begin_layout Definition
@@ -607,10 +603,6 @@ orthogonal
 .
 \end_layout
 
-\begin_layout Subsection
-positive definiteness
-\end_layout
-
 \begin_layout Definition
 \begin_inset Argument 1
 status open
@@ -680,6 +672,15 @@ i.e.,
 \end_layout
 
 \begin_layout Proof
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+přepsat vlastnímy slovy 
+\end_layout
+
+\end_inset
+
 As 
 \begin_inset Formula $P$
 \end_inset
@@ -948,10 +949,6 @@ This also works for an inner product defined from integrals:
 
 \end_layout
 
-\begin_layout Section
-Normalized polynomials
-\end_layout
-
 \begin_layout Definition
 \begin_inset Argument 1
 status open
@@ -979,15 +976,7 @@ For non-negative integer
 \end_layout
 
 \begin_layout Section
-(orthogonal polynomials)
-\end_layout
-
-\begin_layout Section
-(orthonormal polynomials)(maybe add these)
-\end_layout
-
-\begin_layout Section
-Three term recurrence
+Orthogonal polynomials
 \end_layout
 
 \begin_layout Theorem
@@ -1227,7 +1216,7 @@ be monic ortholonormal polynomials.
 \end_layout
 
 \begin_layout Proof
-Monic polynomials 
+Monic polynomials relate to orthonormal polynomials in the way 
 \begin_inset Formula $\pi=\tilde{\pi}\left\Vert \pi\right\Vert _{w},$
 \end_inset
 
@@ -1235,7 +1224,7 @@ where
 \begin_inset Formula $\tilde{\pi}$
 \end_inset
 
- is a monic orthonormal polynomial and 
+ is an orthonormal polynomial and 
 \begin_inset Formula $\left\Vert \pi\right\Vert _{w}=\sqrt{\left\langle \pi,\pi\right\rangle _{w}}$
 \end_inset
 
@@ -1312,17 +1301,6 @@ status open
 With reference to Theorem 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "thm:3-term-recurrence"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-
-\end_inset
-
- and Theorem 
-\begin_inset CommandInset ref
-LatexCommand ref
 reference "thm:normal-3-term-recurrence"
 plural "false"
 caps "false"
@@ -1332,7 +1310,7 @@ nolink "false"
 \end_inset
 
 ,
- the Jacobi matrix is symmetric,
+ the Jacobi matrix of orthonormal polynomials with weight is symmetric,
  tridiagonal matrix
 \end_layout
 
@@ -1619,12 +1597,8 @@ and after simplification,
 
 \end_layout
 
-\begin_layout Chapter
-Quadrature rule
-\end_layout
-
 \begin_layout Section
-quadrature rule
+Quadrature rule
 \end_layout
 
 \begin_layout Definition
@@ -1700,7 +1674,7 @@ then Quadrature rule for positive definite inner product,
 \end_layout
 
 \begin_layout Section
-nodes as eigenvalues
+Nodes as eigenvalues
 \end_layout
 
 \begin_layout Theorem
@@ -1922,7 +1896,7 @@ where
 
 \end_inset
 
-which means that 
+yielding 
 \begin_inset Formula $\lambda^{G}=\beta_{0}v_{v,1}^{2}$
 \end_inset
 
@@ -1983,7 +1957,12 @@ Orthogonality of polynomials
 
 .
  Let 
-\begin_inset Formula $\hat{x}=\frac{a+b}{a-b}+\frac{2}{b-a}x\Longrightarrow d\hat{x}=\frac{2}{b-a}dx\Longrightarrow\quad\int_{a}^{b}\pi_{i}^{L}\left(\frac{a+b}{a-b}+\frac{2}{b-a}x\right)\pi_{j}^{L}\left(\frac{a+b}{a-b}+\frac{2}{b-a}x\right)\,dx=\int_{-1}^{1}\frac{b-a}{2}\pi_{i}^{L}\left(\hat{x}\right)\pi_{j}^{L}\left(\hat{x}\right)\,d\hat{x}=\frac{b-a}{2}\int_{-1}^{1}\pi_{i}^{L}\left(\hat{x}\right)\pi_{j}^{L}\left(\hat{x}\right)\,d\hat{x}=0$
+\begin_inset Formula 
+\begin{eqnarray*}
+\hat{x} & = & \frac{a+b}{a-b}+\frac{2}{b-a}x\Longrightarrow d\hat{x}=\frac{2}{b-a}dx\Longrightarrow\quad\int_{a}^{b}\pi_{i}^{L}\left(\frac{a+b}{a-b}+\frac{2}{b-a}x\right)\pi_{j}^{L}\left(\frac{a+b}{a-b}+\frac{2}{b-a}x\right)\,dx=\\
+ &  & =\int_{-1}^{1}\frac{b-a}{2}\pi_{i}^{L}\left(\hat{x}\right)\pi_{j}^{L}\left(\hat{x}\right)\,d\hat{x}=\frac{b-a}{2}\int_{-1}^{1}\pi_{i}^{L}\left(\hat{x}\right)\pi_{j}^{L}\left(\hat{x}\right)\,d\hat{x}=0
+\end{eqnarray*}
+
 \end_inset
 
 
@@ -2059,7 +2038,7 @@ numeric experiments
 \end_layout
 
 \begin_layout Chapter
-Probability stuff (rename later)
+Stochastic Models and Random Phenomena
 \end_layout
 
 \begin_layout Section
@@ -2080,19 +2059,23 @@ L2 Space
 \begin_inset Formula $L^{2}$
 \end_inset
 
- space is a space where for every 
-\begin_inset Formula $f(x)\in L^{2}:$
+
+\begin_inset Formula $\left(I\right)$
 \end_inset
 
-
-\begin_inset Formula 
-\[
-\intop_{I}\left|f(x)\right|^{2}dx<\infty
-\]
-
+ space consists of continuous functions 
+\begin_inset Formula $f\left(x\right)\in C\left(I\right)$
 \end_inset
 
+ but also functions 
+\begin_inset Formula $g\left(x\right)\notin C\left(I\right)$
+\end_inset
 
+ such that for a sequence of functions 
+\begin_inset Formula $f_{i}\left(x\right)\in C\left(I\right):g\left(x\right)=\lim_{i\rightarrow\infty}f_{i}\left(x\right)$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Section
@@ -2102,6 +2085,16 @@ Probability
 \begin_layout Standard
 Let us have a probability space 
 \begin_inset Formula $\left(\Omega,\mathcal{F},\mathbb{P}\right)$
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+definovat
+\end_layout
+
 \end_inset
 
 .
@@ -2230,7 +2223,7 @@ probability measure
 \end_layout
 
 \begin_layout Subsection
-Random Variable
+Stochaistic process and random field
 \end_layout
 
 \begin_layout Definition
@@ -2238,7 +2231,7 @@ Random Variable
 status open
 
 \begin_layout Plain Layout
-Random Variables,
+Random variables,
  Realisation [Adapted from Lord,
  Definition 4.3,
  p.138]
@@ -2302,8 +2295,11 @@ realization
  of X.
 \end_layout
 
-\begin_layout Subsection
-Random Vector
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
 \end_layout
 
 \begin_layout Definition
@@ -2327,8 +2323,11 @@ A random vector
  is a random variable.
 \end_layout
 
-\begin_layout Subsection
-Stochaistic process
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
 \end_layout
 
 \begin_layout Definition
@@ -2392,8 +2391,11 @@ stochastic process
 .
 \end_layout
 
-\begin_layout Subsection
-Random field
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
 \end_layout
 
 \begin_layout Definition
