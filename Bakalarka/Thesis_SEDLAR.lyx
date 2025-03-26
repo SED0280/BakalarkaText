@@ -2096,25 +2096,26 @@ status collapsed
 \begin_layout Plain Layout
 Velmi laicky napsáno,
  určitě přepíšu.
- Jen jsem chtěl nějak napsat myšlenku
+ Jen jsem chtěl nějak napsat myšlenku.
+ Rozdělit na více definic
 \end_layout
 
 \end_inset
 
-If we have a sequence of functions 
+Let us have a sequence of functions 
 \begin_inset Formula $f_{i}(x)\in C(I)$
 \end_inset
 
- that we denote as 
+ denoted as 
 \begin_inset Formula $\left\{ f_{i}(x)\right\} $
 \end_inset
 
 .
- We can call this sequence a Cauchy sequence if for every 
+ This sequence is called a Cauchy sequence if for every 
 \begin_inset Formula $\epsilon>0$
 \end_inset
 
- exists 
+ there exists 
 \begin_inset Formula $N$
 \end_inset
 
@@ -2123,12 +2124,11 @@ If we have a sequence of functions
 \end_inset
 
  and for all 
-\begin_inset Formula $x$
+\begin_inset Formula $x\in\mathbb{N}$
 \end_inset
 
 ,
- we have:
- 
+ we have 
 \begin_inset Formula 
 \[
 \left|f_{n}(x)-f_{m}(x)\right|<\epsilon.
@@ -2136,10 +2136,6 @@ If we have a sequence of functions
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Definition
 We shall call Cauchy sequences 
 \begin_inset Formula $\left\{ f_{i}(x)\right\} $
 \end_inset
@@ -2148,7 +2144,7 @@ We shall call Cauchy sequences
 \begin_inset Formula $\left\{ g_{i}(x)\right\} $
 \end_inset
 
- equal if 
+ equal if
 \begin_inset Formula 
 \[
 \lim_{i\rightarrow\infty}\left\Vert f_{i}(x)-g_{i}(x)\right\Vert =0.
@@ -2165,7 +2161,15 @@ A space of all the Cauchy sequences
 \end_inset
 
 .
- Let us have a space of function made from limits of all Cauchy sequences,
+ Let us define a space of functions 
+\begin_inset Formula $g\left(x\right)$
+\end_inset
+
+ where for every 
+\begin_inset Formula $\left\{ f_{i}(x)\right\} \in\mathcal{L}(I),g\left(x\right)=\lim_{i\rightarrow\infty}f_{i}(x)$
+\end_inset
+
+,
  where equal sequences are counted only once.
  This space will be denoted as 
 \begin_inset Formula $L^{2}(I)$
