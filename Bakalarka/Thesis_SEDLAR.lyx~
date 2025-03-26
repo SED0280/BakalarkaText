@@ -1230,7 +1230,11 @@ be monic ortholonormal polynomials.
 \end_layout
 
 \begin_layout Proof
-Monic polynomials relates to orthonormal polynomials in the way 
+Monic orthogonal polynomials 
+\begin_inset Formula $\pi$
+\end_inset
+
+ relate to orthonormal polynomials in the way 
 \begin_inset Formula $\pi=\tilde{\pi}\left\Vert \pi\right\Vert _{w},$
 \end_inset
 
@@ -1243,7 +1247,7 @@ where
 \end_inset
 
 .
- Therefore 3 term recurence from Theorem 
+ Therefore 3 term recurrence from Theorem 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "thm:3-term-recurrence"
@@ -1324,7 +1328,7 @@ nolink "false"
 \end_inset
 
 ,
- the Jacobi matrix of orthonormal polynomials with weight is symmetric,
+ the Jacobi matrix of orthonormal polynomials with weights is symmetric,
  tridiagonal matrix
 \end_layout
 
@@ -1634,7 +1638,7 @@ The quadrature rule is a set of weights
  that help approximate the value of an integral 
 \begin_inset Formula 
 \[
-\intop_{I}f(x)dt\approx\sum_{v=1}^{n}\lambda_{v}f(\tau_{v}).
+\intop_{I}f(x)dx\approx\sum_{v=1}^{n}\lambda_{v}f(\tau_{v}).
 \]
 
 \end_inset
@@ -1647,10 +1651,28 @@ The quadrature rule is a set of weights
 status open
 
 \begin_layout Plain Layout
+\begin_inset CommandInset citation
+LatexCommand cite
+after "Theorem 1.45"
+key "Gautschi2004"
+literal "false"
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
 [Adapted from Gautchi,
  Theorem,
  1.45,
  p.21]
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2050,7 +2072,7 @@ numeric experiments
 \end_layout
 
 \begin_layout Chapter
-Stochastic Models and Random Phenomena
+Probability
 \end_layout
 
 \begin_layout Section
@@ -2067,53 +2089,103 @@ L2 Space
 
 \end_inset
 
- The 
-\begin_inset Formula $L^{2}(I)$
-\end_inset
-
- space consists of functions
-\begin_inset Formula $f(x)$
-\end_inset
-
- for which the square of the absolute value is integrable over the interval 
-\begin_inset Formula $I$
-\end_inset
-
-,
- i.e.,
  
-\begin_inset Formula 
-\[
-\int_{I}|f(x)|^{2}\,dx<\infty.
-\]
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Velmi laicky řečeno
+\end_layout
 
 \end_inset
 
-This space includes continuous functions 
-\begin_inset Formula $f(x)\in C(I)$
-\end_inset
-
- as well as functions 
-\begin_inset Formula $g(x)\notin C(I)$
-\end_inset
-
- that can be approximated in the 
-\begin_inset Formula $L^{2}$
-\end_inset
-
--norm by a sequence of continuous functions 
+If we have a sequence of functions 
 \begin_inset Formula $f_{i}(x)\in C(I)$
 \end_inset
 
+ that we denote as 
+\begin_inset Formula $\left\{ f_{i}(x)\right\} $
+\end_inset
+
 .
+ We can call this sequence a Cauchy sequence if for every 
+\begin_inset Formula $\epsilon>0$
+\end_inset
+
+ exists 
+\begin_inset Formula $N$
+\end_inset
+
+ such that for every 
+\begin_inset Formula $m,n\geq N$
+\end_inset
+
+ and for all 
+\begin_inset Formula $x$
+\end_inset
+
+,
+ we have:
+ 
 \begin_inset Formula 
 \[
-\lim_{i\rightarrow\infty}\|f_{i}-g\|_{L^{2}}=0.
+\left|f_{n}(x)-f_{m}(x)\right|<\epsilon.
 \]
 
 \end_inset
 
- 
+
+\end_layout
+
+\begin_layout Definition
+We shall call Cauchy sequences 
+\begin_inset Formula $\left\{ f_{i}(x)\right\} $
+\end_inset
+
+ and 
+\begin_inset Formula $\left\{ g_{i}(x)\right\} $
+\end_inset
+
+ equal if 
+\begin_inset Formula 
+\[
+\lim_{i\rightarrow\infty}\left\Vert f_{i}(x)-g_{i}(x)\right\Vert =0.
+\]
+
+\end_inset
+
+A space of all the Cauchy sequences 
+\begin_inset Formula $\left\{ f_{i}(x)\right\} $
+\end_inset
+
+ will be denoted as 
+\begin_inset Formula $\mathcal{L}$
+\end_inset
+
+.
+ Let us have a space of function made from limits of all Cauchy sequences,
+ where equal sequences are counted only once.
+ This space will be denoted as 
+\begin_inset Formula $L^{2}(I)$
+\end_inset
+
+ and if we further define an inner product of 
+\begin_inset Formula $u,v\in L^{2}(I)$
+\end_inset
+
+ as
+\begin_inset Formula 
+\[
+\left\langle u,v\right\rangle _{L^{2}}\coloneqq\intop_{I}u\left(x\right)v\left(x\right)dx,
+\]
+
+\end_inset
+
+then 
+\begin_inset Formula $L^{2}(I)$
+\end_inset
+
+ is a Hilbert Space.
 \end_layout
 
 \begin_layout Section
