@@ -871,9 +871,27 @@ Hence,
 status open
 
 \begin_layout Plain Layout
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
 [Adapted from Gautchi,
  Theorem 1.6,
  p.3]
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+after "Theorem 1.6"
+key "Gautschi2004"
+literal "false"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -993,9 +1011,28 @@ Orthogonal polynomials
 status open
 
 \begin_layout Plain Layout
-Three term recurrence [Adapted from Gautchi,
+Three term recurrence
+\begin_inset CommandInset citation
+LatexCommand cite
+after "Theorem 1.27"
+key "Gautschi2004"
+literal "false"
+
+\end_inset
+
+ 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+[Adapted from Gautchi,
  Theorem 1.27,
  p.10]
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1058,7 +1095,17 @@ We begin by applying the Gram-Schmidt orthogonalization process,
 \end_inset
 
 .
- Each subsequent function to be orthogonalized is obtained by multiplying the previous orthogonalized function 
+ Each subsequent function 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+to be orthogonalized 
+\end_layout
+
+\end_inset
+
+is obtained by multiplying the previous orthogonalized function 
 \begin_inset Formula $\pi_{k}$
 \end_inset
 
@@ -1097,23 +1144,22 @@ The Gram-Schmidt process produces orthogonal polynomials,
 
 Expanding the sum:
 \begin_inset Formula 
-\[
-\pi_{k+1}(x)=x\pi_{k}(x)-\frac{\left\langle x\pi_{k},\pi_{k}\right\rangle _{w}}{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}}\pi_{k}(x)-\frac{\left\langle x\pi_{k},\pi_{k-1}\right\rangle _{w}}{\left\langle \pi_{k-1},\pi_{k-1}\right\rangle _{w}}\pi_{k-1}(x)-\sum_{i=1}^{k-2}\frac{\left\langle x\pi_{k},\pi_{i}\right\rangle _{w}}{\left\langle \pi_{i},\pi_{i}\right\rangle _{w}}\pi_{i}(x).
-\]
+\begin{equation}
+\pi_{k+1}(x)=x\pi_{k}(x)-\frac{\left\langle x\pi_{k},\pi_{k}\right\rangle _{w}}{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}}\pi_{k}(x)-\frac{\left\langle x\pi_{k},\pi_{k-1}\right\rangle _{w}}{\left\langle \pi_{k-1},\pi_{k-1}\right\rangle _{w}}\pi_{k-1}(x)-\sum_{i=1}^{k-2}\frac{\left\langle x\pi_{k},\pi_{i}\right\rangle _{w}}{\left\langle \pi_{i},\pi_{i}\right\rangle _{w}}\pi_{i}(x).\label{eq:Expanded_Gram-Schmidt}
+\end{equation}
 
 \end_inset
 
-Next by shift property of the inner product,
- we have:
- 
+By shift property of the inner product,
+ we have 
 \begin_inset Formula 
 \[
-\forall k,i\in\mathbb{N}:\left\langle x\pi_{k},\pi_{i}\right\rangle _{w}=\left\langle \pi_{k},x\pi_{i}\right\rangle _{w}
+\forall k,i\in\mathbb{N}:\left\langle x\pi_{k},\pi_{i}\right\rangle _{w}=\left\langle \pi_{k},x\pi_{i}\right\rangle _{w}.
 \]
 
 \end_inset
 
-Because of the construction of these polynomials,
+Due of the construction of these polynomials,
  we know that 
 \begin_inset Formula $x\pi_{i}\in P_{i+1}$
 \end_inset
@@ -1127,41 +1173,55 @@ Because of the construction of these polynomials,
 \begin_inset Formula $i+1$
 \end_inset
 
- and thus the inner product is zero for 
-\begin_inset Formula $k\neq i+1$
-\end_inset
-
 .
- This gives:
- 
-\begin_inset Formula 
-\[
-\forall i\in\mathbb{N},i\leq k-2:\left\langle x\pi_{k},\pi_{i}\right\rangle _{w}=\left\langle \pi_{k},x\pi_{i}\right\rangle _{w}=0
-\]
-
-\end_inset
-
- because 
+ Therefore,
+ thanks to orthogonality of polynomials the inner product is zero for 
 \begin_inset Formula $k\neq i+1$
 \end_inset
 
- and the polynomials are orthogonal.
- This leads to the simplification of the expression for
-\begin_inset Formula $\pi_{k+1}(x)$
+,
+ which gives:
+ 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+nasledujíci vzorec asi neni úplně potreba
+\end_layout
+
 \end_inset
 
-:
+
 \begin_inset Formula 
 \[
-\pi_{k+1}(x)=x\pi_{k}(x)-\frac{\left\langle x\pi_{k},\pi_{k}\right\rangle _{w}}{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}}\pi_{k}(x)-\frac{\left\langle x\pi_{k},\pi_{k-1}\right\rangle _{w}}{\left\langle \pi_{k-1},\pi_{k-1}\right\rangle _{w}}\pi_{k-1}(x)
+\forall i\in\mathbb{N},i\leq k-2:\left\langle x\pi_{k},\pi_{i}\right\rangle _{w}=\left\langle \pi_{k},x\pi_{i}\right\rangle _{w}=0.
 \]
 
 \end_inset
 
-which simplifies further to:
+This leads to the simplification of 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Expanded_Gram-Schmidt"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ as
 \begin_inset Formula 
 \[
-\pi_{k+1}(x)=\left(x-\frac{\left\langle x\pi_{k},\pi_{k}\right\rangle _{w}}{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}}\right)\pi_{k}(x)-\frac{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}}{\left\langle \pi_{k-1},\pi_{k-1}\right\rangle _{w}}\pi_{k-1}(x)
+\pi_{k+1}(x)=x\pi_{k}(x)-\frac{\left\langle x\pi_{k},\pi_{k}\right\rangle _{w}}{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}}\pi_{k}(x)-\frac{\left\langle x\pi_{k},\pi_{k-1}\right\rangle _{w}}{\left\langle \pi_{k-1},\pi_{k-1}\right\rangle _{w}}\pi_{k-1}(x),
+\]
+
+\end_inset
+
+which simplifies further to
+\begin_inset Formula 
+\[
+\pi_{k+1}(x)=\left(x-\frac{\left\langle x\pi_{k},\pi_{k}\right\rangle _{w}}{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}}\right)\pi_{k}(x)-\frac{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}}{\left\langle \pi_{k-1},\pi_{k-1}\right\rangle _{w}}\pi_{k-1}(x).
 \]
 
 \end_inset
@@ -1191,9 +1251,27 @@ Now if we define
 status open
 
 \begin_layout Plain Layout
+\begin_inset CommandInset citation
+LatexCommand cite
+after "Theorem 1.29"
+key "Gautschi2004"
+literal "false"
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
 [Adapted from Gautchi,
  Theorem 1.29,
  p.12]
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1309,9 +1387,27 @@ Jacobi Matrix
 status open
 
 \begin_layout Plain Layout
+\begin_inset CommandInset citation
+LatexCommand cite
+after "Definition 1.30"
+key "Gautschi2004"
+literal "false"
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
 [Adapted from Gautchi,
  Definition 1.30,
  p.13]
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1353,9 +1449,27 @@ J_{n}\coloneqq\begin{bmatrix}\alpha_{0} & \sqrt{\beta_{1}} &  &  & 0\\
 status open
 
 \begin_layout Plain Layout
+\begin_inset CommandInset citation
+LatexCommand cite
+after "Theorem 1.31"
+key "Gautschi2004"
+literal "false"
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
 [Adapted from Gautchi,
  Theorem 1.31,
  p.13]
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1517,9 +1631,28 @@ nolink "false"
 
 \end_inset
 
+
+\begin_inset CommandInset citation
+LatexCommand cite
+after "Corollary to 1.31"
+key "Gautschi2004"
+literal "false"
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
 [Adapted from Gautchi,
  Corollary to 1.31,
  p.13]
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1789,8 +1922,26 @@ where
 status open
 
 \begin_layout Plain Layout
+\begin_inset CommandInset citation
+LatexCommand cite
+after "page 153"
+key "Gautschi2004"
+literal "false"
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
 [Adapted from Gautchi,
  p.153]
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1984,13 +2135,12 @@ Orthogonality of polynomials
  
 \begin_inset Formula 
 \[
-\forall i,j\in\mathbb{N}:i\neq j:\left\langle \pi_{i},\pi_{j}\right\rangle _{1}=\intop_{a}^{b}\pi_{i}(x)\pi_{j}(x)\,dx=\intop_{a}^{b}\pi_{i}^{L}\left(\frac{a+b}{a-b}+\frac{2}{b-a}x\right)\pi_{j}^{L}\left(\frac{a+b}{a-b}+\frac{2}{b-a}x\right)\,dx
+\forall i,j\in\mathbb{N}:i\neq j:\left\langle \pi_{i},\pi_{j}\right\rangle _{1}=\intop_{a}^{b}\pi_{i}(x)\pi_{j}(x)\,dx=\intop_{a}^{b}\pi_{i}^{L}\left(\frac{a+b}{a-b}+\frac{2}{b-a}x\right)\pi_{j}^{L}\left(\frac{a+b}{a-b}+\frac{2}{b-a}x\right)\,dx.
 \]
 
 \end_inset
 
-.
- Let 
+Let 
 \begin_inset Formula 
 \begin{eqnarray*}
 \hat{x} & = & \frac{a+b}{a-b}+\frac{2}{b-a}x\Longrightarrow d\hat{x}=\frac{2}{b-a}dx\Longrightarrow\quad\int_{a}^{b}\pi_{i}^{L}\left(\frac{a+b}{a-b}+\frac{2}{b-a}x\right)\pi_{j}^{L}\left(\frac{a+b}{a-b}+\frac{2}{b-a}x\right)\,dx=\\
@@ -2084,20 +2234,17 @@ L2 space
 status open
 
 \begin_layout Plain Layout
-L2 Space
+Cauchy sequence
 \end_layout
 
 \end_inset
 
- 
+
 \begin_inset Note Note
 status collapsed
 
 \begin_layout Plain Layout
-Velmi laicky napsáno,
- určitě přepíšu.
- Jen jsem chtěl nějak napsat myšlenku.
- Rozdělit na více definic
+Rozdělit na více definic?
 \end_layout
 
 \end_inset
@@ -2161,7 +2308,27 @@ A space of all the Cauchy sequences
 \end_inset
 
 .
- Let us define a space of functions 
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+L2 Space
+\end_layout
+
+\end_inset
+
+Let us define a space of functions 
 \begin_inset Formula $g\left(x\right)$
 \end_inset
 
@@ -2169,16 +2336,18 @@ A space of all the Cauchy sequences
 \begin_inset Formula $\left\{ f_{i}(x)\right\} \in\mathcal{L}(I),g\left(x\right)=\lim_{i\rightarrow\infty}f_{i}(x)$
 \end_inset
 
- 
+
 \begin_inset Note Note
 status collapsed
 
 \begin_layout Plain Layout
-where equal sequences are counted only once.
+,
+ where equal sequences are counted only once
 \end_layout
 
 \end_inset
 
+.
  This space will be denoted as 
 \begin_inset Formula $L^{2}(I)$
 \end_inset
@@ -2319,9 +2488,28 @@ The probability measure
 status open
 
 \begin_layout Plain Layout
-Probability measure [Adapted from Lord,
+Probability measure 
+\begin_inset CommandInset citation
+LatexCommand cite
+after "Definition 4.1"
+key "LordPowellShardlow2014"
+literal "false"
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+[Adapted from Lord,
  Definition 4.1,
  p.138]
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2356,9 +2544,28 @@ status open
 
 \begin_layout Plain Layout
 Random variables,
- Realisation [Adapted from Lord,
+ Realisation 
+\begin_inset CommandInset citation
+LatexCommand cite
+after "Definition 4.3"
+key "LordPowellShardlow2014"
+literal "false"
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+[Adapted from Lord,
  Definition 4.3,
  p.138]
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2629,9 +2836,28 @@ Covarience
 status open
 
 \begin_layout Plain Layout
-Covariance [Adapted from Lord,
+Covariance 
+\begin_inset CommandInset citation
+LatexCommand cite
+after "Definition 4.14"
+key "LordPowellShardlow2014"
+literal "false"
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+[Adapted from Lord,
  Definition 4.14,
  p.142]
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2701,9 +2927,28 @@ Stationary process
 status open
 
 \begin_layout Plain Layout
-Stationary process [Adapted from Lord,
+Stationary process 
+\begin_inset CommandInset citation
+LatexCommand cite
+after "Definition 6.1"
+key "LordPowellShardlow2014"
+literal "false"
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+[Adapted from Lord,
  Definition 6.1,
  p.217]
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2769,9 +3014,28 @@ Isotropic Random Field
 status open
 
 \begin_layout Plain Layout
-Isotropic Random Field [Adapted from Lord,
+Isotropic Random Field 
+\begin_inset CommandInset citation
+LatexCommand cite
+after "Definition 7.14"
+key "LordPowellShardlow2014"
+literal "false"
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+[Adapted from Lord,
  Definition 7.14,
  p.263]
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
