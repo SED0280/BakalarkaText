@@ -1129,12 +1129,12 @@ is obtained by multiplying the previous orthogonalized function
 \end_layout
 
 \begin_layout Proof
-The Gram-Schmidt process produces orthogonal polynomials,
- and we can represent 
+The Gram-Schmidt process produces orthogonal polynomials 
 \begin_inset Formula $\pi_{k+1}(x)$
 \end_inset
 
- as follows:
+,
+ that we can represent as follows:
 \begin_inset Formula 
 \[
 \pi_{k+1}(x)=x\pi_{k}(x)-\sum_{i=1}^{k}\frac{\left\langle x\pi_{k},\pi_{i}\right\rangle _{w}}{\left\langle \pi_{i},\pi_{i}\right\rangle _{w}}\pi_{i}(x).
@@ -1658,6 +1658,13 @@ status collapsed
 \end_inset
 
 
+\begin_inset CommandInset label
+LatexCommand label
+name "cor:Cor to Jacobi eigen"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Corollary
@@ -1747,7 +1754,7 @@ and after simplification,
 \end_layout
 
 \begin_layout Section
-Quadrature rule
+Quadrature rules
 \end_layout
 
 \begin_layout Definition
@@ -1837,7 +1844,11 @@ If the Quadrature rule is obtained by integrating the Lagrange interpolation for
 \end_inset
 
 then Quadrature rule for positive definite inner product,
- has points equal to the root of an n-th ortogonal polynomial
+ has points equal to the root of an 
+\begin_inset Formula $n$
+\end_inset
+
+-th ortogonal polynomial
 \end_layout
 
 \begin_layout Section
@@ -1899,7 +1910,7 @@ Nodes
 \end_inset
 
 where 
-\begin_inset Formula $\beta_{0}=\int_{\mathbb{I}}w(x)\,dx$
+\begin_inset Formula $\beta_{0}=\int_{I}w(x)\,dx$
 \end_inset
 
  and 
@@ -1967,7 +1978,18 @@ nolink "false"
 
 \end_inset
 
- and its Corollary:
+ and its Corollary 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cor:Cor to Jacobi eigen"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+:
 \begin_inset Formula 
 \[
 \beta_{0}v_{v,1}^{2}=\frac{1}{\sum_{k=0}^{n-1}\left[\tilde{\pi}_{k}(\tau_{j}^{(n)})\right]^{2}}
@@ -2011,7 +2033,7 @@ where
 \end_inset
 
 ,
- else
+ else 
 \begin_inset Formula $\delta_{i,j}=0$
 \end_inset
 
@@ -2090,6 +2112,26 @@ yielding
 
 \begin_layout Section
 Legendre over interval
+\end_layout
+
+\begin_layout Theorem
+The weights of Quadrature rule 
+\begin_inset Formula $\lambda_{j}$
+\end_inset
+
+ can be obtained from roots of orthogonal polynomials 
+\begin_inset Formula $\tau_{i}$
+\end_inset
+
+ as 
+\begin_inset Formula 
+\[
+\lambda_{j}=\frac{\int_{a}^{b}\intop_{a}^{b}\prod_{i\neq j,i=0}^{n}\left(x-\tau_{i}\right)\,dx}{\prod_{i\neq j,i=0}^{n}\left(\tau_{j}-\tau_{i}\right)}.
+\]
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Remark
@@ -2819,7 +2861,7 @@ Expected Value
  the expected value is
 \begin_inset Formula 
 \[
-\mathbb{E}\left[X\right]\coloneqq\intop_{-\infty}^{\infty}x\,f\left(x\right)\,dx
+\mathbb{E}\left[X\right]\coloneqq\intop_{-\infty}^{\infty}x\,f\left(x\right)dx
 \]
 
 \end_inset
