@@ -2275,12 +2275,18 @@ Let us have a sequence of functions
 \begin_inset Formula $f_{i}(x)\in C(I)$
 \end_inset
 
+,
+ where 
+\begin_inset Formula $I=\left\langle a,b\right\rangle $
+\end_inset
+
+,
  denoted as 
 \begin_inset Formula $\left\{ f_{i}(x)\right\} $
 \end_inset
 
 .
- This sequence is called a Cauchy sequence if for every 
+ This sequence is called a Cauchy sequence with respect to the A-norm if for every 
 \begin_inset Formula $\epsilon>0$
 \end_inset
 
@@ -2300,37 +2306,77 @@ Let us have a sequence of functions
  we have 
 \begin_inset Formula 
 \[
-\left|f_{n}(x)-f_{m}(x)\right|<\epsilon.
+\left\Vert f_{n}(x)-f_{m}(x)\right\Vert _{A}<\epsilon.
 \]
 
 \end_inset
 
-We shall call Cauchy sequences 
-\begin_inset Formula $\left\{ f_{i}(x)\right\} $
+Let 
+\begin_inset Formula $L^{2}$
 \end_inset
 
- and 
-\begin_inset Formula $\left\{ g_{i}(x)\right\} $
+-norm be
+\begin_inset Formula 
+\[
+\left\Vert f\right\Vert _{L^{2}}\coloneqq\left(\intop_{a}^{b}f(x)^{2}dx\right)^{1/2},\:\forall f\in C(I),
+\]
+
+\end_inset
+
+and 
+\begin_inset Formula $\mathcal{L}^{2}(I)$
+\end_inset
+
+ denote set of all Cauchy sequences 
+\begin_inset Formula $\left\{ f_{i}\right\} \subset C(I)$
+\end_inset
+
+ with respect to the 
+\begin_inset Formula $L^{2}$
+\end_inset
+
+-norm.
+ We shall call Cauchy sequences 
+\begin_inset Formula $\left\{ f_{i}\right\} ,\left\{ g_{i}\right\} \in\mathcal{L}^{2}(I)$
 \end_inset
 
  equal if
 \begin_inset Formula 
 \[
-\lim_{i\rightarrow\infty}\left\Vert f_{i}(x)-g_{i}(x)\right\Vert =0.
+\lim_{i\rightarrow\infty}\left\Vert f_{i}(x)-g_{i}(x)\right\Vert _{L^{2}}=0.
 \]
 
 \end_inset
 
-A space of all the Cauchy sequences 
-\begin_inset Formula $\left\{ f_{i}(x)\right\} $
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
 \end_inset
 
- will be denoted as 
-\begin_inset Formula $\mathcal{L}$
+
+\end_layout
+
+\begin_layout Definition
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Equivalence class
+\end_layout
+
+\end_inset
+
+ A set of all equivalent 
+\begin_inset Formula $\left\{ \left\{ f_{i}\right\} _{j}\right\} $
+\end_inset
+
+ is called an Equivalence class and is denoted as 
+\begin_inset Formula $\left[\left\{ f_{i}\right\} \right]$
 \end_inset
 
 .
- 
 \end_layout
 
 \begin_layout Standard
@@ -2350,38 +2396,97 @@ L2 Space
 
 \end_inset
 
-Let us define a space of functions 
-\begin_inset Formula $g\left(x\right)$
-\end_inset
 
- where for every 
-\begin_inset Formula $\left\{ f_{i}(x)\right\} \in\mathcal{L}(I),g\left(x\right)=\lim_{i\rightarrow\infty}f_{i}(x)$
-\end_inset
-
-
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-,
- where equal sequences are counted only once
-\end_layout
-
-\end_inset
-
-.
- This space will be denoted as 
 \begin_inset Formula $L^{2}(I)$
 \end_inset
 
- and if we further define an inner product of 
-\begin_inset Formula $u,v\in L^{2}(I)$
+ space is an equivalence class space on 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\mathcal{L}^{2}(I)$
 \end_inset
 
- as
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ defined as a completion of 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $C(I)$
+\end_inset
+
+:
 \begin_inset Formula 
 \[
-\left\langle u,v\right\rangle _{L^{2}}\coloneqq\intop_{I}u\left(x\right)v\left(x\right)dx,
+L^{2}(I)\coloneqq\left\{ \left[\left\{ f_{i}\right\} \right]:\left\{ f_{i}\right\} \in\mathcal{L}^{2}(I)\right\} .
+\]
+
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+If we further define a limit 
+\begin_inset Formula 
+\[
+\left\Vert \left\{ f_{i}\right\} \right\Vert _{L^{2}}\coloneqq\lim_{i\rightarrow\infty}\left\Vert f_{i}\right\Vert _{L^{2}}
+\]
+
+\end_inset
+
+and an inner product
+\end_layout
+
+\begin_layout Definition
+\begin_inset Formula 
+\[
+\left\langle \left\{ f_{i}\right\} ,\left\{ g_{i}\right\} \right\rangle _{L^{2}}\coloneqq\lim_{i\rightarrow\infty}\intop_{I}f_{i}\left(x\right)g_{i}\left(x\right)dx,
 \]
 
 \end_inset
