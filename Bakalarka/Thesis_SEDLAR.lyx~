@@ -2956,62 +2956,6 @@ Expected Value
 \end_layout
 
 \begin_layout Section
-Gaussian Random Field
-\end_layout
-
-\begin_layout Definition
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Gaussian Random Field 
-\begin_inset CommandInset citation
-LatexCommand cite
-after "Definition 7.5"
-key "LordPowellShardlow2014"
-literal "false"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-A Gaussian random field (GRF) 
-\begin_inset Formula $\left\{ u\left(\boldsymbol{x}\right):\boldsymbol{x}\in D\right\} $
-\end_inset
-
- is a second-order random field such that 
-\begin_inset Formula $\boldsymbol{u}=\left[u(\boldsymbol{x}_{1}),u(\boldsymbol{x}_{2}),\ldots,u(\boldsymbol{x}_{n})\right]^{T}$
-\end_inset
-
- follows the multivariate Gaussian distribution for any 
-\begin_inset Formula $\boldsymbol{x}_{1},\ldots,\boldsymbol{x}_{n}\in D$
-\end_inset
-
- and for any 
-\begin_inset Formula $n\in\mathbb{N}$
-\end_inset
-
-.
- Specifically,
- 
-\begin_inset Formula $\boldsymbol{u}\sim N\left(\mu,C\right)$
-\end_inset
-
- where 
-\begin_inset Formula $\mu_{i}=\mu\left(\boldsymbol{x}_{i}\right)$
-\end_inset
-
- and 
-\begin_inset Formula $c_{i,j}=C\left(\boldsymbol{x}_{i},\boldsymbol{x}_{j}\right)$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Section
 Covariance
 \end_layout
 
@@ -3268,6 +3212,123 @@ Let
 \end_inset
 
  known as the isotropic covariance.
+\end_layout
+
+\begin_layout Section
+Gaussian Random Field
+\end_layout
+
+\begin_layout Definition
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Gaussian distribution
+\end_layout
+
+\end_inset
+
+ A random variable 
+\begin_inset Formula $X$
+\end_inset
+
+ is said to follow the Gaussian or normal distribution on 
+\begin_inset Formula $D=\mathbb{R}$
+\end_inset
+
+,
+ if for some 
+\begin_inset Formula $\mu\in\mathbb{R}$
+\end_inset
+
+ and 
+\begin_inset Formula $\sigma\in\mathbb{R},\sigma>0$
+\end_inset
+
+,
+ its PDF
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+to do:
+ define earlier
+\end_layout
+
+\end_inset
+
+ is 
+\begin_inset Formula 
+\[
+p\left(x\right)=\frac{1}{\sqrt{2\pi\sigma^{2}}}exp\left(\frac{-\left(x-\mu\right)^{2}}{2\sigma^{2}}\right).
+\]
+
+\end_inset
+
+We write 
+\begin_inset Formula $X\sim N\left(\mu,\sigma^{2}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Gaussian Random Field 
+\begin_inset CommandInset citation
+LatexCommand cite
+after "Definition 7.5"
+key "LordPowellShardlow2014"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+A Gaussian random field (GRF) 
+\begin_inset Formula $\left\{ u\left(\boldsymbol{x}\right):\boldsymbol{x}\in D\right\} $
+\end_inset
+
+ is a second-order random field such that 
+\begin_inset Formula $\boldsymbol{u}=\left[u(\boldsymbol{x}_{1}),u(\boldsymbol{x}_{2}),\ldots,u(\boldsymbol{x}_{n})\right]^{T}$
+\end_inset
+
+ follows the multivariate Gaussian distribution for any 
+\begin_inset Formula $\boldsymbol{x}_{1},\ldots,\boldsymbol{x}_{n}\in D$
+\end_inset
+
+ and for any 
+\begin_inset Formula $n\in\mathbb{N}$
+\end_inset
+
+.
+ Specifically,
+ 
+\begin_inset Formula $\boldsymbol{u}\sim N\left(\mu,C\right)$
+\end_inset
+
+ where 
+\begin_inset Formula $\mu_{i}=\mu\left(\boldsymbol{x}_{i}\right)$
+\end_inset
+
+ and 
+\begin_inset Formula $c_{i,j}=C\left(\boldsymbol{x}_{i},\boldsymbol{x}_{j}\right)$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Chapter

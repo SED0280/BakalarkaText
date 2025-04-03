@@ -3223,6 +3223,67 @@ Gaussian Random Field
 status open
 
 \begin_layout Plain Layout
+Gaussian distribution
+\end_layout
+
+\end_inset
+
+ A random variable 
+\begin_inset Formula $X$
+\end_inset
+
+ is said to follow the Gaussian or normal distribution on 
+\begin_inset Formula $D=\mathbb{R}$
+\end_inset
+
+,
+ if for some 
+\begin_inset Formula $\mu\in\mathbb{R}$
+\end_inset
+
+ and 
+\begin_inset Formula $\sigma\in\mathbb{R},\sigma>0$
+\end_inset
+
+,
+ its PDF
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+to do:
+ define earlier
+\end_layout
+
+\end_inset
+
+ is 
+\begin_inset Formula 
+\[
+p\left(x\right)=\frac{1}{\sqrt{2\pi\sigma^{2}}}exp\left(\frac{-\left(x-\mu\right)^{2}}{2\sigma^{2}}\right).
+\]
+
+\end_inset
+
+We write 
+\begin_inset Formula $X\sim N\left(\mu,\sigma^{2}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
 Gaussian Random Field 
 \begin_inset CommandInset citation
 LatexCommand cite
