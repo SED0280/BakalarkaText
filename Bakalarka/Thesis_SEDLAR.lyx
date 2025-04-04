@@ -1089,52 +1089,37 @@ where
 \end_layout
 
 \begin_layout Proof
-We begin by applying the Gram-Schmidt orthogonalization process,
- starting with the constant function 
-\begin_inset Formula $f_{1}(x)=1$
+We are going to generate a sequence of orthogonal polynomials 
+\begin_inset Formula $\left\{ \pi_{k}(x)\right\} $
+\end_inset
+
+ using a modified Gram-Schmidt process.
+ We begin with 
+\begin_inset Formula $\pi_{0}(x)=1$
 \end_inset
 
 .
- Each subsequent function 
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-to be orthogonalized 
-\end_layout
-
-\end_inset
-
-is obtained by multiplying the previous orthogonalized function 
-\begin_inset Formula $\pi_{k}$
-\end_inset
-
- by 
-\begin_inset Formula $x$
-\end_inset
-
-.
- Thus,
- for 
-\begin_inset Formula $k=1,2,3,\ldots$
-\end_inset
-
-,
- the functions are defined as 
+ Instead of starting with a predefined basis,
+ we iteratively define the sequence to be orthogonalized.
+ Each subsequent function to be orthogonalized is constructed as 
 \begin_inset Formula $f_{k+1}(x)=x\pi_{k}(x)$
 \end_inset
 
 .
- 
-\end_layout
+ We then apply the standard Gram-Schmidt step to orthogonalize 
+\begin_inset Formula $f_{k+1}(x)$
+\end_inset
 
-\begin_layout Proof
-The Gram-Schmidt process produces orthogonal polynomials 
+ against the subspace spanned by 
+\begin_inset Formula $\left\{ \pi_{0},\ldots,\pi_{k}\right\} $
+\end_inset
+
+.
+ Polynomials 
 \begin_inset Formula $\pi_{k+1}(x)$
 \end_inset
 
-,
- that we can represent as
+ can then be represented as
 \begin_inset Formula 
 \[
 \pi_{k+1}(x)=x\pi_{k}(x)-\sum_{i=1}^{k}\frac{\left\langle x\pi_{k},\pi_{i}\right\rangle _{w}}{\left\langle \pi_{i},\pi_{i}\right\rangle _{w}}\pi_{i}(x).
@@ -2170,6 +2155,23 @@ Legendre over interval
 \end_layout
 
 \begin_layout Theorem
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset citation
+LatexCommand cite
+after "Theorem 1.47"
+key "Gautschi2004"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
 The weights of Quadrature rule 
 \begin_inset Formula $\lambda_{j}$
 \end_inset
@@ -2181,7 +2183,7 @@ The weights of Quadrature rule
  as 
 \begin_inset Formula 
 \[
-\lambda_{j}=\frac{\int_{a}^{b}\intop_{a}^{b}\prod_{i\neq j,i=0}^{n}\left(x-\tau_{i}\right)\,dx}{\prod_{i\neq j,i=0}^{n}\left(\tau_{j}-\tau_{i}\right)}.
+\lambda_{j}=\frac{\intop_{a}^{b}\prod_{i\neq j,i=0}^{n}\left(x-\tau_{i}\right)\,dx}{\prod_{i\neq j,i=0}^{n}\left(\tau_{j}-\tau_{i}\right)}.
 \]
 
 \end_inset
@@ -2300,7 +2302,7 @@ Let us denote
 \begin_layout Proof
 \begin_inset Formula 
 \begin{eqnarray*}
-\lambda_{j} & = & \frac{\int_{a}^{b}\intop_{a}^{b}\prod_{i\neq j,i=0}^{n}\left(x-\tau_{i}\right)\,dx}{\prod_{i\neq j,i=0}^{n}\left(\tau_{j}-\tau_{i}\right)}=\frac{\int_{a}^{b}\prod_{i\neq j,i=0}^{n}\left(x-\frac{a+b}{2}-\frac{b-a}{2}\tau_{i}^{L}\right)\,dx}{\prod_{i\neq j,i=0}^{n}\left(\frac{a+b}{2}+\frac{b-a}{2}\tau_{j}^{L}-\frac{a+b}{2}-\frac{b-a}{2}\tau_{i}^{L}\right)}=\\
+\lambda_{j} & = & \frac{\intop_{a}^{b}\prod_{i\neq j,i=0}^{n}\left(x-\tau_{i}\right)\,dx}{\prod_{i\neq j,i=0}^{n}\left(\tau_{j}-\tau_{i}\right)}=\frac{\int_{a}^{b}\prod_{i\neq j,i=0}^{n}\left(x-\frac{a+b}{2}-\frac{b-a}{2}\tau_{i}^{L}\right)\,dx}{\prod_{i\neq j,i=0}^{n}\left(\frac{a+b}{2}+\frac{b-a}{2}\tau_{j}^{L}-\frac{a+b}{2}-\frac{b-a}{2}\tau_{i}^{L}\right)}=\\
  &  & \frac{\int_{-1}^{1}\frac{b-a}{2}\prod_{i\neq j,i=0}^{n}\left(\frac{a+b}{2}+\frac{b-a}{2}\hat{x}-\frac{a+b}{2}-\frac{b-a}{2}\tau_{i}^{L}\right)\,d\hat{x}}{\prod_{i\neq j,i=0}^{n}\left(\frac{b-a}{2}\left(\tau_{j}^{L}-\tau_{i}^{L}\right)\right)}=\frac{\left(\frac{b-a}{2}\right)^{n}\int_{-1}^{1}\prod_{i\neq j,i=0}^{n}\left(\hat{x}-\tau_{i}^{L}\right)\,d\hat{x}}{\left(\frac{b-a}{2}\right)^{n-1}\prod_{i\neq j,i=0}^{n}\left(\tau_{j}^{L}-\tau_{i}^{L}\right)}=\\
  &  & \frac{b-a}{2}\,\frac{\int_{-1}^{1}\prod_{i\neq j,i=0}^{n}\left(\hat{x}-\tau_{i}^{L}\right)\,d\hat{x}}{\prod_{i\neq j,i=0}^{n}\left(\tau_{j}^{L}-\tau_{i}^{L}\right)}=\frac{b-a}{2}\lambda_{j}^{L}
 \end{eqnarray*}
