@@ -379,6 +379,13 @@ P\coloneqq\bigcup_{d=0}^{\infty}P_{d}
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
 \begin_layout Definition
 \begin_inset Argument 1
 status open
@@ -439,7 +446,7 @@ name "def:weigh-function"
 \end_inset
 
 Let 
-\begin_inset Formula $I=\left\langle a,b\right\rangle \subset\mathbb{R}$
+\begin_inset Formula $I=\left\langle a,b\right\rangle \subset\mathbb{R},b>a$
 \end_inset
 
  (bounded,
@@ -471,7 +478,7 @@ The weighted integral is well defined
 
 \begin_inset Formula 
 \[
-\intop_{I}w(x)f(x)\,dx\in\mathbb{R}
+\intop_{I}f(x)w(x)\,dx\in\mathbb{R}
 \]
 
 \end_inset
@@ -490,29 +497,14 @@ Moments of a Weight Function
 \end_inset
 
 Let 
-\begin_inset Formula $w(x)$
+\begin_inset Formula $w(x),I$
 \end_inset
 
- be a weight function from Definition 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "def:weigh-function"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-
-\end_inset
-
- and 
-\begin_inset Formula $I$
-\end_inset
-
- its corresponding support.
+ be a weight function and corresponding support.
  Then all moments are finite:
 \begin_inset Formula 
 \[
-\mu_{r}\coloneqq\intop_{\mathbb{R}}w(x)x^{r}\,dx\in\mathbb{R},\;r=0,1,2,\ldots,\;with\:\forall r:\left|\mu_{r}\right|<\infty.
+\mu_{r}\coloneqq\intop_{\mathbb{R}}x^{r}w(x)\,dx\in\mathbb{R},\;r=0,1,2,\ldots
 \]
 
 \end_inset
@@ -529,31 +521,16 @@ Weighted inner product
 status open
 
 \begin_layout Plain Layout
-Weighted Inner Product
+Weighted inner product
 \end_layout
 
 \end_inset
 
 Let 
-\begin_inset Formula $w(x)$
+\begin_inset Formula $w(x),I$
 \end_inset
 
- be a weight function from Definition 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "def:weigh-function"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-
-\end_inset
-
- and 
-\begin_inset Formula $I$
-\end_inset
-
- its corresponding support.
+ be a weight function and corresponding support.
  For any functions 
 \begin_inset Formula $u,v\in C(I)$
 \end_inset
@@ -562,7 +539,7 @@ nolink "false"
  a weighted inner product is defined as
 \begin_inset Formula 
 \[
-\left\langle u,v\right\rangle _{w}=\intop_{I}w(x)u(x)v(x)\,dx,
+\left\langle u,v\right\rangle _{w}=\intop_{I}u(x)v(x)w(x)\,dx,
 \]
 
 \end_inset
@@ -608,7 +585,7 @@ orthogonal
 status open
 
 \begin_layout Plain Layout
-Positive Definiteness of an Inner Product
+Positive definiteness of an inner product
 \end_layout
 
 \end_inset
@@ -624,7 +601,7 @@ Positive Definiteness of an Inner Product
  is said to be positive definite if 
 \begin_inset Formula 
 \[
-\left\Vert u\right\Vert _{w}>0\quad\forall u\in P:u\cancel{\equiv}0.
+\left\Vert u\right\Vert _{w}>0,\quad\forall u\in P:u\cancel{\equiv}0.
 \]
 
 \end_inset
@@ -639,7 +616,7 @@ Positive Definiteness of an Inner Product
 status open
 
 \begin_layout Plain Layout
-Positive Definiteness of an Inner product over 
+Positive definiteness of an inner product over 
 \begin_inset Formula $\left\langle -1,1\right\rangle $
 \end_inset
 
@@ -648,9 +625,9 @@ Positive Definiteness of an Inner product over
 
 \end_inset
 
-An inner product
+
 \emph default
- over interval 
+An inner product over interval 
 \begin_inset Formula $I=\left\langle -1,1\right\rangle $
 \end_inset
 
@@ -672,7 +649,7 @@ i.e.,
 \begin_inset Formula $P$
 \end_inset
 
-
+.
 \end_layout
 
 \begin_layout Proof
@@ -742,7 +719,11 @@ As
 \end_layout
 
 \begin_layout Proof
-Since u is continuous at 
+Since 
+\begin_inset Formula $u$
+\end_inset
+
+ is continuous at 
 \begin_inset Formula $x_{0}$
 \end_inset
 
@@ -901,7 +882,7 @@ literal "false"
 \begin_inset Formula $\left\{ \pi_{k}\right\} $
 \end_inset
 
- of monic orthogonal polynomials
+ of monic orthogonal polynomials.
 \end_layout
 
 \begin_layout Definition
@@ -980,7 +961,7 @@ Normalized polynomials
 
 \end_inset
 
-For non-negative integer 
+For a non-negative integer 
 \begin_inset Formula $d$
 \end_inset
 
@@ -1691,7 +1672,7 @@ nolink "false"
 
 \end_inset
 
-
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 after "Corollary to 1.31"
@@ -1749,14 +1730,14 @@ J_{n}v_{j}=\tau_{j}^{(n)}v_{j},\;v_{j}^{T}v_{j}=1,
 \end_inset
 
 and let 
-\begin_inset Formula $v_{v,1}$
+\begin_inset Formula $v_{j,1}$
 \end_inset
 
  denote its first component.
  Then,
 \begin_inset Formula 
 \[
-\beta_{0}v_{v,1}^{2}=\frac{1}{\sum_{k=0}^{n-1}\left[\tilde{\pi}_{k}(\tau_{j}^{(n)})\right]^{2}},\quad v=1,2,\ldots,n.
+\beta_{0}v_{j,1}^{2}=\frac{1}{\sum_{k=0}^{n-1}\left[\tilde{\pi}_{k}(\tau_{j}^{(n)})\right]^{2}},\quad j=1,2,\ldots,n.
 \]
 
 \end_inset
@@ -1772,7 +1753,7 @@ For each normalized eigenvector
 :
 \begin_inset Formula 
 \[
-v_{j}=\left(\sum_{k=0}^{n-1}\left[\tilde{\pi}_{k}(\tau_{j}^{(n)})\right]^{2}\right)^{-1/2}\tilde{\pi}(\tau_{j}^{(n)}),\quad v=1,2,\ldots,n.
+v_{j}=\left(\sum_{k=0}^{n-1}\left[\tilde{\pi}_{k}(\tau_{j}^{(n)})\right]^{2}\right)^{-1/2}\tilde{\pi}(\tau_{j}^{(n)}),\quad j=1,2,\ldots,n.
 \]
 
 \end_inset
@@ -1796,7 +1777,7 @@ nolink "false"
  if we compare the first component of each side and square the equation we obtain:
 \begin_inset Formula 
 \[
-v_{v,1}^{2}=\left(\sum_{k=0}^{n-1}\left[\tilde{\pi}_{k}(\tau_{j}^{(n)})\right]^{2}\right)^{-1}\frac{1}{\sqrt{\beta_{0}}},\quad v=1,2,\ldots,n.
+v_{j,1}^{2}=\left(\sum_{k=0}^{n-1}\left[\tilde{\pi}_{k}(\tau_{j}^{(n)})\right]^{2}\right)^{-1}\frac{1}{\sqrt{\beta_{0}}},\quad j=1,2,\ldots,n.
 \]
 
 \end_inset
@@ -1805,7 +1786,7 @@ and after simplification,
  we obtain desired formula
 \begin_inset Formula 
 \[
-\beta_{0}v_{v,1}^{2}=\frac{1}{\sum_{k=0}^{n-1}\left[\tilde{\pi}_{k}(\tau_{j}^{(n)})\right]^{2}},\quad v=1,2,\ldots,n.
+\beta_{0}v_{j,1}^{2}=\frac{1}{\sum_{k=0}^{n-1}\left[\tilde{\pi}_{k}(\tau_{j}^{(n)})\right]^{2}},\quad j=1,2,\ldots,n.
 \]
 
 \end_inset
@@ -1828,17 +1809,17 @@ The Quadrature rule
 \end_inset
 
 The quadrature rule is a set of weights 
-\begin_inset Formula $\lambda_{v}$
+\begin_inset Formula $\lambda_{j}$
 \end_inset
 
  and nodes 
-\begin_inset Formula $\tau_{v}$
+\begin_inset Formula $\tau_{j}$
 \end_inset
 
  that help approximate the value of an integral 
 \begin_inset Formula 
 \[
-\intop_{I}f(x)dx\approx\sum_{v=1}^{n}\lambda_{v}f(\tau_{v}).
+\intop_{I}f(x)dx\approx\sum_{j=1}^{n}\lambda_{j}f(\tau_{j}).
 \]
 
 \end_inset
@@ -1877,38 +1858,176 @@ status collapsed
 
 \end_inset
 
-If the Quadrature rule is obtained by integrating the Lagrange interpolation formula (it is Interpolatory):
- 
-\begin_inset Formula $f(x)=\sum_{v=1}^{n}f(\tau_{v})l_{v}(x)$
+Consider a quadrature rule for approximating 
+\begin_inset Formula $\intop_{I}f(x)w(x)\,dx$
 \end_inset
 
- where 
-\begin_inset Formula $l_{v}(x)=\prod_{\mu=1,\mu\neq v}^{n}\frac{x-\tau_{\mu}}{\tau_{v}-\tau_{\mu}}$
-\end_inset
-
-,
- and the node polynomial 
-\shape up
-
-\begin_inset Formula $\omega_{n}(x)=\prod_{v=1}^{n}(x-\tau_{v})$
-\end_inset
-
-
-\shape default
- satisfies
-\begin_inset Formula $\int_{\mathbb{R}}\omega_{n}(x)p(x)\,dx=0$
-\end_inset
-
- for all 
-\begin_inset Formula $p\in P_{n-1},$
-\end_inset
-
-then Quadrature rule for positive definite inner product,
- has points equal to the root of an 
+ using 
 \begin_inset Formula $n$
 \end_inset
 
--th ortogonal polynomial
+ distinct nodes 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\tau_{1},\ldots,\tau_{n}$
+\end_inset
+
+,
+ where 
+\begin_inset Formula $w(x)$
+\end_inset
+
+ is a positive weight function defining an inner product.
+ Let this quadrature rule satisfy two conditions:
+\end_layout
+
+\begin_layout Enumerate
+The rule is derived by integrating the Lagrange interpolating polynomial based on the nodes 
+\begin_inset Formula $\tau_{j}$
+\end_inset
+
+.
+ That is 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula 
+\[
+\intop_{I}f(x)w(x)\,dx\approx\sum_{j=1}^{n}\lambda_{j}f(\tau_{j}),
+\]
+
+\end_inset
+
+where the weights are 
+\begin_inset Formula $\lambda_{j}=\intop_{I}l_{j}(x)w(x)\,dx$
+\end_inset
+
+ and 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+
+\begin_inset Formula $l_{j}(x)=\prod_{\mu=1,\mu\neq v}^{n}\frac{x-\tau_{\mu}}{\tau_{j}-\tau_{\mu}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+The node polynomial,
+ defined as 
+\shape up
+
+\begin_inset Formula $\omega_{n}(x)=\prod_{v=1}^{n}(x-\tau_{j})$
+\end_inset
+
+,
+ is orthogonal to all polynomials 
+\begin_inset Formula $p(x)$
+\end_inset
+
+ of degree less than 
+\begin_inset Formula $n$
+\end_inset
+
+ with respect to the weight function 
+\begin_inset Formula $w(x)$
+\end_inset
+
+.
+ That is 
+\shape default
+
+\begin_inset Formula $\int_{\mathbb{R}}w(x)\omega_{n}(x)p(x)\,dx=0$
+\end_inset
+
+ for all 
+\begin_inset Formula $p\in P_{n-1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+If both conditions hold,
+ then the nodes 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\tau_{1},\ldots,\tau_{n}$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ of the quadrature rule are precisely the roots of the 
+\begin_inset Formula $n$
+\end_inset
+
+-th degree orthogonal polynomial 
+\begin_inset Formula $\pi_{n}(x)$
+\end_inset
+
+ associated with the weight function 
+\begin_inset Formula $w(x)$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Section
@@ -1947,7 +2066,7 @@ status collapsed
 \end_inset
 
 Nodes 
-\begin_inset Formula $\tau_{v}^{G},v=1,2,3,\ldots,n$
+\begin_inset Formula $\tau_{j}^{G},j=1,2,3,\ldots,n$
 \end_inset
 
 ,
@@ -1957,14 +2076,14 @@ Nodes
 
 ,
  and the weights 
-\begin_inset Formula $\lambda_{v}^{G},v=1,2,3,\ldots,n$
+\begin_inset Formula $\lambda_{j}^{G},j=1,2,3,\ldots,n$
 \end_inset
 
 ,
  are 
 \begin_inset Formula 
 \[
-\lambda_{v}^{G}=\beta_{0}v_{v,1}^{2},
+\lambda_{j}^{G}=\beta_{0}v_{j,1}^{2},
 \]
 
 \end_inset
@@ -1974,7 +2093,7 @@ where
 \end_inset
 
  and 
-\begin_inset Formula $v_{v,1}$
+\begin_inset Formula $v_{j,1}$
 \end_inset
 
  is the first component of the normalized eigenvector 
@@ -1982,7 +2101,7 @@ where
 \end_inset
 
  belonging to the eigenvalue 
-\begin_inset Formula $\tau_{v}^{G}$
+\begin_inset Formula $\tau_{j}^{G}$
 \end_inset
 
 .
@@ -1997,7 +2116,7 @@ literal "false"
 
 \end_inset
 
- Let us have a vector 
+ Let us define a vector 
 \begin_inset Formula $\tilde{\pi}(x)=\left[\tilde{\pi}_{0}(x),\tilde{\pi}_{1}(x),\ldots,\tilde{\pi}_{n-1}(x)\right]^{T}$
 \end_inset
 
@@ -2032,30 +2151,40 @@ nolink "false"
 :
 \begin_inset Formula 
 \[
-\beta_{0}v_{v,1}^{2}=\frac{1}{\sum_{k=0}^{n-1}\left[\tilde{\pi}_{k}(\tau_{j}^{(n)})\right]^{2}}
+\beta_{0}v_{j,1}^{2}=\frac{1}{\sum_{k=0}^{n-1}\left[\tilde{\pi}_{k}(\tau_{j}^{(n)})\right]^{2}}
 \]
 
 \end_inset
 
-On the other hand,
- letting 
-\begin_inset Formula $f(x)=\tilde{\pi}_{k}(x),k\leq n-1$
+Next,
+ consider the function 
+\begin_inset Formula $f(x)=\tilde{\pi}_{k}(x)$
+\end_inset
+
+,
+ where 
+\begin_inset Formula $k\leq n-1$
 \end_inset
 
 ,
  in the Gauss formula 
-\begin_inset Formula $\int_{\mathbb{R}}f(x)\,dx=\sum_{v=1}^{n}\lambda_{v}^{G}f(\tau_{v}^{G})+R_{n}^{G}(f)$
+\begin_inset Formula 
+\[
+\int_{\mathbb{R}}f(x)\,dx=\sum_{j=1}^{n}\lambda_{j}^{G}f(\tau_{j}^{G})+R_{n}^{G}(f)
+\]
+
 \end_inset
 
- and noting that 
+Since 
 \begin_inset Formula $\tilde{\pi}_{0}=\beta_{0}^{-1/2}$
 \end_inset
 
 ,
- one obtains by orthogonality,
+ we use the orthogonality condition,
+ which gives:
 \begin_inset Formula 
 \[
-\beta_{0}^{1/2}\delta_{k,0}=\sum_{v=1}^{n}\lambda_{v}^{G}\tilde{\pi}_{k}(\tau_{v}^{G}),
+\beta_{0}^{1/2}\delta_{k,0}=\sum_{j=1}^{n}\lambda_{v}^{G}\tilde{\pi}_{k}(\tau_{j}^{G}),
 \]
 
 \end_inset
@@ -2079,6 +2208,7 @@ where
 
 ),
  or in matrix form,
+ this can be written as:
 \begin_inset Formula 
 \[
 P\lambda^{G}=\beta_{0}^{1/2}e_{1},
@@ -2090,11 +2220,12 @@ where
 \begin_inset Formula $P$
 \end_inset
 
- is the matrix of eigenvectors and 
+ is the matrix of eigenvectors,
+ 
 \begin_inset Formula $\lambda^{G}$
 \end_inset
 
- the vector of Gauss weights,(insert P and lambda example later) and 
+ is the vector of Gauss weights and 
 \begin_inset Formula $e_{1}^{T}=\left[1,0,\ldots,0\right]\in\mathbb{R}^{n}$
 \end_inset
 
@@ -2107,7 +2238,12 @@ where
  there holds
 \begin_inset Formula 
 \[
-P^{T}P=D_{\pi}=diag\left(d_{0},d_{1},\ldots,d_{n-1}\right),\quad d_{v-1}=\sum_{k=0}^{n-1}\left[\tilde{\pi}_{k}(\tau_{j}^{(n)})\right]^{2}
+P^{T}P=D_{\pi}=\left[\begin{array}{cccc}
+d_{0}\\
+ & d_{1}\\
+ &  & \ddots\\
+ &  &  & d_{n-1}
+\end{array}\right],\quad d_{j-1}=\sum_{k=0}^{n-1}\left[\tilde{\pi}_{k}(\tau_{j}^{(n)})\right]^{2}
 \]
 
 \end_inset
@@ -2144,7 +2280,7 @@ where
 \end_inset
 
 yielding 
-\begin_inset Formula $\lambda^{G}=\beta_{0}v_{v,1}^{2}$
+\begin_inset Formula $\lambda^{G}=\beta_{0}v_{j,1}^{2}$
 \end_inset
 
 
@@ -2286,7 +2422,7 @@ Let us denote
 \end_inset
 
  and weights are 
-\begin_inset Formula $\lambda_{j}=\frac{b-a}{2}\lambda_{j}^{L}$
+\begin_inset Formula $\lambda_{i}=\frac{b-a}{2}\lambda_{i}^{L}$
 \end_inset
 
 .
@@ -3024,7 +3160,7 @@ Expected Value
  the expected value is
 \begin_inset Formula 
 \[
-\mathbb{E}\left[X\right]\coloneqq\intop_{-\infty}^{\infty}xf\left(x\right)dx
+\mathbb{E}\left[X\right]\coloneqq\intop_{-\infty}^{\infty}xf\left(x\right)dx.
 \]
 
 \end_inset
@@ -3083,6 +3219,7 @@ where
 \begin_inset Formula $\mu_{Y}=\mathbb{E}\left[Y\right]$
 \end_inset
 
+.
  
 \end_layout
 
