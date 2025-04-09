@@ -3789,6 +3789,88 @@ and
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Definition
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Tensor space of polynomials
+\end_layout
+
+\end_inset
+
+Let us an 
+\begin_inset Formula $N$
+\end_inset
+
+-dimensional space 
+\begin_inset Formula $V_{N}^{x}$
+\end_inset
+
+ with basis polynomials 
+\begin_inset Formula $\left\{ \psi_{1},\ldots,\psi_{N}\right\} $
+\end_inset
+
+ and an 
+\begin_inset Formula $M$
+\end_inset
+
+-dimensional space 
+\begin_inset Formula $V_{M}^{y}$
+\end_inset
+
+ with basis polynomials 
+\begin_inset Formula $\left\{ \phi_{1},\ldots,\phi_{M}\right\} $
+\end_inset
+
+.
+ The tensor product space is defined as 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula 
+\[
+V_{N}^{x}\otimes V_{M}^{y}:=span\left\{ \psi_{i}\phi_{j}:i=1,\ldots,N,j=1,\ldots,M\right\} 
+\]
+
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ and has dimension 
+\begin_inset Formula $NM$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 We want to approximate eigenpairs 
 \begin_inset Formula $\left(\lambda,\psi\right)$
 \end_inset
@@ -3808,14 +3890,54 @@ We want to approximate eigenpairs
 \uwave off
 \noun off
 \color none
-The eigenproblem is:
+The eigenproblem then is:
 \begin_inset Formula 
 \begin{equation}
-\left(C\psi_{i}\right)\left(x\right)\coloneqq\intop_{\mathcal{T}}c\left(x,y\right)\psi_{i}\left(y\right)dy.=\lambda_{i}\psi_{i}\left(x\right).\label{eq:Galerkin}
+\left(C\psi_{i}\right)\left(x\right)\coloneqq\intop_{\mathcal{T}}c\left(x,y\right)\psi_{i}\left(y\right)dy=\lambda_{i}\psi_{i}\left(x\right)\quad\forall x\in\mathcal{T}.\label{eq:Galerkin}
 \end{equation}
 
 \end_inset
 
+Let us consider a subspace 
+\begin_inset Formula $V_{N}\subset L^{2}$
+\end_inset
+
+ with a basis 
+\begin_inset Formula $\left\langle \psi_{1}\left(\boldsymbol{x}\right),\ldots,\psi_{n}\left(\boldsymbol{x}\right)\right\rangle ,\boldsymbol{x}\in\mathcal{T}$
+\end_inset
+
+,
+ and an approximation 
+\begin_inset Formula $u\approx u_{N}\in V_{N}$
+\end_inset
+
+,
+ which can then be written as
+\begin_inset Formula 
+\[
+u_{N}=\sum_{i=1}^{n}\overline{u}_{i}\psi_{i}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
 We can then obtain a weak formulation of 
 \begin_inset CommandInset ref
 LatexCommand ref
