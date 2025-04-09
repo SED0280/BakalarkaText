@@ -3802,7 +3802,7 @@ Tensor space of polynomials
 
 \end_inset
 
-Let us an 
+Let us have an 
 \begin_inset Formula $N$
 \end_inset
 
@@ -3867,12 +3867,12 @@ V_{N}^{x}\otimes V_{M}^{y}:=span\left\{ \psi_{i}\phi_{j}:i=1,\ldots,N,j=1,\ldots
 \begin_inset Formula $NM$
 \end_inset
 
-
+.
 \end_layout
 
 \begin_layout Standard
 We want to approximate eigenpairs 
-\begin_inset Formula $\left(\lambda,\psi\right)$
+\begin_inset Formula $\left(\lambda,u\right)$
 \end_inset
 
 .
@@ -3893,7 +3893,7 @@ We want to approximate eigenpairs
 The eigenproblem then is:
 \begin_inset Formula 
 \begin{equation}
-\left(C\psi_{i}\right)\left(x\right)\coloneqq\intop_{\mathcal{T}}c\left(x,y\right)\psi_{i}\left(y\right)dy=\lambda_{i}\psi_{i}\left(x\right)\quad\forall x\in\mathcal{T}.\label{eq:Galerkin}
+\left(Cu_{i}\right)\left(x\right)\coloneqq\intop_{\mathcal{T}}c\left(x,y\right)u_{i}\left(y\right)dy=\lambda_{i}u_{i}\left(x\right)\quad\forall\boldsymbol{x}\in\mathcal{T}.\label{eq:eigenproblem}
 \end{equation}
 
 \end_inset
@@ -3908,40 +3908,22 @@ Let us consider a subspace
 
 ,
  and an approximation 
-\begin_inset Formula $u\approx u_{N}\in V_{N}$
+\begin_inset Formula $u_{i}\approx u_{i,N}\in V_{N}$
 \end_inset
 
 ,
  which can then be written as
 \begin_inset Formula 
-\[
-u_{N}=\sum_{i=1}^{n}\overline{u}_{i}\psi_{i}.
-\]
+\begin{equation}
+u_{i,N}=\sum_{j=1}^{n}\overline{u}_{i,j}\psi_{j}.\label{eq:u_approximation}
+\end{equation}
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\nospellcheck off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
-We can then obtain a weak formulation of 
+If we then utilize approximation 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "eq:Galerkin"
+reference "eq:u_approximation"
 plural "false"
 caps "false"
 noprefix "false"
@@ -3949,25 +3931,39 @@ nolink "false"
 
 \end_inset
 
- by multiplying both sides by 
-\begin_inset Formula $v_{k,j}\psi_{j}\left(x\right)$
+ for 
+\begin_inset Formula $u_{i}$
+\end_inset
+
+ in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:eigenproblem"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
 \end_inset
 
 ,
- where vector 
-\begin_inset Formula $v_{k}$
+ multiply both sides by a base function 
+\begin_inset Formula $\psi_{k}$
 \end_inset
 
- represents the approximation of the eigenvector,
- and integrating over 
+ and integrate them over interval 
 \begin_inset Formula $\mathcal{T}$
 \end_inset
 
+ with respect to 
+\begin_inset Formula $x$
+\end_inset
+
 ,
- resulting in 
+ we then obtain a weak formulation 
 \begin_inset Formula 
 \begin{equation}
-\intop_{\mathcal{T}}\intop_{\mathcal{T}}\psi_{i}\left(y\right)c\left(x,y\right)\psi_{j}\left(x\right)v_{k,j}dxdy.=\lambda\intop_{\mathcal{T}}\psi_{i}\left(x\right)\psi_{j}\left(x\right)v_{k,j}dx.\label{eq:weak_Galerkin}
+\sum_{j=1}^{n}\overline{u}_{i,j}\intop_{\mathcal{T}}\intop_{\mathcal{T}}\psi_{k}\left(y\right)c\left(x,y\right)\psi_{j}\left(x\right)dxdy.=\lambda_{i}^{n}\sum_{j=1}^{n}\overline{u}_{i,j}\intop_{\mathcal{T}}\psi_{k}\left(x\right)\psi_{j}\left(x\right)dx.\label{eq:weak_Galerkin}
 \end{equation}
 
 \end_inset
@@ -3985,17 +3981,39 @@ nolink "false"
 
  in a matrix form,
  where 
-\begin_inset Formula $A=\intop_{\mathcal{T}}\intop_{\mathcal{T}}\psi_{j}\left(x\right)c\left(x,y\right)\psi_{i}\left(y\right)dxdy$
+\begin_inset Formula $\overline{u}_{i}$
+\end_inset
+
+ is a vector representation of the Galerkin approximation 
+\begin_inset Formula $u_{i,N}$
+\end_inset
+
+ of an eigenvector 
+\begin_inset Formula $u_{i}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\lambda_{i}^{n}$
+\end_inset
+
+ is the Galerkin approximation of 
+\begin_inset Formula $\lambda_{i}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $A=\intop_{\mathcal{T}}\intop_{\mathcal{T}}\psi_{k}\left(y\right)c\left(x,y\right)\psi_{j}\left(x\right)dxdy$
 \end_inset
 
  and 
-\begin_inset Formula $W=\intop_{\mathcal{T}}\psi_{j}\left(x\right)\psi_{i}\left(x\right)dx.$
+\begin_inset Formula $W=\intop_{\mathcal{T}}\psi_{k}\left(x\right)\psi_{j}\left(x\right)dx,$
 \end_inset
 
  gives us
 \begin_inset Formula 
 \[
-Av_{k}=\lambda Wv_{k}.
+A\overline{u}_{i}=\lambda_{i}^{n}W\overline{u}_{i}.
 \]
 
 \end_inset
@@ -4023,16 +4041,6 @@ Matrix
 \end_inset
 
 .
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-přepsat na theorem a důkaz?
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
