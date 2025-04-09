@@ -1893,8 +1893,9 @@ Consider a quadrature rule for approximating
  Let this quadrature rule satisfy two conditions:
 \end_layout
 
-\begin_layout Enumerate
-The rule is derived by integrating the Lagrange interpolating polynomial based on the nodes 
+\begin_layout Theorem
+1.
+ The rule is derived by integrating the Lagrange interpolating polynomial based on the nodes 
 \begin_inset Formula $\tau_{j}$
 \end_inset
 
@@ -1946,8 +1947,9 @@ where the weights are
 
 \end_layout
 
-\begin_layout Enumerate
-The node polynomial,
+\begin_layout Theorem
+2.
+ The node polynomial,
  defined as 
 \shape up
 
@@ -1971,7 +1973,11 @@ The node polynomial,
  That is 
 \shape default
 
-\begin_inset Formula $\int_{\mathbb{R}}w(x)\omega_{n}(x)p(x)\,dx=0$
+\begin_inset Formula 
+\[
+\int_{\mathbb{R}}w(x)\omega_{n}(x)p(x)\,dx=0
+\]
+
 \end_inset
 
  for all 
@@ -1981,7 +1987,7 @@ The node polynomial,
 .
 \end_layout
 
-\begin_layout Standard
+\begin_layout Theorem
 If both conditions hold,
  then the nodes 
 \family roman
@@ -2469,6 +2475,92 @@ L2 space
 status open
 
 \begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Formula $L^{2}$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ norm
+\end_layout
+
+\end_inset
+
+ For an interval 
+\begin_inset Formula $I=\left\langle a,b\right\rangle ,$
+\end_inset
+
+ where 
+\begin_inset Formula $a,b\in\mathbb{R},a<b$
+\end_inset
+
+,
+ an 
+\begin_inset Formula $L^{2}$
+\end_inset
+
+-norm is defined as
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula 
+\[
+\left\Vert f\right\Vert _{L^{2}}\coloneqq\left(\intop_{I}f(x)^{2}dx\right)^{1/2},\:\forall f\in C(I).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
 Cauchy sequence
 \end_layout
 
@@ -2499,8 +2591,73 @@ Let us have a sequence of functions
 \end_inset
 
 .
- This sequence is called a Cauchy sequence with respect to the A-norm if for every 
-\begin_inset Formula $\epsilon>0$
+ This sequence is called a Cauchy sequence with respect to the 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $L^{2}$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+-norm 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\left\Vert \cdot\right\Vert _{L^{2}}$
+\end_inset
+
+,
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ if for every 
+\begin_inset Formula $\varepsilon>0$
 \end_inset
 
  there exists 
@@ -2511,52 +2668,11 @@ Let us have a sequence of functions
 \begin_inset Formula $m,n\geq N$
 \end_inset
 
- and for all 
-\begin_inset Formula $x\in\mathbb{N}$
-\end_inset
-
 ,
  we have 
 \begin_inset Formula 
 \[
-\left\Vert f_{n}(x)-f_{m}(x)\right\Vert _{A}<\epsilon.
-\]
-
-\end_inset
-
-Let 
-\begin_inset Formula $L^{2}$
-\end_inset
-
--norm be
-\begin_inset Formula 
-\[
-\left\Vert f\right\Vert _{L^{2}}\coloneqq\left(\intop_{a}^{b}f(x)^{2}dx\right)^{1/2},\:\forall f\in C(I),
-\]
-
-\end_inset
-
-and 
-\begin_inset Formula $\mathcal{L}^{2}(I)$
-\end_inset
-
- denote set of all Cauchy sequences 
-\begin_inset Formula $\left\{ f_{i}\right\} \subset C(I)$
-\end_inset
-
- with respect to the 
-\begin_inset Formula $L^{2}$
-\end_inset
-
--norm.
- We shall call Cauchy sequences 
-\begin_inset Formula $\left\{ f_{i}\right\} ,\left\{ g_{i}\right\} \in\mathcal{L}^{2}(I)$
-\end_inset
-
- equal if
-\begin_inset Formula 
-\[
-\lim_{i\rightarrow\infty}\left\Vert f_{i}(x)-g_{i}(x)\right\Vert _{L^{2}}=0.
+\left\Vert f_{n}-f_{m}\right\Vert _{L^{2}}<\varepsilon.
 \]
 
 \end_inset
@@ -2576,16 +2692,78 @@ and
 status open
 
 \begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Formula $\mathcal{L}^{2}$
+\end_inset
+
+ set
+\end_layout
+
+\end_inset
+
+Let 
+\begin_inset Formula $\mathcal{L}^{2}(I)$
+\end_inset
+
+ denote set of all Cauchy sequences 
+\begin_inset Formula $\left\{ f_{i}\right\} \subset C(I)$
+\end_inset
+
+ with respect to the 
+\begin_inset Formula $L^{2}$
+\end_inset
+
+-norm.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
 Equivalence class
 \end_layout
 
 \end_inset
 
- A set of all equivalent 
+ We shall call Cauchy sequences 
+\begin_inset Formula $\left\{ f_{i}\right\} ,\left\{ g_{i}\right\} \in\mathcal{L}^{2}(I)$
+\end_inset
+
+ equivilent if
+\begin_inset Formula 
+\[
+\lim_{i\rightarrow\infty}\left\Vert f_{i}-g_{i}\right\Vert _{L^{2}}=0.
+\]
+
+\end_inset
+
+A set of all equivalent 
 \begin_inset Formula $\left\{ \left\{ f_{i}\right\} _{j}\right\} $
 \end_inset
 
- is called an Equivalence class and is denoted as 
+ is called an equivalence class and is denoted as 
 \begin_inset Formula $\left[\left\{ f_{i}\right\} \right]$
 \end_inset
 
@@ -3575,7 +3753,7 @@ Let
 \begin_layout Standard
 \begin_inset Formula 
 \[
-X(t,\omega)-\mu(t)=\sum_{j=1}^{\infty}\gamma_{j}(\omega)\sqrt{\lambda}\psi(t),
+X(t,\omega)-\mu(t)=\sum_{j=1}^{\infty}\gamma_{j}(\omega)\sqrt{\lambda_{j}}\psi_{j}(t),
 \]
 
 \end_inset
@@ -3611,25 +3789,12 @@ and
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Theorem
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Galerkin Method
-\end_layout
-
-\end_inset
-
-We want to find eigenpairs 
+We want to approximate eigenpairs 
 \begin_inset Formula $\left(\lambda,\psi\right)$
 \end_inset
 
 .
- If we consider the eigenfunctions 
+ 
 \family roman
 \series medium
 \shape up
@@ -3643,29 +3808,10 @@ We want to find eigenpairs
 \uwave off
 \noun off
 \color none
-
-\begin_inset Formula $\psi_{i}$
-\end_inset
-
- as 
-\begin_inset Formula $u$
-\end_inset
-
- in 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "eq:covariance_operator"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-
-\end_inset
-
- we obtain:
+The eigenproblem is:
 \begin_inset Formula 
 \begin{equation}
-\left(C\psi_{i}\right)\left(x\right)\coloneqq\intop_{\mathcal{T}}c\left(x,y\right)\psi_{i}\left(y\right)dy.=\lambda\psi_{i}\left(x\right).\label{eq:Galerkin}
+\left(C\psi_{i}\right)\left(x\right)\coloneqq\intop_{\mathcal{T}}c\left(x,y\right)\psi_{i}\left(y\right)dy.=\lambda_{i}\psi_{i}\left(x\right).\label{eq:Galerkin}
 \end{equation}
 
 \end_inset

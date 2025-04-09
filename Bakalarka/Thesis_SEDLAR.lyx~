@@ -1893,8 +1893,9 @@ Consider a quadrature rule for approximating
  Let this quadrature rule satisfy two conditions:
 \end_layout
 
-\begin_layout Enumerate
-The rule is derived by integrating the Lagrange interpolating polynomial based on the nodes 
+\begin_layout Theorem
+1.
+ The rule is derived by integrating the Lagrange interpolating polynomial based on the nodes 
 \begin_inset Formula $\tau_{j}$
 \end_inset
 
@@ -1946,8 +1947,9 @@ where the weights are
 
 \end_layout
 
-\begin_layout Enumerate
-The node polynomial,
+\begin_layout Theorem
+2.
+ The node polynomial,
  defined as 
 \shape up
 
@@ -1971,7 +1973,11 @@ The node polynomial,
  That is 
 \shape default
 
-\begin_inset Formula $\int_{\mathbb{R}}w(x)\omega_{n}(x)p(x)\,dx=0$
+\begin_inset Formula 
+\[
+\int_{\mathbb{R}}w(x)\omega_{n}(x)p(x)\,dx=0
+\]
+
 \end_inset
 
  for all 
@@ -1981,7 +1987,7 @@ The node polynomial,
 .
 \end_layout
 
-\begin_layout Standard
+\begin_layout Theorem
 If both conditions hold,
  then the nodes 
 \family roman
@@ -2028,42 +2034,6 @@ If both conditions hold,
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Theorem
-If the Quadrature rule is obtained by integrating the Lagrange interpolation formula (it is Interpolatory):
- 
-\begin_inset Formula $f(x)=\sum_{j=1}^{n}f(\tau_{j})l_{j}(x)$
-\end_inset
-
- where 
-\begin_inset Formula $l_{j}(x)=\prod_{\mu=1,\mu\neq v}^{n}\frac{x-\tau_{\mu}}{\tau_{j}-\tau_{\mu}}$
-\end_inset
-
-,
- and the node polynomial 
-\shape up
-
-\begin_inset Formula $\omega_{n}(x)=\prod_{v=1}^{n}(x-\tau_{j})$
-\end_inset
-
-
-\shape default
- satisfies
-\begin_inset Formula $\int_{\mathbb{R}}\omega_{n}(x)p(x)\,dx=0$
-\end_inset
-
- for all 
-\begin_inset Formula $p\in P_{n-1}$
-\end_inset
-
-,
- then Quadrature rule for positive definite inner product,
- has points equal to the root of an 
-\begin_inset Formula $n$
-\end_inset
-
--th ortogonal polynomial
 \end_layout
 
 \begin_layout Section
@@ -2505,6 +2475,92 @@ L2 space
 status open
 
 \begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Formula $L^{2}$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ norm
+\end_layout
+
+\end_inset
+
+ For an interval 
+\begin_inset Formula $I=\left\langle a,b\right\rangle ,$
+\end_inset
+
+ where 
+\begin_inset Formula $a,b\in\mathbb{R},a<b$
+\end_inset
+
+,
+ an 
+\begin_inset Formula $L^{2}$
+\end_inset
+
+-norm is defined as
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula 
+\[
+\left\Vert f\right\Vert _{L^{2}}\coloneqq\left(\intop_{I}f(x)^{2}dx\right)^{1/2},\:\forall f\in C(I).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
 Cauchy sequence
 \end_layout
 
@@ -2535,8 +2591,40 @@ Let us have a sequence of functions
 \end_inset
 
 .
- This sequence is called a Cauchy sequence with respect to the A-norm if for every 
-\begin_inset Formula $\epsilon>0$
+ This sequence is called a Cauchy sequence with respect to the 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $L^{2}$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+-norm if for every 
+\begin_inset Formula $\varepsilon>0$
 \end_inset
 
  there exists 
@@ -2547,32 +2635,53 @@ Let us have a sequence of functions
 \begin_inset Formula $m,n\geq N$
 \end_inset
 
- and for all 
-\begin_inset Formula $x\in\mathbb{N}$
-\end_inset
-
 ,
  we have 
 \begin_inset Formula 
 \[
-\left\Vert f_{n}(x)-f_{m}(x)\right\Vert _{A}<\epsilon.
+\left\Vert f_{n}-f_{m}\right\Vert _{L^{2}}<\varepsilon.
 \]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Formula $\mathcal{L}^{2}$
+\end_inset
+
+ set
+\end_layout
 
 \end_inset
 
 Let 
-\begin_inset Formula $L^{2}$
-\end_inset
-
--norm be
-\begin_inset Formula 
-\[
-\left\Vert f\right\Vert _{L^{2}}\coloneqq\left(\intop_{a}^{b}f(x)^{2}dx\right)^{1/2},\:\forall f\in C(I),
-\]
-
-\end_inset
-
-and 
 \begin_inset Formula $\mathcal{L}^{2}(I)$
 \end_inset
 
@@ -2592,7 +2701,7 @@ and
  equal if
 \begin_inset Formula 
 \[
-\lim_{i\rightarrow\infty}\left\Vert f_{i}(x)-g_{i}(x)\right\Vert _{L^{2}}=0.
+\lim_{i\rightarrow\infty}\left\Vert f_{i}-g_{i}\right\Vert _{L^{2}}=0.
 \]
 
 \end_inset
