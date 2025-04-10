@@ -371,7 +371,7 @@ as a space of real polynomials of degree at most
  The space of all real polynomials is then
 \begin_inset Formula 
 \[
-P\coloneqq\bigcup_{d=0}^{\infty}P_{d}
+P\coloneqq\bigcup_{d=0}^{\infty}P_{d}.
 \]
 
 \end_inset
@@ -478,7 +478,7 @@ The weighted integral is well defined
 
 \begin_inset Formula 
 \[
-\intop_{I}f(x)w(x)\,dx\in\mathbb{R}
+\intop_{I}f(x)w(x)\,dx\in\mathbb{R}.
 \]
 
 \end_inset
@@ -504,7 +504,7 @@ Let
  Then all moments are finite:
 \begin_inset Formula 
 \[
-\mu_{r}\coloneqq\intop_{\mathbb{R}}x^{r}w(x)\,dx\in\mathbb{R},\;r=0,1,2,\ldots
+\mu_{r}\coloneqq\intop_{\mathbb{R}}x^{r}w(x)\,dx\in\mathbb{R},\;r=0,1,2,\ldots.
 \]
 
 \end_inset
@@ -547,7 +547,7 @@ Let
  with the corresponding norm being
 \begin_inset Formula 
 \[
-\left\Vert u\right\Vert _{w}=\sqrt{\left\langle u,u\right\rangle _{w}}
+\left\Vert u\right\Vert _{w}=\sqrt{\left\langle u,u\right\rangle _{w}}.
 \]
 
 \end_inset
@@ -627,11 +627,15 @@ Positive definiteness of an inner product over
 
 
 \emph default
-An inner product over interval 
+A weighted inner product with the weight function 
+\begin_inset Formula $w(x)=1$
+\end_inset
+
+ over interval 
 \begin_inset Formula $I=\left\langle -1,1\right\rangle $
 \end_inset
 
- by 
+ 
 \begin_inset Formula 
 \[
 \left\langle u,v\right\rangle _{w}=\intop_{-1}^{1}u(x)v(x)\,dx
@@ -639,13 +643,7 @@ An inner product over interval
 
 \end_inset
 
-i.e.,
- with the weight function 
-\begin_inset Formula $w(x)=1$
-\end_inset
-
-,
- is positive definite on 
+is positive definite on 
 \begin_inset Formula $P$
 \end_inset
 
@@ -940,7 +938,7 @@ shift property
 \end_layout
 
 \begin_layout Remark
-Shift property holds for an inner product defined from integrals:
+Shift property holds for an inner product defined from weighted integrals:
 \begin_inset Formula 
 \[
 \left\langle tu,v\right\rangle _{w}=\intop_{I}w(x)\left(tu(x)\right)v(x)\,dx=\intop_{I}w(x)u(x)\left(tv(x)\right)\,dx=\left\langle u,tv\right\rangle _{w}
@@ -1029,7 +1027,11 @@ Let
 \begin_inset Formula $\pi_{k},k=0,1,2,\ldots,$
 \end_inset
 
- be a monic orthogonal polynomials.
+ be monic orthogonal polynomials with respect to inner product 
+\begin_inset Formula $\left\langle \cdot,\cdot\right\rangle _{w}$
+\end_inset
+
+.
  Then,
 \begin_inset Formula 
 \[
@@ -1061,7 +1063,15 @@ where
 
 \begin_inset Formula 
 \[
-\beta_{k}=\frac{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}}{\left\langle \pi_{k-1},\pi_{k-1}\right\rangle _{w}},k=0,1,2,\ldots.
+\beta_{k}=\frac{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}}{\left\langle \pi_{k-1},\pi_{k-1}\right\rangle _{w}},k=1,2,\ldots,
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\beta_{0}=\left\langle \pi_{0},\pi_{0}\right\rangle _{w}
 \]
 
 \end_inset
@@ -1358,19 +1368,24 @@ Monic orthogonal polynomials
 \end_inset
 
  relate to orthonormal polynomials in the way 
-\begin_inset Formula $\pi=\tilde{\pi}\left\Vert \pi\right\Vert _{w},$
+\begin_inset Formula $\pi_{i}=\tilde{\pi}_{i}\left\Vert \pi_{i}\right\Vert _{w}$
 \end_inset
 
-where 
-\begin_inset Formula $\tilde{\pi}$
+,
+ where 
+\begin_inset Formula $\tilde{\pi}_{i}$
 \end_inset
 
- is an orthonormal polynomial and 
-\begin_inset Formula $\left\Vert \pi\right\Vert _{w}=\sqrt{\left\langle \pi,\pi\right\rangle _{w}}$
+ are orthonormal polynomials and 
+\begin_inset Formula $\left\Vert \pi_{i}\right\Vert _{w}=\sqrt{\left\langle \pi_{i},\pi_{i}\right\rangle _{w}}$
+\end_inset
+
+ for all 
+\begin_inset Formula $i\in\mathbb{N}$
 \end_inset
 
 .
- Therefore 3 term recurrence from Theorem 
+ Therefore three term recurrence from Theorem 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "thm:3-term-recurrence"
@@ -1405,11 +1420,7 @@ nolink "false"
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Proof
-Which therefore gives us 3 term recurrence from theorem:
+Which therefore gives us three term recurrence from theorem 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "thm:normal-3-term-recurrence"
@@ -1457,7 +1468,7 @@ status collapsed
 
 \end_inset
 
-With reference to Theorem 
+With reference to three term recurrence in Theorem 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "thm:normal-3-term-recurrence"
@@ -1484,6 +1495,45 @@ J_{n}\coloneqq\begin{bmatrix}\alpha_{0} & \sqrt{\beta_{1}} &  &  & 0\\
 \end{bmatrix}.
 \]
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+Monic polynomials 
+\begin_inset Formula $\pi\in P_{n}^{m}$
+\end_inset
+
+ obtained from a three term recurrence 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "thm:3-term-recurrence"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ of degree 
+\begin_inset Formula $n$
+\end_inset
+
+ have exactly 
+\begin_inset Formula $n$
+\end_inset
+
+ roots.
+ We will denote these roots as 
+\begin_inset Formula $\tau^{(n)}=\left[\tau^{1},\ldots,\tau^{n}\right]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
 \end_inset
 
 
@@ -1538,12 +1588,25 @@ The roots
 \begin_inset Formula $J_{n}$
 \end_inset
 
- of order n,
+ of order 
+\begin_inset Formula $n$
+\end_inset
+
+,
  and 
 \begin_inset Formula $\tilde{\boldsymbol{\pi}}\left(\tau_{j}^{(n)}\right)$
 \end_inset
 
  are corresponding eigenvectors.
+ i.e:
+\begin_inset Formula 
+\[
+\tau_{j}^{(n)}\tilde{\pi}(\tau_{j}^{(n)})=J_{n}\tilde{\pi}(\tau_{j}^{(n)})
+\]
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Proof
@@ -1565,7 +1628,7 @@ nolink "false"
  are written in the form 
 \begin_inset Formula 
 \[
-t\tilde{\pi}_{k}(x)=\sqrt{\beta_{k}}\tilde{\pi}_{k-1}(x)+\alpha_{k}\tilde{\pi}_{k}(x)+\sqrt{\beta_{k+1}}\tilde{\pi}_{k+1}(x),\;k=0,1,\ldots,n-1,
+x\tilde{\pi}_{k}(x)=\sqrt{\beta_{k}}\tilde{\pi}_{k-1}(x)+\alpha_{k}\tilde{\pi}_{k}(x)+\sqrt{\beta_{k+1}}\tilde{\pi}_{k+1}(x),\;k=0,1,\ldots,n-1,
 \]
 
 \end_inset
@@ -1581,7 +1644,7 @@ and one lets
 then we can express these equations in matrix form as 
 \begin_inset Formula 
 \[
-t\tilde{\boldsymbol{\pi}}(x)=J_{n}\tilde{\boldsymbol{\pi}}(x)+\sqrt{\beta_{n}}\tilde{\boldsymbol{\pi}}_{n}(x)e_{n},
+x\tilde{\boldsymbol{\pi}}(x)=J_{n}\tilde{\boldsymbol{\pi}}(x)+\sqrt{\beta_{n}}\tilde{\boldsymbol{\pi}}_{n}(x)e_{n},
 \]
 
 \end_inset
@@ -1600,7 +1663,16 @@ where
 
 .
  Both assertions follow immediately from the matrix form of this equation by putting 
-\begin_inset Formula $t=\tau_{j}^{(n)}$
+\begin_inset Formula $x=\tau_{j}^{(n)}$
+\end_inset
+
+,
+ where 
+\begin_inset Formula $\tau_{j}^{(n)}$
+\end_inset
+
+ are roots of monic polynomial 
+\begin_inset Formula $\pi_{j}$
 \end_inset
 
  and noting that 
@@ -1619,7 +1691,7 @@ where
 
 \begin_inset Formula 
 \[
-\tau_{j}^{(n)}\tilde{\boldsymbol{\pi}}(\tau_{j}^{(n)})=J_{n}\tilde{\boldsymbol{\pi}}(\tau_{j}^{(n)})+\sqrt{\beta_{n}}\tilde{\pi}_{n}(\tau_{j}^{(n)})e_{n},
+\tau_{j}^{(n)}\tilde{\boldsymbol{\pi}}(\tau_{j}^{i})=J_{n}\tilde{\boldsymbol{\pi}}(\tau_{j}^{(n)})+\sqrt{\beta_{n}}\tilde{\pi}_{n}(\tau_{j}^{(n)})e_{n},
 \]
 
 \end_inset
@@ -1629,12 +1701,12 @@ since
 \end_inset
 
  are roots of 
-\begin_inset Formula $\pi_{n}$
+\begin_inset Formula $\pi_{j}$
 \end_inset
 
 ,
  then 
-\begin_inset Formula $\tilde{\pi_{n}}(\tau_{j}^{(n)})=0$
+\begin_inset Formula $\tilde{\pi}_{n}\left(\tau_{j}^{(n)}\right)=\pi_{i}\left(\tau_{j}^{(n)}\right)/\left\Vert \pi_{i}\right\Vert _{w}=0$
 \end_inset
 
  and the equation simplifies to:
@@ -4063,6 +4135,50 @@ TEMPLATE
 
 \begin_layout Standard
 TEMPLATE
+\end_layout
+
+\begin_layout Standard
+red notes to fix:
+\end_layout
+
+\begin_layout Standard
+Def Probability space
+\end_layout
+
+\begin_layout Standard
+Def measure
+\end_layout
+
+\begin_layout Standard
+kostku do example
+\end_layout
+
+\begin_layout Standard
+Tenzor space v Glerkinove metode
+\end_layout
+
+\begin_layout Standard
+KL jake rozdělení?
+\end_layout
+
+\begin_layout Standard
+nodes as eigenvalues Proof přehledněji
+\end_layout
+
+\begin_layout Standard
+Legendre over interval monic a normalized
+\end_layout
+
+\begin_layout Standard
+positive definiteness proof svýmy slovy
+\end_layout
+
+\begin_layout Standard
+opravit dukaz po Jakobi matrix
+\end_layout
+
+\begin_layout Standard
+three term recurrence indukcí
 \end_layout
 
 \end_body
