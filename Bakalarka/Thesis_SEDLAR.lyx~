@@ -363,7 +363,7 @@ P_{d}\coloneqq\left\{ p(x)=\sum_{i=0}^{d}a_{i}x^{i}\;\Big|\;a_{i}\in\mathbb{R}\r
 
 \end_inset
 
-as a space of real polynomials of degree at most 
+as the space of real polynomials of degree at most 
 \begin_inset Formula $d$
 \end_inset
 
@@ -411,9 +411,9 @@ P_{d}^{m}\coloneqq\left\{ \pi(x)=x^{d}+\sum_{i=0}^{d-1}a_{i}x^{i}\;\Big|\;a_{i}\
 
 as the set of 
 \emph on
-monic polynomials 
+monic polynomials
 \emph default
-of degree exactly 
+ of degree exactly 
 \begin_inset Formula $d$
 \end_inset
 
@@ -449,7 +449,7 @@ Let
 \begin_inset Formula $I=\left\langle a,b\right\rangle \subset\mathbb{R},b>a$
 \end_inset
 
- (bounded,
+ (a bounded,
  closed interval).
  A function 
 \begin_inset Formula $w(x)\in C(I)$
@@ -465,17 +465,18 @@ Let
 
 is called a 
 \emph on
-Weight function
+weight function
 \emph default
 .
 \end_layout
 
 \begin_layout Remark
-The weighted integral is well defined 
-\begin_inset Formula $\forall f\in C(I)$
+The weighted integral is well defined for all 
+\begin_inset Formula $f\in C(I)$
 \end_inset
 
-
+:
+ 
 \begin_inset Formula 
 \[
 \intop_{I}f(x)w(x)\,dx\in\mathbb{R}.
@@ -504,7 +505,7 @@ Let
  Then all moments are finite:
 \begin_inset Formula 
 \[
-\mu_{r}\coloneqq\intop_{\mathbb{R}}x^{r}w(x)\,dx\in\mathbb{R},\;r=0,1,2,\ldots.
+\mu_{r}\coloneqq\intop_{I}x^{r}w(x)\,dx\in\mathbb{R},\;r=0,1,2,\ldots.
 \]
 
 \end_inset
@@ -590,7 +591,7 @@ Positive definiteness of an inner product
 
 \end_inset
 
- An inner product 
+An inner product 
 \begin_inset Formula $\left\langle \cdot,\cdot\right\rangle _{w}$
 \end_inset
 
@@ -601,7 +602,7 @@ Positive definiteness of an inner product
  is said to be positive definite if 
 \begin_inset Formula 
 \[
-\left\Vert u\right\Vert _{w}>0,\quad\forall u\in P:u\cancel{\equiv}0.
+\left\Vert u\right\Vert _{w}>0,\quad\forall u\in P:u\not\equiv0.
 \]
 
 \end_inset
@@ -610,8 +611,6 @@ Positive definiteness of an inner product
 \end_layout
 
 \begin_layout Lemma
-
-\emph on
 \begin_inset Argument 1
 status open
 
@@ -625,13 +624,11 @@ Positive definiteness of an inner product over
 
 \end_inset
 
-
-\emph default
 A weighted inner product with the weight function 
 \begin_inset Formula $w(x)=1$
 \end_inset
 
- over interval 
+ over the interval 
 \begin_inset Formula $I=\left\langle -1,1\right\rangle $
 \end_inset
 
@@ -660,7 +657,7 @@ přepsat vlastnímy slovy
 
 \end_inset
 
-As 
+Since 
 \begin_inset Formula $P$
 \end_inset
 
@@ -764,7 +761,7 @@ This implies that for every
 \end_inset
 
  in the interval 
-\begin_inset Formula $I_{\delta}=\left\langle x_{0}-\delta,x_{0}+\delta\right\rangle \cap\left\langle -1,1\right\rangle $
+\begin_inset Formula $I_{\delta}=\left(x_{0}-\delta,x_{0}+\delta\right)\cap\left\langle -1,1\right\rangle $
 \end_inset
 
  ,
@@ -841,8 +838,15 @@ Hence,
 \end_inset
 
 ,
- and so the inner product is positive definite.
- 
+ and so the inner product is positive definite on 
+\begin_inset Formula $C\left(\left\langle -1,1\right\rangle \right)$
+\end_inset
+
+ and thus on 
+\begin_inset Formula $P$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Theorem
@@ -875,9 +879,13 @@ literal "false"
 
 \end_inset
 
- If the inner product is positive definite on P,
+If the inner product is positive definite on 
+\begin_inset Formula $P$
+\end_inset
+
+,
  there exists a unique infinite sequence 
-\begin_inset Formula $\left\{ \pi_{k}\right\} $
+\begin_inset Formula $\left\{ \pi_{k}\right\} _{k=0}^{\infty}$
 \end_inset
 
  of monic orthogonal polynomials.
@@ -893,16 +901,8 @@ Shift Property
 
 \end_inset
 
- Let inner product 
+Let the inner product 
 \begin_inset Formula $\left\langle \cdot,\cdot\right\rangle _{w}$
-\end_inset
-
- have the property for every 
-\begin_inset Formula $u,v\in P_{d}$
-\end_inset
-
- and 
-\begin_inset Formula $t\in\mathbb{R}$
 \end_inset
 
 ,
@@ -921,16 +921,25 @@ nolink "false"
 
 \end_inset
 
+,
+ have the property that for every 
+\begin_inset Formula $u,v\in P_{d}$
+\end_inset
+
+ and 
+\begin_inset Formula $t\in\mathbb{R}$
+\end_inset
+
 :
  
 \begin_inset Formula 
 \[
-\left\langle tu,v\right\rangle _{w}=\left\langle u,tv\right\rangle _{w},
+\left\langle tu,v\right\rangle _{w}=\left\langle u,tv\right\rangle _{w}.
 \]
 
 \end_inset
 
-then we say it has 
+Then we say it has the 
 \emph on
 shift property
 \emph default
@@ -938,7 +947,7 @@ shift property
 \end_layout
 
 \begin_layout Remark
-Shift property holds for an inner product defined from weighted integrals:
+The shift property holds for an inner product defined by weighted integrals:
 \begin_inset Formula 
 \[
 \left\langle tu,v\right\rangle _{w}=\intop_{I}w(x)\left(tu(x)\right)v(x)\,dx=\intop_{I}w(x)u(x)\left(tv(x)\right)\,dx=\left\langle u,tv\right\rangle _{w}
@@ -964,12 +973,10 @@ For a non-negative integer
 \end_inset
 
 ,
- the set of normalized polynomials,
- with respect to a weighted norm with weight 
+ the set of normalized polynomials with respect to the weighted norm induced by 
 \begin_inset Formula $w$
 \end_inset
 
-,
  is defined as 
 \begin_inset Formula 
 \[
@@ -1024,10 +1031,11 @@ name "thm:3-term-recurrence"
 \end_inset
 
 Let 
-\begin_inset Formula $\pi_{k},k=0,1,2,\ldots,$
+\begin_inset Formula $\pi_{k},k=0,1,2,\ldots$
 \end_inset
 
- be monic orthogonal polynomials with respect to inner product 
+,
+ be monic orthogonal polynomials with respect to the inner product 
 \begin_inset Formula $\left\langle \cdot,\cdot\right\rangle _{w}$
 \end_inset
 
@@ -1035,7 +1043,7 @@ Let
  Then,
 \begin_inset Formula 
 \[
-\pi_{k+1}(x)=\left(x-\alpha_{k}\right)\pi_{k}(x)-\beta_{k}\pi_{k-1}(x),k=0,1,2,\ldots,
+\pi_{k+1}(x)=\left(x-\alpha_{k}\right)\pi_{k}(x)-\beta_{k}\pi_{k-1}(x),\quad k=0,1,2,\ldots,
 \]
 
 \end_inset
@@ -1048,14 +1056,10 @@ Let
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Theorem
 where
 \begin_inset Formula 
 \[
-\alpha_{k}=\frac{\left\langle x\pi_{k},\pi_{k}\right\rangle _{w}}{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}},k=0,1,2,\ldots,
+\alpha_{k}=\frac{\left\langle x\pi_{k},\pi_{k}\right\rangle _{w}}{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}},\quad k=0,1,2,\ldots,
 \]
 
 \end_inset
@@ -1063,7 +1067,7 @@ where
 
 \begin_inset Formula 
 \[
-\beta_{k}=\frac{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}}{\left\langle \pi_{k-1},\pi_{k-1}\right\rangle _{w}},k=1,2,\ldots,
+\beta_{k}=\frac{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}}{\left\langle \pi_{k-1},\pi_{k-1}\right\rangle _{w}},\quad k=1,2,\ldots,
 \]
 
 \end_inset
@@ -1071,7 +1075,7 @@ where
 
 \begin_inset Formula 
 \[
-\beta_{0}=\left\langle \pi_{0},\pi_{0}\right\rangle _{w}
+\beta_{0}=\left\langle \pi_{0},\pi_{0}\right\rangle _{w}.
 \]
 
 \end_inset
@@ -1106,7 +1110,7 @@ We are going to generate a sequence of orthogonal polynomials
 \end_inset
 
 .
- Polynomials 
+ The polynomial 
 \begin_inset Formula $\pi_{k+1}(x)$
 \end_inset
 
@@ -1121,12 +1125,12 @@ We are going to generate a sequence of orthogonal polynomials
 Expanding the sum:
 \begin_inset Formula 
 \begin{equation}
-\pi_{k+1}(x)=x\pi_{k}(x)-\frac{\left\langle x\pi_{k},\pi_{k}\right\rangle _{w}}{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}}\pi_{k}(x)-\frac{\left\langle x\pi_{k},\pi_{k-1}\right\rangle _{w}}{\left\langle \pi_{k-1},\pi_{k-1}\right\rangle _{w}}\pi_{k-1}(x)-\sum_{i=1}^{k-2}\frac{\left\langle x\pi_{k},\pi_{i}\right\rangle _{w}}{\left\langle \pi_{i},\pi_{i}\right\rangle _{w}}\pi_{i}(x).\label{eq:Expanded_Gram-Schmidt}
+\pi_{k+1}(x)=x\pi_{k}(x)-\frac{\left\langle x\pi_{k},\pi_{k}\right\rangle _{w}}{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}}\pi_{k}(x)-\frac{\left\langle x\pi_{k},\pi_{k-1}\right\rangle _{w}}{\left\langle \pi_{k-1},\pi_{k-1}\right\rangle _{w}}\pi_{k-1}(x)-\sum_{i=0}^{k-2}\frac{\left\langle x\pi_{k},\pi_{i}\right\rangle _{w}}{\left\langle \pi_{i},\pi_{i}\right\rangle _{w}}\pi_{i}(x).\label{eq:Expanded_Gram-Schmidt}
 \end{equation}
 
 \end_inset
 
-By shift property of the inner product,
+By the shift property of the inner product,
  we have 
 \begin_inset Formula 
 \[
@@ -1172,11 +1176,11 @@ Since
 \uwave default
 \noun default
 \color inherit
- then polynomial 
+ then the polynomial 
 \begin_inset Formula $x\pi_{i}$
 \end_inset
 
- has a degree 
+ has degree 
 \begin_inset Formula $i+1$
 \end_inset
 
@@ -1232,7 +1236,7 @@ for certain constants
 .
  If we substitute 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand eqref
 reference "eq:Linear combination xpi_i+1"
 plural "false"
 caps "false"
@@ -1241,22 +1245,27 @@ nolink "false"
 
 \end_inset
 
- into the inner product,
+ into the inner product with 
+\begin_inset Formula $\pi_{k}$
+\end_inset
+
+,
  then for 
 \begin_inset Formula $k>i+1$
 \end_inset
 
- it will be equal to zero due to orthogonality of polynomials 
+ it will be equal to zero due to the orthogonality of the polynomials:
+ 
 \begin_inset Formula 
 \[
-\left\langle x\pi_{k},\pi_{i}\right\rangle _{w}=\left\langle \pi_{k},x\pi_{i}\right\rangle _{w}=\left\langle \pi_{k},\sum_{j=0}^{i+1}c_{j}π_{j}(x)\right\rangle _{w}=0.
+\left\langle x\pi_{k},\pi_{i}\right\rangle _{w}=\left\langle \pi_{k},x\pi_{i}\right\rangle _{w}=\left\langle \pi_{k},\sum_{j=0}^{i+1}c_{j}π_{j}(x)\right\rangle _{w}=0\quad\forall k\geq1.
 \]
 
 \end_inset
 
 This leads to the simplification of 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand eqref
 reference "eq:Expanded_Gram-Schmidt"
 plural "false"
 caps "false"
@@ -1281,16 +1290,27 @@ which simplifies further to
 
 \end_inset
 
-Now if we define 
+Now,
+ if for all 
+\begin_inset Formula $k=0,1,\ldots$
+\end_inset
+
+,
+ we define 
 \begin_inset Formula $\alpha_{k}=\frac{\left\langle x\pi_{k},\pi_{k}\right\rangle _{w}}{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}}$
 \end_inset
 
- and 
+ and for all 
+\begin_inset Formula $k=1,2,\ldots$
+\end_inset
+
+,
+ 
 \begin_inset Formula $\beta_{k}=\frac{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}}{\left\langle \pi_{k-1},\pi_{k-1}\right\rangle _{w}}$
 \end_inset
 
 ,
- we obtain the desired three term recurrence relation:
+ we obtain the desired three-term recurrence relation:
 \begin_inset Formula 
 \[
 \pi_{k+1}(x)=\left(x-\alpha_{k}\right)\pi_{k}(x)-\beta_{k}\pi_{k-1}(x).
@@ -1339,53 +1359,50 @@ name "thm:normal-3-term-recurrence"
 \end_inset
 
  Let 
-\begin_inset Formula $\tilde{\pi}_{k}\in\widetilde{P_{d}^{m}},k=0,1,2,\ldots,$
-\end_inset
-
-be monic orthonormal polynomials.
- Then,
-\begin_inset Formula 
-\[
-\sqrt{\beta_{k+1}}\tilde{\pi}_{k+1}(x)=\left(x-\alpha_{k}\right)\tilde{\pi}_{k}(x)-\sqrt{\beta_{k}}\tilde{\pi}_{k-1}(x),\;k=0,1,2,\ldots,
-\]
-
-\end_inset
-
-
-\begin_inset Formula 
-\[
-\tilde{\pi}_{-1}(x)=0,\tilde{\pi}_{0}(x)=1/\sqrt{\beta_{0}}.
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Proof
-Monic orthogonal polynomials 
-\begin_inset Formula $\pi$
-\end_inset
-
- relate to orthonormal polynomials in the way 
-\begin_inset Formula $\pi_{i}=\tilde{\pi}_{i}\left\Vert \pi_{i}\right\Vert _{w}$
+\begin_inset Formula $\tilde{\pi}_{k}$
 \end_inset
 
 ,
- where 
-\begin_inset Formula $\tilde{\pi}_{i}$
+ 
+\begin_inset Formula $k=0,1,2,\ldots,$
 \end_inset
 
- are orthonormal polynomials and 
-\begin_inset Formula $\left\Vert \pi_{i}\right\Vert _{w}=\sqrt{\left\langle \pi_{i},\pi_{i}\right\rangle _{w}}$
+ be orthonormal polynomials (i.e.,
+ 
+\begin_inset Formula $\tilde{\pi}_{k}\in\widetilde{P_{d}}$
 \end_inset
 
- for all 
-\begin_inset Formula $i\in\mathbb{N}$
+ and they are orthogonal).
+ Then,
+\begin_inset Formula 
+\[
+\sqrt{\beta_{k+1}}\tilde{\pi}_{k+1}(x)=\left(x-\alpha_{k}\right)\tilde{\pi}_{k}(x)-\sqrt{\beta_{k}}\tilde{\pi}_{k-1}(x),\quad k=0,1,2,\ldots,
+\]
+
 \end_inset
 
-.
- Therefore three term recurrence from Theorem 
+
+\begin_inset Formula 
+\[
+\tilde{\pi}_{-1}(x)=0,\tilde{\pi}_{0}(x)=1/\sqrt{\beta_{0}},
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $\alpha_{k}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\beta_{k}$
+\end_inset
+
+ and 
+\begin_inset Formula $\beta_{0}$
+\end_inset
+
+ are defined in Theorem 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "thm:3-term-recurrence"
@@ -1396,7 +1413,45 @@ nolink "false"
 
 \end_inset
 
- is equal to:
+.
+\end_layout
+
+\begin_layout Proof
+Monic orthogonal polynomials 
+\begin_inset Formula $\pi_{k}$
+\end_inset
+
+ relate to the corresponding orthonormal polynomials 
+\begin_inset Formula $\tilde{\pi}_{k}$
+\end_inset
+
+ via 
+\begin_inset Formula $\pi_{k}=\tilde{\pi}_{k}\left\Vert \pi_{k}\right\Vert _{w}$
+\end_inset
+
+,
+ where 
+\begin_inset Formula $\left\Vert \pi_{k}\right\Vert _{w}=\sqrt{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}}$
+\end_inset
+
+ for all 
+\begin_inset Formula $k\in\mathbb{N}_{0}$
+\end_inset
+
+.
+ Therefore,
+ the three-term recurrence from Theorem 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "thm:3-term-recurrence"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ can be rewritten as:
 \begin_inset Formula 
 \begin{eqnarray*}
 \tilde{\pi}_{k+1}\sqrt{\left\langle \pi_{k+1},\pi_{k+1}\right\rangle _{w}} & = & \left(x-\alpha_{k}\right)\tilde{\pi}_{k}\sqrt{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}}-\beta_{k}\tilde{\pi}_{k-1}\sqrt{\left\langle \pi_{k-1},\pi_{k-1}\right\rangle _{w}}
@@ -1420,7 +1475,7 @@ nolink "false"
 
 \end_inset
 
-Which therefore gives us three term recurrence from theorem 
+This gives us three-term recurrence from Theorem 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "thm:normal-3-term-recurrence"
@@ -1431,7 +1486,11 @@ nolink "false"
 
 \end_inset
 
+ for all 
+\begin_inset Formula $k=1,2,\ldots$
+\end_inset
 
+.
 \end_layout
 
 \begin_layout Subsection
@@ -1480,7 +1539,15 @@ nolink "false"
 \end_inset
 
 ,
- the Jacobi matrix of orthonormal polynomials with weights is symmetric,
+ the 
+\begin_inset Formula $n\times n$
+\end_inset
+
+ Jacobi matrix associated with the first 
+\begin_inset Formula $n$
+\end_inset
+
+ orthonormal polynomials is symmetric,
  tridiagonal matrix
 \end_layout
 
@@ -1501,11 +1568,16 @@ J_{n}\coloneqq\begin{bmatrix}\alpha_{0} & \sqrt{\beta_{1}} &  &  & 0\\
 \end_layout
 
 \begin_layout Theorem
-Monic polynomials 
-\begin_inset Formula $\pi\in P_{n}^{m}$
+The monic polynomial 
+\begin_inset Formula $\pi_{n}\in P_{n}^{m}$
 \end_inset
 
- obtained from a three term recurrence 
+ of degree 
+\begin_inset Formula $n$
+\end_inset
+
+,
+ generated by the three-term recurrence relation from Theorem 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "thm:3-term-recurrence"
@@ -1516,17 +1588,14 @@ nolink "false"
 
 \end_inset
 
- of degree 
-\begin_inset Formula $n$
-\end_inset
-
- have exactly 
+,
+ has exactly 
 \begin_inset Formula $n$
 \end_inset
 
  roots.
- We will denote these roots as 
-\begin_inset Formula $\tau^{(n)}=\left[\tau^{1},\ldots,\tau^{n}\right]$
+ We will denote these roots by 
+\begin_inset Formula $\boldsymbol{\tau}^{(n)}=\left[\tau_{0}^{(n)},\ldots,\tau_{n-1}^{(n)}\right]$
 \end_inset
 
 .
@@ -1577,7 +1646,7 @@ name "thm:Jacobi-eigenvalues-eigenvectors"
 \end_inset
 
 The roots 
-\begin_inset Formula $\tau_{j}^{(n)}$
+\begin_inset Formula $\tau_{j}^{(n)},j=0,1,\ldots,n-1,$
 \end_inset
 
  of 
@@ -1588,20 +1657,27 @@ The roots
 \begin_inset Formula $J_{n}$
 \end_inset
 
- of order 
-\begin_inset Formula $n$
-\end_inset
-
-,
- and 
+.
+ Furthermore,
+ the vectors 
 \begin_inset Formula $\tilde{\boldsymbol{\pi}}\left(\tau_{j}^{(n)}\right)$
 \end_inset
 
- are corresponding eigenvectors.
- i.e:
+ are corresponding eigenvectors,
+ where 
+\begin_inset Formula $\tilde{\boldsymbol{\pi}}(x)=\left[\tilde{\pi}_{0}(x),\tilde{\pi}_{1}(x),\ldots,\tilde{\pi}_{n-1}(x)\right]$
+\end_inset
+
+.
+ i.e.,
+ for each 
+\begin_inset Formula $j=0,1,\ldots,n-1$
+\end_inset
+
+:
 \begin_inset Formula 
 \[
-\tau_{j}^{(n)}\tilde{\pi}(\tau_{j}^{(n)})=J_{n}\tilde{\pi}(\tau_{j}^{(n)})
+\tau_{j}^{(n)}\tilde{\boldsymbol{\pi}}(\tau_{j}^{(n)})=J_{n}\tilde{\boldsymbol{\pi}}(\tau_{j}^{(n)})
 \]
 
 \end_inset
@@ -1633,7 +1709,7 @@ x\tilde{\pi}_{k}(x)=\sqrt{\beta_{k}}\tilde{\pi}_{k-1}(x)+\alpha_{k}\tilde{\pi}_{
 
 \end_inset
 
-and one lets
+and we define 
 \begin_inset Formula 
 \[
 \tilde{\boldsymbol{\pi}}(x)=\left[\tilde{\pi}_{0}(x),\tilde{\pi}_{1}(x),\ldots,\tilde{\pi}_{n-1}(x)\right]^{T},
@@ -1644,13 +1720,13 @@ and one lets
 then we can express these equations in matrix form as 
 \begin_inset Formula 
 \[
-x\tilde{\boldsymbol{\pi}}(x)=J_{n}\tilde{\boldsymbol{\pi}}(x)+\sqrt{\beta_{n}}\tilde{\boldsymbol{\pi}}_{n}(x)e_{n},
+x\tilde{\boldsymbol{\pi}}(x)=J_{n}\tilde{\boldsymbol{\pi}}(x)+\sqrt{\beta_{n}}\tilde{\pi}_{n}(x)e_{n},
 \]
 
 \end_inset
 
 where 
-\begin_inset Formula $e_{n}=\left[0,0,\ldots,1\right]^{T}$
+\begin_inset Formula $\boldsymbol{e}_{n}=\left[0,0,\ldots,1\right]^{T}$
 \end_inset
 
  is the 
@@ -1662,7 +1738,26 @@ where
 \end_inset
 
 .
- Both assertions follow immediately from the matrix form of this equation by putting 
+ The assertions from Theorem 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "thm:Jacobi-eigenvalues-eigenvectors"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ regarding 
+\begin_inset Formula $\tau_{j}^{(n)}$
+\end_inset
+
+ and 
+\begin_inset Formula $\tilde{\boldsymbol{\pi}}\left(\tau_{j}^{(n)}\right)$
+\end_inset
+
+ follow immediately from this matrix equation by substituting 
 \begin_inset Formula $x=\tau_{j}^{(n)}$
 \end_inset
 
@@ -1672,56 +1767,53 @@ where
 \end_inset
 
  are roots of monic polynomial 
-\begin_inset Formula $\pi_{j}$
+\begin_inset Formula $\pi_{n}$
 \end_inset
 
  and noting that 
-\begin_inset Formula $\tilde{\boldsymbol{\pi}}(\tau_{j}^{(n)})\neq0$
+\begin_inset Formula $\tilde{\boldsymbol{\pi}}(\tau_{j}^{(n)})\neq\boldsymbol{0}$
 \end_inset
 
-,
- the first component of 
-\begin_inset Formula $\tilde{\boldsymbol{\pi}}(\tau_{j}^{(n)})$
+ (since its first component 
+\begin_inset Formula $\tilde{\pi}_{0}(\tau_{j}^{(n)})=1/\sqrt{\beta_{0}}\neq0$
 \end_inset
 
- being 
-\begin_inset Formula $1/\sqrt{\beta_{0}}$
-\end_inset
-
-
+),
+ yields:
 \begin_inset Formula 
 \[
-\tau_{j}^{(n)}\tilde{\boldsymbol{\pi}}(\tau_{j}^{i})=J_{n}\tilde{\boldsymbol{\pi}}(\tau_{j}^{(n)})+\sqrt{\beta_{n}}\tilde{\pi}_{n}(\tau_{j}^{(n)})e_{n},
+\tau_{j}^{(n)}\tilde{\boldsymbol{\pi}}(\tau_{j}^{i})=J_{n}\tilde{\boldsymbol{\pi}}(\tau_{j}^{(n)})+\sqrt{\beta_{n}}\tilde{\pi}_{n}(\tau_{j}^{(n)})e_{n}.
 \]
 
 \end_inset
 
-since 
+Since 
 \begin_inset Formula $\tau_{j}^{(n)}$
 \end_inset
 
- are roots of 
-\begin_inset Formula $\pi_{j}$
+ are the roots of 
+\begin_inset Formula $\pi_{n}$
 \end_inset
 
 ,
- then 
+ we have 
 \begin_inset Formula $\tilde{\pi}_{n}\left(\tau_{j}^{(n)}\right)=\pi_{i}\left(\tau_{j}^{(n)}\right)/\left\Vert \pi_{i}\right\Vert _{w}=0$
 \end_inset
 
+,
  and the equation simplifies to:
 \begin_inset Formula 
 \[
-\tau_{j}^{(n)}\tilde{\pi}(\tau_{j}^{(n)})=J_{n}\tilde{\pi}(\tau_{j}^{(n)})
+\tau_{j}^{(n)}\tilde{\boldsymbol{\pi}}(\tau_{j}^{(n)})=J_{n}\tilde{\boldsymbol{\pi}}(\tau_{j}^{(n)})
 \]
 
 \end_inset
 
-This gives us eigenpairs 
-\begin_inset Formula $\left(\tilde{\pi}(\tau_{j}^{(n)}),\tau_{j}^{(n)}\right)$
+This shows that 
+\begin_inset Formula $\left(\tau_{j}^{(n)},\tilde{\boldsymbol{\pi}}(\tau_{j}^{(n)})\right)$
 \end_inset
 
- of the Jacobi matrix 
+ are the eigenpairs of the Jacobi matrix 
 \begin_inset Formula $J_{n}$
 \end_inset
 
@@ -1777,12 +1869,8 @@ name "cor:Cor to Jacobi eigen"
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Corollary
 Let 
-\begin_inset Formula $v_{j}$
+\begin_inset Formula $\boldsymbol{v}_{j}$
 \end_inset
 
  denote the normalized eigenvector of 
@@ -1794,22 +1882,29 @@ Let
 \end_inset
 
 ,
+ and let 
+\begin_inset Formula $\boldsymbol{v}_{j,1}$
+\end_inset
+
+ denote its first component.
+ These satisfy:
 \begin_inset Formula 
 \[
-J_{n}v_{j}=\tau_{j}^{(n)}v_{j},\;v_{j}^{T}v_{j}=1,
+J_{n}\boldsymbol{v}_{j}=\tau_{j}^{(n)}\boldsymbol{v}_{j},\quad\boldsymbol{v}_{j}^{T}\boldsymbol{v}_{j}=1,
 \]
 
 \end_inset
 
-and let 
-\begin_inset Formula $v_{j,1}$
+Then,
+ for 
+\begin_inset Formula $j=1,2,\ldots,n$
 \end_inset
 
- denote its first component.
- Then,
+:
+ 
 \begin_inset Formula 
 \[
-\beta_{0}v_{j,1}^{2}=\frac{1}{\sum_{k=0}^{n-1}\left[\tilde{\pi}_{k}(\tau_{j}^{(n)})\right]^{2}},\quad j=1,2,\ldots,n.
+\beta_{0}\boldsymbol{v}_{j,1}^{2}=\frac{1}{\sum_{k=0}^{n-1}\left[\tilde{\pi}_{k}(\tau_{j}^{(n)})\right]^{2}}.
 \]
 
 \end_inset
@@ -1818,19 +1913,63 @@ and let
 \end_layout
 
 \begin_layout Proof
-For each normalized eigenvector 
-\begin_inset Formula $v_{j}$
+Recall the vector 
+\begin_inset Formula $\tilde{\boldsymbol{\pi}}(x)=\left[\tilde{\pi}_{0}(x),\tilde{\pi}_{1}(x),\ldots,\tilde{\pi}_{n-1}(x)\right]$
+\end_inset
+
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ from Theorem 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "thm:Jacobi-eigenvalues-eigenvectors"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ For each normalized eigenvector 
+\begin_inset Formula $\boldsymbol{v}_{j}$
 \end_inset
 
 :
 \begin_inset Formula 
 \[
-v_{j}=\left(\sum_{k=0}^{n-1}\left[\tilde{\pi}_{k}(\tau_{j}^{(n)})\right]^{2}\right)^{-1/2}\tilde{\pi}(\tau_{j}^{(n)}),\quad j=1,2,\ldots,n.
+\boldsymbol{v}_{j}=\left(\sum_{k=0}^{n-1}\left[\tilde{\pi}_{k}(\tau_{j}^{(n)})\right]^{2}\right)^{-1/2}\tilde{\pi}(\tau_{j}^{(n)}),\quad j=1,2,\ldots,n.
 \]
 
 \end_inset
 
-noting from Theorem 
+Noting from Theorem 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "thm:normal-3-term-recurrence"
@@ -1845,20 +1984,20 @@ nolink "false"
 \begin_inset Formula $\tilde{\pi}_{0}=1/\sqrt{\beta_{0}}$
 \end_inset
 
-,
- if we compare the first component of each side and square the equation we obtain:
+ is constant,
+ if we compare the first component of each side of the vector equation above and square the resulting scalar equation,
+ we obtain:
 \begin_inset Formula 
 \[
-v_{j,1}^{2}=\left(\sum_{k=0}^{n-1}\left[\tilde{\pi}_{k}(\tau_{j}^{(n)})\right]^{2}\right)^{-1}\frac{1}{\sqrt{\beta_{0}}},\quad j=1,2,\ldots,n.
+\boldsymbol{v}_{j,1}^{2}=\left(\sum_{k=0}^{n-1}\left[\tilde{\pi}_{k}(\tau_{j}^{(n)})\right]^{2}\right)^{-1}\frac{1}{\beta_{0}},\quad j=1,2,\ldots,n.
 \]
 
 \end_inset
 
-and after simplification,
- we obtain desired formula
+Rearranging this gives the desired relationship:
 \begin_inset Formula 
 \[
-\beta_{0}v_{j,1}^{2}=\frac{1}{\sum_{k=0}^{n-1}\left[\tilde{\pi}_{k}(\tau_{j}^{(n)})\right]^{2}},\quad j=1,2,\ldots,n.
+\beta_{0}\boldsymbol{v}_{j,1}^{2}=\frac{1}{\sum_{k=0}^{n-1}\left[\tilde{\pi}_{k}(\tau_{j}^{(n)})\right]^{2}},\quad j=1,2,\ldots,n.
 \]
 
 \end_inset
@@ -1880,7 +2019,7 @@ The Quadrature rule
 
 \end_inset
 
-The quadrature rule is a set of weights 
+A quadrature rule is a set of weights 
 \begin_inset Formula $\lambda_{j}$
 \end_inset
 
@@ -1888,10 +2027,17 @@ The quadrature rule is a set of weights
 \begin_inset Formula $\tau_{j}$
 \end_inset
 
- that help approximate the value of an integral 
+,
+ 
+\begin_inset Formula $j=0,1,\ldots,n$
+\end_inset
+
+,
+ used to approximate the value of an integral:
+ 
 \begin_inset Formula 
 \[
-\intop_{I}f(x)dx\approx\sum_{j=1}^{n}\lambda_{j}f(\tau_{j}).
+\intop_{I}f(x)w(x)\,dx\approx\sum_{j=0}^{n}\lambda_{j}f(\tau_{j}).
 \]
 
 \end_inset
@@ -1939,20 +2085,6 @@ Consider a quadrature rule for approximating
 \end_inset
 
  distinct nodes 
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\nospellcheck off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
-
 \begin_inset Formula $\tau_{1},\ldots,\tau_{n}$
 \end_inset
 
@@ -1961,18 +2093,24 @@ Consider a quadrature rule for approximating
 \begin_inset Formula $w(x)$
 \end_inset
 
- is a positive weight function defining an inner product.
+ is a positive weight function defining an inner product 
+\begin_inset Formula $\left\langle \cdot,\cdot\right\rangle _{w}$
+\end_inset
+
+.
  Let this quadrature rule satisfy two conditions:
 \end_layout
 
 \begin_layout Theorem
 1.
- The rule is derived by integrating the Lagrange interpolating polynomial based on the nodes 
+ The rule is interpolatory,
+ meaning it is derived by integrating the Lagrange interpolating polynomial based on the nodes 
 \begin_inset Formula $\tau_{j}$
 \end_inset
 
 .
- That is 
+ The approximation is given by:
+ 
 \family roman
 \series medium
 \shape up
@@ -1994,11 +2132,7 @@ Consider a quadrature rule for approximating
 
 \end_inset
 
-where the weights are 
-\begin_inset Formula $\lambda_{j}=\intop_{I}l_{j}(x)w(x)\,dx$
-\end_inset
 
- and 
 \family default
 \series default
 \shape default
@@ -2012,8 +2146,32 @@ where the weights are
 \uwave default
 \noun default
 \color inherit
+where the weights 
+\begin_inset Formula $\lambda_{j}$
+\end_inset
 
-\begin_inset Formula $l_{j}(x)=\prod_{\mu=1,\mu\neq v}^{n}\frac{x-\tau_{\mu}}{\tau_{j}-\tau_{\mu}}$
+ are the integrals of the Lagrange basis polynomials:
+\begin_inset Formula 
+\[
+\lambda_{j}=\intop_{I}l_{j}(x)w(x)\,dx,
+\]
+
+\end_inset
+
+and 
+\begin_inset Formula $l_{j}(x)$
+\end_inset
+
+ are the Lagrange basis polynomials:
+ 
+\begin_inset Formula 
+\[
+l_{j}(x)=\prod_{\substack{\mu=1\\
+\mu\neq j
+}
+}^{n}\frac{x-\tau_{\mu}}{\tau_{j}-\tau_{\mu}}.
+\]
+
 \end_inset
 
 
@@ -2021,11 +2179,8 @@ where the weights are
 
 \begin_layout Theorem
 2.
- The node polynomial,
- defined as 
-\shape up
-
-\begin_inset Formula $\omega_{n}(x)=\prod_{v=1}^{n}(x-\tau_{j})$
+ The node polynomial 
+\begin_inset Formula $\omega_{n}(x)=\prod_{j=1}^{n}(x-\tau_{j})$
 \end_inset
 
 ,
@@ -2042,12 +2197,11 @@ where the weights are
 \end_inset
 
 .
- That is 
-\shape default
-
+ That is:
+ 
 \begin_inset Formula 
 \[
-\int_{\mathbb{R}}w(x)\omega_{n}(x)p(x)\,dx=0
+\intop_{I}w(x)\omega_{n}(x)p(x)\,dx=0,
 \]
 
 \end_inset
@@ -2105,6 +2259,38 @@ If both conditions hold,
 \begin_inset Formula $w(x)$
 \end_inset
 
+ and correspondingly the inner product 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\left\langle \cdot,\cdot\right\rangle _{w}$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
 .
 \end_layout
 
@@ -2143,25 +2329,43 @@ status collapsed
 
 \end_inset
 
-Nodes 
-\begin_inset Formula $\tau_{j}^{G},j=1,2,3,\ldots,n$
+The nodes 
+\begin_inset Formula $\tau_{j}^{G}$
 \end_inset
 
 ,
- of the n-point Gauss quadrature rule are the eigenvalues of the Jacobi matrix 
+ 
+\begin_inset Formula $j=1,2,\ldots,n$
+\end_inset
+
+,
+ of the 
+\begin_inset Formula $n$
+\end_inset
+
+-point Gauss quadrature rule associated with the inner product 
+\begin_inset Formula $\left\langle \cdot,\cdot\right\rangle _{w}$
+\end_inset
+
+ and interval 
+\begin_inset Formula $I$
+\end_inset
+
+ are the eigenvalues of the Jacobi matrix 
 \begin_inset Formula $J_{n}$
 \end_inset
 
-,
- and the weights 
+.
+ The corresponding weights 
 \begin_inset Formula $\lambda_{j}^{G},j=1,2,3,\ldots,n$
 \end_inset
 
 ,
- are 
+ are given by:
+ 
 \begin_inset Formula 
 \[
-\lambda_{j}^{G}=\beta_{0}v_{j,1}^{2},
+\lambda_{j}^{G}=\beta_{0}\boldsymbol{v}_{j,1}^{2},
 \]
 
 \end_inset
@@ -2171,14 +2375,18 @@ where
 \end_inset
 
  and 
-\begin_inset Formula $v_{j,1}$
+\begin_inset Formula $\boldsymbol{v}_{j,1}$
 \end_inset
 
  is the first component of the normalized eigenvector 
-\begin_inset Formula $v_{j}$
+\begin_inset Formula $\boldsymbol{v}_{j}$
 \end_inset
 
- belonging to the eigenvalue 
+ of 
+\begin_inset Formula $J_{n}$
+\end_inset
+
+ corresponding to the eigenvalue 
 \begin_inset Formula $\tau_{j}^{G}$
 \end_inset
 
@@ -2194,17 +2402,12 @@ literal "false"
 
 \end_inset
 
- Let us define a vector 
-\begin_inset Formula $\tilde{\pi}(x)=\left[\tilde{\pi}_{0}(x),\tilde{\pi}_{1}(x),\ldots,\tilde{\pi}_{n-1}(x)\right]^{T}$
+ Let us define a vector of orthonormal polynomials 
+\begin_inset Formula $\tilde{\boldsymbol{\pi}}(x)=\left[\tilde{\pi}_{0}(x),\tilde{\pi}_{1}(x),\ldots,\tilde{\pi}_{n-1}(x)\right]^{T}$
 \end_inset
 
-,
- where 
-\begin_inset Formula $\tilde{\pi}_{k}(x)$
-\end_inset
-
- are orthonormal polynomials.
- By Theorem 
+.
+ We recall from the properties of the Jacobi matrix eigenvectors (related to Theorem
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "thm:Jacobi-eigenvalues-eigenvectors"
@@ -2215,7 +2418,7 @@ nolink "false"
 
 \end_inset
 
- and its Corollary 
+ and specifically Corollary 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "cor:Cor to Jacobi eigen"
@@ -2229,40 +2432,94 @@ nolink "false"
 :
 \begin_inset Formula 
 \[
-\beta_{0}v_{j,1}^{2}=\frac{1}{\sum_{k=0}^{n-1}\left[\tilde{\pi}_{k}(\tau_{j}^{(n)})\right]^{2}}
+\beta_{0}\boldsymbol{v}_{j,1}^{2}=\frac{1}{\sum_{k=0}^{n-1}\left[\tilde{\pi}_{k}(\tau_{j}^{(n)})\right]^{2}},\quad j=1,\dots,n,
 \]
 
 \end_inset
 
-Next,
- consider the function 
+where 
+\begin_inset Formula $\boldsymbol{v}_{j,1}$
+\end_inset
+
+ is the first component of the normalized eigenvector 
+\begin_inset Formula $\boldsymbol{v}_{j}$
+\end_inset
+
+ corresponding to the eigenvalue 
+\begin_inset Formula $\tau_{j}^{(n)}$
+\end_inset
+
+.
+ Next,
+ let 
 \begin_inset Formula $f(x)=\tilde{\pi}_{k}(x)$
 \end_inset
 
-,
- where 
-\begin_inset Formula $k\leq n-1$
+ for some 
+\begin_inset Formula $k\in\{0,1,\ldots,n-1\}$
+\end_inset
+
+.
+ The 
+\begin_inset Formula $n$
+\end_inset
+
+-point Gauss quadrature rule integrates polynomials of degree up to 
+\begin_inset Formula $2n-1$
+\end_inset
+
+ exactly.
+ Since 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ is a polynomial of degree 
+\begin_inset Formula $k\le n-1<2n-1$
 \end_inset
 
 ,
- in the Gauss formula 
+ the Gauss formula is exact:
+ 
 \begin_inset Formula 
 \[
-\int_{\mathbb{R}}f(x)\,dx=\sum_{j=1}^{n}\lambda_{j}^{G}f(\tau_{j}^{G})+R_{n}^{G}(f)
+\intop_{I}f(x)w(x)\,dx=\sum_{j=1}^{n}\lambda_{j}^{G}f(\tau_{j}^{G}).
 \]
 
 \end_inset
 
-Since 
-\begin_inset Formula $\tilde{\pi}_{0}=\beta_{0}^{-1/2}$
+The integral on the left side is 
+\begin_inset Formula $\intop_{I}\tilde{\pi}_{k}(x)w(x)\,dx=\langle\tilde{\pi}_{k},1\rangle_{w}$
 \end_inset
 
-,
- we use the orthogonality condition,
- which gives:
+.
+ Since 
+\begin_inset Formula $1=\sqrt{\beta_{0}}\tilde{\pi}_{0}(x)$
+\end_inset
+
+ (because 
+\begin_inset Formula $\tilde{\pi}_{0}$
+\end_inset
+
+ is the constant orthonormal polynomial,
+ 
+\begin_inset Formula $\tilde{\pi}_{0}=1/||\pi_{0}||_{w}=1/\sqrt{\langle1,1\rangle_{w}}=1/\sqrt{\beta_{0}}$
+\end_inset
+
+),
+ this integral becomes 
+\begin_inset Formula $\sqrt{\beta_{0}}\langle\tilde{\pi}_{k},\tilde{\pi}_{0}\rangle_{w}=\sqrt{\beta_{0}}\delta_{k,0}$
+\end_inset
+
+ by the orthonormality of the 
+\begin_inset Formula $\tilde{\pi}$
+\end_inset
+
+ polynomials.
+ Thus,
+ the exact Gauss formula yields:
 \begin_inset Formula 
 \[
-\beta_{0}^{1/2}\delta_{k,0}=\sum_{j=1}^{n}\lambda_{v}^{G}\tilde{\pi}_{k}(\tau_{j}^{G}),
+\beta_{0}^{1/2}\delta_{k,0}=\sum_{j=1}^{n}\lambda_{j}^{G}\tilde{\pi}_{k}(\tau_{j}^{G}),\quad k=0,1,\ldots,n-1,
 \]
 
 \end_inset
@@ -2271,26 +2528,12 @@ where
 \begin_inset Formula $\delta_{k,0}$
 \end_inset
 
- is the Kronecker delta (if 
-\begin_inset Formula $i=j$
-\end_inset
-
- then 
-\begin_inset Formula $\delta_{i,j}=1$
-\end_inset
-
-,
- else 
-\begin_inset Formula $\delta_{i,j}=0$
-\end_inset
-
-),
- or in matrix form,
- this can be written as:
+ is the Kronecker delta.
+ This system of equations can be written in matrix form as:
 \begin_inset Formula 
-\[
-P\lambda^{G}=\beta_{0}^{1/2}e_{1},
-\]
+\begin{equation}
+P^{T}\boldsymbol{\lambda}^{G}=\beta_{0}^{1/2}\boldsymbol{e}_{1},\label{eq:Gauss_matrix_form}
+\end{equation}
 
 \end_inset
 
@@ -2298,25 +2541,41 @@ where
 \begin_inset Formula $P$
 \end_inset
 
- is the matrix of eigenvectors,
+ is the 
+\begin_inset Formula $n\times n$
+\end_inset
+
+ matrix whose 
+\begin_inset Formula $(k+1,j)$
+\end_inset
+
+ entry is 
+\begin_inset Formula $\tilde{\pi}_{k}(\tau_{j}^{G})$
+\end_inset
+
+,
  
-\begin_inset Formula $\lambda^{G}$
+\begin_inset Formula $\boldsymbol{\lambda}^{G}$
 \end_inset
 
- is the vector of Gauss weights and 
-\begin_inset Formula $e_{1}^{T}=\left[1,0,\ldots,0\right]\in\mathbb{R}^{n}$
+ is the vector of Gauss weights 
+\begin_inset Formula $[\lambda_{1}^{G},\dots,\lambda_{n}^{G}]^{T}$
 \end_inset
 
- the first coordinate vector.
- Since the columns of 
+ and 
+\begin_inset Formula $\boldsymbol{e}_{1}=\left[1,0,\ldots,0\right]^{T}\in\mathbb{R}^{n}$
+\end_inset
+
+ is the first standard basis vector.
+ It is known that the columns of 
 \begin_inset Formula $P$
 \end_inset
 
  are mutually orthogonal,
- there holds
+ and specifically:
 \begin_inset Formula 
 \[
-P^{T}P=D_{\pi}=\left[\begin{array}{cccc}
+PP^{T}=D_{\pi}=\left[\begin{array}{cccc}
 d_{0}\\
  & d_{1}\\
  &  & \ddots\\
@@ -2326,46 +2585,61 @@ d_{0}\\
 
 \end_inset
 
-Multiplying the matrix form of our equation by 
-\begin_inset Formula $P^{T}$
+Multiplying the equation 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Gauss_matrix_form"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
 \end_inset
 
- from the left,
- one gets
+ by 
+\begin_inset Formula $P$
+\end_inset
+
+ from the left yields:
 \begin_inset Formula 
 \[
-D_{\pi}\lambda^{G}=\beta_{0}^{1/2}P^{T}e_{1}=\beta_{0}^{1/2}\beta_{0}^{-1/2}e=e,
+D_{\pi}\boldsymbol{\lambda}^{G}=\beta_{0}^{1/2}P\boldsymbol{e}_{1}=\beta_{0}^{1/2}\beta_{0}^{-1/2}\boldsymbol{e}=\boldsymbol{e},
 \]
 
 \end_inset
 
 where 
-\begin_inset Formula $e=\left[1,1,\ldots,1\right]^{T}\in\mathbb{R}^{n}$
+\begin_inset Formula $\boldsymbol{e}=\left[1,1,\ldots,1\right]^{T}\in\mathbb{R}^{n}$
 \end_inset
 
 .
  There follows 
-\begin_inset Formula $\lambda^{G}=D_{\pi}^{-1}e$
+\begin_inset Formula $\lambda^{G}=D_{\pi}^{-1}\boldsymbol{e}$
 \end_inset
 
 ,
  that is,
+ for each 
+\begin_inset Formula $j=1,\dots,n$
+\end_inset
+
+:
 \begin_inset Formula 
 \[
-\lambda^{G}=\frac{1}{\sum_{k=0}^{n-1}\left[\tilde{\pi}_{k}(\tau_{j}^{(n)})\right]^{2}}
+\lambda_{j}^{G}=\frac{1}{d_{j-1}}=\frac{1}{\sum_{k=0}^{n-1}\left[\tilde{\pi}_{k}(\tau_{j}^{(n)})\right]^{2}},
 \]
 
 \end_inset
 
 yielding 
-\begin_inset Formula $\lambda^{G}=\beta_{0}v_{j,1}^{2}$
+\begin_inset Formula $\lambda_{j}^{G}=\beta_{0}\boldsymbol{v}_{j,1}^{2}$
 \end_inset
 
 
 \end_layout
 
 \begin_layout Section
-Legendre over interval
+Legendre polynomials over a general interval
 \end_layout
 
 \begin_layout Theorem
@@ -2386,11 +2660,11 @@ literal "false"
 
 \end_inset
 
-The weights of Quadrature rule 
+The weights 
 \begin_inset Formula $\lambda_{j}$
 \end_inset
 
- can be obtained from roots of orthogonal polynomials 
+ of a quadrature rule can be obtained from roots of orthogonal polynomials 
 \begin_inset Formula $\tau_{i}$
 \end_inset
 
@@ -2410,30 +2684,76 @@ Orthogonal Lagrange polynomials denoted as
 \begin_inset Formula $\pi_{i}^{L}(x)$
 \end_inset
 
- are defined for an inner product over interval 
+ are defined with respect to the inner product over the interval 
 \begin_inset Formula $I^{L}=\left\langle -1,1\right\rangle $
 \end_inset
 
- and a weight function 
+ and the weight function 
 \begin_inset Formula $w(x)=1$
 \end_inset
 
 .
- Let us have an interval 
-\begin_inset Formula $I=\left\langle a,b\right\rangle ;a,b\in\mathbb{R}:a<b$
+ Consider an interval 
+\begin_inset Formula $I=\left\langle a,b\right\rangle $
 \end_inset
 
- and an inner product over interval 
+,
+ where 
+\begin_inset Formula $a,b\in\mathbb{R}$
+\end_inset
+
+ and 
+\begin_inset Formula $a<b$
+\end_inset
+
+.
+ For the inner product defined over interval 
 \begin_inset Formula $I$
 \end_inset
 
- with a weight 
+ with the weight function 
 \begin_inset Formula $w(x)=1$
 \end_inset
 
 ,
- orthogonal polynomials created with this inner product will be equal to 
-\begin_inset Formula $\pi_{i}(x)=\pi_{i}^{L}\left(\frac{a+b}{a-b}+\frac{2}{b-a}x\right)$
+ the corresponding orthogonal polynomials 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\pi_{i}(x)$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ are related to 
+\begin_inset Formula $\pi_{i}^{L}(x)$
+\end_inset
+
+ by 
+\begin_inset Formula $\pi_{i}(x)=\pi_{i}^{L}\left(\frac{a+b}{a-b}+\frac{2}{b-a}x\right).$
 \end_inset
 
 
@@ -2477,25 +2797,29 @@ Let
 \end_layout
 
 \begin_layout Remark
-Let us denote 
+Let 
 \begin_inset Formula $\tau_{i}^{L}$
 \end_inset
 
- as the roots of Lagrange polynomials and 
+ denote the roots of Lagrange polynomials and 
 \begin_inset Formula $\lambda_{i}^{L}$
 \end_inset
 
- as their corresponding weights of quadrature.
+ denote the corresponding Gauss-Legendre quadrature weights.
  For orthogonal polynomials 
 \begin_inset Formula $\pi(x)$
 \end_inset
 
- made from inner product over interval 
+ associated with the inner product over the interval 
 \begin_inset Formula $I=\left\langle a,b\right\rangle $
 \end_inset
 
-,
- the roots are 
+ (with weight 
+\begin_inset Formula $w(x)=1$
+\end_inset
+
+),
+ the roots (Gauss quadrature nodes) are 
 \begin_inset Formula $\tau_{i}=\frac{a+b}{2}+\frac{b-a}{2}\tau_{i}^{L}$
 \end_inset
 
@@ -2539,7 +2863,10 @@ Probability
 \end_layout
 
 \begin_layout Section
-L2 space
+\begin_inset Formula $L^{2}$
+\end_inset
+
+ space
 \end_layout
 
 \begin_layout Definition
@@ -2596,7 +2923,11 @@ status open
 \begin_inset Formula $L^{2}$
 \end_inset
 
--norm is defined as
+-norm on 
+\begin_inset Formula $C\left(I\right)$
+\end_inset
+
+ is defined as
 \family roman
 \series medium
 \shape up
@@ -2613,7 +2944,7 @@ status open
 
 \begin_inset Formula 
 \[
-\left\Vert f\right\Vert _{L^{2}}\coloneqq\left(\intop_{I}f(x)^{2}dx\right)^{1/2},\:\forall f\in C(I).
+\left\Vert f\right\Vert _{L^{2}}\coloneqq\left(\intop_{I}\left|f(x)\right|^{2}dx\right)^{1/2},\:\forall f\in C(I).
 \]
 
 \end_inset
@@ -2648,11 +2979,11 @@ Rozdělit na více definic?
 
 \end_inset
 
-Let us have a sequence of functions 
-\begin_inset Formula $f_{i}(x)\in C(I)$
+Let 
+\begin_inset Formula $\left\{ f_{i}(x)\right\} _{i=0}^{\infty}\in C(I)$
 \end_inset
 
-,
+ be a sequence,
  where 
 \begin_inset Formula $I=\left\langle a,b\right\rangle $
 \end_inset
@@ -2732,7 +3063,7 @@ Let us have a sequence of functions
 \begin_inset Formula $\varepsilon>0$
 \end_inset
 
- there exists 
+ there exists an integer 
 \begin_inset Formula $N$
 \end_inset
 
@@ -2790,7 +3121,7 @@ Let
 \begin_inset Formula $\mathcal{L}^{2}(I)$
 \end_inset
 
- denote set of all Cauchy sequences 
+ denote the set of all Cauchy sequences 
 \begin_inset Formula $\left\{ f_{i}\right\} \subset C(I)$
 \end_inset
 
@@ -2819,11 +3150,11 @@ Equivalence class
 
 \end_inset
 
- We shall call Cauchy sequences 
+ We shall call two Cauchy sequences 
 \begin_inset Formula $\left\{ f_{i}\right\} ,\left\{ g_{i}\right\} \in\mathcal{L}^{2}(I)$
 \end_inset
 
- equivilent if
+ equivalent if
 \begin_inset Formula 
 \[
 \lim_{i\rightarrow\infty}\left\Vert f_{i}-g_{i}\right\Vert _{L^{2}}=0.
@@ -2835,7 +3166,7 @@ A set of all equivalent
 \begin_inset Formula $\left\{ \left\{ f_{i}\right\} _{j}\right\} $
 \end_inset
 
- is called an equivalence class and is denoted as 
+ is called an equivalence class and is denoted by 
 \begin_inset Formula $\left[\left\{ f_{i}\right\} \right]$
 \end_inset
 
@@ -2859,7 +3190,16 @@ L2 Space
 
 \end_inset
 
+Let us have 
+\begin_inset Formula $F\coloneqq\left\{ f_{i}\right\} \in\mathcal{L}^{2}(I)$
+\end_inset
 
+ and 
+\begin_inset Formula $G\coloneqq\left\{ g_{i}\right\} \in\mathcal{L}^{2}(I)$
+\end_inset
+
+.
+ 
 \begin_inset Formula $L^{2}(I)$
 \end_inset
 
@@ -2916,7 +3256,7 @@ L2 Space
 :
 \begin_inset Formula 
 \[
-L^{2}(I)\coloneqq\left\{ \left[\left\{ f_{i}\right\} \right]:\left\{ f_{i}\right\} \in\mathcal{L}^{2}(I)\right\} .
+L^{2}(I)\coloneqq\left\{ \left[F\right]:F\coloneqq\left\{ f_{i}\right\} \in\mathcal{L}^{2}(I)\right\} .
 \]
 
 \end_inset
@@ -2935,10 +3275,10 @@ L^{2}(I)\coloneqq\left\{ \left[\left\{ f_{i}\right\} \right]:\left\{ f_{i}\right
 \uwave default
 \noun default
 \color inherit
-If we further define a limit 
+If we further define a norm 
 \begin_inset Formula 
 \[
-\left\Vert \left\{ f_{i}\right\} \right\Vert _{L^{2}}\coloneqq\lim_{i\rightarrow\infty}\left\Vert f_{i}\right\Vert _{L^{2}}
+\left\Vert F\right\Vert _{L^{2}}\coloneqq\lim_{i\rightarrow\infty}\left\Vert f_{i}\right\Vert _{L^{2}}
 \]
 
 \end_inset
@@ -2949,7 +3289,7 @@ and an inner product
 \begin_layout Definition
 \begin_inset Formula 
 \[
-\left\langle \left\{ f_{i}\right\} ,\left\{ g_{i}\right\} \right\rangle _{L^{2}}\coloneqq\lim_{i\rightarrow\infty}\intop_{I}f_{i}\left(x\right)g_{i}\left(x\right)dx,
+\left\langle F,G\right\rangle _{L^{2}}\coloneqq\lim_{i\rightarrow\infty}\intop_{I}f_{i}\left(x\right)g_{i}\left(x\right)dx,
 \]
 
 \end_inset
@@ -2958,15 +3298,15 @@ then
 \begin_inset Formula $L^{2}(I)$
 \end_inset
 
- is a Hilbert Space.
+ is a Hilbert space.
 \end_layout
 
 \begin_layout Section
-Probability
+Probability fundamentals
 \end_layout
 
 \begin_layout Standard
-Let us have a probability space 
+Consider a probability space 
 \begin_inset Formula $\left(\Omega,\mathcal{F},\mathbb{P}\right)$
 \end_inset
 
@@ -3035,7 +3375,7 @@ event
 .
  Each event corresponds to a set of outcomes in the experiment.
  For example in the dice rolls,
- lets say we want to know the probability of rolling an even number and so the set 
+ let's say we want to know the probability of rolling an even number and so the set 
 \begin_inset Formula $F=\left\{ 2,4,6\right\} $
 \end_inset
 
@@ -3063,7 +3403,7 @@ The probability measure
 
 .
  Higher probability means the event is more likely to occur in an experiment.
- For a dice roll the probability of rolling an even number (
+ For a fair dice roll the probability of rolling an even number (
 \begin_inset Formula $F=\left\{ 2,4,6\right\} $
 \end_inset
 
@@ -3779,7 +4119,7 @@ A Gaussian random field (GRF)
 \end_layout
 
 \begin_layout Chapter
-Karhunen-Loéve expansion
+Karhunen-Loève expansion
 \end_layout
 
 \begin_layout Standard
@@ -3846,10 +4186,10 @@ where the coefficients
 \end_inset
 
 and 
-\begin_inset Formula $\left(\lambda,\psi\right)$
+\begin_inset Formula $\left(\lambda_{j},\psi_{j}\right)$
 \end_inset
 
- are eigenpairs of the covariance operator 
+ are eigenpairs of the auto covariance operator 
 \begin_inset Formula $C$
 \end_inset
 
@@ -3994,7 +4334,7 @@ u_{i,N}=\sum_{j=1}^{n}\overline{u}_{i,j}\psi_{j}.\label{eq:u_approximation}
 
 If we then utilize approximation 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand eqref
 reference "eq:u_approximation"
 plural "false"
 caps "false"
@@ -4009,7 +4349,7 @@ nolink "false"
 
  in 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand eqref
 reference "eq:eigenproblem"
 plural "false"
 caps "false"
@@ -4028,21 +4368,21 @@ nolink "false"
 \end_inset
 
  with respect to 
-\begin_inset Formula $x$
+\begin_inset Formula $\boldsymbol{x}$
 \end_inset
 
 ,
  we then obtain a weak formulation 
 \begin_inset Formula 
 \begin{equation}
-\sum_{j=1}^{n}\overline{u}_{i,j}\intop_{\mathcal{T}}\intop_{\mathcal{T}}\psi_{k}\left(y\right)c\left(x,y\right)\psi_{j}\left(x\right)dxdy.=\lambda_{i}^{n}\sum_{j=1}^{n}\overline{u}_{i,j}\intop_{\mathcal{T}}\psi_{k}\left(x\right)\psi_{j}\left(x\right)dx.\label{eq:weak_Galerkin}
+\sum_{j=1}^{n}\overline{u}_{i,j}\intop_{\mathcal{T}}\intop_{\mathcal{T}}\psi_{k}\left(\boldsymbol{y}\right)c\left(\boldsymbol{x},\boldsymbol{y}\right)\psi_{j}\left(\boldsymbol{x}\right)d\boldsymbol{x}d\boldsymbol{y}.=\lambda_{i}^{n}\sum_{j=1}^{n}\overline{u}_{i,j}\intop_{\mathcal{T}}\psi_{k}\left(\boldsymbol{x}\right)\psi_{j}\left(\boldsymbol{x}\right)d\boldsymbol{x},\quad\forall k\in\left\{ 1,\ldots,n\right\} .\label{eq:weak_Galerkin}
 \end{equation}
 
 \end_inset
 
 Rewriting the weak formulation 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand eqref
 reference "eq:weak_Galerkin"
 plural "false"
 caps "false"
@@ -4075,11 +4415,11 @@ nolink "false"
 
 ,
  
-\begin_inset Formula $A=\intop_{\mathcal{T}}\intop_{\mathcal{T}}\psi_{k}\left(y\right)c\left(x,y\right)\psi_{j}\left(x\right)dxdy$
+\begin_inset Formula $A=\intop_{\mathcal{T}}\intop_{\mathcal{T}}\psi_{k}\left(\boldsymbol{y}\right)c\left(\boldsymbol{x},\boldsymbol{y}\right)\psi_{j}\left(\boldsymbol{x}\right)d\boldsymbol{x}d\boldsymbol{y}$
 \end_inset
 
  and 
-\begin_inset Formula $W=\intop_{\mathcal{T}}\psi_{k}\left(x\right)\psi_{j}\left(x\right)dx,$
+\begin_inset Formula $W=\intop_{\mathcal{T}}\psi_{k}\left(\boldsymbol{x}\right)\psi_{j}\left(\boldsymbol{x}\right)d\boldsymbol{x},$
 \end_inset
 
  gives us
@@ -4100,7 +4440,7 @@ Matrix
 
  is symmetric and positive definite.
  If 
-\begin_inset Formula $\psi_{i}\left(x\right)$
+\begin_inset Formula $\psi_{i}\left(\boldsymbol{x}\right)$
 \end_inset
 
  are orthonormal polynomials then 
@@ -4151,6 +4491,10 @@ Def measure
 
 \begin_layout Standard
 kostku do example
+\end_layout
+
+\begin_layout Standard
+kde example?
 \end_layout
 
 \begin_layout Standard
