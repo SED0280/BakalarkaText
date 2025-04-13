@@ -66,9 +66,6 @@ Proof of 13 (need more)
 small fixes to 14 15
 def 18
 ------------------------------------------------------------------
-NO DISCORD DURRING STUDY
-st - napsat uvod a závěr, omáčka.... a dokončit opravy červených věcí
-ct - omáčka
 
 Def Probability space
 Def measure
