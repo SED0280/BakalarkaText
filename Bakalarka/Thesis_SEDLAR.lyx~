@@ -2955,7 +2955,7 @@ Let
 \end_layout
 
 \begin_layout Section
-Numerical experiments
+Numerical experiments and examples
 \end_layout
 
 \begin_layout Standard
@@ -3432,19 +3432,6 @@ then
 Probability fundamentals
 \end_layout
 
-\begin_layout Definition
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Probability space
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Standard
 Consider a probability space 
 \begin_inset Formula $\left(\Omega,\mathcal{F},\mathbb{P}\right)$
@@ -3559,6 +3546,242 @@ The probability measure
 status open
 
 \begin_layout Plain Layout
+Measure
+\end_layout
+
+\end_inset
+
+Let 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\Omega$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ be a set,
+ and let 
+\begin_inset Formula $\varSigma$
+\end_inset
+
+ be a 
+\begin_inset Formula $\sigma$
+\end_inset
+
+-algebra on 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\Omega$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ (i.e.,
+ a collection of subsets of 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\Omega$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ containing 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\Omega$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ itself,
+ closed under complements and countable unions).
+ A function 
+\begin_inset Formula $\mu:\varSigma\rightarrow\left[0,\infty\right]$
+\end_inset
+
+ is called a measure on the measurable space 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\left(\Omega,\varSigma\right)$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ if 
+\begin_inset Formula $\mu\left(\emptyset\right)=0$
+\end_inset
+
+ and for any countable collection 
+\begin_inset Formula $\left\{ A_{i}\right\} $
+\end_inset
+
+ of pairwise disjoint sets in
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+
+\begin_inset Formula $\varSigma,\mu(\bigcup_{i}x_{1}A_{i})=\varSigma_{i}x_{1}μ(Aᵢ)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
 Probability measure 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -3604,6 +3827,100 @@ probability measure
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Probability space
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Each thing should probably have its own definition
+\end_layout
+
+\end_inset
+
+Probability space 
+\begin_inset Formula $\left(\Omega,\mathcal{F},\mathbb{P}\right)$
+\end_inset
+
+ is a space.
+ 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ is the all possible elementary outcomes of the random experiment,
+ 
+\begin_inset Formula $\mathcal{F}$
+\end_inset
+
+ is a collection of subsets of 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ and 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\mathbb{P}$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ is a function that assigns a probability (a real number) to each event 
+\begin_inset Formula $A$
+\end_inset
+
+ in the event space 
+\begin_inset Formula $\mathcal{F}$
+\end_inset
+
+.
+ Each subset in 
+\begin_inset Formula $\mathcal{F}$
+\end_inset
+
+ is called an event.
+ An event represents a specific outcome or a set of outcomes we might be interested in.
 \end_layout
 
 \begin_layout Subsection
@@ -4286,6 +4603,10 @@ A Gaussian random field (GRF)
 .
 \end_layout
 
+\begin_layout Section
+Numerical experiments and examples
+\end_layout
+
 \begin_layout Chapter
 Karhunen-Loève expansion
 \end_layout
@@ -4643,50 +4964,6 @@ TEMPLATE
 
 \begin_layout Standard
 TEMPLATE
-\end_layout
-
-\begin_layout Standard
-red notes to fix:
-\end_layout
-
-\begin_layout Standard
-Def Probability space
-\end_layout
-
-\begin_layout Standard
-Def measure
-\end_layout
-
-\begin_layout Standard
-kostku do example
-\end_layout
-
-\begin_layout Standard
-Tenzor space v Glerkinove metode
-\end_layout
-
-\begin_layout Standard
-KL jake rozdělení?
-\end_layout
-
-\begin_layout Standard
-nodes as eigenvalues Proof přehledněji
-\end_layout
-
-\begin_layout Standard
-Legendre over interval monic a normalized
-\end_layout
-
-\begin_layout Standard
-positive definiteness proof svýmy slovy
-\end_layout
-
-\begin_layout Standard
-opravit dukaz po Jakobi matrix
-\end_layout
-
-\begin_layout Standard
-three term recurrence indukcí
 \end_layout
 
 \end_body

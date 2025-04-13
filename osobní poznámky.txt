@@ -67,18 +67,16 @@ small fixes to 14 15
 def 18
 ------------------------------------------------------------------
 
-Def Probability space
-Def measure
-kostku do example
-Tenzor space v Glerkinove metode
-KL jake rozdělení?
-nodes as eigenvalues Proof přehledněji
-Legendre over interval monic a normalized
-positive definiteness proof svýmy slovy
-
-- pripadne možna jeste neco v modrych poznamkach:
-opravit dukaz po Jakobi matrix
-three term recurrence indukcí
+- Def Probability space
+- Def measure
+ kostku do example
+ Tenzor space v Glerkinove metode
+- KL jake rozdělení?
+- nodes as eigenvalues Proof přehledněji
+ Legendre over interval monic a normalized
+ positive definiteness proof svýmy slovy
+- opravit dukaz po Jakobi matrix
+ three term recurrence indukcí
 
 Pak hlavne ten uvod a závěr
 
