@@ -116,7 +116,7 @@ Quadratures}
 
 \DeclareMathOperator{\Cov}{Cov}
 
-\DeclareMathOperator{\span}{span}
+\DeclareMathOperator{\spanSed}{span}
 \end_preamble
 \options english, bachelor
 \use_default_options false
@@ -733,15 +733,6 @@ is positive definite on
 \end_layout
 
 \begin_layout Proof
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-přepsat vlastnímy slovy 
-\end_layout
-
-\end_inset
-
 Since 
 \begin_inset Formula $P$
 \end_inset
@@ -764,7 +755,7 @@ Since
 \begin_inset Formula $u\in C\left(\left\langle -1,1\right\rangle \right)$
 \end_inset
 
- be a nonzero function;
+ be a nonzero function,
  that is,
  
 \begin_inset Formula $u\not\equiv0$
@@ -796,7 +787,8 @@ Since
 \end_inset
 
  instead).
-\end_layout
+\begin_inset Note Note
+status collapsed
 
 \begin_layout Proof
 Since 
@@ -915,6 +907,132 @@ it follows that
 
 Hence,
  
+\begin_inset Formula $\|u\|_{w}>0$
+\end_inset
+
+ for every nonzero function 
+\begin_inset Formula $u\in C\left(\left\langle -1,1\right\rangle \right)$
+\end_inset
+
+,
+ and so the inner product is positive definite on 
+\begin_inset Formula $C\left(\left\langle -1,1\right\rangle \right)$
+\end_inset
+
+ and thus on 
+\begin_inset Formula $P$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+ Let
+\begin_inset Formula 
+\[
+\epsilon=\frac{u(x_{0})}{2}>0.
+\]
+
+\end_inset
+
+Since 
+\begin_inset Formula $u$
+\end_inset
+
+ is continuous,
+ for this 
+\begin_inset Formula $\epsilon$
+\end_inset
+
+,
+ there exists a 
+\begin_inset Formula $\delta>0$
+\end_inset
+
+ such that for all 
+\begin_inset Formula $x$
+\end_inset
+
+ in the interval 
+\begin_inset Formula $I_{\delta}=\left(x_{0}-\delta,x_{0}+\delta\right)\cap\left\langle -1,1\right\rangle $
+\end_inset
+
+,
+ we have:
+\begin_inset Formula 
+\[
+\left|u(x)-u(x_{0})\right|<\epsilon.
+\]
+
+\end_inset
+
+Note that 
+\begin_inset Formula $I_{\delta}$
+\end_inset
+
+ has positive length 
+\begin_inset Formula $|I_{\delta}|>0$
+\end_inset
+
+.
+ Then,
+ for every 
+\begin_inset Formula $x\in I_{\delta}$
+\end_inset
+
+,
+ it follows that
+\begin_inset Formula 
+\[
+u(x)>u(x_{0})-\epsilon=\frac{u(x_{0})}{2}>0.
+\]
+
+\end_inset
+
+This implies that 
+\begin_inset Formula 
+\[
+u(x)^{2}>\left(\frac{u(x_{0})}{2}\right)^{2}.
+\]
+
+\end_inset
+
+Integrating both sides over the interval 
+\begin_inset Formula $I_{\delta}$
+\end_inset
+
+,
+ we get:
+ 
+\begin_inset Formula 
+\[
+\intop_{I_{\delta}}u(x)^{2}\,dx\ge\intop_{I_{\delta}}\left(\frac{u(x_{0})}{2}\right)^{2}dx=\left(\frac{u(x_{0})}{2}\right)^{2}\cdot\left|I_{\delta}\right|,
+\]
+
+\end_inset
+
+The squared norm 
+\begin_inset Formula $\|u\|_{w}^{2}$
+\end_inset
+
+ satisfies
+\begin_inset Formula 
+\[
+\left\Vert u\right\Vert _{w}^{2}=\intop_{I}u(x)^{2}\,dx\ge\intop_{I_{\delta}}u(x)^{2}\,dx,
+\]
+
+\end_inset
+
+therefore 
+\begin_inset Formula 
+\[
+\|u\|_{w}^{2}\ge\left(\frac{u(x_{0})}{2}\right)^{2}\cdot\left|I_{\delta}\right|>0.
+\]
+
+\end_inset
+
+This shows us that 
 \begin_inset Formula $\|u\|_{w}>0$
 \end_inset
 
@@ -4788,7 +4906,7 @@ Let us have an
 
 \begin_inset Formula 
 \[
-V_{N}^{x}\otimes V_{M}^{y}:=\span\left\{ \psi_{i}\phi_{j}:i=1,\ldots,N,j=1,\ldots,M\right\} 
+V_{N}^{x}\otimes V_{M}^{y}:=\spanSed\left\{ \psi_{i}\phi_{j}:i=1,\ldots,N,j=1,\ldots,M\right\} 
 \]
 
 \end_inset
