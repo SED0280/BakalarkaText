@@ -113,6 +113,10 @@ Quadratures}
 \renewcommand{\defn}{\begin{defnBox}\olddefn}
 \let\endolddefn\enddefn
 \renewcommand{\enddefn}{\endolddefn\end{defnBox}}
+
+\DeclareMathOperator{\Cov}{Cov}
+
+\DeclareMathOperator{\span}{span}
 \end_preamble
 \options english, bachelor
 \use_default_options false
@@ -1179,8 +1183,18 @@ We are going to generate a sequence of orthogonal polynomials
 \end_inset
 
  using a modified Gram-Schmidt process.
- We begin with 
-\begin_inset Formula $\pi_{0}(x)=1$
+\begin_inset Formula 
+\begin{eqnarray*}
+\pi_{0}(x) & = & f_{0}(x)\\
+\pi_{1}(x) & = & f_{1}(x)-\frac{\left\langle f_{1},\pi_{0}\right\rangle _{w}}{\left\langle \pi_{0},\pi_{0}\right\rangle _{w}}\pi_{0}(x)\\
+ & \vdots\\
+\pi_{k}(x) & = & f_{k}(x)-\sum_{i=1}^{k-1}\frac{\left\langle f_{k},\pi_{i}\right\rangle _{w}}{\left\langle \pi_{i},\pi_{i}\right\rangle _{w}}\pi_{i}(x).
+\end{eqnarray*}
+
+\end_inset
+
+We begin with 
+\begin_inset Formula $f_{0}(x)=1$
 \end_inset
 
 .
@@ -1206,9 +1220,11 @@ We are going to generate a sequence of orthogonal polynomials
 
  can then be represented as
 \begin_inset Formula 
-\[
-\pi_{k+1}(x)=x\pi_{k}(x)-\sum_{i=1}^{k}\frac{\left\langle x\pi_{k},\pi_{i}\right\rangle _{w}}{\left\langle \pi_{i},\pi_{i}\right\rangle _{w}}\pi_{i}(x).
-\]
+\begin{eqnarray*}
+\pi_{0}(x) & = & 1\\
+ & \vdots\\
+\pi_{k+1}(x) & = & x\pi_{k}(x)-\sum_{i=1}^{k}\frac{\left\langle x\pi_{k},\pi_{i}\right\rangle _{w}}{\left\langle \pi_{i},\pi_{i}\right\rangle _{w}}\pi_{i}(x).
+\end{eqnarray*}
 
 \end_inset
 
@@ -3456,16 +3472,6 @@ definovat
 \end_inset
 
  is the sample space in an experiment and it is the set of all possible outcomes.
- For example in a roll of a die there are six possible outcomes and 
-\begin_inset Formula $\Omega=\left\{ 1,2,3,4,5,6\right\} $
-\end_inset
-
- and,
- in a sequence of M rolls,
- 
-\begin_inset Formula $\Omega=\left\{ 1,2,3,4,5,6\right\} ^{M}.$
-\end_inset
-
  In general,
  the sample space is an abstract set,
  one large enough to parameterize all possible outcomes of the experiment.
@@ -3501,20 +3507,6 @@ event
 \emph default
 .
  Each event corresponds to a set of outcomes in the experiment.
- For example in the dice rolls,
- let's say we want to know the probability of rolling an even number and so the set 
-\begin_inset Formula $F=\left\{ 2,4,6\right\} $
-\end_inset
-
- is included as an event in the 
-\begin_inset Formula $\sigma$
-\end_inset
-
--algebra 
-\begin_inset Formula $\mathcal{F}$
-\end_inset
-
-.
 \end_layout
 
 \begin_layout Standard
@@ -3526,16 +3518,6 @@ The probability measure
  a number between 0 and 1,
  to every measurable set in 
 \begin_inset Formula $\mathcal{F}$
-\end_inset
-
-.
- Higher probability means the event is more likely to occur in an experiment.
- For a fair dice roll the probability of rolling an even number (
-\begin_inset Formula $F=\left\{ 2,4,6\right\} $
-\end_inset
-
-) would be 
-\begin_inset Formula $\mathbb{P}\left(\left\{ 2,4,6\right\} \right)=1/2$
 \end_inset
 
 .
@@ -3764,10 +3746,10 @@ Let
 \noun default
 \color inherit
 
-\begin_inset Formula $\varSigma,\mu(\bigcup_{i}x_{1}A_{i})=\varSigma_{i}x_{1}μ(Aᵢ)$
+\begin_inset Formula $\varSigma,\quad\mu\left(\bigcup_{i=1}A_{i}\right)=\sum_{i=1}\mu\left(A_{i}\right)$
 \end_inset
 
-
+.
 \end_layout
 
 \begin_layout Standard
@@ -4289,7 +4271,7 @@ The covariance of two real-valued random variables
  is
 \begin_inset Formula 
 \[
-Cov\left(X,Y\right)\coloneqq\mathbb{E}\left[\left(X-\mu_{X}\right)\left(Y-\mu_{Y}\right)\right]=\mathbb{E}\left[XY\right]-\mu_{X}\mu_{Y},
+\Cov\left(X,Y\right)\coloneqq\mathbb{E}\left[\left(X-\mu_{X}\right)\left(Y-\mu_{Y}\right)\right]=\mathbb{E}\left[XY\right]-\mu_{X}\mu_{Y},
 \]
 
 \end_inset
@@ -4331,7 +4313,7 @@ The autocovariance function
  is defined as:
 \begin_inset Formula 
 \[
-C\left(s,t\right)\coloneqq Cov\left(X\left(s\right),X\left(t\right)\right),
+C\left(s,t\right)\coloneqq\Cov\left(X\left(s\right),X\left(t\right)\right),
 \]
 
 \end_inset
@@ -4522,7 +4504,7 @@ to do:
  is given by:
 \begin_inset Formula 
 \[
-p\left(x\right)=\frac{1}{\sqrt{2\pi\sigma^{2}}}exp\left(\frac{-\left(x-\mu\right)^{2}}{2\sigma^{2}}\right),\quad x\in\mathbb{R}.
+p\left(x\right)=\frac{1}{\sqrt{2\pi\sigma^{2}}}\exp\left(\frac{-\left(x-\mu\right)^{2}}{2\sigma^{2}}\right),\quad x\in\mathbb{R}.
 \]
 
 \end_inset
@@ -4597,7 +4579,7 @@ A Gaussian random field (GRF)
 \end_inset
 
  has entries 
-\begin_inset Formula $C_{ij}=Cov(u(\boldsymbol{x}_{i}),u(\boldsymbol{x}_{j}))$
+\begin_inset Formula $C_{ij}=\Cov\left(u(\boldsymbol{x}_{i}),u(\boldsymbol{x}_{j})\right)$
 \end_inset
 
 .
@@ -4605,6 +4587,67 @@ A Gaussian random field (GRF)
 
 \begin_layout Section
 Numerical experiments and examples
+\end_layout
+
+\begin_layout Standard
+We can consider rolls of dice as an example of probability space 
+\begin_inset Formula $\left(\Omega,\mathcal{F},\mathbb{P}\right)$
+\end_inset
+
+.
+ In a roll of a die there are six possible outcomes and 
+\begin_inset Formula $\Omega=\left\{ 1,2,3,4,5,6\right\} $
+\end_inset
+
+ and,
+ in a sequence of M rolls,
+ 
+\begin_inset Formula $\Omega=\left\{ 1,2,3,4,5,6\right\} ^{M}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\mathcal{F}$
+\end_inset
+
+ is a collection of subsets of 
+\begin_inset Formula $\Omega$
+\end_inset
+
+,
+ these subsets are known as events.
+ Each event corresponds to a set of outcomes in the experiment.
+ Let's say we want to know the probability of rolling an even number and so the set 
+\begin_inset Formula $F=\left\{ 2,4,6\right\} $
+\end_inset
+
+ is included as an event in the 
+\begin_inset Formula $\sigma$
+\end_inset
+
+-algebra 
+\begin_inset Formula $\mathcal{F}$
+\end_inset
+
+.
+ Lastly we have the probability measure 
+\begin_inset Formula $\mathbb{P}$
+\end_inset
+
+,
+ which assigns a probability to every measurable set in 
+\begin_inset Formula $\mathcal{F}$
+\end_inset
+
+.
+ Probability will be a number between 0 and 1,
+ where 0 means the even will never occur and one means the event will always occur.
+ Higher probability means the event is more likely to occur in an experiment.
+ For a fair dice roll the probability of rolling an even number would be 
+\begin_inset Formula $\mathbb{P}\left(\left\{ 2,4,6\right\} \right)=1/2$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Chapter
@@ -4745,7 +4788,7 @@ Let us have an
 
 \begin_inset Formula 
 \[
-V_{N}^{x}\otimes V_{M}^{y}:=span\left\{ \psi_{i}\phi_{j}:i=1,\ldots,N,j=1,\ldots,M\right\} 
+V_{N}^{x}\otimes V_{M}^{y}:=\span\left\{ \psi_{i}\phi_{j}:i=1,\ldots,N,j=1,\ldots,M\right\} 
 \]
 
 \end_inset
@@ -4769,6 +4812,35 @@ V_{N}^{x}\otimes V_{M}^{y}:=span\left\{ \psi_{i}\phi_{j}:i=1,\ldots,N,j=1,\ldots
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Remark
+An 
+\begin_inset Formula $N$
+\end_inset
+
+-dimensional tensor product space 
+\begin_inset Formula $V_{N}^{x}$
+\end_inset
+
+ can be formed from 
+\begin_inset Formula $N$
+\end_inset
+
+ one-dimensional spaces 
+\begin_inset Formula $V_{1}^{x_{i}}$
+\end_inset
+
+:
+ 
+\begin_inset Formula 
+\[
+V_{N}^{x}=V_{1}^{x_{1}}\otimes V_{1}^{x_{2}}\otimes\cdots\otimes V_{1}^{x_{N}}.
+\]
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
