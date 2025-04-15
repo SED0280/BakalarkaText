@@ -74,7 +74,7 @@ def 18
 - KL jake rozdělení?
 - nodes as eigenvalues Proof přehledněji
  Legendre over interval monic a normalized
- positive definiteness proof svýmy slovy
+- positive definiteness proof svýmy slovy
 - opravit dukaz po Jakobi matrix
 . three term recurrence indukcí
 
