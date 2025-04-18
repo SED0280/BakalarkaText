@@ -607,30 +607,69 @@ Weighted inner product
 status open
 
 \begin_layout Plain Layout
-Weighted inner product
+Weighted bilinear form
 \end_layout
 
 \end_inset
 
-Let 
-\begin_inset Formula $w(x),I$
+For a weight function 
+\begin_inset Formula $w(x)$
 \end_inset
 
- be a weight function and corresponding support.
- For any functions 
-\begin_inset Formula $u,v\in C(I)$
+ and its corresponding support 
+\begin_inset Formula $I$
 \end_inset
 
 ,
- a weighted inner product is defined as
+ we define the symmetric bilinear form 
+\begin_inset Formula $\left\langle \cdot,\cdot\right\rangle _{w}$
+\end_inset
+
+ for all 
+\begin_inset Formula $u,v\in C(I)$
+\end_inset
+
+ as:
 \begin_inset Formula 
 \[
-\left\langle u,v\right\rangle _{w}=\intop_{I}u(x)v(x)w(x)\,dx,
+\left\langle u,v\right\rangle _{w}=\intop_{I}u(x)v(x)w(x)\,dx.
 \]
 
 \end_inset
 
- with the corresponding norm being
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Můžu to nazvat Norm?
+ Ai říká že prý ne,
+ protože to není ještě inner product
+\end_layout
+
+\end_inset
+
+The quantity 
+\begin_inset Formula $\left\Vert u\right\Vert _{w}$
+\end_inset
+
+,
+ derived from the bilinear form 
+\begin_inset Formula $\left\langle \cdot,\cdot\right\rangle _{w}$
+\end_inset
+
+,
+ is defined as
 \begin_inset Formula 
 \[
 \left\Vert u\right\Vert _{w}=\sqrt{\left\langle u,u\right\rangle _{w}}.
@@ -641,29 +680,11 @@ Let
 
 \end_layout
 
-\begin_layout Remark
-If 
-\begin_inset Formula $\left\langle u,v\right\rangle _{w}=0$
+\begin_layout Standard
+\begin_inset Separator plain
 \end_inset
 
-,
- then 
-\begin_inset Formula $u$
-\end_inset
 
- and 
-\begin_inset Formula $v$
-\end_inset
-
- are said to be 
-\emph on
-orthogonal
-\emph default
- with respect to the weight function 
-\begin_inset Formula $w$
-\end_inset
-
-.
 \end_layout
 
 \begin_layout Definition
@@ -671,23 +692,23 @@ orthogonal
 status open
 
 \begin_layout Plain Layout
-Positive definiteness of an inner product
+Positive definiteness
 \end_layout
 
 \end_inset
 
-An inner product 
+A bilinear form 
 \begin_inset Formula $\left\langle \cdot,\cdot\right\rangle _{w}$
 \end_inset
 
  on 
-\begin_inset Formula $P$
+\begin_inset Formula $C\left(I\right)$
 \end_inset
 
  is said to be positive definite if 
 \begin_inset Formula 
 \[
-\left\Vert u\right\Vert _{w}>0,\quad\forall u\in P:u\not\equiv0.
+\left\Vert u\right\Vert _{w}>0,\quad\forall u\in C\left(I\right):u\not\equiv0.
 \]
 
 \end_inset
@@ -700,7 +721,7 @@ An inner product
 status open
 
 \begin_layout Plain Layout
-Positive definiteness of an inner product over 
+Inner product over 
 \begin_inset Formula $\left\langle -1,1\right\rangle $
 \end_inset
 
@@ -709,11 +730,22 @@ Positive definiteness of an inner product over
 
 \end_inset
 
-A weighted inner product with the weight function 
+
+\begin_inset CommandInset label
+LatexCommand label
+name "Inner-product-over-<-1,1>"
+
+\end_inset
+
+A symmetric bilinear form 
+\begin_inset Formula $\left\langle \cdot,\cdot\right\rangle _{w}$
+\end_inset
+
+ with the weight function 
 \begin_inset Formula $w(x)=1$
 \end_inset
 
- over the interval 
+ and corresponding support 
 \begin_inset Formula $I=\left\langle -1,1\right\rangle $
 \end_inset
 
@@ -726,32 +758,14 @@ A weighted inner product with the weight function
 \end_inset
 
 is positive definite on 
-\begin_inset Formula $P$
+\begin_inset Formula $C\left(I\right)$
 \end_inset
 
-.
+ and it is called an inner product.
 \end_layout
 
 \begin_layout Proof
-Since 
-\begin_inset Formula $P$
-\end_inset
-
- on 
-\begin_inset Formula $\left\langle -1,1\right\rangle $
-\end_inset
-
- is a subset of 
-\begin_inset Formula $C\left(\left\langle -1,1\right\rangle \right)$
-\end_inset
-
-,
- we will prove it for 
-\begin_inset Formula $C\left(\left\langle -1,1\right\rangle \right)$
-\end_inset
-
-.
- Let 
+Let 
 \begin_inset Formula $u\in C\left(\left\langle -1,1\right\rangle \right)$
 \end_inset
 
@@ -931,7 +945,7 @@ Hence,
  Let
 \begin_inset Formula 
 \[
-\epsilon=\frac{u(x_{0})}{2}>0.
+\varepsilon=\frac{u(x_{0})}{2}>0.
 \]
 
 \end_inset
@@ -942,7 +956,7 @@ Since
 
  is continuous,
  for this 
-\begin_inset Formula $\epsilon$
+\begin_inset Formula $\varepsilon$
 \end_inset
 
 ,
@@ -962,7 +976,7 @@ Since
  we have:
 \begin_inset Formula 
 \[
-\left|u(x)-u(x_{0})\right|<\epsilon.
+\left|u(x)-u(x_{0})\right|<\varepsilon.
 \]
 
 \end_inset
@@ -972,7 +986,7 @@ Note that
 \end_inset
 
  has positive length 
-\begin_inset Formula $|I_{\delta}|>0$
+\begin_inset Formula $|I_{\delta}|\geq\delta>0$
 \end_inset
 
 .
@@ -985,7 +999,7 @@ Note that
  it follows that
 \begin_inset Formula 
 \[
-u(x)>u(x_{0})-\epsilon=\frac{u(x_{0})}{2}>0.
+u(x)>u(x_{0})-\varepsilon=\frac{u(x_{0})}{2}>0.
 \]
 
 \end_inset
@@ -1045,8 +1059,72 @@ This shows that
 \begin_inset Formula $C\left(\left\langle -1,1\right\rangle \right)$
 \end_inset
 
- and thus on 
-\begin_inset Formula $P$
+.
+\end_layout
+
+\begin_layout Corollary
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+to Lemma 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Inner-product-over-<-1,1>"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+inner product 
+\begin_inset Formula $\left\langle \cdot,\cdot\right\rangle _{w}$
+\end_inset
+
+ is positive definite for all 
+\begin_inset Formula $w(x)$
+\end_inset
+
+ from Definition 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "def:weigh-function"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Remark
+If 
+\begin_inset Formula $\left\langle u,v\right\rangle _{w}=0$
+\end_inset
+
+,
+ then 
+\begin_inset Formula $u$
+\end_inset
+
+ and 
+\begin_inset Formula $v$
+\end_inset
+
+ are said to be 
+\emph on
+orthogonal
+\emph default
+ with respect to the weight function 
+\begin_inset Formula $w$
 \end_inset
 
 .
@@ -1082,19 +1160,30 @@ literal "false"
 
 \end_inset
 
-If the inner product is positive definite on 
+Let 
+\begin_inset Formula $\left\langle \cdot,\cdot\right\rangle _{w}$
+\end_inset
+
+ be inner product on 
 \begin_inset Formula $P$
 \end_inset
 
 ,
- there exists a unique infinite sequence 
+ then there exists a unique infinite sequence 
 \begin_inset Formula $\left\{ \pi_{k}\right\} _{k=0}^{\infty}$
 \end_inset
 
  of monic orthogonal polynomials.
 \end_layout
 
-\begin_layout Definition
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
 \begin_inset Argument 1
 status open
 
@@ -1104,56 +1193,32 @@ Shift Property
 
 \end_inset
 
-Let the inner product 
+The inner product 
 \begin_inset Formula $\left\langle \cdot,\cdot\right\rangle _{w}$
 \end_inset
 
-,
- with 
-\begin_inset Formula $w$
-\end_inset
-
- from Definition 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "def:weigh-function"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-
-\end_inset
-
-,
- have the property that for every 
-\begin_inset Formula $u,v\in P_{d}$
-\end_inset
-
- and 
-\begin_inset Formula $t\in\mathbb{R}$
-\end_inset
-
-:
+ has the property:
  
 \begin_inset Formula 
 \[
-\left\langle tu,v\right\rangle _{w}=\left\langle u,tv\right\rangle _{w}.
+\left\langle tu,v\right\rangle _{w}=\left\langle u,tv\right\rangle _{w},\forall u,v\in P_{d}\forall t\in\mathbb{R}.
 \]
 
 \end_inset
 
-Then we say it has the 
+i.e.,
+ we say it has the 
 \emph on
 shift property
 \emph default
 .
 \end_layout
 
-\begin_layout Remark
+\begin_layout Proof
 The shift property holds for an inner product defined by weighted integrals:
 \begin_inset Formula 
 \[
-\left\langle tu,v\right\rangle _{w}=\intop_{I}w(x)\left(tu(x)\right)v(x)\,dx=\intop_{I}w(x)u(x)\left(tv(x)\right)\,dx=\left\langle u,tv\right\rangle _{w}
+\left\langle tu,v\right\rangle _{w}=\intop_{I}w(x)\left(tu(x)\right)v(x)\,dx=t\intop_{I}w(x)u(x)v(x)\,dx=\intop_{I}w(x)u(x)\left(tv(x)\right)\,dx=\left\langle u,tv\right\rangle _{w}.
 \]
 
 \end_inset
@@ -1176,8 +1241,12 @@ For a non-negative integer
 \end_inset
 
 ,
- the set of normalized polynomials with respect to the weighted norm induced by 
-\begin_inset Formula $w$
+ the set of normalized polynomials with respect to the inner product 
+\begin_inset Formula $\left\langle \cdot,\cdot\right\rangle _{w}$
+\end_inset
+
+ and norm 
+\begin_inset Formula $\left\Vert \cdot\right\Vert _{w}$
 \end_inset
 
  is defined as 
@@ -1300,34 +1369,68 @@ We are going to generate a sequence of orthogonal polynomials
 \begin_inset Formula $\left\{ \pi_{k}(x)\right\} $
 \end_inset
 
- using a modified Gram-Schmidt process.
+ using a Gram-Schmidt process:
 \begin_inset Formula 
 \begin{eqnarray*}
 \pi_{0}(x) & = & f_{0}(x)\\
 \pi_{1}(x) & = & f_{1}(x)-\frac{\left\langle f_{1},\pi_{0}\right\rangle _{w}}{\left\langle \pi_{0},\pi_{0}\right\rangle _{w}}\pi_{0}(x)\\
  & \vdots\\
-\pi_{k}(x) & = & f_{k}(x)-\sum_{i=1}^{k-1}\frac{\left\langle f_{k},\pi_{i}\right\rangle _{w}}{\left\langle \pi_{i},\pi_{i}\right\rangle _{w}}\pi_{i}(x).
+\pi_{k}(x) & = & f_{k}(x)-\sum_{i=1}^{k-1}\frac{\left\langle f_{k},\pi_{i}\right\rangle _{w}}{\left\langle \pi_{i},\pi_{i}\right\rangle _{w}}\pi_{i}(x);
 \end{eqnarray*}
 
 \end_inset
 
-We begin with 
+with 
 \begin_inset Formula $f_{0}(x)=1$
 \end_inset
 
-.
- Instead of starting with a predefined basis,
- we iteratively define the sequence to be orthogonalized.
- Each subsequent function to be orthogonalized is constructed as 
+ and each subsequent function to be orthogonalized is constructed as 
 \begin_inset Formula $f_{k+1}(x)=x\pi_{k}(x)$
 \end_inset
 
 .
- We then apply the standard Gram-Schmidt step to orthogonalize 
+ Note that by this construction 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\pi_{k}$
+\end_inset
+
+ are monic and orthogonal polynomials.
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ In the 
+\begin_inset Formula $k+1$
+\end_inset
+
+th step 
 \begin_inset Formula $f_{k+1}(x)$
 \end_inset
 
- against the subspace spanned by 
+ is orthogonalized against the subspace spanned by 
 \begin_inset Formula $\left\{ \pi_{0},\ldots,\pi_{k}\right\} $
 \end_inset
 
@@ -1339,14 +1442,13 @@ We begin with
  can then be represented as
 \begin_inset Formula 
 \begin{eqnarray*}
-\pi_{0}(x) & = & 1\\
- & \vdots\\
 \pi_{k+1}(x) & = & x\pi_{k}(x)-\sum_{i=1}^{k}\frac{\left\langle x\pi_{k},\pi_{i}\right\rangle _{w}}{\left\langle \pi_{i},\pi_{i}\right\rangle _{w}}\pi_{i}(x).
 \end{eqnarray*}
 
 \end_inset
 
-Expanding the sum:
+Expanding the sum,
+ we have
 \begin_inset Formula 
 \begin{equation}
 \pi_{k+1}(x)=x\pi_{k}(x)-\frac{\left\langle x\pi_{k},\pi_{k}\right\rangle _{w}}{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}}\pi_{k}(x)-\frac{\left\langle x\pi_{k},\pi_{k-1}\right\rangle _{w}}{\left\langle \pi_{k-1},\pi_{k-1}\right\rangle _{w}}\pi_{k-1}(x)-\sum_{i=0}^{k-2}\frac{\left\langle x\pi_{k},\pi_{i}\right\rangle _{w}}{\left\langle \pi_{i},\pi_{i}\right\rangle _{w}}\pi_{i}(x).\label{eq:Expanded_Gram-Schmidt}
@@ -1378,11 +1480,11 @@ Since
 \noun off
 \color none
 
-\begin_inset Formula $\pi_{i}$
+\begin_inset Formula $x\pi_{i}$
 \end_inset
 
  is a polynomial of degree 
-\begin_inset Formula $i$
+\begin_inset Formula $i+1$
 \end_inset
 
 ,
@@ -1400,16 +1502,8 @@ Since
 \uwave default
 \noun default
 \color inherit
- then the polynomial 
-\begin_inset Formula $x\pi_{i}$
-\end_inset
-
- has degree 
-\begin_inset Formula $i+1$
-\end_inset
-
-.
- We can express 
+ i.e.
+ we can express 
 \family roman
 \series medium
 \shape up
@@ -1458,31 +1552,19 @@ for certain constants
 \end_inset
 
 .
- If we substitute 
-\begin_inset CommandInset ref
-LatexCommand eqref
-reference "eq:Linear combination xpi_i+1"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-
-\end_inset
-
- into the inner product with 
-\begin_inset Formula $\pi_{k}$
-\end_inset
-
-,
- then for 
+ Then for 
 \begin_inset Formula $k>i+1$
 \end_inset
 
- it will be equal to zero due to the orthogonality of the polynomials:
+ 
+\begin_inset Formula $\left\langle \pi_{k},x\pi_{i}\right\rangle _{w}$
+\end_inset
+
+ is zero due to the orthogonality of the polynomials:
  
 \begin_inset Formula 
 \[
-\left\langle x\pi_{k},\pi_{i}\right\rangle _{w}=\left\langle \pi_{k},x\pi_{i}\right\rangle _{w}=\left\langle \pi_{k},\sum_{j=0}^{i+1}c_{j}π_{j}(x)\right\rangle _{w}=0\quad\forall k\geq1.
+\left\langle x\pi_{k},\pi_{i}\right\rangle _{w}=\left\langle \pi_{k},x\pi_{i}\right\rangle _{w}=\sum_{j=0}^{i+1}c_{j}\left\langle \pi_{k},π_{j}(x)\right\rangle _{w}=0\quad\forall k>i+1.
 \]
 
 \end_inset
@@ -1515,22 +1597,26 @@ which simplifies further to
 \end_inset
 
 Now,
- if for all 
+ if we define 
+\begin_inset Formula $\alpha_{k}=\frac{\left\langle x\pi_{k},\pi_{k}\right\rangle _{w}}{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}}$
+\end_inset
+
+ for all 
 \begin_inset Formula $k=0,1,\ldots$
 \end_inset
 
 ,
- we define 
-\begin_inset Formula $\alpha_{k}=\frac{\left\langle x\pi_{k},\pi_{k}\right\rangle _{w}}{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}}$
-\end_inset
-
- and for all 
-\begin_inset Formula $k=1,2,\ldots$
+ 
+\begin_inset Formula $\beta_{0}=\left\langle \pi_{0},\pi_{0}\right\rangle _{w}$
 \end_inset
 
 ,
- 
+ and 
 \begin_inset Formula $\beta_{k}=\frac{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}}{\left\langle \pi_{k-1},\pi_{k-1}\right\rangle _{w}}$
+\end_inset
+
+ for all 
+\begin_inset Formula $k=1,2,\ldots$
 \end_inset
 
 ,
@@ -1591,12 +1677,7 @@ name "thm:normal-3-term-recurrence"
 \begin_inset Formula $k=0,1,2,\ldots,$
 \end_inset
 
- be orthonormal polynomials (i.e.,
- 
-\begin_inset Formula $\tilde{\pi}_{k}\in\widetilde{P_{d}}$
-\end_inset
-
- and they are orthogonal).
+ be series of orthonormal polynomials.
  Then,
 \begin_inset Formula 
 \[
@@ -1699,7 +1780,7 @@ nolink "false"
 
 \end_inset
 
-This gives us three-term recurrence from Theorem 
+This gives us the three-term recurrence from Theorem 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "thm:normal-3-term-recurrence"
@@ -1933,6 +2014,14 @@ x\tilde{\pi}_{k}(x)=\sqrt{\beta_{k}}\tilde{\pi}_{k-1}(x)+\alpha_{k}\tilde{\pi}_{
 
 \end_inset
 
+
+\begin_inset Formula 
+\[
+\tilde{\pi}_{-1}(x)=0,
+\]
+
+\end_inset
+
 and we define 
 \begin_inset Formula 
 \[
@@ -1941,10 +2030,14 @@ and we define
 
 \end_inset
 
-then we can express these equations in matrix form as 
+then we can express these equations for 
+\begin_inset Formula $k=0,1,\ldots n-1$
+\end_inset
+
+ in matrix form as 
 \begin_inset Formula 
 \[
-x\tilde{\boldsymbol{\pi}}(x)=J_{n}\tilde{\boldsymbol{\pi}}(x)+\sqrt{\beta_{n}}\tilde{\pi}_{n}(x)e_{n},
+x\tilde{\boldsymbol{\pi}}(x)=J_{n}\tilde{\boldsymbol{\pi}}(x)+\sqrt{\beta_{n}}\tilde{\pi}_{n}(x)\boldsymbol{e}_{n},
 \]
 
 \end_inset
@@ -2094,7 +2187,7 @@ name "cor:Cor to Jacobi eigen"
 \end_inset
 
 Let 
-\begin_inset Formula $\boldsymbol{v}_{j}$
+\begin_inset Formula $\boldsymbol{v}_{j}^{(n)}$
 \end_inset
 
  denote the normalized eigenvector of 
@@ -2107,14 +2200,14 @@ Let
 
 ,
  and let 
-\begin_inset Formula $\boldsymbol{v}_{j,1}$
+\begin_inset Formula $\boldsymbol{v}_{j,1}^{(n)}$
 \end_inset
 
  denote its first component.
  These satisfy:
 \begin_inset Formula 
 \[
-J_{n}\boldsymbol{v}_{j}=\tau_{j}^{(n)}\boldsymbol{v}_{j},\quad\boldsymbol{v}_{j}^{T}\boldsymbol{v}_{j}=1,
+J_{n}\boldsymbol{v}_{j}^{(n)}=\tau_{j}^{(n)}\boldsymbol{v}_{j}^{(n)},\quad\left(\boldsymbol{v}_{j}^{(n)}\right)^{T}\boldsymbol{v}_{j}^{(n)}=1,
 \]
 
 \end_inset
@@ -2128,7 +2221,7 @@ Then,
  
 \begin_inset Formula 
 \[
-\beta_{0}\boldsymbol{v}_{j,1}^{2}=\frac{1}{\sum_{k=0}^{n-1}\left[\tilde{\pi}_{k}(\tau_{j}^{(n)})\right]^{2}}.
+\beta_{0}\left(\boldsymbol{v}_{j,1}^{(n)}\right)^{2}=\frac{1}{\sum_{k=0}^{n-1}\left[\tilde{\pi}_{k}(\tau_{j}^{(n)})\right]^{2}}.
 \]
 
 \end_inset
@@ -2182,13 +2275,13 @@ nolink "false"
 \noun default
 \color inherit
  For each normalized eigenvector 
-\begin_inset Formula $\boldsymbol{v}_{j}$
+\begin_inset Formula $\boldsymbol{v}_{j}^{(n)}$
 \end_inset
 
 :
 \begin_inset Formula 
 \[
-\boldsymbol{v}_{j}=\left(\sum_{k=0}^{n-1}\left[\tilde{\pi}_{k}(\tau_{j}^{(n)})\right]^{2}\right)^{-1/2}\tilde{\pi}(\tau_{j}^{(n)}),\quad j=1,2,\ldots,n.
+\boldsymbol{v}_{j}^{(n)}=\left(\sum_{k=0}^{n-1}\left[\tilde{\pi}_{k}(\tau_{j}^{(n)})\right]^{2}\right)^{-1/2}\tilde{\boldsymbol{\pi}}(\tau_{j}^{(n)}),\quad j=0,1,\ldots,n.
 \]
 
 \end_inset
@@ -2213,7 +2306,7 @@ nolink "false"
  we obtain:
 \begin_inset Formula 
 \[
-\boldsymbol{v}_{j,1}^{2}=\left(\sum_{k=0}^{n-1}\left[\tilde{\pi}_{k}(\tau_{j}^{(n)})\right]^{2}\right)^{-1}\frac{1}{\beta_{0}},\quad j=1,2,\ldots,n.
+\left(\boldsymbol{v}_{j,1}^{(n)}\right)^{2}=\left(\sum_{k=0}^{n-1}\left[\tilde{\pi}_{k}(\tau_{j}^{(n)})\right]^{2}\right)^{-1}\frac{1}{\beta_{0}},\quad j=0,1,\ldots,n.
 \]
 
 \end_inset
@@ -2221,7 +2314,7 @@ nolink "false"
 Rearranging this gives the desired relationship:
 \begin_inset Formula 
 \[
-\beta_{0}\boldsymbol{v}_{j,1}^{2}=\frac{1}{\sum_{k=0}^{n-1}\left[\tilde{\pi}_{k}(\tau_{j}^{(n)})\right]^{2}},\quad j=1,2,\ldots,n.
+\beta_{0}\left(\boldsymbol{v}_{j,1}^{(n)}\right)^{2}=\frac{1}{\sum_{k=0}^{n-1}\left[\tilde{\pi}_{k}(\tau_{j}^{(n)})\right]^{2}},\quad j=0,1,\ldots,n.
 \]
 
 \end_inset
@@ -2262,15 +2355,15 @@ A quadrature rule is a set of weights
 
 ,
  
-\begin_inset Formula $j=0,1,\ldots,n$
+\begin_inset Formula $j=0,1,\ldots,n-1$
 \end_inset
 
 ,
- used to approximate the value of an integral:
+ used to approximate the value of a weighted integral:
  
 \begin_inset Formula 
 \[
-\intop_{I}f(x)w(x)\,dx\approx\sum_{j=0}^{n}\lambda_{j}f(\tau_{j}).
+\intop_{I}f(x)w(x)\,dx\approx\sum_{j=0}^{n-1}\lambda_{j}f(\tau_{j}).
 \]
 
 \end_inset
@@ -2309,7 +2402,7 @@ status collapsed
 
 \end_inset
 
-Consider a quadrature rule for approximating 
+Consider a quadrature rule for approximating weighted integral 
 \begin_inset Formula $\intop_{I}f(x)w(x)\,dx$
 \end_inset
 
@@ -2318,7 +2411,7 @@ Consider a quadrature rule for approximating
 \end_inset
 
  distinct nodes 
-\begin_inset Formula $\tau_{1},\ldots,\tau_{n}$
+\begin_inset Formula $\tau_{0},\ldots,\tau_{n-1}$
 \end_inset
 
 ,
@@ -2385,13 +2478,13 @@ where the weights
 
  are the integrals of the Lagrange basis polynomials:
 \begin_inset Formula 
-\[
-\lambda_{j}=\intop_{I}l_{j}(x)w(x)\,dx,
-\]
+\begin{equation}
+\lambda_{j}=\intop_{I}l_{j}(x)w(x)\,dx,\label{eq:weights_of_quadrature}
+\end{equation}
 
 \end_inset
 
-and 
+where 
 \begin_inset Formula $l_{j}(x)$
 \end_inset
 
@@ -2528,7 +2621,7 @@ If both conditions hold,
 \end_layout
 
 \begin_layout Section
-Nodes as eigenvalues
+Golub-Welsh scheme
 \end_layout
 
 \begin_layout Standard
@@ -2568,7 +2661,7 @@ status collapsed
 \end_inset
 
 The nodes 
-\begin_inset Formula $\tau_{j}^{G}$
+\begin_inset Formula $\tau_{j}$
 \end_inset
 
 ,
@@ -2585,17 +2678,13 @@ The nodes
 \begin_inset Formula $\left\langle \cdot,\cdot\right\rangle _{w}$
 \end_inset
 
- and interval 
-\begin_inset Formula $I$
-\end_inset
-
  are the eigenvalues of the Jacobi matrix 
 \begin_inset Formula $J_{n}$
 \end_inset
 
 .
  The corresponding weights 
-\begin_inset Formula $\lambda_{j}^{G},j=1,2,3,\ldots,n$
+\begin_inset Formula $\lambda_{j},j=1,2,3,\ldots,n$
 \end_inset
 
 ,
@@ -2603,7 +2692,7 @@ The nodes
  
 \begin_inset Formula 
 \[
-\lambda_{j}^{G}=\beta_{0}\boldsymbol{v}_{j,1}^{2},
+\lambda_{j}=\beta_{0}\boldsymbol{v}_{j,1}^{2},
 \]
 
 \end_inset
@@ -2625,7 +2714,7 @@ where
 \end_inset
 
  corresponding to the eigenvalue 
-\begin_inset Formula $\tau_{j}^{G}$
+\begin_inset Formula $\tau_{j}$
 \end_inset
 
 .
@@ -2640,23 +2729,12 @@ literal "false"
 
 \end_inset
 
- Let us define a vector of orthonormal polynomials 
+ Let us recall a vector of orthonormal polynomials 
 \begin_inset Formula $\tilde{\boldsymbol{\pi}}(x)=\left[\tilde{\pi}_{0}(x),\tilde{\pi}_{1}(x),\ldots,\tilde{\pi}_{n-1}(x)\right]^{T}$
 \end_inset
 
 .
- We recall from the properties of the Jacobi matrix eigenvectors (related to Theorem
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "thm:Jacobi-eigenvalues-eigenvectors"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-
-\end_inset
-
- and specifically Corollary 
+ From Corollary 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "cor:Cor to Jacobi eigen"
@@ -2667,7 +2745,7 @@ nolink "false"
 
 \end_inset
 
-:
+ we have:
 \begin_inset Formula 
 \[
 \beta_{0}\boldsymbol{v}_{j,1}^{2}=\frac{1}{\sum_{k=0}^{n-1}\left[\tilde{\pi}_{k}(\tau_{j}^{(n)})\right]^{2}},\quad j=1,\dots,n,
@@ -2805,11 +2883,23 @@ where
 \end_inset
 
  is the first standard basis vector.
- It is known that the columns of 
+ From Theorem 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "thm:Jacobi-eigenvalues-eigenvectors"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ we know that the columns of 
 \begin_inset Formula $P$
 \end_inset
 
- are mutually orthogonal,
+ are eigenvectors,
+ therefore mutually orthogonal,
  and specifically:
 \begin_inset Formula 
 \[
@@ -2869,7 +2959,18 @@ where
 
 \end_inset
 
-yielding 
+by Clorollary 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cor:Cor to Jacobi eigen"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ yielding 
 \begin_inset Formula $\lambda_{j}^{G}=\beta_{0}\boldsymbol{v}_{j,1}^{2}$
 \end_inset
 
@@ -2880,45 +2981,8 @@ yielding
 Legendre polynomials over a general interval
 \end_layout
 
-\begin_layout Theorem
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset citation
-LatexCommand cite
-after "Theorem 1.47"
-key "Gautschi2004"
-literal "false"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-The weights 
-\begin_inset Formula $\lambda_{j}$
-\end_inset
-
- of a quadrature rule can be obtained from roots of orthogonal polynomials 
-\begin_inset Formula $\tau_{i}$
-\end_inset
-
- as 
-\begin_inset Formula 
-\[
-\lambda_{j}=\frac{\intop_{a}^{b}\prod_{i\neq j,i=0}^{n}\left(x-\tau_{i}\right)\,dx}{\prod_{i\neq j,i=0}^{n}\left(\tau_{j}-\tau_{i}\right)}.
-\]
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Remark
-Orthogonal Lagrange polynomials denoted as 
+Orthogonal Legendre polynomials denoted as 
 \begin_inset Formula $\pi_{i}^{L}(x)$
 \end_inset
 
@@ -2991,13 +3055,65 @@ Orthogonal Lagrange polynomials denoted as
 \end_inset
 
  by 
-\begin_inset Formula $\pi_{i}(x)=\pi_{i}^{L}\left(\frac{a+b}{a-b}+\frac{2}{b-a}x\right).$
+\begin_inset Formula $\pi_{i}(x)=\pi_{i}^{L}\left(\frac{a+b}{a-b}+\frac{2}{b-a}x\right)\sqrt{\frac{2}{b-a}}.$
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+scale monic:
+ pokud mám monic poly.:
+ 
+\begin_inset Formula $\pi_{i}^{L}\left(x\right)=x^{k}+\cdots$
+\end_inset
+
+,
+ potom 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\pi_{i}^{L}\left(\frac{a+b}{a-b}+\frac{2}{b-a}x\right)=\left(\frac{a+b}{a-b}+\frac{2}{b-a}x\right)^{k}+\cdots=\left(\frac{2}{b-a}x\right)^{k}+A_{1}\left(\frac{2}{b-a}x\right)^{k-1}\frac{a+b}{a-b}+\cdots$
+\end_inset
+
+ největší exponent 
+\begin_inset Formula $x$
+\end_inset
+
+ bude 
+\begin_inset Formula $\left(\frac{2}{b-a}\right)^{k}x^{k}$
+\end_inset
+
+,
+ takže aby to bylo zase monic musím to přeškálovat 
+\begin_inset Formula $/\left(\frac{2}{b-a}\right)^{k}$
+\end_inset
+
+ (Legendre nejsou monic ani othronormal)
+\end_layout
+
 \end_inset
 
 
 \end_layout
 
 \begin_layout Proof
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
 Orthogonality of polynomials 
 \begin_inset Formula $\pi_{i}(x)$
 \end_inset
@@ -3005,17 +3121,18 @@ Orthogonality of polynomials
  can be proven:
  
 \begin_inset Formula 
-\[
-\forall i,j\in\mathbb{N}:i\neq j:\left\langle \pi_{i},\pi_{j}\right\rangle _{1}=\intop_{a}^{b}\pi_{i}(x)\pi_{j}(x)\,dx=\intop_{a}^{b}\pi_{i}^{L}\left(\frac{a+b}{a-b}+\frac{2}{b-a}x\right)\pi_{j}^{L}\left(\frac{a+b}{a-b}+\frac{2}{b-a}x\right)\,dx.
-\]
+\begin{align*}
+\forall i,j & \in\mathbb{N}:i\neq j:\left\langle \pi_{i},\pi_{j}\right\rangle _{1}=\intop_{a}^{b}\pi_{i}(x)\pi_{j}(x)\,dx=\\
+= & \intop_{a}^{b}\pi_{i}^{L}\left(\frac{a+b}{a-b}+\frac{2}{b-a}x\right)\pi_{j}^{L}\left(\frac{a+b}{a-b}+\frac{2}{b-a}x\right)\frac{2}{b-a}\,dx.
+\end{align*}
 
 \end_inset
 
 Let 
 \begin_inset Formula 
 \begin{eqnarray*}
-\hat{x} & = & \frac{a+b}{a-b}+\frac{2}{b-a}x\Longrightarrow d\hat{x}=\frac{2}{b-a}dx\Longrightarrow\quad\int_{a}^{b}\pi_{i}^{L}\left(\frac{a+b}{a-b}+\frac{2}{b-a}x\right)\pi_{j}^{L}\left(\frac{a+b}{a-b}+\frac{2}{b-a}x\right)\,dx=\\
- &  & =\int_{-1}^{1}\frac{b-a}{2}\pi_{i}^{L}\left(\hat{x}\right)\pi_{j}^{L}\left(\hat{x}\right)\,d\hat{x}=\frac{b-a}{2}\int_{-1}^{1}\pi_{i}^{L}\left(\hat{x}\right)\pi_{j}^{L}\left(\hat{x}\right)\,d\hat{x}=0
+\hat{x} & = & \frac{a+b}{a-b}+\frac{2}{b-a}x\Longrightarrow d\hat{x}=\frac{2}{b-a}dx\Longrightarrow\quad\int_{a}^{b}\pi_{i}^{L}\left(\frac{a+b}{a-b}+\frac{2}{b-a}x\right)\pi_{j}^{L}\left(\frac{a+b}{a-b}+\frac{2}{b-a}x\right)\frac{2}{b-a}\,dx=\\
+ & = & \int_{-1}^{1}\pi_{i}^{L}\left(\hat{x}\right)\pi_{j}^{L}\left(\hat{x}\right)\,d\hat{x}=0
 \end{eqnarray*}
 
 \end_inset
@@ -3027,8 +3144,211 @@ Let
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset Separator plain
+\end_inset
+
+We will prove the orthogonality of the polynomials 
+\begin_inset Formula $\pi_{i}(x)$
+\end_inset
+
+ and 
+\begin_inset Formula $\pi_{j}(x)$
+\end_inset
+
+ for 
+\begin_inset Formula $i\neq j$
+\end_inset
+
+ with respect to the inner product 
+\begin_inset Formula $\langle\cdot,\cdot\rangle_{1}=\int_{a}^{b}u(x)v(x)dx$
+\end_inset
+
+.
+ Recall the relationship 
+\begin_inset Formula $\pi_{k}(x)=\pi_{k}^{L}\left(\frac{a+b}{a-b}+\frac{2}{b-a}x\right)\sqrt{\frac{2}{b-a}}$
+\end_inset
+
+,
+ where 
+\begin_inset Formula $\pi_{k}^{L}$
+\end_inset
+
+ are Legendre polynomials.
+ Thus,
+ for 
+\begin_inset Formula $i\neq j$
+\end_inset
+
+:
+ 
+\begin_inset Formula 
+\[
+\left\langle \pi_{i},\pi_{j}\right\rangle _{1}=\intop_{a}^{b}\pi_{i}(x)\pi_{j}(x)\,dx=\intop_{a}^{b}\pi_{i}^{L}\left(\frac{a+b}{a-b}+\frac{2}{b-a}x\right)\pi_{j}^{L}\left(\frac{a+b}{a-b}+\frac{2}{b-a}x\right)\frac{2}{b-a}\,dx.
+\]
+
+\end_inset
+
+Let us perform the substitution:
+ 
+\begin_inset Formula 
+\[
+\hat{x}=\frac{a+b}{a-b}+\frac{2}{b-a}x.
+\]
+
+\end_inset
+
+Then 
+\begin_inset Formula $d\hat{x}=\frac{2}{b-a}dx$
+\end_inset
+
+.
+ The limits change as follows:
+ when 
+\begin_inset Formula $x=a$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\hat{x}=-1$
+\end_inset
+
+,
+ and when 
+\begin_inset Formula $x=b$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\hat{x}=1$
+\end_inset
+
+.
+ Substituting into the integral gives:
+ 
+\begin_inset Formula 
+\begin{align*}
+\intop_{a}^{b}\pi_{i}^{L}\left(\dots\right)\pi_{j}^{L}\left(\dots\right)\,\frac{2}{b-a}dx & =\intop_{-1}^{1}\pi_{i}^{L}\left(\hat{x}\right)\pi_{j}^{L}\left(\hat{x}\right)\,d\hat{x}.
+\end{align*}
+
+\end_inset
+
+Since 
+\begin_inset Formula $\pi_{i}^{L}$
+\end_inset
+
+ and 
+\begin_inset Formula $\pi_{j}^{L}$
+\end_inset
+
+ are orthogonal Legendre polynomials for 
+\begin_inset Formula $i\neq j$
+\end_inset
+
+ with respect to the weight 
+\begin_inset Formula $w(x)=1$
+\end_inset
+
+ on 
+\begin_inset Formula $[-1,1]$
+\end_inset
+
+,
+ the integral is zero:
+ 
+\begin_inset Formula 
+\[
+\intop_{-1}^{1}\pi_{i}^{L}\left(\hat{x}\right)\pi_{j}^{L}\left(\hat{x}\right)\,d\hat{x}=0.
+\]
+
+\end_inset
+
+Therefore,
+ 
+\begin_inset Formula $\left\langle \pi_{i},\pi_{j}\right\rangle _{1}=0$
+\end_inset
+
+ for 
+\begin_inset Formula $i\neq j$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset citation
+LatexCommand cite
+after "Theorem 1.47"
+key "Gautschi2004"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+The weights 
+\begin_inset Formula $\lambda_{j}$
+\end_inset
+
+ for an 
+\begin_inset Formula $n$
+\end_inset
+
+-point quadrature rule approximating 
+\begin_inset Formula $\intop_{a}^{b}f\left(x\right)w\left(x\right)\,dx$
+\end_inset
+
+,
+ using the roots 
+\begin_inset Formula $\tau_{i}$
+\end_inset
+
+ (
+\begin_inset Formula $i=0,\dots,n-1$
+\end_inset
+
+) of the corresponding orthogonal polynomial as nodes (
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+means 
+\begin_inset Quotes eld
+\end_inset
+
+compare
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+cf.
+ 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:weights_of_quadrature"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+),
+ are given by:
+\begin_inset Formula 
+\[
+\lambda_{j}=\frac{\intop_{a}^{b}\prod_{i\neq j,i=0}^{n-1}\left(x-\tau_{i}\right)\,dx}{\prod_{i\neq j,i=0}^{n-1}\left(\tau_{j}-\tau_{i}\right)},\quad j=0,\dots,n-1.
+\]
+
 \end_inset
 
 
@@ -3078,9 +3398,9 @@ Let
 \begin_layout Proof
 \begin_inset Formula 
 \begin{eqnarray*}
-\lambda_{j} & = & \frac{\intop_{a}^{b}\prod_{i\neq j,i=0}^{n}\left(x-\tau_{i}\right)\,dx}{\prod_{i\neq j,i=0}^{n}\left(\tau_{j}-\tau_{i}\right)}=\frac{\int_{a}^{b}\prod_{i\neq j,i=0}^{n}\left(x-\frac{a+b}{2}-\frac{b-a}{2}\tau_{i}^{L}\right)\,dx}{\prod_{i\neq j,i=0}^{n}\left(\frac{a+b}{2}+\frac{b-a}{2}\tau_{j}^{L}-\frac{a+b}{2}-\frac{b-a}{2}\tau_{i}^{L}\right)}=\\
- &  & \frac{\int_{-1}^{1}\frac{b-a}{2}\prod_{i\neq j,i=0}^{n}\left(\frac{a+b}{2}+\frac{b-a}{2}\hat{x}-\frac{a+b}{2}-\frac{b-a}{2}\tau_{i}^{L}\right)\,d\hat{x}}{\prod_{i\neq j,i=0}^{n}\left(\frac{b-a}{2}\left(\tau_{j}^{L}-\tau_{i}^{L}\right)\right)}=\frac{\left(\frac{b-a}{2}\right)^{n}\int_{-1}^{1}\prod_{i\neq j,i=0}^{n}\left(\hat{x}-\tau_{i}^{L}\right)\,d\hat{x}}{\left(\frac{b-a}{2}\right)^{n-1}\prod_{i\neq j,i=0}^{n}\left(\tau_{j}^{L}-\tau_{i}^{L}\right)}=\\
- &  & \frac{b-a}{2}\,\frac{\int_{-1}^{1}\prod_{i\neq j,i=0}^{n}\left(\hat{x}-\tau_{i}^{L}\right)\,d\hat{x}}{\prod_{i\neq j,i=0}^{n}\left(\tau_{j}^{L}-\tau_{i}^{L}\right)}=\frac{b-a}{2}\lambda_{j}^{L}
+\lambda_{j} & = & \frac{\intop_{a}^{b}\prod_{i\neq j,i=0}^{n-1}\left(x-\tau_{i}\right)\,dx}{\prod_{i\neq j,i=0}^{n-1}\left(\tau_{j}-\tau_{i}\right)}=\frac{\int_{a}^{b}\prod_{i\neq j,i=0}^{n-1}\left(x-\frac{a+b}{2}-\frac{b-a}{2}\tau_{i}^{L}\right)\,dx}{\prod_{i\neq j,i=0}^{n-1}\left(\frac{a+b}{2}+\frac{b-a}{2}\tau_{j}^{L}-\frac{a+b}{2}-\frac{b-a}{2}\tau_{i}^{L}\right)}=\\
+ & = & \frac{\int_{-1}^{1}\frac{b-a}{2}\prod_{i\neq j,i=0}^{n-1}\left(\frac{a+b}{2}+\frac{b-a}{2}\hat{x}-\frac{a+b}{2}-\frac{b-a}{2}\tau_{i}^{L}\right)\,d\hat{x}}{\prod_{i\neq j,i=0}^{n-1}\left(\frac{b-a}{2}\left(\tau_{j}^{L}-\tau_{i}^{L}\right)\right)}=\frac{\left(\frac{b-a}{2}\right)^{n}\int_{-1}^{1}\prod_{i\neq j,i=0}^{n-1}\left(\hat{x}-\tau_{i}^{L}\right)\,d\hat{x}}{\left(\frac{b-a}{2}\right)^{n-1}\prod_{i\neq j,i=0}^{n-1}\left(\tau_{j}^{L}-\tau_{i}^{L}\right)}=\\
+ & = & \frac{b-a}{2}\,\frac{\int_{-1}^{1}\prod_{i\neq j,i=0}^{n-1}\left(\hat{x}-\tau_{i}^{L}\right)\,d\hat{x}}{\prod_{i\neq j,i=0}^{n-1}\left(\tau_{j}^{L}-\tau_{i}^{L}\right)}=\frac{b-a}{2}\lambda_{j}^{L}
 \end{eqnarray*}
 
 \end_inset
@@ -3418,23 +3738,19 @@ L2 Space
 \end_inset
 
 Let 
-\begin_inset Formula $F=\left\{ f_{i}\right\} _{i=0}^{\infty}$
+\begin_inset Formula $F=\left\{ f_{i}\right\} _{i=0}^{\infty}\in\mathcal{L}^{2}(I)$
 \end_inset
 
  and 
-\begin_inset Formula $G=\left\{ g_{i}\right\} _{i=0}^{\infty}$
-\end_inset
-
-be Cauchy sequences in 
-\begin_inset Formula $\mathcal{L}^{2}(I)$
+\begin_inset Formula $G=\left\{ g_{i}\right\} _{i=0}^{\infty}\in\mathcal{L}^{2}(I)$
 \end_inset
 
 .
- The space 
+ Let us define the space 
 \begin_inset Formula $L^{2}(I)$
 \end_inset
 
- is an equivalence class space on 
+ as an equivalence class space on 
 \family roman
 \series medium
 \shape up
@@ -3539,7 +3855,7 @@ L^{2}(I)\coloneqq\left\{ \left[F\right]:F\in\mathcal{L}^{2}(I)\right\} .
 \uwave default
 \noun default
 \color inherit
-If we define a norm on this space by 
+add a norm
 \begin_inset Formula 
 \[
 \left\Vert \left[F\right]\right\Vert _{L^{2}}\coloneqq\lim_{i\rightarrow\infty}\left\Vert f_{i}\right\Vert _{L^{2}}
@@ -3547,14 +3863,18 @@ If we define a norm on this space by
 
 \end_inset
 
-and an inner product by
+and an inner product
 \begin_inset Formula 
 \[
-\left\langle \left[F\right],\left[G\right]\right\rangle _{L^{2}}\coloneqq\lim_{i\rightarrow\infty}\intop_{I}f_{i}\left(x\right)g_{i}\left(x\right)dx,
+\left\langle \left[F\right],\left[G\right]\right\rangle _{L^{2}}\coloneqq\lim_{i\rightarrow\infty}\intop_{I}f_{i}\left(x\right)g_{i}\left(x\right)dx.
 \]
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Corollary
 then 
 \begin_inset Formula $L^{2}(I)$
 \end_inset
@@ -3636,6 +3956,67 @@ The probability measure
  a number between 0 and 1,
  to every measurable set in 
 \begin_inset Formula $\mathcal{F}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Example
+We can consider rolls of dice as an example of probability space 
+\begin_inset Formula $\left(\Omega,\mathcal{F},\mathbb{P}\right)$
+\end_inset
+
+.
+ In a roll of a die there are six possible outcomes and 
+\begin_inset Formula $\Omega=\left\{ 1,2,3,4,5,6\right\} $
+\end_inset
+
+ and,
+ in a sequence of M rolls,
+ 
+\begin_inset Formula $\Omega=\left\{ 1,2,3,4,5,6\right\} ^{M}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\mathcal{F}$
+\end_inset
+
+ is a collection of subsets of 
+\begin_inset Formula $\Omega$
+\end_inset
+
+,
+ these subsets are known as events.
+ Each event corresponds to a set of outcomes in the experiment.
+ Let's say we want to know the probability of rolling an even number and so the set 
+\begin_inset Formula $F=\left\{ 2,4,6\right\} $
+\end_inset
+
+ is included as an event in the 
+\begin_inset Formula $\sigma$
+\end_inset
+
+-algebra 
+\begin_inset Formula $\mathcal{F}$
+\end_inset
+
+.
+ Lastly we have the probability measure 
+\begin_inset Formula $\mathbb{P}$
+\end_inset
+
+,
+ which assigns a probability to every measurable set in 
+\begin_inset Formula $\mathcal{F}$
+\end_inset
+
+.
+ Probability will be a number between 0 and 1,
+ where 0 means the even will never occur and one means the event will always occur.
+ Higher probability means the event is more likely to occur in an experiment.
+ For a fair dice roll the probability of rolling an even number would be 
+\begin_inset Formula $\mathbb{P}\left(\left\{ 2,4,6\right\} \right)=1/2$
 \end_inset
 
 .
@@ -3792,7 +4173,7 @@ Let
  itself,
  closed under complements and countable unions).
  A function 
-\begin_inset Formula $\mu:\varSigma\rightarrow\left[0,\infty\right]$
+\begin_inset Formula $\mu:\varSigma\rightarrow\left\langle 0,\infty\right\rangle $
 \end_inset
 
  is called a measure on the measurable space 
@@ -3864,7 +4245,7 @@ Let
 \noun default
 \color inherit
 
-\begin_inset Formula $\varSigma,\quad\mu\left(\bigcup_{i=1}A_{i}\right)=\sum_{i=1}\mu\left(A_{i}\right)$
+\begin_inset Formula $\varSigma,\quad\mu\left(\bigcup_{i}A_{i}\right)=\sum_{i}\mu\left(A_{i}\right)$
 \end_inset
 
 .
@@ -4023,8 +4404,8 @@ Probability space
  An event represents a specific outcome or a set of outcomes we might be interested in.
 \end_layout
 
-\begin_layout Subsection
-Stochastic process and random field
+\begin_layout Section
+Stochastic processes and random fields
 \end_layout
 
 \begin_layout Definition
@@ -4216,16 +4597,11 @@ stochastic process
 \end_inset
 
 .
- A stochastic process can also be denoted by 
-\begin_inset Formula $X(t)$
+ 
+\begin_inset Formula $\Omega\rightarrow L^{2}\left(\mathcal{T}\right)$
 \end_inset
 
-,
- where 
-\begin_inset Formula $X:\mathcal{T}\times\Omega\rightarrow\mathbb{R}$
-\end_inset
 
-.
 \end_layout
 
 \begin_layout Standard
@@ -4343,8 +4719,11 @@ Let
 
 \end_layout
 
-\begin_layout Section
-Covariance
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
 \end_layout
 
 \begin_layout Definition
@@ -4406,8 +4785,11 @@ where
  
 \end_layout
 
-\begin_layout Subsection
-Autocovariance
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
 \end_layout
 
 \begin_layout Definition
@@ -4443,8 +4825,11 @@ for all
 .
 \end_layout
 
-\begin_layout Section
-Stationary process
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
 \end_layout
 
 \begin_layout Definition
@@ -4502,7 +4887,7 @@ is constant (independent of
  
 \end_layout
 
-\begin_layout Lemma
+\begin_layout Standard
 The covariance function of a stationary stochastic process 
 \begin_inset Formula $\left\{ X\left(t\right):t\in\mathcal{T}\right\} $
 \end_inset
@@ -4561,7 +4946,7 @@ A random field
 \begin_inset Formula $\left\{ X\left(\boldsymbol{x}\right):\boldsymbol{x}\in\mathbb{R}^{d}\right\} $
 \end_inset
 
- is an isotropic and stationary if its mean 
+ is isotropic and stationary if its mean 
 \begin_inset Formula $\mu=\mathbb{E}[X(\boldsymbol{x})]$
 \end_inset
 
@@ -4622,7 +5007,7 @@ to do:
  is given by:
 \begin_inset Formula 
 \[
-p\left(x\right)=\frac{1}{\sqrt{2\pi\sigma^{2}}}\exp\left(\frac{-\left(x-\mu\right)^{2}}{2\sigma^{2}}\right),\quad x\in\mathbb{R}.
+f\left(x\right)=\frac{1}{\sqrt{2\pi\sigma^{2}}}\exp\left(\frac{-\left(x-\mu\right)^{2}}{2\sigma^{2}}\right),\quad x\in\mathbb{R}.
 \]
 
 \end_inset
@@ -4707,77 +5092,16 @@ A Gaussian random field (GRF)
 Numerical experiments and examples
 \end_layout
 
-\begin_layout Standard
-We can consider rolls of dice as an example of probability space 
-\begin_inset Formula $\left(\Omega,\mathcal{F},\mathbb{P}\right)$
-\end_inset
-
-.
- In a roll of a die there are six possible outcomes and 
-\begin_inset Formula $\Omega=\left\{ 1,2,3,4,5,6\right\} $
-\end_inset
-
- and,
- in a sequence of M rolls,
- 
-\begin_inset Formula $\Omega=\left\{ 1,2,3,4,5,6\right\} ^{M}$
-\end_inset
-
-.
- 
-\begin_inset Formula $\mathcal{F}$
-\end_inset
-
- is a collection of subsets of 
-\begin_inset Formula $\Omega$
-\end_inset
-
-,
- these subsets are known as events.
- Each event corresponds to a set of outcomes in the experiment.
- Let's say we want to know the probability of rolling an even number and so the set 
-\begin_inset Formula $F=\left\{ 2,4,6\right\} $
-\end_inset
-
- is included as an event in the 
-\begin_inset Formula $\sigma$
-\end_inset
-
--algebra 
-\begin_inset Formula $\mathcal{F}$
-\end_inset
-
-.
- Lastly we have the probability measure 
-\begin_inset Formula $\mathbb{P}$
-\end_inset
-
-,
- which assigns a probability to every measurable set in 
-\begin_inset Formula $\mathcal{F}$
-\end_inset
-
-.
- Probability will be a number between 0 and 1,
- where 0 means the even will never occur and one means the event will always occur.
- Higher probability means the event is more likely to occur in an experiment.
- For a fair dice roll the probability of rolling an even number would be 
-\begin_inset Formula $\mathbb{P}\left(\left\{ 2,4,6\right\} \right)=1/2$
-\end_inset
-
-.
-\end_layout
-
 \begin_layout Chapter
 Karhunen-Loève expansion
 \end_layout
 
-\begin_layout Standard
-\begin_inset Note Note
-status collapsed
+\begin_layout Theorem
+\begin_inset Argument 1
+status open
 
 \begin_layout Plain Layout
-Přepsat na definici?
+Karhunen-Loève
 \end_layout
 
 \end_inset
@@ -4810,9 +5134,6 @@ Let
 
 .
  That is,
-\end_layout
-
-\begin_layout Standard
 \begin_inset Formula 
 \[
 X(t,\omega)-\mu(t)=\sum_{j=1}^{\infty}\gamma_{j}(\omega)\sqrt{\lambda_{j}}\psi_{j}(t),
@@ -4825,9 +5146,6 @@ where the coefficients
 \end_inset
 
  are random variables defined by
-\end_layout
-
-\begin_layout Standard
 \begin_inset Formula 
 \[
 \gamma_{j}(\omega)\coloneqq\langle X(t,\omega)-\mu(t),\phi_{j}(t)\rangle_{L^{2}(\mathcal{T})}
@@ -4859,7 +5177,7 @@ and
 status open
 
 \begin_layout Plain Layout
-Tensor space of polynomials
+Tensor space
 \end_layout
 
 \end_inset
@@ -4869,11 +5187,7 @@ Let us have an
 \end_inset
 
 -dimensional space 
-\begin_inset Formula $V_{N}^{x}$
-\end_inset
-
- with basis polynomials 
-\begin_inset Formula $\left\{ \psi_{1},\ldots,\psi_{N}\right\} $
+\begin_inset Formula $V_{N}^{x}\coloneqq\spanSed\left\{ \psi_{1},\ldots,\psi_{N}\right\} $
 \end_inset
 
  and an 
@@ -4881,11 +5195,7 @@ Let us have an
 \end_inset
 
 -dimensional space 
-\begin_inset Formula $V_{M}^{y}$
-\end_inset
-
- with basis polynomials 
-\begin_inset Formula $\left\{ \phi_{1},\ldots,\phi_{M}\right\} $
+\begin_inset Formula $V_{M}^{y}\coloneqq\spanSed\left\{ \phi_{1},\ldots,\phi_{M}\right\} $
 \end_inset
 
 .

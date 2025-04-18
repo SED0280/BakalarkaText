@@ -79,5 +79,8 @@ def 18
 . three term recurrence indukcí
 
 Pak hlavne ten uvod a závěr
+------------------------------------------------------------------
+
+Leg(4) = Divide[1,8](35Power[x,4]-30Power[x,2]+3)
 
 
