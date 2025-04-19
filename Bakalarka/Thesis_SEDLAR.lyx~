@@ -5451,6 +5451,44 @@ We want to approximate eigenpairs
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Subsection
+Galerkin method
+\end_layout
+
+\begin_layout Standard
+The Galerkin method is employed to compute approximations of the desired eigenpairs 
+\begin_inset Formula $\left(\lambda,u\right)$
+\end_inset
+
+.
+ Alternatively,
+ reflecting the process more explicitly:
+ Application of the Galerkin procedure discretizes the underlying operator eigenvalue problem,
+ resulting in a matrix eigenvalue problem whose solutions provide the approximate eigenpairs 
+\begin_inset Formula $\left(\lambda,u\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
 Let us consider a subspace 
 \begin_inset Formula $V_{N}\subset L^{2}$
 \end_inset

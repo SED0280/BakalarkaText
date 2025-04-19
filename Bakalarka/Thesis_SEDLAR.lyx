@@ -5234,7 +5234,12 @@ Karhunen-Loève expansion
 
 \begin_layout Standard
 This section addresses the Karhunen-Loève (KL) expansion,
- specifically focusing on its application to Isotropic Gaussian Random Fields.
+ specifically focusing on its application to Isotropic Gaussian Random Fields for which we will consider the expected value will be equal to 0,
+ i.e.,
+\begin_inset Formula $\mathbb{E}\left[X\right]=0$
+\end_inset
+
+ .
  Subsequently,
  a numerical approximation of the KL expansion is pursued using the Galerkin method.
  The implementation of this method involves the computation of integrals over the specified multi-dimensional domain 
