@@ -3519,6 +3519,38 @@ Numerical experiments and examples
 Probability
 \end_layout
 
+\begin_layout Standard
+This chapter commences with the formal definition of the Hilbert space 
+\begin_inset Formula $L^{2}(I)$
+\end_inset
+
+,
+ constructed as the completion of the space of continuous functions 
+\begin_inset Formula $C(I)$
+\end_inset
+
+ with respect to the 
+\begin_inset Formula $L^{2}$
+\end_inset
+
+ norm defined on the interval 
+\begin_inset Formula $I$
+\end_inset
+
+.
+ Subsequently,
+ fundamental concepts from probability theory are introduced.
+ This includes foundational elements of measure theory,
+ the axiomatic definition of a probability space,
+ and the concept of expected value.
+ Building upon this foundation,
+ the discussion then progresses to the topic of stochastic processes,
+ introducing the concepts of random fields,
+ their associated autocovariance functions,
+ and the important subclass represented by Gaussian random fields.
+ 
+\end_layout
+
 \begin_layout Section
 \begin_inset Formula $L^{2}$
 \end_inset
@@ -3831,7 +3863,38 @@ The set of all sequences equivalent to a given sequence
 status open
 
 \begin_layout Plain Layout
-L2 Space
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Formula $L^{2}$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ Space
 \end_layout
 
 \end_inset
@@ -3974,11 +4037,10 @@ and an inner product
 \end_layout
 
 \begin_layout Corollary
-then 
 \begin_inset Formula $L^{2}(I)$
 \end_inset
 
- becomes a Hilbert space.
+ is a Hilbert space.
 \end_layout
 
 \begin_layout Section
@@ -5170,6 +5232,23 @@ Numerical experiments
 Karhunen-Loève expansion
 \end_layout
 
+\begin_layout Standard
+This section addresses the Karhunen-Loève (KL) expansion,
+ specifically focusing on its application to Isotropic Gaussian Random Fields.
+ Subsequently,
+ a numerical approximation of the KL expansion is pursued using the Galerkin method.
+ The implementation of this method involves the computation of integrals over the specified multi-dimensional domain 
+\begin_inset Formula $\mathcal{T}$
+\end_inset
+
+.
+ Gaussian quadrature techniques are employed for the efficient numerical evaluation of these integrals.
+ The determination of the eigenfunctions and eigenvalues required for the KL expansion inherently corresponds to solving an integral eigenvalue problem,
+ which is conceptually equivalent to the spectral decomposition of the covariance operator associated with the random field.
+ The Galerkin procedure provides a means to discretize this problem,
+ leading to a matrix eigenvalue problem.
+\end_layout
+
 \begin_layout Theorem
 \begin_inset Argument 1
 status open
@@ -5372,6 +5451,44 @@ We want to approximate eigenpairs
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Subsection
+Galerkin method
+\end_layout
+
+\begin_layout Standard
+The Galerkin method is employed to compute approximations of the desired eigenpairs 
+\begin_inset Formula $\left(\lambda,u\right)$
+\end_inset
+
+.
+ Alternatively,
+ reflecting the process more explicitly:
+ Application of the Galerkin procedure discretizes the underlying operator eigenvalue problem,
+ resulting in a matrix eigenvalue problem whose solutions provide the approximate eigenpairs 
+\begin_inset Formula $\left(\lambda,u\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
 Let us consider a subspace 
 \begin_inset Formula $V_{N}\subset L^{2}$
 \end_inset
