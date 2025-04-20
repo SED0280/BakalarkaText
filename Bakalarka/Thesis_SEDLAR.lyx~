@@ -3162,14 +3162,7 @@ Orthogonal Legendre polynomials denoted as
 status collapsed
 
 \begin_layout Plain Layout
-scale monic:
- pokud mám monic poly.:
- 
-\begin_inset Formula $\pi_{i}^{L}\left(x\right)=x^{k}+\cdots$
-\end_inset
 
-,
- potom 
 \family roman
 \series medium
 \shape up
@@ -3183,24 +3176,7 @@ scale monic:
 \uwave off
 \noun off
 \color none
-
-\begin_inset Formula $\pi_{i}^{L}\left(\frac{a+b}{a-b}+\frac{2}{b-a}x\right)=\left(\frac{a+b}{a-b}+\frac{2}{b-a}x\right)^{k}+\cdots=\left(\frac{2}{b-a}x\right)^{k}+A_{1}\left(\frac{2}{b-a}x\right)^{k-1}\frac{a+b}{a-b}+\cdots$
-\end_inset
-
- největší exponent 
-\begin_inset Formula $x$
-\end_inset
-
- bude 
-\begin_inset Formula $\left(\frac{2}{b-a}\right)^{k}x^{k}$
-\end_inset
-
-,
- takže aby to bylo zase monic musím to přeškálovat 
-\begin_inset Formula $/\left(\frac{2}{b-a}\right)^{k}$
-\end_inset
-
- (Legendre nejsou monic ani othronormal)
+(Legendre nejsou monic ani othronormal)
 \end_layout
 
 \end_inset
@@ -5234,7 +5210,12 @@ Karhunen-Loève expansion
 
 \begin_layout Standard
 This section addresses the Karhunen-Loève (KL) expansion,
- specifically focusing on its application to Isotropic Gaussian Random Fields.
+ specifically focusing on its application to Isotropic Gaussian Random Fields for which we will consider the expected value will be equal to 0,
+ i.e.,
+\begin_inset Formula $\mathbb{E}\left[X\right]=0$
+\end_inset
+
+ .
  Subsequently,
  a numerical approximation of the KL expansion is pursued using the Galerkin method.
  The implementation of this method involves the computation of integrals over the specified multi-dimensional domain 

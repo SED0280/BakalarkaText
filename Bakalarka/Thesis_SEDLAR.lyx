@@ -1292,11 +1292,7 @@ Relative to the inner product
 ,
  there exists a basis for the polynomial space consisting of mutually orthogonal polynomials.
  Leveraging the properties of this inner product,
- specifically its interaction with multiplication by the independent variable 
-\begin_inset Formula $x$
-\end_inset
-
-,
+ specifically the shift property,
  allows for the derivation of the fundamental three-term recurrence relation satisfied by these orthogonal polynomials.
  The coefficients of this recurrence relation are then used to construct a symmetric tridiagonal matrix,
  commonly referred to as the Jacobi matrix associated with the polynomial sequence.
@@ -3162,14 +3158,7 @@ Orthogonal Legendre polynomials denoted as
 status collapsed
 
 \begin_layout Plain Layout
-scale monic:
- pokud mám monic poly.:
- 
-\begin_inset Formula $\pi_{i}^{L}\left(x\right)=x^{k}+\cdots$
-\end_inset
 
-,
- potom 
 \family roman
 \series medium
 \shape up
@@ -3183,24 +3172,7 @@ scale monic:
 \uwave off
 \noun off
 \color none
-
-\begin_inset Formula $\pi_{i}^{L}\left(\frac{a+b}{a-b}+\frac{2}{b-a}x\right)=\left(\frac{a+b}{a-b}+\frac{2}{b-a}x\right)^{k}+\cdots=\left(\frac{2}{b-a}x\right)^{k}+A_{1}\left(\frac{2}{b-a}x\right)^{k-1}\frac{a+b}{a-b}+\cdots$
-\end_inset
-
- největší exponent 
-\begin_inset Formula $x$
-\end_inset
-
- bude 
-\begin_inset Formula $\left(\frac{2}{b-a}\right)^{k}x^{k}$
-\end_inset
-
-,
- takže aby to bylo zase monic musím to přeškálovat 
-\begin_inset Formula $/\left(\frac{2}{b-a}\right)^{k}$
-\end_inset
-
- (Legendre nejsou monic ani othronormal)
+(Legendre nejsou monic ani othronormal)
 \end_layout
 
 \end_inset
