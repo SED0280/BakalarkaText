@@ -1047,7 +1047,7 @@ Integrating both sides over the interval
 \end_inset
 
 The squared norm 
-\begin_inset Formula $\|u\|_{w}^{2}$
+\begin_inset Formula $\left\Vert u\right\Vert _{w}^{2}$
 \end_inset
 
  satisfies
@@ -1061,7 +1061,7 @@ The squared norm
 therefore 
 \begin_inset Formula 
 \[
-\|u\|_{w}^{2}\ge\left(\frac{u(x_{0})}{2}\right)^{2}\cdot\left|I_{\delta}\right|>0.
+\left\Vert u\right\Vert _{w}^{2}\ge\left(\frac{u(x_{0})}{2}\right)^{2}\cdot\left|I_{\delta}\right|>0.
 \]
 
 \end_inset
@@ -2720,7 +2720,15 @@ Having established in the preceding discussion that the roots of the orthogonal 
  correspond to the eigenvalues obtained via the spectral decomposition of the associated Jacobi matrix,
  the focus now shifts to the computation of the corresponding quadrature weights.
  This section details the procedure for determining these weights,
- employing the well-established Golub-Welsch algorithm,
+ employing the well-established Golub-Welsch algorithm 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "GolubWelsch1969"
+literal "false"
+
+\end_inset
+
+,
  which utilizes the first components of the normalized eigenvectors derived from the same spectral decomposition.
 \end_layout
 

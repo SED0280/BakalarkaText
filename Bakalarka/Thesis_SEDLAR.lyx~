@@ -1292,11 +1292,7 @@ Relative to the inner product
 ,
  there exists a basis for the polynomial space consisting of mutually orthogonal polynomials.
  Leveraging the properties of this inner product,
- specifically its interaction with multiplication by the independent variable 
-\begin_inset Formula $x$
-\end_inset
-
-,
+ specifically the shift property,
  allows for the derivation of the fundamental three-term recurrence relation satisfied by these orthogonal polynomials.
  The coefficients of this recurrence relation are then used to construct a symmetric tridiagonal matrix,
  commonly referred to as the Jacobi matrix associated with the polynomial sequence.
