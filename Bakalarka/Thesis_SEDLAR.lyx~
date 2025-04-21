@@ -334,20 +334,11 @@ Polynomials
 \end_layout
 
 \begin_layout Standard
-This section defines various types of polynomials relevant to the subsequent analysis.
- The degree of a polynomial is defined as the highest exponent of its variable term,
- typically denoted by 
-\begin_inset Formula $x$
-\end_inset
-
-.
- Certain classes of polynomials possess distinct characteristics.
- Notably,
- orthogonal polynomials are defined by the property that the inner product of any two distinct polynomials within a sequence is zero.
- This orthogonality property is fundamental for the developments presented in subsequent sections.
- The inner product,
- in this context,
- is defined via integration over a specified interval 
+This section defines various types of polynomials.
+ For example orthogonal polynomials are going to be important.
+ They are defined by a property that the inner product of any two distinct polynomials within a sequence is zero.
+ This orthogonality property constitutes a fundamental prerequisite for the theoretical framework and results presented in subsequent sections.
+ The inner product employed throughout this work is defined via integration over a specified interval 
 \begin_inset Formula $I$
 \end_inset
 
@@ -357,11 +348,11 @@ This section defines various types of polynomials relevant to the subsequent ana
 
 .
  A key characteristic of orthogonal polynomials,
- and consequently their normalized counterparts (orthonormal polynomials),
+ and by extension their normalized counterparts (orthonormal polynomials),
  is that they satisfy a three-term recurrence relation.
  The coefficients of this recurrence relation can be arranged into a symmetric tridiagonal matrix,
  known as the Jacobi matrix.
- The eigensystem of this Jacobi matrix provides a direct method for determining the roots of the orthogonal polynomials and constructing the corresponding orthonormal polynomials.
+ The eigenpairs of this Jacobi matrix provides a direct method for determining the roots of the orthogonal polynomials.
  The chapter concludes with a discussion on Gaussian quadrature rules,
  which utilize the roots of orthogonal polynomials as nodes and derived values as weights for numerical integration.
  The eigenvalue decomposition of the aforementioned Jacobi matrix directly yields these quadrature nodes and weights.
@@ -4835,6 +4826,11 @@ status collapsed
 
 \end_inset
 
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
 Let 
 \begin_inset Formula $\left(\Omega,\mathcal{F},\mathbb{P}\right)$
 \end_inset
@@ -4846,45 +4842,29 @@ Let
  be a measurable space.
  Then,
  
-\begin_inset Formula $X$
+\end_layout
+
 \end_inset
 
- is a real-valued random variable if 
-\begin_inset Formula $X$
-\end_inset
-
- is a measurable function from 
-\begin_inset Formula $\left(\Omega,\mathcal{F}\right)$
-\end_inset
-
- to 
-\begin_inset Formula $\mathbb{R}$
-\end_inset
-
-.
- To emphasize the 
-\begin_inset Formula $\sigma$
-\end_inset
-
--algebra 
-\begin_inset Formula $\mathcal{F}$
-\end_inset
-
- on 
-\begin_inset Formula $\Omega$
+For a probability space 
+\begin_inset Formula $\left(\Omega,\mathcal{F},\mathbb{P}\right)$
 \end_inset
 
 ,
- we may say that 
-\begin_inset Formula $X$
+ a measurable map 
+\begin_inset Formula $X:\mathcal{F}\rightarrow\mathbb{R}$
 \end_inset
 
- is an 
-\begin_inset Formula $\mathcal{F}$
-\end_inset
+ is called a 
+\emph on
+random variable
+\emph default
+.
+ 
+\end_layout
 
--measurable random variable.
- The value 
+\begin_layout Remark
+The value 
 \begin_inset Formula $X(\omega)$
 \end_inset
 
@@ -4905,13 +4885,6 @@ realization
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
-\begin_inset Separator plain
-\end_inset
-
-
 \end_layout
 
 \begin_layout Definition

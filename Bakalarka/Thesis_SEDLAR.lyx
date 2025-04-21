@@ -334,20 +334,11 @@ Polynomials
 \end_layout
 
 \begin_layout Standard
-This section defines various types of polynomials relevant to the subsequent analysis.
- The degree of a polynomial is defined as the highest exponent of its variable term,
- typically denoted by 
-\begin_inset Formula $x$
-\end_inset
-
-.
- Certain classes of polynomials possess distinct characteristics.
- Notably,
- orthogonal polynomials are defined by the property that the inner product of any two distinct polynomials within a sequence is zero.
- This orthogonality property is fundamental for the developments presented in subsequent sections.
- The inner product,
- in this context,
- is defined via integration over a specified interval 
+This section defines various types of polynomials.
+ For example orthogonal polynomials are going to be important.
+ They are defined by a property that the inner product of any two distinct polynomials within a sequence is zero.
+ This orthogonality property constitutes a fundamental prerequisite for the theoretical framework and results presented in subsequent sections.
+ The inner product employed throughout this work is defined via integration over a specified interval 
 \begin_inset Formula $I$
 \end_inset
 
@@ -357,11 +348,11 @@ This section defines various types of polynomials relevant to the subsequent ana
 
 .
  A key characteristic of orthogonal polynomials,
- and consequently their normalized counterparts (orthonormal polynomials),
+ and by extension their normalized counterparts (orthonormal polynomials),
  is that they satisfy a three-term recurrence relation.
  The coefficients of this recurrence relation can be arranged into a symmetric tridiagonal matrix,
  known as the Jacobi matrix.
- The eigensystem of this Jacobi matrix provides a direct method for determining the roots of the orthogonal polynomials and constructing the corresponding orthonormal polynomials.
+ The eigenpairs of this Jacobi matrix provides a direct method for determining the roots of the orthogonal polynomials.
  The chapter concludes with a discussion on Gaussian quadrature rules,
  which utilize the roots of orthogonal polynomials as nodes and derived values as weights for numerical integration.
  The eigenvalue decomposition of the aforementioned Jacobi matrix directly yields these quadrature nodes and weights.
@@ -385,7 +376,7 @@ Polynomials of real variable
 
 \begin_layout Standard
 The scope of this study is confined to polynomials with real coefficients and a real variable.
- A polynomial is designated as monic if its leading coefficient,
+ A polynomial is considered as monic if its leading coefficient,
  corresponding to the term with the highest degree,
  is equal to unity.
  Specifically,
