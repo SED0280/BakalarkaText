@@ -4332,10 +4332,32 @@ algebra if and only if it satisfies the following axioms:
 
 ,
  also denoted by 
-\begin_inset Formula $\Omega/A$
+\begin_inset Formula $\Omega\setminus A$
 \end_inset
 
 )
+\end_layout
+
+\begin_layout Definition
+3.
+ If 
+\begin_inset Formula $\left\{ A_{n}\right\} $
+\end_inset
+
+ is a countable collection of elements of 
+\begin_inset Formula $\mathcal{F}$
+\end_inset
+
+ and 
+\begin_inset Formula $A=\bigcup_{n=1}^{\infty}A_{n}$
+\end_inset
+
+,
+ then 
+\begin_inset Formula $A\in\mathcal{F}$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard

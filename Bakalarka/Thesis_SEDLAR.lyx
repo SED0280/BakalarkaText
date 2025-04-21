@@ -4835,6 +4835,11 @@ status collapsed
 
 \end_inset
 
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
 Let 
 \begin_inset Formula $\left(\Omega,\mathcal{F},\mathbb{P}\right)$
 \end_inset
@@ -4846,45 +4851,29 @@ Let
  be a measurable space.
  Then,
  
-\begin_inset Formula $X$
+\end_layout
+
 \end_inset
 
- is a real-valued random variable if 
-\begin_inset Formula $X$
-\end_inset
-
- is a measurable function from 
-\begin_inset Formula $\left(\Omega,\mathcal{F}\right)$
-\end_inset
-
- to 
-\begin_inset Formula $\mathbb{R}$
-\end_inset
-
-.
- To emphasize the 
-\begin_inset Formula $\sigma$
-\end_inset
-
--algebra 
-\begin_inset Formula $\mathcal{F}$
-\end_inset
-
- on 
-\begin_inset Formula $\Omega$
+For a probability space 
+\begin_inset Formula $\left(\Omega,\mathcal{F},\mathbb{P}\right)$
 \end_inset
 
 ,
- we may say that 
-\begin_inset Formula $X$
+ a measurable map 
+\begin_inset Formula $X:\mathcal{F}\rightarrow\mathbb{R}$
 \end_inset
 
- is an 
-\begin_inset Formula $\mathcal{F}$
-\end_inset
+ is called a 
+\emph on
+random variable
+\emph default
+.
+ 
+\end_layout
 
--measurable random variable.
- The value 
+\begin_layout Remark
+The value 
 \begin_inset Formula $X(\omega)$
 \end_inset
 
@@ -4905,13 +4894,6 @@ realization
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
-\begin_inset Separator plain
-\end_inset
-
-
 \end_layout
 
 \begin_layout Definition
