@@ -1067,7 +1067,7 @@ therefore
 \end_inset
 
 This shows that 
-\begin_inset Formula $\|u\|_{w}>0$
+\begin_inset Formula $\left\Vert u\right\Vert _{w}>0$
 \end_inset
 
  for every nonzero function 
@@ -1148,6 +1148,36 @@ orthogonal
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Remark
+Given the definition of the weighted inner product 
+\begin_inset Formula $\left\langle \cdot,\cdot\right\rangle _{w}$
+\end_inset
+
+,
+ a key objective is the construction of a corresponding sequence of orthogonal polynomials.
+ A fundamental theorem guarantees that for such an inner product defined on the space of polynomials,
+ there exists an infinite sequence 
+\begin_inset Formula $\{\pi_{k}(x)\}_{k=0}^{\infty}$
+\end_inset
+
+ of polynomials such that 
+\begin_inset Formula $\left\langle \pi_{j},\pi_{k}\right\rangle _{w}=0$
+\end_inset
+
+ for 
+\begin_inset Formula $j\neq k$
+\end_inset
+
+.
+ Furthermore,
+ this sequence can be uniquely determined by imposing the additional constraint that each polynomial 
+\begin_inset Formula $\pi_{k}(x)$
+\end_inset
+
+ is monic (i.e.,
+ its leading coefficient is unity).
 \end_layout
 
 \begin_layout Theorem
@@ -1976,6 +2006,50 @@ The spectral decomposition (or eigenvalue decomposition) of the symmetric Jacobi
 \end_inset
 
 ) whose columns are the corresponding normalized eigenvectors.
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $\{\tilde{\pi}_{i}(x)\}_{i=0}^{n-1}$
+\end_inset
+
+ denote the sequence consisting of the first 
+\begin_inset Formula $n$
+\end_inset
+
+ orthonormal polynomials generated with respect to the inner product 
+\begin_inset Formula $\left\langle \cdot,\cdot\right\rangle _{w}$
+\end_inset
+
+,
+ where each polynomial 
+\begin_inset Formula $\tilde{\pi}_{i}(x)$
+\end_inset
+
+ has degree 
+\begin_inset Formula $i$
+\end_inset
+
+.
+ We define the corresponding vector of these orthonormal basis polynomials as:
+ 
+\begin_inset Formula 
+\[
+\tilde{\boldsymbol{\pi}}(x)=\left[\tilde{\pi}_{0}(x),\tilde{\pi}_{1}(x),\ldots,\tilde{\pi}_{n-1}(x)\right]^{T}
+\]
+
+\end_inset
+
+This vector provides an orthonormal basis for the space of polynomials of degree at most 
+\begin_inset Formula $n-1$
+\end_inset
+
+,
+ denoted 
+\begin_inset Formula $\mathcal{P}_{n-1}$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Theorem
@@ -4156,6 +4230,148 @@ We can consider rolls of dice as an example of probability space
 status open
 
 \begin_layout Plain Layout
+\begin_inset Formula $\sigma$
+\end_inset
+
+-algebra
+\end_layout
+
+\end_inset
+
+For a space 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\Omega$
+\end_inset
+
+,
+ we call a set 
+\begin_inset Formula $\mathcal{F}$
+\end_inset
+
+,
+ whose elements are subsets of 
+\begin_inset Formula $\Omega$
+\end_inset
+
+,
+ a sigma 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+
+\begin_inset Formula $\sigma$
+\end_inset
+
+-
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+algebra if and only if it satisfies the following axioms:
+\end_layout
+
+\begin_layout Definition
+1.
+ 
+\begin_inset Formula $\Omega\in\mathcal{F}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+2.
+ If 
+\begin_inset Formula $A\in\mathcal{F}$
+\end_inset
+
+,
+ then 
+\begin_inset Formula $A^{c}\in\mathcal{F}$
+\end_inset
+
+(where 
+\begin_inset Formula $A^{c}$
+\end_inset
+
+ is the complement of 
+\begin_inset Formula $A$
+\end_inset
+
+,
+ also denoted by 
+\begin_inset Formula $\Omega\setminus A$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Definition
+3.
+ If 
+\begin_inset Formula $\left\{ A_{n}\right\} $
+\end_inset
+
+ is a countable collection of elements of 
+\begin_inset Formula $\mathcal{F}$
+\end_inset
+
+ and 
+\begin_inset Formula $A=\bigcup_{n=1}^{\infty}A_{n}$
+\end_inset
+
+,
+ then 
+\begin_inset Formula $A\in\mathcal{F}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
 Measure
 \end_layout
 
@@ -4458,14 +4674,9 @@ Probability space
 
 
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
-Each thing should probably have its own definition
-\end_layout
-
-\end_inset
-
 Probability space 
 \begin_inset Formula $\left(\Omega,\mathcal{F},\mathbb{P}\right)$
 \end_inset
@@ -4531,6 +4742,61 @@ Probability space
 
  is called an event.
  An event represents a specific outcome or a set of outcomes we might be interested in.
+\end_layout
+
+\end_inset
+
+A probability space is a triple 
+\begin_inset Formula $\left(\Omega,\mathcal{F},\mathbb{P}\right)$
+\end_inset
+
+,
+ where 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ is a sample space,
+ 
+\begin_inset Formula $\mathcal{F}$
+\end_inset
+
+ is a sigma-algebra of events and 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\mathbb{P}$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ is a probability measure on 
+\begin_inset Formula $\mathcal{F}$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Section
