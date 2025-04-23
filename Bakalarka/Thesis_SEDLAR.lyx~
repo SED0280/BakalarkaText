@@ -335,9 +335,8 @@ Polynomials
 
 \begin_layout Standard
 This section defines various types of polynomials.
- For example orthogonal polynomials are going to be important.
- They are defined by a property that the inner product of any two distinct polynomials within a sequence is zero.
- This orthogonality property constitutes a fundamental prerequisite for the theoretical framework and results presented in subsequent sections.
+ For example orthogonal polynomials are going to be important further on.
+ They are defined by a property that the inner product of any two distinct orthogonal polynomials within a sequence is zero.
  The inner product employed throughout this work is defined via integration over a specified interval 
 \begin_inset Formula $I$
 \end_inset
@@ -352,11 +351,24 @@ This section defines various types of polynomials.
  is that they satisfy a three-term recurrence relation.
  The coefficients of this recurrence relation can be arranged into a symmetric tridiagonal matrix,
  known as the Jacobi matrix.
- The eigenpairs of this Jacobi matrix provides a direct method for determining the roots of the orthogonal polynomials.
+ The eigenpairs of this Jacobi matrix provide a direct method for determining the roots of the orthogonal polynomials.
  The chapter concludes with a discussion on Gaussian quadrature rules,
  which utilize the roots of orthogonal polynomials as nodes and derived values as weights for numerical integration.
- The eigenvalue decomposition of the aforementioned Jacobi matrix directly yields these quadrature nodes and weights.
- Furthermore,
+ The eigenvalue (spectral) decomposition of the aforementioned Jacobi matrix yields via Golub-Welsch algorithm 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "GolubWelsch1969"
+literal "false"
+
+\end_inset
+
+ these quadrature nodes and weights.
+ For Legendre polynomials we also show how to extend them over a finite interval with the use of a simple affine change of variables.
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Furthermore,
  the specific case leading to Legendre polynomials is examined,
  corresponding to integration over an interval 
 \begin_inset Formula $\left\langle a,b\right\rangle $
@@ -370,17 +382,132 @@ This section defines various types of polynomials.
 .
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The section is organized as follows.
+ Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Polynomials-of-real"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ introduces monic polynomials.
+ Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Weighted-Inner-product"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ defines the weighted inner product and the orthonormal basis.
+ Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Three-term-recurrence"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ presents the definition of Jacobi matrix derived from the three-term recurrence.
+ Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Quadrature-rules"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ introduces the quadrature rule for approximating integrals over finite intervals.
+ Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Golub-Welsch-algorithm"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ describes the Golub-Welsch algorithm for computing quadrature nodes and weights.
+ Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Generalization-of-Legendre"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ focuses on Legendre polynomials and their affine generalisations.
+\end_layout
+
+\begin_layout Standard
+Standard results from linear algebra and functional analysis are used freely;
+ key references for orthogonal polynomials are Gautschi
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Gautschi2004"
+literal "false"
+
+\end_inset
+
+ and Szegő
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Szego1975"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
 \begin_layout Section
 Polynomials of real variable
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Polynomials-of-real"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 The scope of this study is confined to polynomials with real coefficients and a real variable.
- A polynomial is designated as monic if its leading coefficient,
- corresponding to the term with the highest degree,
- is equal to unity.
+ A polynomial is considered as monic if its leading coefficient is equal to one.
  Specifically,
- for a polynomial 
+ a polynomial 
 \begin_inset Formula $p(x)=a_{n}x^{n}+a_{n-1}x^{n-1}+\dots+a_{1}x+a_{0}$
 \end_inset
 
@@ -388,8 +515,7 @@ The scope of this study is confined to polynomials with real coefficients and a 
 \begin_inset Formula $n$
 \end_inset
 
-,
- it is monic if 
+ is monic if 
 \begin_inset Formula $a_{n}=1$
 \end_inset
 
@@ -484,7 +610,14 @@ monic polynomials
 \end_layout
 
 \begin_layout Section
-Weighted spaces
+Weighted Inner product
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Weighted-Inner-product"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -518,10 +651,6 @@ The analysis herein employs a weighted inner product.
 
 ,
  is utilized to construct the corresponding sequence of orthonormal polynomials.
-\end_layout
-
-\begin_layout Subsection
-Weight function
 \end_layout
 
 \begin_layout Definition
@@ -609,10 +738,6 @@ Let
 
 \end_layout
 
-\begin_layout Subsection
-Weighted inner product
-\end_layout
-
 \begin_layout Definition
 \begin_inset Argument 1
 status open
@@ -660,7 +785,7 @@ For a weight function
 
 \begin_layout Definition
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Můžu to nazvat Norm?
@@ -670,8 +795,8 @@ Můžu to nazvat Norm?
 
 \end_inset
 
-The quantity 
-\begin_inset Formula $\left\Vert u\right\Vert _{w}$
+The operant 
+\begin_inset Formula $\left\Vert u\right\Vert _{w}:C\left(I\right)\rightarrow\mathbb{R}_{0}^{+}$
 \end_inset
 
 ,
@@ -772,7 +897,9 @@ is positive definite on
 \begin_inset Formula $C\left(I\right)$
 \end_inset
 
- and it is called an inner product.
+ ,
+ i.e.
+ it is an inner product.
 \end_layout
 
 \begin_layout Proof
@@ -997,7 +1124,7 @@ Note that
 \end_inset
 
  has positive length 
-\begin_inset Formula $|I_{\delta}|\geq\delta>0$
+\begin_inset Formula $|I_{\delta}|\geq\min\left(\delta,1\right)>0$
 \end_inset
 
 .
@@ -1094,11 +1221,11 @@ nolink "false"
 
 \end_inset
 
-inner product 
+Bilinear form 
 \begin_inset Formula $\left\langle \cdot,\cdot\right\rangle _{w}$
 \end_inset
 
- is positive definite for all 
+ is an inner product for all 
 \begin_inset Formula $w(x)$
 \end_inset
 
@@ -1111,6 +1238,28 @@ caps "false"
 noprefix "false"
 nolink "false"
 
+\end_inset
+
+ and 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\left\Vert \cdot\right\Vert _{w}$
+\end_inset
+
+ is a norm on 
+\begin_inset Formula $C\left(I\right)$
 \end_inset
 
 .
@@ -1134,14 +1283,91 @@ If
 \emph on
 orthogonal
 \emph default
- with respect to the weight function 
-\begin_inset Formula $w$
+ with respect to the inner product 
+\begin_inset Formula $\left\langle \cdot,\cdot\right\rangle _{w}$
 \end_inset
 
 .
 \end_layout
 
-\begin_layout Remark
+\begin_layout Theorem
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Shift Property
+\end_layout
+
+\end_inset
+
+The inner product 
+\begin_inset Formula $\left\langle \cdot,\cdot\right\rangle _{w}$
+\end_inset
+
+ has the property:
+ 
+\begin_inset Formula 
+\[
+\left\langle xu,v\right\rangle _{w}=\left\langle u,xv\right\rangle _{w},\quad\forall u,v\in P_{d}\quad\forall x\in\mathbb{R}.
+\]
+
+\end_inset
+
+i.e.,
+ we say it has the 
+\emph on
+shift property
+\emph default
+.
+\end_layout
+
+\begin_layout Proof
+The shift property holds for an inner product defined by weighted integrals:
+\begin_inset Formula 
+\[
+\left\langle xu,v\right\rangle _{w}=\intop_{I}\left(xu(x)\right)v(x)w(x)\,dx=\intop_{I}u(x)\left(xv(x)\right)w(x)\,dx=\left\langle u,tv\right\rangle _{w}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Normalized polynomials
+\end_layout
+
+\end_inset
+
+For a non-negative integer 
+\begin_inset Formula $d$
+\end_inset
+
+,
+ the set of normalized polynomials with respect to the inner product 
+\begin_inset Formula $\left\langle \cdot,\cdot\right\rangle _{w}$
+\end_inset
+
+ and norm 
+\begin_inset Formula $\left\Vert \cdot\right\Vert _{w}$
+\end_inset
+
+ is defined as 
+\begin_inset Formula 
+\[
+\widetilde{P_{d}}\coloneqq\left\{ \tilde{p}\in P_{d}:\left\Vert \tilde{p}\right\Vert _{w}=1\right\} .
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Given the definition of the weighted inner product 
 \begin_inset Formula $\left\langle \cdot,\cdot\right\rangle _{w}$
 \end_inset
@@ -1150,7 +1376,7 @@ Given the definition of the weighted inner product
  a key objective is the construction of a corresponding sequence of orthogonal polynomials.
  A fundamental theorem guarantees that for such an inner product defined on the space of polynomials,
  there exists an infinite sequence 
-\begin_inset Formula $\{\pi_{k}(x)\}_{k=0}^{\infty}$
+\begin_inset Formula $\left\{ \pi_{k}(x)\right\} _{k=0}^{\infty}$
 \end_inset
 
  of polynomials such that 
@@ -1217,110 +1443,45 @@ Let
  of monic orthogonal polynomials.
 \end_layout
 
-\begin_layout Standard
-\begin_inset Separator plain
-\end_inset
-
-
-\end_layout
-
-\begin_layout Theorem
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Shift Property
-\end_layout
-
-\end_inset
-
-The inner product 
-\begin_inset Formula $\left\langle \cdot,\cdot\right\rangle _{w}$
-\end_inset
-
- has the property:
- 
-\begin_inset Formula 
-\[
-\left\langle tu,v\right\rangle _{w}=\left\langle u,tv\right\rangle _{w},\forall u,v\in P_{d}\forall t\in\mathbb{R}.
-\]
-
-\end_inset
-
-i.e.,
- we say it has the 
-\emph on
-shift property
-\emph default
-.
-\end_layout
-
-\begin_layout Proof
-The shift property holds for an inner product defined by weighted integrals:
-\begin_inset Formula 
-\[
-\left\langle tu,v\right\rangle _{w}=\intop_{I}w(x)\left(tu(x)\right)v(x)\,dx=t\intop_{I}w(x)u(x)v(x)\,dx=\intop_{I}w(x)u(x)\left(tv(x)\right)\,dx=\left\langle u,tv\right\rangle _{w}.
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Definition
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Normalized polynomials
-\end_layout
-
-\end_inset
-
-For a non-negative integer 
-\begin_inset Formula $d$
-\end_inset
-
-,
- the set of normalized polynomials with respect to the inner product 
-\begin_inset Formula $\left\langle \cdot,\cdot\right\rangle _{w}$
-\end_inset
-
- and norm 
-\begin_inset Formula $\left\Vert \cdot\right\Vert _{w}$
-\end_inset
-
- is defined as 
-\begin_inset Formula 
-\[
-\widetilde{P_{d}}\coloneqq\left\{ \tilde{p}\in P_{d}:\left\Vert \tilde{p}\right\Vert _{w}=1\right\} .
-\]
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Section
-Three term recurrence
+Three-term recurrence
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Three-term-recurrence"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Relative to the inner product 
+For any inner product 
 \begin_inset Formula $\left\langle \cdot,\cdot\right\rangle _{w}$
 \end_inset
 
 ,
- there exists a basis for the polynomial space consisting of mutually orthogonal polynomials.
- Leveraging the properties of this inner product,
+ there exists a basis 
+\begin_inset Formula $\left\{ \pi_{k}\right\} _{k=0}^{\infty}$
+\end_inset
+
+ for the polynomial space consisting of mutually orthogonal polynomials.
+ Leveraging the properties of integral inner product,
  specifically the shift property,
- allows for the derivation of the fundamental three-term recurrence relation satisfied by these orthogonal polynomials.
- The coefficients of this recurrence relation are then used to construct a symmetric tridiagonal matrix,
+ allows for the derivation of the three-term recurrence relation for these orthogonal polynomials.
+ The coefficients of this recurrence relation also form a symmetric tridiagonal matrix,
  commonly referred to as the Jacobi matrix associated with the polynomial sequence.
  Crucially,
- the spectral decomposition of this Jacobi matrix provides essential information:
- its eigenvalues correspond precisely to the roots of the orthogonal polynomials,
- and its eigenvectors facilitate the computation of the corresponding orthonormal polynomials and related quantities (such as quadrature weights).
+ the spectral decomposition of Jacobi matrix 
+\begin_inset Formula $J_{n}$
+\end_inset
+
+ provides essential information:
+ its eigenvalues correspond precisely to the roots of the 
+\begin_inset Formula $n$
+\end_inset
+
+-th orthogonal (and orthonormal) polynomial,
+ and its eigenvectors are the previous orthonormal polynomials evaluated at these roots.
  
 \end_layout
 
@@ -1593,7 +1754,7 @@ Since
 :
 \begin_inset Formula 
 \begin{equation}
-xπ_{i}(x)=\sum_{j=0}^{i+1}c_{j}π_{j}(x),\label{eq:Linear combination xpi_i+1}
+x\pi_{i}(x)=\sum_{j=0}^{i+1}c_{j}\pi_{j}(x),\label{eq:Linear combination xpi_i+1}
 \end{equation}
 
 \end_inset
@@ -1615,7 +1776,7 @@ for certain constants
  
 \begin_inset Formula 
 \[
-\left\langle x\pi_{k},\pi_{i}\right\rangle _{w}=\left\langle \pi_{k},x\pi_{i}\right\rangle _{w}=\sum_{j=0}^{i+1}c_{j}\left\langle \pi_{k},π_{j}(x)\right\rangle _{w}=0\quad\forall k>i+1.
+\left\langle x\pi_{k},\pi_{i}\right\rangle _{w}=\left\langle \pi_{k},x\pi_{i}\right\rangle _{w}=\sum_{j=0}^{i+1}c_{j}\left\langle \pi_{k},\pi_{j}\right\rangle _{w}=0,\quad\forall k>i+1.
 \]
 
 \end_inset
@@ -1647,8 +1808,7 @@ which simplifies further to
 
 \end_inset
 
-Now,
- if we define 
+Which yields 
 \begin_inset Formula $\alpha_{k}=\frac{\left\langle x\pi_{k},\pi_{k}\right\rangle _{w}}{\left\langle \pi_{k},\pi_{k}\right\rangle _{w}}$
 \end_inset
 
@@ -1671,6 +1831,7 @@ Now,
 \end_inset
 
 ,
+ i.e.
  we obtain the desired three-term recurrence relation:
 \begin_inset Formula 
 \[
@@ -1850,7 +2011,22 @@ nolink "false"
 \end_layout
 
 \begin_layout Subsection
-Jacobi Matrix
+Jacobi Matrix and it's eigenvalue decomposition
+\end_layout
+
+\begin_layout Standard
+The coefficients can be arranged into a tree diagonal symmetric matrix.
+ This matrix has useful ties to the recurrence itself yielding valuable ties between its eigenvalue decomposition and to the roots of orthogonal polynomials.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+asi zkusit vlastnímy slovy
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Definition
@@ -1967,44 +2143,49 @@ nolink "false"
 \end_layout
 
 \begin_layout Standard
-The spectral decomposition (or eigenvalue decomposition) of the symmetric Jacobi matrix yields its set of eigenvalues and a corresponding matrix whose columns are the associated eigenvectors.
+The spectral decomposition (or eigenvalue decomposition) of the symmetric Jacobi matrix yields its set of real eigenvalues and a corresponding matrix whose columns are the associated eigenvectors.
  Specifically,
  if 
-\begin_inset Formula $J$
+\begin_inset Formula $J_{n}$
 \end_inset
 
- denotes the Jacobi matrix,
+ denotes the 
+\begin_inset Formula $n$
+\end_inset
+
+th Jacobi matrix,
  its spectral decomposition is given by 
-\begin_inset Formula $J=Q\Lambda Q^{T}$
+\begin_inset Formula $J_{n}=Q_{n}\Lambda_{n}Q_{n}^{T}$
 \end_inset
 
 ,
  where 
-\begin_inset Formula $\Lambda$
+\begin_inset Formula $\Lambda_{n}$
 \end_inset
 
  is a diagonal matrix containing the real eigenvalues of 
-\begin_inset Formula $J$
+\begin_inset Formula $J_{n}$
 \end_inset
 
  along its diagonal,
  and 
-\begin_inset Formula $Q$
+\begin_inset Formula $Q_{n}$
 \end_inset
 
- is an orthogonal matrix (
-\begin_inset Formula $Q^{T}Q=QQ^{T}=I$
+ is an orthonormal matrix (
+\begin_inset Formula $Q_{n}^{T}Q_{n}=Q_{n}Q_{n}^{T}=I$
 \end_inset
 
 ) whose columns are the corresponding normalized eigenvectors.
 \end_layout
 
 \begin_layout Standard
-Let 
+For showing the ties between Jacobi matrix and orthonormal polynomial we need to define a vector of othronormal polynomials.
+ For a sequence 
 \begin_inset Formula $\{\tilde{\pi}_{i}(x)\}_{i=0}^{n-1}$
 \end_inset
 
- denote the sequence consisting of the first 
+ consisting of the first 
 \begin_inset Formula $n$
 \end_inset
 
@@ -2012,17 +2193,15 @@ Let
 \begin_inset Formula $\left\langle \cdot,\cdot\right\rangle _{w}$
 \end_inset
 
-,
- where each polynomial 
-\begin_inset Formula $\tilde{\pi}_{i}(x)$
+ (each polynomial 
+\begin_inset Formula $\tilde{\pi}_{i}(x),i=0,\ldots,n-1$
 \end_inset
 
  has degree 
 \begin_inset Formula $i$
 \end_inset
 
-.
- We define the corresponding vector of these orthonormal basis polynomials as:
+) we define the corresponding vector of these orthonormal polynomials as:
  
 \begin_inset Formula 
 \[
@@ -2267,6 +2446,14 @@ This shows that
 .
 \end_layout
 
+\begin_layout Remark
+Note that 
+\begin_inset Formula $\tilde{\boldsymbol{\pi}}(\tau_{j}^{(n)})$
+\end_inset
+
+ are not necessarily normalized polynomials.
+\end_layout
+
 \begin_layout Corollary
 \begin_inset Argument 1
 status open
@@ -2454,38 +2641,32 @@ Rearranging this gives the desired relationship:
 
 \begin_layout Section
 Quadrature rules
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Quadrature-rules"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 Numerical quadrature provides an effective methodology for approximating the value of definite and improper integrals.
+ The integral approximation is calculated as the weighted sum of the integrated function evaluated at the nodes.
  Specifically,
  Gaussian quadrature rules,
  which are intrinsically linked to orthogonal polynomials,
  offer high accuracy.
- This section elucidates the process of deriving the quadrature nodes 
-\begin_inset Formula $\{x_{i}\}_{i=1}^{N}$
+ This section introduces the process of deriving the quadrature nodes 
+\begin_inset Formula $\{\tau_{i}\}_{i=1}^{N}$
 \end_inset
 
  and corresponding weights 
-\begin_inset Formula $\{w_{i}\}_{i=1}^{N}$
+\begin_inset Formula $\{\lambda_{i}\}_{i=1}^{N}$
 \end_inset
 
 .
- These nodes and weights are obtained directly from the spectral information (eigenvalues and first components of normalized eigenvectors) of the Jacobi matrix associated with the three-term recurrence relation of the orthogonal polynomials.
- The integral approximation is then calculated as the weighted sum of the integrand function evaluated at the nodes:
  
-\begin_inset Formula 
-\[
-\intop_{I}f(x)w(x)\,dx\approx\sum_{j=0}^{n-1}\lambda_{j}f(\tau_{j}).
-\]
-
-\end_inset
-
-where 
-\begin_inset Formula $w(x)$
-\end_inset
-
- is the weight function associated with the inner product and orthogonal polynomials.
 \end_layout
 
 \begin_layout Definition
@@ -2508,7 +2689,7 @@ A quadrature rule is a set of weights
 
 ,
  
-\begin_inset Formula $j=0,1,\ldots,n-1$
+\begin_inset Formula $j=1,2,\ldots,n$
 \end_inset
 
 ,
@@ -2516,7 +2697,7 @@ A quadrature rule is a set of weights
  
 \begin_inset Formula 
 \[
-\intop_{I}f(x)w(x)\,dx\approx\sum_{j=0}^{n-1}\lambda_{j}f(\tau_{j}).
+\intop_{I}f(x)w(x)\,dx\approx\sum_{j=1}^{n}\lambda_{j}f(\tau_{j}).
 \]
 
 \end_inset
@@ -2564,7 +2745,7 @@ Consider a quadrature rule for approximating weighted integral
 \end_inset
 
  distinct nodes 
-\begin_inset Formula $\tau_{0},\ldots,\tau_{n-1}$
+\begin_inset Formula $\tau_{1},\ldots,\tau_{n}$
 \end_inset
 
 ,
@@ -2775,6 +2956,13 @@ If both conditions hold,
 
 \begin_layout Section
 Golub-Welsch algorithm
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Golub-Welsch-algorithm"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -3147,6 +3335,13 @@ nolink "false"
 
 \begin_layout Section
 Generalization of Legendre polynomials
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Generalization-of-Legendre"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Remark
