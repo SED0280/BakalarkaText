@@ -2153,7 +2153,7 @@ The spectral decomposition (or eigenvalue decomposition) of the symmetric Jacobi
 \begin_inset Formula $n$
 \end_inset
 
-th Jacobi matrix,
+-th Jacobi matrix,
  its spectral decomposition is given by 
 \begin_inset Formula $J_{n}=Q_{n}\Lambda_{n}Q_{n}^{T}$
 \end_inset
@@ -3345,6 +3345,12 @@ name "sec:Generalization-of-Legendre"
 \end_layout
 
 \begin_layout Remark
+\begin_inset CommandInset label
+LatexCommand label
+name "rem:affine_generalization_of_Legendre"
+
+\end_inset
+
 Orthogonal Legendre polynomials denoted as 
 \begin_inset Formula $\pi_{i}^{L}(x)$
 \end_inset
@@ -3626,6 +3632,13 @@ literal "false"
 \end_inset
 
 
+\begin_inset CommandInset label
+LatexCommand label
+name "quad_weights_equation"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -3728,18 +3741,215 @@ Let
 \end_layout
 
 \begin_layout Proof
-\begin_inset Formula $\pi^{L}(\tau_{i}^{L})=0,\,\pi(\tau_{i})=0,\,\pi_{i}(x)=\pi_{i}^{L}\left(\frac{a+b}{a-b}+\frac{2}{b-a}x\right)\quad\Longrightarrow\;\pi^{L}\left(\frac{a+b}{a-b}+\frac{2}{b-a}\tau_{i}\right)=0\;\Longrightarrow\;\tau_{i}^{L}=\frac{a+b}{a-b}+\frac{2}{b-a}\tau_{i}\;\Longrightarrow\;\frac{a+b}{2}+\frac{b-a}{2}\tau_{i}^{L}=\tau_{i}$
+Let 
+\begin_inset Formula $\tau_{i}^{L}$
+\end_inset
+
+ be the roots of the 
+\begin_inset Formula $n$
+\end_inset
+
+-th degree Legendre polynomial 
+\begin_inset Formula $\pi_{n}^{L}$
+\end_inset
+
+,
+ then
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\begin_inset Formula $\pi^{L}(\tau_{i}^{L})=0$
 \end_inset
 
 
-\end_layout
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ for all 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
 
-\begin_layout Proof
+\begin_inset Formula $i=0,\ldots,n-1$
+\end_inset
+
+.
+ From Remark 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "rem:affine_generalization_of_Legendre"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ we have the 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+polynomial
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\begin_inset Formula $\pi_{n}(x)=\pi_{n}^{L}\left(\frac{a+b}{a-b}+\frac{2}{b-a}x\right)\sqrt{\frac{2}{b-a}}$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+.
+ The roots 
+\begin_inset Formula $\tau_{i}$
+\end_inset
+
+ of the polynomial 
+\begin_inset Formula $\pi_{n}$
+\end_inset
+
+ must satisfy 
+\begin_inset Formula $\pi_{n}(\tau_{i})=0$
+\end_inset
+
+.
+ This implies:
+\begin_inset Formula 
+\[
+\pi_{n}^{L}\left(\frac{a+b}{a-b}+\frac{2}{b-a}\tau_{i}\right)=0.
+\]
+
+\end_inset
+
+Since 
+\begin_inset Formula $\tau_{i}^{L}$
+\end_inset
+
+ are the roots of 
+\begin_inset Formula $\pi_{n}^{L}$
+\end_inset
+
+,
+ we must have:
+ 
+\begin_inset Formula 
+\[
+\tau_{i}^{L}=\frac{a+b}{a-b}+\frac{2}{b-a}\tau_{i}\;\Longrightarrow\;\frac{a+b}{2}+\frac{b-a}{2}\tau_{i}^{L}=\tau_{i}.
+\]
+
+\end_inset
+
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+If we then utilize this substitution in Theorem 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "quad_weights_equation"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ we get:
 \begin_inset Formula 
 \begin{eqnarray*}
-\lambda_{j} & = & \frac{\intop_{a}^{b}\prod_{i\neq j,i=0}^{n-1}\left(x-\tau_{i}\right)\,dx}{\prod_{i\neq j,i=0}^{n-1}\left(\tau_{j}-\tau_{i}\right)}=\frac{\int_{a}^{b}\prod_{i\neq j,i=0}^{n-1}\left(x-\frac{a+b}{2}-\frac{b-a}{2}\tau_{i}^{L}\right)\,dx}{\prod_{i\neq j,i=0}^{n-1}\left(\frac{a+b}{2}+\frac{b-a}{2}\tau_{j}^{L}-\frac{a+b}{2}-\frac{b-a}{2}\tau_{i}^{L}\right)}=\\
- & = & \frac{\int_{-1}^{1}\frac{b-a}{2}\prod_{i\neq j,i=0}^{n-1}\left(\frac{a+b}{2}+\frac{b-a}{2}\hat{x}-\frac{a+b}{2}-\frac{b-a}{2}\tau_{i}^{L}\right)\,d\hat{x}}{\prod_{i\neq j,i=0}^{n-1}\left(\frac{b-a}{2}\left(\tau_{j}^{L}-\tau_{i}^{L}\right)\right)}=\frac{\left(\frac{b-a}{2}\right)^{n}\int_{-1}^{1}\prod_{i\neq j,i=0}^{n-1}\left(\hat{x}-\tau_{i}^{L}\right)\,d\hat{x}}{\left(\frac{b-a}{2}\right)^{n-1}\prod_{i\neq j,i=0}^{n-1}\left(\tau_{j}^{L}-\tau_{i}^{L}\right)}=\\
- & = & \frac{b-a}{2}\,\frac{\int_{-1}^{1}\prod_{i\neq j,i=0}^{n-1}\left(\hat{x}-\tau_{i}^{L}\right)\,d\hat{x}}{\prod_{i\neq j,i=0}^{n-1}\left(\tau_{j}^{L}-\tau_{i}^{L}\right)}=\frac{b-a}{2}\lambda_{j}^{L}
+\lambda_{j} & = & \frac{\intop_{a}^{b}\prod_{i\neq j,i=0}^{n-1}\left(x-\tau_{i}\right)\,dx}{\prod_{i\neq j,i=0}^{n-1}\left(\tau_{j}-\tau_{i}\right)}=\\
+ & = & \frac{\int_{a}^{b}\prod_{i\neq j,i=0}^{n-1}\left(x-\frac{a+b}{2}-\frac{b-a}{2}\tau_{i}^{L}\right)\,dx}{\prod_{i\neq j,i=0}^{n-1}\left(\frac{a+b}{2}+\frac{b-a}{2}\tau_{j}^{L}-\frac{a+b}{2}-\frac{b-a}{2}\tau_{i}^{L}\right)}=\\
+ & = & \frac{\int_{-1}^{1}\frac{b-a}{2}\prod_{i\neq j,i=0}^{n-1}\left(\frac{a+b}{2}+\frac{b-a}{2}\hat{x}-\frac{a+b}{2}-\frac{b-a}{2}\tau_{i}^{L}\right)\,d\hat{x}}{\prod_{i\neq j,i=0}^{n-1}\left(\frac{b-a}{2}\left(\tau_{j}^{L}-\tau_{i}^{L}\right)\right)}=\\
+ & = & \frac{\left(\frac{b-a}{2}\right)^{n}\int_{-1}^{1}\prod_{i\neq j,i=0}^{n-1}\left(\hat{x}-\tau_{i}^{L}\right)\,d\hat{x}}{\left(\frac{b-a}{2}\right)^{n-1}\prod_{i\neq j,i=0}^{n-1}\left(\tau_{j}^{L}-\tau_{i}^{L}\right)}=\\
+ & = & \frac{b-a}{2}\,\frac{\int_{-1}^{1}\prod_{i\neq j,i=0}^{n-1}\left(\hat{x}-\tau_{i}^{L}\right)\,d\hat{x}}{\prod_{i\neq j,i=0}^{n-1}\left(\tau_{j}^{L}-\tau_{i}^{L}\right)}=\\
+ & = & \frac{b-a}{2}\lambda_{j}^{L}
 \end{eqnarray*}
 
 \end_inset
@@ -3748,11 +3958,145 @@ Let
 \end_layout
 
 \begin_layout Section
-Numerical experiments and examples
+Numerical experiments
 \end_layout
 
 \begin_layout Standard
-(add numeric experiments with pictures and graphs)
+At the start of my code I create the Legendre polynomials with the help of the three-term recurrence 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "thm:3-term-recurrence"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+ The first seven Legendre polynomials can be seen in the following graph:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Graphs/Legendre.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Normalized Legendre polynomials are made from 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "thm:normal-3-term-recurrence"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Graphs/LegendreNorm.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Next I tried to move them to somewhere else (how do I say this?) like in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "rem:affine_generalization_of_Legendre"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+ Since these polynomials are orthonormal with respect to an inner product with interval 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\left\langle -1,1\right\rangle $
+\end_inset
+
+ and lets say we want some 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+orthonormal polynomials with respect to an inner product with interval 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\left\langle a,b\right\rangle $
+\end_inset
+
+.
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ For example I tried to make it where 
+\begin_inset Formula $a=3$
+\end_inset
+
+ and 
+\begin_inset Formula $b=15$
+\end_inset
+
+:
 \end_layout
 
 \begin_layout Chapter
