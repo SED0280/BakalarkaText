@@ -5217,37 +5217,12 @@ Let
 \begin_inset Formula $\varSigma$
 \end_inset
 
-,
+:
+\begin_inset Formula 
+\[
+\mu\left(\bigcup_{i}A_{i}\right)=\sum_{i}\mu\left(A_{i}\right)
+\]
 
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\nospellcheck off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
- 
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\nospellcheck default
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-
-\begin_inset Formula $\mu\left(\bigcup_{i}A_{i}\right)=\sum_{i}\mu\left(A_{i}\right)$
 \end_inset
 
 .
@@ -5460,6 +5435,14 @@ A probability space is a triple
 Stochastic processes and random fields
 \end_layout
 
+\begin_layout Standard
+This section defines stochastic processes and random fields,
+ we will work only with real-valued variables.
+ Further on,
+ we discuss the covariance and the autocovariance function.
+ The section concludes by explaining the meaning of stationarity for a stochastic process.
+\end_layout
+
 \begin_layout Definition
 \begin_inset Argument 1
 status open
@@ -5521,7 +5504,7 @@ For a probability space
 \begin_inset Formula $X:\mathcal{F}\rightarrow\mathbb{R}$
 \end_inset
 
- is called a 
+ is called a real-valued 
 \emph on
 random variable
 \emph default
@@ -5571,8 +5554,7 @@ A random vector
 \begin_inset Formula $X_{i},i=1,2,\ldots,n$
 \end_inset
 
-,
- are random variable.
+ are random variables.
 \end_layout
 
 \begin_layout Standard
@@ -5631,11 +5613,11 @@ stochastic process
 \end_inset
 
 .
- 
+ The stochastic process can also be viewed as a map 
 \begin_inset Formula $\Omega\rightarrow L^{2}\left(\mathcal{T}\right)$
 \end_inset
 
-
+.
 \end_layout
 
 \begin_layout Standard
@@ -5676,21 +5658,26 @@ status collapsed
 
 \end_inset
 
-A 
-\emph on
-random field
-\emph default
- 
-\begin_inset Formula $\left\{ u(\boldsymbol{x}):\boldsymbol{x}\in D\right\} $
-\end_inset
-
-,
- where 
+Given a set 
 \begin_inset Formula $D\subset\mathbb{R}^{d}$
 \end_inset
 
- is a collection of real-valued random variables defined on a probability space 
-\begin_inset Formula $\left(\Omega,\mathcal{F},\mathbb{P}\right)$
+ and a probability space 
+\begin_inset Formula $(\Omega,\mathcal{F},\mathbb{P})$
+\end_inset
+
+,
+ a real-valued 
+\emph on
+random field
+\emph default
+ is a collection of real-valued random variables 
+\begin_inset Formula $\left\{ u(\boldsymbol{x}):\boldsymbol{x}\in D\right\} $
+\end_inset
+
+.
+ The random field can also be viewed as a map 
+\begin_inset Formula $\Omega\rightarrow L^{2}\left(D\right)$
 \end_inset
 
 .
@@ -5821,7 +5808,7 @@ The autocovariance function
 \begin_inset Formula $C\left(s,t\right)$
 \end_inset
 
- of a stochastic process 
+ of a stochastic process or random field 
 \begin_inset Formula $\left\{ X\left(t\right):t\in\mathcal{T}\right\} $
 \end_inset
 
@@ -5841,14 +5828,15 @@ for all
 \end_layout
 
 \begin_layout Standard
-We will assume that the expected value will be equal to 0,
+For simplicity we will assume that the expected value will be a constant zero function,
  i.e.,
+ 
 \begin_inset Formula $\mathbb{E}\left[X\right]=0$
 \end_inset
 
 .
- If this is not the case,
- instead consider stochastic process 
+ Note that if this is not the case,
+ we can instead consider stochastic process 
 \begin_inset Formula $\left\{ Y\left(t\right):t\in\mathcal{T}\right\} $
 \end_inset
 
@@ -5862,7 +5850,7 @@ We will assume that the expected value will be equal to 0,
 \begin_inset Formula $Y$
 \end_inset
 
- will be 0.
+ would be zero.
 \end_layout
 
 \begin_layout Definition
@@ -5932,10 +5920,6 @@ C\left(s,t\right)=C\left(s-t,0\right)\eqqcolon c\left(s-t\right),
  is known as the stationary covariance function.
 \end_layout
 
-\begin_layout Section
-Isotropic Random Field
-\end_layout
-
 \begin_layout Definition
 \begin_inset Argument 1
 status open
@@ -5987,8 +5971,14 @@ A random field
  known as the isotropic covariance.
 \end_layout
 
-\begin_layout Section
-Gaussian Random Field
+\begin_layout Standard
+The main focus here will be random fields 
+\begin_inset Formula $X(t)$
+\end_inset
+
+ with Gaussian distribution,
+ i.e.
+ Gaussian random fields.
 \end_layout
 
 \begin_layout Definition
@@ -6005,7 +5995,7 @@ A random variable
 \begin_inset Formula $X$
 \end_inset
 
- is said to have the Gaussian (or normal) distributionwith mean 
+ is said to have the Gaussian (or normal) distribution with mean 
 \begin_inset Formula $\mu\in\mathbb{R}$
 \end_inset
 
@@ -6038,6 +6028,79 @@ We denote this by
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Gaussian vector
+\end_layout
+
+\end_inset
+
+A random vector 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\mathbb{X}\coloneqq\left(X_{1},X_{2},\ldots,X_{n}\right)$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ is said to be a Gaussian vector if there exists 
+\begin_inset Formula $\mu\in\mathbb{R}^{n}$
+\end_inset
+
+ and 
+\begin_inset Formula $A\in\mathbb{R}^{n\times m}$
+\end_inset
+
+ such that 
+\begin_inset Formula $\mathbb{X}=\mu+A\mathbb{Y}$
+\end_inset
+
+ where 
+\begin_inset Formula $\mathbb{Y}$
+\end_inset
+
+ is an 
+\begin_inset Formula $m$
+\end_inset
+
+-dimensional random vector whose components are independent and have the Gaussian distribution.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -6110,7 +6173,16 @@ A Gaussian random field (GRF)
 \end_layout
 
 \begin_layout Section
-Numerical experiments
+Autocovariance functions
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Graphs/CovarianceFunctions.png
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Chapter
@@ -6119,24 +6191,25 @@ Karhunen-Loève expansion
 
 \begin_layout Standard
 This section addresses the Karhunen-Loève (KL) expansion,
- specifically focusing on its application to Isotropic Gaussian Random Fields for which we will consider the expected value will be equal to 0,
+ specifically focusing on its application to Isotropic Gaussian Random Fields for which we will consider the expected value will be constant zero function,
  i.e.,
+ 
 \begin_inset Formula $\mathbb{E}\left[X\right]=0$
 \end_inset
 
  .
  Subsequently,
- a numerical approximation of the KL expansion is pursued using the Galerkin method.
- The implementation of this method involves the computation of integrals over the specified multi-dimensional domain 
-\begin_inset Formula $\mathcal{T}$
-\end_inset
-
-.
+ a numerical approximation of the KL expansion is computed using the Galerkin method.
  Gaussian quadrature techniques are employed for the efficient numerical evaluation of these integrals.
  The determination of the eigenfunctions and eigenvalues required for the KL expansion inherently corresponds to solving an integral eigenvalue problem,
  which is conceptually equivalent to the spectral decomposition of the covariance operator associated with the random field.
  The Galerkin procedure provides a means to discretize this problem,
  leading to a matrix eigenvalue problem.
+ The main computational part of this method consists of integrals over the specified multi-dimensional domain 
+\begin_inset Formula $\mathcal{T}$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Theorem
@@ -6153,22 +6226,13 @@ Let
 \begin_inset Formula $X(t)$
 \end_inset
 
- be a Gaussian random field and 
-\begin_inset Formula $\mu(t)=\mathbb{E}[X(t)]=0$
-\end_inset
-
-.
- Consider the mean-zero process 
-\begin_inset Formula $X(t)-\mu(t)$
-\end_inset
-
-.
+ be a zero mean Gaussian random field.
  We are interested in expressing the sample paths 
-\begin_inset Formula $X(t,\omega)-\mu(t)$
+\begin_inset Formula $X(t,\omega)$
 \end_inset
 
  as a series in an orthonormal basis 
-\begin_inset Formula $\{\phi_{j}:j\in\mathbb{N}\}$
+\begin_inset Formula $\{\tilde{\pi}_{j}:j\in\mathbb{N}\}$
 \end_inset
 
  of 
@@ -6179,7 +6243,7 @@ Let
  That is,
 \begin_inset Formula 
 \[
-X(t,\omega)-\mu(t)=\sum_{j=1}^{\infty}\gamma_{j}(\omega)\sqrt{\lambda_{j}}\psi_{j}(t),
+X(t,\omega)=\sum_{j=1}^{\infty}\gamma_{j}(\omega)\sqrt{\lambda_{j}}\psi_{j}(t),
 \]
 
 \end_inset
@@ -6191,7 +6255,7 @@ where the coefficients
  are random variables defined by
 \begin_inset Formula 
 \[
-\gamma_{j}(\omega)\coloneqq\langle X(t,\omega)-\mu(t),\phi_{j}(t)\rangle_{L^{2}(\mathcal{T})}
+\gamma_{j}(\omega)\coloneqq\langle X(t,\omega),\tilde{\pi}_{j}(t)\rangle_{L^{2}(\mathcal{T})}
 \]
 
 \end_inset
@@ -6200,7 +6264,7 @@ and
 \begin_inset Formula $\left(\lambda_{j},\psi_{j}\right)$
 \end_inset
 
- are eigenpairs of the auto covariance operator 
+ are eigenpairs of the autocovariance operator 
 \begin_inset Formula $C$
 \end_inset
 
@@ -6333,10 +6397,44 @@ We want to approximate eigenpairs
 \uwave off
 \noun off
 \color none
- of
+ of C,
+ i.e.
+ find 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+
+\begin_inset Formula $\left(\lambda_{i},u_{i}\right)$
+\end_inset
+
+such
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
 \begin_inset Formula 
 \begin{equation}
-\left(Cu_{i}\right)\left(x\right)\coloneqq\intop_{\mathcal{T}}c\left(x,y\right)u_{i}\left(y\right)dy=\lambda_{i}u_{i}\left(x\right)\quad\forall\boldsymbol{x}\in\mathcal{T}.\label{eq:eigenproblem}
+\left(Cu_{i}\right)\left(\boldsymbol{x}\right)\coloneqq\intop_{\mathcal{T}}c\left(\boldsymbol{x},\boldsymbol{y}\right)u_{i}\left(\boldsymbol{y}\right)d\boldsymbol{y}=\lambda_{i}u_{i}\left(\boldsymbol{x}\right)\quad\forall\boldsymbol{x}\in\mathcal{T}.\label{eq:eigenproblem}
 \end{equation}
 
 \end_inset
@@ -6344,21 +6442,19 @@ We want to approximate eigenpairs
 
 \end_layout
 
-\begin_layout Subsection
-Galerkin method
+\begin_layout Section
+The Galerkin method for approximation of eigenpairs of autocovariance operator
 \end_layout
 
 \begin_layout Standard
 The Galerkin method is employed to compute approximations of the desired eigenpairs 
-\begin_inset Formula $\left(\lambda,u\right)$
+\begin_inset Formula $\left(\lambda_{i},u_{i}\right)$
 \end_inset
 
 .
- Alternatively,
- reflecting the process more explicitly:
- Application of the Galerkin procedure discretizes the underlying operator eigenvalue problem,
+ the Galerkin approach discretizes the underlying operator eigenvalue problem,
  resulting in a matrix eigenvalue problem whose solutions provide the approximate eigenpairs 
-\begin_inset Formula $\left(\lambda,u\right)$
+\begin_inset Formula $\left(\lambda_{i},u_{i}\right)$
 \end_inset
 
 .
@@ -6402,7 +6498,7 @@ Let us consider a subspace
 \noun default
 \color inherit
 
-\begin_inset Formula $\left\{ \psi_{j}\left(\boldsymbol{x}\right)\right\} _{j=0}^{N-1}$
+\begin_inset Formula $\left\{ \psi_{j}\left(\boldsymbol{x}\right)\right\} _{j=0}^{N}$
 \end_inset
 
 .
@@ -6432,7 +6528,7 @@ Let us consider a subspace
 
 \begin_inset Formula 
 \begin{equation}
-u_{i,N}=\sum_{j=0}^{n-1}\overline{u}_{i,j}\psi_{j}.\label{eq:u_approximation}
+u_{i,N}=\sum_{j=0}^{N}\overline{u}_{i,j}\psi_{j}.\label{eq:u_approximation}
 \end{equation}
 
 \end_inset
@@ -6451,7 +6547,7 @@ u_{i,N}=\sum_{j=0}^{n-1}\overline{u}_{i,j}\psi_{j}.\label{eq:u_approximation}
 \uwave default
 \noun default
 \color inherit
-Substituting the approximation 
+Next we substitute the approximation 
 \begin_inset Formula $u_{i,N}$
 \end_inset
 
@@ -6470,8 +6566,8 @@ nolink "false"
 
 \end_inset
 
- and applying the Galerkin method,
- meaning
+ and apply the Galerkin method.
+ This involves testing
 \family roman
 \series medium
 \shape up
@@ -6485,7 +6581,46 @@ nolink "false"
 \uwave off
 \noun off
 \color none
- we multiply both sides by a base function 
+ the resulting expression with the basis functions 
+\begin_inset Formula $\psi_{k}$
+\end_inset
+
+ in the Galerkin sense,
+ i.e.,
+ integrating the residual against 
+\begin_inset Formula $\psi_{k}$
+\end_inset
+
+ over the domain 
+\begin_inset Formula $\mathcal{T}$
+\end_inset
+
+ with respect to 
+\begin_inset Formula $\boldsymbol{x}$
+\end_inset
+
+.
+ We arrive at the corresponding weak formulation:
+ 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+multiply both sides by a base function 
 \begin_inset Formula $\psi_{k}$
 \end_inset
 
@@ -6498,10 +6633,15 @@ nolink "false"
 \end_inset
 
 ,
- we then obtain a weak formulation 
+ we then obtain a weak formulation
+\end_layout
+
+\end_inset
+
+ 
 \begin_inset Formula 
 \begin{equation}
-\sum_{j=0}^{n-1}\overline{u}_{i,j}\intop_{\mathcal{T}}\intop_{\mathcal{T}}\psi_{k}\left(\boldsymbol{y}\right)c\left(\boldsymbol{x},\boldsymbol{y}\right)\psi_{j}\left(\boldsymbol{x}\right)d\boldsymbol{x}d\boldsymbol{y}.=\lambda_{i,N}^{n}\sum_{j=0}^{n-1}\overline{u}_{i,j}\intop_{\mathcal{T}}\psi_{k}\left(\boldsymbol{x}\right)\psi_{j}\left(\boldsymbol{x}\right)d\boldsymbol{x},\quad\forall k\in\left\{ 0,\ldots,n-1\right\} ,\label{eq:weak_Galerkin}
+\sum_{j=0}^{N}\overline{u}_{i,j}\intop_{\mathcal{T}}\intop_{\mathcal{T}}\psi_{k}\left(\boldsymbol{y}\right)c\left(\boldsymbol{x},\boldsymbol{y}\right)\psi_{j}\left(\boldsymbol{x}\right)d\boldsymbol{x}d\boldsymbol{y}.=\lambda_{i,N}^{n}\sum_{j=0}^{N}\overline{u}_{i,j}\intop_{\mathcal{T}}\psi_{k}\left(\boldsymbol{x}\right)\psi_{j}\left(\boldsymbol{x}\right)d\boldsymbol{x},\quad\forall k\in\left\{ 0,\ldots,N\right\} ,\label{eq:weak_Galerkin}
 \end{equation}
 
 \end_inset
@@ -6529,9 +6669,9 @@ where
 \end_inset
 
 .
- This can be rewritten in matrix form.
+ This can be rewritten in a matrix form.
  Let 
-\begin_inset Formula $\overline{\boldsymbol{u}}_{i}=[\overline{u}_{i,0},\dots,\overline{u}_{i,N-1}]^{T}$
+\begin_inset Formula $\overline{\boldsymbol{u}}_{i}=\left[\overline{u}_{i,0},\dots,\overline{u}_{i,N}\right]^{T}$
 \end_inset
 
  be the vector representation of the Galerkin approximation 
@@ -6681,6 +6821,40 @@ If the kernel
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Section
+Numeric experiments
+\end_layout
+
+\begin_layout Standard
+we have graphs of eigenvalues and eigenfunctions from the 1D Karhunen-Loève:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Graphs/eigenvalues.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Graphs/Eigenfunctions.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+then I need to make graphs of the error of exp covariance on log-lin graph.
+\end_layout
+
+\begin_layout Standard
+another thing I need to make is residuum for eigenvalues and eigenvector
 \end_layout
 
 \begin_layout Standard
