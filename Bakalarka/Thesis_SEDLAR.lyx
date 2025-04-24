@@ -3404,15 +3404,15 @@ name "rem:affine_generalization_of_Legendre"
 
 \end_inset
 
-Orthogonal Legendre polynomials denoted as 
+Let the orthogonal polynomials denoted by 
 \begin_inset Formula $\pi_{i}^{L}(x)$
 \end_inset
 
- are defined with respect to the inner product over the interval 
+ (the Legendre polynomials) be defined with respect to the inner product over the interval 
 \begin_inset Formula $I^{L}=\left\langle -1,1\right\rangle $
 \end_inset
 
- and the weight function 
+ with the weight function 
 \begin_inset Formula $w(x)=1$
 \end_inset
 
@@ -3431,7 +3431,7 @@ Orthogonal Legendre polynomials denoted as
 \end_inset
 
 .
- For the inner product defined over interval 
+ For the inner product defined over the interval 
 \begin_inset Formula $I$
 \end_inset
 
@@ -3786,7 +3786,7 @@ Let
 \begin_inset Formula $\tau_{i}=\frac{a+b}{2}+\frac{b-a}{2}\tau_{i}^{L}$
 \end_inset
 
- and weights are 
+ and the weights are 
 \begin_inset Formula $\lambda_{i}=\frac{b-a}{2}\lambda_{i}^{L}$
 \end_inset
 
@@ -4225,12 +4225,17 @@ Probability
 \end_layout
 
 \begin_layout Standard
-This chapter commences with the formal definition of the Hilbert space 
+This chapter starts with an introduction to the Hilbert space 
 \begin_inset Formula $L^{2}(I)$
 \end_inset
 
-,
- constructed as the completion of the space of continuous functions 
+.
+ To keep the thesis approachable,
+ we constructed 
+\begin_inset Formula $L^{2}(I)$
+\end_inset
+
+ as a completion of the space of continuous functions 
 \begin_inset Formula $C(I)$
 \end_inset
 
@@ -4243,8 +4248,8 @@ This chapter commences with the formal definition of the Hilbert space
 \end_inset
 
 .
- Subsequently,
- fundamental concepts from probability theory are introduced.
+ After this,
+ key ideas from probability theory are introduced.
  This includes foundational elements of measure theory,
  the axiomatic definition of a probability space,
  and the concept of expected value.
@@ -4758,6 +4763,7 @@ Consider a probability space
 \end_inset
 
 .
+ 
 \begin_inset Formula $\Omega$
 \end_inset
 
@@ -4767,9 +4773,7 @@ Consider a probability space
  In general,
  the sample space is an abstract set,
  one large enough to parameterize all possible outcomes of the experiment.
-\end_layout
-
-\begin_layout Standard
+ 
 \begin_inset Formula $\mathcal{F}$
 \end_inset
 
@@ -4799,10 +4803,7 @@ event
 \emph default
 .
  Each event corresponds to a set of outcomes in the experiment.
-\end_layout
-
-\begin_layout Standard
-The probability measure 
+ The probability measure 
 \begin_inset Formula $\mathbb{P}$
 \end_inset
 
@@ -4825,9 +4826,9 @@ We can consider rolls of dice as an example of probability space
 \begin_inset Formula $\Omega=\left\{ 1,2,3,4,5,6\right\} $
 \end_inset
 
- and,
- in a sequence of M rolls,
- 
+.
+ For a sequence of M rolls,
+ the sample space is 
 \begin_inset Formula $\Omega=\left\{ 1,2,3,4,5,6\right\} ^{M}$
 \end_inset
 
@@ -4889,7 +4890,7 @@ status open
 
 \end_inset
 
-For a space 
+For a set 
 \family roman
 \series medium
 \shape up
@@ -4959,7 +4960,7 @@ algebra if and only if it satisfies the following axioms:
 \begin_inset Formula $\Omega\in\mathcal{F}$
 \end_inset
 
-
+,
 \end_layout
 
 \begin_layout Definition
@@ -4986,7 +4987,7 @@ algebra if and only if it satisfies the following axioms:
 \begin_inset Formula $\Omega\setminus A$
 \end_inset
 
-)
+),
 \end_layout
 
 \begin_layout Definition
@@ -5212,36 +5213,16 @@ Let
 \begin_inset Formula $\left\{ A_{i}\right\} $
 \end_inset
 
- of pairwise disjoint sets in
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\nospellcheck off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
- 
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\nospellcheck default
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
+ of pairwise disjoint sets in 
+\begin_inset Formula $\varSigma$
+\end_inset
 
-\begin_inset Formula $\varSigma,\quad\mu\left(\bigcup_{i}A_{i}\right)=\sum_{i}\mu\left(A_{i}\right)$
+:
+\begin_inset Formula 
+\[
+\mu\left(\bigcup_{i}A_{i}\right)=\sum_{i}\mu\left(A_{i}\right)
+\]
+
 \end_inset
 
 .
