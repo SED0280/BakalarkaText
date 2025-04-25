@@ -334,10 +334,8 @@ Polynomials
 \end_layout
 
 \begin_layout Standard
-This section defines various types of polynomials.
- For example orthogonal polynomials are going to be important further on.
- They are defined by a property that the inner product of any two distinct orthogonal polynomials within a sequence is zero.
- The inner product employed throughout this work is defined via integration over a specified interval 
+This section is devoted to introduction of orthogonal polynomials with respect to given inner products.
+ The inner products considered throughout this work is defined via integration over a specified interval 
 \begin_inset Formula $I$
 \end_inset
 
@@ -354,7 +352,8 @@ This section defines various types of polynomials.
  The eigenpairs of this Jacobi matrix provide a direct method for determining the roots of the orthogonal polynomials.
  The chapter concludes with a discussion on Gaussian quadrature rules,
  which utilize the roots of orthogonal polynomials as nodes and derived values as weights for numerical integration.
- The eigenvalue (spectral) decomposition of the aforementioned Jacobi matrix yields via Golub-Welsch algorithm 
+ The eigenvalue (spectral) decomposition of the aforementioned Jacobi matrix yields,
+ via Golub-Welsch algorithm 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "GolubWelsch1969"
@@ -362,8 +361,10 @@ literal "false"
 
 \end_inset
 
+,
  these quadrature nodes and weights.
- For Legendre polynomials we also show how to extend them over a finite interval with the use of a simple affine change of variables.
+ For Legendre polynomials,
+ we also show how to extend them over a finite interval with the use of a simple affine transformation of variables.
 \begin_inset Note Note
 status collapsed
 
@@ -460,7 +461,7 @@ nolink "false"
 
 \end_inset
 
- focuses on Legendre polynomials and their affine generalisations.
+ focuses on Legendre polynomials and their affine generalizations.
 \end_layout
 
 \begin_layout Standard
@@ -504,7 +505,7 @@ name "sec:Polynomials-of-real"
 \end_layout
 
 \begin_layout Standard
-The scope of this study is confined to polynomials with real coefficients and a real variable.
+The scope of this study is confined to polynomials with real coefficients and of a real variable.
  A polynomial is considered as monic if its leading coefficient is equal to one.
  Specifically,
  a polynomial 
@@ -621,20 +622,29 @@ name "sec:Weighted-Inner-product"
 \end_layout
 
 \begin_layout Standard
-The analysis considered here considers a weighted inner product.
- To establish this rigorously,
- we initially define a strictly positive continuous weight function 
+In this thesis we constraint ourselves to continuous weight functions,
+ instead of the more general approach considering general measures as in 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Gautschi2004"
+literal "false"
+
+\end_inset
+
+.
+ To define a weighted inner product properly,
+ we first define a strictly positive continuous weight function 
 \begin_inset Formula $w(x)$
 \end_inset
 
- on a closed interval and a corresponding symmetric bilinear form,
- denoted as 
+ on a closed interval and the related symmetric bilinear form,
+ denoted 
 \begin_inset Formula $\left\langle \cdot,\cdot\right\rangle _{w}$
 \end_inset
 
 .
  It is demonstrated that this form is positive definite,
- i.e.
+ i.e.,
  it is a weighted inner product.
  For clarity and conciseness in the subsequent parts,
  the primary focus will be restricted to the specific case defined over the interval 
@@ -1897,7 +1907,7 @@ name "thm:normal-3-term-recurrence"
 \begin_inset Formula $k=0,1,2,\ldots,$
 \end_inset
 
- be series of orthonormal polynomials.
+ be a series of orthonormal polynomials.
  Then,
 \begin_inset Formula 
 \[
@@ -1909,7 +1919,7 @@ name "thm:normal-3-term-recurrence"
 
 \begin_inset Formula 
 \[
-\tilde{\pi}_{-1}(x)=0,\tilde{\pi}_{0}(x)=1/\sqrt{\beta_{0}},
+\tilde{\pi}_{-1}(x)=0,\quad\tilde{\pi}_{0}(x)=1/\sqrt{\beta_{0}},
 \]
 
 \end_inset
@@ -1923,6 +1933,7 @@ where
 \begin_inset Formula $\beta_{k}$
 \end_inset
 
+,
  and 
 \begin_inset Formula $\beta_{0}$
 \end_inset
@@ -2023,18 +2034,8 @@ Jacobi Matrix and it's eigenvalue decomposition
 \end_layout
 
 \begin_layout Standard
-The coefficients can be arranged into a tree diagonal symmetric matrix.
+The coefficients of three-term recurrence can be arranged into a three diagonal symmetric matrix.
  This matrix has useful ties to the recurrence itself yielding valuable ties between its eigenvalue decomposition and to the roots of orthogonal polynomials.
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-asi zkusit vlastnímy slovy
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Definition
@@ -2113,6 +2114,15 @@ status open
 
 \begin_layout Plain Layout
 Roots of monic polynomials
+\begin_inset CommandInset citation
+LatexCommand cite
+after "pg. 7"
+key "Gautschi2004"
+literal "false"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2151,7 +2161,11 @@ nolink "false"
 \end_layout
 
 \begin_layout Standard
-The spectral decomposition (or eigenvalue decomposition) of the symmetric Jacobi matrix yields its set of real eigenvalues and a corresponding matrix whose columns are the associated eigenvectors.
+The eigenvalue decomposition of the symmetric Jacobi matrix 
+\begin_inset Formula $J_{n}$
+\end_inset
+
+ yields set of real eigenvalues.
  Specifically,
  if 
 \begin_inset Formula $J_{n}$
@@ -2188,7 +2202,8 @@ The spectral decomposition (or eigenvalue decomposition) of the symmetric Jacobi
 \end_layout
 
 \begin_layout Standard
-For showing the ties between Jacobi matrix and orthonormal polynomial we need to define a vector of othronormal polynomials.
+For showing the ties between Jacobi matrix and orthonormal polynomial,
+ we need to define a vector of othronormal polynomials.
  For a sequence 
 \begin_inset Formula $\{\tilde{\pi}_{i}(x)\}_{i=0}^{n-1}$
 \end_inset
