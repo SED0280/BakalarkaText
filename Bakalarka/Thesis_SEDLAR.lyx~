@@ -4054,12 +4054,9 @@ nolink "false"
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
 \begin_inset Float figure
 placement H
-alignment document
+alignment center
 wide false
 sideways false
 status open
@@ -4099,10 +4096,6 @@ name "fig:Legendre-polynomials"
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
 Normalized Legendre polynomials are generated using the recurrence relation described in Theorem 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -4128,9 +4121,6 @@ nolink "false"
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
 \begin_inset Float figure
 placement H
 alignment center
@@ -4172,10 +4162,6 @@ name "fig:Normalized-Legendre-polynomials"
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
 Next,
  the normalized Legendre polynomials were adapted for use on a different interval,
  applying the affine transformation described in Remark 
@@ -4238,7 +4224,18 @@ nolink "false"
 
 ,
  we know that the eigenvalues are the quadrature nodes and the weights can be obtained from the first components of the eigenvectors.
- Figure X illustrates the relationship between the size 
+ Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Log-Log-Plot-of-Time"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ illustrates the relationship between the size 
 \begin_inset Formula $n$
 \end_inset
 
@@ -4254,17 +4251,19 @@ nolink "false"
  It is a log-log graph where we observe that the data points can be approximated by a linear fit with a slope close to 2,
  suggesting that the computation time has approximately quadratic complexity.
  
-\end_layout
-
-\begin_layout Standard
 \begin_inset Float figure
 placement document
-alignment document
+alignment center
 wide false
 sideways false
 status open
 
 \begin_layout Plain Layout
+\begin_inset Graphics
+	filename Graphs/NodesWightsTime.pdf
+
+\end_inset
+
 
 \end_layout
 
@@ -4274,6 +4273,170 @@ status open
 \begin_layout Plain Layout
 Log-Log Plot of Computation Time vs.
  Jacobi Size n
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Log-Log-Plot-of-Time"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+We will now try to experiment with different functions and examine the approximation error 
+\begin_inset Formula $\left|i_{n}-i^{*}\right|$
+\end_inset
+
+,
+ where 
+\begin_inset Formula $i_{n}$
+\end_inset
+
+ is the integral approximation obtained using 
+\begin_inset Formula $n$
+\end_inset
+
+ nodes and weights,
+ and 
+\begin_inset Formula $i^{*}$
+\end_inset
+
+ is the exact value of the integral.
+\end_layout
+
+\begin_layout Example
+We will approximate the integral of a polynomial.
+ Specifically,
+ we will consider the polynomial 
+\begin_inset Formula $f(x)=x^{50}+x^{4}-4x^{3}-15x+35$
+\end_inset
+
+.
+ Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Approximation-of-Poly-Integ"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ shows the polynomial 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ on the left side and the convergence graph of the approximation error on the right side.
+ 
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Graphs/PolynomialInteg.pdf
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Approximation of Polynomial Integration
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Approximation-of-Poly-Integ"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+Next we will approximate the integral of a smooth function 
+\begin_inset Formula $f(x)=\cos(x^{2})$
+\end_inset
+
+.
+ Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Approximation-of-Smooth-Integ"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ shows us again 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ on the left and convergence graph of the approximation error on the right side.
+ 
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Graphs/SmoothInteg.pdf
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Approximation of a Smooth Function Integration
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Approximation-of-Smooth-Integ"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -4291,8 +4454,84 @@ Log-Log Plot of Computation Time vs.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+Here we experiment with an integral of a non-smooth function 
+\begin_inset Formula $f(x)=\left|x\right|+\left|x+0.5\right|-\left|x-0.5\right|$
+\end_inset
+
+.
+ Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Approximation-of-NonSmooth-Integ"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ shows this function and the corresponding quadrature approximation error for an increasing number of nodes.
+ A noticeable pattern in the error can be observed:
+ its value fluctuates depending on whether an odd or even number of nodes and weights is used.
+ The overall accuracy of the approximation is also lower than typically achieved for smooth functions.
+ This behavior is expected because the effectiveness of Gaussian quadrature depends on the smoothness of the function being integrated,
+ and 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ has points where it is not differentiable within the interval 
+\begin_inset Formula $I$
+\end_inset
+
+.
+ In order to achieve a better approximation,
+ we could split the interval 
+\begin_inset Formula $I$
+\end_inset
+
+ into multiple subintervals such that the function is smooth on each subinterval,
+ and then integrate the function separately over each respective subinterval.
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
 \begin_inset Graphics
-	filename Graphs/QuadTimeLog.png
+	filename Graphs/NonSmoothInteg.pdf
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Approximation of a Non-Smooth Function Integration
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Approximation-of-NonSmooth-Integ"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -4300,39 +4539,96 @@ Log-Log Plot of Computation Time vs.
 \end_layout
 
 \begin_layout Standard
-(will add text)
+\begin_inset Separator plain
+\end_inset
+
+
 \end_layout
 
-\begin_layout Standard
+\begin_layout Example
+Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Approximation-of-Discontinuous-Integ"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ shows a discontinuous shifted sign function defined as:
+ 
+\begin_inset Formula 
+\[
+f(x)=\begin{cases}
+-1 & \text{if }x<-0.5\\
+0 & \text{if }x=-0.5\\
+1 & \text{if }x>-0.5
+\end{cases}
+\]
+
+\end_inset
+
+We can observe that the accuracy of the quadrature approximation is even lower than for the previous non-smooth function,
+ and the error fluctuates significantly depending on whether an odd or even number of nodes and weights is used.
+ This occurs because 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ is discontinuous within the interval 
+\begin_inset Formula $I$
+\end_inset
+
+ (specifically at 
+\begin_inset Formula $x=-0.5$
+\end_inset
+
+).
+ We could once again split the interval 
+\begin_inset Formula $I$
+\end_inset
+
+ into multiple subintervals to achieve a better result.
+ 
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
 \begin_inset Graphics
-	filename Graphs/PolyError.png
+	filename Graphs/DiscontinuousInteg.pdf
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset Graphics
-	filename Graphs/SmoothError.png
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Approximation of a Discontinuous Function Integration
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Approximation-of-Discontinuous-Integ"
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset Graphics
-	filename Graphs/NonSmoothError.png
-
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset Graphics
-	filename Graphs/DiscontinuousError.png
+\begin_layout Plain Layout
+
+\end_layout
 
 \end_inset
 
