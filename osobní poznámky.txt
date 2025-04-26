@@ -81,6 +81,54 @@ def 18
 Pak hlavne ten uvod a závěr
 ------------------------------------------------------------------
 
+zbývá:
+- Uvod												|	N
+- záver												|	N
+- abstract											|	N
+- citace											|	s/N
+- popisy grafů k KL										|	S
+- popis grafu cov funkcí									|x	S
+- exp covariance, vývoj chyby proti analytickému řešení (+citace toho clanku)			|	S
+- List of symbols										|	N
+-- opravit popisy grafů u polynomů podle poznámek.						|	S
+-- projít všechny emaily a papíry(staci jen novejsi) jestli jeste neco nemam opravit		|	N
+-- vycistit kody										|	N
+---- kovergence residua										|	n/P
+-- 2D graph x a y cele cisla									| 	s/N
+
+
+
+
+Rozdělené na zbytek víkendu:
+
+**********************************************************
+		Sobota:
+
+- popis grafu cov funkcí									x
+-- opravit popisy grafů u polynomů podle poznámek.						o
+- exp covariance, vývoj chyby proti analytickému řešení (+citace toho clanku)			o
+-- 2D graph x a y cele cisla									o
+- popisy grafů k KL										o
+- citace											o
+- 2n+1 missing?
+
+**********************************************************
+		Neděle:
+
+- List of symbols										o
+-- vycistit kody										o
+- abstract											o
+- Uvod												o
+- záver												o
+-- projít všechny emaily a papíry(staci jen novejsi) jestli jeste neco nemam opravit		o
+---- kovergence residua										o
+**********************************************************
+
+
+
+
+
+
 
 
 

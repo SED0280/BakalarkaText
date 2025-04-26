@@ -2977,6 +2977,46 @@ If both conditions hold,
 .
 \end_layout
 
+\begin_layout Remark
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $2n-1$
+\end_inset
+
+ quadrature exactness 
+\begin_inset CommandInset citation
+LatexCommand cite
+after "pg. 8"
+key "Gautschi2004"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "rem:2n-1-quadrature-exactness"
+
+\end_inset
+
+The 
+\begin_inset Formula $n$
+\end_inset
+
+-point Gauss quadrature rule integrates polynomials of degree up to 
+\begin_inset Formula $2n-1$
+\end_inset
+
+ exactly.
+\end_layout
+
 \begin_layout Section
 Golub-Welsch algorithm
 \begin_inset CommandInset label
@@ -3162,7 +3202,18 @@ where
 \begin_inset Formula $2n-1$
 \end_inset
 
- exactly.
+ exactly (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "rem:2n-1-quadrature-exactness"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+).
  Since 
 \begin_inset Formula $f(x)$
 \end_inset
@@ -4024,6 +4075,23 @@ nolink "false"
 Numerical experiments
 \end_layout
 
+\begin_layout Standard
+In this section,
+ we present a demonstration numerical experiments demonstrating:
+\end_layout
+
+\begin_layout Itemize
+assembly of orthogonal and orthonormal polynomials,
+\end_layout
+
+\begin_layout Itemize
+the efficiency of construction of quadrature rule using Golub-Welsch algorithm,
+\end_layout
+
+\begin_layout Itemize
+convergence of quadrature approximation for various types of functions.
+\end_layout
+
 \begin_layout Subsection
 Polynomials
 \end_layout
@@ -4041,7 +4109,7 @@ nolink "false"
 \end_inset
 
 .
- This can be done efficiently using numpy array operations.
+ This can be done efficiently using Numpy array operations.
  The first six polynomials in this sequence are illustrated in Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -4162,8 +4230,7 @@ name "fig:Normalized-Legendre-polynomials"
 
 \end_inset
 
-Next,
- the normalized Legendre polynomials were adapted for use on a different interval,
+The normalized Legendre polynomials were also adapted for use on a different interval,
  applying the affine transformation described in Remark 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -4176,16 +4243,7 @@ nolink "false"
 \end_inset
 
 .
- Recall that the standard normalized Legendre polynomials are orthonormal with respect to the inner product defined on the interval 
-\begin_inset Formula $\langle-1,1\rangle$
-\end_inset
-
-.
- The goal is to generate a corresponding set of polynomials that are orthonormal with respect to an inner product defined on a different interval 
-\begin_inset Formula $\langle a,b\rangle$
-\end_inset
-
-.
+ 
 \end_layout
 
 \begin_layout Subsection
@@ -4193,7 +4251,7 @@ Quadrature rules
 \end_layout
 
 \begin_layout Standard
-The focus now shifts to Gaussian quadrature rules.
+The focus now shifts to Gaussian quadrature rules and their use for approximations of definite integrals over finite intervals.
 \end_layout
 
 \begin_layout Standard
@@ -4203,7 +4261,7 @@ First,
 \begin_inset Formula $J_{n}$
 \end_inset
 
- and is performed using the Golub-Welsch algorithm.
+ and its construction and is performed using the Golub-Welsch algorithm.
  The Jacobi matrix 
 \begin_inset Formula $J_{n}$
 \end_inset
@@ -4322,6 +4380,39 @@ We will approximate the integral of a polynomial.
 \end_inset
 
 .
+ The exact value of the integral in this case will is 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $i^{*}=\frac{17962}{255}$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+.
  Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -4338,7 +4429,31 @@ nolink "false"
 \end_inset
 
  on the left side and the convergence graph of the approximation error on the right side.
- 
+ We observe the expected convergence to machine precision at 
+\begin_inset Formula $n=26$
+\end_inset
+
+ nodes/weights,
+ because we know from 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "rem:2n-1-quadrature-exactness"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ that a Gaussian quadrature rule with 
+\begin_inset Formula $n$
+\end_inset
+
+ nodes integrates polynomials of degree up to 
+\begin_inset Formula $2n-1$
+\end_inset
+
+ exactly.
 \begin_inset Float figure
 placement document
 alignment document
@@ -4359,7 +4474,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Approximation of Polynomial Integration
+Integrated function (left) and the convergence of numerical integration (right)
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Approximation-of-Poly-Integ"
@@ -4387,7 +4502,8 @@ name "fig:Approximation-of-Poly-Integ"
 \end_layout
 
 \begin_layout Example
-Next we will approximate the integral of a smooth function 
+Next,
+ we will approximate the integral of the smooth function 
 \begin_inset Formula $f(x)=\cos(x^{2})$
 \end_inset
 
@@ -4403,11 +4519,31 @@ nolink "false"
 
 \end_inset
 
- shows us again 
+ shows 
 \begin_inset Formula $f(x)$
 \end_inset
 
  on the left and convergence graph of the approximation error on the right side.
+ The exact solution is tied to Fresnel integral (
+\begin_inset Formula $C$
+\end_inset
+
+),
+ and in practice is also computed numerical 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "AlazahChandlerWildeLaPorte2014"
+literal "false"
+
+\end_inset
+
+.
+ The exact value of the integral is 
+\begin_inset Formula $i^{*}=\sqrt{2\pi}C(\sqrt{\frac{2}{\pi}})$
+\end_inset
+
+.
+ Exponential convergence is observed in the right graph.
  
 \begin_inset Float figure
 placement document
@@ -4429,7 +4565,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Approximation of a Smooth Function Integration
+Integrated function (left) and the convergence of numerical integration (right)
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Approximation-of-Smooth-Integ"
@@ -4466,6 +4602,11 @@ Here we experiment with an integral of a non-smooth function
 \end_inset
 
 .
+ The exact value of the integral is 
+\begin_inset Formula $i^{*}=1$
+\end_inset
+
+.
  Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -4498,6 +4639,7 @@ nolink "false"
 
  into multiple subintervals such that the function is smooth on each subinterval,
  and then integrate the function separately over each respective subinterval.
+ Note that in this case a quadrature consisting of two points would be enough for each of the four subintervals.
 \begin_inset Float figure
 placement document
 alignment document
@@ -4518,7 +4660,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Approximation of a Non-Smooth Function Integration
+Integrated function (left) and the convergence of numerical integration (right)
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Approximation-of-NonSmooth-Integ"
@@ -4591,6 +4733,8 @@ We can observe that the accuracy of the quadrature approximation is even lower t
 
  into subintervals (e.g.,
  at the point of discontinuity) to achieve a more accurate result.
+ In this case,
+ a one-point quadrature rule applied to each of the two subintervals would be sufficient to obtain the exact value of the integral.
  
 \begin_inset Float figure
 placement document
@@ -4612,7 +4756,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Approximation of a Discontinuous Function Integration
+Integrated function (left) and the convergence of numerical integration (right)
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Approximation-of-Discontinuous-Integ"
@@ -4637,8 +4781,76 @@ name "fig:Approximation-of-Discontinuous-Integ"
 \end_layout
 
 \begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+We will now experiment with two-dimensional integration.
+ In this example,
+ we will integrate the function 
+\begin_inset Formula $f(x,y)=\sin(x^{2}+y^{2})$
+\end_inset
+
+.
+ Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Convergence-of-2D-Quad"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ shows the convergence of the quadrature error for this function for different numbers of weights and nodes used in each dimension.
+ We observe that convergence to machine precision is achieved around 
+\begin_inset Formula $n=11$
+\end_inset
+
+ nodes per dimension.
+ 
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
 \begin_inset Graphics
-	filename Graphs/2DQuad.png
+	filename Graphs/2DInteg.pdf
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Convergence of 2D numerical integration
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Convergence-of-2D-Quad"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
 
 \end_inset
 
@@ -6602,8 +6814,92 @@ Autocovariance functions
 \end_layout
 
 \begin_layout Standard
+In this section,
+ we will examine some autocovariance functions.
+ 
+\end_layout
+
+\begin_layout Example
+Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Covariance-Functions"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ shows five different autocovariance functions.
+ These include three Matérn covariance functions,
+ each with a different smoothness parameter 
+\begin_inset Formula $\nu$
+\end_inset
+
+.
+ Also shown are the Squared Exponential (Gaussian) covariance function 
+\begin_inset Formula $C(d)=e^{-\frac{d^{2}}{2}}$
+\end_inset
+
+ and the Exponential covariance function 
+\begin_inset Formula $C(d)=e^{-d}$
+\end_inset
+
+.
+ We note that the Matérn covariance function with 
+\begin_inset Formula $\nu=0.5$
+\end_inset
+
+ is equivalent to the exponential covariance function.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Nevím co víc k tomu napsat
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
 \begin_inset Graphics
-	filename Graphs/CovarianceFunctions.png
+	filename Graphs/CovarienceFunctions.pdf
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Autocovariance Functions
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Covariance-Functions"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
 
 \end_inset
 
