@@ -7678,7 +7678,7 @@ Numeric experiments
 \end_layout
 
 \begin_layout Standard
-We will be constructing a matrix 
+We construct the matrix 
 \begin_inset Formula $A$
 \end_inset
 
@@ -7694,8 +7694,8 @@ nolink "false"
 \end_inset
 
 .
- In our code it is constructed from vectors consisting of normalized Legendre polynomials 
-\begin_inset Formula $\tilde{\pi}_{i},i=0,\ldots,N$
+ In our code it is constructed from vectors consisting of orthonormal Legendre polynomials 
+\begin_inset Formula $\tilde{\pi}_{i},i=0,\ldots,N-1$
 \end_inset
 
  at quadrature nodes 
@@ -7772,27 +7772,33 @@ nolink "false"
  
 \begin_inset Formula 
 \[
-\varphi\coloneqq\left[\begin{array}{ccc}
-\lambda_{1}\tilde{\pi}_{0}(\tau_{1}) & \lambda_{2}\tilde{\pi}_{0}(\tau_{2}) & \cdots\\
-\lambda_{1}\tilde{\pi}_{1}(\tau_{1}) & \ddots\\
-\vdots &  & \lambda_{M}\tilde{\pi}_{N}(\tau_{M})
+\varphi=\left[\begin{array}{cccc}
+\lambda_{1}\tilde{\pi}_{0}(\tau_{1}) & \lambda_{2}\tilde{\pi}_{0}(\tau_{2}) & \cdots & \lambda_{M}\tilde{\pi}_{0}(\tau_{M})\\
+\lambda_{1}\tilde{\pi}_{1}(\tau_{1}) & \lambda_{2}\tilde{\pi}_{1}(\tau_{2}) & \cdots & \lambda_{M}\tilde{\pi}_{1}(\tau_{M})\\
+\vdots & \vdots & \ddots & \vdots\\
+\lambda_{1}\tilde{\pi}_{N-1}(\tau_{1}) & \lambda_{2}\tilde{\pi}_{N-1}(\tau_{2}) & \cdots & \lambda_{M}\tilde{\pi}_{N-1}(\tau_{M})
 \end{array}\right].
 \]
 
 \end_inset
 
-We will then have an 
+We also define the 
 \begin_inset Formula $M\times M$
 \end_inset
 
- matrix of the covariance function evaluated at the quadrature nodes:
+ covariance matrix 
+\begin_inset Formula $C$
+\end_inset
+
+ whose entries are the values of the covariance function evaluated between pairs of quadrature nodes:
 \begin_inset Formula 
 \[
-C\coloneqq\left[\begin{array}{ccc}
-c\left(\tau_{1},\tau_{1}\right) & c\left(\tau_{2},\tau_{1}\right)\\
-c\left(\tau_{1},\tau_{2}\right)\\
- &  & c\left(\tau_{M},\tau_{M}\right)
-\end{array}\right]
+C=\left[\begin{array}{cccc}
+c\left(\tau_{1},\tau_{1}\right) & c\left(\tau_{2},\tau_{1}\right) & \cdots & c\left(\tau_{M},\tau_{1}\right)\\
+c\left(\tau_{1},\tau_{2}\right) & c\left(\tau_{2},\tau_{2}\right) & \cdots & c\left(\tau_{M},\tau_{2}\right)\\
+\vdots & \vdots & \ddots & \vdots\\
+c\left(\tau_{1},\tau_{M}\right) & c\left(\tau_{2},\tau_{M}\right) & \cdots & c\left(\tau_{M},\tau_{M}\right)
+\end{array}\right],\quad\text{i.e., }C_{ij}=c(\tau_{i},\tau_{j}).
 \]
 
 \end_inset
@@ -7809,11 +7815,27 @@ A\coloneqq\varphi C\varphi^{T}.
 
 \end_inset
 
-From this matrix 
+Since we are using orthonormal polynomials as base functions then 
+\begin_inset Formula $W$
+\end_inset
+
+ is an identity matrix and eigenvalues and eigenvectors of this matrix 
 \begin_inset Formula $A$
 \end_inset
 
- we will obtain eigenvalues and eigenfunctions.
+ approximate the eigenvalues 
+\begin_inset Formula $\lambda_{i}$
+\end_inset
+
+ and the coefficient vectors 
+\begin_inset Formula $\overline{\boldsymbol{u}}_{i}$
+\end_inset
+
+ for the eigenfunctions 
+\begin_inset Formula $u_{i}$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
