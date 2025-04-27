@@ -109,7 +109,7 @@ Rozdělené na zbytek víkendu:
 - exp covariance, vývoj chyby proti analytickému řešení (+citace toho clanku)			o
 -- 2D graph x a y cele cisla									o
 - popisy grafů k KL										o
-- citace											o
+- citace											x
 - 2n+1 missing?											x
 
 **********************************************************

@@ -4844,15 +4844,80 @@ name "fig:Convergence-of-2D-Quad"
 \end_layout
 
 \begin_layout Example
-\begin_inset Note Note
+In this example,
+ we want to show how the convergence of the quadrature error appears for a non-symmetric function.
+ We will integrate 
+\begin_inset Formula $f(x,y)=x^{2}y^{2}\cos\left(\pi\left(10x+y\right)\right)$
+\end_inset
+
+.
+ Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Convergence-of-2D-Quad2"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ shows the convergence of the quadrature error for different numbers of weights and nodes used in each dimension.
+ We observe that convergence to machine precision is achieved around 
+\begin_inset Formula $n_{x}=34$
+\end_inset
+
+ for the 
+\begin_inset Formula $x$
+\end_inset
+
+-axis and 
+\begin_inset Formula $n_{y}=11$
+\end_inset
+
+ for the 
+\begin_inset Formula $y$
+\end_inset
+
+-axis.
+ 
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
 status open
 
 \begin_layout Plain Layout
-a
+\begin_inset Graphics
+	filename Graphs/2DInteg2.pdf
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Plain Layout
-2D Example o [viz str 32 in Thesis_SEDLAR8_annotated.pdf]
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Convergence of 2D numerical integration
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Convergence-of-2D-Quad2"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \end_inset
@@ -7810,16 +7875,22 @@ The matrix
  will then be constructed as:
 \begin_inset Formula 
 \[
-A\coloneqq\varphi C\varphi^{T}.
+A=\varphi C\varphi^{T}.
 \]
 
 \end_inset
 
-The eigenvalues and eigenvectors of this matrix 
+Since we are using orthonormal polynomials as basis functions,
+ the matrix 
+\begin_inset Formula $W$
+\end_inset
+
+ is the identity matrix.
+ The eigenvalues and eigenvectors of matrix 
 \begin_inset Formula $A$
 \end_inset
 
- approximate the eigenvalues 
+ therefore approximate the eigenvalues 
 \begin_inset Formula $\lambda_{i}$
 \end_inset
 
@@ -7827,37 +7898,251 @@ The eigenvalues and eigenvectors of this matrix
 \begin_inset Formula $\overline{\boldsymbol{u}}_{i}$
 \end_inset
 
- for the eigenfunctions 
+ of the eigenfunctions 
 \begin_inset Formula $u_{i}$
 \end_inset
 
+ in Karhunen-Loève expansion respectively.
+ In Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Eigenvalues-of-cov"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+,
+ we see eigenvalues corresponding to different covariance functions;
+ in this case,
+ they were calculated using 21 orthonormal basis functions.
+ 
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Graphs/eigenvalues.pdf
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Eigenvalues from different covariance functions
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Eigenvalues-of-cov"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Eigenfunctions-of-Exp-cov"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ shows the eigenfunctions corresponding to the exponential covariance function 
+\begin_inset Formula $\Cov(x,y)=\exp\left(-\left|x-y\right|\right)$
+\end_inset
+
 .
-\end_layout
+ 
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Graphics
-	filename Graphs/eigenvalues.png
+	filename Graphs/eigenfunctions.pdf
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset Graphics
-	filename Graphs/Eigenfunctions.png
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Eigenfunctions of Exp covarience function
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Eigenfunctions-of-Exp-cov"
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+a
+\end_layout
+
+\begin_layout Plain Layout
+Here should be 
+\begin_inset Quotes eld
+\end_inset
+
+exp covariance,
+ vývoj chyby proti analytickému řešení
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
 then I need to make graphs of the error of exp covariance on log-lin graph.
 \end_layout
 
+\end_inset
+
+We can also define the residual to measure the accuracy of the KL expansion.
+ For an approximate eigenpair 
+\begin_inset Formula $\left(\tilde{\lambda}_{i},\tilde{u}_{i}\right)$
+\end_inset
+
+,
+ the residual 
+\begin_inset Formula $R_{i}$
+\end_inset
+
+ is defined as the squared 
+\begin_inset Formula $L^{2}$
+\end_inset
+
+-norm of the error in the eigenproblem equation:
+ 
+\begin_inset Formula 
+\[
+R_{i}=\left\Vert \intop_{\mathcal{T}}c\left(x,y\right)\tilde{u}_{i}\left(y\right)\,dy-\tilde{\lambda}_{i}\tilde{u}_{i}\left(x\right)\right\Vert _{L^{2}}^{2}=\intop_{\mathcal{T}}\left(\intop_{\mathcal{T}}c\left(x,y\right)\tilde{u}_{i}\left(y\right)\,dy-\tilde{\lambda}_{i}\tilde{u}_{i}\left(x\right)\right)^{2}dx.
+\]
+
+\end_inset
+
+In Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Residuum-of-eigenpairs"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+,
+ we see the residual for the first five approximate eigenpairs as the number of basis polynomials,
+ and therefore the size of matrix 
+\begin_inset Formula $A$
+\end_inset
+
+,
+ increases.
+ 
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Graphs/EigenpairsResiduum.pdf
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Residuum of eigenpairs
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Residuum-of-eigenpairs"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
-another thing I need to make is residuum for eigenvalues and eigenvector (log-lin again)
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+.
+\end_layout
+
+\begin_layout Plain Layout
+2D Eigenfunkce a sample
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
