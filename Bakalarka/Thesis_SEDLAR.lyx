@@ -21,7 +21,7 @@ Quadratures}
 
 \ThesisAssignmentFileName{ThesisAssignment.pdf}
 
-\Acknowledgement{I would like to thank Ing. Michal Béreš, Phd. for his guidance with the writing of this thesis and assistance with the implementation of my code.}
+\Acknowledgement{I would like to thank Ing. Michal Béreš, Phd. for his guidance and help with the thesis and my family for supporting me in my studies}
 
 \CzechAbstract{Cílem práce je definovat a naimplementovat efektivní způsob aproximace Karhunen-Loèveho rozkladu. Budeme k tomu využívat Gaussovy kvadratury a bázy polynomů orthonormálních vzhledem k váženému skalárnímu součinu na konečném intervalu. Ukážeme si jak z afinní transofrmace Legendrových polynomů pro získat kvadraturní body a váhy.}
 \CzechKeywords{orhogonální, orthonormální, Legendrovy polynomy, Gaussova kvadratura, skalární součin, normála, Galerkinova metoda, Karhunen-Loèveho rozklad, tří-členná rekurze, Jacobiho matice}
@@ -243,79 +243,6 @@ MakeTitlePages
 
 
 \begin_inset Newpage clearpage
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Gautschi2004,LordPowellShardlow2014"
-literal "false"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-TEMPLATE
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement document
-alignment document
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-TEMPLATE
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-TEMPLATE
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float table
-placement document
-alignment document
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-TEMPLATE
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-TEMPLATE
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \end_inset
 
 
@@ -8277,6 +8204,10 @@ Conclusion
 \end_layout
 
 \begin_layout Standard
+[add text]
+\end_layout
+
+\begin_layout Standard
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
 btprint "btPrintCited"
@@ -8287,15 +8218,6 @@ encoding "default"
 \end_inset
 
 
-\end_layout
-
-\begin_layout Chapter
-\start_of_appendix
-TEMPLATE
-\end_layout
-
-\begin_layout Standard
-TEMPLATE
 \end_layout
 
 \end_body

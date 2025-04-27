@@ -21,7 +21,7 @@ Quadratures}
 
 \ThesisAssignmentFileName{ThesisAssignment.pdf}
 
-\Acknowledgement{I would like to thank Ing. Michal Béreš, Phd. for his guidance with the writing of this thesis and assistance with the implementation of my code.}
+\Acknowledgement{I would like to thank Ing. Michal Béreš, Phd. for his guidance and help with the thesis and my family for supporting me in my studies}
 
 \CzechAbstract{Cílem práce je definovat a naimplementovat efektivní způsob aproximace Karhunen-Loèveho rozkladu. Budeme k tomu využívat Gaussovy kvadratury a bázy polynomů orthonormálních vzhledem k váženému skalárnímu součinu na konečném intervalu. Ukážeme si jak z afinní transofrmace Legendrových polynomů pro získat kvadraturní body a váhy.}
 \CzechKeywords{orhogonální, orthonormální, Legendrovy polynomy, Gaussova kvadratura, skalární součin, normála, Galerkinova metoda, Karhunen-Loèveho rozklad, tří-členná rekurze, Jacobiho matice}
@@ -330,23 +330,26 @@ Introduction
 \end_layout
 
 \begin_layout Standard
-In the first chapter we will be defining different kinds of polynomials.
- We will also talk about a weighted inner product.
- One of the polynomials we will be defining is called orthogonal.
- What orthogonal means is that if we try to get a inner product of two orthogonal polynomials the result will be zero.
- This will prove very useful in a lot of definitions and theorems in later chapters.
+In the first chapter,
+ we will define different types of polynomials.
+ We will also discuss the weighted inner product.
+ One type of polynomial we will define is the orthogonal polynomial.
+ Orthogonal means that the inner product of two distinct orthogonal polynomials is zero.
+ This property will prove very useful in many definitions and theorems in subsequent chapters.
  Since these orthogonal polynomials are so useful,
  we will need a way to reliably generate them.
- The generation process of orthogonal and orthonormal polynomials (polynomials whose inner products is unity or zero depending on if its the same polynomial) we will be using is called a three-term recurrence.
- what we need for it is a set of base functions and an inner product.
- The coefficients that are used in this three-term recurrence can also be arranged into a symmetric three diagonal matrix called Jacobi matrix.
- Jacobi matrix is useful for obtaining the roots of monic orthogonal polynomials and the normalized version of these polynomials from the eigenvalue decomposition.
- Since it is a three diagonal matrix we will be using a specific function in our code to efficiently obtain the eigenvalues and eigenvectors of the Jacobi matrix.
- The topic will now change to quadrature rules.
- Quadrature rule is a set of quadrature nodes and weights that allow us to approximate a weighted integral over a finite interval.
- The more nodes and weights the Quadrature rule has,
- the more precise the approximation is.
- A way we will be getting these nodes and weights is from the Golub-Welsch algorithm 
+ The generation process we will use for orthogonal and orthonormal polynomials (orthonormal polynomials are orthogonal polynomials normalized to have a norm of one) is the three-term recurrence relation.
+ This process relies on the definition of the inner product.
+ The coefficients used in this three-term recurrence can also be arranged into a symmetric tridiagonal matrix called the Jacobi matrix.
+ The Jacobi matrix is useful for obtaining the roots of the corresponding monic orthogonal polynomials (which are its eigenvalues) and information related to the quadrature weights (from its eigenvectors).
+ Since it is a tridiagonal matrix,
+ we will use a specific function in our code to efficiently obtain the eigenvalues and eigenvectors of the Jacobi matrix.
+ The discussion then shifts to quadrature rules.
+ A quadrature rule is a set of quadrature nodes and weights that allows us to approximate weighted integrals over a finite interval.
+ Generally,
+ the more nodes and weights a quadrature rule has,
+ the more precise the approximation becomes.
+ We will obtain these nodes and weights using the Golub-Welsch algorithm 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "GolubWelsch1969"
@@ -355,25 +358,47 @@ literal "false"
 \end_inset
 
 .
- Golub-Welsch algorithm utilizes the eigenvalue decomposition of the Jacobi matrix.
- Then the eigenvalues are nodes of the quadrature rule and we can obtain the weights of the quadrature rule from the first component of each eigenvector.
- At the end of this chapter we will talk about the Legendre polynomials and their affine transformation.
- Legendre polynomials are polynomials defined with respect to a weighted inner product over interval 
-\begin_inset Formula $\left\langle -1,1\right\rangle $
+ The Golub-Welsch algorithm utilizes the eigenvalue decomposition of the Jacobi matrix.
+ The eigenvalues of the Jacobi matrix are the nodes of the corresponding Gauss quadrature rule,
+ and we can obtain the weights of the quadrature rule from the first components of the normalized eigenvectors.
+ Finally,
+ this chapter will discuss Legendre polynomials and their affine transformation.
+ Legendre polynomials are orthogonal polynomials defined with respect to the standard inner product (weight function 
+\begin_inset Formula $w(x)=1$
 \end_inset
 
- and a unity weight function.
- The roots of Legendre polynomials can serve as nodes for a Gauss quadrature rule for an integral over interval 
+) on the interval 
 \begin_inset Formula $\left\langle -1,1\right\rangle $
 \end_inset
 
 .
- We then have an affine transformation for Legendre polynomials,
- nodes and weights to get nodes and weights for Gauss quadrature rule for an integral over a finite interval 
+ The roots of Legendre polynomials serve as nodes for the Gauss-Legendre quadrature rule,
+ used for integrals over the interval 
+\begin_inset Formula $\left\langle -1,1\right\rangle $
+\end_inset
+
+.
+ We will then present an affine transformation that maps the Legendre polynomials,
+ nodes,
+ and weights from the reference interval 
+\begin_inset Formula $\left\langle -1,1\right\rangle $
+\end_inset
+
+ to obtain the corresponding polynomials,
+ nodes,
+ and weights for Gauss quadrature on an arbitrary finite interval 
 \begin_inset Formula $\left\langle a,b\right\rangle $
 \end_inset
 
-.
+ (where 
+\begin_inset Formula $a<b$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+In the second chapter we 
 \end_layout
 
 \begin_layout Chapter
@@ -8252,6 +8277,10 @@ Conclusion
 \end_layout
 
 \begin_layout Standard
+[add text]
+\end_layout
+
+\begin_layout Standard
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
 btprint "btPrintCited"
@@ -8262,15 +8291,6 @@ encoding "default"
 \end_inset
 
 
-\end_layout
-
-\begin_layout Chapter
-\start_of_appendix
-TEMPLATE
-\end_layout
-
-\begin_layout Standard
-TEMPLATE
 \end_layout
 
 \end_body
