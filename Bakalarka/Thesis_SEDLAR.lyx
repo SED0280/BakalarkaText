@@ -3472,6 +3472,108 @@ This work focuses specifically on Legendre polynomials because they can be adapt
 \end_layout
 
 \begin_layout Remark
+Legendre polynomials 
+\begin_inset Formula $\pi_{k}^{L}(x)$
+\end_inset
+
+ are orthogonal polynomials with respect to the standard inner product (weight 
+\begin_inset Formula $w(x)=1$
+\end_inset
+
+) over the interval 
+\begin_inset Formula $I^{L}=\left\langle -1,1\right\rangle $
+\end_inset
+
+.
+ The coefficients 
+\begin_inset Formula $\alpha_{k}$
+\end_inset
+
+ and 
+\begin_inset Formula $\beta_{k}$
+\end_inset
+
+ for the three-term recurrence relation (Theorem 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "thm:3-term-recurrence"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+) for these monic orthogonal polynomials are given by 
+\begin_inset Formula $\beta_{0}=2$
+\end_inset
+
+;
+ 
+\begin_inset Formula $\alpha_{k}=0$
+\end_inset
+
+ for 
+\begin_inset Formula $k=0,1,\ldots$
+\end_inset
+
+;
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ and 
+\begin_inset Formula $\beta_{k}=1/(4−k^{−2})$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ for 
+\begin_inset Formula $k=1,2,\ldots$
+\end_inset
+
+ (see 
+\begin_inset CommandInset citation
+LatexCommand cite
+after "Table 1.1"
+key "Gautschi2004"
+literal "false"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Remark
 \begin_inset CommandInset label
 LatexCommand label
 name "rem:affine_generalization_of_Legendre"
@@ -7957,7 +8059,51 @@ Since we are using orthonormal polynomials as basis functions,
 \end_inset
 
  in Karhunen-Loève expansion respectively.
- In Figure 
+\end_layout
+
+\begin_layout Standard
+This approach is also applicable to higher-dimensional fields.
+ One can either:
+ 
+\end_layout
+
+\begin_layout Enumerate
+Vectorize:
+ Unroll the domain (quadrature nodes) and the basis function evaluations into long vectors (e.g.,
+ using lexicographical ordering).
+ Then,
+ construct the large matrices 
+\begin_inset Formula $A$
+\end_inset
+
+ and 
+\begin_inset Formula $W$
+\end_inset
+
+ as in the 1D case and solve the resulting eigenvalue problem.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Use Tensor Operations:
+ Treat the operations involved in constructing the matrix 
+\begin_inset Formula $A$
+\end_inset
+
+ (or applying it to a vector) as tensor contractions.
+ Tools like `einsum` (e.g.,
+ in NumPy) can perform these operations efficiently.
+ `einsum` takes multiple input tensors and a string describing which dimensions correspond and how they should be contracted or rearranged to produce the desired output tensor.
+ This often avoids forming the large,
+ explicit matrix 
+\begin_inset Formula $A$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+In Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Eigenvalues-of-cov"
@@ -7972,7 +8118,6 @@ nolink "false"
  we see eigenvalues corresponding to different covariance functions;
  in this case,
  they were calculated using 21 orthonormal basis functions.
- 
 \begin_inset Float figure
 placement document
 alignment document
@@ -8068,29 +8213,59 @@ name "fig:Eigenfunctions-of-Exp-cov"
 
 \end_inset
 
+Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Error-of-Eigenpairs"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
 
-\begin_inset Note Note
+\end_inset
+
+ shows the error of the eigenfunction approximations compared to the analytical results.
+ We observe that after using a sufficient number of basis polynomials,
+ the errors stabilize,
+ each at a different level.
+ 
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
 status open
 
 \begin_layout Plain Layout
-a
-\end_layout
+\begin_inset Graphics
+	filename Graphs/EigenpairsError.pdf
 
-\begin_layout Plain Layout
-Here should be 
-\begin_inset Quotes eld
-\end_inset
-
-exp covariance,
- vývoj chyby proti analytickému řešení
-\begin_inset Quotes erd
 \end_inset
 
 
 \end_layout
 
 \begin_layout Plain Layout
-then I need to make graphs of the error of exp covariance on log-lin graph.
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Error of eigenfunctions
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Error-of-Eigenpairs"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \end_inset
