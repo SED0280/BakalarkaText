@@ -21,13 +21,13 @@ Quadratures}
 
 \ThesisAssignmentFileName{ThesisAssignment.pdf}
 
-\Acknowledgement{TEMPLATE TEMPLATE TEMPLATE TEMPLATE TEMPLATE TEMPLATE TEMPLATE TEMPLATE TEMPLATE}
+\Acknowledgement{I would like to thank Ing. Michal Béreš, Phd. for his guidance with the writing of this thesis and assistance with the implementation of my code.}
 
-\CzechAbstract{TEMPLATE TEMPLATE TEMPLATE TEMPLATE TEMPLATE TEMPLATE TEMPLATE TEMPLATE TEMPLATE}
-\CzechKeywords{TEMPLATE; TEMPLATE; TEMPLATE}
+\CzechAbstract{Cílem práce je definovat a naimplementovat efektivní způsob aproximace Karhunen-Loèveho rozkladu. Budeme k tomu využívat Gaussovy kvadratury a bázy polynomů orthonormálních vzhledem k váženému skalárnímu součinu na konečném intervalu. Ukážeme si jak z afinní transofrmace Legendrových polynomů pro získat kvadraturní body a váhy.}
+\CzechKeywords{orhogonální, orthonormální, Legendrovy polynomy, Gaussova kvadratura, skalární součin, normála, Galerkinova metoda, Karhunen-Loèveho rozklad, tří-členná rekurze, Jacobiho matice}
 
-\EnglishAbstract{TEMPLATE TEMPLATE TEMPLATE TEMPLATE TEMPLATE TEMPLATE TEMPLATE TEMPLATE TEMPLATE}
-\EnglishKeywords{TEMPLATE; TEMPLATE; TEMPLATE}
+\EnglishAbstract{The goal of this thesis is to define and implement an efficient method to approximate the Karhunen-Loève decomposition. We will utilize Gaussian quadratures and a basis of orthonormal polynomials with respect to an inner product over a finite interval. We will show how to obtain the nodes (roots) and weights for the quadrature rule using an affine transformation of Legendre polynomials.}
+\EnglishKeywords{orhogonal, orthonormal, Legendre polynomials, Gauss quadrature rule, inner product, norm, Galerkin method, Karhunen-Loève expantion, three-term recurrence, Jacobi matrix}
 
 
 
@@ -326,7 +326,7 @@ Introduction
 \end_layout
 
 \begin_layout Standard
-TEMPLATE
+In this thesis we will be trying to 
 \end_layout
 
 \begin_layout Chapter
@@ -342,7 +342,7 @@ name "chap:Polynomials"
 
 \begin_layout Standard
 This section is devoted to introduction of orthogonal polynomials with respect to given inner products.
- The inner products considered throughout this work is defined via integration over a specified interval 
+ The inner products considered throughout this work are defined via integration over a specified interval 
 \begin_inset Formula $I$
 \end_inset
 
@@ -3696,12 +3696,43 @@ Therefore,
 \end_inset
 
 .
- We also keep the normalization,
- if it is set for 
+ If the polynomials 
 \begin_inset Formula $\pi_{i}^{L}$
 \end_inset
 
-.
+ are orthonormal then 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\pi_{i}$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ are also orthonormal.
 \begin_inset Note Note
 status open
 
@@ -5478,7 +5509,15 @@ and an inner product
 
  is a Hilbert space.
  Also,
- this definition of L2 space yeilds the same space (isometrically isomorphic) as L2 under Lebesgue measure 
+ this definition of 
+\begin_inset Formula $L^{2}(I)$
+\end_inset
+
+ space yields the same space (isometrically isomorphic) as 
+\begin_inset Formula $L^{2}(I)$
+\end_inset
+
+ under Lebesgue measure 
 \begin_inset CommandInset citation
 LatexCommand cite
 after "section 7.4 Theorem 12"
@@ -5487,7 +5526,7 @@ literal "false"
 
 \end_inset
 
-
+.
 \begin_inset Note Note
 status open
 
@@ -6934,7 +6973,7 @@ Autocovariance functions
 \begin_layout Standard
 In this section,
  we will examine some basic autocovariance functions.
- 
+ An original source introducing covariance functions as a tool for describing spacial properties of random field via a family of Matérn covariance functions is 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Matern1960"
@@ -6942,7 +6981,7 @@ literal "false"
 
 \end_inset
 
-
+.
 \end_layout
 
 \begin_layout Example
@@ -7742,7 +7781,7 @@ Numeric experiments
 \end_layout
 
 \begin_layout Standard
-We construct the matrix 
+We will construct the matrix 
 \begin_inset Formula $A$
 \end_inset
 
@@ -7758,11 +7797,28 @@ nolink "false"
 \end_inset
 
 .
- In our code it is constructed from vectors consisting of orthonormal Legendre polynomials 
+ Our aim is to approximate the entries of the matrix 
+\begin_inset Formula $A$
+\end_inset
+
+ using a series of vector operations,
+ i.e.,
+ construct all entries 
+\begin_inset Formula $A_{k,l}$
+\end_inset
+
+ simultaneously.
+ This way,
+ we will not recompute the values needed to evaluate the integral numerically multiple times.
+ Note that this approach will calculate all entries,
+ meaning some calculations are redundant since the matrix is symmetric.
+ In our code,
+ the calculation involves orthonormal Legendre polynomials 
 \begin_inset Formula $\tilde{\pi}_{i},i=0,\ldots,N-1$
 \end_inset
 
- at quadrature nodes 
+,
+ evaluated at quadrature nodes 
 \family roman
 \series medium
 \shape up
@@ -7795,7 +7851,7 @@ nolink "false"
 \noun default
 \color inherit
 ,
- multiplied by quadrature weights 
+ and the corresponding quadrature weights 
 \family roman
 \series medium
 \shape up
@@ -7810,7 +7866,7 @@ nolink "false"
 \noun off
 \color none
 
-\begin_inset Formula $\lambda_{i},i=1,\ldots,M$
+\begin_inset Formula $w_{i},i=1,\ldots,M$
 \end_inset
 
 
@@ -7837,16 +7893,17 @@ nolink "false"
 \begin_inset Formula 
 \[
 \varphi=\left[\begin{array}{cccc}
-\lambda_{1}\tilde{\pi}_{0}(\tau_{1}) & \lambda_{2}\tilde{\pi}_{0}(\tau_{2}) & \cdots & \lambda_{M}\tilde{\pi}_{0}(\tau_{M})\\
-\lambda_{1}\tilde{\pi}_{1}(\tau_{1}) & \lambda_{2}\tilde{\pi}_{1}(\tau_{2}) & \cdots & \lambda_{M}\tilde{\pi}_{1}(\tau_{M})\\
+w_{1}\tilde{\pi}_{0}(\tau_{1}) & w_{2}\tilde{\pi}_{0}(\tau_{2}) & \cdots & w_{M}\tilde{\pi}_{0}(\tau_{M})\\
+w_{1}\tilde{\pi}_{1}(\tau_{1}) & w_{2}\tilde{\pi}_{1}(\tau_{2}) & \cdots & w_{M}\tilde{\pi}_{1}(\tau_{M})\\
 \vdots & \vdots & \ddots & \vdots\\
-\lambda_{1}\tilde{\pi}_{N-1}(\tau_{1}) & \lambda_{2}\tilde{\pi}_{N-1}(\tau_{2}) & \cdots & \lambda_{M}\tilde{\pi}_{N-1}(\tau_{M})
+w_{1}\tilde{\pi}_{N-1}(\tau_{1}) & w_{2}\tilde{\pi}_{N-1}(\tau_{2}) & \cdots & w_{M}\tilde{\pi}_{N-1}(\tau_{M})
 \end{array}\right].
 \]
 
 \end_inset
 
-We also define the 
+Note that this matrix is formed virtually (not assembled directly) in the code (we use Numpy broadcasting).
+ We also define the 
 \begin_inset Formula $M\times M$
 \end_inset
 
@@ -7857,12 +7914,11 @@ We also define the
  whose entries are the values of the covariance function evaluated between pairs of quadrature nodes:
 \begin_inset Formula 
 \[
-C=\left[\begin{array}{cccc}
-c\left(\tau_{1},\tau_{1}\right) & c\left(\tau_{2},\tau_{1}\right) & \cdots & c\left(\tau_{M},\tau_{1}\right)\\
-c\left(\tau_{1},\tau_{2}\right) & c\left(\tau_{2},\tau_{2}\right) & \cdots & c\left(\tau_{M},\tau_{2}\right)\\
+C=\begin{bmatrix}c\left(\tau_{1},\tau_{1}\right) & c\left(\tau_{1},\tau_{2}\right) & \cdots & c\left(\tau_{1},\tau_{M}\right)\\
+c\left(\tau_{2},\tau_{1}\right) & c\left(\tau_{2},\tau_{2}\right) & \cdots & c\left(\tau_{2},\tau_{M}\right)\\
 \vdots & \vdots & \ddots & \vdots\\
-c\left(\tau_{1},\tau_{M}\right) & c\left(\tau_{2},\tau_{M}\right) & \cdots & c\left(\tau_{M},\tau_{M}\right)
-\end{array}\right],\quad\text{i.e., }C_{ij}=c(\tau_{i},\tau_{j}).
+c\left(\tau_{M},\tau_{1}\right) & c\left(\tau_{M},\tau_{2}\right) & \cdots & c\left(\tau_{M},\tau_{M}\right)
+\end{bmatrix},\quad\text{i.e., }C_{ij}=c(\tau_{i},\tau_{j}).
 \]
 
 \end_inset
@@ -8142,6 +8198,10 @@ status open
 \end_inset
 
 
+\end_layout
+
+\begin_layout Chapter
+Conclusion
 \end_layout
 
 \begin_layout Standard
