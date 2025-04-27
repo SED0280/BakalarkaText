@@ -105,12 +105,12 @@ Rozdělené na zbytek víkendu:
 		Sobota:
 
 - popis grafu cov funkcí									x
--- opravit popisy grafů u polynomů podle poznámek.						o
+-- opravit popisy grafů u polynomů podle poznámek.						x
 - exp covariance, vývoj chyby proti analytickému řešení (+citace toho clanku)			o
 -- 2D graph x a y cele cisla									o
 - popisy grafů k KL										o
 - citace											o
-- 2n+1 missing?
+- 2n+1 missing?											x
 
 **********************************************************
 		Neděle:
