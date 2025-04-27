@@ -21,13 +21,13 @@ Quadratures}
 
 \ThesisAssignmentFileName{ThesisAssignment.pdf}
 
-\Acknowledgement{TEMPLATE TEMPLATE TEMPLATE TEMPLATE TEMPLATE TEMPLATE TEMPLATE TEMPLATE TEMPLATE}
+\Acknowledgement{I would like to thank Ing. Michal Béreš, Phd. for his guidance with the writing of this thesis and assistance with the implementation of my code.}
 
-\CzechAbstract{TEMPLATE TEMPLATE TEMPLATE TEMPLATE TEMPLATE TEMPLATE TEMPLATE TEMPLATE TEMPLATE}
-\CzechKeywords{TEMPLATE; TEMPLATE; TEMPLATE}
+\CzechAbstract{Cílem práce je definovat a naimplementovat efektivní způsob aproximace Karhunen-Loèveho rozkladu. Budeme k tomu využívat Gaussovy kvadratury a bázy polynomů orthonormálních vzhledem k váženému skalárnímu součinu na konečném intervalu. Ukážeme si jak z afinní transofrmace Legendrových polynomů pro získat kvadraturní body a váhy.}
+\CzechKeywords{orhogonální, orthonormální, Legendrovy polynomy, Gaussova kvadratura, skalární součin, normála, Galerkinova metoda, Karhunen-Loèveho rozklad, tří-členná rekurze, Jacobiho matice}
 
-\EnglishAbstract{TEMPLATE TEMPLATE TEMPLATE TEMPLATE TEMPLATE TEMPLATE TEMPLATE TEMPLATE TEMPLATE}
-\EnglishKeywords{TEMPLATE; TEMPLATE; TEMPLATE}
+\EnglishAbstract{The goal of this thesis is to define and implement an efficient method to approximate the Karhunen-Loève decomposition. We will utilize Gaussian quadratures and a basis of orthonormal polynomials with respect to an inner product over a finite interval. We will show how to obtain the nodes (roots) and weights for the quadrature rule using an affine transformation of Legendre polynomials.}
+\EnglishKeywords{orhogonal, orthonormal, Legendre polynomials, Gauss quadrature rule, inner product, norm, Galerkin method, Karhunen-Loève expantion, three-term recurrence, Jacobi matrix}
 
 
 
@@ -326,7 +326,54 @@ Introduction
 \end_layout
 
 \begin_layout Standard
-in this work we will do some funky things
+[Text k čemu je KL dobrý]
+\end_layout
+
+\begin_layout Standard
+In the first chapter we will be defining different kinds of polynomials.
+ We will also talk about a weighted inner product.
+ One of the polynomials we will be defining is called orthogonal.
+ What orthogonal means is that if we try to get a inner product of two orthogonal polynomials the result will be zero.
+ This will prove very useful in a lot of definitions and theorems in later chapters.
+ Since these orthogonal polynomials are so useful,
+ we will need a way to reliably generate them.
+ The generation process of orthogonal and orthonormal polynomials (polynomials whose inner products is unity or zero depending on if its the same polynomial) we will be using is called a three-term recurrence.
+ what we need for it is a set of base functions and an inner product.
+ The coefficients that are used in this three-term recurrence can also be arranged into a symmetric three diagonal matrix called Jacobi matrix.
+ Jacobi matrix is useful for obtaining the roots of monic orthogonal polynomials and the normalized version of these polynomials from the eigenvalue decomposition.
+ Since it is a three diagonal matrix we will be using a specific function in our code to efficiently obtain the eigenvalues and eigenvectors of the Jacobi matrix.
+ The topic will now change to quadrature rules.
+ Quadrature rule is a set of quadrature nodes and weights that allow us to approximate a weighted integral over a finite interval.
+ The more nodes and weights the Quadrature rule has,
+ the more precise the approximation is.
+ A way we will be getting these nodes and weights is from the Golub-Welsch algorithm 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "GolubWelsch1969"
+literal "false"
+
+\end_inset
+
+.
+ Golub-Welsch algorithm utilizes the eigenvalue decomposition of the Jacobi matrix.
+ Then the eigenvalues are nodes of the quadrature rule and we can obtain the weights of the quadrature rule from the first component of each eigenvector.
+ At the end of this chapter we will talk about the Legendre polynomials and their affine transformation.
+ Legendre polynomials are polynomials defined with respect to a weighted inner product over interval 
+\begin_inset Formula $\left\langle -1,1\right\rangle $
+\end_inset
+
+ and a unity weight function.
+ The roots of Legendre polynomials can serve as nodes for a Gauss quadrature rule for an integral over interval 
+\begin_inset Formula $\left\langle -1,1\right\rangle $
+\end_inset
+
+.
+ We then have an affine transformation for Legendre polynomials,
+ nodes and weights to get nodes and weights for Gauss quadrature rule for an integral over a finite interval 
+\begin_inset Formula $\left\langle a,b\right\rangle $
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Chapter
@@ -8198,6 +8245,10 @@ status open
 \end_inset
 
 
+\end_layout
+
+\begin_layout Chapter
+Conclusion
 \end_layout
 
 \begin_layout Standard
