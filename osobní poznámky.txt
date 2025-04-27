@@ -125,10 +125,21 @@ Rozdělené na zbytek víkendu:
 **********************************************************
 
 
+4 ZBYLÉ ČÁSTI
 
+- KL EXPERIMENTY A KÓD
+- CITACE
+- ÚVOD
+- ZÁVĚR
 
+The goal of this thesis is to implement an efficient method to approximate the Karhunen-Loève decomposition. 
+We utilize Gaussian quadratures and a basis of orthonormal polynomials with respect to an inner product over a finite interval. 
+We show how to obtain the nodes (roots) and weights for the quadrature rule. Using an affine transformation of 
+Legendre polynomials.
 
-
+In this thesis consists of theory about polynomials, weighted inner product and quadrature rules. A lot of it is taken from other sources but is rewritten in a  way that an undergraduate students can understand. 
+There is a Three term recurrence that makes orthogonal polynomials with respect to a weighted inner product. Then the Quadrature rule is discussed and Golub-Welsch algorithm for obtaining quadrature nodes and weights.
+Then the fundimentals of probability are referenced about Covarience functions and Random Gaussian fields
 
 
 

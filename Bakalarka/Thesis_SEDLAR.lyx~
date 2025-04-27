@@ -3485,7 +3485,40 @@ Legendre polynomials
 \end_inset
 
 .
- The 
+ The coefficients 
+\begin_inset Formula $\alpha_{k}$
+\end_inset
+
+ and 
+\begin_inset Formula $\beta_{k}$
+\end_inset
+
+ for the three-term recurrence relation (Theorem 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "thm:3-term-recurrence"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+) for these monic orthogonal polynomials are given by 
+\begin_inset Formula $\beta_{0}=2$
+\end_inset
+
+;
+ 
+\begin_inset Formula $\alpha_{k}=0$
+\end_inset
+
+ for 
+\begin_inset Formula $k=0,1,\ldots$
+\end_inset
+
+;
+
 \family roman
 \series medium
 \shape up
@@ -3499,26 +3532,11 @@ Legendre polynomials
 \uwave off
 \noun off
 \color none
-
-\begin_inset Formula $\alpha_{k}$
-\end_inset
-
  and 
-\begin_inset Formula $\beta_{k}$
+\begin_inset Formula $\beta_{k}=1/(4−k^{−2})$
 \end_inset
 
- for three-term recurrence from Theorem 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "thm:3-term-recurrence"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
 
-\end_inset
-
- of these orthogonal polynomials 
 \family default
 \series default
 \shape default
@@ -3532,39 +3550,10 @@ nolink "false"
 \uwave default
 \noun default
 \color inherit
-
-\begin_inset Formula $\pi_{k}^{L}(x)$
+ for 
+\begin_inset Formula $k=1,2,\ldots$
 \end_inset
 
-
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\nospellcheck off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
- is given as 
-\begin_inset Formula $\beta_{0}=2$
-\end_inset
-
-,
- 
-\begin_inset Formula $\alpha_{k}=0,k=0,1,\ldots$
-\end_inset
-
-,
- and 
-\begin_inset Formula $\beta_{k}=1/(4−k^{−2}),k=1,2,\ldots$
-\end_inset
-
-.
  (see 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -3574,7 +3563,7 @@ literal "false"
 
 \end_inset
 
-)
+).
 \end_layout
 
 \begin_layout Standard

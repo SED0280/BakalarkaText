@@ -24,10 +24,10 @@ Quadratures}
 \Acknowledgement{I would like to thank Ing. Michal Béreš, Phd. for his guidance and help with the thesis and my family for supporting me in my studies}
 
 \CzechAbstract{Cílem práce je definovat a naimplementovat efektivní způsob aproximace Karhunen-Loèveho rozkladu. Budeme k tomu využívat Gaussovy kvadratury a bázy polynomů orthonormálních vzhledem k váženému skalárnímu součinu na konečném intervalu. Ukážeme si jak z afinní transofrmace Legendrových polynomů pro získat kvadraturní body a váhy.}
-\CzechKeywords{orhogonální, orthonormální, Legendrovy polynomy, Gaussova kvadratura, skalární součin, normála, Galerkinova metoda, Karhunen-Loèveho rozklad, tří-členná rekurze, Jacobiho matice}
+\CzechKeywords{Legendrovy polynomy, Gaussova kvadratura, Galerkinova metoda, Karhunen-Loèveho rozklad, tří-členná rekurze, Jacobiho matice}
 
-\EnglishAbstract{The goal of this thesis is to define and implement an efficient method to approximate the Karhunen-Loève decomposition. We will utilize Gaussian quadratures and a basis of orthonormal polynomials with respect to an inner product over a finite interval. We will show how to obtain the nodes (roots) and weights for the quadrature rule using an affine transformation of Legendre polynomials.}
-\EnglishKeywords{orhogonal, orthonormal, Legendre polynomials, Gauss quadrature rule, inner product, norm, Galerkin method, Karhunen-Loève expantion, three-term recurrence, Jacobi matrix}
+\EnglishAbstract{This thesis provides a review of the theory related to orthogonal polynomials, weighted inner products, and Gaussian quadrature rules. Key concepts, including the three-term recurrence relation for generating orthogonal polynomials and the Golub-Welsch algorithm for computing quadrature nodes and weights from the associated Jacobi matrix, are presented with an emphasis on clarity and accessibility. Fundamental concepts from probability theory are introduced, focusing on covariance functions and Gaussian random fields, to establish the necessary background for the primary application explored in this work. The core application demonstrates the use of the Galerkin method, together with orthogonal polynomial bases and Gaussian quadrature rules, to achieve an efficient numerical approximation of the Karhunen-Loève (KL) expansion for stochastic processes. All methods discussed are implemented in Python, and the corresponding code is available at the specified repository [repository address].}
+\EnglishKeywords{Legendre polynomials, Gauss quadrature rule, Galerkin method, Karhunen-Loève expantion, three-term recurrence, Jacobi matrix}
 
 
 
