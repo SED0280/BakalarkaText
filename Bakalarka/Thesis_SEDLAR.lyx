@@ -297,18 +297,6 @@ MakeTitlePages
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset FloatList table
-
-\end_inset
-
-
-\begin_inset Newpage clearpage
-\end_inset
-
-
-\end_layout
-
 \begin_layout Chapter
 Introduction
 \end_layout
@@ -317,7 +305,7 @@ Introduction
 In many areas of science and engineering,
  we encounter systems or phenomena that involve randomness or uncertainty.
  Instead of having fixed values,
- quantities might vary unpredictably.
+ measurements might vary unpredictably.
  Mathematical objects called stochastic processes,
  or more generally random fields (as introduced in Chapter
 \begin_inset space ~
@@ -337,7 +325,8 @@ nolink "false"
 ),
  are used to model such situations where values change randomly over time or space.
  Examples include variations in material properties or fluctuating forces acting on a structure.
- Working directly with these random fields can be very difficult because they can be infinitely complex.
+ However random fields can be infinitely complex,
+ therefore working directly with them can be very difficult.
  A powerful technique to simplify them is the Karhunen-Loève (KL) expansion 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -2253,6 +2242,101 @@ Which yields
 
 \end_layout
 
+\begin_layout Remark
+Legendre polynomials 
+\begin_inset Formula $\pi_{k}^{L}(x)$
+\end_inset
+
+ are orthogonal polynomials with respect to the standard inner product (weight 
+\begin_inset Formula $w(x)=1$
+\end_inset
+
+) over the interval 
+\begin_inset Formula $I^{L}=\left\langle -1,1\right\rangle $
+\end_inset
+
+.
+ The coefficients 
+\begin_inset Formula $\alpha_{k}$
+\end_inset
+
+ and 
+\begin_inset Formula $\beta_{k}$
+\end_inset
+
+ for the three-term recurrence relation (Theorem 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "thm:3-term-recurrence"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+) for these monic orthogonal polynomials are given by 
+\begin_inset Formula $\beta_{0}=2$
+\end_inset
+
+;
+ 
+\begin_inset Formula $\alpha_{k}=0$
+\end_inset
+
+ for 
+\begin_inset Formula $k=0,1,\ldots$
+\end_inset
+
+;
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ and 
+\begin_inset Formula $\beta_{k}=1/(4−k^{−2})$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ for 
+\begin_inset Formula $k=1,2,\ldots$
+\end_inset
+
+ (see 
+\begin_inset CommandInset citation
+LatexCommand cite
+after "Table 1.1"
+key "Gautschi2004"
+literal "false"
+
+\end_inset
+
+).
+\end_layout
+
 \begin_layout Standard
 Having a series of orthogonal polynomials and induced norm 
 \begin_inset Formula $\left\Vert \cdot\right\Vert _{w}$
@@ -3884,108 +3968,6 @@ This work focuses specifically on Legendre polynomials because they can be adapt
 
 .
  Such integration can be achieved by applying an affine transformation to the Legendre polynomials and their corresponding quadrature nodes and weights.
-\end_layout
-
-\begin_layout Remark
-Legendre polynomials 
-\begin_inset Formula $\pi_{k}^{L}(x)$
-\end_inset
-
- are orthogonal polynomials with respect to the standard inner product (weight 
-\begin_inset Formula $w(x)=1$
-\end_inset
-
-) over the interval 
-\begin_inset Formula $I^{L}=\left\langle -1,1\right\rangle $
-\end_inset
-
-.
- The coefficients 
-\begin_inset Formula $\alpha_{k}$
-\end_inset
-
- and 
-\begin_inset Formula $\beta_{k}$
-\end_inset
-
- for the three-term recurrence relation (Theorem 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "thm:3-term-recurrence"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-
-\end_inset
-
-) for these monic orthogonal polynomials are given by 
-\begin_inset Formula $\beta_{0}=2$
-\end_inset
-
-;
- 
-\begin_inset Formula $\alpha_{k}=0$
-\end_inset
-
- for 
-\begin_inset Formula $k=0,1,\ldots$
-\end_inset
-
-;
-
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\nospellcheck off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
- and 
-\begin_inset Formula $\beta_{k}=1/(4−k^{−2})$
-\end_inset
-
-
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\nospellcheck default
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
- for 
-\begin_inset Formula $k=1,2,\ldots$
-\end_inset
-
- (see 
-\begin_inset CommandInset citation
-LatexCommand cite
-after "Table 1.1"
-key "Gautschi2004"
-literal "false"
-
-\end_inset
-
-).
-\end_layout
-
-\begin_layout Standard
-\begin_inset Separator plain
-\end_inset
-
-
 \end_layout
 
 \begin_layout Remark
@@ -7562,9 +7544,9 @@ Let
 .
  That is,
 \begin_inset Formula 
-\[
-X(t,\omega)=\sum_{j=1}^{\infty}\gamma_{j}(\omega)\sqrt{\lambda_{j}}\psi_{j}(t),
-\]
+\begin{equation}
+X(t,\omega)=\sum_{j=1}^{\infty}\gamma_{j}(\omega)\sqrt{\lambda_{j}}\psi_{j}(t),\label{eq:Karhunen-Loeve}
+\end{equation}
 
 \end_inset
 
@@ -8421,6 +8403,20 @@ Use Tensor Operations:
 \end_inset
 
 .
+ The elements of the tensor 
+\begin_inset Formula $A$
+\end_inset
+
+ are then computed as:
+ 
+\begin_inset Formula 
+\begin{equation}
+A_{klij}=\sum_{p=1}^{n}\sum_{q=1}^{n}\sum_{r=1}^{n}\sum_{s=1}^{n}\left(\psi_{k}(x_{p})w_{p}\right)\left(\psi_{l}(x_{q})w_{q}\right)C_{pqrs}\left(\psi_{i}(x_{r})w_{r}\right)\left(\psi_{j}(x_{s})w_{s}\right)
+\end{equation}
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -8519,7 +8515,50 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Eigenfunctions of Exponential covariance function
+Functions 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\sqrt{\lambda_{j}}\psi_{j}(t)$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ used in KL (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Karhunen-Loeve"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+)
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Eigenfunctions-of-Exp-cov"
@@ -8540,21 +8579,87 @@ name "fig:Eigenfunctions-of-Exp-cov"
 
 \end_inset
 
-We can also define the residual to measure the accuracy of the KL expansion.
- For an approximate eigenpair 
+Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Sampled-functions"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ illustrates three sample functions generated using the Karhunen-Loève (KL) expansion.
+ 
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Graphs/1Drealization.pdf
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Sampled functions
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Sampled-functions"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+The accuracy of the approximated eigenpairs 
 \begin_inset Formula $\left(\tilde{\lambda}_{i},\tilde{u}_{i}\right)$
 \end_inset
 
-,
- the residual 
-\begin_inset Formula $R_{i}$
+ obtained from the Galerkin method can be quantified by examining the residual error.
+ This residual measures how closely the approximate solution satisfies the original integral eigenvalue problem 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:eigenproblem"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
 \end_inset
 
- is defined as the squared 
+.
+ The magnitude of this error is typically measured using the 
 \begin_inset Formula $L^{2}$
 \end_inset
 
--norm of the error in the eigenproblem equation:
+-norm of the residual function 
+\begin_inset Formula $R_{i}(x)=\intop_{\mathcal{T}}c\left(x,y\right)\tilde{u}_{i}\left(y\right)\,dy-\tilde{\lambda}_{i}\tilde{u}_{i}\left(x\right)$
+\end_inset
+
+,
+ defined as:
  
 \begin_inset Formula 
 \[
@@ -8607,7 +8712,10 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Residuum of eigenpairs
+\begin_inset Formula $L^{2}$
+\end_inset
+
+-norm of the residuum of eigenpairs
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Residuum-of-eigenpairs"
