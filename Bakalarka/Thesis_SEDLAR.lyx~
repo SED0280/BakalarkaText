@@ -24,10 +24,10 @@ Quadratures}
 \Acknowledgement{I would like to thank Ing. Michal Béreš, Phd. for his guidance and help with the thesis and my family for supporting me in my studies}
 
 \CzechAbstract{Cílem práce je definovat a naimplementovat efektivní způsob aproximace Karhunen-Loèveho rozkladu. Budeme k tomu využívat Gaussovy kvadratury a bázy polynomů orthonormálních vzhledem k váženému skalárnímu součinu na konečném intervalu. Ukážeme si jak z afinní transofrmace Legendrových polynomů pro získat kvadraturní body a váhy.}
-\CzechKeywords{orhogonální, orthonormální, Legendrovy polynomy, Gaussova kvadratura, skalární součin, normála, Galerkinova metoda, Karhunen-Loèveho rozklad, tří-členná rekurze, Jacobiho matice}
+\CzechKeywords{Legendrovy polynomy, Gaussova kvadratura, Galerkinova metoda, Karhunen-Loèveho rozklad, tří-členná rekurze, Jacobiho matice}
 
-\EnglishAbstract{The goal of this thesis is to define and implement an efficient method to approximate the Karhunen-Loève decomposition. We will utilize Gaussian quadratures and a basis of orthonormal polynomials with respect to an inner product over a finite interval. We will show how to obtain the nodes (roots) and weights for the quadrature rule using an affine transformation of Legendre polynomials.}
-\EnglishKeywords{orhogonal, orthonormal, Legendre polynomials, Gauss quadrature rule, inner product, norm, Galerkin method, Karhunen-Loève expantion, three-term recurrence, Jacobi matrix}
+\EnglishAbstract{This thesis provides a review of the theory related to orthogonal polynomials, weighted inner products, and Gaussian quadrature rules. Key concepts, including the three-term recurrence relation for generating orthogonal polynomials and the Golub-Welsch algorithm for computing quadrature nodes and weights from the associated Jacobi matrix, are presented with an emphasis on clarity and accessibility. Fundamental concepts from probability theory are introduced, focusing on covariance functions and Gaussian random fields, to establish the necessary background for the primary application explored in this work. The core application demonstrates the use of the Galerkin method, together with orthogonal polynomial bases and Gaussian quadrature rules, to achieve an efficient numerical approximation of the Karhunen-Loève (KL) expansion for stochastic processes. All methods discussed are implemented in Python, and the corresponding code is available at the specified repository [repository address].}
+\EnglishKeywords{Legendre polynomials, Gauss quadrature rule, Galerkin method, Karhunen-Loève expantion, three-term recurrence, Jacobi matrix}
 
 
 
@@ -8170,6 +8170,12 @@ nolink "false"
 \begin_inset Formula $\Cov(x,y)=\exp\left(-\left|x-y\right|\right)$
 \end_inset
 
+ multiplied by the square root of corresponding eigenvalue,
+ i.e.
+ 
+\begin_inset Formula $u_{i}(x)\sqrt{\lambda_{i}}$
+\end_inset
+
 .
  
 \begin_inset Float figure
@@ -8192,7 +8198,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Eigenfunctions of Exp covarience function
+Eigenfunctions of Exponential covariance function
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Eigenfunctions-of-Exp-cov"
@@ -8288,7 +8294,7 @@ We can also define the residual to measure the accuracy of the KL expansion.
  
 \begin_inset Formula 
 \[
-R_{i}=\left\Vert \intop_{\mathcal{T}}c\left(x,y\right)\tilde{u}_{i}\left(y\right)\,dy-\tilde{\lambda}_{i}\tilde{u}_{i}\left(x\right)\right\Vert _{L^{2}}^{2}=\intop_{\mathcal{T}}\left(\intop_{\mathcal{T}}c\left(x,y\right)\tilde{u}_{i}\left(y\right)\,dy-\tilde{\lambda}_{i}\tilde{u}_{i}\left(x\right)\right)^{2}dx.
+R_{i}=\left\Vert \intop_{\mathcal{T}}c\left(x,y\right)\tilde{u}_{i}\left(y\right)\,dy-\tilde{\lambda}_{i}\tilde{u}_{i}\left(x\right)\right\Vert _{L^{2}}=\left(\intop_{\mathcal{T}}\left(\intop_{\mathcal{T}}c\left(x,y\right)\tilde{u}_{i}\left(y\right)\,dy-\tilde{\lambda}_{i}\tilde{u}_{i}\left(x\right)\right)^{2}dx\right)^{1/2}.
 \]
 
 \end_inset
@@ -8312,6 +8318,10 @@ nolink "false"
 
 ,
  increases.
+ We observe that the residual decreases substantially only for either the even- or odd-indexed eigenpairs at each step,
+ in an alternating fashion.
+ This is because the basis polynomials being added alternate between even and odd degrees,
+ and adding a polynomial of a certain parity primarily refines the approximations of the eigenpairs with the corresponding parity.
  
 \begin_inset Float figure
 placement document
