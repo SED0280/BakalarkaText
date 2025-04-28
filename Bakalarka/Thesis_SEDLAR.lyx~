@@ -8770,7 +8770,7 @@ nolink "false"
  random variables,
  random fields,
  and autocovariance functions,
- with a focus on Gaussian random fields which are commonly used in applications.
+ with a focus on Gaussian random fields (GRF) which are commonly used in applications.
 \end_layout
 
 \begin_layout Standard
