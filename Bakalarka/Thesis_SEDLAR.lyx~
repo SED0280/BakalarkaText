@@ -21,12 +21,12 @@ Quadratures}
 
 \ThesisAssignmentFileName{ThesisAssignment.pdf}
 
-\Acknowledgement{I would like to thank Ing. Michal Béreš, Phd. for his guidance and help with the thesis and my family for supporting me in my studies}
+\Acknowledgement{I would like to thank Ing. Michal Béreš, Phd. for his guidance and help with the thesis and my family for supporting me in my studies.}
 
 \CzechAbstract{Cílem práce je definovat a naimplementovat efektivní způsob aproximace Karhunen-Loèveho rozkladu. Budeme k tomu využívat Gaussovy kvadratury a bázy polynomů orthonormálních vzhledem k váženému skalárnímu součinu na konečném intervalu. Ukážeme si jak z afinní transofrmace Legendrových polynomů pro získat kvadraturní body a váhy.}
 \CzechKeywords{Legendrovy polynomy, Gaussova kvadratura, Galerkinova metoda, Karhunen-Loèveho rozklad, tří-členná rekurze, Jacobiho matice}
 
-\EnglishAbstract{This thesis provides a review of the theory related to orthogonal polynomials, weighted inner products, and Gaussian quadrature rules. Key concepts, including the three-term recurrence relation for generating orthogonal polynomials and the Golub-Welsch algorithm for computing quadrature nodes and weights from the associated Jacobi matrix, are presented with an emphasis on clarity and accessibility. Fundamental concepts from probability theory are introduced, focusing on covariance functions and Gaussian random fields, to establish the necessary background for the primary application explored in this work. The core application demonstrates the use of the Galerkin method, together with orthogonal polynomial bases and Gaussian quadrature rules, to achieve an efficient numerical approximation of the Karhunen-Loève (KL) expansion for stochastic processes. All methods discussed are implemented in Python, and the corresponding code is available at the specified repository [repository address].}
+\EnglishAbstract{The goal of this thesis is to define and implement an efficient method to approximate the KarhunenLoève decomposition. The thesis first provides a review of the theory related to orthogonal polynomials, weighted inner products, and Gaussian quadrature rules. Key ideas are explained in a clear and accessible way. These include the three-term recurrence relation for generating orthogonal polynomials and the Golub-Welsch algorithm for computing quadrature nodes and weights from the associated Jacobi matrix. Fundamental concepts from probability theory are introduced, focusing on covariance functions and Gaussian random fields, to establish the necessary background for the primary application explored in this work. The core application demonstrates the use of the Galerkin method, together with orthogonal polynomial bases and Gaussian quadrature rules, to achieve an efficient numerical approximation of the Karhunen-Loève (KL) expansion for stochastic processes. All methods discussed are implemented in Python, and the corresponding code is available at the specified repository [repository address].}
 \EnglishKeywords{Legendre polynomials, Gauss quadrature rule, Galerkin method, Karhunen-Loève expantion, three-term recurrence, Jacobi matrix}
 
 
@@ -34,8 +34,10 @@ Quadratures}
 \AddAcronym{$P$}{space of all real polynomials}
 \AddAcronym{$\mathbb{T}$}{TEMPLATE\\}
 
-\AddAcronym{pdf}{probability density function}
-\AddAcronym{TEMPLATE}{TEMPLATE\\}
+\AddAcronym{PDF}{probability density function}
+\AddAcronym{GRF}{Gaussian Random Field}
+\AddAcronym{MVN}{Multivariate Normal}
+\AddAcronym{KL}{Karhunen-Loève\\}
 
 
 
@@ -250,98 +252,6 @@ MakeTitlePages
 
 \begin_layout Chapter
 Introduction
-\end_layout
-
-\begin_layout Standard
-[Text k čemu je KL dobrý]
-\end_layout
-
-\begin_layout Standard
-In the first chapter,
- we will define different types of polynomials.
- We will also discuss the weighted inner product.
- One type of polynomial we will define is the orthogonal polynomial.
- Orthogonal means that the inner product of two distinct orthogonal polynomials is zero.
- This property will prove very useful in many definitions and theorems in subsequent chapters.
- Since these orthogonal polynomials are so useful,
- we will need a way to reliably generate them.
- The generation process we will use for orthogonal and orthonormal polynomials (orthonormal polynomials are orthogonal polynomials normalized to have a norm of one) is the three-term recurrence relation.
- This process relies on the definition of the inner product.
- The coefficients used in this three-term recurrence can also be arranged into a symmetric tridiagonal matrix called the Jacobi matrix.
- The Jacobi matrix is useful for obtaining the roots of the corresponding monic orthogonal polynomials (which are its eigenvalues) and information related to the quadrature weights (from its eigenvectors).
- Since it is a tridiagonal matrix,
- we will use a specific function in our code to efficiently obtain the eigenvalues and eigenvectors of the Jacobi matrix.
- The discussion then shifts to quadrature rules.
- A quadrature rule is a set of quadrature nodes and weights that allows us to approximate weighted integrals over a finite interval.
- Generally,
- the more nodes and weights a quadrature rule has,
- the more precise the approximation becomes.
- We will obtain these nodes and weights using the Golub-Welsch algorithm 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "GolubWelsch1969"
-literal "false"
-
-\end_inset
-
-.
- The Golub-Welsch algorithm utilizes the eigenvalue decomposition of the Jacobi matrix.
- The eigenvalues of the Jacobi matrix are the nodes of the corresponding Gauss quadrature rule,
- and we can obtain the weights of the quadrature rule from the first components of the normalized eigenvectors.
- Finally,
- this chapter will discuss Legendre polynomials and their affine transformation.
- Legendre polynomials are orthogonal polynomials defined with respect to the standard inner product (weight function 
-\begin_inset Formula $w(x)=1$
-\end_inset
-
-) on the interval 
-\begin_inset Formula $\left\langle -1,1\right\rangle $
-\end_inset
-
-.
- The roots of Legendre polynomials serve as nodes for the Gauss-Legendre quadrature rule,
- used for integrals over the interval 
-\begin_inset Formula $\left\langle -1,1\right\rangle $
-\end_inset
-
-.
- We will then present an affine transformation that maps the Legendre polynomials,
- nodes,
- and weights from the reference interval 
-\begin_inset Formula $\left\langle -1,1\right\rangle $
-\end_inset
-
- to obtain the corresponding polynomials,
- nodes,
- and weights for Gauss quadrature on an arbitrary finite interval 
-\begin_inset Formula $\left\langle a,b\right\rangle $
-\end_inset
-
- (where 
-\begin_inset Formula $a<b$
-\end_inset
-
-).
-\end_layout
-
-\begin_layout Standard
-In the second chapter we 
-\end_layout
-
-\begin_layout Standard
-.
-\end_layout
-
-\begin_layout Standard
-.
-\end_layout
-
-\begin_layout Standard
-.
-\end_layout
-
-\begin_layout Standard
-.
 \end_layout
 
 \begin_layout Standard
@@ -719,7 +629,7 @@ nolink "false"
  expectation,
  covariance,
  autocovariance functions,
- and Gaussian random fields.
+ and Gaussian random fields (GRF).
  
 \end_layout
 
@@ -2079,7 +1989,7 @@ with
 \begin_inset Formula $k+1$
 \end_inset
 
-th step 
+-th step 
 \begin_inset Formula $f_{k+1}(x)$
 \end_inset
 
@@ -2638,7 +2548,7 @@ The eigenvalue decomposition of the symmetric Jacobi matrix
 
 \begin_layout Standard
 For showing the ties between Jacobi matrix and orthonormal polynomials,
- we need to define a vector of othronormal polynomials.
+ we need to define a vector of orthonormal polynomials.
  For a sequence 
 \begin_inset Formula $\{\tilde{\pi}_{i}(x)\}_{i=0}^{n-1}$
 \end_inset
@@ -2740,7 +2650,7 @@ The roots
 \begin_inset Formula $\tilde{\boldsymbol{\pi}}(x)=\left[\tilde{\pi}_{0}(x),\tilde{\pi}_{1}(x),\ldots,\tilde{\pi}_{n-1}(x)\right]^{T}$
 \end_inset
 
-.
+,
  i.e.,
  for each 
 \begin_inset Formula $j=0,1,\ldots,n-1$
@@ -5546,7 +5456,7 @@ This chapter starts with an introduction to the Hilbert space
  the discussion then progresses to the topic of stochastic processes,
  introducing the concepts of random fields,
  their associated autocovariance functions,
- and the important subclass represented by Gaussian random fields.
+ and the important subclass represented by Gaussian random fields (GRF).
  
 \end_layout
 
@@ -6081,20 +5991,6 @@ literal "false"
 \end_inset
 
 .
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-.
-\end_layout
-
-\begin_layout Plain Layout
-Theorem 12?
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Section
@@ -6652,80 +6548,6 @@ Probability space
 
 \end_inset
 
-
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-Probability space 
-\begin_inset Formula $\left(\Omega,\mathcal{F},\mathbb{P}\right)$
-\end_inset
-
- is a space.
- 
-\begin_inset Formula $\Omega$
-\end_inset
-
- is the all possible elementary outcomes of the random experiment,
- 
-\begin_inset Formula $\mathcal{F}$
-\end_inset
-
- is a collection of subsets of 
-\begin_inset Formula $\Omega$
-\end_inset
-
- and 
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\nospellcheck off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
-
-\begin_inset Formula $\mathbb{P}$
-\end_inset
-
-
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\nospellcheck default
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
- is a function that assigns a probability (a real number) to each event 
-\begin_inset Formula $A$
-\end_inset
-
- in the event space 
-\begin_inset Formula $\mathcal{F}$
-\end_inset
-
-.
- Each subset in 
-\begin_inset Formula $\mathcal{F}$
-\end_inset
-
- is called an event.
- An event represents a specific outcome or a set of outcomes we might be interested in.
-\end_layout
-
-\end_inset
-
 A probability space is a triple 
 \begin_inset Formula $\left(\Omega,\mathcal{F},\mathbb{P}\right)$
 \end_inset
@@ -6819,26 +6641,6 @@ status collapsed
 \end_inset
 
 
-\end_layout
-
-\end_inset
-
-
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-Let 
-\begin_inset Formula $\left(\Omega,\mathcal{F},\mathbb{P}\right)$
-\end_inset
-
- be a probability space and let 
-\begin_inset Formula $\mathbb{R}$
-\end_inset
-
- be a measurable space.
- Then,
- 
 \end_layout
 
 \end_inset
@@ -7326,7 +7128,7 @@ The main focus here will be random fields
 
  with Gaussian distribution,
  i.e.
- Gaussian random fields.
+ Gaussian random fields (GRF).
 \end_layout
 
 \begin_layout Definition
@@ -7637,7 +7439,7 @@ literal "false"
 \end_inset
 
 ,
- specifically focusing on its application to Isotropic Gaussian Random Fields for which we will consider the expected value will be constant zero function,
+ specifically focusing on its application to Isotropic GRF for which we will consider the expected value will be constant zero function,
  i.e.,
  
 \begin_inset Formula $\mathbb{E}\left[X\right]=0$
@@ -7746,7 +7548,7 @@ The random variables
  have zero mean,
  unit variance and are pairwise uncorrelated.
  Moreover,
- for Gaussian random field they are independent.
+ for GRF they are independent.
 \end_layout
 
 \begin_layout Definition
@@ -8679,63 +8481,6 @@ name "fig:Eigenfunctions-of-Exp-cov"
 
 \end_inset
 
-Figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Error-of-Eigenpairs"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-
-\end_inset
-
- shows the error of the eigenfunction approximations compared to the analytical results.
- We observe that after using a sufficient number of basis polynomials,
- the errors stabilize,
- each at a different level.
- 
-\begin_inset Float figure
-placement document
-alignment document
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Graphics
-	filename Graphs/EigenpairsError.pdf
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Error of eigenfunctions
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Error-of-Eigenpairs"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
 We can also define the residual to measure the accuracy of the KL expansion.
  For an approximate eigenpair 
 \begin_inset Formula $\left(\tilde{\lambda}_{i},\tilde{u}_{i}\right)$
@@ -8754,7 +8499,7 @@ We can also define the residual to measure the accuracy of the KL expansion.
  
 \begin_inset Formula 
 \[
-R_{i}=\left\Vert \intop_{\mathcal{T}}c\left(x,y\right)\tilde{u}_{i}\left(y\right)\,dy-\tilde{\lambda}_{i}\tilde{u}_{i}\left(x\right)\right\Vert _{L^{2}}=\left(\intop_{\mathcal{T}}\left(\intop_{\mathcal{T}}c\left(x,y\right)\tilde{u}_{i}\left(y\right)\,dy-\tilde{\lambda}_{i}\tilde{u}_{i}\left(x\right)\right)^{2}dx\right)^{1/2}.
+\left\Vert R_{i}\right\Vert _{L^{2}}=\left\Vert \intop_{\mathcal{T}}c\left(x,y\right)\tilde{u}_{i}\left(y\right)\,dy-\tilde{\lambda}_{i}\tilde{u}_{i}\left(x\right)\right\Vert _{L^{2}}=\left(\intop_{\mathcal{T}}\left(\intop_{\mathcal{T}}c\left(x,y\right)\tilde{u}_{i}\left(y\right)\,dy-\tilde{\lambda}_{i}\tilde{u}_{i}\left(x\right)\right)^{2}dx\right)^{1/2}.
 \]
 
 \end_inset
@@ -8824,23 +8569,6 @@ name "fig:Residuum-of-eigenpairs"
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-.
-\end_layout
-
-\begin_layout Plain Layout
-2D Eigenfunkce a sample
-\end_layout
-
-\end_inset
-
 Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -8852,12 +8580,8 @@ nolink "false"
 
 \end_inset
 
- shows the the first six eigenfunctions for two dimensional fields.
- We can observe that they are symmetrical.
- 
-\end_layout
-
-\begin_layout Standard
+ shows the first six eigenfunctions for two-dimensional fields.
+ We observe that they are symmetric.
 \begin_inset Float figure
 placement document
 alignment document
@@ -8878,10 +8602,64 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-2 dimensional eigenfunctions
+2 Dimensional eigenfunctions
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:2-dimensional-Eigenfunctions"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:2-Dimensional-realization"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ shows six examples of sampled two-dimensional fields.
+ 
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Graphs/2DRealization.pdf
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+2 Dimensional realization 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:2-Dimensional-realization"
 
 \end_inset
 
@@ -9003,7 +8781,7 @@ The core objective was addressed in Chapter
 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "chap:KL"
+reference "chap:Karhunen-Loève-expansion"
 plural "false"
 caps "false"
 noprefix "false"
@@ -9025,7 +8803,7 @@ nolink "false"
 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "chap:OrthoPoly"
+reference "chap:Polynomials"
 plural "false"
 caps "false"
 noprefix "false"
@@ -9041,7 +8819,7 @@ nolink "false"
 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "chap:OrthoPoly"
+reference "chap:Polynomials"
 plural "false"
 caps "false"
 noprefix "false"
@@ -9064,7 +8842,7 @@ In terms of contribution,
 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "chap:OrthoPoly"
+reference "chap:Polynomials"
 plural "false"
 caps "false"
 noprefix "false"
@@ -9087,7 +8865,7 @@ nolink "false"
  involved the compilation and concise presentation of established mathematical theory from existing literature 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "Gautschi2004,XiuKarniadakis2002"
+key "Gautschi2004,LordPowellShardlow2014"
 literal "false"
 
 \end_inset
@@ -9105,7 +8883,7 @@ The primary practical contribution of this work lies in the implementation and i
 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "chap:Experiments"
+reference "chap:Polynomials"
 plural "false"
 caps "false"
 noprefix "false"
@@ -9116,7 +8894,7 @@ nolink "false"
  and 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "chap:KL"
+reference "chap:Karhunen-Loève-expansion"
 plural "false"
 caps "false"
 noprefix "false"
