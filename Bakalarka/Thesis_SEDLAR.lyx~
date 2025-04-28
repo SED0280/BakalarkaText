@@ -325,7 +325,8 @@ nolink "false"
 ),
  are used to model such situations where values change randomly over time or space.
  Examples include variations in material properties or fluctuating forces acting on a structure.
- However random fields can be infinitely complex,
+ However,
+ random fields can possess infinite complexity,
  therefore working directly with them can be very difficult.
  A powerful technique to simplify them is the Karhunen-Loève (KL) expansion 
 \begin_inset CommandInset citation
@@ -8641,7 +8642,7 @@ The accuracy of the approximated eigenpairs
  This residual measures how closely the approximate solution satisfies the original integral eigenvalue problem 
 \begin_inset CommandInset ref
 LatexCommand eqref
-reference "eq:intro_integral_eigenproblem"
+reference "eq:eigenproblem"
 plural "false"
 caps "false"
 noprefix "false"
@@ -8712,7 +8713,10 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Residuum of eigenpairs
+\begin_inset Formula $L^{2}$
+\end_inset
+
+-norm of the residuum of eigenpairs
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Residuum-of-eigenpairs"
