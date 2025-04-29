@@ -8828,7 +8828,11 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-2 Dimensional realization 
+2 Dimensional realization with dimensions 
+\begin_inset Formula $\left\langle -1,1\right\rangle \times\left\langle -1,1\right\rangle $
+\end_inset
+
+ 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:2-Dimensional-realization"
