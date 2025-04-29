@@ -160,20 +160,20 @@ Quadratures}
 ]{defnBox}
 
 % Wrap Theorems in Frames Without Recursion
-\let\oldthm\thm
-\renewcommand{\thm}{\begin{thmBox}\oldthm}
-\let\endoldthm\endthm
-\renewcommand{\endthm}{\endoldthm\end{thmBox}}
+% \let\oldthm\thm
+% \renewcommand{\thm}{\begin{thmBox}\oldthm}
+% \let\endoldthm\endthm
+% \renewcommand{\endthm}{\endoldthm\end{thmBox}}
 
-\let\oldlem\lem
-\renewcommand{\lem}{\begin{lemBox}\oldlem}
-\let\endoldlem\endlem
-\renewcommand{\endlem}{\endoldlem\end{lemBox}}
+% \let\oldlem\lem
+% \renewcommand{\lem}{\begin{lemBox}\oldlem}
+% \let\endoldlem\endlem
+% \renewcommand{\endlem}{\endoldlem\end{lemBox}}
 
-\let\olddefn\defn
-\renewcommand{\defn}{\begin{defnBox}\olddefn}
-\let\endolddefn\enddefn
-\renewcommand{\enddefn}{\endolddefn\end{defnBox}}
+% \let\olddefn\defn
+% \renewcommand{\defn}{\begin{defnBox}\olddefn}
+% \let\endolddefn\enddefn
+% \renewcommand{\enddefn}{\endolddefn\end{defnBox}}
 
 \DeclareMathOperator{\Cov}{Cov}
 
@@ -8681,7 +8681,9 @@ nolink "false"
 \end_inset
 
 ,
- we see the residual for the first five approximate eigenpairs as the number of basis polynomials,
+ we see the residual for the first five approximate eigenpairs,
+ made from the exponential covariance function,
+ as the number of basis polynomials,
  and therefore the size of matrix 
 \begin_inset Formula $A$
 \end_inset
@@ -8692,7 +8694,7 @@ nolink "false"
  in an alternating fashion.
  This is because the basis polynomials being added alternate between even and odd degrees,
  and adding a polynomial of a certain parity primarily refines the approximations of the eigenpairs with the corresponding parity.
- 
+ Similar 
 \begin_inset Float figure
 placement document
 alignment document
