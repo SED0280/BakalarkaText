@@ -8748,7 +8748,7 @@ nolink "false"
 
 \end_inset
 
- shows the first six eigenfunctions for two-dimensional fields.
+ shows the first six eigenfunctions for two-dimensional fields made from exponential covariance function.
  We observe that they are symmetric.
 \begin_inset Float figure
 placement document
@@ -8759,7 +8759,7 @@ status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename Graphs/Eigenfunctions2D.pdf
+	filename Graphs/Eigenfunctions2DExp.pdf
 
 \end_inset
 
@@ -8770,7 +8770,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-2 Dimensional eigenfunctions with dimensions 
+2D eigenfunctions with dimensions 
 \begin_inset Formula $\left\langle -1,1\right\rangle \times\left\langle -1,1\right\rangle $
 \end_inset
 
@@ -8806,7 +8806,7 @@ nolink "false"
 
 \end_inset
 
- shows six examples of sampled two-dimensional fields.
+ shows six examples of sampled two-dimensional fields made from exponential covariance function.
  
 \begin_inset Float figure
 placement document
@@ -8817,7 +8817,7 @@ status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename Graphs/2DRealization.pdf
+	filename Graphs/2DRealizationExp.pdf
 
 \end_inset
 
@@ -8828,10 +8828,130 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-2 Dimensional realization 
+2D realization with dimensions 
+\begin_inset Formula $\left\langle -1,1\right\rangle \times\left\langle -1,1\right\rangle $
+\end_inset
+
+ 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:2-Dimensional-realization"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:2-dimensional-Eigenfunctions"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ shows the first six eigenfunctions for two-dimensional fields made from squared exponential covariance function.
+ We observe that they are symmetric.
+ 
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Graphs/Eigenfunctions2DSqExp.pdf
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+2D eigenfunctions with dimensions 
+\begin_inset Formula $\left\langle -1,1\right\rangle \times\left\langle -1,1\right\rangle $
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:2D-eigenfunctionsSq"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:2-Dimensional-realization"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ shows six examples of sampled two-dimensional fields.
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Graphs/2DRealizationsqExp.pdf
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+2D realization with dimensions 
+\begin_inset Formula $\left\langle -1,1\right\rangle \times\left\langle -1,1\right\rangle $
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:2D-realization-Sq"
 
 \end_inset
 

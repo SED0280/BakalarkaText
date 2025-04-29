@@ -132,17 +132,15 @@ Rozdělené na zbytek víkendu:
 - ÚVOD
 - ZÁVĚR
 
-The goal of this thesis is to implement an efficient method to approximate the Karhunen-Loève decomposition. 
-We utilize Gaussian quadratures and a basis of orthonormal polynomials with respect to an inner product over a finite interval. 
-We show how to obtain the nodes (roots) and weights for the quadrature rule. Using an affine transformation of 
-Legendre polynomials.
+------------------------------------------------------------------
 
-In this thesis consists of theory about polynomials, weighted inner product and quadrature rules. A lot of it is taken from other sources but is rewritten in a way that an undergraduate students can understand. 
-There is a Three term recurrence that makes orthogonal polynomials with respect to a weighted inner product. Then the Quadrature rule is discussed and Golub-Welsch algorithm for obtaining quadrature nodes and weights.
-Then the fundimentals of probability are referenced about Covarience functions and Random Gaussian fields.
-We utilize the Galerkin method along with orthogonal polynomials and quadratures for an efficient approximation of Karhunen Lèove decomposition.
-Everything is implemented in python code at repository [will add git adress]
+Už to skoro je
+
+ - potřebuju přepsat geteigenfunctions aby dávala i eigenvektory, uříznout a vykreslit tečkama společně s ostatními.
 
 
-This thesis provides a review of the theory underpinning orthogonal polynomials, weighted inner products, and Gaussian quadrature rules. Key concepts, including the three-term recurrence relation for generating orthogonal polynomials and the Golub-Welsch algorithm for computing quadrature nodes and weights from the associated Jacobi matrix, are presented with an emphasis on clarity and accessibility. Fundamental concepts from probability theory are introduced, focusing on covariance functions and Gaussian random fields, to establish the necessary background for the primary application explored in this work. The core application demonstrates the use of the Galerkin method, in conjunction with orthogonal polynomial bases and Gaussian quadrature rules, to achieve an efficient numerical approximation of the Karhunen-Loève (KL) expansion for stochastic processes. All methods discussed are implemented in Python, and the corresponding code is available at the specified repository [repository address].
+
+
+
+
 
