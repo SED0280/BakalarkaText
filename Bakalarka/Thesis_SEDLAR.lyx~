@@ -37,29 +37,27 @@ Quadratures}
 \AddAcronym{$\mathbb{N}$}{The set of natural numbers $\{1, 2, 3, \dots\}$}
 \AddAcronym{$\mathbb{N}_{0}$}{The set of natural numbers including zero $\{0, 1, 2, \dots\}$}
 \AddAcronym{$I$}{A finite interval $\langle a, b \rangle \subset \mathbb{R}$}
-\AddAcronym{$\mathcal{T}$}{Domain of a random field (often a subset of $\mathbb{R}^d$)}
+\AddAcronym{$\mathcal{T}$}{Domain of a random field (a subset of $\mathbb{R}^d$)}
 \AddAcronym{$P$}{The space of all real polynomials}
 \AddAcronym{$P_d$}{The space of real polynomials of degree at most $d$}
 \AddAcronym{$P_d^m$}{The set of monic polynomials of degree exactly $d$}
-\AddAcronym{$\widetilde{P_d}$}{The set of normalized polynomials of degree $d$ (norm = 1)}
+\AddAcronym{$\widetilde{P_d}$}{The set of normalized polynomials of degree $d$}
 \AddAcronym{$C(I)$}{The space of continuous functions on the interval $I$}
 \AddAcronym{$L^2(I)$}{Hilbert space of square-integrable functions on the interval $I$}
-\AddAcronym{$\mathcal{L}^2(I)$}{Set of Cauchy sequences in $C(I)$ with respect to the $L^2$-norm}
-\AddAcronym{$V_N, V_N^x, V_M^y$}{Finite-dimensional function (sub)spaces}
+\AddAcronym{$V_N, V_N^x, V_M^y$}{Finite-dimensional function subspaces}	
 \AddAcronym{$V_N^x \otimes V_M^y$}{Tensor product space}
-\AddAcronym{$\Omega$}{Sample space in probability theory}
-\AddAcronym{$\mathcal{F}, \varSigma$}{Sigma-algebra (event space) on $\Omega$}
+\AddAcronym{$\Omega$}{Sample space}
+\AddAcronym{$\mathcal{F}, \varSigma$}{Sigma-algebra on $\Omega$}
 \AddAcronym{$w(x)$}{Weight function}
 \AddAcronym{$\left\langle \cdot, \cdot \right\rangle_w$}{Weighted inner product with weight $w(x)$}
 \AddAcronym{$\left\Vert \cdot \right\Vert_w$}{Norm derived from the weighted inner product $\left\langle \cdot, \cdot \right\rangle_w$}
-\AddAcronym{$\left\Vert \cdot \right\Vert_{L^2}$}{Standard $L^2$-norm over a specified interval}
-\AddAcronym{$\left\langle \cdot, \cdot \right\rangle_{L^2}$}{Standard $L^2$-inner product over a specified interval}
+\AddAcronym{$\left\Vert \cdot \right\Vert_{L^2}$}{$L^2$-norm over a specified interval}
+\AddAcronym{$\left\langle \cdot, \cdot \right\rangle_{L^2}$}{$L^2$-inner product over a specified interval}
 \AddAcronym{$\pi_k(x)$}{Monic orthogonal polynomial of degree $k$}
 \AddAcronym{$\tilde{\pi}_k(x)$}{Orthonormal polynomial of degree $k$}
 \AddAcronym{$\pi_k^L(x)$}{Monic Legendre polynomial of degree $k$}
 \AddAcronym{$\tilde{\pi}_k^L(x)$}{Orthonormal Legendre polynomial of degree $k$}
 \AddAcronym{$\mathbb{P}$}{Probability measure}
-\AddAcronym{$\mu$}{General measure}
 \AddAcronym{$X, Y, X(t), u(\boldsymbol{x})$}{Random variables, stochastic processes, random fields}
 \AddAcronym{$\mathbb{E}[\cdot]$}{Expected value operator}
 \AddAcronym{$\Cov(\cdot, \cdot)$}{Covariance operator between two random variables}
@@ -68,27 +66,17 @@ Quadratures}
 \AddAcronym{$c^0(r)$}{Isotropic covariance function}
 \AddAcronym{$N(\mu, \sigma^2)$}{Gaussian (normal) distribution with mean $\mu$ and variance $\sigma^2$}
 \AddAcronym{$\spanSed\{\cdot\}$}{Span of a set of vectors or functions} % Ensure \spanSed is defined or change to \mathrm{span} or \operatorname{span}
-\AddAcronym{$\mu_r$}{$r$-th moment of a weight function}
 \AddAcronym{$\alpha_k, \beta_k$}{Coefficients in the three-term recurrence relation}
 \AddAcronym{$\lambda_j$}{Eigenvalue of covariance operator or quadrature weight or Quadrature weight (context-dependent)}
-\AddAcronym{$\psi_j(x)$}{Eigenfunction of covariance operator}
 \AddAcronym{$\tau_j$}{Quadrature node (root of orthogonal polynomial)}
-\AddAcronym{$\gamma_j$}{Random coefficients in KL expansion}
-\AddAcronym{$\lambda_{i,N}$}{Galerkin approximation of the $i$-th eigenvalue using $N$ basis functions}
-\AddAcronym{$\overline{u}_{i,j}$}{Coefficient of the $j$-th basis function in the approximation of the $i$-th eigenfunction}
-\AddAcronym{$\sigma^2$}{Variance parameter}
+\AddAcronym{$\sigma^2$}{Variance}
 \AddAcronym{$\delta_{k,0}, \delta_{kj}$}{Kronecker delta}
 \AddAcronym{$\boldsymbol{x}, \boldsymbol{y}$}{Vectors in $\mathbb{R}^d$}
 \AddAcronym{$\tilde{\boldsymbol{\pi}}(x)$}{Vector of orthonormal polynomials $[\tilde{\pi}_0(x), \dots, \tilde{\pi}_{n-1}(x)]^T$}
 \AddAcronym{$\boldsymbol{\tau}^{(n)}$}{Vector of roots $[\tau_0^{(n)}, \dots, \tau_{n-1}^{(n)}]^T$}
 \AddAcronym{$\boldsymbol{e}_n$}{$n$-th standard basis vector $[0, \dots, 0, 1]^T$}
-\AddAcronym{$\boldsymbol{v}_j^{(n)}$}{$j$-th normalized eigenvector of $J_n$}
-\AddAcronym{$\boldsymbol{v}_{j,0}^{(n)}$}{First component of $\boldsymbol{v}_j^{(n)}$}
 \AddAcronym{$\boldsymbol{\lambda}^G$}{Vector of Gauss weights $[\lambda_1^G, \dots, \lambda_n^G]^T$}
 \AddAcronym{$\boldsymbol{e}$}{Vector of ones $[1, 1, \dots, 1]^T$}
-\AddAcronym{$\mathbb{X}$}{Random vector $(X_1, \dots, X_n)$}
-\AddAcronym{$\boldsymbol{\mu}$}{Mean vector (in probability)}
-\AddAcronym{$\overline{\boldsymbol{u}}_i$}{Vector representation of Galerkin approximation $[\overline{u}_{i,0}, \dots, \overline{u}_{i,N}]^T$}
 \AddAcronym{$J_n$}{$n \times n$ Jacobi matrix\\}	
 
 
@@ -8421,7 +8409,151 @@ A_{klij}=\sum_{p=1}^{n}\sum_{q=1}^{n}\sum_{r=1}^{n}\sum_{s=1}^{n}\left(\psi_{k}(
 \end_layout
 
 \begin_layout Standard
-In Figure 
+The next step is to determine an adequate number of quadrature nodes and weights (
+\begin_inset Formula $N$
+\end_inset
+
+) required to compute the entries of the Galerkin matrix 
+\begin_inset Formula $A$
+\end_inset
+
+ with sufficient accuracy.
+ Since the exact analytical values of the matrix entries 
+\begin_inset Formula $A_{k,l}$
+\end_inset
+
+ (which involve integrals approximated by quadrature) are generally unknown,
+ a reference value is needed for comparison.
+ We adopt the common approach of assuming that using a significantly larger number of nodes yields a highly accurate result.
+ Therefore,
+ a reference value 
+\begin_inset Formula $A_{k,l}^{*}$
+\end_inset
+
+ is computed using a large number of nodes,
+ 
+\begin_inset Formula $N_{ref}$
+\end_inset
+
+.
+ The values 
+\begin_inset Formula $A_{k,l}$
+\end_inset
+
+ computed with fewer nodes (
+\begin_inset Formula $N<N_{ref}$
+\end_inset
+
+) are then compared against this reference to assess convergence.
+\end_layout
+
+\begin_layout Example
+This approach is illustrated in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Error-of-A_kl"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+ In this example,
+ matrix entries 
+\begin_inset Formula $A_{k,l}$
+\end_inset
+
+ were computed using 
+\begin_inset Formula $N$
+\end_inset
+
+ nodes,
+ where 
+\begin_inset Formula $N$
+\end_inset
+
+ ranged from 
+\begin_inset Formula $10$
+\end_inset
+
+ to 
+\begin_inset Formula $600$
+\end_inset
+
+.
+ These computed values were compared to a reference value 
+\begin_inset Formula $A_{k,l}^{*}$
+\end_inset
+
+ computed with 
+\begin_inset Formula $N_{ref}=1000$
+\end_inset
+
+ nodes.
+ The figure shows the error,
+ defined as 
+\begin_inset Formula $|A_{k,l}-A_{k,l}^{*}|$
+\end_inset
+
+.
+ 
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Graphs/AijError.pdf
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Error of entries 
+\begin_inset Formula $A_{k,l}$
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Error-of-A_kl"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We now examine the computed eigenvalues and eigenvectors of the matrix 
+\begin_inset Formula $A$
+\end_inset
+
+.
+ Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Eigenvalues-of-cov"
@@ -8432,8 +8564,7 @@ nolink "false"
 
 \end_inset
 
-,
- we see eigenvalues corresponding to different covariance functions;
+ shows the computed approximate eigenvalues corresponding to different covariance functions;
  in this case,
  they were calculated using 21 orthonormal basis functions.
 \begin_inset Float figure
@@ -8456,7 +8587,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Eigenvalues from different covariance functions
+Approximate eigenvalues from different covariance functions
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Eigenvalues-of-cov"
@@ -8531,7 +8662,7 @@ Functions
 \noun off
 \color none
 
-\begin_inset Formula $\sqrt{\lambda_{j}}\psi_{j}(t)$
+\begin_inset Formula $u_{i}(x)\sqrt{\lambda_{i}}$
 \end_inset
 
 
@@ -8694,7 +8825,7 @@ nolink "false"
  in an alternating fashion.
  This is because the basis polynomials being added alternate between even and odd degrees,
  and adding a polynomial of a certain parity primarily refines the approximations of the eigenpairs with the corresponding parity.
- Similar 
+ 
 \begin_inset Float figure
 placement document
 alignment document
@@ -8739,10 +8870,35 @@ name "fig:Residuum-of-eigenpairs"
 
 \end_inset
 
-Figure 
+The analysis is now extended to two-dimensional random fields defined on the square domain 
+\begin_inset Formula $\mathcal{T}=\left\langle -1,1\right\rangle \times\left\langle -1,1\right\rangle $
+\end_inset
+
+.
+ We examine the Karhunen-Loève (KL) expansion components and resulting field realizations for two different isotropic covariance models.
+ Those covariance models are the exponential covariance function,
+ 
+\begin_inset Formula $\Cov(\boldsymbol{x},\boldsymbol{y})=\exp\left(-\|\boldsymbol{x}-\boldsymbol{y}\|\right)$
+\end_inset
+
+,
+ and squared exponential covariance function,
+ 
+\begin_inset Formula $\Cov(\boldsymbol{x},\boldsymbol{y})=\exp\left(-\|\boldsymbol{x}-\boldsymbol{y}\|^{2}\right)$
+\end_inset
+
+.
+ All visualizations presented in this section correspond to this domain 
+\begin_inset Formula $\mathcal{T}$
+\end_inset
+
+.
+ Firstly,
+ we examine the eigenvalues for these covariance functions,
+ shown in Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:2-dimensional-Eigenfunctions"
+reference "fig:Eigenvalues-for-2D"
 plural "false"
 caps "false"
 noprefix "false"
@@ -8750,8 +8906,109 @@ nolink "false"
 
 \end_inset
 
- shows the first six eigenfunctions for two-dimensional fields made from exponential covariance function.
- We observe that they are symmetric.
+.
+ 
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Graphs/2Deigenvalues.pdf
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Eigenvalues for the different covariance functions
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Eigenvalues-for-2D"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:2D_Eigenfunctions_Exp"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ displays the first six computed approximate eigenfunctions,
+ 
+\begin_inset Formula $\tilde{u}_{j}(\boldsymbol{x})$
+\end_inset
+
+,
+ derived from the exponential covariance function on 
+\begin_inset Formula $\mathcal{T}$
+\end_inset
+
+.
+ These eigenfunctions represent the fundamental spatial patterns within the random field.
+ Similarly,
+ Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:2D_Eigenfunctions_SqExp"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ shows the first six approximate eigenfunctions derived from the squared exponential covariance function on the same domain.
+ A notable characteristic observed in both sets of eigenfunctions (Figures 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:2D_Eigenfunctions_Exp"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:2D_Eigenfunctions_SqExp"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+) is their distinct symmetry,
+ reflecting the isotropic nature of the underlying covariance functions.
 \begin_inset Float figure
 placement document
 alignment document
@@ -8772,14 +9029,19 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-2D eigenfunctions with dimensions 
+Approximate 2D eigenfunctions 
+\begin_inset Formula $\tilde{u}_{j}(\boldsymbol{x})$
+\end_inset
+
+ for the exponential covariance function,
+ defined on the domain 
 \begin_inset Formula $\left\langle -1,1\right\rangle \times\left\langle -1,1\right\rangle $
 \end_inset
 
 
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:2-dimensional-Eigenfunctions"
+name "fig:2D_Eigenfunctions_Exp"
 
 \end_inset
 
@@ -8797,77 +9059,6 @@ name "fig:2-dimensional-Eigenfunctions"
 
 \end_inset
 
-Figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:2-Dimensional-realization"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-
-\end_inset
-
- shows six examples of sampled two-dimensional fields made from exponential covariance function.
- 
-\begin_inset Float figure
-placement document
-alignment document
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Graphics
-	filename Graphs/2DRealizationExp.pdf
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-2D realization with dimensions 
-\begin_inset Formula $\left\langle -1,1\right\rangle \times\left\langle -1,1\right\rangle $
-\end_inset
-
- 
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:2-Dimensional-realization"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-Figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:2-dimensional-Eigenfunctions"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-
-\end_inset
-
- shows the first six eigenfunctions for two-dimensional fields made from squared exponential covariance function.
- We observe that they are symmetric.
  
 \begin_inset Float figure
 placement document
@@ -8889,14 +9080,93 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-2D eigenfunctions with dimensions 
+Approximate 2D eigenfunctions 
+\begin_inset Formula $\tilde{u}_{j}(\boldsymbol{x})$
+\end_inset
+
+ for the squared exponential covariance function,
+ defined on the domain 
 \begin_inset Formula $\left\langle -1,1\right\rangle \times\left\langle -1,1\right\rangle $
 \end_inset
 
 
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:2D-eigenfunctionsSq"
+name "fig:2D_Eigenfunctions_SqExp"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Next,
+ plots of sample fields generated using these KL expansions are shown.
+ Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:2D_Realizations_Exp"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ illustrates six sample realizations of the two-dimensional random field modeled with the exponential covariance function.
+ Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:2D_Realizations_SqExp"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ provides corresponding sample realizations for the field modeled with the squared exponential covariance function.
+ These plots offer visual examples of the texture and spatial structure characteristic of random fields resulting from these respective covariance models over the domain 
+\begin_inset Formula $\mathcal{T}$
+\end_inset
+
+.
+ 
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Graphs/2DRealizationExp.pdf
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Sample realizations of a 2D random field with an exponential covariance function,
+ defined on the domain 
+\begin_inset Formula $\left\langle -1,1\right\rangle \times\left\langle -1,1\right\rangle $
+\end_inset
+
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:2D_Realizations_Exp"
 
 \end_inset
 
@@ -8914,18 +9184,7 @@ name "fig:2D-eigenfunctionsSq"
 
 \end_inset
 
-Figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:2-Dimensional-realization"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
 
-\end_inset
-
- shows six examples of sampled two-dimensional fields made from squared exponential covariance function.
 \begin_inset Float figure
 placement document
 alignment document
@@ -8946,14 +9205,15 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-2D realization with dimensions 
+Sample realizations of a 2D random field with a squared exponential covariance function,
+ defined on the domain 
 \begin_inset Formula $\left\langle -1,1\right\rangle \times\left\langle -1,1\right\rangle $
 \end_inset
 
 
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:2D-realization-Sq"
+name "fig:2D_Realizations_SqExp"
 
 \end_inset
 
