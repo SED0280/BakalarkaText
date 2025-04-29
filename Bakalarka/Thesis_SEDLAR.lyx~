@@ -9530,6 +9530,93 @@ nolink "false"
 \end_inset
 
 .
+ In a same way Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Eigenfunctions-of-SqExp-cov"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ shows
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\begin_inset Formula $u_{i}(x)\sqrt{\lambda_{i}}$
+\end_inset
+
+ approximations for 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+squared exponential covariance and Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Eigenfunctions-of-Mat-cov"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ shows
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\begin_inset Formula $u_{i}(x)\sqrt{\lambda_{i}}$
+\end_inset
+
+ approximations for Matérn
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ covariance.
  
 \begin_inset Float figure
 placement document
@@ -9540,7 +9627,7 @@ status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename Graphs/eigenfunctions.pdf
+	filename Graphs/EigenfunctionsExp.pdf
 
 \end_inset
 
@@ -9583,7 +9670,7 @@ Functions
 \uwave default
 \noun default
 \color inherit
- used in KL (
+ used in KL for exponential covariance (
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "eq:Karhunen-Loeve"
@@ -9615,19 +9702,7 @@ name "fig:Eigenfunctions-of-Exp-cov"
 
 \end_inset
 
-Figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Sampled-functions"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
 
-\end_inset
-
- illustrates three sample functions generated using the Karhunen-Loève (KL) expansion.
- 
 \begin_inset Float figure
 placement document
 alignment document
@@ -9637,7 +9712,7 @@ status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename Graphs/1Drealization.pdf
+	filename Graphs/EigenfunctionsSqExp.pdf
 
 \end_inset
 
@@ -9648,10 +9723,53 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Sampled functions
+Functions 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $u_{i}(x)\sqrt{\lambda_{i}}$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ used in KL for squared exponential covariance (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Karhunen-Loeve"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+) in 1D 
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:Sampled-functions"
+name "fig:Eigenfunctions-of-SqExp-cov"
 
 \end_inset
 
@@ -9664,6 +9782,279 @@ name "fig:Sampled-functions"
 \end_layout
 
 \begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Graphs/EigenfunctionsMat.pdf
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Functions 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $u_{i}(x)\sqrt{\lambda_{i}}$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ used in KL for Matérn covariance (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Karhunen-Loeve"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+) in 1D 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Eigenfunctions-of-Mat-cov"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+Figures 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Sampled-functions-Exp"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+,
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Sampled-functions-SqExp"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Sampled-functions-Mat"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ each illustrate three sampled realizations generated using the Karhunen-Loève (KL) expansion with different covariance functions.
+ Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Sampled-functions-Exp"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ used the exponential covariance function,
+ Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Sampled-functions-SqExp"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ used the squared exponential covariance function and Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Sampled-functions-Mat"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ used the Matérn covariance function with parameter 
+\begin_inset Formula $v=2.5$
+\end_inset
+
+.
+ 
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Graphs/1DrealizationExp.pdf
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Sample realizations of a 1D random field with a exponential covariance function 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Sampled-functions-Exp"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Graphs/1DrealizationSqExp.pdf
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Sample realizations of a 1D random field with a squared exponential covariance function
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Sampled-functions-SqExp"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Graphs/1DrealizationMat.pdf
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Sample realizations of a 1D random field with a Matérn covariance function
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Sampled-functions-Mat"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
 
 \end_layout
 
@@ -9811,7 +10202,7 @@ status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename Graphs/EigenpairsResiduumExp.pdf
+	filename Graphs/EigenpairsResiduumSqExp.pdf
 
 \end_inset
 
@@ -9852,7 +10243,7 @@ status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename Graphs/EigenpairsResiduumExp.pdf
+	filename Graphs/EigenpairsResiduumMat.pdf
 
 \end_inset
 
@@ -9897,7 +10288,7 @@ The analysis is now extended to two-dimensional random fields defined on the squ
 ,
  and squared exponential covariance function,
  
-\begin_inset Formula $\Cov(\boldsymbol{x},\boldsymbol{y})=\exp\left(-\|\boldsymbol{x}-\boldsymbol{y}\|^{2}\right)$
+\begin_inset Formula $\Cov(\boldsymbol{x},\boldsymbol{y})=\exp\left(-\|\boldsymbol{x}-\boldsymbol{y}\|^{2}/2\right)$
 \end_inset
 
 .
