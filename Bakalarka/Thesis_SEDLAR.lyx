@@ -37,29 +37,27 @@ Quadratures}
 \AddAcronym{$\mathbb{N}$}{The set of natural numbers $\{1, 2, 3, \dots\}$}
 \AddAcronym{$\mathbb{N}_{0}$}{The set of natural numbers including zero $\{0, 1, 2, \dots\}$}
 \AddAcronym{$I$}{A finite interval $\langle a, b \rangle \subset \mathbb{R}$}
-\AddAcronym{$\mathcal{T}$}{Domain of a random field (often a subset of $\mathbb{R}^d$)}
+\AddAcronym{$\mathcal{T}$}{Domain of a random field (a subset of $\mathbb{R}^d$)}
 \AddAcronym{$P$}{The space of all real polynomials}
 \AddAcronym{$P_d$}{The space of real polynomials of degree at most $d$}
 \AddAcronym{$P_d^m$}{The set of monic polynomials of degree exactly $d$}
-\AddAcronym{$\widetilde{P_d}$}{The set of normalized polynomials of degree $d$ (norm = 1)}
+\AddAcronym{$\widetilde{P_d}$}{The set of normalized polynomials of degree $d$}
 \AddAcronym{$C(I)$}{The space of continuous functions on the interval $I$}
 \AddAcronym{$L^2(I)$}{Hilbert space of square-integrable functions on the interval $I$}
-\AddAcronym{$\mathcal{L}^2(I)$}{Set of Cauchy sequences in $C(I)$ with respect to the $L^2$-norm}
-\AddAcronym{$V_N, V_N^x, V_M^y$}{Finite-dimensional function (sub)spaces}
+\AddAcronym{$V_N, V_N^x, V_M^y$}{Finite-dimensional function subspaces}	
 \AddAcronym{$V_N^x \otimes V_M^y$}{Tensor product space}
-\AddAcronym{$\Omega$}{Sample space in probability theory}
-\AddAcronym{$\mathcal{F}, \varSigma$}{Sigma-algebra (event space) on $\Omega$}
+\AddAcronym{$\Omega$}{Sample space}
+\AddAcronym{$\mathcal{F}, \varSigma$}{Sigma-algebra on $\Omega$}
 \AddAcronym{$w(x)$}{Weight function}
 \AddAcronym{$\left\langle \cdot, \cdot \right\rangle_w$}{Weighted inner product with weight $w(x)$}
 \AddAcronym{$\left\Vert \cdot \right\Vert_w$}{Norm derived from the weighted inner product $\left\langle \cdot, \cdot \right\rangle_w$}
-\AddAcronym{$\left\Vert \cdot \right\Vert_{L^2}$}{Standard $L^2$-norm over a specified interval}
-\AddAcronym{$\left\langle \cdot, \cdot \right\rangle_{L^2}$}{Standard $L^2$-inner product over a specified interval}
+\AddAcronym{$\left\Vert \cdot \right\Vert_{L^2}$}{$L^2$-norm over a specified interval}
+\AddAcronym{$\left\langle \cdot, \cdot \right\rangle_{L^2}$}{$L^2$-inner product over a specified interval}
 \AddAcronym{$\pi_k(x)$}{Monic orthogonal polynomial of degree $k$}
 \AddAcronym{$\tilde{\pi}_k(x)$}{Orthonormal polynomial of degree $k$}
 \AddAcronym{$\pi_k^L(x)$}{Monic Legendre polynomial of degree $k$}
 \AddAcronym{$\tilde{\pi}_k^L(x)$}{Orthonormal Legendre polynomial of degree $k$}
 \AddAcronym{$\mathbb{P}$}{Probability measure}
-\AddAcronym{$\mu$}{General measure}
 \AddAcronym{$X, Y, X(t), u(\boldsymbol{x})$}{Random variables, stochastic processes, random fields}
 \AddAcronym{$\mathbb{E}[\cdot]$}{Expected value operator}
 \AddAcronym{$\Cov(\cdot, \cdot)$}{Covariance operator between two random variables}
@@ -68,27 +66,17 @@ Quadratures}
 \AddAcronym{$c^0(r)$}{Isotropic covariance function}
 \AddAcronym{$N(\mu, \sigma^2)$}{Gaussian (normal) distribution with mean $\mu$ and variance $\sigma^2$}
 \AddAcronym{$\spanSed\{\cdot\}$}{Span of a set of vectors or functions} % Ensure \spanSed is defined or change to \mathrm{span} or \operatorname{span}
-\AddAcronym{$\mu_r$}{$r$-th moment of a weight function}
 \AddAcronym{$\alpha_k, \beta_k$}{Coefficients in the three-term recurrence relation}
 \AddAcronym{$\lambda_j$}{Eigenvalue of covariance operator or quadrature weight or Quadrature weight (context-dependent)}
-\AddAcronym{$\psi_j(x)$}{Eigenfunction of covariance operator}
 \AddAcronym{$\tau_j$}{Quadrature node (root of orthogonal polynomial)}
-\AddAcronym{$\gamma_j$}{Random coefficients in KL expansion}
-\AddAcronym{$\lambda_{i,N}$}{Galerkin approximation of the $i$-th eigenvalue using $N$ basis functions}
-\AddAcronym{$\overline{u}_{i,j}$}{Coefficient of the $j$-th basis function in the approximation of the $i$-th eigenfunction}
-\AddAcronym{$\sigma^2$}{Variance parameter}
+\AddAcronym{$\sigma^2$}{Variance}
 \AddAcronym{$\delta_{k,0}, \delta_{kj}$}{Kronecker delta}
 \AddAcronym{$\boldsymbol{x}, \boldsymbol{y}$}{Vectors in $\mathbb{R}^d$}
 \AddAcronym{$\tilde{\boldsymbol{\pi}}(x)$}{Vector of orthonormal polynomials $[\tilde{\pi}_0(x), \dots, \tilde{\pi}_{n-1}(x)]^T$}
 \AddAcronym{$\boldsymbol{\tau}^{(n)}$}{Vector of roots $[\tau_0^{(n)}, \dots, \tau_{n-1}^{(n)}]^T$}
 \AddAcronym{$\boldsymbol{e}_n$}{$n$-th standard basis vector $[0, \dots, 0, 1]^T$}
-\AddAcronym{$\boldsymbol{v}_j^{(n)}$}{$j$-th normalized eigenvector of $J_n$}
-\AddAcronym{$\boldsymbol{v}_{j,0}^{(n)}$}{First component of $\boldsymbol{v}_j^{(n)}$}
 \AddAcronym{$\boldsymbol{\lambda}^G$}{Vector of Gauss weights $[\lambda_1^G, \dots, \lambda_n^G]^T$}
 \AddAcronym{$\boldsymbol{e}$}{Vector of ones $[1, 1, \dots, 1]^T$}
-\AddAcronym{$\mathbb{X}$}{Random vector $(X_1, \dots, X_n)$}
-\AddAcronym{$\boldsymbol{\mu}$}{Mean vector (in probability)}
-\AddAcronym{$\overline{\boldsymbol{u}}_i$}{Vector representation of Galerkin approximation $[\overline{u}_{i,0}, \dots, \overline{u}_{i,N}]^T$}
 \AddAcronym{$J_n$}{$n \times n$ Jacobi matrix\\}	
 
 
