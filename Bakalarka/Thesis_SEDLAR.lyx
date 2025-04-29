@@ -68,6 +68,7 @@ Quadratures}
 \AddAcronym{$\spanSed\{\cdot\}$}{Span of a set of vectors or functions} % Ensure \spanSed is defined or change to \mathrm{span} or \operatorname{span}
 \AddAcronym{$\alpha_k, \beta_k$}{Coefficients in the three-term recurrence relation}
 \AddAcronym{$\lambda_j$}{Eigenvalue of covariance operator or quadrature weight or Quadrature weight (context-dependent)}
+\AddAcronym{$u_j$}{Eigenfunction of covariance operator}
 \AddAcronym{$\tau_j$}{Quadrature node (root of orthogonal polynomial)}
 \AddAcronym{$\sigma^2$}{Variance}
 \AddAcronym{$\delta_{k,0}, \delta_{kj}$}{Kronecker delta}
@@ -312,11 +313,19 @@ nolink "false"
 
 ),
  are used to model such situations where values change randomly over time or space.
- Examples include variations in material properties or fluctuating forces acting on a structure.
+ Examples include variations in material properties or fluctuating forces acting on a
+\begin_inset space ~
+\end_inset
+
+structure.
  However,
  random fields can possess infinite complexity,
  therefore working directly with them can be very difficult.
- A powerful technique to simplify them is the Karhunen-Loève (KL) expansion 
+ A
+\begin_inset space ~
+\end_inset
+
+powerful technique to simplify them is the Karhunen-Loève (KL) expansion 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Karhunen1947,Loeve1948"
@@ -325,7 +334,11 @@ literal "false"
 \end_inset
 
 ,
- which is a central topic of this thesis (discussed in Chapter
+ which is a
+\begin_inset space ~
+\end_inset
+
+central topic of this thesis (discussed in Chapter
 \begin_inset space ~
 \end_inset
 
@@ -341,21 +354,41 @@ nolink "false"
 \end_inset
 
 ).
- The KL expansion represents a random field as a sum of specific,
+ The KL expansion represents a
+\begin_inset space ~
+\end_inset
+
+random field as a
+\begin_inset space ~
+\end_inset
+
+sum of specific,
  deterministic functions multiplied by random coefficients.
  These deterministic functions capture the main spatial patterns of the randomness,
  and the random coefficients capture the uncertainty in the magnitude of these patterns.
- A key property is that these random coefficients are uncorrelated (and for Gaussian fields,
+ A
+\begin_inset space ~
+\end_inset
+
+key property is that these random coefficients are uncorrelated (and for Gaussian fields,
  independent),
  which simplifies analysis.
  The KL expansion is considered optimal because it captures the most variance (randomness) of the field using the fewest terms in the sum,
- making it efficient for representing complex random behavior in a manageable way.
+ making it efficient for representing complex random behavior in a
+\begin_inset space ~
+\end_inset
+
+manageable way.
 \end_layout
 
 \begin_layout Standard
-The core of finding the KL expansion involves solving a specific mathematical problem:
+The core of finding the KL expansion involves solving a
+\begin_inset space ~
+\end_inset
+
+specific mathematical problem:
  finding the eigenfunctions 
-\begin_inset Formula $\psi_{j}$
+\begin_inset Formula $u_{j}$
 \end_inset
 
  and eigenvalues 
@@ -380,14 +413,14 @@ The core of finding the KL expansion involves solving a specific mathematical pr
  
 \begin_inset Formula 
 \begin{equation}
-\int_{\mathcal{T}}c(\boldsymbol{x},\boldsymbol{y})\psi_{j}(\boldsymbol{y})d\boldsymbol{y}=\lambda_{j}\psi_{j}(\boldsymbol{x}),\quad\boldsymbol{x}\in\mathcal{T}.\label{eq:intro_integral_eigenproblem}
+\int_{\mathcal{T}}c(\boldsymbol{x},\boldsymbol{y})u_{j}(\boldsymbol{y})d\boldsymbol{y}=\lambda_{j}u_{j}(\boldsymbol{x}),\quad\boldsymbol{x}\in\mathcal{T}.\label{eq:intro_integral_eigenproblem}
 \end{equation}
 
 \end_inset
 
 This is known as an integral eigenvalue problem.
  Finding exact analytical solutions (
-\begin_inset Formula $\psi_{j}$
+\begin_inset Formula $u_{j}$
 \end_inset
 
  and 
@@ -400,7 +433,11 @@ This is known as an integral eigenvalue problem.
 \end_layout
 
 \begin_layout Standard
-This thesis focuses on a practical numerical approach to compute the approximate KL expansion.
+This thesis focuses on a
+\begin_inset space ~
+\end_inset
+
+practical numerical approach to compute the approximate KL expansion.
  The chosen method is the Galerkin method (detailed in Chapter
 \begin_inset space ~
 \end_inset
@@ -417,7 +454,11 @@ nolink "false"
 \end_inset
 
 ).
- The Galerkin method transforms the difficult integral eigenvalue problem into a more standard matrix eigenvalue problem,
+ The Galerkin method transforms the difficult integral eigenvalue problem into a
+\begin_inset space ~
+\end_inset
+
+more standard matrix eigenvalue problem,
  which can be solved using computational linear algebra techniques.
 \end_layout
 
@@ -434,12 +475,16 @@ Basis Functions:
 
 \series default
  The Galerkin method approximates the unknown eigenfunctions 
-\begin_inset Formula $\psi_{j}$
+\begin_inset Formula $u_{j}$
 \end_inset
 
  as combinations of known,
  simpler functions called basis functions.
- A good choice for these basis functions,
+ A
+\begin_inset space ~
+\end_inset
+
+good choice for these basis functions,
  especially when working on intervals,
  are orthogonal polynomials.
  Chapter
@@ -481,7 +526,11 @@ Numerical Integration:
 
 .
  Calculating these integrals accurately and efficiently is crucial.
- Gaussian quadrature is a very effective technique for numerical integration,
+ Gaussian quadrature is a
+\begin_inset space ~
+\end_inset
+
+very effective technique for numerical integration,
  especially when integrating polynomials or functions well-approximated by polynomials.
  Chapter
 \begin_inset space ~
@@ -537,7 +586,11 @@ nolink "false"
 
 \begin_layout Standard
 Therefore,
- this thesis builds a computational pipeline:
+ this thesis builds a
+\begin_inset space ~
+\end_inset
+
+computational pipeline:
  We use the theory of orthogonal polynomials (Chapter
 \begin_inset space ~
 \end_inset
@@ -596,7 +649,15 @@ nolink "false"
 \end_inset
 
 ).
- The result is a numerical approximation of the Karhunen-Loève expansion for a given random field.
+ The result is a
+\begin_inset space ~
+\end_inset
+
+numerical approximation of the Karhunen-Loève expansion for a
+\begin_inset space ~
+\end_inset
+
+given random field.
 \end_layout
 
 \begin_layout Standard
@@ -717,7 +778,11 @@ nolink "false"
 
 \begin_layout Standard
 By following these steps,
- this thesis aims to provide a clear description and practical implementation of methods used to compute the Karhunen-Loève expansion,
+ this thesis aims to provide a
+\begin_inset space ~
+\end_inset
+
+clear description and practical implementation of methods used to compute the Karhunen-Loève expansion,
  relying heavily on the properties of orthogonal polynomials and associated numerical techniques.
 \end_layout
 
@@ -734,22 +799,50 @@ name "chap:Polynomials"
 
 \begin_layout Standard
 This section is devoted to introduction of orthogonal polynomials with respect to given inner products.
- The inner products considered throughout this work are defined via integration over a specified interval 
+ The inner products considered throughout this work are defined via integration over a
+\begin_inset space ~
+\end_inset
+
+specified interval 
 \begin_inset Formula $I$
 \end_inset
 
- with respect to a continuous weight function 
+ with respect to a
+\begin_inset space ~
+\end_inset
+
+continuous weight function 
 \begin_inset Formula $w\in C(I)$
 \end_inset
 
 .
- A key characteristic of orthogonal polynomials with respect to these inner products,
+ A
+\begin_inset space ~
+\end_inset
+
+key characteristic of orthogonal polynomials with respect to these inner products,
  and by extension their normalized counterparts (orthonormal polynomials),
- is that they satisfy a three-term recurrence relation.
- The coefficients of this recurrence relation can be arranged into a symmetric tridiagonal matrix,
+ is that they satisfy a
+\begin_inset space ~
+\end_inset
+
+three-term recurrence relation.
+ The coefficients of this recurrence relation can be arranged into a
+\begin_inset space ~
+\end_inset
+
+symmetric tridiagonal matrix,
  known as the Jacobi matrix.
- The eigenpairs of this Jacobi matrix provide a direct method for determining the roots of the orthogonal polynomials.
- The chapter concludes with a discussion on Gaussian quadrature rules,
+ The eigenpairs of this Jacobi matrix provide a
+\begin_inset space ~
+\end_inset
+
+direct method for determining the roots of the orthogonal polynomials.
+ The chapter concludes with a
+\begin_inset space ~
+\end_inset
+
+discussion on Gaussian quadrature rules,
  which utilize the roots of orthogonal polynomials as nodes and derived values as weights for numerical integration.
  The eigenvalue (spectral) decomposition of the aforementioned Jacobi matrix yields,
  via Golub-Welsch algorithm 
@@ -763,7 +856,15 @@ literal "false"
 ,
  these quadrature nodes and weights.
  For Legendre polynomials,
- we also show how to extend them over a finite interval with the use of a simple affine transformation of variables.
+ we also show how to extend them over a
+\begin_inset space ~
+\end_inset
+
+finite interval with the use of a
+\begin_inset space ~
+\end_inset
+
+simple affine transformation of variables.
 \begin_inset Note Note
 status collapsed
 
@@ -888,10 +989,22 @@ name "sec:Polynomials-of-real"
 \end_layout
 
 \begin_layout Standard
-The scope of this study is confined to polynomials with real coefficients and of a real variable.
- A polynomial is considered as monic if its leading coefficient is equal to one.
+The scope of this study is confined to polynomials with real coefficients and of a
+\begin_inset space ~
+\end_inset
+
+real variable.
+ A
+\begin_inset space ~
+\end_inset
+
+polynomial is considered as monic if its leading coefficient is equal to one.
  Specifically,
- a polynomial 
+ a
+\begin_inset space ~
+\end_inset
+
+polynomial 
 \begin_inset Formula $p(x)=a_{n}x^{n}+a_{n-1}x^{n-1}+\dots+a_{1}x+a_{0}$
 \end_inset
 
@@ -923,7 +1036,11 @@ name "def:polynomials-of-degree"
 
 \end_inset
 
-For a non-negative integer 
+For a
+\begin_inset space ~
+\end_inset
+
+non-negative integer 
 \begin_inset Formula $d$
 \end_inset
 
@@ -969,7 +1086,11 @@ Monic polynomials
 
 \end_inset
 
-For a non-negative integer 
+For a
+\begin_inset space ~
+\end_inset
+
+non-negative integer 
 \begin_inset Formula $d$
 \end_inset
 
@@ -1015,12 +1136,24 @@ literal "false"
 \end_inset
 
 .
- To define a weighted inner product properly,
- we first define a strictly positive continuous weight function 
+ To define a
+\begin_inset space ~
+\end_inset
+
+weighted inner product properly,
+ we first define a
+\begin_inset space ~
+\end_inset
+
+strictly positive continuous weight function 
 \begin_inset Formula $w(x)$
 \end_inset
 
- on a closed interval and the related symmetric bilinear form,
+ on a
+\begin_inset space ~
+\end_inset
+
+closed interval and the related symmetric bilinear form,
  denoted 
 \begin_inset Formula $\left\langle \cdot,\cdot\right\rangle _{w}$
 \end_inset
@@ -1028,7 +1161,11 @@ literal "false"
 .
  It is demonstrated that this form is positive definite,
  i.e.,
- it is a weighted inner product.
+ it is a
+\begin_inset space ~
+\end_inset
+
+weighted inner product.
  For clarity and conciseness in the subsequent parts,
  the primary focus will be restricted to the specific case defined over the interval 
 \begin_inset Formula $I=\left\langle -1,1\right\rangle $
@@ -1063,9 +1200,17 @@ Let
 \begin_inset Formula $I=\left\langle a,b\right\rangle \subset\mathbb{R},b>a$
 \end_inset
 
- (a bounded,
+ (a
+\begin_inset space ~
+\end_inset
+
+bounded,
  closed interval).
- A function 
+ A
+\begin_inset space ~
+\end_inset
+
+function 
 \begin_inset Formula $w(x)\in C(I)$
 \end_inset
 
@@ -1077,7 +1222,11 @@ Let
 
 \end_inset
 
-is called a 
+is called a
+\begin_inset space ~
+\end_inset
+
+
 \emph on
 weight function
 \emph default
@@ -1106,7 +1255,11 @@ The weighted integral is well defined for all
 status open
 
 \begin_layout Plain Layout
-Moments of a Weight Function
+Moments of a
+\begin_inset space ~
+\end_inset
+
+Weight Function
 \end_layout
 
 \end_inset
@@ -1115,7 +1268,11 @@ Let
 \begin_inset Formula $w(x),I$
 \end_inset
 
- be a weight function and corresponding support.
+ be a
+\begin_inset space ~
+\end_inset
+
+weight function and corresponding support.
  Then all moments are finite:
 \begin_inset Formula 
 \[
@@ -1137,7 +1294,11 @@ Weighted bilinear form
 
 \end_inset
 
-For a weight function 
+For a
+\begin_inset space ~
+\end_inset
+
+weight function 
 \begin_inset Formula $w(x)$
 \end_inset
 
@@ -1222,7 +1383,11 @@ Positive definiteness
 
 \end_inset
 
-A bilinear form 
+A
+\begin_inset space ~
+\end_inset
+
+bilinear form 
 \begin_inset Formula $\left\langle \cdot,\cdot\right\rangle _{w}$
 \end_inset
 
@@ -1262,7 +1427,11 @@ name "Inner-product-over-<-1,1>"
 
 \end_inset
 
-A symmetric bilinear form 
+A
+\begin_inset space ~
+\end_inset
+
+symmetric bilinear form 
 \begin_inset Formula $\left\langle \cdot,\cdot\right\rangle _{w}$
 \end_inset
 
@@ -1296,7 +1465,11 @@ Let
 \begin_inset Formula $u\in C\left(\left\langle -1,1\right\rangle \right)$
 \end_inset
 
- be a nonzero function,
+ be a
+\begin_inset space ~
+\end_inset
+
+nonzero function,
  that is,
  
 \begin_inset Formula $u\not\equiv0$
@@ -1647,7 +1820,39 @@ nolink "false"
 \begin_inset Formula $\left\Vert \cdot\right\Vert _{w}$
 \end_inset
 
- is a norm on 
+ is 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+a
+\begin_inset space ~
+\end_inset
+
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+norm on 
 \begin_inset Formula $C\left(I\right)$
 \end_inset
 
@@ -1732,7 +1937,11 @@ Normalized polynomials
 
 \end_inset
 
-For a non-negative integer 
+For a
+\begin_inset space ~
+\end_inset
+
+non-negative integer 
 \begin_inset Formula $d$
 \end_inset
 
@@ -1762,8 +1971,20 @@ Given the definition of the weighted inner product
 \end_inset
 
 ,
- a key objective is the construction of a corresponding sequence of orthogonal polynomials.
- A fundamental theorem guarantees that for such inner product defined on the space of polynomials,
+ a
+\begin_inset space ~
+\end_inset
+
+key objective is the construction of a
+\begin_inset space ~
+\end_inset
+
+corresponding sequence of orthogonal polynomials.
+ A
+\begin_inset space ~
+\end_inset
+
+fundamental theorem guarantees that for such inner product defined on the space of polynomials,
  there exists an infinite sequence 
 \begin_inset Formula $\left\{ \pi_{k}(x)\right\} _{k=0}^{\infty}$
 \end_inset
@@ -1824,7 +2045,11 @@ Let
 \end_inset
 
 ,
- then there exists a unique infinite sequence 
+ then there exists a
+\begin_inset space ~
+\end_inset
+
+unique infinite sequence 
 \begin_inset Formula $\left\{ \pi_{k}\right\} _{k=0}^{\infty}$
 \end_inset
 
@@ -1848,7 +2073,11 @@ For any inner product
 \end_inset
 
 ,
- there exists a basis 
+ there exists a
+\begin_inset space ~
+\end_inset
+
+basis 
 \begin_inset Formula $\left\{ \pi_{k}\right\} _{k=0}^{\infty}$
 \end_inset
 
@@ -1856,7 +2085,11 @@ For any inner product
  Leveraging the properties of integral inner product,
  specifically the shift property,
  allows for the derivation of the three-term recurrence relation for these orthogonal polynomials.
- The coefficients of this recurrence relation also form a symmetric tridiagonal matrix,
+ The coefficients of this recurrence relation also form a
+\begin_inset space ~
+\end_inset
+
+symmetric tridiagonal matrix,
  commonly referred to as the Jacobi matrix associated with the polynomial sequence.
  Crucially,
  the spectral decomposition of Jacobi matrix 
@@ -1878,24 +2111,12 @@ For any inner product
 status open
 
 \begin_layout Plain Layout
-Three term recurrence
+Three-term recurrence 
 \begin_inset CommandInset citation
 LatexCommand cite
 after "Theorem 1.27"
 key "Gautschi2004"
 literal "false"
-
-\end_inset
-
- 
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-[Adapted from Gautchi,
- Theorem 1.27,
- p.10]
-\end_layout
 
 \end_inset
 
@@ -1965,11 +2186,19 @@ where
 \end_layout
 
 \begin_layout Proof
-We are going to generate a sequence of orthogonal polynomials 
+We are going to generate a
+\begin_inset space ~
+\end_inset
+
+sequence of orthogonal polynomials 
 \begin_inset Formula $\left\{ \pi_{k}(x)\right\} $
 \end_inset
 
- using a Gram-Schmidt process:
+ using a
+\begin_inset space ~
+\end_inset
+
+Gram-Schmidt process:
 \begin_inset Formula 
 \begin{eqnarray*}
 \pi_{0}(x) & = & f_{0}(x)\\
@@ -1989,7 +2218,8 @@ with
 \end_inset
 
 .
- Note that by this construction 
+ Note that by this construction,
+ 
 \family roman
 \series medium
 \shape up
@@ -2023,10 +2253,11 @@ with
 \noun default
 \color inherit
  In the 
-\begin_inset Formula $k+1$
+\begin_inset Formula $(k+1)$
 \end_inset
 
--th step 
+-th step,
+ 
 \begin_inset Formula $f_{k+1}(x)$
 \end_inset
 
@@ -2083,7 +2314,39 @@ Since
 \begin_inset Formula $x\pi_{i}$
 \end_inset
 
- is a polynomial of degree 
+ is 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+a
+\begin_inset space ~
+\end_inset
+
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+polynomial of degree 
 \begin_inset Formula $i+1$
 \end_inset
 
@@ -2121,7 +2384,39 @@ Since
 \begin_inset Formula $x\pi_{i}\in P_{i+1}$
 \end_inset
 
- as a linear combination of the orthogonal polynomials up to degree 
+ as 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+a
+\begin_inset space ~
+\end_inset
+
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+linear combination of the orthogonal polynomials up to degree 
 \family default
 \series default
 \shape default
@@ -2327,7 +2622,11 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-Having a series of orthogonal polynomials and induced norm 
+Having a
+\begin_inset space ~
+\end_inset
+
+series of orthogonal polynomials and induced norm 
 \begin_inset Formula $\left\Vert \cdot\right\Vert _{w}$
 \end_inset
 
@@ -2384,7 +2683,11 @@ name "thm:normal-3-term-recurrence"
 \begin_inset Formula $k=0,1,2,\ldots,$
 \end_inset
 
- be a series of orthonormal polynomials.
+ be a
+\begin_inset space ~
+\end_inset
+
+series of orthonormal polynomials.
  Then,
 \begin_inset Formula 
 \[
@@ -2511,7 +2814,11 @@ Jacobi Matrix and it's eigenvalue decomposition
 \end_layout
 
 \begin_layout Standard
-The coefficients of three-term recurrence can be arranged into a three diagonal symmetric matrix.
+The coefficients of three-term recurrence can be arranged into a
+\begin_inset space ~
+\end_inset
+
+three diagonal symmetric matrix.
  This matrix has useful ties to the recurrence itself yielding valuable ties between its eigenvalue decomposition and to the roots of orthogonal polynomials.
 \end_layout
 
@@ -2662,7 +2969,11 @@ The eigenvalue decomposition of the symmetric Jacobi matrix
 \begin_inset Formula $\Lambda_{n}$
 \end_inset
 
- is a diagonal matrix containing the real eigenvalues of 
+ is a
+\begin_inset space ~
+\end_inset
+
+diagonal matrix containing the real eigenvalues of 
 \begin_inset Formula $J_{n}$
 \end_inset
 
@@ -2680,8 +2991,16 @@ The eigenvalue decomposition of the symmetric Jacobi matrix
 
 \begin_layout Standard
 For showing the ties between Jacobi matrix and orthonormal polynomials,
- we need to define a vector of orthonormal polynomials.
- For a sequence 
+ we need to define a
+\begin_inset space ~
+\end_inset
+
+vector of orthonormal polynomials.
+ For a
+\begin_inset space ~
+\end_inset
+
+sequence 
 \begin_inset Formula $\{\tilde{\pi}_{i}(x)\}_{i=0}^{n-1}$
 \end_inset
 
@@ -3170,7 +3489,8 @@ Numerical quadrature provides an effective methodology for approximating the val
 \end_layout
 
 \begin_layout Standard
-For more details on numerical approximation of integrals we refer to 
+For more details on numerical approximation of integrals,
+ we refer to 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "DavisRabinowitz2007"
@@ -3199,7 +3519,15 @@ The Quadrature rule
 
 \end_inset
 
-A quadrature rule is a set of weights 
+A
+\begin_inset space ~
+\end_inset
+
+quadrature rule is a
+\begin_inset space ~
+\end_inset
+
+set of weights 
 \begin_inset Formula $\lambda_{j}$
 \end_inset
 
@@ -3213,7 +3541,11 @@ A quadrature rule is a set of weights
 \end_inset
 
 ,
- used to approximate the value of a weighted integral:
+ used to approximate the value of a
+\begin_inset space ~
+\end_inset
+
+weighted integral:
  
 \begin_inset Formula 
 \[
@@ -3256,7 +3588,11 @@ status collapsed
 
 \end_inset
 
-Consider a quadrature rule for approximating weighted integral 
+Consider a
+\begin_inset space ~
+\end_inset
+
+quadrature rule for approximating weighted integral 
 \begin_inset Formula $\intop_{I}f(x)w(x)\,dx$
 \end_inset
 
@@ -3273,7 +3609,11 @@ Consider a quadrature rule for approximating weighted integral
 \begin_inset Formula $w(x)$
 \end_inset
 
- is a positive weight function defining an inner product 
+ is a
+\begin_inset space ~
+\end_inset
+
+positive weight function defining an inner product 
 \begin_inset Formula $\left\langle \cdot,\cdot\right\rangle _{w}$
 \end_inset
 
@@ -3644,7 +3984,11 @@ literal "false"
 
 \end_inset
 
- Let us recall a vector of orthonormal polynomials 
+ Let us recall a
+\begin_inset space ~
+\end_inset
+
+vector of orthonormal polynomials 
 \begin_inset Formula 
 \[
 \tilde{\boldsymbol{\pi}}(x)=\left[\tilde{\pi}_{0}(x),\tilde{\pi}_{1}(x),\ldots,\tilde{\pi}_{n-1}(x)\right]^{T}.
@@ -3719,7 +4063,11 @@ nolink "false"
 \begin_inset Formula $f(x)$
 \end_inset
 
- is a polynomial of degree 
+ is a
+\begin_inset space ~
+\end_inset
+
+polynomial of degree 
 \begin_inset Formula $k\le n-1<2n-1$
 \end_inset
 
@@ -4723,7 +5071,11 @@ name "fig:Normalized-Legendre-polynomials"
 
 \end_inset
 
-The normalized Legendre polynomials were also adapted for use on a different interval,
+The normalized Legendre polynomials were also adapted for use on a
+\begin_inset space ~
+\end_inset
+
+different interval,
  applying the affine transformation described in Remark 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -4761,7 +5113,11 @@ First,
 
  is represented in the code as two one-dimensional arrays:
  the main diagonal and the first sub-diagonal.
- These arrays are then used in a function `eigh_tridiagonal` from the `scipy.linalg` library to calculate the eigenvalues and eigenvectors.
+ These arrays are then used in a
+\begin_inset space ~
+\end_inset
+
+function `eigh_tridiagonal` from the `scipy.linalg` library to calculate the eigenvalues and eigenvectors.
  From Theorem 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -4799,7 +5155,19 @@ nolink "false"
 \end_inset
 
  is also the number of nodes and weights obtained) and the time taken to compute these nodes and weights.
- It is a log-log graph where we observe that the data points can be approximated by a linear fit with a slope close to 2,
+ It is a
+\begin_inset space ~
+\end_inset
+
+log-log graph where we observe that the data points can be approximated by a
+\begin_inset space ~
+\end_inset
+
+linear fit with a
+\begin_inset space ~
+\end_inset
+
+slope close to 2,
  suggesting that the computation time has approximately quadratic complexity.
  
 \begin_inset Float figure
@@ -4870,7 +5238,11 @@ We will now try to experiment with different functions and examine the approxima
 \end_layout
 
 \begin_layout Example
-We will approximate the integral of a polynomial.
+We will approximate the integral of a
+\begin_inset space ~
+\end_inset
+
+polynomial.
  Specifically,
  we will consider the polynomial 
 \begin_inset Formula $f(x)=x^{50}+x^{4}-4x^{3}-15x+35$
@@ -4942,7 +5314,11 @@ nolink "false"
 
 \end_inset
 
- that a Gaussian quadrature rule with 
+ that a
+\begin_inset space ~
+\end_inset
+
+Gaussian quadrature rule with 
 \begin_inset Formula $n$
 \end_inset
 
@@ -5094,7 +5470,11 @@ name "fig:Approximation-of-Smooth-Integ"
 \end_layout
 
 \begin_layout Example
-Here we experiment with an integral of a non-smooth function 
+Here we experiment with an integral of a
+\begin_inset space ~
+\end_inset
+
+non-smooth function 
 \begin_inset Formula $f(x)=\left|x\right|+\left|x+0.5\right|-\left|x-0.5\right|$
 \end_inset
 
@@ -5116,7 +5496,11 @@ nolink "false"
 \end_inset
 
  shows this function and the corresponding quadrature approximation error for an increasing number of nodes.
- A noticeable pattern in the error can be observed:
+ A
+\begin_inset space ~
+\end_inset
+
+noticeable pattern in the error can be observed:
  its value fluctuates depending on whether an odd or even number of nodes and weights is used.
  The overall accuracy of the approximation is also lower than typically achieved for smooth functions.
  This behavior is expected because the effectiveness of Gaussian quadrature depends on the smoothness of the function being integrated,
@@ -5129,14 +5513,22 @@ nolink "false"
 \end_inset
 
 .
- In order to achieve a better approximation,
+ In order to achieve a
+\begin_inset space ~
+\end_inset
+
+better approximation,
  we could split the interval 
 \begin_inset Formula $I$
 \end_inset
 
  into multiple subintervals such that the function is smooth on each subinterval,
  and then integrate the function separately over each respective subinterval.
- Note that in this case a quadrature consisting of two points would be enough for each of the four subintervals.
+ Note that in this case a
+\begin_inset space ~
+\end_inset
+
+quadrature consisting of two points would be enough for each of the four subintervals.
 \begin_inset Float figure
 placement document
 alignment document
@@ -5196,7 +5588,11 @@ nolink "false"
 
 \end_inset
 
- shows a discontinuous shifted sign function defined as:
+ shows a
+\begin_inset space ~
+\end_inset
+
+discontinuous shifted sign function defined as:
  
 \begin_inset Formula 
 \[
@@ -5229,9 +5625,17 @@ We can observe that the accuracy of the quadrature approximation is even lower t
 \end_inset
 
  into subintervals (e.g.,
- at the point of discontinuity) to achieve a more accurate result.
+ at the point of discontinuity) to achieve a
+\begin_inset space ~
+\end_inset
+
+more accurate result.
  In this case,
- a one-point quadrature rule applied to each of the two subintervals would be sufficient to obtain the exact value of the integral.
+ a
+\begin_inset space ~
+\end_inset
+
+one-point quadrature rule applied to each of the two subintervals would be sufficient to obtain the exact value of the integral.
  
 \begin_inset Float figure
 placement document
@@ -5363,7 +5767,11 @@ name "fig:Convergence-of-2D-Quad"
 
 \begin_layout Example
 In this example,
- we want to show how the convergence of the quadrature error appears for a non-symmetric function.
+ we want to show how the convergence of the quadrature error appears for a
+\begin_inset space ~
+\end_inset
+
+non-symmetric function.
  We will integrate 
 \begin_inset Formula $f(x,y)=x^{2}y^{2}\cos\left(\pi\left(10x+y\right)\right)$
 \end_inset
@@ -5464,7 +5872,11 @@ This chapter starts with an introduction to the Hilbert space
 \begin_inset Formula $L^{2}(I)$
 \end_inset
 
- as a completion of the space of continuous functions 
+ as a
+\begin_inset space ~
+\end_inset
+
+completion of the space of continuous functions 
 \begin_inset Formula $C(I)$
 \end_inset
 
@@ -5480,7 +5892,11 @@ This chapter starts with an introduction to the Hilbert space
  After this,
  key ideas from probability theory are introduced.
  This includes foundational elements of measure theory,
- the axiomatic definition of a probability space,
+ the axiomatic definition of a
+\begin_inset space ~
+\end_inset
+
+probability space,
  and the concept of expected value.
  Building upon this foundation,
  the discussion then progresses to the topic of stochastic processes,
@@ -5623,7 +6039,11 @@ Let
 \begin_inset Formula $\left\{ f_{i}\right\} _{i=0}^{\infty}$
 \end_inset
 
- be a sequence of functions in 
+ be a
+\begin_inset space ~
+\end_inset
+
+sequence of functions in 
 \begin_inset Formula $C(I)$
 \end_inset
 
@@ -5633,7 +6053,11 @@ Let
 \end_inset
 
 .
- This sequence is called a Cauchy sequence with respect to the 
+ This sequence is called a
+\begin_inset space ~
+\end_inset
+
+Cauchy sequence with respect to the 
 \family roman
 \series medium
 \shape up
@@ -5801,7 +6225,11 @@ We call two Cauchy sequences
 
 \end_inset
 
-The set of all sequences equivalent to a given sequence 
+The set of all sequences equivalent to a
+\begin_inset space ~
+\end_inset
+
+given sequence 
 \begin_inset Formula $\{f_{i}\}$
 \end_inset
 
@@ -5978,7 +6406,11 @@ L^{2}(I)\coloneqq\left\{ \left[F\right]:F\in\mathcal{L}^{2}(I)\right\} .
 \uwave default
 \noun default
 \color inherit
-add a norm
+add a
+\begin_inset space ~
+\end_inset
+
+norm
 \begin_inset Formula 
 \[
 \left\Vert \left[F\right]\right\Vert _{L^{2}}\coloneqq\lim_{i\rightarrow\infty}\left\Vert f_{i}\right\Vert _{L^{2}}
@@ -6001,7 +6433,11 @@ and an inner product
 \begin_inset Formula $L^{2}(I)$
 \end_inset
 
- is a Hilbert space.
+ is a
+\begin_inset space ~
+\end_inset
+
+Hilbert space.
  Also,
  this definition of 
 \begin_inset Formula $L^{2}(I)$
@@ -6028,7 +6464,11 @@ Probability fundamentals
 \end_layout
 
 \begin_layout Standard
-Consider a probability space 
+Consider a
+\begin_inset space ~
+\end_inset
+
+probability space 
 \begin_inset Formula $\left(\Omega,\mathcal{F},\mathbb{P}\right)$
 \end_inset
 
@@ -6047,13 +6487,21 @@ Consider a probability space
 \begin_inset Formula $\mathcal{F}$
 \end_inset
 
- is a collection of subsets of 
+ is a
+\begin_inset space ~
+\end_inset
+
+collection of subsets of 
 \begin_inset Formula $\Omega$
 \end_inset
 
  and comprises of those subsets to which we can assign probabilities.
  Formally,
- it is a 
+ it is a
+\begin_inset space ~
+\end_inset
+
+
 \emph on
 
 \begin_inset Formula $\sigma$
@@ -6072,13 +6520,25 @@ Consider a probability space
 event
 \emph default
 .
- Each event corresponds to a set of outcomes in the experiment.
+ Each event corresponds to a
+\begin_inset space ~
+\end_inset
+
+set of outcomes in the experiment.
  The probability measure 
 \begin_inset Formula $\mathbb{P}$
 \end_inset
 
- assigns a probability,
- a number between 0 and 1,
+ assigns a
+\begin_inset space ~
+\end_inset
+
+probability,
+ a
+\begin_inset space ~
+\end_inset
+
+number between 0 and 1,
  to every measurable set in 
 \begin_inset Formula $\mathcal{F}$
 \end_inset
@@ -6092,12 +6552,24 @@ We can consider rolls of dice as an example of probability space
 \end_inset
 
 .
- In a roll of a die there are six possible outcomes and 
+ In a
+\begin_inset space ~
+\end_inset
+
+roll of a
+\begin_inset space ~
+\end_inset
+
+die there are six possible outcomes and 
 \begin_inset Formula $\Omega=\left\{ 1,2,3,4,5,6\right\} $
 \end_inset
 
 .
- For a sequence of 
+ For a
+\begin_inset space ~
+\end_inset
+
+sequence of 
 \begin_inset Formula $M$
 \end_inset
 
@@ -6111,13 +6583,21 @@ We can consider rolls of dice as an example of probability space
 \begin_inset Formula $\mathcal{F}$
 \end_inset
 
- is a collection of subsets of 
+ is a
+\begin_inset space ~
+\end_inset
+
+collection of subsets of 
 \begin_inset Formula $\Omega$
 \end_inset
 
 ,
  these subsets are known as events.
- Each event corresponds to a set of outcomes in the experiment.
+ Each event corresponds to a
+\begin_inset space ~
+\end_inset
+
+set of outcomes in the experiment.
  Let's say we want to know the probability of rolling an even number and so the set 
 \begin_inset Formula $F=\left\{ 2,4,6\right\} $
 \end_inset
@@ -6136,15 +6616,27 @@ We can consider rolls of dice as an example of probability space
 \end_inset
 
 ,
- which assigns a probability to every measurable set in 
+ which assigns a
+\begin_inset space ~
+\end_inset
+
+probability to every measurable set in 
 \begin_inset Formula $\mathcal{F}$
 \end_inset
 
 .
- Probability will be a number between 0 and 1,
+ Probability will be a
+\begin_inset space ~
+\end_inset
+
+number between 0 and 1,
  where 0 means the even will never occur and one means the event will always occur.
  Higher probability means the event is more likely to occur in an experiment.
- For a fair dice roll the probability of rolling an even number would be 
+ For a
+\begin_inset space ~
+\end_inset
+
+fair dice roll the probability of rolling an even number would be 
 \begin_inset Formula $\mathbb{P}\left(\left\{ 2,4,6\right\} \right)=1/2$
 \end_inset
 
@@ -6164,7 +6656,11 @@ status open
 
 \end_inset
 
-For a set 
+For a
+\begin_inset space ~
+\end_inset
+
+set 
 \family roman
 \series medium
 \shape up
@@ -6183,7 +6679,39 @@ For a set
 \end_inset
 
 ,
- we call a set 
+ we call 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+a
+\begin_inset space ~
+\end_inset
+
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+set 
 \begin_inset Formula $\mathcal{F}$
 \end_inset
 
@@ -6193,7 +6721,39 @@ For a set
 \end_inset
 
 ,
- a sigma 
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+a
+\begin_inset space ~
+\end_inset
+
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+sigma 
 \family default
 \series default
 \shape default
@@ -6270,7 +6830,11 @@ algebra if and only if it satisfies the following axioms:
 \begin_inset Formula $\left\{ A_{n}\right\} $
 \end_inset
 
- is a countable collection of elements of 
+ is a
+\begin_inset space ~
+\end_inset
+
+countable collection of elements of 
 \begin_inset Formula $\mathcal{F}$
 \end_inset
 
@@ -6335,12 +6899,20 @@ Let
 \uwave default
 \noun default
 \color inherit
- be a set,
+ be a
+\begin_inset space ~
+\end_inset
+
+set,
  and let 
 \begin_inset Formula $\varSigma$
 \end_inset
 
- be a 
+ be a
+\begin_inset space ~
+\end_inset
+
+
 \begin_inset Formula $\sigma$
 \end_inset
 
@@ -6377,7 +6949,11 @@ Let
 \noun default
 \color inherit
  (i.e.,
- a collection of subsets of 
+ a
+\begin_inset space ~
+\end_inset
+
+collection of subsets of 
 \family roman
 \series medium
 \shape up
@@ -6443,11 +7019,19 @@ Let
 \color inherit
  itself,
  closed under complements and countable unions).
- A function 
+ A
+\begin_inset space ~
+\end_inset
+
+function 
 \begin_inset Formula $\mu:\varSigma\rightarrow\left\langle 0,\infty\right\rangle $
 \end_inset
 
- is called a measure on the measurable space 
+ is called a
+\begin_inset space ~
+\end_inset
+
+measure on the measurable space 
 \family roman
 \series medium
 \shape up
@@ -6540,7 +7124,11 @@ status collapsed
 
 \end_inset
 
-A measure 
+A
+\begin_inset space ~
+\end_inset
+
+measure 
 \begin_inset Formula $\mathbb{P}$
 \end_inset
 
@@ -6548,7 +7136,11 @@ A measure
 \begin_inset Formula $(\Omega,\mathcal{F})$
 \end_inset
 
- is a 
+ is a
+\begin_inset space ~
+\end_inset
+
+
 \emph on
 probability measure
 \emph default
@@ -6578,7 +7170,15 @@ Probability space
 
 \end_inset
 
-A probability space is a triple 
+A
+\begin_inset space ~
+\end_inset
+
+probability space is a
+\begin_inset space ~
+\end_inset
+
+triple 
 \begin_inset Formula $\left(\Omega,\mathcal{F},\mathbb{P}\right)$
 \end_inset
 
@@ -6587,12 +7187,20 @@ A probability space is a triple
 \begin_inset Formula $\Omega$
 \end_inset
 
- is a sample space,
+ is a
+\begin_inset space ~
+\end_inset
+
+sample space,
  
 \begin_inset Formula $\mathcal{F}$
 \end_inset
 
- is a sigma-algebra of events and 
+ is a
+\begin_inset space ~
+\end_inset
+
+sigma-algebra of events and 
 \family roman
 \series medium
 \shape up
@@ -6624,7 +7232,11 @@ A probability space is a triple
 \uwave default
 \noun default
 \color inherit
- is a probability measure on 
+ is a
+\begin_inset space ~
+\end_inset
+
+probability measure on 
 \begin_inset Formula $\mathcal{F}$
 \end_inset
 
@@ -6640,7 +7252,11 @@ This section defines stochastic processes and random fields,
  we will work only with real-valued variables.
  Further on,
  we discuss the covariance and the autocovariance function.
- The section concludes by explaining the meaning of stationarity for a stochastic process.
+ The section concludes by explaining the meaning of stationarity for a
+\begin_inset space ~
+\end_inset
+
+stochastic process.
 \end_layout
 
 \begin_layout Definition
@@ -6675,16 +7291,28 @@ status collapsed
 
 \end_inset
 
-For a probability space 
+For a
+\begin_inset space ~
+\end_inset
+
+probability space 
 \begin_inset Formula $\left(\Omega,\mathcal{F},\mathbb{P}\right)$
 \end_inset
 
 ,
- a measurable map 
+ a
+\begin_inset space ~
+\end_inset
+
+measurable map 
 \begin_inset Formula $X:\mathcal{F}\rightarrow\mathbb{R}$
 \end_inset
 
- is called a real-valued 
+ is called a
+\begin_inset space ~
+\end_inset
+
+real-valued 
 \emph on
 random variable
 \emph default
@@ -6697,7 +7325,11 @@ The value
 \begin_inset Formula $X(\omega)$
 \end_inset
 
- for a given outcome 
+ for a
+\begin_inset space ~
+\end_inset
+
+given outcome 
 \begin_inset Formula $\omega\in\Omega$
 \end_inset
 
@@ -6705,7 +7337,11 @@ The value
 \begin_inset Formula $\mathbb{R}$
 \end_inset
 
- and is called a 
+ and is called a
+\begin_inset space ~
+\end_inset
+
+
 \emph on
 realization
 \emph default
@@ -6726,11 +7362,19 @@ Random vector
 
 \end_inset
 
-A random vector 
+A
+\begin_inset space ~
+\end_inset
+
+random vector 
 \begin_inset Formula $\mathbb{X}\coloneqq\left(X_{1},X_{2},\ldots,X_{n}\right)$
 \end_inset
 
- is a vector whose elements 
+ is a
+\begin_inset space ~
+\end_inset
+
+vector whose elements 
 \begin_inset Formula $X_{i},i=1,2,\ldots,n$
 \end_inset
 
@@ -6775,25 +7419,49 @@ status collapsed
 
 \end_inset
 
-Given a set 
+Given a
+\begin_inset space ~
+\end_inset
+
+set 
 \begin_inset Formula $\mathcal{T}\subset\mathbb{R}$
 \end_inset
 
- and a probability space 
+ and a
+\begin_inset space ~
+\end_inset
+
+probability space 
 \begin_inset Formula $(\Omega,\mathcal{F},\mathbb{P})$
 \end_inset
 
 ,
- a real-valued 
+ a
+\begin_inset space ~
+\end_inset
+
+real-valued 
 \emph on
 stochastic process
 \emph default
- (also known as a random process) is a collection of real-valued random variables 
+ (also known as a
+\begin_inset space ~
+\end_inset
+
+random process) is a
+\begin_inset space ~
+\end_inset
+
+collection of real-valued random variables 
 \begin_inset Formula $\left\{ X(t):t\in\mathcal{T}\right\} $
 \end_inset
 
 .
- The stochastic process can also be viewed as a map 
+ The stochastic process can also be viewed as a
+\begin_inset space ~
+\end_inset
+
+map 
 \begin_inset Formula $\Omega\rightarrow L^{2}\left(\mathcal{T}\right)$
 \end_inset
 
@@ -6838,25 +7506,45 @@ status collapsed
 
 \end_inset
 
-Given a set 
+Given a
+\begin_inset space ~
+\end_inset
+
+set 
 \begin_inset Formula $D\subset\mathbb{R}^{d}$
 \end_inset
 
- and a probability space 
+ and a
+\begin_inset space ~
+\end_inset
+
+probability space 
 \begin_inset Formula $(\Omega,\mathcal{F},\mathbb{P})$
 \end_inset
 
 ,
- a real-valued 
+ a
+\begin_inset space ~
+\end_inset
+
+real-valued 
 \emph on
 random field
 \emph default
- is a collection of real-valued random variables 
+ is a
+\begin_inset space ~
+\end_inset
+
+collection of real-valued random variables 
 \begin_inset Formula $\left\{ u(\boldsymbol{x}):\boldsymbol{x}\in D\right\} $
 \end_inset
 
 .
- The random field can also be viewed as a map 
+ The random field can also be viewed as a
+\begin_inset space ~
+\end_inset
+
+map 
 \begin_inset Formula $\Omega\rightarrow L^{2}\left(D\right)$
 \end_inset
 
@@ -6880,7 +7568,11 @@ Expected Value
 
 \end_inset
 
-For a continuous random variable 
+For a
+\begin_inset space ~
+\end_inset
+
+continuous random variable 
 \begin_inset Formula $X$
 \end_inset
 
@@ -6988,7 +7680,11 @@ The autocovariance function
 \begin_inset Formula $C\left(s,t\right)$
 \end_inset
 
- of a stochastic process or random field 
+ of a
+\begin_inset space ~
+\end_inset
+
+stochastic process or random field 
 \begin_inset Formula $\left\{ X\left(t\right):t\in\mathcal{T}\right\} $
 \end_inset
 
@@ -7008,7 +7704,11 @@ for all
 \end_layout
 
 \begin_layout Standard
-For simplicity we will assume that the expected value will be a constant zero function,
+For simplicity we will assume that the expected value will be a
+\begin_inset space ~
+\end_inset
+
+constant zero function,
  i.e.,
  
 \begin_inset Formula $\mathbb{E}\left[X\right]=0$
@@ -7064,7 +7764,11 @@ status collapsed
 
 \end_inset
 
-A stochastic process 
+A
+\begin_inset space ~
+\end_inset
+
+stochastic process 
 \begin_inset Formula $\left\{ X\left(t\right):t\in\mathcal{T}\right\} $
 \end_inset
 
@@ -7081,7 +7785,11 @@ A stochastic process
 \end_layout
 
 \begin_layout Standard
-The covariance function of a stationary stochastic process 
+The covariance function of a
+\begin_inset space ~
+\end_inset
+
+stationary stochastic process 
 \begin_inset Formula $\left\{ X\left(t\right):t\in\mathcal{T}\right\} $
 \end_inset
 
@@ -7131,7 +7839,11 @@ status collapsed
 
 \end_inset
 
-A random field 
+A
+\begin_inset space ~
+\end_inset
+
+random field 
 \begin_inset Formula $\left\{ X\left(\boldsymbol{x}\right):\boldsymbol{x}\in\mathbb{R}^{d}\right\} $
 \end_inset
 
@@ -7144,7 +7856,11 @@ A random field
 \end_inset
 
 ,
- for a function 
+ for a
+\begin_inset space ~
+\end_inset
+
+function 
 \begin_inset Formula $c^{0}:\mathbb{R}^{+}\rightarrow\mathbb{R}$
 \end_inset
 
@@ -7171,7 +7887,11 @@ Gaussian distribution
 
 \end_inset
 
-A random variable 
+A
+\begin_inset space ~
+\end_inset
+
+random variable 
 \begin_inset Formula $X$
 \end_inset
 
@@ -7227,7 +7947,11 @@ Gaussian vector
 
 \end_inset
 
-A random vector 
+A
+\begin_inset space ~
+\end_inset
+
+random vector 
 \family roman
 \series medium
 \shape up
@@ -7259,7 +7983,11 @@ A random vector
 \uwave default
 \noun default
 \color inherit
- is said to be a Gaussian vector if there exists 
+ is said to be a
+\begin_inset space ~
+\end_inset
+
+Gaussian vector if there exists 
 \begin_inset Formula $\mu\in\mathbb{R}^{n}$
 \end_inset
 
@@ -7309,11 +8037,19 @@ literal "false"
 
 \end_inset
 
-A Gaussian random field (GRF) 
+A
+\begin_inset space ~
+\end_inset
+
+Gaussian random field (GRF) 
 \begin_inset Formula $\left\{ u\left(\boldsymbol{x}\right):\boldsymbol{x}\in D\right\} $
 \end_inset
 
- is a random field such that for any finite set of points 
+ is a
+\begin_inset space ~
+\end_inset
+
+random field such that for any finite set of points 
 \begin_inset Formula $\boldsymbol{x}_{1},\ldots,\boldsymbol{x}_{n}\in D$
 \end_inset
 
@@ -7359,7 +8095,15 @@ Autocovariance functions
 \begin_layout Standard
 In this section,
  we will examine some basic autocovariance functions.
- An original source introducing covariance functions as a tool for describing spacial properties of random field via a family of Matérn covariance functions is 
+ An original source introducing covariance functions as a
+\begin_inset space ~
+\end_inset
+
+tool for describing spacial properties of random field via a
+\begin_inset space ~
+\end_inset
+
+family of Matérn covariance functions is 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Matern1960"
@@ -7384,7 +8128,11 @@ nolink "false"
 
  shows five different autocovariance functions.
  These include three Matérn covariance functions,
- each with a different smoothness parameter 
+ each with a
+\begin_inset space ~
+\end_inset
+
+different smoothness parameter 
 \begin_inset Formula $\nu$
 \end_inset
 
@@ -7477,17 +8225,30 @@ literal "false"
 
  .
  Subsequently,
- a numerical approximation of the KL expansion is computed using the Galerkin method.
+ a
+\begin_inset space ~
+\end_inset
+
+numerical approximation of the KL expansion is computed using the Galerkin method.
  Gaussian quadrature techniques are employed for the efficient numerical evaluation of these integrals.
  The determination of the eigenfunctions and eigenvalues required for the KL expansion inherently corresponds to solving an integral eigenvalue problem,
  which is conceptually equivalent to the spectral decomposition of the covariance operator associated with the random field.
- The Galerkin procedure provides a means to discretize this problem,
- leading to a matrix eigenvalue problem.
+ The Galerkin procedure provides a
+\begin_inset space ~
+\end_inset
+
+means to discretize this problem,
+ leading to a
+\begin_inset space ~
+\end_inset
+
+matrix eigenvalue problem.
  The main computational part of this method consists of integrals over the specified multi-dimensional domain 
 \begin_inset Formula $\mathcal{T}$
 \end_inset
 
 .
+ 
 \end_layout
 
 \begin_layout Standard
@@ -7501,6 +8262,18 @@ literal "false"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+We are interested in expressing the sample paths of a random field 
+\begin_inset Formula $X(t,\omega)\in L^{2}\left(\mathcal{T}\right)$
+\end_inset
+
+ as a
+\begin_inset space ~
+\end_inset
+
+series in an orthonormal basis.
 \end_layout
 
 \begin_layout Theorem
@@ -7517,13 +8290,13 @@ Let
 \begin_inset Formula $X(t)$
 \end_inset
 
- be a zero mean Gaussian random field.
- We are interested in expressing the sample paths 
-\begin_inset Formula $X(t,\omega)\in L^{2}\left(\mathcal{T}\right)$
+ be a
+\begin_inset space ~
 \end_inset
 
- as a series in an orthonormal basis 
-\begin_inset Formula $\{\tilde{\pi}_{j}:j\in\mathbb{N}\}$
+zero mean Gaussian random field,
+ then there exists an orthonormal basis 
+\begin_inset Formula $\{\tilde{u}_{j}:j\in\mathbb{N}\}$
 \end_inset
 
  of 
@@ -7531,10 +8304,10 @@ Let
 \end_inset
 
 .
- That is,
+ Such that 
 \begin_inset Formula 
 \begin{equation}
-X(t,\omega)=\sum_{j=1}^{\infty}\gamma_{j}(\omega)\sqrt{\lambda_{j}}\psi_{j}(t),\label{eq:Karhunen-Loeve}
+X(t,\omega)=\sum_{j=1}^{\infty}\gamma_{j}(\omega)\sqrt{\lambda_{j}}u_{j}(t),\label{eq:Karhunen-Loeve}
 \end{equation}
 
 \end_inset
@@ -7546,13 +8319,13 @@ where the coefficients
  are random variables defined by
 \begin_inset Formula 
 \[
-\gamma_{j}(\omega)\coloneqq\langle X(t,\omega),\tilde{\pi}_{j}(t)\rangle_{L^{2}(\mathcal{T})}
+\gamma_{j}(\omega)\coloneqq\langle X(t,\omega),\tilde{u}_{j}(t)\rangle_{L^{2}(\mathcal{T})}
 \]
 
 \end_inset
 
 and 
-\begin_inset Formula $\left(\lambda_{j},\psi_{j}\right)$
+\begin_inset Formula $\left(\lambda_{j},u_{j}\right)$
 \end_inset
 
  are eigenpairs of the autocovariance operator 
@@ -7652,32 +8425,48 @@ V_{N}^{x}\otimes V_{M}^{y}:=\spanSed\left\{ \psi_{i}\phi_{j}:i=1,\ldots,N,j=1,\l
 \end_layout
 
 \begin_layout Remark
-An 
-\begin_inset Formula $N$
+Let 
+\begin_inset Formula $V_{N_{i}}^{x_{i}}$
 \end_inset
 
--dimensional tensor product space 
+,
+ for 
+\begin_inset Formula $i=1,2,\ldots n$
+\end_inset
+
+,
+ be a sequence of vector spaces,
+ where each space 
+\begin_inset Formula $V_{N_{i}}^{x_{i}}$
+\end_inset
+
+ has dimension 
+\begin_inset Formula $N_{i}$
+\end_inset
+
+.
+ The tensor product space 
 \begin_inset Formula $V_{N}^{x}$
 \end_inset
 
- can be formed from 
-\begin_inset Formula $N$
-\end_inset
-
- one-dimensional spaces 
-\begin_inset Formula $V_{1}^{x_{i}}$
-\end_inset
-
-:
+ is formed as:
  
 \begin_inset Formula 
 \[
-V_{N}^{x}=V_{1}^{x_{1}}\otimes V_{1}^{x_{2}}\otimes\cdots\otimes V_{1}^{x_{N}}.
+V_{N}^{x}=V_{N_{1}}^{x_{1}}\otimes V_{N_{2}}^{x_{2}}\otimes\cdots\otimes V_{N_{n}}^{x_{n}}.
 \]
 
 \end_inset
 
+The dimension of the resulting space 
+\begin_inset Formula $V_{N}^{x}$
+\end_inset
 
+ is 
+\begin_inset Formula $N=\prod_{i=1}^{n}N_{i}$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -7754,8 +8543,12 @@ The Galerkin method is employed to compute approximations of the desired eigenpa
 \end_inset
 
 .
- the Galerkin approach discretizes the underlying operator eigenvalue problem,
- resulting in a matrix eigenvalue problem whose solutions provide the approximate eigenpairs 
+ The Galerkin approach discretizes the underlying operator eigenvalue problem,
+ resulting in a
+\begin_inset space ~
+\end_inset
+
+matrix eigenvalue problem whose solutions provide the approximate eigenpairs 
 \begin_inset Formula $\left(\lambda_{i},u_{i}\right)$
 \end_inset
 
@@ -7777,7 +8570,39 @@ The Galerkin method is employed to compute approximations of the desired eigenpa
 \uwave off
 \noun off
 \color none
-Let us consider a subspace 
+Let us consider 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+a
+\begin_inset space ~
+\end_inset
+
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+subspace 
 \begin_inset Formula $V_{N}\subset L^{2}$
 \end_inset
 
@@ -7785,7 +8610,39 @@ Let us consider a subspace
 \begin_inset Formula $\left(\mathcal{T}\right)$
 \end_inset
 
- with a basis 
+ with 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+a
+\begin_inset space ~
+\end_inset
+
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+basis 
 \family default
 \series default
 \shape default
@@ -7813,7 +8670,11 @@ Let us consider a subspace
 \end_inset
 
 ,
- written as a linear combination of the basis functions:
+ written as a
+\begin_inset space ~
+\end_inset
+
+linear combination of the basis functions:
 \family roman
 \series medium
 \shape up
@@ -7849,7 +8710,8 @@ u_{i,N}=\sum_{j=0}^{N}\overline{u}_{i,j}\psi_{j}.\label{eq:u_approximation}
 \uwave default
 \noun default
 \color inherit
-Next we substitute the approximation 
+Next,
+ we substitute the approximation 
 \begin_inset Formula $u_{i,N}$
 \end_inset
 
@@ -7971,7 +8833,11 @@ where
 \end_inset
 
 .
- This can be rewritten in a matrix form.
+ This can be rewritten in a
+\begin_inset space ~
+\end_inset
+
+matrix form.
  Let 
 \begin_inset Formula $\overline{\boldsymbol{u}}_{i}=\left[\overline{u}_{i,0},\dots,\overline{u}_{i,N}\right]^{T}$
 \end_inset
@@ -8194,20 +9060,32 @@ nolink "false"
 \begin_inset Formula $A$
 \end_inset
 
- using a series of vector operations,
+ using a
+\begin_inset space ~
+\end_inset
+
+series of vector operations,
  i.e.,
  construct all entries 
 \begin_inset Formula $A_{k,l}$
 \end_inset
 
  simultaneously.
- This way,
+ In this way,
  we will not recompute the values needed to evaluate the integral numerically multiple times.
  Note that this approach will calculate all entries,
- meaning some calculations are redundant since the matrix is symmetric.
+ meaning some calculations may be redundant for a
+\begin_inset space ~
+\end_inset
+
+symmetric covariance 
+\begin_inset Formula $c\left(x,y\right)$
+\end_inset
+
+.
  In our code,
  the calculation involves orthonormal Legendre polynomials 
-\begin_inset Formula $\tilde{\pi}_{i},i=0,\ldots,N-1$
+\begin_inset Formula $\tilde{\pi}_{i},i=0,\ldots,N$
 \end_inset
 
 ,
@@ -8278,7 +9156,7 @@ nolink "false"
 \color inherit
 .
  These vectors will form an 
-\begin_inset Formula $M\times N$
+\begin_inset Formula $M\times\left(N+1\right)$
 \end_inset
 
  matrix:
@@ -8289,7 +9167,7 @@ nolink "false"
 w_{1}\tilde{\pi}_{0}(\tau_{1}) & w_{2}\tilde{\pi}_{0}(\tau_{2}) & \cdots & w_{M}\tilde{\pi}_{0}(\tau_{M})\\
 w_{1}\tilde{\pi}_{1}(\tau_{1}) & w_{2}\tilde{\pi}_{1}(\tau_{2}) & \cdots & w_{M}\tilde{\pi}_{1}(\tau_{M})\\
 \vdots & \vdots & \ddots & \vdots\\
-w_{1}\tilde{\pi}_{N-1}(\tau_{1}) & w_{2}\tilde{\pi}_{N-1}(\tau_{2}) & \cdots & w_{M}\tilde{\pi}_{N-1}(\tau_{M})
+w_{1}\tilde{\pi}_{N}(\tau_{1}) & w_{2}\tilde{\pi}_{N}(\tau_{2}) & \cdots & w_{M}\tilde{\pi}_{N}(\tau_{M})
 \end{array}\right].
 \]
 
@@ -8382,16 +9260,18 @@ Use Tensor Operations:
 \begin_inset Formula $A$
 \end_inset
 
- (or applying it to a vector) as tensor contractions.
- Tools like `einsum` (e.g.,
- in NumPy) can perform these operations efficiently.
- `einsum` takes multiple input tensors and a string describing which dimensions correspond and how they should be contracted or rearranged to produce the desired output tensor.
- This often avoids forming the large,
- explicit matrix 
-\begin_inset Formula $A$
+ (or applying it to a
+\begin_inset space ~
 \end_inset
 
-.
+vector) as tensor contractions.
+ Tools like `einsum` (e.g.,
+ in NumPy) can perform these operations efficiently.
+ `einsum` takes multiple input tensors and a
+\begin_inset space ~
+\end_inset
+
+string describing which dimensions correspond and how they should be contracted or rearranged to produce the desired output tensor.
  The elements of the tensor 
 \begin_inset Formula $A$
 \end_inset
@@ -8423,14 +9303,34 @@ The next step is to determine an adequate number of quadrature nodes and weights
 \end_inset
 
  (which involve integrals approximated by quadrature) are generally unknown,
- a reference value is needed for comparison.
- We adopt the common approach of assuming that using a significantly larger number of nodes yields a highly accurate result.
+ a
+\begin_inset space ~
+\end_inset
+
+reference value is needed for comparison.
+ We adopt the common approach of assuming that using a
+\begin_inset space ~
+\end_inset
+
+significantly larger number of nodes yields a
+\begin_inset space ~
+\end_inset
+
+highly accurate result.
  Therefore,
- a reference value 
+ a
+\begin_inset space ~
+\end_inset
+
+reference value 
 \begin_inset Formula $A_{k,l}^{*}$
 \end_inset
 
- is computed using a large number of nodes,
+ is computed using a
+\begin_inset space ~
+\end_inset
+
+large number of nodes,
  
 \begin_inset Formula $N_{ref}$
 \end_inset
@@ -8483,7 +9383,11 @@ nolink "false"
 \end_inset
 
 .
- These computed values were compared to a reference value 
+ These computed values were compared to a
+\begin_inset space ~
+\end_inset
+
+reference value 
 \begin_inset Formula $A_{k,l}^{*}$
 \end_inset
 
@@ -8566,7 +9470,7 @@ nolink "false"
 
  shows the computed approximate eigenvalues corresponding to different covariance functions;
  in this case,
- they were calculated using 21 orthonormal basis functions.
+ they were calculated using 61 orthonormal basis functions.
 \begin_inset Float figure
 placement document
 alignment document
@@ -8587,7 +9491,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Approximate eigenvalues from different covariance functions
+Approximate 1D eigenvalues from different covariance functions
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Eigenvalues-of-cov"
@@ -8690,7 +9594,7 @@ nolink "false"
 
 \end_inset
 
-)
+) in 1D 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Eigenfunctions-of-Exp-cov"
@@ -8803,7 +9707,7 @@ nolink "false"
 In Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:Residuum-of-eigenpairs"
+reference "fig:Residuum-of-eigenpairs-Exp"
 plural "false"
 caps "false"
 noprefix "false"
@@ -8813,18 +9717,49 @@ nolink "false"
 
 ,
  we see the residual for the first five approximate eigenpairs,
- made from the exponential covariance function,
- as the number of basis polynomials,
- and therefore the size of matrix 
-\begin_inset Formula $A$
+ computed for the exponential covariance function,
+ for increasing number of basis polynomials.
+ Similarly,
+ Figure
+\begin_inset space ~
 \end_inset
 
-,
- increases.
+
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "fig:Residuum-of-eigenpairs-Sq-Exp"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ presents the corresponding residual results for the squared exponential covariance function.
+ The residual behavior for the Matérn covariance function is illustrated in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Residuum-of-eigenpairs-Mat"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
  We observe that the residual decreases substantially only for either the even- or odd-indexed eigenpairs at each step,
  in an alternating fashion.
  This is because the basis polynomials being added alternate between even and odd degrees,
- and adding a polynomial of a certain parity primarily refines the approximations of the eigenpairs with the corresponding parity.
+ and adding a
+\begin_inset space ~
+\end_inset
+
+polynomial of a
+\begin_inset space ~
+\end_inset
+
+certain parity primarily refines the approximations of the eigenpairs with the corresponding parity.
  
 \begin_inset Float figure
 placement document
@@ -8835,7 +9770,7 @@ status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename Graphs/EigenpairsResiduum.pdf
+	filename Graphs/EigenpairsResiduumExp.pdf
 
 \end_inset
 
@@ -8849,15 +9784,34 @@ status open
 \begin_inset Formula $L^{2}$
 \end_inset
 
--norm of the residuum of eigenpairs
+-norm of the residuum of eigenpairs for 1D exponential covariance
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:Residuum-of-eigenpairs"
+name "fig:Residuum-of-eigenpairs-Exp"
 
 \end_inset
 
 
 \end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Graphs/EigenpairsResiduumSqExp.pdf
 
 \end_inset
 
@@ -8865,6 +9819,65 @@ name "fig:Residuum-of-eigenpairs"
 \end_layout
 
 \begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset Formula $L^{2}$
+\end_inset
+
+-norm of the residuum of eigenpairs for 1D squared exponential covariance
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Residuum-of-eigenpairs-Sq-Exp"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Graphs/EigenpairsResiduumMat.pdf
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset Formula $L^{2}$
+\end_inset
+
+-norm of the residuum of eigenpairs for 1D Matérn covariance
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Residuum-of-eigenpairs-Mat"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
 
 \end_layout
 
@@ -8884,7 +9897,7 @@ The analysis is now extended to two-dimensional random fields defined on the squ
 ,
  and squared exponential covariance function,
  
-\begin_inset Formula $\Cov(\boldsymbol{x},\boldsymbol{y})=\exp\left(-\|\boldsymbol{x}-\boldsymbol{y}\|^{2}\right)$
+\begin_inset Formula $\Cov(\boldsymbol{x},\boldsymbol{y})=\exp\left(-\|\boldsymbol{x}-\boldsymbol{y}\|^{2}/2\right)$
 \end_inset
 
 .
@@ -8943,10 +9956,6 @@ name "fig:Eigenvalues-for-2D"
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 Figure 
@@ -8985,7 +9994,11 @@ nolink "false"
 \end_inset
 
  shows the first six approximate eigenfunctions derived from the squared exponential covariance function on the same domain.
- A notable characteristic observed in both sets of eigenfunctions (Figures 
+ A
+\begin_inset space ~
+\end_inset
+
+notable characteristic observed in both sets of eigenfunctions (Figures 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:2D_Eigenfunctions_Exp"
@@ -9050,10 +10063,6 @@ name "fig:2D_Eigenfunctions_Exp"
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -9178,10 +10187,6 @@ name "fig:2D_Realizations_Exp"
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -9246,7 +10251,15 @@ name "chap:Conclusion"
 \end_layout
 
 \begin_layout Standard
-This thesis set out to implement a numerical method for computing the Karhunen-Loève (KL) expansion of a random field.
+This thesis set out to implement a
+\begin_inset space ~
+\end_inset
+
+numerical method for computing the Karhunen-Loève (KL) expansion of a
+\begin_inset space ~
+\end_inset
+
+random field.
  The approach relies on combining the theory of orthogonal polynomials,
  Gaussian quadrature,
  and the Galerkin method to solve the underlying integral eigenvalue problem associated with the random field’s autocovariance function.
@@ -9324,7 +10337,11 @@ nolink "false"
  random variables,
  random fields,
  and autocovariance functions,
- with a focus on Gaussian random fields (GRF) which are commonly used in applications.
+ with a
+\begin_inset space ~
+\end_inset
+
+focus on Gaussian random fields (GRF) which are commonly used in applications.
 \end_layout
 
 \begin_layout Standard
@@ -9388,7 +10405,11 @@ nolink "false"
 
 \begin_layout Standard
 In terms of contribution,
- a significant part of this thesis,
+ a
+\begin_inset space ~
+\end_inset
+
+significant part of this thesis,
  particularly Chapters
 \begin_inset space ~
 \end_inset
@@ -9425,11 +10446,19 @@ literal "false"
 \end_inset
 
 .
- These sections aimed to gather the necessary background information in a structured and accessible manner.
+ These sections aimed to gather the necessary background information in a
+\begin_inset space ~
+\end_inset
+
+structured and accessible manner.
 \end_layout
 
 \begin_layout Standard
-The primary practical contribution of this work lies in the implementation and integration of these theoretical components into a working computational pipeline.
+The primary practical contribution of this work lies in the implementation and integration of these theoretical components into a
+\begin_inset space ~
+\end_inset
+
+working computational pipeline.
  This involved writing and testing code (as evidenced by the results in Chapters
 \begin_inset space ~
 \end_inset
@@ -9491,8 +10520,16 @@ Bringing these distinct mathematical tools together to successfully approximate 
 
 \begin_layout Standard
 Overall,
- this thesis successfully demonstrated the effectiveness of using orthogonal polynomials and Gaussian quadrature within a Galerkin framework for the numerical approximation of the Karhunen-Loève expansion.
- It provides a practical guide to the underlying theory and its implementation,
+ this thesis successfully demonstrated the effectiveness of using orthogonal polynomials and Gaussian quadrature within a
+\begin_inset space ~
+\end_inset
+
+Galerkin framework for the numerical approximation of the Karhunen-Loève expansion.
+ It provides a
+\begin_inset space ~
+\end_inset
+
+practical guide to the underlying theory and its implementation,
  confirming the utility of these combined techniques for computationally representing stochastic processes.
 \end_layout
 

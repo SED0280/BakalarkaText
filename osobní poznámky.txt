@@ -139,8 +139,28 @@ Už to skoro je
  - potřebuju přepsat geteigenfunctions aby dávala i eigenvektory, uříznout a vykreslit tečkama společně s ostatními.
 
 
+-------------------------------------------------------
 
+% Define theorem styles with boxed environments
+\newtheoremstyle{boxtheorem}  % Boxed theorem style
+  {0pt} % Space above
+  {5pt} % Space below
+  {}    % Body font
+  {}    % Indent amount
+  {\bfseries} % Theorem head font
+  {.}   % Punctuation after theorem head
+  { }   % Space after theorem head
+  {\thmname{#1} \thmnumber{#2}\thmnote{ (#3)}}
 
+% Apply to theorem and definition
+\theoremstyle{boxtheorem}
 
+\newmdenv[
+-------------------------------------------------------
 
+k+1-th
 
+co ještě: Nový repositář pro REALNY kod (a odkaz do abstractu), česky abstrakt, projít CELÝ text (pro jistotu)
+a až po všem se možná pokusit o další rychlé experimenty 
+
+JO a mezery u referencí a "a something"
