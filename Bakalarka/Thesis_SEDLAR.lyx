@@ -67,7 +67,7 @@ Quadratures}
 \AddAcronym{$N(\mu, \sigma^2)$}{Gaussian (normal) distribution with mean $\mu$ and variance $\sigma^2$}
 \AddAcronym{$\spanSed\{\cdot\}$}{Span of a set of vectors or functions} % Ensure \spanSed is defined or change to \mathrm{span} or \operatorname{span}
 \AddAcronym{$\alpha_k, \beta_k$}{Coefficients in the three-term recurrence relation}
-\AddAcronym{$\lambda_j$}{Eigenvalue of covariance operator or quadrature weight or Quadrature weight (context-dependent)}
+\AddAcronym{$\lambda_j$}{Eigenvalue of covariance operator or Quadrature weight (context-dependent)}
 \AddAcronym{$u_j$}{Eigenfunction of covariance operator}
 \AddAcronym{$\tau_j$}{Quadrature node (root of orthogonal polynomial)}
 \AddAcronym{$\sigma^2$}{Variance}
@@ -683,14 +683,13 @@ nolink "false"
 
 :
  Provides the mathematical foundation related to orthogonal polynomials.
- Key topics include definitions,
- weighted inner products,
+ Key topics include weighted inner products,
  the three-term recurrence relation,
  Jacobi matrices,
  Gaussian quadrature rules,
  the Golub-Welsch algorithm for computing nodes and weights,
  and the generalization of Legendre polynomials to arbitrary finite intervals.
- The end of this Chapter demonstrates the concepts through numerical examples.
+ The end of this chapter demonstrates the concepts through numerical examples.
  This includes generating polynomials,
  timing the quadrature rule computation,
  and testing the convergence of Gaussian quadrature for integrating different types of functions.
@@ -1791,7 +1790,11 @@ Bilinear form
 \begin_inset Formula $w(x)$
 \end_inset
 
- from Definition 
+ from Definition
+\begin_inset space ~
+\end_inset
+
+
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "def:weigh-function"
@@ -2256,7 +2259,8 @@ with
 \begin_inset Formula $(k+1)$
 \end_inset
 
--th step,
+\SpecialChar nobreakdash
+th step,
  
 \begin_inset Formula $f_{k+1}(x)$
 \end_inset
@@ -2366,7 +2370,7 @@ polynomial of degree
 \noun default
 \color inherit
  i.e.
- we can express 
+ 
 \family roman
 \series medium
 \shape up
@@ -2382,6 +2386,39 @@ polynomial of degree
 \color none
 
 \begin_inset Formula $x\pi_{i}\in P_{i+1}$
+\end_inset
+
+,
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ we can express
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\begin_inset Formula $x\pi_{i}$
 \end_inset
 
  as 
@@ -2447,10 +2484,12 @@ for certain constants
 \end_inset
 
 .
- Then for 
+ Then,
+ for 
 \begin_inset Formula $k>i+1$
 \end_inset
 
+,
  
 \begin_inset Formula $\left\langle \pi_{k},x\pi_{i}\right\rangle _{w}$
 \end_inset
@@ -2548,7 +2587,11 @@ Legendre polynomials
 \begin_inset Formula $\beta_{k}$
 \end_inset
 
- for the three-term recurrence relation (Theorem 
+ for the three-term recurrence relation (Theorem
+\begin_inset space ~
+\end_inset
+
+
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "thm:3-term-recurrence"
@@ -2633,7 +2676,7 @@ series of orthogonal polynomials and induced norm
 ,
  we can form the orthonormal basis.
  Orthonormal basis can also be represented via three-term recurrence,
- tied to recurrence for monic polynomials.
+ tied to recurrence for monic orthogonal polynomials.
  
 \end_layout
 
@@ -2718,7 +2761,11 @@ where
 \begin_inset Formula $\beta_{0}$
 \end_inset
 
- are defined in Theorem 
+ are defined in Theorem
+\begin_inset space ~
+\end_inset
+
+
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "thm:3-term-recurrence"
@@ -2756,7 +2803,11 @@ Monic orthogonal polynomials
 
 .
  Therefore,
- the three-term recurrence from Theorem 
+ the three-term recurrence from Theorem
+\begin_inset space ~
+\end_inset
+
+
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "thm:3-term-recurrence"
@@ -2786,12 +2837,16 @@ nolink "false"
 
 \begin_inset Formula 
 \[
-\tilde{\pi}_{k+1}\sqrt{\beta_{k+1}}=\left(x-\alpha_{k}\right)\tilde{\pi}_{k}-\beta_{k}\tilde{\pi}_{k-1}\sqrt{\beta_{k}^{-1}}=\left(x-\alpha_{k}\right)\tilde{\pi}_{k}-\tilde{\pi}_{k-1}\sqrt{\beta_{k}}
+\tilde{\pi}_{k+1}\sqrt{\beta_{k+1}}=\left(x-\alpha_{k}\right)\tilde{\pi}_{k}-\beta_{k}\tilde{\pi}_{k-1}\sqrt{\beta_{k}^{-1}}=\left(x-\alpha_{k}\right)\tilde{\pi}_{k}-\tilde{\pi}_{k-1}\sqrt{\beta_{k}}.
 \]
 
 \end_inset
 
-This gives us the three-term recurrence from Theorem 
+This gives us the three-term recurrence from Theorem
+\begin_inset space ~
+\end_inset
+
+
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "thm:normal-3-term-recurrence"
@@ -2852,7 +2907,11 @@ status collapsed
 
 \end_inset
 
-With reference to three term recurrence in Theorem 
+With reference to three term recurrence in Theorem
+\begin_inset space ~
+\end_inset
+
+
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "thm:normal-3-term-recurrence"
@@ -2897,7 +2956,7 @@ J_{n}\coloneqq\begin{bmatrix}\alpha_{0} & \sqrt{\beta_{1}} &  &  & 0\\
 status open
 
 \begin_layout Plain Layout
-Roots of monic polynomials
+Roots of monic polynomials 
 \begin_inset CommandInset citation
 LatexCommand cite
 after "Theorem 1.19"
@@ -2920,7 +2979,11 @@ The monic polynomial
 \end_inset
 
 ,
- generated by the three-term recurrence relation from Theorem 
+ generated by the three-term recurrence relation from Theorem
+\begin_inset space ~
+\end_inset
+
+
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "thm:3-term-recurrence"
@@ -3123,7 +3186,11 @@ If the first
 \begin_inset Formula $n$
 \end_inset
 
- equations from Theorem 
+ equations from Theorem
+\begin_inset space ~
+\end_inset
+
+
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "thm:normal-3-term-recurrence"
@@ -3183,7 +3250,11 @@ where
 \end_inset
 
 .
- The assertions from Theorem 
+ The assertions from Theorem
+\begin_inset space ~
+\end_inset
+
+
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "thm:Jacobi-eigenvalues-eigenvectors"
@@ -3384,7 +3455,39 @@ Recall the vector
 \uwave off
 \noun off
 \color none
- from Theorem 
+ from 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+Theorem
+\begin_inset space ~
+\end_inset
+
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "thm:Jacobi-eigenvalues-eigenvectors"
@@ -3422,7 +3525,11 @@ nolink "false"
 
 \end_inset
 
-Noting from Theorem 
+Noting from Theorem
+\begin_inset space ~
+\end_inset
+
+
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "thm:normal-3-term-recurrence"
@@ -3474,7 +3581,7 @@ Numerical quadrature provides an effective methodology for approximating the val
  The integral approximation is calculated as the weighted sum of the integrated function evaluated at the nodes.
  Specifically,
  Gaussian quadrature rules,
- which are intrinsically linked to orthogonal polynomials,
+ which are inherently linked to orthogonal polynomials,
  offer high accuracy.
  This section introduces the process of deriving the quadrature nodes 
 \begin_inset Formula $\{\tau_{i}\}_{i=1}^{N}$
@@ -3996,7 +4103,11 @@ vector of orthonormal polynomials
 
 \end_inset
 
-From Corollary 
+From Corollary
+\begin_inset space ~
+\end_inset
+
+
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "cor:Cor to Jacobi eigen"
@@ -4161,7 +4272,11 @@ where
 \end_inset
 
  is the first standard basis vector.
- From Theorem 
+ From Theorem
+\begin_inset space ~
+\end_inset
+
+
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "thm:Jacobi-eigenvalues-eigenvectors"
@@ -4222,7 +4337,11 @@ Since the first row of
 \begin_inset Formula $\tilde{\pi}_{0}(\tau_{j}^{G})$
 \end_inset
 
- and from Theorem 
+ and from Theorem
+\begin_inset space ~
+\end_inset
+
+
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "thm:normal-3-term-recurrence"
@@ -4269,7 +4388,11 @@ where
 
 \end_inset
 
-by Corollary 
+by Corollary
+\begin_inset space ~
+\end_inset
+
+
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "cor:Cor to Jacobi eigen"
@@ -4305,6 +4428,19 @@ This work focuses specifically on Legendre polynomials because they can be adapt
 
 .
  Such integration can be achieved by applying an affine transformation to the Legendre polynomials and their corresponding quadrature nodes and weights.
+\end_layout
+
+\begin_layout Standard
+For more information on affine transformations,
+ we refer to 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "AbramowitzStegun1964"
+literal "false"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Remark
@@ -4885,7 +5021,11 @@ Since
 \uwave default
 \noun default
 \color inherit
-If we then utilize this substitution in Theorem 
+If we then utilize this substitution in Theorem
+\begin_inset space ~
+\end_inset
+
+
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "thm:quad_weights_equation"
@@ -4938,7 +5078,11 @@ Polynomials
 \end_layout
 
 \begin_layout Standard
-Legendre polynomials are generated using the three-term recurrence relation presented in Theorem 
+Legendre polynomials are generated using the three-term recurrence relation presented in Theorem
+\begin_inset space ~
+\end_inset
+
+
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "thm:3-term-recurrence"
@@ -5005,7 +5149,11 @@ name "fig:Legendre-polynomials"
 
 \end_inset
 
-Normalized Legendre polynomials are generated using the recurrence relation described in Theorem 
+Normalized Legendre polynomials are generated using the recurrence relation described in Theorem
+\begin_inset space ~
+\end_inset
+
+
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "thm:normal-3-term-recurrence"
@@ -5118,7 +5266,11 @@ First,
 \end_inset
 
 function `eigh_tridiagonal` from the `scipy.linalg` library to calculate the eigenvalues and eigenvectors.
- From Theorem 
+ From Theorem
+\begin_inset space ~
+\end_inset
+
+
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "thm:Gauss-Quardature-from"
@@ -5706,8 +5858,7 @@ We will now experiment with two-dimensional integration.
 
 ).
  In practice,
- this value is often computed numerically,
- 
+ this value is often computed numerically 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "AlazahChandlerWildeLaPorte2014"
@@ -6663,8 +6814,8 @@ probability to every measurable set in
 \begin_inset space ~
 \end_inset
 
-number between 0 and 1,
- where 0 means the even will never occur and one means the event will always occur.
+number between zero and one,
+ where zero means the event will never occur and one means the event will always occur.
  Higher probability means the event is more likely to occur in an experiment.
  For a
 \begin_inset space ~
@@ -9030,9 +9181,13 @@ The clear choice for basis functions are the orthonormal polynomials with respec
 \begin_inset Formula $\mathcal{T}$
 \end_inset
 
- (here assumed as multidimensional interval).
+.
  The basis can be then expressed as tensor product of Legendre polynomials,
- whose construction was thoroughly disseminated in Chapter 
+ whose construction was thoroughly disseminated in Chapter
+\begin_inset space ~
+\end_inset
+
+
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "chap:Polynomials"
@@ -9990,6 +10145,8 @@ nolink "false"
 \end_inset
 
 .
+ Note that sampling the realizations is computationally inexpensive,
+ as it involves multiplying the eigenfunctions by the square root of the eigenvalues and by samples from a standard Gaussian distribution.
  
 \begin_inset Float figure
 placement document
@@ -10605,6 +10762,10 @@ nolink "false"
 .
  Comparing the two sets of samples reveals that the sampled realizations from the squared exponential covariance function appear much smoother than those from the exponential covariance function.
  That is because the squared exponential maintains high correlation locally much more strongly than the exponential.
+ Note that sampling a 2D realization is performed simply in our code.
+ It involves multiplying an eigenfunction,
+ the square root of the corresponding eigenvalue,
+ and a sample from a standard normal distribution.
  
 \begin_inset Float figure
 placement document
