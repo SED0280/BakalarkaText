@@ -9751,7 +9751,7 @@ nolink "false"
 \begin_inset Formula $A_{k,l}$
 \end_inset
 
- were computed from Matérn covariance function
+ were computed from the Matérn covariance function
 \family roman
 \series medium
 \shape up
