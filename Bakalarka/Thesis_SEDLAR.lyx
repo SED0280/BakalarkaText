@@ -10637,7 +10637,7 @@ symmetry
 ,
  reflecting the isotropic nature of the underlying covariance functions.
 \begin_inset Float figure
-placement document
+placement H
 alignment document
 wide false
 sideways false
@@ -10684,7 +10684,7 @@ name "fig:2D_Eigenfunctions_Exp"
 
  
 \begin_inset Float figure
-placement document
+placement H
 alignment document
 wide false
 sideways false
@@ -10880,7 +10880,7 @@ numerical method for computing the Karhunen-Loève (KL) expansion of a
 \end_inset
 
 random field.
- The method combines the theory of orthogonal polynomials,
+ The method combined the theory of orthogonal polynomials,
  Gaussian quadrature,
  and the Galerkin technique to solve the integral eigenvalue problem associated with the random field’s autocovariance function.
 \end_layout
