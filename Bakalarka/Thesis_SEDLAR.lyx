@@ -9540,7 +9540,7 @@ large number of nodes,
 This approach is illustrated in Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:Error-of-A_kl"
+reference "fig:Error-of-A_kl-Exp"
 plural "false"
 caps "false"
 noprefix "false"
@@ -9554,7 +9554,39 @@ nolink "false"
 \begin_inset Formula $A_{k,l}$
 \end_inset
 
- were computed using 
+ were computed from exponential covariance 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\Cov(x,y)=\exp\left(-\left|x-y\right|\right)$
+\end_inset
+
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+using 
 \begin_inset Formula $N$
 \end_inset
 
@@ -9581,7 +9613,7 @@ reference value
 \end_inset
 
  computed with 
-\begin_inset Formula $N_{r}=1000$
+\begin_inset Formula $N_{r}=5000$
 \end_inset
 
  nodes.
@@ -9611,7 +9643,7 @@ status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename Graphs/AijError.pdf
+	filename Graphs/AijError_Exp.pdf
 
 \end_inset
 
@@ -9626,10 +9658,169 @@ Error of entries
 \begin_inset Formula $A_{k,l}$
 \end_inset
 
-
+ obtained from exponential covariance
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:Error-of-A_kl"
+name "fig:Error-of-A_kl-Exp"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+The same approach was used in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Error-of-A_kl-Mat"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+ This time,
+ the matrix entries 
+\begin_inset Formula $A_{k,l}$
+\end_inset
+
+ were computed from Matérn covariance function
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+using 
+\begin_inset Formula $N$
+\end_inset
+
+ nodes,
+ where 
+\begin_inset Formula $N$
+\end_inset
+
+ ranged from 
+\begin_inset Formula $10$
+\end_inset
+
+ to 
+\begin_inset Formula $200$
+\end_inset
+
+.
+ The computed values were compared to a
+\begin_inset space ~
+\end_inset
+
+reference value 
+\begin_inset Formula $A_{k,l}^{*}$
+\end_inset
+
+ computed with 
+\begin_inset Formula $N_{r}=5000$
+\end_inset
+
+ nodes.
+ Note that the convergence shown in this graph is much quicker than that in Figure
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Error-of-A_kl-Exp"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+ This is because the exponential covariance function is not smooth at zero lag (
+\begin_inset Formula $x=y$
+\end_inset
+
+),
+ whereas the Matérn covariance function (with 
+\begin_inset Formula $\nu=2.5>0.5$
+\end_inset
+
+) is smoother at zero lag.
+ 
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Graphs/AijError_Mat.pdf
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Error of entries 
+\begin_inset Formula $A_{k,l}$
+\end_inset
+
+ obtained from Matérn covariance
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Error-of-A_kl-Mat"
 
 \end_inset
 
