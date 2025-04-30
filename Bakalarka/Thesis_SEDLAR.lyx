@@ -23,10 +23,10 @@ Quadratures}
 
 \Acknowledgement{I would like to thank Ing. Michal Béreš, Phd. for his guidance and help with the thesis and my family for supporting me in my studies.}
 
-\CzechAbstract{Cílem této práce je definovat a naimplementovat efektivní způsob pro aproximaci Karhunen-Loèveho rozkladu. Práce nejprve poskytuje přehled teorie týkající se ortogonálních polynomů, vážených skalárních součinů a Gaussových kvadraturních pravidel. Klíčové myšlenky jsou vysvětleny jasným a přístupným způsobem. Mezi ně patří tříčlenný rekurentní vztah pro generování ortogonálních polynomů a Golubův-Welschův algoritmus pro výpočet kvadraturních uzlů a vah z přidružené Jacobiho matice. Jsou představeny základní koncepty z teorie pravděpodobnosti se zaměřením na kovarianční funkce a Gaussovská náhodná pole, aby byl vytvořen nezbytný základ pro hlavní aplikaci zkoumanou v této práci. Hlavní aplikace ukazuje použití Galerkinovy metody, společně s bázemi ortogonálních polynomů a Gaussovými kvadraturními pravidly, k dosažení efektivní numerické aproximace Karhunen-Loèveho (KL) rozkladu pro stochastické procesy. Všechny diskutované metody jsou implementovány v jazyce Python a odpovídající kód je dostupný v uvedeném repozitáři https://github.com/SED0280/SED0280ThesisCode.}
+\CzechAbstract{Cílem této práce je definovat a naimplementovat efektivní způsob pro aproximaci Karhunen-Loèveho rozkladu. Práce nejprve poskytuje přehled teorie týkající se ortogonálních polynomů, vážených skalárních součinů a Gaussových kvadraturních pravidel. Klíčové myšlenky jsou vysvětleny jasným a přístupným způsobem. Mezi ně patří tříčlenný rekurentní vztah pro generování ortogonálních polynomů a Golubův-Welschův algoritmus pro výpočet kvadraturních uzlů a vah z přidružené Jacobiho matice. Jsou představeny základní koncepty z teorie pravděpodobnosti se zaměřením na kovarianční funkce a Gaussovská náhodná pole, aby byl vytvořen nezbytný základ pro hlavní aplikaci zkoumanou v této práci. Hlavní aplikace ukazuje použití Galerkinovy metody, společně s bázemi ortogonálních polynomů a Gaussovými kvadraturními pravidly, k dosažení efektivní numerické aproximace Karhunen-Loèveho (KL) rozkladu pro stochastické procesy. Všechny diskutované metody jsou implementovány v jazyce Python a odpovídající kód je dostupný v uvedeném repozitáři \cite{SedlarThesisCode}.}
 \CzechKeywords{Legendrovy polynomy, Gaussova kvadratura, Galerkinova metoda, Karhunen-Loèveho rozklad, tří-členná rekurze, Jacobiho matice}
 
-\EnglishAbstract{The goal of this thesis is to define and implement an efficient method to approximate the KarhunenLoève decomposition. The thesis first provides a review of the theory related to orthogonal polynomials, weighted inner products, and Gaussian quadrature rules. Key ideas are explained in a clear and accessible way. These include the three-term recurrence relation for generating orthogonal polynomials and the Golub-Welsch algorithm for computing quadrature nodes and weights from the associated Jacobi matrix. Fundamental concepts from probability theory are introduced, focusing on covariance functions and Gaussian random fields, to establish the necessary background for the primary application explored in this work. The core application demonstrates the use of the Galerkin method, together with orthogonal polynomial bases and Gaussian quadrature rules, to achieve an efficient numerical approximation of the Karhunen-Loève (KL) expansion for stochastic processes. All methods discussed are implemented in Python, and the corresponding code is available at the specified repository https://github.com/SED0280/SED0280ThesisCode.}
+\EnglishAbstract{The goal of this thesis is to define and implement an efficient method to approximate the KarhunenLoève decomposition. The thesis first provides a review of the theory related to orthogonal polynomials, weighted inner products, and Gaussian quadrature rules. Key ideas are explained in a clear and accessible way. These include the three-term recurrence relation for generating orthogonal polynomials and the Golub-Welsch algorithm for computing quadrature nodes and weights from the associated Jacobi matrix. Fundamental concepts from probability theory are introduced, focusing on covariance functions and Gaussian random fields, to establish the necessary background for the primary application explored in this work. The core application demonstrates the use of the Galerkin method, together with orthogonal polynomial bases and Gaussian quadrature rules, to achieve an efficient numerical approximation of the Karhunen-Loève (KL) expansion for stochastic processes. All methods discussed are implemented in Python, and the corresponding code is available at the specified repository \cite{SedlarThesisCode}.}
 \EnglishKeywords{Legendre polynomials, Gauss quadrature rule, Galerkin method, Karhunen-Loève expantion, three-term recurrence, Jacobi matrix}
 
 
@@ -657,7 +657,15 @@ numerical approximation of the Karhunen-Loève expansion for a
 \begin_inset space ~
 \end_inset
 
-given random field.
+given random field (see 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "SedlarThesisCode"
+literal "false"
+
+\end_inset
+
+).
 \end_layout
 
 \begin_layout Standard
@@ -5073,6 +5081,18 @@ the efficiency of construction of quadrature rule using Golub-Welsch algorithm,
 convergence of quadrature approximation for various types of functions.
 \end_layout
 
+\begin_layout Standard
+all numerical results presented were generated using the implementation provided in 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "SedlarThesisCode"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
 \begin_layout Subsection
 Polynomials
 \end_layout
@@ -8348,8 +8368,16 @@ nolink "false"
 
 \end_inset
 
- shows five different autocovariance functions.
- These include three Matérn covariance functions,
+ shows five different autocovariance functions (generated using the implementation in 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "SedlarThesisCode"
+literal "false"
+
+\end_inset
+
+).
+ These include three Matérn covariance functions ,
  each with a
 \begin_inset space ~
 \end_inset
@@ -9296,7 +9324,15 @@ series of vector operations,
 \begin_inset Formula $A_{k,l}$
 \end_inset
 
- simultaneously.
+ simultaneously (see 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "SedlarThesisCode"
+literal "false"
+
+\end_inset
+
+ for implementation).
  In this way,
  we will not recompute the values needed to evaluate the integral numerically multiple times.
  Note that this approach will calculate all entries,
@@ -9810,7 +9846,7 @@ reference value
 \end_inset
 
  nodes.
- Note that the convergence shown in this graph is much quicker than that in Figure
+ Note that the convergence shown in this graph is much faster than that in Figure
 \begin_inset space ~
 \end_inset
 
@@ -9826,16 +9862,20 @@ nolink "false"
 \end_inset
 
 .
- This is because the exponential covariance function is not smooth at zero lag (
+ This is because the exponential covariance function is not smooth at 
 \begin_inset Formula $x=y$
 \end_inset
 
-),
+,
  whereas the Matérn covariance function (with 
 \begin_inset Formula $\nu=2.5>0.5$
 \end_inset
 
-) is smoother at zero lag.
+) is smooth at 
+\begin_inset Formula $x=y$
+\end_inset
+
+.
  
 \begin_inset Float figure
 placement document
@@ -11369,7 +11409,15 @@ The key practical outcome of this work lies in the implementation and integratio
 \begin_inset space ~
 \end_inset
 
-working computational pipeline.
+working computational pipeline in (see 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "SedlarThesisCode"
+literal "false"
+
+\end_inset
+
+).
  This task involved creating and testing the code (as evidenced by the results in Chapters
 \begin_inset space ~
 \end_inset
