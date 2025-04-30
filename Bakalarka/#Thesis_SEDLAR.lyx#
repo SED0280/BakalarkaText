@@ -10409,10 +10409,6 @@ nolink "false"
 \begin_inset Formula $\tilde{u}_{j}(\boldsymbol{x})$
 \end_inset
 
- multiplied by squared eigenvalues 
-\begin_inset Formula $\sqrt{\tilde{\lambda}_{i}}$
-\end_inset
-
 ,
  derived from the exponential covariance function on 
 \begin_inset Formula $\mathcal{T}$
@@ -10431,16 +10427,7 @@ nolink "false"
 
 \end_inset
 
- shows the first six approximate eigenfunctions 
-\begin_inset Formula $\tilde{u}_{j}(\boldsymbol{x})$
-\end_inset
-
- multiplied by squared eigenvalues 
-\begin_inset Formula $\sqrt{\tilde{\lambda}_{i}}$
-\end_inset
-
-,
- derived from the squared exponential covariance function on the same domain.
+ shows the first six approximate eigenfunctions multiplied by squared eigenvalues derived from the squared exponential covariance function on the same domain.
  A
 \begin_inset space ~
 \end_inset

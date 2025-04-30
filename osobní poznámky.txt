@@ -160,10 +160,10 @@ Už to skoro je
 
 co ještě: 
 Nový repositář pro REALNY kod (a odkaz do abstractu), 
-česky abstrakt,---------------------------------------------------------***DONE***
+česky abstrakt,-------------------------------------------------------------------***DONE***
 projít CELÝ text (pro jistotu)
-a až po všem se možná pokusit o další rychlé experimenty 
+a až po všem se možná pokusit o další rychlé experimenty ... No
 
-JO a mezery u referencí a "a something"---------------------------------***DONE***
+JO a mezery u referencí a "a something"-------------------------------------------***DONE***
 
-get_eigenpairs nevrací eigenfunkci ale už to přenásobení vlastním číslem
+get_eigenpairs nevrací eigenfunkci ale už to přenásobení vlastním číslem----------***DONE***
