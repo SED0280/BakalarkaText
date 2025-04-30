@@ -9521,7 +9521,7 @@ reference value
 
 large number of nodes,
  
-\begin_inset Formula $N_{ref}$
+\begin_inset Formula $N_{r}$
 \end_inset
 
 .
@@ -9530,7 +9530,7 @@ large number of nodes,
 \end_inset
 
  computed with fewer nodes (
-\begin_inset Formula $N<N_{ref}$
+\begin_inset Formula $N<N_{r}$
 \end_inset
 
 ) are then compared against this reference to assess convergence.
@@ -9581,7 +9581,7 @@ reference value
 \end_inset
 
  computed with 
-\begin_inset Formula $N_{ref}=1000$
+\begin_inset Formula $N_{r}=1000$
 \end_inset
 
  nodes.

@@ -9181,7 +9181,7 @@ The clear choice for basis functions are the orthonormal polynomials with respec
 \begin_inset Formula $\mathcal{T}$
 \end_inset
 
- (here assumed as multidimensional interval).
+.
  The basis can be then expressed as tensor product of Legendre polynomials,
  whose construction was thoroughly disseminated in Chapter
 \begin_inset space ~
