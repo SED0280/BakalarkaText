@@ -2907,7 +2907,7 @@ status collapsed
 
 \end_inset
 
-With reference to three term recurrence in Theorem
+With reference to three-term recurrence in Theorem
 \begin_inset space ~
 \end_inset
 
@@ -3613,7 +3613,7 @@ literal "false"
 
 \end_inset
 
-
+.
 \end_layout
 
 \begin_layout Definition
@@ -5095,7 +5095,11 @@ nolink "false"
 
 .
  This can be done efficiently using Numpy array operations.
- The first six polynomials in this sequence are illustrated in Figure 
+ The first six polynomials in this sequence are illustrated in Figure
+\begin_inset space ~
+\end_inset
+
+
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Legendre-polynomials"
@@ -5166,7 +5170,11 @@ nolink "false"
 
 .
  Similarly,
- the first six polynomials in this normalized sequence are shown in Figure 
+ the first six polynomials in this normalized sequence are shown in Figure
+\begin_inset space ~
+\end_inset
+
+
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Normalized-Legendre-polynomials"
@@ -5283,7 +5291,11 @@ nolink "false"
 
 ,
  we know that the eigenvalues are the quadrature nodes and the weights can be obtained from the first components of the eigenvectors.
- Figure 
+ Figure
+\begin_inset space ~
+\end_inset
+
+
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Log-Log-Plot-of-Time"
@@ -5434,7 +5446,11 @@ polynomial.
 \noun default
 \color inherit
 .
- Figure 
+ Figure
+\begin_inset space ~
+\end_inset
+
+
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Approximation-of-Poly-Integ"
@@ -5533,7 +5549,11 @@ Next,
 \end_inset
 
 .
- Figure 
+ Figure
+\begin_inset space ~
+\end_inset
+
+
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Approximation-of-Smooth-Integ"
@@ -5636,7 +5656,11 @@ non-smooth function
 \end_inset
 
 .
- Figure 
+ Figure
+\begin_inset space ~
+\end_inset
+
+
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Approximation-of-NonSmooth-Integ"
@@ -5729,7 +5753,11 @@ name "fig:Approximation-of-NonSmooth-Integ"
 \end_layout
 
 \begin_layout Example
-Figure 
+Figure
+\begin_inset space ~
+\end_inset
+
+
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Approximation-of-Discontinuous-Integ"
@@ -5752,12 +5780,17 @@ f(x)=\begin{cases}
 -1 & \text{if }x<-0.5\\
 0 & \text{if }x=-0.5\\
 1 & \text{if }x>-0.5
-\end{cases}
+\end{cases}.
 \]
 
 \end_inset
 
-We can observe that the accuracy of the quadrature approximation is even lower than for the previous non-smooth function,
+The exact value of the integral is 
+\begin_inset Formula $i^{*}=1$
+\end_inset
+
+.
+ We can observe that the accuracy of the quadrature approximation is even lower than for the previous non-smooth function,
  and the error fluctuates significantly depending on whether an odd or even number of nodes and weights is used.
  This occurs because 
 \begin_inset Formula $f(x)$
@@ -8300,7 +8333,11 @@ literal "false"
 \end_layout
 
 \begin_layout Example
-Figure 
+Figure
+\begin_inset space ~
+\end_inset
+
+
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Covariance-Functions"
@@ -8481,7 +8518,7 @@ Let
 
 zero mean Gaussian random field,
  then there exists an orthonormal basis 
-\begin_inset Formula $\{\tilde{u}_{j}:j\in\mathbb{N}\}$
+\begin_inset Formula $\{u_{j}:j\in\mathbb{N}\}$
 \end_inset
 
  of 
@@ -8504,7 +8541,7 @@ where the coefficients
  are random variables defined by
 \begin_inset Formula 
 \[
-\gamma_{j}(\omega)\coloneqq\langle X(t,\omega),\tilde{u}_{j}(t)\rangle_{L^{2}(\mathcal{T})}
+\gamma_{j}(\omega)\coloneqq\langle X(t,\omega),u_{j}(t)\rangle_{L^{2}(\mathcal{T})}
 \]
 
 \end_inset
@@ -9065,7 +9102,7 @@ A_{k,j}=\intop_{\mathcal{T}}\intop_{\mathcal{T}}\psi_{k}\left(\boldsymbol{y}\rig
 and
 \begin_inset Formula 
 \[
-W_{k,j}=\intop_{\mathcal{T}}\psi_{k}\left(\boldsymbol{x}\right)\psi_{j}\left(\boldsymbol{x}\right)d\boldsymbol{x},
+W_{k,j}=\intop_{\mathcal{T}}\psi_{k}\left(\boldsymbol{x}\right)\psi_{j}\left(\boldsymbol{x}\right)d\boldsymbol{x}.
 \]
 
 \end_inset
@@ -9225,7 +9262,7 @@ nolink "false"
 \end_layout
 
 \begin_layout Section
-Numeric experiments
+Numerical experiments
 \end_layout
 
 \begin_layout Standard
@@ -9362,8 +9399,7 @@ w_{1}\tilde{\pi}_{N}(\tau_{1}) & w_{2}\tilde{\pi}_{N}(\tau_{2}) & \cdots & w_{M}
 
 \end_inset
 
-Note that this matrix is formed virtually (not assembled directly) in the code (we use Numpy broadcasting).
- We also define the 
+We also define the 
 \begin_inset Formula $M\times M$
 \end_inset
 
@@ -9537,7 +9573,11 @@ large number of nodes,
 \end_layout
 
 \begin_layout Example
-This approach is illustrated in Figure 
+This approach is illustrated in Figure
+\begin_inset space ~
+\end_inset
+
+
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Error-of-A_kl-Exp"
@@ -9690,7 +9730,11 @@ name "fig:Error-of-A_kl-Exp"
 \end_layout
 
 \begin_layout Example
-The same approach was used in Figure 
+The same approach was used in Figure
+\begin_inset space ~
+\end_inset
+
+
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Error-of-A_kl-Mat"
@@ -9703,11 +9747,11 @@ nolink "false"
 
 .
  This time,
- a matrix entries 
+ the matrix entries 
 \begin_inset Formula $A_{k,l}$
 \end_inset
 
- were computed from Matérn covariance
+ were computed from Matérn covariance function
 \family roman
 \series medium
 \shape up
@@ -9766,8 +9810,7 @@ reference value
 \end_inset
 
  nodes.
- Note that the convergence of this graph is much quicker,
- then in Figure
+ Note that the convergence shown in this graph is much quicker than that in Figure
 \begin_inset space ~
 \end_inset
 
@@ -9783,42 +9826,16 @@ nolink "false"
 \end_inset
 
 .
- That is because exponential covariance is not smooth around 
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\nospellcheck off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
-
-\begin_inset Formula $\exp\left(0\right)$
-\end_inset
-
- (when 
+ This is because the exponential covariance function is not smooth at zero lag (
 \begin_inset Formula $x=y$
 \end_inset
 
-)
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\nospellcheck default
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
+),
+ whereas the Matérn covariance function (with 
+\begin_inset Formula $\nu=2.5>0.5$
+\end_inset
+
+) is smoother at zero lag.
  
 \begin_inset Float figure
 placement document
@@ -9874,7 +9891,11 @@ We now examine the computed eigenvalues and eigenvectors of the matrix
 \end_inset
 
 .
- Figure 
+ Figure
+\begin_inset space ~
+\end_inset
+
+
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Eigenvalues-of-cov"
@@ -9925,7 +9946,11 @@ name "fig:Eigenvalues-of-cov"
 
 \end_inset
 
-Figure 
+Figure
+\begin_inset space ~
+\end_inset
+
+
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Eigenfunctions-of-Exp-cov"
@@ -9947,7 +9972,11 @@ nolink "false"
 \end_inset
 
 .
- In a same way Figure 
+ In a same way Figure
+\begin_inset space ~
+\end_inset
+
+
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Eigenfunctions-of-SqExp-cov"
@@ -9990,7 +10019,11 @@ nolink "false"
 \uwave default
 \noun default
 \color inherit
-squared exponential covariance and Figure 
+squared exponential covariance and Figure
+\begin_inset space ~
+\end_inset
+
+
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Eigenfunctions-of-Mat-cov"
@@ -10324,7 +10357,11 @@ nolink "false"
 \end_inset
 
  each illustrate three sampled realizations generated using the Karhunen-Loève (KL) expansion with different covariance functions.
- Figure 
+ Figure
+\begin_inset space ~
+\end_inset
+
+
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Sampled-functions-Exp"
@@ -10336,7 +10373,11 @@ nolink "false"
 \end_inset
 
  used the exponential covariance function,
- Figure 
+ Figure
+\begin_inset space ~
+\end_inset
+
+
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Sampled-functions-SqExp"
@@ -10347,7 +10388,11 @@ nolink "false"
 
 \end_inset
 
- used the squared exponential covariance function and Figure 
+ used the squared exponential covariance function and Figure
+\begin_inset space ~
+\end_inset
+
+
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Sampled-functions-Mat"
@@ -10514,7 +10559,11 @@ nolink "false"
 
 \end_inset
 
-In Figure 
+In Figure
+\begin_inset space ~
+\end_inset
+
+
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Residuum-of-eigenpairs-Exp"
@@ -10546,7 +10595,11 @@ nolink "false"
 \end_inset
 
  presents the corresponding residual results for the squared exponential covariance function.
- The residual behavior for the Matérn covariance function is illustrated in Figure 
+ The residual behavior for the Matérn covariance function is illustrated in Figure
+\begin_inset space ~
+\end_inset
+
+
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Residuum-of-eigenpairs-Mat"
@@ -10718,7 +10771,11 @@ The analysis is now extended to two-dimensional random fields defined on the squ
 .
  Firstly,
  we examine the eigenvalues for these covariance functions,
- shown in Figure 
+ shown in Figure
+\begin_inset space ~
+\end_inset
+
+
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Eigenvalues-for-2D"
@@ -10768,7 +10825,11 @@ name "fig:Eigenvalues-for-2D"
 
 \end_inset
 
-Figure 
+Figure
+\begin_inset space ~
+\end_inset
+
+
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:2D_Eigenfunctions_Exp"
@@ -10797,7 +10858,11 @@ nolink "false"
 
 .
  Similarly,
- Figure 
+ Figure
+\begin_inset space ~
+\end_inset
+
+
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:2D_Eigenfunctions_SqExp"
@@ -10949,7 +11014,11 @@ name "fig:2D_Eigenfunctions_SqExp"
 
 Next,
  plots of sample fields generated using these KL expansions are shown.
- Figure 
+ Figure
+\begin_inset space ~
+\end_inset
+
+
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:2D_Realizations_Exp"
@@ -10961,7 +11030,11 @@ nolink "false"
 \end_inset
 
  illustrates six sample realizations of the two-dimensional random field modeled with the exponential covariance function.
- Figure 
+ Figure
+\begin_inset space ~
+\end_inset
+
+
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:2D_Realizations_SqExp"
