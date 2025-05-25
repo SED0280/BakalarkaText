@@ -167,3 +167,21 @@ a až po všem se možná pokusit o další rychlé experimenty ... No
 JO a mezery u referencí a "a something"-------------------------------------------***DONE***
 
 get_eigenpairs nevrací eigenfunkci ale už to přenásobení vlastním číslem----------***DONE***
+
+
+------------------------------------------------------------------
+slidy:
+1.-4. 	popis co jsem sepsal (ne jak to funguje)
+5. 	potom kód, Legendrovy polynomy pomocí 3-term recurrence, i normalní a transformované
+6.-7. 	vypočítání kvadraturních vah a bodů z Jacobi matice representovanou diagonalama ktera je 3-diagonalni
+	že používam scipy.linalg.eigh_tridiagonal
+	jak dopočítám váhy (veta)
+8. 	KL, Tesor A vypočítaný pomocí einsum
+
+první 4 skrátit do jedné
+Zmínit že to je hodne citované a spíš o 
+Přidat vzorečky pro KL
+A_ij Error
+víc bodově
+
+

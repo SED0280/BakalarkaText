@@ -1,0 +1,53 @@
+%% modified logo colors
+\definecolor{darkgreen}{rgb}{.02,.38,.20}
+\definecolor{lightgreen}{rgb}{.71,.85,.55}
+\definecolor{mDarkTeal}{HTML}{353638}
+\setbeamercolor{background canvas}{bg=white}
+%% modified frame title
+\setbeamercolor{frametitle}{%
+	bg = normal text.bg,
+	fg = darkgreen
+}
+\addtobeamertemplate{frametitle}{}{%
+	\begin{textblock*}{100mm}(.8\textwidth,-.95cm)
+		\includegraphics[scale=.25]{logo2}
+\end{textblock*}
+    
+    \vphantom{g}% To avoid fluctuations per frame
+    %\hrule% Uncomment to see desired effect, without a full-width hrule
+        \par\vspace*{-\baselineskip}% <-- reduce vertical space after rule
+    \par\hspace*{-\dimexpr0.5\paperwidth-0.5\textwidth}\rule[0.5\baselineskip]{\paperwidth}{0.4pt}
+    \par\vspace*{-10pt}% <-- reduce vertical space after rule
+    }
+
+
+%% modified progress bar
+\setbeamercolor{progress bar}{%
+	fg=darkgreen,
+	bg=lightgreen
+}
+
+%% modified footer
+
+%%  1-piece
+%\setbeamertemplate{frame footer}{Marie Kub\'{i}nov\'{a}, demo talk }
+%\setbeamercolor{frame footer}{fg=darkgreen}
+
+% 3-piece
+\setbeamerfont{footline}{size=\fontsize{6}{6}\selectfont}
+\setbeamercolor{section in foot}{fg=darkgreen}
+\setbeamertemplate{footline}
+{
+	\hbox{%
+		\begin{beamercolorbox}[wd=.25\paperwidth,left]{section in foot}%
+			\hspace{.3cm}\insertshortauthor
+		\end{beamercolorbox}%
+		\begin{beamercolorbox}[wd=.5\paperwidth,center]{section in foot}%
+			\insertshorttitle
+		\end{beamercolorbox}%
+		\begin{beamercolorbox}[wd=.25\paperwidth,right]{section in foot}%
+			\insertframenumber/\inserttotalframenumber\hspace{.3cm}
+	\end{beamercolorbox}}%
+	
+	\vskip3pt%
+}
