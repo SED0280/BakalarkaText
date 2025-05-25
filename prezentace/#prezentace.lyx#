@@ -243,23 +243,83 @@ Legendre polynomials
 \end_layout
 
 \begin_layout Frame
-Calculated using Three-term recurrence.
+Three-term recurrence:
+\begin_inset Formula 
+\[
+\pi_{k+1}(x)=\left(x-\alpha_{k}\right)\pi_{k}(x)-\beta_{k}\pi_{k-1}(x),\quad k=0,1,2,\ldots,
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\pi_{-1}(x)=0,\pi_{0}(x)=1.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
 \end_layout
 
 \begin_layout Frame
-\begin_inset Formula $\alpha_{k}$
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Normalized Legendre polynomials
+\end_layout
+
 \end_inset
 
- and 
-\begin_inset Formula $\beta_{k}$
-\end_inset
 
- equations obtained from Gautschi W.
- (2004).
 \end_layout
 
 \begin_layout Frame
-Normalized and transformed are calculated too.
+Three-term recurrence:
+\begin_inset Formula 
+\[
+\sqrt{\beta_{k+1}}\tilde{\pi}_{k+1}(x)=\left(x-\alpha_{k}\right)\tilde{\pi}_{k}(x)-\sqrt{\beta_{k}}\tilde{\pi}_{k-1}(x),\quad k=0,1,2,\ldots,
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\tilde{\pi}_{-1}(x)=0,\quad\tilde{\pi}_{0}(x)=1/\sqrt{\beta_{0}},
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+generalization of 
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -338,24 +398,15 @@ Quadrature
 \end_layout
 
 \begin_layout Frame
-Calculated quadrature nodes and weights from the Jacobi matrix.
+Jacobi matrix represented vectors
 \end_layout
 
 \begin_layout Frame
-Since the Jacobi matrix is tree-diagonal,
- it is represented as two vectors of the diagonals.
-\end_layout
-
-\begin_layout Frame
-We gain the eigenpairs utilizing function 
+eigenpairs from 
 \emph on
-linalg.eigh_tridiagonal
+scipy.linalg.eigh_tridiagonal
 \emph default
- from the 
-\emph on
-scipy
-\emph default
- library.
+.
 \end_layout
 
 \begin_layout Standard
@@ -379,7 +430,7 @@ Golub-Welsch algorithm
 \end_layout
 
 \begin_layout Frame
-Eigenvalues are the quadrature nodes.
+Eigenvalues are the quadrature nodes
 \end_layout
 
 \begin_layout Frame
@@ -387,7 +438,7 @@ The quadrature weights
 \begin_inset Formula $\lambda_{i}$
 \end_inset
 
- are calculated as:
+:
 \begin_inset Formula 
 \[
 \lambda_{i}=\beta_{0}\boldsymbol{v}_{i,1}^{2}.
@@ -476,22 +527,112 @@ Karhunen-Loève expansion
 \end_inset
 
 
-\end_layout
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
 
-\begin_layout Frame
-Calculated using the Galerkin method.
-\end_layout
+\begin_inset Formula 
+\[
+X(t,\omega)=\sum_{j=1}^{\infty}\gamma_{j}(\omega)\sqrt{\lambda_{j}}u_{j}(t)
+\]
 
-\begin_layout Frame
-We get a matrix 
-\begin_inset Formula $A$
 \end_inset
 
- from the covariance function and basis of orthogonal polynomials.
+
+\begin_inset Formula 
+\[
+\gamma_{j}(\omega)\coloneqq\langle X(t,\omega),u_{j}(t)\rangle_{L^{2}(\mathcal{T})}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
 \end_layout
 
 \begin_layout Frame
-For this we utilize the einsum function from the Numpy library.
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Karhunen-Loève expansion
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+Galerkin method
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula 
+\[
+A\overline{\boldsymbol{u}}_{i}=\lambda_{i,N}W\overline{\boldsymbol{u}}_{i},
+\]
+
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+where:
+\begin_inset Formula 
+\[
+A_{k,j}=\intop_{\mathcal{T}}\intop_{\mathcal{T}}\psi_{k}\left(\boldsymbol{y}\right)c\left(\boldsymbol{x},\boldsymbol{y}\right)\psi_{j}\left(\boldsymbol{x}\right)d\boldsymbol{x}d\boldsymbol{y},
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+W_{k,j}=\intop_{\mathcal{T}}\psi_{k}\left(\boldsymbol{x}\right)\psi_{j}\left(\boldsymbol{x}\right)d\boldsymbol{x}.
+\]
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Frame

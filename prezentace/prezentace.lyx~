@@ -242,8 +242,7 @@ Legendre polynomials
 
 \end_layout
 
-\begin_deeper
-\begin_layout Itemize
+\begin_layout Frame
 Three-term recurrence:
 \begin_inset Formula 
 \[
@@ -255,7 +254,7 @@ Three-term recurrence:
 
 \begin_inset Formula 
 \[
-\pi_{-1}(x)=0,\pi_{0}(x)=1,
+\pi_{-1}(x)=0,\pi_{0}(x)=1.
 \]
 
 \end_inset
@@ -263,23 +262,66 @@ Three-term recurrence:
 
 \end_layout
 
-\begin_layout Itemize
-\begin_inset Formula $\alpha_{k}$
+\begin_layout Standard
+\begin_inset Separator plain
 \end_inset
 
- and 
-\begin_inset Formula $\beta_{k}$
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Normalized Legendre polynomials
+\end_layout
+
 \end_inset
 
- equations obtained from Gautschi W.
- (2004).
+
 \end_layout
 
-\begin_layout Itemize
-Normalized and transformed are calculated too.
+\begin_layout Frame
+Three-term recurrence:
+\begin_inset Formula 
+\[
+\sqrt{\beta_{k+1}}\tilde{\pi}_{k+1}(x)=\left(x-\alpha_{k}\right)\tilde{\pi}_{k}(x)-\sqrt{\beta_{k}}\tilde{\pi}_{k-1}(x),\quad k=0,1,2,\ldots,
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\tilde{\pi}_{-1}(x)=0,\quad\tilde{\pi}_{0}(x)=1/\sqrt{\beta_{0}},
+\]
+
+\end_inset
+
+
 \end_layout
 
-\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+generalization of 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
 \begin_inset Separator plain
 \end_inset
@@ -356,24 +398,15 @@ Quadrature
 \end_layout
 
 \begin_layout Frame
-Calculated quadrature nodes and weights from the Jacobi matrix.
+Jacobi matrix represented vectors
 \end_layout
 
 \begin_layout Frame
-Since the Jacobi matrix is tree-diagonal,
- it is represented as two vectors of the diagonals.
-\end_layout
-
-\begin_layout Frame
-We gain the eigenpairs utilizing function 
+eigenpairs from 
 \emph on
-linalg.eigh_tridiagonal
+scipy.linalg.eigh_tridiagonal
 \emph default
- from the 
-\emph on
-scipy
-\emph default
- library.
+.
 \end_layout
 
 \begin_layout Standard
@@ -397,7 +430,7 @@ Golub-Welsch algorithm
 \end_layout
 
 \begin_layout Frame
-Eigenvalues are the quadrature nodes.
+Eigenvalues are the quadrature nodes
 \end_layout
 
 \begin_layout Frame
@@ -405,7 +438,7 @@ The quadrature weights
 \begin_inset Formula $\lambda_{i}$
 \end_inset
 
- are calculated as:
+:
 \begin_inset Formula 
 \[
 \lambda_{i}=\beta_{0}\boldsymbol{v}_{i,1}^{2}.
@@ -494,30 +527,183 @@ Karhunen-Loève expansion
 \end_inset
 
 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula 
+\[
+X(t,\omega)=\sum_{j=1}^{\infty}\gamma_{j}(\omega)\sqrt{\lambda_{j}}u_{j}(t)
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\gamma_{j}(\omega)\coloneqq\langle X(t,\omega),u_{j}(t)\rangle_{L^{2}(\mathcal{T})}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
 \end_layout
 
 \begin_layout Frame
-Calculated using the Galerkin method.
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Galerkin method
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Frame
-We get a matrix 
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Formula 
+\[
+A\overline{\boldsymbol{u}}_{i}=\lambda_{i,N}W\overline{\boldsymbol{u}}_{i},
+\]
+
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+
+\begin_inset Formula 
+\[
+A_{k,j}=\intop_{\mathcal{T}}\intop_{\mathcal{T}}\psi_{k}\left(\boldsymbol{y}\right)c\left(\boldsymbol{x},\boldsymbol{y}\right)\psi_{j}\left(\boldsymbol{x}\right)d\boldsymbol{x}d\boldsymbol{y},
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+W_{k,j}=\intop_{\mathcal{T}}\psi_{k}\left(\boldsymbol{x}\right)\psi_{j}\left(\boldsymbol{x}\right)d\boldsymbol{x}.
+\]
+
+\end_inset
+
+
 \begin_inset Formula $A$
 \end_inset
 
- from the covariance function and basis of orthogonal polynomials.
+ is calculated using 
+\emph on
+numpy.einsum
 \end_layout
 
-\begin_layout Frame
-For this we utilize the einsum function from the Numpy library.
-\end_layout
-
-\begin_layout Frame
-From eigenvalue decomposition of matrix 
-\begin_inset Formula $A$
+\begin_layout Standard
+\begin_inset Separator plain
 \end_inset
 
- we get the eigenvalues and eigenfunctions used in Karhunen-Loève expansion
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $A_{i,j}$
+\end_inset
+
+ Error
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Float figure
+placement H
+alignment center
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename graphs/AijError_Exp.pdf
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Error of entries 
+\begin_inset Formula $A_{k,l}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Frame
