@@ -1067,7 +1067,7 @@ Answer
 \end_layout
 
 \begin_layout Frame
-vychází z Remark 25 (The 
+Vychází z Remark 25 (The 
 \begin_inset Formula $n$
 \end_inset
 
@@ -1075,9 +1075,16 @@ vychází z Remark 25 (The
 \begin_inset Formula $2n-1$
 \end_inset
 
- exactly.),
- protože spojité funkce se dají aproximovat polynomem celkem přesně.
- Efektivita Gaussovské kvadratury poté v podstatě závisí na nepřesnosti aproximace polynomy.
+ exactly.)
+\end_layout
+
+\begin_layout Frame
+Spojité funkce se dají aproximovat polynomem.
+ Efektivita Gaussové kvadratury poté závisí na nepřesnosti aproximace polynomem.
+\end_layout
+
+\begin_layout Frame
+
 \end_layout
 
 \begin_layout Standard
@@ -1102,10 +1109,6 @@ Opponent questions
 
 \begin_layout Frame
 Jak by Vaše implementace KL rozkladu fungovala ve více než dvou prostorových dimenzích?
-\end_layout
-
-\begin_layout Frame
-Bylo by možné provést KL rozklad i na jiných doménách než kartézských součinech intervalů?
 \end_layout
 
 \begin_layout Standard
@@ -1168,7 +1171,7 @@ Výpočetní náročnost by stoupla
 status open
 
 \begin_layout Plain Layout
-Answer
+Opponent questions
 \end_layout
 
 \end_inset
@@ -1180,7 +1183,23 @@ Answer
 Bylo by možné provést KL rozklad i na jiných doménách než kartézských součinech intervalů?
 \end_layout
 
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
 \begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Answer
+\end_layout
+
+\end_inset
+
 
 \end_layout
 

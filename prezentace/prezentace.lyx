@@ -829,7 +829,7 @@ Substituce na čtverec
 \end_layout
 
 \begin_layout Itemize
-integrál přes čtverec násobený dvěma
+Integrál přes čtverec násobený dvěma
 \end_layout
 
 \end_deeper
@@ -1111,10 +1111,6 @@ Opponent questions
 Jak by Vaše implementace KL rozkladu fungovala ve více než dvou prostorových dimenzích?
 \end_layout
 
-\begin_layout Frame
-Bylo by možné provést KL rozklad i na jiných doménách než kartézských součinech intervalů?
-\end_layout
-
 \begin_layout Standard
 \begin_inset Separator plain
 \end_inset
@@ -1175,7 +1171,7 @@ Výpočetní náročnost by stoupla
 status open
 
 \begin_layout Plain Layout
-Answer
+Opponent questions
 \end_layout
 
 \end_inset
@@ -1187,7 +1183,23 @@ Answer
 Bylo by možné provést KL rozklad i na jiných doménách než kartézských součinech intervalů?
 \end_layout
 
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
 \begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Answer
+\end_layout
+
+\end_inset
+
 
 \end_layout
 
