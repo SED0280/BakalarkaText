@@ -137,10 +137,6 @@ maketitle
 
 \end_layout
 
-\begin_layout Section
-Contents of thesis
-\end_layout
-
 \begin_layout Frame
 \begin_inset Argument 4
 status open
@@ -173,6 +169,10 @@ Experimenting with efficiency
 \end_inset
 
 
+\end_layout
+
+\begin_layout Section
+Contents of thesis
 \end_layout
 
 \begin_layout Frame
@@ -314,7 +314,7 @@ Three-term recurrence:
 status open
 
 \begin_layout Plain Layout
-generalization of 
+Generalization of Legendre polynomials and quadrature
 \end_layout
 
 \end_inset
@@ -322,6 +322,44 @@ generalization of
 
 \end_layout
 
+\begin_layout Frame
+Legendre polynomial transformation:
+\begin_inset Formula 
+\[
+\pi_{i}(x)=\pi_{i}^{L}\left(\frac{a+b}{a-b}+\frac{2}{b-a}x\right)\sqrt{\frac{2}{b-a}}.
+\]
+
+\end_inset
+
+Quadrature transformations
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+nodes:
+\begin_inset Formula 
+\[
+\tau_{i}=\frac{a+b}{2}+\frac{b-a}{2}\tau_{i}^{L}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+weights:
+\begin_inset Formula 
+\[
+\lambda_{i}=\frac{b-a}{2}\lambda_{i}^{L}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
 \begin_layout Standard
 \begin_inset Separator plain
 \end_inset
@@ -708,6 +746,10 @@ Error of entries
 
 \begin_layout Frame
 
+\end_layout
+
+\begin_layout Section
+Thank you for your attention
 \end_layout
 
 \begin_layout Standard
