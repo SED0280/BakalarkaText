@@ -830,14 +830,6 @@ Substituce na čtverec
 
 \begin_layout Itemize
 integrál přes čtverec násobený dvěma
-\begin_inset Formula 
-\[
-A_{klij}=\sum_{p=1}^{n}\sum_{q=1}^{n}\sum_{r=1}^{n}\sum_{s=1}^{n}\left(\psi_{k}(x_{p})w_{p}\right)\left(\psi_{l}(x_{q})w_{q}\right)2C_{pqrs}^{*}\left(\psi_{i}(x_{r})w_{r}\right)\left(\psi_{j}(x_{s})w_{s}\right)
-\]
-
-\end_inset
-
-
 \end_layout
 
 \end_deeper
@@ -1054,8 +1046,28 @@ Na straně 32 píšete,
  Z čeho toto tvrzení vychází?
 \end_layout
 
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
 \begin_layout Frame
-- vychází z Remark 25 (The 
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Answer
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+Vychází z Remark 25 (The 
 \begin_inset Formula $n$
 \end_inset
 
@@ -1063,9 +1075,16 @@ Na straně 32 píšete,
 \begin_inset Formula $2n-1$
 \end_inset
 
- exactly.),
- protože spojité funkce se dají aproximovat polynomy celkem přesně.
- efektivita Gaussovské kvadratury poté závisí na nepřesnosti aproximace polynomy.
+ exactly.)
+\end_layout
+
+\begin_layout Frame
+Spojité funkce se dají aproximovat polynomem.
+ Efektivita Gaussové kvadratury poté závisí na nepřesnosti aproximace polynomem.
+\end_layout
+
+\begin_layout Frame
+
 \end_layout
 
 \begin_layout Standard
@@ -1093,9 +1112,75 @@ Jak by Vaše implementace KL rozkladu fungovala ve více než dvou prostorových
 \end_layout
 
 \begin_layout Frame
-- Implementace KL by fungovala podobným způsobem,
- využilo by se hlavně více kvadratur.
- 
+Bylo by možné provést KL rozklad i na jiných doménách než kartézských součinech intervalů?
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Answer
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+Implementace KL by fungovala podobným způsobem.
+\end_layout
+
+\begin_layout Frame
+Bázové funkce 
+\begin_inset Formula $\psi\left(\boldsymbol{x}\right)$
+\end_inset
+
+ by byly násobky orthonormálních polynomů (
+\begin_inset Formula $\psi_{i,j,k,l}\left(\boldsymbol{x}\right)=\tilde{\pi}_{i}(x_{1})\tilde{\pi}_{j}(x_{2})\tilde{\pi}_{k}(x_{3})\tilde{\pi}_{l}(x_{4})$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Frame
+Tensor 
+\begin_inset Formula $A$
+\end_inset
+
+ by měl více dimenzí
+\end_layout
+
+\begin_layout Frame
+Výpočetní náročnost by stoupla
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Answer
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Frame
@@ -1103,8 +1188,16 @@ Bylo by možné provést KL rozklad i na jiných doménách než kartézských s
 \end_layout
 
 \begin_layout Frame
-- Obecně je to možné,
- jenom ne stejným způsobem jako je moje implementace.
+
+\end_layout
+
+\begin_layout Frame
+Ano,
+ ale ne s mojí implementací.
+\end_layout
+
+\begin_layout Frame
+
 \end_layout
 
 \end_body
