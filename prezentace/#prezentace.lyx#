@@ -137,10 +137,6 @@ maketitle
 
 \end_layout
 
-\begin_layout Section
-Contents of thesis
-\end_layout
-
 \begin_layout Frame
 \begin_inset Argument 4
 status open
@@ -165,56 +161,6 @@ Implementing said theory in python
 
 \begin_layout Itemize
 Experimenting with efficiency
-\end_layout
-
-\end_deeper
-\begin_layout Standard
-\begin_inset Separator plain
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Discussed theory
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Orthogonality
-\end_layout
-
-\begin_layout Itemize
-Three-term recurrence
-\end_layout
-
-\begin_layout Itemize
-Legendre polynomials
-\end_layout
-
-\begin_layout Itemize
-Isotropic random field
-\end_layout
-
-\begin_layout Itemize
-Covariance
-\end_layout
-
-\begin_layout Itemize
-Gaussian distribution
-\end_layout
-
-\begin_layout Itemize
-Galerkin Method
 \end_layout
 
 \end_deeper
@@ -314,7 +260,7 @@ Three-term recurrence:
 status open
 
 \begin_layout Plain Layout
-generalization of 
+Generalization of Legendre polynomials
 \end_layout
 
 \end_inset
@@ -322,6 +268,44 @@ generalization of
 
 \end_layout
 
+\begin_layout Frame
+Legendre polynomial transformation:
+\begin_inset Formula 
+\[
+\pi_{i}(x)=\pi_{i}^{L}\left(\frac{a+b}{a-b}+\frac{2}{b-a}x\right)\sqrt{\frac{2}{b-a}}.
+\]
+
+\end_inset
+
+Quadrature transformations
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+nodes:
+\begin_inset Formula 
+\[
+\tau_{i}=\frac{a+b}{2}+\frac{b-a}{2}\tau_{i}^{L}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+weights:
+\begin_inset Formula 
+\[
+\lambda_{i}=\frac{b-a}{2}\lambda_{i}^{L}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
 \begin_layout Standard
 \begin_inset Separator plain
 \end_inset
@@ -571,7 +555,7 @@ X(t,\omega)=\sum_{j=1}^{\infty}\gamma_{j}(\omega)\sqrt{\lambda_{j}}u_{j}(t)
 status open
 
 \begin_layout Plain Layout
-Karhunen-Loève expansion
+Galerkin method
 \end_layout
 
 \end_inset
@@ -580,7 +564,7 @@ Karhunen-Loève expansion
 \end_layout
 
 \begin_layout Frame
-Galerkin method
+
 \family roman
 \series medium
 \shape up
@@ -594,7 +578,6 @@ Galerkin method
 \uwave off
 \noun off
 \color none
-
 \begin_inset Formula 
 \[
 A\overline{\boldsymbol{u}}_{i}=\lambda_{i,N}W\overline{\boldsymbol{u}}_{i},
@@ -616,7 +599,7 @@ A\overline{\boldsymbol{u}}_{i}=\lambda_{i,N}W\overline{\boldsymbol{u}}_{i},
 \uwave default
 \noun default
 \color inherit
-where:
+
 \begin_inset Formula 
 \[
 A_{k,j}=\intop_{\mathcal{T}}\intop_{\mathcal{T}}\psi_{k}\left(\boldsymbol{y}\right)c\left(\boldsymbol{x},\boldsymbol{y}\right)\psi_{j}\left(\boldsymbol{x}\right)d\boldsymbol{x}d\boldsymbol{y},
@@ -633,18 +616,86 @@ W_{k,j}=\intop_{\mathcal{T}}\psi_{k}\left(\boldsymbol{x}\right)\psi_{j}\left(\bo
 \end_inset
 
 
-\end_layout
-
-\begin_layout Frame
-From eigenvalue decomposition of matrix 
 \begin_inset Formula $A$
 \end_inset
 
- we get the eigenvalues and eigenfunctions used in Karhunen-Loève expansion
+ is calculated using 
+\emph on
+numpy.einsum
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $A_{i,j}$
+\end_inset
+
+ calculation error
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Float figure
+placement H
+alignment center
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename graphs/AijError_Exp.pdf
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Error of entries 
+\begin_inset Formula $A_{k,l}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Frame
 
+\end_layout
+
+\begin_layout Section
+Thank you for your attention
 \end_layout
 
 \begin_layout Standard
