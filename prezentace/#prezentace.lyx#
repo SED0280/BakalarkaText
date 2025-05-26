@@ -175,6 +175,10 @@ Experimenting with efficiency
 Implementation
 \end_layout
 
+\begin_layout Section
+Legendre polynomials
+\end_layout
+
 \begin_layout Frame
 \begin_inset Argument 4
 status open
@@ -368,6 +372,10 @@ Normalized Legendre polynomials
 
 \end_layout
 
+\begin_layout Section
+Quadrature rules
+\end_layout
+
 \begin_layout Frame
 \begin_inset Argument 4
 status open
@@ -389,8 +397,6 @@ Jacobi matrix represented vectors
 eigenpairs from 
 \emph on
 scipy.linalg.eigh_tridiagonal
-\emph default
-.
 \end_layout
 
 \begin_layout Standard
@@ -498,6 +504,10 @@ Log-Log Plot of Computation Time vs.
 \end_inset
 
 
+\end_layout
+
+\begin_layout Section
+Karhunen-Loève expansion
 \end_layout
 
 \begin_layout Frame
@@ -670,7 +680,7 @@ status open
 
 \begin_layout Plain Layout
 Error of entries 
-\begin_inset Formula $A_{k,l}$
+\begin_inset Formula $A_{i,j}$
 \end_inset
 
 
@@ -719,7 +729,7 @@ appendix
 status open
 
 \begin_layout Plain Layout
-Supervisor questions
+Supervisor question
 \end_layout
 
 \end_inset
@@ -728,13 +738,78 @@ Supervisor questions
 \end_layout
 
 \begin_layout Frame
-V grafu 4.1 sledujete pomalou konvergenci k přesné hodnotě integrálu při exponenciální kovarianci.Lze tento integrál efektivněji vyčíslit s ohledem na nespojitost derivace na přímce x = y?
+V grafu 4.1 sledujete pomalou konvergenci k přesné hodnotě integrálu při exponenciální kovarianci.
+ Lze tento integrál efektivněji vyčíslit s ohledem na nespojitost derivace na přímce x = y?
  Jaký byste zvolil postup,
  aby bylo možné dosáhnout požadované přesnosti s výrazně menším počtem kvadraturních bodů?
 \end_layout
 
 \begin_layout Frame
-- Rozdělíme na část pod 
+\begin_inset Float figure
+placement H
+alignment center
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename graphs/AijError_Exp.pdf
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Error of entries 
+\begin_inset Formula $A_{i,j}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Answer
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Rozdělíme na část pod 
 \begin_inset Formula $y=x$
 \end_inset
 
@@ -742,30 +817,31 @@ V grafu 4.1 sledujete pomalou konvergenci k přesné hodnotě integrálu při ex
 \begin_inset Formula $y=x$
 \end_inset
 
-,
- neboli nad diagonálou by platilo 
-\begin_inset Formula $x<y$
-\end_inset
-
- a pod diagonálou 
-\begin_inset Formula $x>y$
-\end_inset
-
 .
- pak můžeme integrovat každou trojúhelníkovou část zvlášť,
- neboli jestliže integrujeme např přes interval 
-\begin_inset Formula $I=\left\langle -1,1\right\rangle \times\left\langle -1,1\right\rangle $
-\end_inset
+\end_layout
 
-,
- pak:
+\begin_layout Itemize
+2 ekvivalentní trojúhelníky
+\end_layout
+
+\begin_layout Itemize
+Substituce na čtverec
+\end_layout
+
+\begin_layout Itemize
+integrál přes čtverec násobený dvěma
 \begin_inset Formula 
 \[
-A_{k,j}=\intop_{-1}^{1}\intop_{-1}^{x}\psi_{k}\left(y\right)c\left(x,y\right)\psi_{j}\left(x\right)\,dydx+\intop_{-1}^{1}\intop_{-1}^{y}\psi_{k}\left(y\right)c\left(x,y\right)\psi_{j}\left(x\right)\,dxdy
+A_{klij}=\sum_{p=1}^{n}\sum_{q=1}^{n}\sum_{r=1}^{n}\sum_{s=1}^{n}\left(\psi_{k}(x_{p})w_{p}\right)\left(\psi_{l}(x_{q})w_{q}\right)2C_{pqrs}^{*}\left(\psi_{i}(x_{r})w_{r}\right)\left(\psi_{j}(x_{s})w_{s}\right)
 \]
 
 \end_inset
 
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
 
 \end_layout
 
@@ -796,6 +872,29 @@ Odkud v důkazu věty 15 plyne,
 \end_inset
 
 ?
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Answer
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
 \begin_inset Formula 
 \[
 \langle x\pi_{k},\pi_{k-1}\rangle=\langle\pi_{k},x\pi_{k-1}\rangle
@@ -804,13 +903,120 @@ Odkud v důkazu věty 15 plyne,
 \end_inset
 
 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\pi_{k-1}$
+\end_inset
+
+ je monický 
+\begin_inset Formula $\Longrightarrow x\pi_{k-1}$
+\end_inset
+
+ je monický
+\end_layout
+
+\begin_layout Frame
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Formula 
+\begin{eqnarray*}
+\exists p_{k-1}\in P_{k-1}:x\pi_{k-1} & = & x^{k}+p_{k-1}\\
+\exists q_{k-1}\in P_{k-1}:\pi_{k} & = & x^{k}+q_{k-1}
+\end{eqnarray*}
+
+\end_inset
+
+
 \begin_inset Formula 
 \[
-x\pi_{k-1}=\sum_{i=0}^{k}c_{i}\pi_{i}=\pi_{k}+\sum_{i=0}^{k-1}c_{i}\pi_{i}
+x\pi_{k-1}-\pi_{k}=p_{k-1}-q_{k-1}=r_{k-1}\in P_{k-1}
 \]
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Answer
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Formula 
+\[
+x\pi_{k-1}=\pi_{k}+x\pi_{k-1}-\pi_{k}=\pi_{k}+r_{k-1}=\pi_{k}+\sum_{i=0}^{k-1}c_{i}\pi_{i},\quad r_{k-1}\in P_{k-1}
+\]
+
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
 
 \begin_inset Formula 
 \[
@@ -848,18 +1054,28 @@ Na straně 32 píšete,
  Z čeho toto tvrzení vychází?
 \end_layout
 
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
 \begin_layout Frame
-- vychází z Remark 25 (The 
-\begin_inset Formula $n$
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Answer
+\end_layout
+
 \end_inset
 
--point Gauss quadrature rule integrates polynomials of degree up to 
-\begin_inset Formula $2n-1$
-\end_inset
 
- exactly.),
- protože spojité funkce se dají aproximovat polynomy celkem přesně.
- efektivita Gaussovské kvadratury poté závisí na nepřesnosti aproximace polynomy.
+\end_layout
+
+\begin_layout Frame
+something
 \end_layout
 
 \begin_layout Standard
@@ -887,13 +1103,32 @@ Jak by Vaše implementace KL rozkladu fungovala ve více než dvou prostorových
 \end_layout
 
 \begin_layout Frame
-- Implementace KL by fungovala podobným způsobem,
- využilo by se hlavně více kvadratur.
- 
+Bylo by možné provést KL rozklad i na jiných doménách než kartézských součinech intervalů?
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
 \end_layout
 
 \begin_layout Frame
-Bylo by možné provést KL rozklad i na jiných doménách než kartézských součinech intervalů?
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Answer
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+- Implementace KL by fungovala podobným způsobem,
+ využilo by se hlavně více kvadratur.
 \end_layout
 
 \begin_layout Frame
