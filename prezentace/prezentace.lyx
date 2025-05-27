@@ -156,7 +156,7 @@ Rewriting related theory in an understandable way
 \end_layout
 
 \begin_layout Itemize
-Implementing said theory in python
+Implementing theory in Python
 \end_layout
 
 \begin_layout Itemize
@@ -169,10 +169,6 @@ Experimenting with efficiency
 \end_inset
 
 
-\end_layout
-
-\begin_layout Section
-Implementation
 \end_layout
 
 \begin_layout Section
@@ -212,6 +208,26 @@ Three-term recurrence:
 
 \end_layout
 
+\begin_layout Frame
+Modification of normalized variant:
+\begin_inset Formula 
+\[
+\sqrt{\beta_{k+1}}\tilde{\pi}_{k+1}(x)=\left(x-\alpha_{k}\right)\tilde{\pi}_{k}(x)-\sqrt{\beta_{k}}\tilde{\pi}_{k-1}(x),\quad k=0,1,2,\ldots,
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\tilde{\pi}_{-1}(x)=0,\quad\tilde{\pi}_{0}(x)=1/\sqrt{\beta_{0}},
+\]
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
 \begin_inset Separator plain
 \end_inset
@@ -233,22 +249,6 @@ Normalized Legendre polynomials
 \end_layout
 
 \begin_layout Frame
-Three-term recurrence:
-\begin_inset Formula 
-\[
-\sqrt{\beta_{k+1}}\tilde{\pi}_{k+1}(x)=\left(x-\alpha_{k}\right)\tilde{\pi}_{k}(x)-\sqrt{\beta_{k}}\tilde{\pi}_{k-1}(x),\quad k=0,1,2,\ldots,
-\]
-
-\end_inset
-
-
-\begin_inset Formula 
-\[
-\tilde{\pi}_{-1}(x)=0,\quad\tilde{\pi}_{0}(x)=1/\sqrt{\beta_{0}},
-\]
-
-\end_inset
-
 
 \end_layout
 
@@ -381,7 +381,7 @@ Quadrature rules
 status open
 
 \begin_layout Plain Layout
-Quadrature
+Golub-Welsch algorithm
 \end_layout
 
 \end_inset
@@ -390,13 +390,41 @@ Quadrature
 \end_layout
 
 \begin_layout Frame
-Jacobi matrix represented vectors
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Formula 
+\[
+J_{n}\coloneqq\begin{bmatrix}\alpha_{0} & \sqrt{\beta_{1}} &  &  & 0\\
+\sqrt{\beta_{1}} & \alpha_{1} & \sqrt{\beta_{2}}\\
+ & \sqrt{\beta_{2}} & \alpha_{2} & \ddots\\
+ &  & \ddots & \ddots & \sqrt{\beta_{n}}\\
+0 &  &  & \sqrt{\beta_{n}} & \alpha_{n}
+\end{bmatrix}
+\]
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Frame
-eigenpairs from 
-\emph on
-scipy.linalg.eigh_tridiagonal
+Jacobi matrix represented by vectors in code
+\end_layout
+
+\begin_layout Frame
+eigenpairs obtained from specialized algorithm for Hermite three-diagonal matrices
 \end_layout
 
 \begin_layout Standard
@@ -420,7 +448,7 @@ Golub-Welsch algorithm
 \end_layout
 
 \begin_layout Frame
-Eigenvalues are the quadrature nodes
+Eigenvalues of the Jacobi matrix are the quadrature nodes
 \end_layout
 
 \begin_layout Frame
@@ -612,7 +640,7 @@ A\overline{\boldsymbol{u}}_{i}=\lambda_{i,N}W\overline{\boldsymbol{u}}_{i},
 
 \begin_inset Formula 
 \[
-A_{k,j}=\intop_{\mathcal{T}}\intop_{\mathcal{T}}\psi_{k}\left(\boldsymbol{y}\right)c\left(\boldsymbol{x},\boldsymbol{y}\right)\psi_{j}\left(\boldsymbol{x}\right)d\boldsymbol{x}d\boldsymbol{y},
+W_{k,j}=\intop_{\mathcal{T}}\psi_{k}\left(\boldsymbol{x}\right)\psi_{j}\left(\boldsymbol{x}\right)d\boldsymbol{x}.
 \]
 
 \end_inset
@@ -620,7 +648,7 @@ A_{k,j}=\intop_{\mathcal{T}}\intop_{\mathcal{T}}\psi_{k}\left(\boldsymbol{y}\rig
 
 \begin_inset Formula 
 \[
-W_{k,j}=\intop_{\mathcal{T}}\psi_{k}\left(\boldsymbol{x}\right)\psi_{j}\left(\boldsymbol{x}\right)d\boldsymbol{x}.
+A_{k,j}=\intop_{\mathcal{T}}\intop_{\mathcal{T}}\psi_{k}\left(\boldsymbol{y}\right)c\left(\boldsymbol{x},\boldsymbol{y}\right)\psi_{j}\left(\boldsymbol{x}\right)d\boldsymbol{x}d\boldsymbol{y},
 \]
 
 \end_inset
@@ -667,7 +695,7 @@ status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename graphs/AijError_Exp.pdf
+	filename graphs/AijError_Mat.pdf
 	scale 60
 
 \end_inset
@@ -691,12 +719,71 @@ Error of entries
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Residuum
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Float figure
+placement H
+alignment center
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename graphs/EigenpairsResiduumMat.pdf
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Residuum
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Plain Layout
 
 \end_layout
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Frame
 
 \end_layout
 
