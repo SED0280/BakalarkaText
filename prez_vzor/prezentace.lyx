@@ -26,9 +26,13 @@
 
 \usepackage{xcolor}
 
-\title[Approximation of Karhunen-Loève Decomposition]{Approximation of Karhunen-Loève Decomposition of Isotropic Gaussian Random Fields Using Orthogonal Polynomials and Gaussian Quadratures} 
+\title[Approximation of Karhunen-Loève Decomposition]{~\\ Approximation of Karhunen-Loève Decomposition of Isotropic Gaussian Random Fields Using Orthogonal Polynomials and Gaussian Quadratures} 
 \date{\today}
-\author[MS]{\underline{Michal Sedlář}}
+\author[MS]{\underline{Michal Sedlář}
+\\
+\\
+\\
+\small{\underline{Supervisor:} Ing. Michal Béreš, Ph.D.}}
 \titlegraphic{\vspace{-15pt}\hfill\includegraphics[height=1.2cm]{logo.png}}
 
 \input{settings}
@@ -152,26 +156,32 @@ Goal of thesis
 \end_layout
 
 \begin_deeper
+\begin_layout Standard
+
+\series bold
+\bar under
+Goal:
+
+\series default
+\bar default
+ Utilize orthogonal polynomials and corresponding Gaussian quadratures for Karhunen-Loève decomposition of isotropic Gaussian random fields.
+\end_layout
+
 \begin_layout Itemize
-Reviewing theory of orthogonal and orthonormal polynomials,
- specifically:
+Review of theory of orthogonal polynomials with emphasis on
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-Three-term recurrence
+three-term recurrence
 \end_layout
 
 \begin_layout Itemize
-Golub-Welsch algorithm
+Golub-Welsh algorithm
 \end_layout
 
 \begin_layout Itemize
-Generalization of Legendre polynomials and quadrature
-\end_layout
-
-\begin_layout Itemize
-Numerical experiments and implementation of quadrature rules
+Implementation and numerical tests on quadrature convergence
 \end_layout
 
 \end_deeper
@@ -181,15 +191,15 @@ Karhunen-Loève decomposition of isotropic Gaussian random fields
 
 \begin_deeper
 \begin_layout Itemize
-Introduction to Karhunen-Loève decomposition
+short introduction into random fields and Karhunen-Loève decomposition 
 \end_layout
 
 \begin_layout Itemize
-Galerkin method for obtaining eigenpairs of autocovariance function
+Galerkin approximation of eigen-pairs of autocovariance operator and its use for Karhunen-Loève decomposition 
 \end_layout
 
 \begin_layout Itemize
-Numerical experiments of convergence and residuum of calculated eigenpairs
+Implementation and numerical test on convergence of polynomial approximation
 \end_layout
 
 \end_deeper
@@ -268,7 +278,7 @@ status collapsed
 
 \begin_deeper
 \begin_layout Itemize
-Random fields can be considered as a
+Random field can also be viewed as a
 \begin_inset space ~
 \end_inset
 
@@ -280,16 +290,26 @@ map
 \end_layout
 
 \begin_layout Itemize
-samples of random fields are then functions of spatial domains
+samples are then functions on spacial domains
 \end_layout
 
 \begin_layout Itemize
-Karhunen-Loève decomposition separates randomness and spatial behavior.
- It can be used for fast and efficient sampling
+Karhunen-Loève decomposition separates randomness and spacial behavior and can be used for fast and efficient sampling
 \end_layout
 
 \begin_layout Itemize
-Autocovariance function of isotropic Gaussian random fields is used for decomposition.
+Key property of isotropic Gaussian random fields used for decomposition is auto-covariance function,
+ e.g.
+ 
+\begin_inset Formula $C(d)=e^{-d}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $d$
+\end_inset
+
+ is the distance of points
 \end_layout
 
 \end_deeper
@@ -311,7 +331,7 @@ end{column}
 
 \begin_layout Columns
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -368,7 +388,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename graphs/2DRealizationExp.pdf
+	filename C:/home/ber0061/Repositories/BakalarkaText/Bakalarka/Graphs/2DRealizationExp.pdf
 	width 100col%
 
 \end_inset
@@ -410,15 +430,15 @@ end{column}
 \end_layout
 
 \end_deeper
-\begin_layout Section
-Legendre polynomials and Quadrature rules
-\end_layout
-
 \begin_layout Standard
 \begin_inset Separator plain
 \end_inset
 
 
+\end_layout
+
+\begin_layout Section
+Legendre polynomials and Quadrature rules
 \end_layout
 
 \begin_layout Frame
@@ -435,7 +455,7 @@ Legendre polynomials
 \end_layout
 
 \begin_layout Frame
-Calculated using the three-term recurrence:
+Key property for evaluating and computing the quadrature weights and nodes is the three-term recurrence:
 \begin_inset Formula 
 \[
 \pi_{k+1}(x)=\left(x-\alpha_{k}\right)\pi_{k}(x)-\beta_{k}\pi_{k-1}(x),\quad k=0,1,2,\ldots,
@@ -455,7 +475,7 @@ Calculated using the three-term recurrence:
 \end_layout
 
 \begin_layout Frame
-Can be modified for a calculation of normalized Legendre polynomials.
+It can be also modified for direct assembly of normalized Legendre polynomials.
 \end_layout
 
 \begin_layout Standard
@@ -470,17 +490,147 @@ Can be modified for a calculation of normalized Legendre polynomials.
 status open
 
 \begin_layout Plain Layout
-Legendre polynomials
+Golub-Welsch algorithm
 \end_layout
 
 \end_inset
 
 
-\begin_inset Note Note
+\end_layout
+
+\begin_layout Frame
+Coefficient of three-term recurence creates Jacobi matrix:
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula 
+\[
+J_{n}\coloneqq\begin{bmatrix}\alpha_{0} & \sqrt{\beta_{1}} &  &  & 0\\
+\sqrt{\beta_{1}} & \alpha_{1} & \sqrt{\beta_{2}}\\
+ & \sqrt{\beta_{2}} & \alpha_{2} & \ddots\\
+ &  & \ddots & \ddots & \sqrt{\beta_{n}}\\
+0 &  &  & \sqrt{\beta_{n}} & \alpha_{n}
+\end{bmatrix}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+eigenpairs obtained from specialized algorithm for Hermite three-diagonal matrices
+\begin_inset Formula 
+\[
+\intop_{I}f(x)w(x)\,dx\approx\sum_{j=1}^{n}\lambda_{j}f(\tau_{j}).
+\]
+
+\end_inset
+
+Eigenvalues of the Jacobi matrix are the quadrature nodes 
+\begin_inset Formula $\tau_{j}$
+\end_inset
+
+ and the quadrature weights 
+\begin_inset Formula $\lambda_{i}=\beta_{0}\boldsymbol{v}_{i,1}^{2},$
+\end_inset
+
+ 
+\begin_inset Formula $\boldsymbol{v}_{i}$
+\end_inset
+
+ is corresponding eigenvector.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
 status open
 
 \begin_layout Plain Layout
-sřídají se sudé a liché
+Generalization of Legendre polynomials
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+Legendre polynomial transformation:
+\begin_inset Formula 
+\[
+\pi_{i}(x)=\pi_{i}^{L}\left(\frac{a+b}{a-b}+\frac{2}{b-a}x\right)\sqrt{\frac{2}{b-a}}.
+\]
+
+\end_inset
+
+Quadrature transformations
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+nodes:
+\begin_inset Formula 
+\[
+\tau_{i}=\frac{a+b}{2}+\frac{b-a}{2}\tau_{i}^{L}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+weights:
+\begin_inset Formula 
+\[
+\lambda_{i}=\frac{b-a}{2}\lambda_{i}^{L}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Legendre polynomials
 \end_layout
 
 \end_inset
@@ -535,249 +685,6 @@ Normalized Legendre polynomials
 status open
 
 \begin_layout Plain Layout
-Golub-Welsch algorithm
-\end_layout
-
-\end_inset
-
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-(V kódu Jacobi matrix reprezentován jako 2 vektory)
-\end_layout
-
-\begin_layout Plain Layout
-zmínit že používám Golub-Welsch
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Coefficients of the three-term recurrence make Jacobi matrix:
-\family roman
-\size small
-
-\begin_inset Formula 
-\[
-J_{n}\coloneqq\begin{bmatrix}\alpha_{0} & \sqrt{\beta_{1}} &  &  & 0\\
-\sqrt{\beta_{1}} & \alpha_{1} & \sqrt{\beta_{2}}\\
- & \sqrt{\beta_{2}} & \alpha_{2} & \ddots\\
- &  & \ddots & \ddots & \sqrt{\beta_{n}}\\
-0 &  &  & \sqrt{\beta_{n}} & \alpha_{n}
-\end{bmatrix}
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-eigenvalues of the Jacobi matrix are quadrature nodes 
-\begin_inset Formula $\tau_{j}$
-\end_inset
-
- and the quadrature weights 
-\begin_inset Formula $\lambda_{i}=\beta_{0}\boldsymbol{v}_{i,1}^{2},$
-\end_inset
-
- 
-\begin_inset Formula $\boldsymbol{v}_{i}$
-\end_inset
-
- is corresponding eigenvector.
-\begin_inset Formula 
-\[
-\intop_{I}f(x)w(x)\,dx\approx\sum_{j=1}^{n}\lambda_{j}f(\tau_{j}).
-\]
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Standard
-\begin_inset Separator plain
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Generalization of Legendre polynomials
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Legendre polynomial transformation:
-\begin_inset Formula 
-\[
-\pi_{i}(x)=\pi_{i}^{L}\left(\frac{a+b}{a-b}+\frac{2}{b-a}x\right)\sqrt{\frac{2}{b-a}}.
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-Quadrature transformations
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-nodes:
-\begin_inset Formula 
-\[
-\tau_{i}=\frac{a+b}{2}+\frac{b-a}{2}\tau_{i}^{L}
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-weights:
-\begin_inset Formula 
-\[
-\lambda_{i}=\frac{b-a}{2}\lambda_{i}^{L}
-\]
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\end_deeper
-\begin_layout Standard
-\begin_inset Separator plain
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Quadrature examples
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Float figure
-placement H
-alignment center
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Graphics
-	filename graphs/SmoothInteg.pdf
-	height 2.5cm
-
-\end_inset
-
-
-\begin_inset space \space{}
-\end_inset
-
-
-\begin_inset space \space{}
-\end_inset
-
- 
-\begin_inset Graphics
-	filename graphs/PolynomialInteg.pdf
-	height 2.5cm
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Graphics
-	filename graphs/DiscontinuousInteg.pdf
-	height 2.5cm
-
-\end_inset
-
-
-\begin_inset space \space{}
-\end_inset
-
-
-\begin_inset space \space{}
-\end_inset
-
- 
-\begin_inset Graphics
-	filename graphs/NonSmoothInteg.pdf
-	height 2.5cm
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Examples of Integrated function (purple) and the convergence of numerical integration (green)
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Separator plain
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
 Computation time
 \end_layout
 
@@ -787,10 +694,7 @@ Computation time
 \end_layout
 
 \begin_layout Frame
-Eigenpairs are obtained using a specialized algorithm for Hermite three-diagonal matrices
-\end_layout
-
-\begin_layout Frame
+Eigendecomposition can be done efficiently for hermite threediagonal matrices (speciffic algorithms).
 \begin_inset Float figure
 placement H
 alignment center
@@ -868,26 +772,15 @@ Karhunen-Loève expansion
 
 \begin_inset Formula 
 \[
-X(t,\omega)=\sum_{j=1}^{\infty}\gamma_{j}(\omega)\sqrt{\lambda_{j}}u_{j}(t),
+X(t,\omega)=\sum_{j=1}^{\infty}\gamma_{j}(\omega)\sqrt{\lambda_{j}}u_{j}(t)
 \]
 
 \end_inset
 
 
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\nospellcheck default
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
+\end_layout
 
+\begin_layout Frame
 \begin_inset Formula $\left(\lambda_{j},u_{j}\right)$
 \end_inset
 
@@ -897,12 +790,16 @@ X(t,\omega)=\sum_{j=1}^{\infty}\gamma_{j}(\omega)\sqrt{\lambda_{j}}u_{j}(t),
 
 :
 \begin_inset Formula 
-\[
-\left(Cu\right)\left(x\right)\coloneqq\intop_{\mathcal{T}}c\left(x,y\right)u\left(y\right)dy.
-\]
+\begin{equation}
+\left(Cu\right)\left(x\right)\coloneqq\intop_{\mathcal{T}}c\left(x,y\right)u\left(y\right)dy.\label{eq:covariance_operator}
+\end{equation}
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Frame
 
 \family roman
 \series medium
@@ -917,28 +814,19 @@ X(t,\omega)=\sum_{j=1}^{\infty}\gamma_{j}(\omega)\sqrt{\lambda_{j}}u_{j}(t),
 \uwave off
 \noun off
 \color none
+e.g.
+ 
+\begin_inset Formula $c\left(x,y\right)=c(d)=\exp\left(-d\right),d=\left\Vert x-y\right\Vert $
+\end_inset
+
 
 \begin_inset Formula 
 \[
-\gamma_{j}(\omega)\coloneqq\langle X(t,\omega),u_{j}(t)\rangle_{L^{2}(\mathcal{T})}
+\gamma_{j}(\omega)\coloneqq\langle X(t,\omega),u_{j}(t)\rangle_{L^{2}(\mathcal{T})},
 \]
 
 \end_inset
 
-
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\nospellcheck default
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
 for Gaussian random field 
 \begin_inset Formula $\gamma_{j}(\omega)$
 \end_inset
@@ -972,17 +860,15 @@ Galerkin method
 \end_layout
 
 \begin_layout Frame
-Galerkin method approximates eigenpairs of autocovariance operator with polynomial basis that is orthonormal on 
+We approximate eigenpairs of autocovariance operator using Galerkin method with polynomial basis (orthonormal on 
 \begin_inset Formula $\mathcal{T}$
 \end_inset
 
-.
- We assume 
+ (we assume 
 \begin_inset Formula $\mathcal{T}$
 \end_inset
 
- is a multidimensional interval,
- then the basis is a tensor product of 1D Legendre polynomials.
+ is vícerozměrný interval -> tensor product of 1d legendre polynomials)
 \family roman
 \series medium
 \shape up
@@ -1026,28 +912,25 @@ W_{k,j}=\intop_{\mathcal{T}}\psi_{k}\left(\boldsymbol{x}\right)\psi_{j}\left(\bo
 
 \end_inset
 
-Matrix 
-\begin_inset Formula $W$
-\end_inset
-
- is an identity matrix due to orthonormality of basis polynomials.
- We then have an eigenvalue problem with semi-definite matrix 
-\begin_inset Formula $A$
+due to orthonormal polynomials 
+\begin_inset Formula $W=I$
 \end_inset
 
 .
+ i.e.
+ we solve standard eigenvalue problem with semidefinite matrix A.
 \begin_inset Formula 
 \[
-A_{k,j}=\intop_{\mathcal{T}}\intop_{\mathcal{T}}\psi_{k}\left(\boldsymbol{y}\right)c\left(\boldsymbol{x},\boldsymbol{y}\right)\psi_{j}\left(\boldsymbol{x}\right)d\boldsymbol{x}d\boldsymbol{y}.
+A_{k,j}=\intop_{\mathcal{T}}\intop_{\mathcal{T}}\psi_{k}\left(\boldsymbol{y}\right)c\left(\boldsymbol{x},\boldsymbol{y}\right)\psi_{j}\left(\boldsymbol{x}\right)d\boldsymbol{x}d\boldsymbol{y},
 \]
 
 \end_inset
 
-Entries of 
+entries of 
 \begin_inset Formula $A$
 \end_inset
 
- are computed using multidimensional quadratures (tensor product of 1D quadratures)
+ are computed using multidimensional quadratures (product of 1D quadratures.
 \end_layout
 
 \begin_layout Standard
@@ -1074,18 +957,6 @@ status open
 \end_layout
 
 \begin_layout Frame
-Calculated values are compared against values of a matrix 
-\begin_inset Formula $A^{*}$
-\end_inset
-
- that was computed with 
-\begin_inset Formula $N_{r}=5000$
-\end_inset
-
- nodes.
-\end_layout
-
-\begin_layout Frame
 \begin_inset Float figure
 placement H
 alignment center
@@ -1108,10 +979,10 @@ status open
 
 \begin_layout Plain Layout
 Error of entries 
-\begin_inset Formula $A_{k,l}$
+\begin_inset Formula $A_{i,j}$
 \end_inset
 
- obtained from Matérn covariance
+
 \end_layout
 
 \end_inset
@@ -1136,21 +1007,7 @@ Error of entries
 status open
 
 \begin_layout Plain Layout
-Residuum
-\end_layout
-
-\end_inset
-
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-.
-\end_layout
-
-\begin_layout Plain Layout
-říká nám jak moc je A přerušené
+Residuum of polynomial approximation of eigenpairs
 \end_layout
 
 \end_inset
@@ -1193,7 +1050,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Residuum of eigenpairs obtained from Matérn covariance
+Residuum
 \end_layout
 
 \end_inset
@@ -1210,68 +1067,15 @@ Residuum of eigenpairs obtained from Matérn covariance
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset Separator plain
-\end_inset
-
+\begin_layout Frame
 
 \end_layout
 
 \begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Conclusion
-\end_layout
-
-\end_inset
-
 
 \end_layout
 
-\begin_layout Frame
-what I have achieved:
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-implemented Golub-Welsch algorithm for obtaining quadrature nodes and weights
-\end_layout
-
-\begin_layout Itemize
-experimented with accuracy and computation time of Gaussian quadrature on different functions
-\end_layout
-
-\begin_layout Itemize
-explained basics of random fields and Karhunen-Loève decomposition
-\end_layout
-
-\begin_layout Itemize
-utilized Galerkin method for gaining eigenpairs 
-\begin_inset Formula $\left(\lambda_{j},u_{j}\right)$
-\end_inset
-
- that are use in Karhunen-Loève decomposition
-\end_layout
-
-\begin_layout Itemize
-shown computation error of elements of matrix 
-\begin_inset Formula $A$
-\end_inset
-
- and a residuum of an approximation of eigenpairs 
-\begin_inset Formula $\left(\lambda_{j},u_{j}\right)$
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Frame
-
-\series bold
-\bar under
+\begin_layout Section
 Thank you for your attention
 \end_layout
 
