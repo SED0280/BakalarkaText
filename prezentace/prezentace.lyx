@@ -1379,7 +1379,7 @@ Answer
 \end_layout
 
 \begin_deeper
-\begin_layout Itemize
+\begin_layout Standard
 Rozdělíme na část pod 
 \begin_inset Formula $y=x$
 \end_inset
@@ -1388,19 +1388,33 @@ Rozdělíme na část pod
 \begin_inset Formula $y=x$
 \end_inset
 
+,
+ tím vzniknou dva trojúhelníky se stejnými hodnotami.
+\end_layout
+
+\begin_layout Standard
+Poté aplikujeme substituci na čtverec kde 
+\begin_inset Formula $x=u,y=\frac{1}{2}(u+1)(v+1)-1$
+\end_inset
+
+ a 
+\begin_inset Formula $\left|J\right|=(u+1)/2$
+\end_inset
+
+.
+ Substituce v integrálu pak je:
+\begin_inset Formula 
+\[
+\intop_{-1}^{1}\intop_{-1}^{1}\psi_{k}\left(\frac{(u+1)(v+1)}{2}-1\right)c\left(u,\frac{(u+1)(v+1)}{2}-1\right)\psi_{j}\left(u\right)dudv
+\]
+
+\end_inset
+
 
 \end_layout
 
-\begin_layout Itemize
-2 ekvivalentní trojúhelníky
-\end_layout
-
-\begin_layout Itemize
-Substituce na čtverec
-\end_layout
-
-\begin_layout Itemize
-Integrál přes čtverec násobený dvěma
+\begin_layout Standard
+Nakonec integrál vynásobíme dvěma protože integrujeme přes dva stejné trojúhelníky
 \end_layout
 
 \end_deeper
