@@ -206,7 +206,7 @@ Numerical experiments of convergence and residuum of calculated eigenpairs
 status open
 
 \begin_layout Plain Layout
-Goal of thesis
+Random fields
 \end_layout
 
 \end_inset
@@ -1156,8 +1156,11 @@ status open
 \end_inset
 
 
-\size footnotesize
+\end_layout
 
+\begin_layout Frame
+
+\size footnotesize
 \begin_inset Formula 
 \[
 \left\Vert R_{i}\right\Vert _{L^{2}}=\left\Vert \intop_{\mathcal{T}}c\left(x,y\right)\tilde{u}_{i}\left(y\right)\,dy-\tilde{\lambda}_{i}\tilde{u}_{i}\left(x\right)\right\Vert _{L^{2}}=\left(\intop_{\mathcal{T}}\left(\intop_{\mathcal{T}}c\left(x,y\right)\tilde{u}_{i}\left(y\right)\,dy-\tilde{\lambda}_{i}\tilde{u}_{i}\left(x\right)\right)^{2}dx\right)^{1/2}.
@@ -1319,7 +1322,7 @@ status open
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename graphs/AijError_Exp.pdf
-	scale 40
+	scale 55
 
 \end_inset
 
@@ -1331,10 +1334,10 @@ status open
 
 \begin_layout Plain Layout
 Error of entries 
-\begin_inset Formula $A_{i,j}$
+\begin_inset Formula $A_{k,l}$
 \end_inset
 
-
+ obtained from exponential covariance
 \end_layout
 
 \end_inset
@@ -1381,7 +1384,7 @@ Rozdělíme na část pod
 \begin_inset Formula $y=x$
 \end_inset
 
-.
+
 \end_layout
 
 \begin_layout Itemize
@@ -1515,43 +1518,6 @@ x\pi_{k-1}-\pi_{k}=p_{k-1}-q_{k-1}=r_{k-1}\in P_{k-1}
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Separator plain
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Answer
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\nospellcheck off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
 \begin_inset Formula 
 \[
 x\pi_{k-1}=\pi_{k}+x\pi_{k-1}-\pi_{k}=\pi_{k}+r_{k-1}=\pi_{k}+\sum_{i=0}^{k-1}c_{i}\pi_{i},\quad r_{k-1}\in P_{k-1}
@@ -1631,7 +1597,8 @@ Answer
 \end_layout
 
 \begin_layout Frame
-Vychází z Remark 25 (The 
+Vychází z Remark 25:
+ The 
 \begin_inset Formula $n$
 \end_inset
 
@@ -1639,12 +1606,48 @@ Vychází z Remark 25 (The
 \begin_inset Formula $2n-1$
 \end_inset
 
- exactly.)
+ exactly.
+ 
 \end_layout
 
 \begin_layout Frame
 Spojité funkce se dají aproximovat polynomem.
  Efektivita Gaussové kvadratury poté závisí na nepřesnosti aproximace polynomem.
+ Hodní odhad chyby aproximace polynomem poté závisí na čísle 
+\begin_inset Formula $k$
+\end_inset
+
+,
+ které značí kolikrát spojitě diferencovatelná aproximovaná funkce je.
+ Čím větší je 
+\begin_inset Formula $k$
+\end_inset
+
+,
+ tím přesněji se funkce dá approximovat polynomeme a tím menší vznikne chyba.
+ viz.
+ 
+\emph on
+The 
+\begin_inset Formula $h-p$
+\end_inset
+
+ version of the finite element method with quasiuniform meshes by I.
+ Babuška,
+ Manil Suri
+\emph default
+,
+ Lemma 4.1:
+\end_layout
+
+\begin_layout Frame
+\begin_inset Graphics
+	filename graphs/Lemma4_1.png
+	scale 80
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Frame
@@ -1716,11 +1719,25 @@ Tensor
 \begin_inset Formula $A$
 \end_inset
 
- by měl více dimenzí
+ by měl více dimenzí,
+ pro spektralní rozklad by se 
+\begin_inset Formula $A$
+\end_inset
+
+ převedlo na matici.
 \end_layout
 
 \begin_layout Frame
-Výpočetní náročnost by stoupla
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Výpočetní náročnost by stoupla.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1770,6 +1787,11 @@ Answer
 \begin_layout Frame
 Ano,
  ale ne s mojí implementací.
+ Neměli bysme bázy orthogonálních polynomů a 
+\begin_inset Formula $W$
+\end_inset
+
+ by poté nebyla jednotková matice.
 \end_layout
 
 \begin_layout Frame
