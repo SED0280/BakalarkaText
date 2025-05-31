@@ -1184,6 +1184,29 @@ Calculated values are compared against values of a matrix
 \end_layout
 
 \begin_layout Frame
+Matérn covariance:
+ 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $c(d)=\sigma^{2}\frac{2^{1-\nu}}{\Gamma(\nu)}\left(\sqrt{2\nu}\frac{d}{\rho}\right)^{\nu}K_{\nu}\left(\sqrt{2\nu}\frac{d}{\rho}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Frame
 \begin_inset Float figure
 placement H
 alignment center
@@ -1759,11 +1782,7 @@ Vychází z Remark 25:
 \end_inset
 
  exactly.
- 
-\end_layout
-
-\begin_layout Frame
-Spojité funkce se dají aproximovat polynomem.
+ Spojité funkce se dají aproximovat polynomem.
  Efektivita Gaussové kvadratury poté závisí na nepřesnosti aproximace polynomem.
  Hodní odhad chyby aproximace polynomem poté závisí na čísle 
 \begin_inset Formula $k$
@@ -1776,8 +1795,12 @@ Spojité funkce se dají aproximovat polynomem.
 \end_inset
 
 ,
- tím přesněji se funkce dá approximovat polynomeme a tím menší vznikne chyba.
- viz.
+ tím přesněji se funkce dá approximovat polynomem a tím menší vznikne chyba.
+ 
+\end_layout
+
+\begin_layout Frame
+viz.
  
 \emph on
 The 
@@ -1795,7 +1818,7 @@ The
 \begin_layout Frame
 \begin_inset Graphics
 	filename graphs/Lemma4_1.png
-	scale 80
+	scale 75
 
 \end_inset
 
