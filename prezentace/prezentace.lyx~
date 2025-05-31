@@ -27,7 +27,7 @@
 \usepackage{xcolor}
 
 \title[Approximation of Karhunen-Loève Decomposition]{Approximation of Karhunen-Loève Decomposition of Isotropic Gaussian Random Fields Using Orthogonal Polynomials and Gaussian Quadratures} 
-\date{\today}
+\date{3.6.2025}
 \author[MS]{\underline{Michal Sedlář}}
 \titlegraphic{\vspace{-15pt}\hfill\includegraphics[height=1.2cm]{logo.png}}
 
@@ -143,7 +143,7 @@ maketitle
 status open
 
 \begin_layout Plain Layout
-Goal of thesis
+Goal of the thesis
 \end_layout
 
 \end_inset
@@ -153,8 +153,7 @@ Goal of thesis
 
 \begin_deeper
 \begin_layout Itemize
-Reviewing theory of orthogonal and orthonormal polynomials,
- specifically:
+Review of the theory of orthogonal polynomials:
 \end_layout
 
 \begin_deeper
@@ -167,11 +166,11 @@ Golub-Welsch algorithm
 \end_layout
 
 \begin_layout Itemize
-Generalization of Legendre polynomials and quadrature
+Generalization of Legendre polynomials and quadrature to any interval
 \end_layout
 
 \begin_layout Itemize
-Numerical experiments and implementation of quadrature rules
+Numerical experiments of quadrature rule convergence
 \end_layout
 
 \end_deeper
@@ -185,11 +184,11 @@ Introduction to Karhunen-Loève decomposition
 \end_layout
 
 \begin_layout Itemize
-Galerkin method for obtaining eigenpairs of autocovariance function
+Galerkin method for approximating eigenpairs of autocovariance function
 \end_layout
 
 \begin_layout Itemize
-Numerical experiments of convergence and residuum of calculated eigenpairs
+Numerical experiments of Galerkin matrix assembly and convergence of residuum of calculated eigenpairs
 \end_layout
 
 \end_deeper
@@ -206,7 +205,8 @@ Numerical experiments of convergence and residuum of calculated eigenpairs
 status open
 
 \begin_layout Plain Layout
-Random fields
+Goal:
+ approximating KL decomposition and sampling GRF
 \end_layout
 
 \end_inset
@@ -280,12 +280,12 @@ map
 \end_layout
 
 \begin_layout Itemize
-samples of random fields are then functions of spatial domains
+samples of random fields are then functions on spatial domains.
 \end_layout
 
 \begin_layout Itemize
 Karhunen-Loève decomposition separates randomness and spatial behavior.
- It can be used for fast and efficient sampling
+ It can be used for fast and efficient sampling.
 \end_layout
 
 \begin_layout Itemize
@@ -380,7 +380,11 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Sample realizations of a 2D random field with an exponential covariance function
+Sample realizations of a 2D random field with an exponential covariance function (
+\begin_inset Formula $c(x,y)=\exp(-\left\Vert x-y\right\Vert )$
+\end_inset
+
+)
 \end_layout
 
 \end_inset
@@ -426,7 +430,7 @@ Legendre polynomials and Quadrature rules
 status open
 
 \begin_layout Plain Layout
-Legendre polynomials
+Construction of orthogonal polynomials
 \end_layout
 
 \end_inset
@@ -435,7 +439,7 @@ Legendre polynomials
 \end_layout
 
 \begin_layout Frame
-Calculated using the three-term recurrence:
+Can be constructed using the three-term recurrence:
 \begin_inset Formula 
 \[
 \pi_{k+1}(x)=\left(x-\alpha_{k}\right)\pi_{k}(x)-\beta_{k}\pi_{k-1}(x),\quad k=0,1,2,\ldots,
@@ -455,7 +459,7 @@ Calculated using the three-term recurrence:
 \end_layout
 
 \begin_layout Frame
-Can be modified for a calculation of normalized Legendre polynomials.
+Can be modified for the construction of normalized polynomials.
 \end_layout
 
 \begin_layout Standard
@@ -470,7 +474,7 @@ Can be modified for a calculation of normalized Legendre polynomials.
 status open
 
 \begin_layout Plain Layout
-Legendre polynomials
+Visualization of Legendre polynomials
 \end_layout
 
 \end_inset
@@ -563,7 +567,7 @@ zmínit že používám Golub-Welsch
 
 \begin_deeper
 \begin_layout Itemize
-Coefficients of the three-term recurrence make Jacobi matrix:
+Coefficients of the three-term recurrence define the Jacobi matrix:
 \family roman
 \size small
 
@@ -591,7 +595,7 @@ eigenvalues of the Jacobi matrix are quadrature nodes
 \begin_inset Formula $\lambda_{i}=\beta_{0}\boldsymbol{v}_{i,1}^{2},$
 \end_inset
 
- 
+ where 
 \begin_inset Formula $\boldsymbol{v}_{i}$
 \end_inset
 
@@ -600,6 +604,16 @@ eigenvalues of the Jacobi matrix are quadrature nodes
 \[
 \intop_{I}f(x)w(x)\,dx\approx\sum_{j=1}^{n}\lambda_{j}f(\tau_{j}).
 \]
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Okomentovat co je I a w
+\end_layout
 
 \end_inset
 
@@ -628,6 +642,14 @@ Generalization of Legendre polynomials
 \end_layout
 
 \begin_deeper
+\begin_layout Itemize
+Integral over 
+\begin_inset Formula $I=<a,b>$
+\end_inset
+
+
+\end_layout
+
 \begin_layout Itemize
 Legendre polynomial transformation:
 \begin_inset Formula 
@@ -852,6 +874,14 @@ Karhunen-Loève expansion
 \end_inset
 
 
+\end_layout
+
+\begin_layout Frame
+\begin_inset Formula $X:\mathcal{T}\times\Omega\rightarrow\mathbb{R}$
+\end_inset
+
+ is a random field (isotropic,
+ Gaussian with zero mean)
 \family roman
 \series medium
 \shape up
@@ -865,7 +895,7 @@ Karhunen-Loève expansion
 \uwave off
 \noun off
 \color none
-
+.
 \begin_inset Formula 
 \[
 X(t,\omega)=\sum_{j=1}^{\infty}\gamma_{j}(\omega)\sqrt{\lambda_{j}}u_{j}(t),
@@ -898,7 +928,7 @@ X(t,\omega)=\sum_{j=1}^{\infty}\gamma_{j}(\omega)\sqrt{\lambda_{j}}u_{j}(t),
 :
 \begin_inset Formula 
 \[
-\left(Cu\right)\left(x\right)\coloneqq\intop_{\mathcal{T}}c\left(x,y\right)u\left(y\right)dy.
+\left(Cu\right)\left(x\right)\coloneqq\intop_{\mathcal{T}}c\left(x,y\right)u\left(y\right)dy,
 \]
 
 \end_inset
@@ -920,7 +950,7 @@ X(t,\omega)=\sum_{j=1}^{\infty}\gamma_{j}(\omega)\sqrt{\lambda_{j}}u_{j}(t),
 
 \begin_inset Formula 
 \[
-\gamma_{j}(\omega)\coloneqq\langle X(t,\omega),u_{j}(t)\rangle_{L^{2}(\mathcal{T})}
+\gamma_{j}(\omega)\coloneqq\langle X(t,\omega),u_{j}(t)\rangle_{L^{2}(\mathcal{T})}.
 \]
 
 \end_inset
@@ -949,6 +979,74 @@ for Gaussian random field
 \end_inset
 
 .
+ 
+\end_layout
+
+\begin_layout Frame
+\begin_inset Formula $c(x,y)=c(\left\Vert x-y\right\Vert )=c(d)$
+\end_inset
+
+.
+ e.g.
+ exp:
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\begin_inset Formula $c(d)=e^{-d}$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+,
+ squared exp:
+\begin_inset Formula $c(d)=e^{-\frac{d^{2}}{2}}$
+\end_inset
+
+,
+ Matérn:
+ 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $c(d)=\sigma^{2}\frac{2^{1-\nu}}{\Gamma(\nu)}\left(\sqrt{2\nu}\frac{d}{\rho}\right)^{\nu}K_{\nu}\left(\sqrt{2\nu}\frac{d}{\rho}\right)$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1065,7 +1163,7 @@ status open
 \begin_inset Formula $A_{i,j}$
 \end_inset
 
- calculation error
+ calculation error of Matern covariance
 \end_layout
 
 \end_inset
@@ -1231,7 +1329,7 @@ Conclusion
 \end_layout
 
 \begin_layout Frame
-what I have achieved:
+What I have achieved:
 \end_layout
 
 \begin_deeper
@@ -1248,11 +1346,11 @@ explained basics of random fields and Karhunen-Loève decomposition
 \end_layout
 
 \begin_layout Itemize
-utilized Galerkin method for gaining eigenpairs 
+utilized Galerkin method for approximating eigenpairs 
 \begin_inset Formula $\left(\lambda_{j},u_{j}\right)$
 \end_inset
 
- that are use in Karhunen-Loève decomposition
+ for Karhunen-Loève decomposition
 \end_layout
 
 \begin_layout Itemize
@@ -1389,7 +1487,7 @@ Rozdělíme na část pod
 \end_inset
 
 ,
- tím vzniknou dva trojúhelníky se stejnými hodnotami.
+ tím vzniknou dva trojúhelníky.
 \end_layout
 
 \begin_layout Standard
@@ -1405,7 +1503,7 @@ Poté aplikujeme substituci na čtverec kde
  Substituce v integrálu pak je:
 \begin_inset Formula 
 \[
-\intop_{-1}^{1}\intop_{-1}^{y}\psi_{k}\left(y\right)c\left(x,y\right)\psi_{j}\left(x\right)dxdy=\intop_{-1}^{1}\intop_{-1}^{1}\psi_{k}\left(\frac{(u+1)(v+1)}{2}-1\right)c\left(u,\frac{(u+1)(v+1)}{2}-1\right)\psi_{j}\left(u\right)dudv
+\intop_{-1}^{1}\intop_{-1}^{1}\psi_{k}\left(\frac{(u+1)(v+1)}{2}-1\right)c\left(u,\frac{(u+1)(v+1)}{2}-1\right)\psi_{j}\left(u\right)(u+1)/2\,dudv
 \]
 
 \end_inset
@@ -1414,7 +1512,43 @@ Poté aplikujeme substituci na čtverec kde
 \end_layout
 
 \begin_layout Standard
-Nakonec integrál vynásobíme dvěma protože integrujeme přes dva stejné trojúhelníky
+Na vrchní trojúhelník použijeme podobnou substituci 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $x=\frac{1}{2}(u+1)(v+1)-1,y=v$
+\end_inset
+
+ a 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+
+\begin_inset Formula $\left|J\right|=(u+1)/2$
+\end_inset
+
+
 \end_layout
 
 \end_deeper
