@@ -26,9 +26,9 @@
 
 \usepackage{xcolor}
 
-\title[Approximation of Karhunen-Loève Decomposition]{Approximation of Karhunen-Loève Decomposition of Isotropic Gaussian Random Fields Using Orthogonal Polynomials and Gaussian Quadratures} 
+\title[Approximation of Karhunen-Loève Decomposition]{~\\ Approximation of Karhunen-Loève Decomposition of Isotropic Gaussian Random Fields Using Orthogonal Polynomials and Gaussian Quadratures} 
 \date{3.6.2025}
-\author[MS]{\underline{Michal Sedlář}}
+\author[MS]{\underline{Michal Sedlář}
 \\
 \\
 \\

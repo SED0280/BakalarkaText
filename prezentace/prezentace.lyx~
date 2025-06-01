@@ -29,6 +29,10 @@
 \title[Approximation of Karhunen-Loève Decomposition]{Approximation of Karhunen-Loève Decomposition of Isotropic Gaussian Random Fields Using Orthogonal Polynomials and Gaussian Quadratures} 
 \date{3.6.2025}
 \author[MS]{\underline{Michal Sedlář}}
+\\
+\\
+\\
+\small{\underline{Supervisor:} Ing. Michal Béreš, Ph.D.}}
 \titlegraphic{\vspace{-15pt}\hfill\includegraphics[height=1.2cm]{logo.png}}
 
 \input{settings}
