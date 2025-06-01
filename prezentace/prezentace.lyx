@@ -29,6 +29,10 @@
 \title[Approximation of Karhunen-Loève Decomposition]{Approximation of Karhunen-Loève Decomposition of Isotropic Gaussian Random Fields Using Orthogonal Polynomials and Gaussian Quadratures} 
 \date{3.6.2025}
 \author[MS]{\underline{Michal Sedlář}}
+\\
+\\
+\\
+\small{\underline{Supervisor:} Ing. Michal Béreš, Ph.D.}}
 \titlegraphic{\vspace{-15pt}\hfill\includegraphics[height=1.2cm]{logo.png}}
 
 \input{settings}
@@ -1172,35 +1176,25 @@ status open
 \end_layout
 
 \begin_layout Frame
-Calculated values are compared against values of a matrix 
+Calculated values are compared against matrix 
 \begin_inset Formula $A^{*}$
 \end_inset
 
- that was computed with 
+ with 
 \begin_inset Formula $N_{r}=5000$
 \end_inset
 
  nodes.
-\end_layout
-
-\begin_layout Frame
-Matérn covariance:
- 
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\nospellcheck off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
-
+ Matérn covariance 
 \begin_inset Formula $c(d)=\sigma^{2}\frac{2^{1-\nu}}{\Gamma(\nu)}\left(\sqrt{2\nu}\frac{d}{\rho}\right)^{\nu}K_{\nu}\left(\sqrt{2\nu}\frac{d}{\rho}\right)$
+\end_inset
+
+ has parameters 
+\begin_inset Formula $\nu=0.5$
+\end_inset
+
+ and 
+\begin_inset Formula $\rho=1$
 \end_inset
 
 .
@@ -1772,7 +1766,7 @@ Answer
 \end_layout
 
 \begin_layout Frame
-Vychází z Remark 25:
+Pozorování vychází z Remark 25:
  The 
 \begin_inset Formula $n$
 \end_inset
@@ -1782,25 +1776,9 @@ Vychází z Remark 25:
 \end_inset
 
  exactly.
- Spojité funkce se dají aproximovat polynomem.
  Efektivita Gaussové kvadratury poté závisí na nepřesnosti aproximace polynomem.
- Hodní odhad chyby aproximace polynomem závisí na čísle 
-\begin_inset Formula $k$
-\end_inset
-
-,
- které značí kolikrát spojitě diferencovatelná aproximovaná funkce je.
- Čím větší je 
-\begin_inset Formula $k$
-\end_inset
-
-,
- tím přesněji se funkce dá approximovat polynomem a tím menší vznikne chyba.
- 
-\end_layout
-
-\begin_layout Frame
-viz.
+ Existují odhady chyby polynomiální aproximace v závislosti na hladkosti aproximované funkce,
+ například:
  
 \emph on
 The 
