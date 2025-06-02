@@ -26,9 +26,9 @@
 
 \usepackage{xcolor}
 
-\title[Approximation of Karhunen-Loève Decomposition]{Approximation of Karhunen-Loève Decomposition of Isotropic Gaussian Random Fields Using Orthogonal Polynomials and Gaussian Quadratures} 
+\title[Approximation of Karhunen-Loève Decomposition]{~\\ Approximation of Karhunen-Loève Decomposition of Isotropic Gaussian Random Fields Using Orthogonal Polynomials and Gaussian Quadratures} 
 \date{3.6.2025}
-\author[MS]{\underline{Michal Sedlář}}
+\author[MS]{\underline{Michal Sedlář}
 \\
 \\
 \\
@@ -280,7 +280,7 @@ map
 \begin_inset Formula $\Omega\rightarrow L^{2}\left(D\right)$
 \end_inset
 
-
+.
 \end_layout
 
 \begin_layout Itemize
@@ -1167,7 +1167,7 @@ status open
 \begin_inset Formula $A_{i,j}$
 \end_inset
 
- calculation error of Matern covariance
+ calculation error of Matérn covariance
 \end_layout
 
 \end_inset
@@ -1562,7 +1562,7 @@ Na vrchní trojúhelník použijeme podobnou substituci
 \noun default
 \color inherit
 
-\begin_inset Formula $\left|J\right|=(u+1)/2$
+\begin_inset Formula $\left|J\right|=(v+1)/2$
 \end_inset
 
 
@@ -1653,23 +1653,6 @@ Answer
 \end_inset
 
  je monický
-\end_layout
-
-\begin_layout Frame
-
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\nospellcheck off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
 \begin_inset Formula 
 \begin{eqnarray*}
 \exists p_{k-1}\in P_{k-1}:x\pi_{k-1} & = & x^{k}+p_{k-1}\\
